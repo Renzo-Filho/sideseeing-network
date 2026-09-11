@@ -52,3 +52,4 @@ Thumbs.db
 *.log
 *.lock
 /notebooks/cache/
+/notebooks/

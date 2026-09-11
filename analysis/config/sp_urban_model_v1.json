@@ -1,0 +1,48 @@
+{
+  "model_version": "v1",
+  "source_release": "sp_attributes_2026_09_11_v1",
+  "paths": {
+    "primary_attributes": "results/SP/tables/attributes_primary.csv",
+    "wide_attributes": "results/SP/tables/attributes_wide.parquet",
+    "long_attributes": "results/SP/tables/attributes_long.parquet",
+    "attribute_dictionary": "results/SP/tables/attribute_dictionary.csv",
+    "district_geometry": "results/SP/spatial/sao_paulo_district_attributes.gpkg"
+  },
+  "target_district_id": "10",
+  "target_district_name": "Brás",
+  "fitting_cohort": "all_96",
+  "random_seed": 20260911,
+  "weight_draws": 500,
+  "tie_policy": "competition_rank_and_id_sort",
+  "publication_thresholds": {
+    "top_k_review": 10,
+    "weight_stable_pct": 80
+  },
+  "families": {
+    "M1": { "weight": 1.0, "type": "scalar", "columns": ["street_density_km_km2"], "transform": "log" },
+    "M2": { "weight": 1.0, "type": "scalar", "columns": ["intersection_density_proxy_5m_km2"], "transform": "log" },
+    "M3": { "weight": 1.0, "type": "scalar", "columns": ["block_log_area_median", "block_log_area_iqr"], "transform": "identity" },
+    "M4": { "weight": 1.0, "type": "scalar", "columns": ["block_compactness_median", "block_compactness_iqr", "block_elongation_median", "block_elongation_iqr"], "transform": "identity" },
+    "M6": { "weight": 1.0, "type": "composition", "columns": ["street_class_model_share_arterial", "street_class_model_share_coletora", "street_class_model_share_local", "street_class_model_share_rodovia", "street_class_model_share_via_de_pedestres", "street_class_model_share_vtr"], "transform": "joint_sqrt_hellinger" },
+    "M7": { "weight": 1.0, "type": "scalar", "columns": ["cadastral_parcel_density_km2"], "transform": "log" },
+    "B1": { "weight": 1.0, "type": "scalar", "columns": ["building_coverage_land"], "transform": "identity" },
+    "B2": { "weight": 1.0, "type": "scalar", "columns": ["cadastral_floor_count_median", "cadastral_floor_count_p90"], "transform": "log" },
+    "B3": { "weight": 1.0, "type": "scalar", "columns": ["cadastral_floor_area_density"], "transform": "log" },
+    "U1": { "weight": 1.0, "type": "scalar", "columns": ["land_use_entropy_count"], "transform": "identity" },
+    "U2": { "weight": 1.0, "type": "scalar", "columns": ["formal_job_density_area_first_km2"], "transform": "log" },
+    "U3": { "weight": 1.0, "type": "scalar", "columns": ["population_density_km2"], "transform": "log" },
+    "U4": { "weight": 1.0, "type": "scalar", "columns": ["bus_service_access_weekday_am_400m"], "transform": "log1p" }
+  },
+  "scaling": {
+    "method": "robust_median_iqr",
+    "fallback_to_sd_tolerance": 1e-12
+  },
+  "family_calibration_rule": "median_positive_distance_all_pairs",
+  "metric_variants": ["equal_family", "regularized_mahalanobis", "pca_euclidean"],
+  "scenario_substitutions": {
+    "M2_0m": { "M2": ["intersection_density_proxy_0m_km2"], "transform": "log", "refit_scales": true },
+    "M2_10m": { "M2": ["intersection_density_proxy_10m_km2"], "transform": "log", "refit_scales": true },
+    "M2_20m": { "M2": ["intersection_density_proxy_20m_km2"], "transform": "log", "refit_scales": true }
+  }
+}
+
