@@ -1,0 +1,31 @@
+{
+  "base_run": "analysis/processed/SP/sp_prep_2026_09_10_v3",
+  "M6": {
+    "status": "approved",
+    "overlay": "analysis/outputs/sp_simplification_review_2026_09_10/m6_classification_overlay.parquet",
+    "join_key": "edge_id",
+    "class_field": "class_model"
+  },
+  "M2": {
+    "status": "approved_proxy",
+    "overlay": "analysis/outputs/sp_allocation_experiments_2026_09_10/m2_selection_overlay.parquet",
+    "join_key": "node_id",
+    "selection_field": "selected_m2_proxy",
+    "distance_m": 5,
+    "excluded_structure_types": [
+      "PONTE",
+      "VIADUTO",
+      "TUNEL"
+    ]
+  },
+  "U2": {
+    "experiment_directory": "analysis/outputs/sp_allocation_experiments_2026_09_10",
+    "primary_scenario": "area_first",
+    "status": "recommended_policy_accepted_with_attribute_authorization",
+    "unlocated_policy": "retain unlocated bucket; citywide priors are sensitivities only"
+  },
+  "attribute_construction_authorized": true,
+  "attribute_run_config": "analysis/config/sp_attributes_2026_09_11.json",
+  "attribute_run_status": "complete",
+  "attribute_output": "analysis/outputs/sp_attributes/sp_attributes_2026_09_11_v1"
+}
