@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sideseeing-network"
+version = "0.1.0"
+description = "Pedestrian network extraction and spatial analysis for sidewalk accessibility"
+authors = [
+    {name = "Principal GIS Software Engineer"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "networkx",
+    "osmnx",
+    "shapely",
+    "geopandas",
+    "pyproj",
+    "pandas"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8"
+]

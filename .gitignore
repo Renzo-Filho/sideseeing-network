@@ -1,0 +1,54 @@
+# Python environments, bytecode and build products
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Credentials and local machine settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+.tmp/
+
+# Original downloads and disposable caches (never publish source microdata)
+/data/
+/cache/
+/analysis/data/
+/analysis/cache/
+/SP data/
+/Chicago data/
+
+# Local compatibility aliases and historical paths
+/analysis/.compat/
+/analysis/outputs
+/analysis/processed
+
+# Large prepared records, experiments, checkpoints and logs
+# Keep the folder guides; publish only curated district results under results/.
+/analysis/work/*
+!/analysis/work/README.md
+!/analysis/work/prepared/
+/analysis/work/prepared/*
+!/analysis/work/prepared/README.md
+!/analysis/work/evidence/
+/analysis/work/evidence/*
+!/analysis/work/evidence/README.md
+!/analysis/work/runs/
+/analysis/work/runs/*
+!/analysis/work/runs/README.md
+*.log
+*.lock
+/notebooks/cache/
