@@ -1,0 +1,9 @@
+{
+  "districts": 3,
+  "rows": 231,
+  "features": 77,
+  "primary_columns": 23,
+  "families": 13,
+  "checks": "identities, full family coverage, finite values, fraction/entropy bounds, positive denominators, primary completeness, U1/M6 composition sums",
+  "passed": true
+}

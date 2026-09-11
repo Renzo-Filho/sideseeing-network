@@ -1,0 +1,78 @@
+family_id,feature_name,unit,primary_feature,method,observation_period,coverage_definition
+M1,street_density_km_km2,km/km²,True,all canonical valid v3 logradouro source lines; carriageways retained; boundary-coincident length owned by ascending district ID,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_model_share_arterial,fraction,True,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_observed_share_arterial,fraction,False,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_model_share_coletora,fraction,True,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_observed_share_coletora,fraction,False,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_model_share_local,fraction,True,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_observed_share_local,fraction,False,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_model_share_rodovia,fraction,True,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_observed_share_rodovia,fraction,False,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_model_share_via_de_pedestres,fraction,True,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_observed_share_via_de_pedestres,fraction,False,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_model_share_vtr,fraction,True,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_observed_share_vtr,fraction,False,class shares of canonical clipped length; all unknown Local,source-specific mixed vintage; see frozen source manifest,eligible source records
+M6,street_class_imputed_share,fraction,False,,source-specific mixed vintage; see frozen source manifest,eligible source records
+M2,intersection_density_proxy_5m_km2,nodes/km²,True,at least 3 source arms; exclude PONTE/VIADUTO/TUNEL distance <=5m,source-specific mixed vintage; see frozen source manifest,eligible source records
+M2,intersection_density_proxy_0m_km2,nodes/km²,False,,source-specific mixed vintage; see frozen source manifest,eligible source records
+M2,intersection_density_proxy_10m_km2,nodes/km²,False,,source-specific mixed vintage; see frozen source manifest,eligible source records
+M2,intersection_density_proxy_20m_km2,nodes/km²,False,,source-specific mixed vintage; see frozen source manifest,eligible source records
+M3,block_area_median,m²,False,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M3,block_area_p25,m²,False,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M3,block_area_p75,m²,False,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M3,block_area_iqr,m²,False,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M3,block_log_area_median,ln(m²/1m²),True,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M3,block_log_area_iqr,ln(m²/1m²),True,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M4,block_compactness_median,dimensionless,True,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M4,block_compactness_iqr,dimensionless,True,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M4,block_elongation_median,dimensionless,True,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M4,block_elongation_iqr,dimensionless,True,whole eligible Quadra; largest overlap ownership; perimeter includes holes,source-specific mixed vintage; see frozen source manifest,eligible source records
+M7,cadastral_parcel_density_km2,entities/km²,True,unique accepted entity key; cadastral completeness not independently measured,source-specific mixed vintage; see frozen source manifest,eligible source records
+M7,parcel_log_area_median,ln(m²/1m²),False,,source-specific mixed vintage; see frozen source manifest,eligible source records
+M7,parcel_log_area_iqr,ln(m²/1m²),False,,source-specific mixed vintage; see frozen source manifest,eligible source records
+B2,cadastral_floor_count_median,floors,True,one distinct positive report per accepted cadastral entity; ancillary/conflicting reports excluded,IPTU 2026,eligible source records
+B2,cadastral_floor_count_p75,floors,False,one distinct positive report per accepted cadastral entity; ancillary/conflicting reports excluded,IPTU 2026,eligible source records
+B2,cadastral_floor_count_p90,floors,True,one distinct positive report per accepted cadastral entity; ancillary/conflicting reports excluded,IPTU 2026,eligible source records
+B3,cadastral_floor_area_density,m²/m²,True,unique fiscal unit area sum; no ideal-fraction reapplication; whole parcel district,IPTU 2026,district source completeness unknown; city fiscal mass located 97.3032%
+U1,land_use_entropy_count,normalized entropy,True,fixed 7 categories; entropy on classified mass; mixed entity counted once,IPTU 2026,eligible source records
+U1,land_use_count_share_residential,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_count_share_commerce_services,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_count_share_industry_warehouse,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_count_share_institutional,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_count_share_transport_utilities,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_count_share_vacant,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_count_share_mixed_other,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_entropy_land_area,normalized entropy,False,fixed 7 categories; entropy on classified mass; mixed entity counted once,IPTU 2026,eligible source records
+U1,land_use_land_area_share_residential,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_land_area_share_commerce_services,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_land_area_share_industry_warehouse,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_land_area_share_institutional,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_land_area_share_transport_utilities,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_land_area_share_vacant,fraction,False,,IPTU 2026,eligible source records
+U1,land_use_land_area_share_mixed_other,fraction,False,,IPTU 2026,eligible source records
+U2,formal_job_density_address_first_business_prior_km2,job links/km²,False,2022 RAIS CEP allocation address_first_business_prior,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_address_first_km2,job links/km²,False,2022 RAIS CEP allocation address_first,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_address_first_located_jobs_prior_km2,job links/km²,False,2022 RAIS CEP allocation address_first_located_jobs_prior,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_area_first_business_prior_km2,job links/km²,False,2022 RAIS CEP allocation area_first_business_prior,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_area_first_km2,job links/km²,True,2022 RAIS CEP allocation area_first,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_area_first_located_jobs_prior_km2,job links/km²,False,2022 RAIS CEP allocation area_first_located_jobs_prior,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_area_mixed_km2,job links/km²,False,2022 RAIS CEP allocation area_mixed,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_equal_workplace_km2,job links/km²,False,2022 RAIS CEP allocation equal_workplace,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_hybrid_km2,job links/km²,False,2022 RAIS CEP allocation hybrid,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U2,formal_job_density_residential_first_km2,job links/km²,False,2022 RAIS CEP allocation residential_first,RAIS 2022; tax/address supports mixed vintage,citywide allocated fraction; district missing mass unknown
+U3,population_density_km2,people/km²,True,2022 sector area allocation; outside residual retained,census 2022,citywide source population within district union
+B1,building_coverage_land,fraction,True,exact footprint union in disjoint 2km tiles; intersect district land,Overture 2026-08-19.0,all intersecting records in provided release; real building completeness unknown
+B1,building_coverage_gross,fraction,False,same tile union on gross district area,Overture 2026-08-19.0,eligible source records
+B1,footprint_overlap_excess_fraction,fraction,False,,Overture 2026-08-19.0,eligible source records
+U4,bus_service_access_saturday_am_400m,expected departures per 2h per resident,False,"250m EPSG:31983 origin-zero grid intersected with each census sector and district; representative point per nonempty intersection, population uniform within source sector; maximum reachable stop supply per route/direction, then sum; all source stops including outside district",2022 population; September 2026 GTFS scenarios,eligible source records
+U4,population_bus_service_reach_saturday_am_400m,fraction,False,population at support points with positive reachable service,2022 population; September 2026 GTFS scenarios,eligible source records
+U4,bus_service_access_saturday_am_800m,expected departures per 2h per resident,False,"250m EPSG:31983 origin-zero grid intersected with each census sector and district; representative point per nonempty intersection, population uniform within source sector; maximum reachable stop supply per route/direction, then sum; all source stops including outside district",2022 population; September 2026 GTFS scenarios,eligible source records
+U4,population_bus_service_reach_saturday_am_800m,fraction,False,population at support points with positive reachable service,2022 population; September 2026 GTFS scenarios,eligible source records
+U4,bus_service_access_sunday_am_400m,expected departures per 2h per resident,False,"250m EPSG:31983 origin-zero grid intersected with each census sector and district; representative point per nonempty intersection, population uniform within source sector; maximum reachable stop supply per route/direction, then sum; all source stops including outside district",2022 population; September 2026 GTFS scenarios,eligible source records
+U4,population_bus_service_reach_sunday_am_400m,fraction,False,population at support points with positive reachable service,2022 population; September 2026 GTFS scenarios,eligible source records
+U4,bus_service_access_sunday_am_800m,expected departures per 2h per resident,False,"250m EPSG:31983 origin-zero grid intersected with each census sector and district; representative point per nonempty intersection, population uniform within source sector; maximum reachable stop supply per route/direction, then sum; all source stops including outside district",2022 population; September 2026 GTFS scenarios,eligible source records
+U4,population_bus_service_reach_sunday_am_800m,fraction,False,population at support points with positive reachable service,2022 population; September 2026 GTFS scenarios,eligible source records
+U4,bus_service_access_weekday_am_400m,expected departures per 2h per resident,True,"250m EPSG:31983 origin-zero grid intersected with each census sector and district; representative point per nonempty intersection, population uniform within source sector; maximum reachable stop supply per route/direction, then sum; all source stops including outside district",2022 population; September 2026 GTFS scenarios,eligible source records
+U4,population_bus_service_reach_weekday_am_400m,fraction,False,population at support points with positive reachable service,2022 population; September 2026 GTFS scenarios,eligible source records
+U4,bus_service_access_weekday_am_800m,expected departures per 2h per resident,False,"250m EPSG:31983 origin-zero grid intersected with each census sector and district; representative point per nonempty intersection, population uniform within source sector; maximum reachable stop supply per route/direction, then sum; all source stops including outside district",2022 population; September 2026 GTFS scenarios,eligible source records
+U4,population_bus_service_reach_weekday_am_800m,fraction,False,population at support points with positive reachable service,2022 population; September 2026 GTFS scenarios,eligible source records

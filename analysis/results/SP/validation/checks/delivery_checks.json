@@ -1,0 +1,8 @@
+{
+  "geopackage_sqlite_integrity": "ok",
+  "layer": "district_attributes",
+  "epsg": 31983,
+  "broken_documentation_links": [],
+  "construction_progress": "complete",
+  "synthetic_tests_passed": 5
+}

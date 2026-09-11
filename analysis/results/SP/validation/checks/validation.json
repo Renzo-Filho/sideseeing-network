@@ -1,0 +1,23 @@
+{
+  "districts": 96,
+  "rows": 7392,
+  "features": 77,
+  "primary_columns": 23,
+  "families": 13,
+  "checks": "identities, full family coverage, finite values, fraction/entropy bounds, positive denominators, primary completeness, U1/M6 composition sums",
+  "passed": true,
+  "street_length_conservation": {
+    "independent_city_clip_m": 19369524.694831796,
+    "district_sum_m": 19369524.694861148,
+    "source_self_retrace_removed_m": 40.00087657943368,
+    "normalization": "union within each non-simple source edge; separate source edges retained"
+  },
+  "citywide_numerators": {
+    "cadastral_floor_area_density": 581313100.0,
+    "formal_job_density_area_first_km2": 4878630.0,
+    "population_density_km2": 11446054.473149512,
+    "intersection_density_proxy_5m_km2": 106625.0
+  },
+  "source_jobs_unlocated": 508844,
+  "no_model_fitted": true
+}

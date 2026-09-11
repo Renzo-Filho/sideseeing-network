@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "check": "96 by 77 unique feature grid",
+      "passed": true
+    },
+    {
+      "check": "Whole eligible blocks reconciled",
+      "passed": true
+    },
+    {
+      "check": "Canonical cadastral entities reconciled",
+      "passed": true
+    },
+    {
+      "check": "Eligible floor profiles reconciled",
+      "passed": true
+    },
+    {
+      "check": "Compactness bounds",
+      "passed": true
+    },
+    {
+      "check": "Elongation lower bound",
+      "passed": true
+    },
+    {
+      "check": "weekday_am larger radius monotonicity",
+      "passed": true
+    },
+    {
+      "check": "saturday_am larger radius monotonicity",
+      "passed": true
+    },
+    {
+      "check": "sunday_am larger radius monotonicity",
+      "passed": true
+    },
+    {
+      "check": "All 96 population supports conserve mass and reconstruct U4",
+      "passed": true
+    },
+    {
+      "check": "v2 baseline unchanged",
+      "passed": true
+    },
+    {
+      "check": "Raw SP files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N02 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N03 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N04 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N05 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N06 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N07 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N08 prepared files unchanged",
+      "passed": true
+    },
+    {
+      "check": "N09 prepared files unchanged",
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "raw_outlier_flags": 38,
+  "primary_constant_columns": [],
+  "model_fitted": false
+}
