@@ -1,82 +1,87 @@
+"""Validated transforms with an explicit, serializable fit/apply boundary."""
 import numpy as np
 import pandas as pd
 
-def fit_transform_scalars(df: pd.DataFrame, config: dict):
-    """Apply log transforms and robust scaling, returning params and standardized df."""
-    out_df = pd.DataFrame(index=df.index)
-    params = {}
-    
-    tol = config['scaling']['fallback_to_sd_tolerance']
-    
-    for fam, f_config in config['families'].items():
-        if f_config['type'] != 'scalar':
-            continue
-            
-        t_type = f_config['transform']
-        for col in f_config['columns']:
-            # 1. Transform
-            x = df[col].astype(float)
-            if t_type == 'log':
-                x_t = np.log(x)
-            elif t_type == 'log1p':
-                x_t = np.log1p(x)
-            elif t_type == 'identity':
-                x_t = x
-            else:
-                raise ValueError(f"Unknown transform {t_type}")
-                
-            # 2. Fit Scaling
-            med = x_t.median()
-            iqr = x_t.quantile(0.75) - x_t.quantile(0.25)
-            
-            used_sd = False
-            scale = iqr
-            
-            effective_zero = tol * max(1.0, np.abs(x_t).max())
-            
-            if iqr <= effective_zero:
-                used_sd = True
-                scale = x_t.std(ddof=0)
-                if scale <= effective_zero:
-                    raise ValueError(f"Feature {col} is constant even after SD fallback.")
-                    
-            params[col] = {
-                'transform': t_type,
-                'median': med,
-                'iqr': iqr,
-                'sd_ddof0': x_t.std(ddof=0),
-                'selected_scale': scale,
-                'used_sd_fallback': used_sd
-            }
-            
-            out_df[col] = (x_t - med) / scale
-            
-    return out_df, params
 
-def transform_composition(df: pd.DataFrame, config: dict):
-    """Normalize and sqrt transform composition features."""
-    out_df = pd.DataFrame(index=df.index)
-    
-    for fam, f_config in config['families'].items():
-        if f_config['type'] != 'composition':
+def transformed_values(series, kind):
+    x = series.astype(float)
+    if not np.isfinite(x).all():
+        raise ValueError(f"Nonfinite input: {series.name}")
+    if kind == 'log':
+        if (x <= 0).any():
+            raise ValueError(f"Log requires positive values: {series.name}")
+        x = np.log(x)
+    elif kind == 'log1p':
+        if (x < 0).any():
+            raise ValueError(f"Service log1p requires nonnegative values: {series.name}")
+        x = np.log1p(x)
+    elif kind != 'identity':
+        raise ValueError(f"Unknown transform {kind}")
+    if not np.isfinite(x).all():
+        raise ValueError(f"Nonfinite transformed value: {series.name}")
+    return x
+
+
+def fit_transform_scalars(df, config):
+    params = {}
+    tol = config['scaling']['fallback_to_sd_tolerance']
+    if not np.isfinite(tol) or tol <= 0:
+        raise ValueError('Invalid scale tolerance')
+    for fc in config['families'].values():
+        if fc['type'] != 'scalar':
             continue
-            
-        cols = f_config['columns']
-        mat = df[cols].values
-        
-        sums = mat.sum(axis=1)
-        if not np.allclose(sums, 1.0, atol=1e-8):
-            raise ValueError(f"Composition {fam} does not sum to 1 within 1e-8")
-            
-        # Renormalize to exact 1 just in case, per plan "numerical residuals... may be renormalized"
-        mat = mat / sums[:, np.newaxis]
-        
-        if (mat < 0).any():
-            raise ValueError(f"Composition {fam} has negative values")
-            
-        sqrt_mat = np.sqrt(mat)
-        
-        for i, col in enumerate(cols):
-            out_df[col] = sqrt_mat[:, i]
-            
-    return out_df
+        for col in fc['columns']:
+            x = transformed_values(df[col], fc['transform'])
+            iqr = float(x.quantile(.75) - x.quantile(.25))
+            sd = float(x.std(ddof=0))
+            threshold = tol * max(1., float(x.abs().max()))
+            standard = config['scaling']['method'] == 'standard_mean_sd'
+            if config['scaling']['method'] not in ('robust_median_iqr', 'standard_mean_sd'):
+                raise ValueError('Unknown scaling method')
+            fallback = not standard and iqr <= threshold
+            scale = sd if standard or fallback else iqr
+            params[col] = dict(transform=fc['transform'], median=float(x.median()),
+                               center=float(x.mean() if standard else x.median()), iqr=iqr,
+                               sd_ddof0=sd, selected_scale=scale, used_sd_fallback=fallback,
+                               effective_zero=threshold, retained=scale > threshold)
+    return apply_scalar_transforms(df, params), params
+
+
+def apply_scalar_transforms(df, params):
+    if not df.index.is_unique:
+        raise ValueError('Duplicate district IDs')
+    out = pd.DataFrame(index=df.index)
+    excluded = []
+    for col, p in params.items():
+        x = transformed_values(df[col], p['transform'])
+        if not p.get('retained', True):
+            excluded.append(col)
+            continue
+        scale = p['selected_scale']
+        if not np.isfinite(scale) or scale <= 0:
+            raise ValueError(f'Invalid fitted scale: {col}')
+        out[col] = (x - p.get('center', p['median'])) / scale
+    if not np.isfinite(out.to_numpy()).all():
+        raise ValueError('Nonfinite scaled coordinates')
+    out.attrs['excluded_columns'] = excluded
+    return out
+
+
+def transform_composition(df, config):
+    if not df.index.is_unique:
+        raise ValueError('Duplicate district IDs')
+    out = pd.DataFrame(index=df.index)
+    adjustments = {}
+    for fam, fc in config['families'].items():
+        if fc['type'] != 'composition':
+            continue
+        x = df[fc['columns']].to_numpy(float)
+        if not np.isfinite(x).all() or (x < 0).any():
+            raise ValueError(f'Invalid composition: {fam}')
+        sums = x.sum(axis=1)
+        if not np.allclose(sums, 1., rtol=0, atol=1e-8):
+            raise ValueError(f'Composition {fam} must sum to one within absolute 1e-8')
+        adjustments[fam] = float(np.max(abs(sums - 1.)))
+        out[fc['columns']] = np.sqrt(x / sums[:, None])
+    out.attrs['max_sum_adjustments'] = adjustments
+    return out

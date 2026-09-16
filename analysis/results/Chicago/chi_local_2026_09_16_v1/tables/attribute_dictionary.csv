@@ -1,0 +1,41 @@
+family,feature,unit,method,status,strict_cross_city_accepted
+U1,land_use_entropy_cmap_area8,index,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_residential,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_commercial,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_institutional,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_industrial,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_transport_utilities,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_agriculture,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_open_space,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,land_use_share_vacant_construction,fraction,"CMAP 2023 primary LANDUSE; eight broad groups; within-category union on land, conflicting-category overlap excluded; excludes water,6000,9999; secondary uses not split",local_source_exploratory,False
+U1,lui_ambiguous_gross,fraction,Source coverage diagnostic,diagnostic,False
+U1,lui_coverage_gross,fraction,Source coverage diagnostic,diagnostic,False
+U1,lui_overlap_gross,fraction,Source coverage diagnostic,diagnostic,False
+U1,lui_classified_land,fraction,Source coverage diagnostic,diagnostic,False
+U1,lui_secondary_use_area_fraction,fraction,Source coverage diagnostic,diagnostic,False
+M1,street_density_municipal_km_km2,km/km2,"Exploratory source-code universe. N selected, other status codes withheld pending documentation. Code 4 retained by code without asserting its label. Named alleys, sidewalks, river and extent lines excluded. Not equivalent to SP municipal or proposed shared Overture network.",local_source_exploratory,False
+M6,road_share_code_1,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M6,road_share_code_2,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M6,road_share_code_3,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M6,road_share_code_4,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M6,road_share_code_7,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M6,road_share_code_9,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M6,road_share_code_99,fraction,"Length shares of the same M1 universe; source codes, not SP categories",local_source_exploratory,False
+M3,block_log_area_median_experimental,log(m2),Whole planar road-enclosed polygons; boundary-touching excluded; no carriageway or barrier correction; NOT accepted physical blocks,experimental_not_model_ready,False
+M3,block_log_area_iqr_experimental,log(m2),Whole planar road-enclosed polygons; boundary-touching excluded; no carriageway or barrier correction; NOT accepted physical blocks,experimental_not_model_ready,False
+M4,block_compactness_median_experimental,ratio,Whole planar road-enclosed polygons; boundary-touching excluded; no carriageway or barrier correction; NOT accepted physical blocks,experimental_not_model_ready,False
+M4,block_compactness_iqr_experimental,ratio,Whole planar road-enclosed polygons; boundary-touching excluded; no carriageway or barrier correction; NOT accepted physical blocks,experimental_not_model_ready,False
+M4,block_elongation_median_experimental,ratio,Whole planar road-enclosed polygons; boundary-touching excluded; no carriageway or barrier correction; NOT accepted physical blocks,experimental_not_model_ready,False
+M4,block_elongation_iqr_experimental,ratio,Whole planar road-enclosed polygons; boundary-touching excluded; no carriageway or barrier correction; NOT accepted physical blocks,experimental_not_model_ready,False
+B1,building_coverage_municipal_land,fraction,ACTIVE municipal footprint exact tiled union; CMAP 5000 water mask proxy; source metadata August 2015,local_source_exploratory,False
+B1,building_coverage_municipal_gross,fraction,Same footprint union / gross area,diagnostic,False
+B1,footprint_overlap_excess_fraction,fraction,"Summed clipped area minus union, divided by sum",diagnostic,False
+B2,building_stories_median_municipal,stories,One positive stories field per ACTIVE building; whole geometry largest-overlap assignment; no missing-floor imputation; distinct from SP fiscal entities,local_source_exploratory,False
+B2,building_stories_p90_municipal,stories,One positive stories field per ACTIVE building; whole geometry largest-overlap assignment; no missing-floor imputation; distinct from SP fiscal entities,local_source_exploratory,False
+B2,building_stories_coverage,fraction,Positive stories / assigned ACTIVE building records,diagnostic,False
+U3,population_density_acs_label2023,residents/km2,Provided ACS aggregate; exact validated name crosswalk; period/MOE provenance unresolved,provisional_population_provenance,False
+M7,m7_unavailable,unavailable,No physical parcel geometry / condominium parent crosswalk,blocked,False
+B3,b3_unavailable,unavailable,No verified unique all-stock gross floor-area measure,blocked,False
+U2,u2_unavailable,unavailable,No workplace job counts and matching block geography,blocked,False
+U4,u4_unavailable,unavailable,No bus GTFS or fine-scale population support,blocked,False
+M2,m2_unavailable,unavailable,Road topology/level consistency and common SP method not yet validated; no planar proxy promoted,blocked,False

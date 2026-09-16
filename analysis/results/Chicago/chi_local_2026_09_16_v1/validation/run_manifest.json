@@ -1,0 +1,92 @@
+{
+  "completed_utc": "2026-09-16T16:32:21.774308+00:00",
+  "config": {
+    "release_id": "chi_local_2026_09_16_v1",
+    "scope": "Chicago local-source exploratory attributes; no cross-city model acceptance",
+    "metric_crs": 26916,
+    "community_ids": [
+      1,
+      77
+    ],
+    "road_classes": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "7",
+      "9",
+      "99"
+    ],
+    "road_status": [
+      "N"
+    ],
+    "road_class_labels": {
+      "1": "expressway",
+      "2": "arterial",
+      "3": "collector",
+      "4": "source_code_4",
+      "7": "tiered",
+      "9": "ramp",
+      "99": "unclassified_ohare"
+    },
+    "road_rule_note": "Exploratory source-code universe. N selected, other status codes withheld pending documentation. Code 4 retained by code without asserting its label. Named alleys, sidewalks, river and extent lines excluded. Not equivalent to SP municipal or proposed shared Overture network.",
+    "building_status": "ACTIVE",
+    "building_stories_field": "stories",
+    "water_code": "5000",
+    "land_use_groups": [
+      "residential",
+      "commercial",
+      "institutional",
+      "industrial",
+      "transport_utilities",
+      "agriculture",
+      "open_space",
+      "vacant_construction"
+    ],
+    "land_use_prefixes": {
+      "11": "residential",
+      "12": "commercial",
+      "13": "institutional",
+      "14": "industrial",
+      "15": "transport_utilities",
+      "2": "agriculture",
+      "3": "open_space",
+      "4": "vacant_construction"
+    },
+    "tile_m": 2000,
+    "strict_cross_city_families": [],
+    "blocked_families": {
+      "M7": "No physical parcel geometry / condominium parent crosswalk",
+      "B3": "No verified unique all-stock gross floor-area measure",
+      "U2": "No workplace job counts and matching block geography",
+      "U4": "No bus GTFS or fine-scale population support"
+    }
+  },
+  "python": "3.12.3",
+  "versions": {
+    "numpy": "2.5.0",
+    "pandas": "2.3.3",
+    "geopandas": "1.1.3",
+    "pyogrio": "0.12.1",
+    "shapely": "2.1.2"
+  },
+  "code": {
+    "analysis/scripts/prepare_chicago.py": "f4a018ab0d9915ce27859bd26e19268b9561a04077fbae8dbeead0d4aeab1cf6",
+    "analysis/config/chicago_attributes_v1.json": "71d97f54ba8aeed179d5e625ed4f23f434c5d93891ccab97b458ef7977763f36",
+    "analysis/scripts/harmonization/geometry.py": "e094dc183f3e49d15158d70edc4abc6395703efbba7394355f9d62b7a712c78e"
+  },
+  "outputs": {
+    "README.md": "bdf4fcce49da70eee90454fb7106948be8dec9538c6a5298497dece73ed7f592",
+    "validation/source_manifest.json": "14175bc4ed88893d1e49b96a4d0cb26e9b126f8ad068d96abc686248bf21afc5",
+    "validation/checks.json": "a4a0dc44706bb2515531c83a54132ddf50b3dd4604666cf70b6a2c90e014070a",
+    "validation/road_topology_diagnostic.json": "74254fbec7e739cb2160ee0bf3142a2a0dde9d35157020114ec81d30add9a450",
+    "tables/attribute_dictionary.csv": "c3d318fda9a881ea6fa05fd55f47340d6a9e92501ca831832c65f29352890dd8",
+    "tables/attributes_wide.csv": "fa3426935f100eee473147ca4ef0e07f8a2f698fb13b8c1d6ace9afadec205c1",
+    "tables/population_crosswalk.csv": "44572a4ea948b175a4854e33ac4c032ffd930ff56f6816450b97d1dbd4cc5e94",
+    "tables/attributes_long.parquet": "3b61303fa51d75f03a089c381c0eadbd1f43a8f1399cba4e0ee33cd783ddeaa0",
+    "tables/m2_endpoint_candidates.csv": "ceba6b258460e4aa3ef8d891ee75723cd469f47edf5b49dc4d6cc1e0db1ba853",
+    "tables/attributes_long.csv": "ce53d2b538270d1683b79e0de1fced6283689858d337b429a04c6e2ab75455b3",
+    "tables/attributes_wide.parquet": "4de7921980e4be9c579a2f07d770155b3f638b5fdfd8950290cb9328fcf5d17e",
+    "spatial/chicago_community_attributes.gpkg": "7eca7cd4f24ba1308447cb847d2a17e2fc8760a347eeb59a0796738348117053"
+  }
+}

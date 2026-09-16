@@ -1,0 +1,12 @@
+{
+  "eligible_road_records": 54172,
+  "empty_or_multipart_excluded": 0,
+  "node_level_groups": 35873,
+  "groups_three_or_more_arms": 24846,
+  "all_node_groups_spread_gt_1m": 0,
+  "max_endpoint_spread_m": 0.0,
+  "warning": "Original single-part coordinate direction retained. Source node IDs, level semantics, physical arm duplication and completeness require review. Not accepted M2 intersections.",
+  "candidates_after_nonzero_id_filter": 24846,
+  "assigned_inside_city": 24652,
+  "outside_city": 194
+}

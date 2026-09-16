@@ -1,0 +1,93 @@
+{
+  "districts": {
+    "rows_read": 77,
+    "invalid_before": 0,
+    "null_before": 0,
+    "positive_polygon_rows": 77,
+    "area_change_repair_m2": 0.0
+  },
+  "district_overlap_m2": 1.5497207641601562e-06,
+  "lui": {
+    "rows_read": 228223,
+    "invalid_before": 0,
+    "null_before": 0,
+    "positive_polygon_rows": 228223,
+    "area_change_repair_m2": 0.0
+  },
+  "road_source": {
+    "rows": 56338,
+    "class_counts": {
+      "4": 37831,
+      "3": 6959,
+      "2": 6265,
+      "1": 1869,
+      "9": 1157,
+      "E": 1113,
+      "99": 556,
+      "RIV": 351,
+      "7": 150,
+      "5": 78,
+      "S": 6,
+      "NULL": 3
+    },
+    "status_counts": {
+      "N": 55503,
+      "P": 642,
+      "UC": 91,
+      "V": 50,
+      "C": 31,
+      "NULL": 21
+    }
+  },
+  "road_exact_duplicates_removed": 0,
+  "road_length_conservation": {
+    "assigned_m": 6898663.480964887,
+    "city_clipped_m": 6898663.507585797,
+    "difference_m": -0.02662091050297022
+  },
+  "blocks": {
+    "total": 19359,
+    "edge_excluded": 505
+  },
+  "building_status_counts": {
+    "ACTIVE": 820456,
+    "PROPOSED": 140,
+    "": 9,
+    "DEMOLISHED": 1
+  },
+  "buildings": {
+    "rows_read": 820456,
+    "invalid_before": 9,
+    "null_before": 0,
+    "positive_polygon_rows": 820456,
+    "area_change_repair_m2": 0.0
+  },
+  "duplicate_active_building_ids": {
+    "882804": 2
+  },
+  "building_story_fields": {
+    "positive_stories": 427924,
+    "positive_below_ground_stories": 334,
+    "no_stories_definition": "NO_STORIES_BELOW: below-ground stories, not competing total floor count",
+    "max_stories": 110.0,
+    "source_vintage_counts": {
+      "AERIALS98": 758627,
+      "AERIALS": 58898,
+      "": 1834,
+      "AERIALS02": 935,
+      "INTERM": 91,
+      "AERIALS04": 29,
+      "INTERNET": 22,
+      "INTERIM": 19
+    }
+  },
+  "population_mass": 2647621.0,
+  "release": {
+    "units": 77,
+    "features": 40,
+    "long_rows": 3080,
+    "all_strict_cross_city_accepted": false,
+    "gpkg_roundtrip": true,
+    "complete_local_baseline": true
+  }
+}

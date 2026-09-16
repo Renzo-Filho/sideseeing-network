@@ -1,5 +1,10 @@
 # São Paulo–Chicago urban-form comparison: research protocol
 
+## Chicago construction status — September 16, 2026
+
+Local Chicago construction and remaining measurement gates are tracked in [analysis/CHICAGO_EXECUTION_REPORT.md](analysis/CHICAGO_EXECUTION_REPORT.md) and [data requirements](analysis/CHICAGO_DATA_REQUIREMENTS.md). Local arithmetic checks alone do not make the attributes ready for cross-city ranking.
+
+
 Updated 11 September 2026. This is the current research scope. [Implementation methods](analysis/notes/SP_ATTRIBUTE_IMPLEMENTATION_PLAN.md) and the [current resolution handoff](analysis/notes/SP_DATA_RESOLUTION_HANDOFF.md) govern detailed definitions, evidence and continuation.
 
 ## Objective and research sequence
@@ -46,6 +51,6 @@ Keep pedestrian accessibility outcomes separate from the morphology selection st
 
 ## Current execution boundary
 
-The v2/v3 baselines are preserved. N10 attribute construction is complete for all 96 districts: 77 numeric attributes/diagnostics/sensitivities and 23 primary candidate columns across 13 families. M2 uses the approved 5 m structure-exclusion proxy; M6 assigns unclassified roads Local with imputation flags; U2 uses area-first with an unlocated bucket and alternative scenarios retained. The [construction report](analysis/outputs/sp_attributes/sp_attributes_2026_09_11_v1/REPORT.md) documents implementation and validation. N11 similarity fitting, grid-morphology attributes, Chicago comparison and the separate accessibility study have not started.
+The v2/v3 baselines are preserved. N10 attribute construction is complete for all 96 districts: 77 numeric attributes/diagnostics/sensitivities and 23 primary candidate columns across 13 families. M2 uses the approved 5 m structure-exclusion proxy; M6 assigns unclassified roads Local with imputation flags; U2 uses area-first with an unlocated bucket and alternative scenarios retained. The [construction report](analysis/outputs/sp_attributes/sp_attributes_2026_09_11_v1/REPORT.md) documents implementation and validation. The SP similarity model is implemented and corrected in [v2](analysis/SP_MODEL_FIXES.md), with source/weight robustness evaluated. [Chicago harmonization](analysis/CHICAGO_HARMONIZATION_PLAN.md) has entered local-source attribute construction; grid-morphology attributes, cross-city fitting and the separate accessibility study remain later work.
 
-Current documentation is consolidated under `analysis/notes/`. Superseded status reports have been removed; evidence, scripts and prepared datasets remain. Use the current handoff rather than historical manifests to identify the next action.
+Current Chicago documentation is linked from `analysis/README.md`; SP preparation history is consolidated under `analysis/notes/`. Superseded status reports have been removed; evidence, scripts and prepared datasets remain. Use the current handoff rather than historical manifests to identify the next action.

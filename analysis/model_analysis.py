@@ -7,7 +7,7 @@
 # 
 # ## Math and Techniques
 # 
-# To establish a mathematically rigorous comparison between districts, we use a 13-dimensional feature space combining Morphology (M), Buildings (B), and Urban Functions (U).
+# To establish a mathematically rigorous comparison between districts, we use a 23-coordinate embedding grouped into 13 families combining Morphology (M), Buildings (B), and Urban Functions (U).
 # 
 # ### Transformations
 # - **Logarithmic (`ln(x)` or `ln(1+x)`)**: Applied to highly skewed variables such as density measures (e.g. `street_density_km_km2`, `population_density_km2`) to express relative differences and reduce extreme magnitude domination.
@@ -50,8 +50,13 @@
 # *   **U4 (Population-weighted expected bus-service access)**: `bus_service_access_weekday_am_400m` — Expected nearby bus departures accessible per resident over a standard 2-hour window.
 # 
 
-# In[18]:
+# In[81]:
 
+
+try:
+    display
+except NameError:
+    display = print
 
 import pandas as pd
 import numpy as np
@@ -63,102 +68,46 @@ from math import pi
 
 # Configure plotting
 plt.style.use('seaborn-v0_8-whitegrid')
-get_ipython().run_line_magic('matplotlib', 'inline')
+# Plotting is configured by the active environment.
 
 
-# In[19]:
+# In[82]:
 
 
-base_dir = Path('.')
-config_path = base_dir / 'config/sp_urban_model_v1.json'
-
-with open(config_path, 'r') as f:
-    config = json.load(f)
-
-primary_path = base_dir / config['paths']['primary_attributes']
-df = pd.read_csv(primary_path, dtype={'district_id': str})
-df.set_index('district_id', inplace=True)
-print(f"Loaded {len(df)} districts.")
+import sys
+base_dir = (Path(__file__).resolve().parent if '__file__' in globals() else
+            (Path.cwd() if (Path.cwd() / 'config/sp_urban_model_v2.json').exists() else Path.cwd() / 'analysis'))
+sys.path.insert(0, str(base_dir / 'scripts'))
+from sp_model.inputs import freeze_inputs
+from sp_model.transforms import fit_transform_scalars, transform_composition
+from sp_model.distances import compute_distances, build_embedding, rank_target
+config_path = base_dir / 'config/sp_urban_model_v2.json'
+config, df, input_manifest = freeze_inputs(config_path, base_dir)
+df = df.set_index('district_id')
+print(f"Loaded {len(df)} districts with verified source identities.")
 df.head()
-
 
 # ## Transform & Compute Distances
 # Applying the mathematical transforms specified in the plan...
 # 
 
-# In[20]:
+# In[83]:
 
 
-# 1. Transform Scalars
-scalar_cols = []
-t_df = pd.DataFrame(index=df.index)
-for fam, f_config in config['families'].items():
-    if f_config['type'] == 'scalar':
-        for col in f_config['columns']:
-            x = df[col].astype(float)
-            if f_config['transform'] == 'log': x = np.log(x)
-            elif f_config['transform'] == 'log1p': x = np.log1p(x)
-
-            med, iqr = x.median(), x.quantile(0.75) - x.quantile(0.25)
-            scale = iqr if iqr > 1e-12 else x.std(ddof=0)
-            t_df[col] = (x - med) / scale
-            scalar_cols.append(col)
-
-# 2. Transform Composition (M6)
-comp_cols = config['families']['M6']['columns']
-mat = df[comp_cols].values
-mat = mat / mat.sum(axis=1)[:, np.newaxis] # Normalize
-sqrt_mat = np.sqrt(mat)
-for i, col in enumerate(comp_cols):
-    t_df[col] = sqrt_mat[:, i]
-
-# 3. Compute Distances to Brás ('10')
+# Shared, tested implementation; notebook and CLI use identical calculations.
+scalar_df, transform_params = fit_transform_scalars(df, config)
+comp_df = transform_composition(df, config)
+t_df = pd.concat([scalar_df, comp_df], axis=1)
+scalar_cols = scalar_df.columns.tolist()
+comp_cols = comp_df.columns.tolist()
+all_distances, family_matrices, calibrations, family_contributions = compute_distances(scalar_df, comp_df, config)
 bras_id = config['target_district_id']
-n = len(t_df)
-dists = {fam: np.zeros(n) for fam in config['families']}
-calibrations = {}
-
-for fam, f_config in config['families'].items():
-    cols = f_config['columns']
-    fam_data = t_df[cols].values
-    bras_data = t_df.loc[bras_id, cols].values
-
-    # Calculate all pairs to find calibration median
-    all_mat = np.zeros((n, n))
-    if f_config['type'] == 'scalar':
-        for i in range(n):
-            for j in range(n):
-                all_mat[i, j] = np.sum((fam_data[i] - fam_data[j])**2) / len(cols)
-    else:
-        for i in range(n):
-            for j in range(n):
-                all_mat[i, j] = 0.5 * np.sum((fam_data[i] - fam_data[j])**2)
-
-    pos_dists = all_mat[np.triu_indices(n, k=1)]
-    calibrations[fam] = np.median(pos_dists[pos_dists > 0])
-
-    # Brás distances
-    for i in range(n):
-        if f_config['type'] == 'scalar':
-            dists[fam][i] = np.sum((fam_data[i] - bras_data)**2) / len(cols)
-        else:
-            dists[fam][i] = 0.5 * np.sum((fam_data[i] - bras_data)**2)
-
-# Total Distance
-total_dist = np.zeros(n)
-contributions = {}
-for fam in config['families']:
-    w_f = config['families'][fam]['weight'] / 13.0
-    c_arr = w_f * dists[fam] / calibrations[fam]
-    contributions[fam] = c_arr
-    total_dist += c_arr
-
-total_dist = np.sqrt(total_dist)
-
-res = pd.DataFrame({'distance': total_dist}, index=df.index)
+bras_idx = df.index.get_loc(bras_id)
+n = len(df)
+total_dist = all_distances[bras_idx]
+contributions = {family: matrix[bras_idx] for family, matrix in family_contributions.items()}
+res = rank_target(all_distances, df.index.tolist(), bras_id).set_index('district_id')
 res['district_name'] = df['district_name']
-res = res.drop(bras_id).sort_values('distance')
-res['rank'] = res['distance'].rank(method='min').astype(int)
 print("Top 10 similar districts to Brás:")
 display(res[['district_name', 'distance', 'rank']].head(10))
 
@@ -167,7 +116,7 @@ display(res[['district_name', 'distance', 'rank']].head(10))
 # ### Breakdown of Squared Distance for Top 10 Neighbors
 # 
 
-# In[21]:
+# In[84]:
 
 
 top_10 = res.head(10).index
@@ -201,11 +150,52 @@ plt.tight_layout()
 plt.show()
 
 
+# In[85]:
+
+
+import geopandas as gpd
+
+# Load geometry
+geo_path = base_dir / config['paths']['district_geometry']
+gdf = gpd.read_file(geo_path)
+gdf['district_id'] = gdf['district_id'].astype(str)
+
+# Merge distance and rank to the geodataframe
+gdf = gdf.merge(res[['distance', 'rank']], on='district_id', how='left')
+
+# Filter geometries
+top10_gdf = gdf[gdf['rank'] <= 10]
+bras_gdf = gdf[gdf['district_id'] == bras_id]
+
+# Create a neutral base map for all districts
+m = gdf.explore(
+    tiles='OpenStreetMap',
+    tooltip=['district_name', 'distance', 'rank'],
+    style_kwds={'weight': 1, 'color': 'gray', 'fillOpacity': 0.1, 'fillColor': '#e0e0e0'}
+)
+
+# Highlight top 10 districts
+m = top10_gdf.explore(
+    m=m,
+    style_kwds={'weight': 3, 'fillOpacity': 0.4, 'color': 'red', 'fillColor': 'red'},
+    tooltip=['district_name', 'rank', 'distance']
+)
+
+# Highlight Brás
+m = bras_gdf.explore(
+    m=m,
+    style_kwds={'weight': 4, 'fillOpacity': 0.4, 'color': 'blue', 'fillColor': 'blue'},
+    tooltip=['district_name']
+)
+
+m
+
+
 # ### Radar Chart Comparison: Brás vs Top Match
-# We compare the standardized coordinates of Brás and its #1 Top Match to see on which axes they align or diverge.
+# This visualization shows selected raw-variable mean/SD z-scores, not the fitted distance coordinates. It omits M6 and some distribution summaries; use family contributions for the full metric.
 # 
 
-# In[22]:
+# In[86]:
 
 
 top_match_id = top_10[0]
@@ -263,7 +253,7 @@ ax.fill(angles, val_bras, alpha=0.1)
 ax.plot(angles, val_top, linewidth=2, linestyle='solid', label=f"{top_match_name} (Top Match)")
 ax.fill(angles, val_top, alpha=0.1)
 
-plt.title(f"Urban Similarity Radar: {bras_name} vs {top_match_name}", size=15, y=1.1)
+plt.title(f"Selected raw-variable z-score profile: {bras_name} vs {top_match_name}", size=15, y=1.1)
 plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
 plt.tight_layout()
 plt.show()
@@ -276,24 +266,12 @@ plt.show()
 # However, we can use **PCA (Principal Component Analysis)** on the full set of transformed 23 variables to understand the structural variance of the entire dataset. PCA will tell us which attributes drive the most variation across all of São Paulo's districts.
 # 
 
-# In[23]:
+# In[87]:
 
 
 # We calculate PCA from scratch using numpy SVD (ensures no sklearn dependency issues)
-X = t_df.values
 # Build the primary embedding as per Section 5.2
-E_df = pd.DataFrame(index=t_df.index)
-for fam, f_config in config['families'].items():
-    cols = f_config['columns']
-    w_f = f_config['weight'] / 13.0
-    b_f = calibrations[fam]
-    if f_config['type'] == 'scalar':
-        k_f = len(cols)
-        scale_factor = np.sqrt(w_f / (k_f * b_f))
-    else: # M6 composition
-        scale_factor = np.sqrt(w_f / (2.0 * b_f))
-    for col in cols:
-        E_df[col] = t_df[col] * scale_factor
+E_df = build_embedding(scalar_df, comp_df, config, calibrations)
 
 X = E_df.values
 X_centered = X - X.mean(axis=0)
@@ -316,15 +294,18 @@ plt.xticks(range(1, len(explained_var)+1))
 plt.tight_layout()
 plt.show()
 
+
+# In[88]:
+
+
 # Extract Feature Loadings for PC1 and PC2
 loadings = pd.DataFrame(
     Vt[:2, :].T, 
-    index=t_df.columns, 
     index=E_df.columns, 
     columns=['PC1', 'PC2']
 )
 
-print("Attribute Loadings (Importance) in Principal Component 1:")
+print("PCA Loadings (Variance Directions) in Principal Component 1:")
 display(loadings.sort_values(by='PC1', key=abs, ascending=False)['PC1'].to_frame().head(10))
 
 
@@ -332,7 +313,7 @@ display(loadings.sort_values(by='PC1', key=abs, ascending=False)['PC1'].to_frame
 # Projecting all districts into the 2D space of the first two principal components to visualize where Brás sits relative to the rest of the city.
 # 
 
-# In[24]:
+# In[89]:
 
 
 # Calculate PCA scores (projections)
@@ -362,9 +343,227 @@ plt.tight_layout()
 plt.show()
 
 
-# ## Sensitivity Metric: PCA-Weighted Distance
+# In[90]:
+
+
+import numpy as np
+import pandas as pd
+
+# Ensure we have the Brás index position in the array
+bras_idx = df.index.get_loc(bras_id)
+
+# Grab the baseline ranks from your earlier 'res' dataframe
+baseline_ranks = res['rank']
+
+# Style function
+def color_shift(val):
+    if pd.isna(val):
+        return ''
+    color = 'green' if val > 0 else 'red' if val < 0 else 'black'
+    return f'color: {color}'
+
+
+# ### Truncated PCA Distance: k=1 Dimension
+
+# In[91]:
+
+
+# 1. Slice the pca_scores array for the first 1 components
+pca_k = pca_scores[:, :1]
+
+# 2. Extract Brás PCA scores for 1 components
+bras_pca_k = pca_k[bras_idx]
+
+# 3. Calculate Euclidean distance between Brás and all districts
+dists = np.linalg.norm(pca_k - bras_pca_k, axis=1)
+
+# Create DataFrame to hold distances
+pca_res = pd.DataFrame({'pca_distance': dists}, index=df.index)
+pca_res['district_name'] = df['district_name']
+
+# 4. Filter out Brás and sort ascending
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
+
+# 5. Assign competition rank (method='min')
+pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
+
+# 6. Calculate Rank Shift (Baseline Rank - New PCA Rank)
+pca_res['rank_shift'] = baseline_ranks - pca_res['pca_rank']
+
+# Grab the Top 10 and display for PDF compatibility
+top_10 = pca_res[['district_name', 'pca_distance', 'pca_rank', 'rank_shift']].head(10).copy()
+top_10['pca_distance'] = top_10['pca_distance'].round(4)
+top_10
+
+
+# ### Truncated PCA Distance: k=2 Dimensions
+
+# In[92]:
+
+
+# 1. Slice the pca_scores array for the first 2 components
+pca_k = pca_scores[:, :2]
+
+# 2. Extract Brás PCA scores for 2 components
+bras_pca_k = pca_k[bras_idx]
+
+# 3. Calculate Euclidean distance between Brás and all districts
+dists = np.linalg.norm(pca_k - bras_pca_k, axis=1)
+
+# Create DataFrame to hold distances
+pca_res = pd.DataFrame({'pca_distance': dists}, index=df.index)
+pca_res['district_name'] = df['district_name']
+
+# 4. Filter out Brás and sort ascending
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
+
+# 5. Assign competition rank (method='min')
+pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
+
+# 6. Calculate Rank Shift (Baseline Rank - New PCA Rank)
+pca_res['rank_shift'] = baseline_ranks - pca_res['pca_rank']
+
+# Grab the Top 10 and display for PDF compatibility
+top_10 = pca_res[['district_name', 'pca_distance', 'pca_rank', 'rank_shift']].head(10).copy()
+top_10['pca_distance'] = top_10['pca_distance'].round(4)
+top_10
+
+
+# ### Truncated PCA Distance: k=3 Dimensions
+
+# In[93]:
+
+
+# 1. Slice the pca_scores array for the first 3 components
+pca_k = pca_scores[:, :3]
+
+# 2. Extract Brás PCA scores for 3 components
+bras_pca_k = pca_k[bras_idx]
+
+# 3. Calculate Euclidean distance between Brás and all districts
+dists = np.linalg.norm(pca_k - bras_pca_k, axis=1)
+
+# Create DataFrame to hold distances
+pca_res = pd.DataFrame({'pca_distance': dists}, index=df.index)
+pca_res['district_name'] = df['district_name']
+
+# 4. Filter out Brás and sort ascending
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
+
+# 5. Assign competition rank (method='min')
+pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
+
+# 6. Calculate Rank Shift (Baseline Rank - New PCA Rank)
+pca_res['rank_shift'] = baseline_ranks - pca_res['pca_rank']
+
+# Grab the Top 10 and display for PDF compatibility
+top_10 = pca_res[['district_name', 'pca_distance', 'pca_rank', 'rank_shift']].head(10).copy()
+top_10['pca_distance'] = top_10['pca_distance'].round(4)
+top_10
+
+
+# ### Truncated PCA Distance: k=4 Dimensions
+
+# In[94]:
+
+
+# 1. Slice the pca_scores array for the first 4 components
+pca_k = pca_scores[:, :4]
+
+# 2. Extract Brás PCA scores for 4 components
+bras_pca_k = pca_k[bras_idx]
+
+# 3. Calculate Euclidean distance between Brás and all districts
+dists = np.linalg.norm(pca_k - bras_pca_k, axis=1)
+
+# Create DataFrame to hold distances
+pca_res = pd.DataFrame({'pca_distance': dists}, index=df.index)
+pca_res['district_name'] = df['district_name']
+
+# 4. Filter out Brás and sort ascending
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
+
+# 5. Assign competition rank (method='min')
+pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
+
+# 6. Calculate Rank Shift (Baseline Rank - New PCA Rank)
+pca_res['rank_shift'] = baseline_ranks - pca_res['pca_rank']
+
+# Grab the Top 10 and display for PDF compatibility
+top_10 = pca_res[['district_name', 'pca_distance', 'pca_rank', 'rank_shift']].head(10).copy()
+top_10['pca_distance'] = top_10['pca_distance'].round(4)
+top_10
+
+
+# ### Truncated PCA Distance: k=5 Dimensions
+
+# In[95]:
+
+
+# 1. Slice the pca_scores array for the first 5 components
+pca_k = pca_scores[:, :5]
+
+# 2. Extract Brás PCA scores for 5 components
+bras_pca_k = pca_k[bras_idx]
+
+# 3. Calculate Euclidean distance between Brás and all districts
+dists = np.linalg.norm(pca_k - bras_pca_k, axis=1)
+
+# Create DataFrame to hold distances
+pca_res = pd.DataFrame({'pca_distance': dists}, index=df.index)
+pca_res['district_name'] = df['district_name']
+
+# 4. Filter out Brás and sort ascending
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
+
+# 5. Assign competition rank (method='min')
+pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
+
+# 6. Calculate Rank Shift (Baseline Rank - New PCA Rank)
+pca_res['rank_shift'] = baseline_ranks - pca_res['pca_rank']
+
+# Grab the Top 10 and display for PDF compatibility
+top_10 = pca_res[['district_name', 'pca_distance', 'pca_rank', 'rank_shift']].head(10).copy()
+top_10['pca_distance'] = top_10['pca_distance'].round(4)
+top_10
+
+
+# ### Truncated PCA Distance: k=6 Dimensions
+
+# In[96]:
+
+
+# 1. Slice the pca_scores array for the first 6 components
+pca_k = pca_scores[:, :6]
+
+# 2. Extract Brás PCA scores for 6 components
+bras_pca_k = pca_k[bras_idx]
+
+# 3. Calculate Euclidean distance between Brás and all districts
+dists = np.linalg.norm(pca_k - bras_pca_k, axis=1)
+
+# Create DataFrame to hold distances
+pca_res = pd.DataFrame({'pca_distance': dists}, index=df.index)
+pca_res['district_name'] = df['district_name']
+
+# 4. Filter out Brás and sort ascending
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
+
+# 5. Assign competition rank (method='min')
+pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
+
+# 6. Calculate Rank Shift (Baseline Rank - New PCA Rank)
+pca_res['rank_shift'] = baseline_ranks - pca_res['pca_rank']
+
+# Grab the Top 10 and display for PDF compatibility
+top_10 = pca_res[['district_name', 'pca_distance', 'pca_rank', 'rank_shift']].head(10).copy()
+top_10['pca_distance'] = top_10['pca_distance'].round(4)
+top_10
+
+
+# ## Sensitivity Metric: Truncated PCA Distance
 # 
-# Instead of assigning an equal 1/13 manual weight to each feature family, we can calculate the similarity distance in the **Principal Component Space**. 
+# PCA is fitted to the already equal-family-weighted embedding. Truncation removes directions but does not remove those weighting assumptions. 
 # 
 # By retaining the top principal components that explain 90% of the variance and computing the Euclidean distance along those axes, the similarity score is naturally weighted by the dominant structural and morphological trends of São Paulo.
 # 
@@ -372,7 +571,7 @@ plt.show()
 # Let's explicitly interpret the actual features driving the variance.
 # 
 
-# In[25]:
+# In[97]:
 
 
 # 1. Interpret PCA Loadings for PC1 and PC2
@@ -409,7 +608,7 @@ for i in range(len(pca_retained)):
 # 4. Rank and Display
 pca_res = pd.DataFrame({'pca_distance': pca_distances}, index=df.index)
 pca_res['district_name'] = df['district_name']
-pca_res = pca_res.drop(bras_id).sort_values('pca_distance')
+pca_res = pca_res.drop(bras_id).sort_values(['pca_distance', 'district_id'])
 pca_res['pca_rank'] = pca_res['pca_distance'].rank(method='min').astype(int)
 
 print("\n--- TOP 10 MATCHES USING PCA-WEIGHTED DISTANCE ---")
@@ -423,11 +622,12 @@ comparison['rank_shift'] = comparison['equal_weight_rank'] - comparison['pca_ran
 display(comparison)
 
 
-# ## Validation: Ward Hierarchical Clustering
+# ## Descriptive Check: Ward Hierarchical Clustering
 # 
-# To validate the similarity findings, we apply Ward hierarchical clustering on the properly weighted primary embedding. This will allow us to see if Brás and its top matches naturally fall into the same urban typology cluster.
+# Ward clustering on the same embedding is a descriptive consistency check, not independent validation of real urban typologies.
 
-# In[26]:
+# In[98]:
+
 
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.metrics import silhouette_score
@@ -445,7 +645,7 @@ for k in range(3, 9):
 
 # Choose the k with the highest silhouette score
 best_k = max(silhouette_scores, key=silhouette_scores.get)
-print(f"\nOptimal number of clusters (highest silhouette score): {best_k}")
+print(f"\nBest tested k by silhouette (descriptive, not independent validation): {best_k}")
 
 # Fit final model with best_k
 ward_final = AgglomerativeClustering(n_clusters=best_k, linkage='ward')
@@ -493,3 +693,4 @@ plt.title(f'Districts Projected onto PC1 and PC2 (Colored by Ward Clusters, k={b
 plt.legend()
 plt.tight_layout()
 plt.show()
+

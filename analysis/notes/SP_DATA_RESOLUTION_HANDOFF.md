@@ -1,5 +1,13 @@
 # São Paulo preparation: current status and resumption handoff
 
+**Chicago continuation (2026-09-16):** local attribute work is tracked in [CHICAGO_EXECUTION_REPORT.md](../CHICAGO_EXECUTION_REPORT.md), with current [data requirements](../CHICAGO_DATA_REQUIREMENTS.md). This SP handoff remains historical/reference material; do not overwrite the frozen SP attributes.
+
+## SP reference stage — corrected model; Chicago local baseline complete
+
+The user implemented the SP model and authorized correction after independent review. The corrected `sp_urban_model_v2` now passes 26 audit checks and 30 automated tests, preserves the original 95-district Brás ranking, and includes 577 source/weight/metric/influence scenarios. Read [SP_MODEL_FIXES.md](../SP_MODEL_FIXES.md) for issue/cause/fix evidence and the [v2 model report](../results/SP/models/sp_urban_model_v2/reports/MODEL_REPORT.md) for results. Original v1 model outputs and frozen source attributes remain unchanged.
+
+Chicago source inventory, geographic support and validated local attribute construction are tracked in [CHICAGO_EXECUTION_REPORT.md](../CHICAGO_EXECUTION_REPORT.md). No cross-city model has been fitted; shared-feature acceptance and paired SP reconstruction remain pending. Full-city finer U4 support and morphological grids remain explicitly deferred. The preparation and N10 evidence below are historical stages, not a claim that N11 is still unstarted.
+
 Updated 11 September 2026. This is the single current execution record. Pair it with [SP_ATTRIBUTE_IMPLEMENTATION_PLAN.md](SP_ATTRIBUTE_IMPLEMENTATION_PLAN.md) for attribute formulas and the ordered specification. Older status documents were removed in the prior consolidation; historical data and validation evidence remain preserved.
 
 ## N10 attribute construction — complete
@@ -12,7 +20,7 @@ Pilots Brás/Itaim Bibi/Grajaú passed before full construction. Five new synthe
 
 Two street-processing bugs were caught before release: GeoPandas `.length` referenced source geometry instead of the clipped-length column, and GEOS rejected mixed point/line shared-boundary differences. Explicit column indexing and zero-dimensional-contact filtering corrected them. The final audit also identified 40.00088 m of retraced geometry in two source edges: normalizing each edge independently aligned the audit with polygon clipping without changing district attributes. District street totals now reconcile independently to the clipped municipal network. U2 source counts and census-sector counts are retained in entity metadata.
 
-**Next stage: review the released attributes and carry out N11 model design/fitting when authorized.** The primary CSV is unscaled and includes dependent M6 shares; transformations, family weights, compositional handling, outlier review and U2 sensitivity remain necessary before similarity rankings. No model fitting, rankings, Chicago analysis or grid-morphology attributes were performed. U4's grid is population-integration support, not a completed grid-morphology analysis.
+**Historical N10 next-stage recommendation (now executed in SP model v2):** The primary CSV is unscaled and includes dependent M6 shares; transformations, family weights, compositional handling, outlier review and U2 sensitivity remain necessary before similarity rankings. The N10 stage itself did not perform model fitting or rankings; these now exist in the separate v2 model. Chicago fitting and grid-morphology attributes remain unperformed. U4's grid is population-integration support, not a completed grid-morphology analysis.
 
 ## Approved methods and experiment evidence update (after v3 acceptance)
 
@@ -24,7 +32,7 @@ Resume using `analysis/config/sp_current_methods.json`, which binds the frozen b
 
 ## Scope and authorization
 
-The user first authorized preparation N01–N09 and subsequently authorized N10 attribute construction. Both are now complete. The earlier construction stop has been superseded; similarity model fitting and rankings remain unstarted. M5 and U5 remain removed; the active families are M1–M4, M6–M7, B1–B3 and U1–U4.
+The user first authorized preparation N01–N09 and subsequently authorized N10 attribute construction. Both are now complete. The earlier construction stop has been superseded; SP model fitting/ranking has since been completed and corrected in v2; see the current-stage note. M5 and U5 remain removed; the active families are M1–M4, M6–M7, B1–B3 and U1–U4.
 
 The analysis unit is the 96 municipal districts, with Brás=`10`, Itaim Bibi=`35` and Grajaú=`30`. The metropolitan building bounding box is only a source extraction extent. Municipal membership is determined geometrically. All geometric processing uses EPSG:31983.
 
@@ -111,7 +119,7 @@ Scenarios, in America/Sao_Paulo: Wednesday 2026-09-09 07:00–09:00; Saturday 20
 
 ## Readiness and remaining work
 
-**N10 construction is complete; model fitting has not started.** The following source/proxy limitations remain relevant to interpreting the released attributes.
+**N10 and the corrected SP model are complete; cross-city harmonization remains next.** The following source/proxy limitations remain relevant to interpreting the released attributes.
 
 | Families | Status / condition for continuation |
 |---|---|

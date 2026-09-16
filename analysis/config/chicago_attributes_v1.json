@@ -1,0 +1,18 @@
+{
+  "release_id": "chi_local_2026_09_16_v1",
+  "scope": "Chicago local-source exploratory attributes; no cross-city model acceptance",
+  "metric_crs": 26916,
+  "community_ids": [1, 77],
+  "road_classes": ["1", "2", "3", "4", "7", "9", "99"],
+  "road_status": ["N"],
+  "road_class_labels": {"1":"expressway", "2":"arterial", "3":"collector", "4":"source_code_4", "7":"tiered", "9":"ramp", "99":"unclassified_ohare"},
+  "road_rule_note": "Exploratory source-code universe. N selected, other status codes withheld pending documentation. Code 4 retained by code without asserting its label. Named alleys, sidewalks, river and extent lines excluded. Not equivalent to SP municipal or proposed shared Overture network.",
+  "building_status": "ACTIVE",
+  "building_stories_field": "stories",
+  "water_code": "5000",
+  "land_use_groups": ["residential", "commercial", "institutional", "industrial", "transport_utilities", "agriculture", "open_space", "vacant_construction"],
+  "land_use_prefixes": {"11":"residential", "12":"commercial", "13":"institutional", "14":"industrial", "15":"transport_utilities", "2":"agriculture", "3":"open_space", "4":"vacant_construction"},
+  "tile_m": 2000,
+  "strict_cross_city_families": [],
+  "blocked_families": {"M7":"No physical parcel geometry / condominium parent crosswalk", "B3":"No verified unique all-stock gross floor-area measure", "U2":"No workplace job counts and matching block geography", "U4":"No bus GTFS or fine-scale population support"}
+}

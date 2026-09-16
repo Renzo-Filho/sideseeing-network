@@ -1,6 +1,13 @@
 # Analysis workspace — start here
 
-**To analyze the completed São Paulo attributes, open [results/SP](results/SP/README.md).** There are 96 districts, 13 feature families, 23 primary candidate columns and 77 total attribute/diagnostic columns. Model fitting has not started.
+## Chicago local attribute construction (September 2026)
+
+**Continue in a new chat:** copy the complete [NEXT_AGENT_PROMPT.md](NEXT_AGENT_PROMPT.md).
+
+[Data requirements](CHICAGO_DATA_REQUIREMENTS.md) · [Attribute documentation](CHICAGO_ATTRIBUTE_DOCUMENTATION.md) · [Execution report and handoff](CHICAGO_EXECUTION_REPORT.md) · [Chicago outputs](results/Chicago/README.md)
+
+
+**To analyze the completed São Paulo attributes, open [results/SP](results/SP/README.md).** There are 96 districts, 13 feature families, 23 primary candidate columns and 77 total attribute/diagnostic columns. The primary SP model is implemented; the corrected v2 release and robustness results are available below.
 
 | Folder | Purpose | Should I open it? |
 |---|---|---|
@@ -49,7 +56,7 @@ File roles: **CSV** for inspection and interchange (read district IDs as strings
 
 [Attribute documentation](ATTRIBUTE_DOCUMENTATION.md) — definitions, input processing, formulas, all 77 columns, and limitations.
 
-[Urban model implementation plan](URBAN_MODEL_IMPLEMENTATION_PLAN.md) — proposed N11 preprocessing, family distances, Brás comparisons, robustness tests and deliverables; modeling is not yet executed.
+[Urban model implementation plan](URBAN_MODEL_IMPLEMENTATION_PLAN.md) — proposed N11 preprocessing, family distances, Brás comparisons, robustness tests and deliverables; the primary implementation now exists; see the v2 corrections report for completed modeling and robustness work.
 
 ## GitHub checkout and local data
 
@@ -58,3 +65,7 @@ Git tracks analysis code, versioned configurations, documentation, tests and the
 For development, use Python 3.12 and install `analysis/requirements.txt` into a virtual environment. Run `python -m unittest discover -s analysis/tests -p 'test_sp*.py' -v` for synthetic tests. Full source reconstruction additionally requires the documented raw/prepared inputs; this repository does not bundle them or claim they can be recovered from the district tables.
 
 Legacy scripts still address `analysis/outputs` and `analysis/processed`. To reproduce a historical run, restore the original directory layout from your data backup, or restore the organized `work/` datasets and compatibility links using the original workstation's organization manifest. The one-time `organize_analysis_workspace.py` is a migration tool for a complete pre-organization workspace, not a fresh-checkout bootstrap command. Reports link to some excluded local evidence intentionally; their absence on GitHub is not missing published district results. `fetch.py` is a historical acquisition prototype with older feature labels and bounded requests, not the accepted current preparation entry point. The RAIS fetcher requires a local `GOOGLE_CLOUD_PROJECT` environment variable and separately configured credentials.
+
+[SP model validation](SP_MODEL_VALIDATION.md) — reproduced baseline ranking, identified defects and remaining acceptance work.
+
+[Corrected SP model](SP_MODEL_FIXES.md) · [Chicago harmonization plan](CHICAGO_HARMONIZATION_PLAN.md).

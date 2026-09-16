@@ -1,0 +1,52 @@
+{
+  "review_date": "2026-09-16",
+  "building_metadata_url": "https://data.cityofchicago.org/api/views/syp8-uezg.json",
+  "building_metadata": {
+    "attachments": [
+      {
+        "filename": "buildings.zip",
+        "assetId": "Wir2BTHPb7-BTOWMkr8XcKCfKCt8U6y8wK20cV4Tjhw",
+        "name": "buildings.zip"
+      }
+    ],
+    "custom_fields": {
+      "Metadata": {
+        "Time Period": "Current as of August 2015",
+        "Frequency": "Data are updated as needed",
+        "Data Owner": "Buildings"
+      }
+    },
+    "availableDisplayTypes": [
+      "table",
+      "fatrow",
+      "page"
+    ]
+  },
+  "building_dictionary_url": "https://data.cityofchicago.org/api/assets/003C600C-3A66-4605-8E7E-2477AAE95E16",
+  "verified_building_fields": {
+    "stories": "Number of stories",
+    "no_stories": "Number of stories below ground",
+    "bldg_sq_fo": "Not actively maintained",
+    "z_coord": "Not maintained"
+  },
+  "road_metadata_url": "https://gisapps.chicago.gov/arcgis/rest/services/ExternalApps/TransLegend/MapServer/1?f=pjson",
+  "road_renderer_labels": {
+    "1": "Expressway",
+    "2": "Arterials",
+    "3": "Collectors",
+    "5": "Named Alleys",
+    "7": "Tiered",
+    "9": "Ramps",
+    "99": "Unclassified (O'Hare)",
+    "E": "Extent",
+    "RIV": "River",
+    "S": "Sidewalk"
+  },
+  "snapshot_sha256": {
+    "buildings_metadata.json": "2f0b20190933762117321da8ce68df4f74c3d91946a6e45b9ef9d769f7b84514",
+    "roads_metadata.json": "1e183ed011d59bf8f1c5e038629eaf3c316861d9c888a0da8e1d2faed929532a",
+    "buildings_source_metadata.pdf": "08226179ce5d561fd708176161ae7eb1a0035008fb898916447ca86a1ba0b6e9"
+  },
+  "cmap_guide": "https://cmap-repos.github.io/LUI-wiki/field_guide_index.html",
+  "dates_note": "Download/export date is not source observation period. Road observation vintage and ACS estimate period remain unresolved."
+}

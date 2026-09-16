@@ -1,0 +1,78 @@
+district_id,unit_id,district_name,gross_area_m2,candidate_count,candidate_density_km2,status
+01,CHI:01,ROGERS PARK,4758656.228015077,255,53.586556326294065,experimental_source_graph_not_harmonized
+02,CHI:02,WEST RIDGE,9137658.14084154,458,50.122251559502985,experimental_source_graph_not_harmonized
+03,CHI:03,UPTOWN,6043042.934366598,239,39.54961144505766,experimental_source_graph_not_harmonized
+04,CHI:04,LINCOLN SQUARE,6623966.103541163,312,47.10169030502817,experimental_source_graph_not_harmonized
+05,CHI:05,NORTH CENTER,5296593.106232864,277,52.29776847952227,experimental_source_graph_not_harmonized
+06,CHI:06,LAKE VIEW,8096437.499658218,409,50.51604486754397,experimental_source_graph_not_harmonized
+07,CHI:07,LINCOLN PARK,8198678.660118646,361,44.03148543387062,experimental_source_graph_not_harmonized
+08,CHI:08,NEAR NORTH SIDE,7118003.341570558,414,58.162377865455255,experimental_source_graph_not_harmonized
+09,CHI:09,EDISON PARK,2937112.005044956,182,61.96563143910961,experimental_source_graph_not_harmonized
+10,CHI:10,NORWOOD PARK,11322618.219300324,674,59.52686798633837,experimental_source_graph_not_harmonized
+11,CHI:11,JEFFERSON PARK,6022237.97074972,353,58.61608287725208,experimental_source_graph_not_harmonized
+12,CHI:12,FOREST GLEN,8274696.336238334,395,47.73589071421641,experimental_source_graph_not_harmonized
+13,CHI:13,NORTH PARK,6525331.184540938,171,26.205566455402828,experimental_source_graph_not_harmonized
+14,CHI:14,ALBANY PARK,4970648.800632658,285,57.336579475042676,experimental_source_graph_not_harmonized
+15,CHI:15,PORTAGE PARK,10230362.674821753,541,52.88180069426776,experimental_source_graph_not_harmonized
+16,CHI:16,IRVING PARK,8319173.245334982,466,56.015181588063676,experimental_source_graph_not_harmonized
+17,CHI:17,DUNNING,9617716.436107114,435,45.22903153672843,experimental_source_graph_not_harmonized
+18,CHI:18,MONTCLARE,2560171.673085884,117,45.70006036312983,experimental_source_graph_not_harmonized
+19,CHI:19,BELMONT CRAGIN,10128559.056784386,468,46.20598027579459,experimental_source_graph_not_harmonized
+20,CHI:20,HERMOSA,3026664.271465896,149,49.2291138481095,experimental_source_graph_not_harmonized
+21,CHI:21,AVONDALE,5132936.209682022,295,57.47197860038764,experimental_source_graph_not_harmonized
+22,CHI:22,LOGAN SQUARE,9288854.881953834,599,64.4858820180002,experimental_source_graph_not_harmonized
+23,CHI:23,HUMBOLDT PARK,9328244.684562545,455,48.776593602115355,experimental_source_graph_not_harmonized
+24,CHI:24,WEST TOWN,11842194.028135978,723,61.05287569872758,experimental_source_graph_not_harmonized
+25,CHI:25,AUSTIN,18498319.92524273,812,43.89587828957095,experimental_source_graph_not_harmonized
+26,CHI:26,WEST GARFIELD PARK,3350730.606758987,201,59.9869173590229,experimental_source_graph_not_harmonized
+27,CHI:27,EAST GARFIELD PARK,5002269.903132768,264,52.776040699976,experimental_source_graph_not_harmonized
+28,CHI:28,NEAR WEST SIDE,14713428.325045448,829,56.343088890361614,experimental_source_graph_not_harmonized
+29,CHI:29,NORTH LAWNDALE,8307642.494482472,432,52.00031179566443,experimental_source_graph_not_harmonized
+30,CHI:30,SOUTH LAWNDALE,11882815.954581944,338,28.44443617505236,experimental_source_graph_not_harmonized
+31,CHI:31,LOWER WEST SIDE,7570662.2062242115,293,38.702030551450356,experimental_source_graph_not_harmonized
+32,CHI:32,LOOP,4301423.448060153,264,61.375031588451996,experimental_source_graph_not_harmonized
+33,CHI:33,NEAR SOUTH SIDE,4620205.2120612515,145,31.383887369649955,experimental_source_graph_not_harmonized
+34,CHI:34,ARMOUR SQUARE,2577601.841831905,148,57.41771192047885,experimental_source_graph_not_harmonized
+35,CHI:35,DOUGLAS,4270688.521222364,184,43.08438770133843,experimental_source_graph_not_harmonized
+36,CHI:36,OAKLAND,1570141.2414192385,72,45.855747305204055,experimental_source_graph_not_harmonized
+37,CHI:37,FULLER PARK,1848913.626373443,113,61.11697073791606,experimental_source_graph_not_harmonized
+38,CHI:38,GRAND BOULEVARD,4501641.174230013,229,50.870336203366875,experimental_source_graph_not_harmonized
+39,CHI:39,KENWOOD,2698752.5193461874,97,35.942532449585144,experimental_source_graph_not_harmonized
+40,CHI:40,WASHINGTON PARK,3933639.2311044564,140,35.59045244743807,experimental_source_graph_not_harmonized
+41,CHI:41,HYDE PARK,4187160.273554516,163,38.928531355602466,experimental_source_graph_not_harmonized
+42,CHI:42,WOODLAWN,5367025.069098742,212,39.500467627888334,experimental_source_graph_not_harmonized
+43,CHI:43,SOUTH SHORE,7594657.399805894,432,56.882091878303974,experimental_source_graph_not_harmonized
+44,CHI:44,CHATHAM,7641960.258714579,347,45.40719766296814,experimental_source_graph_not_harmonized
+45,CHI:45,AVALON PARK,3235392.223975368,193,59.65273655843137,experimental_source_graph_not_harmonized
+46,CHI:46,SOUTH CHICAGO,8658353.316413738,294,33.955648291998074,experimental_source_graph_not_harmonized
+47,CHI:47,BURNSIDE,1577750.4900127081,45,28.521620043760876,experimental_source_graph_not_harmonized
+48,CHI:48,CALUMET HEIGHTS,4532529.506122129,216,47.65550885178945,experimental_source_graph_not_harmonized
+49,CHI:49,ROSELAND,12468599.090501223,625,50.12591995809176,experimental_source_graph_not_harmonized
+50,CHI:50,PULLMAN,5477165.108303168,122,22.27429657270196,experimental_source_graph_not_harmonized
+51,CHI:51,SOUTH DEERING,28201380.17173013,221,7.836495896804962,experimental_source_graph_not_harmonized
+52,CHI:52,EAST SIDE,7727178.703392426,231,29.89448139701819,experimental_source_graph_not_harmonized
+53,CHI:53,WEST PULLMAN,9224313.72146977,409,44.339341912021546,experimental_source_graph_not_harmonized
+54,CHI:54,RIVERDALE,9133600.2635281,72,7.882981291343273,experimental_source_graph_not_harmonized
+55,CHI:55,HEGEWISCH,13549805.897309886,140,10.332251329725317,experimental_source_graph_not_harmonized
+56,CHI:56,GARFIELD RIDGE,10944726.480271464,458,41.84663735777892,experimental_source_graph_not_harmonized
+57,CHI:57,ARCHER HEIGHTS,5191636.034741252,159,30.626183911200254,experimental_source_graph_not_harmonized
+58,CHI:58,BRIGHTON PARK,7045514.692655271,298,42.296413108137536,experimental_source_graph_not_harmonized
+59,CHI:59,MCKINLEY PARK,3660611.3185833413,172,46.98668747671471,experimental_source_graph_not_harmonized
+60,CHI:60,BRIDGEPORT,5411376.26288976,272,50.26447742422327,experimental_source_graph_not_harmonized
+61,CHI:61,NEW CITY,12498811.102789551,422,33.76321127901643,experimental_source_graph_not_harmonized
+62,CHI:62,WEST ELSDON,3036772.3278312637,147,48.40665816557321,experimental_source_graph_not_harmonized
+63,CHI:63,GAGE PARK,5689383.197588823,262,46.05068614661715,experimental_source_graph_not_harmonized
+64,CHI:64,CLEARING,6604979.639871065,260,39.36423943391223,experimental_source_graph_not_harmonized
+65,CHI:65,WEST LAWN,7641846.6241053315,256,33.499756353716556,experimental_source_graph_not_harmonized
+66,CHI:66,CHICAGO LAWN,9123770.849222558,372,40.77261541829477,experimental_source_graph_not_harmonized
+67,CHI:67,WEST ENGLEWOOD,8164513.351020754,407,49.8498786763715,experimental_source_graph_not_harmonized
+68,CHI:68,ENGLEWOOD,7951338.819003335,430,54.078943155122474,experimental_source_graph_not_harmonized
+69,CHI:69,GREATER GRAND CROSSING,9176699.438654505,387,42.17202520220519,experimental_source_graph_not_harmonized
+70,CHI:70,ASHBURN,12575528.458546674,582,46.2803612522905,experimental_source_graph_not_harmonized
+71,CHI:71,AUBURN GRESHAM,9753564.39047053,508,52.08352348566318,experimental_source_graph_not_harmonized
+72,CHI:72,BEVERLY,8241752.41919864,359,43.55869743960426,experimental_source_graph_not_harmonized
+73,CHI:73,WASHINGTON HEIGHTS,7392825.464327746,391,52.889115519725706,experimental_source_graph_not_harmonized
+74,CHI:74,MOUNT GREENWOOD,7016921.1373001775,235,33.49047187530717,experimental_source_graph_not_harmonized
+75,CHI:75,MORGAN PARK,8529326.80246866,381,44.66941047325405,experimental_source_graph_not_harmonized
+76,CHI:76,OHARE,34522423.5838005,372,10.775604994736215,experimental_source_graph_not_harmonized
+77,CHI:77,EDGEWATER,4497787.52675187,206,45.8002959843604,experimental_source_graph_not_harmonized

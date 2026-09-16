@@ -1,6 +1,6 @@
 # Urban similarity model — detailed implementation plan
 
-**Status: proposed N11 implementation; no model has been fitted by this document.** This plan starts from the completed São Paulo attribute release, compares Brás (`10`) with the other 95 municipal districts, and preserves the existing source/proxy decisions. It specifies a descriptive similarity model, not a predictor of pedestrian conditions or a causal model.
+**Status update: the primary SP model and core robustness experiments are implemented and corrected in v2.** See [SP_MODEL_FIXES.md](SP_MODEL_FIXES.md) for completed work, validation and remaining scientific limits. The following specification is retained as the implementation protocol. This plan starts from the completed São Paulo attribute release, compares Brás (`10`) with the other 95 municipal districts, and preserves the existing source/proxy decisions. It specifies a descriptive similarity model, not a predictor of pedestrian conditions or a causal model.
 
 Read alongside [attribute documentation](ATTRIBUTE_DOCUMENTATION.md), [results](results/SP/README.md), [research protocol](../plan.md) and [method decisions](notes/SP_METHOD_DECISIONS.md). These are proposed modeling defaults, not previously validated findings. Freeze them before inspecting the resulting rankings; document any later changes rather than choosing settings to obtain preferred neighbors.
 

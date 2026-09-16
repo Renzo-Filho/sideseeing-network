@@ -1,0 +1,92 @@
+[
+  {
+    "path": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+    "bytes": 2082874,
+    "sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16"
+  },
+  {
+    "path": "analysis/data/Chicago/Boundaries_-_Zoning_Districts_(current)_20260915.geojson",
+    "bytes": 39788878,
+    "sha256": "2661439b6122561a10d9addf955496cdc9ae5ab735e0088df3c43c4dec221b89"
+  },
+  {
+    "path": "analysis/data/Chicago/Building_Footprints_20260915.geojson",
+    "bytes": 1109808916,
+    "sha256": "26567ddd70d54f0306ca52b186bed6d766db5dcfa46f0e2e9d4e1d789470cf20"
+  },
+  {
+    "path": "analysis/data/Chicago/Building_Permits_20260915.geojson",
+    "bytes": 2965592667,
+    "sha256": "79309831aaa70e428f5100a23c1f5b8c51c927ed0a7c2ded76f874fc46451af5"
+  },
+  {
+    "path": "analysis/data/Chicago/CTA_-_System_Information_-_List_of_'L'_Stops_20260915.csv",
+    "bytes": 56602,
+    "sha256": "ff89c01e6afbd573bee6e7aa927e3ddc4bf24dda912bf5886942d4487ed45ed2"
+  },
+  {
+    "path": "analysis/data/Chicago/LUI_2023_view_332920193481040239.gpkg",
+    "bytes": 635740160,
+    "sha256": "5a781f48d4fd9d1bba172918edfeca9ef6553607ba8485ec0384d3f2d49efdc6"
+  },
+  {
+    "path": "analysis/data/Chicago/Socioeconomically_Disadvantaged_Areas_20260831.geojson",
+    "bytes": 727757,
+    "sha256": "d1364c9c6fc3b72a838be1aecdda4539bf58c84239a8c25550404d432726d26d"
+  },
+  {
+    "path": "analysis/data/Chicago/business_2652811-20190701_20260915.geojson",
+    "bytes": 29473,
+    "sha256": "88e84d659e989fb4fcde9e7a1a24ae185bb9576e7b0a1bd385c40fb29ecb8a1a"
+  },
+  {
+    "path": "analysis/data/Chicago/chicago_acs_community_areas.csv",
+    "bytes": 17008,
+    "sha256": "88d24927b70ac44ba73acfd96187c951bc166f0b18021ce5bd39a0774892aff0"
+  },
+  {
+    "path": "analysis/data/Chicago/chicagosidewalks/chicagosidewalks.dbf",
+    "bytes": 102076441,
+    "sha256": "bf75ff341e37bc585258d52801e8d92487d4a36afd9a069a5edb694344e4054b"
+  },
+  {
+    "path": "analysis/data/Chicago/chicagosidewalks/chicagosidewalks.prj",
+    "bytes": 497,
+    "sha256": "1e0787b78265c46f0b95f3ddd30c1f09316bb96a00d751d9826d0e41c424f319"
+  },
+  {
+    "path": "analysis/data/Chicago/chicagosidewalks/chicagosidewalks.sbn",
+    "bytes": 4822308,
+    "sha256": "353e628793f9665991eef23530cd02c0407c14ae78d70864937a4abf7a31fd5b"
+  },
+  {
+    "path": "analysis/data/Chicago/chicagosidewalks/chicagosidewalks.sbx",
+    "bytes": 111756,
+    "sha256": "ca8a0440c1a99042f5cb78aa9be1daa4b9e1975c33a2234af9336d25ba2d7e8f"
+  },
+  {
+    "path": "analysis/data/Chicago/chicagosidewalks/chicagosidewalks.shp",
+    "bytes": 91143472,
+    "sha256": "f1e0a41e5d423208f814c5b9ecc9b25bf4807132fe38e497ba948363db616c6e"
+  },
+  {
+    "path": "analysis/data/Chicago/chicagosidewalks/chicagosidewalks.shx",
+    "bytes": 4462444,
+    "sha256": "0368fbcc8907a994b69a86ac52b20390f78bccdb2fb7b543e0827856ad0c38e8"
+  },
+  {
+    "path": "analysis/data/Chicago/cook_county_tracts_pop_2019.csv",
+    "bytes": 68891,
+    "sha256": "a00c36e3735662d27010189fe62aff91dd695d4dee43c4c39d66786f821bc6ed"
+  },
+  {
+    "path": "analysis/data/Chicago/morphological_data.csv",
+    "bytes": 160,
+    "sha256": "140529460200efb4f6cee592c01a1f73810a91f26979d7b01086e2438cf020de"
+  },
+  {
+    "path": "analysis/data/Chicago/steet_center_lines_20260915.geojson",
+    "bytes": 83617801,
+    "sha256": "ebfabc5fde1ddfec2c161a405900601263e525942790e7510d791ea2057cf959"
+  }
+]

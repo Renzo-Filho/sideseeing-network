@@ -1,0 +1,474 @@
+{
+  "passed": 87,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "exact 77 qualified IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unique unit-feature keys",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no infinite values",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "missing families explicitly null",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no cross-city acceptance implied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "district area accounting",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "all reported ratio numerators reconstruct values",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "road_share_code_ sums to one",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "land_use_share_ sums to one",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "all fractions bounded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "entropy bounded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "building IDs resolved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "metric valid prepared geometries",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "area IDs have positive land",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "GeoPackage CRS and IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg gross_area_m2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg water_area_m2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_area_m2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg b3_unavailable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg block_compactness_iqr_experimental",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg block_compactness_median_experimental",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg block_elongation_iqr_experimental",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg block_elongation_median_experimental",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg block_log_area_iqr_experimental",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg block_log_area_median_experimental",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg building_coverage_municipal_gross",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg building_coverage_municipal_land",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg building_stories_coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg building_stories_median_municipal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg building_stories_p90_municipal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg footprint_overlap_excess_fraction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_entropy_cmap_area8",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_agriculture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_commercial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_industrial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_institutional",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_open_space",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_residential",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_transport_utilities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg land_use_share_vacant_construction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg lui_ambiguous_gross",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg lui_classified_land",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg lui_coverage_gross",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg lui_overlap_gross",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg lui_secondary_use_area_fraction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg m2_unavailable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg m7_unavailable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg population_density_acs_label2023",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_7",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_9",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg road_share_code_99",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg street_density_municipal_km_km2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg u2_unavailable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "gpkg u4_unavailable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "long-wide equivalence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "csv-parquet equivalence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pilot identity LOOP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "untiled B1 LOOP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B2 percentile LOOP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pilot identity NEAR WEST SIDE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "untiled B1 NEAR WEST SIDE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B2 percentile NEAR WEST SIDE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pilot identity WEST TOWN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "untiled B1 WEST TOWN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B2 percentile WEST TOWN",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pilot identity SOUTH LAWNDALE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "untiled B1 SOUTH LAWNDALE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B2 percentile SOUTH LAWNDALE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "pilot identity OHARE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "untiled B1 OHARE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B2 percentile OHARE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum validation/source_manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum validation/checks.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum validation/road_topology_diagnostic.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/attribute_dictionary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/attributes_wide.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/population_crosswalk.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/attributes_long.parquet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/m2_endpoint_candidates.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/attributes_long.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum tables/attributes_wide.parquet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "published checksum spatial/chicago_community_attributes.gpkg",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pilot_reconstruction": [
+    {
+      "unit_id": "CHI:32",
+      "name": "LOOP",
+      "land_union_m2": 1133495.9319768874,
+      "positive_floor_reports": 539
+    },
+    {
+      "unit_id": "CHI:28",
+      "name": "NEAR WEST SIDE",
+      "land_union_m2": 3494366.7562235366,
+      "positive_floor_reports": 2725
+    },
+    {
+      "unit_id": "CHI:24",
+      "name": "WEST TOWN",
+      "land_union_m2": 3334917.5121943383,
+      "positive_floor_reports": 10306
+    },
+    {
+      "unit_id": "CHI:30",
+      "name": "SOUTH LAWNDALE",
+      "land_union_m2": 2519418.7022439335,
+      "positive_floor_reports": 8623
+    },
+    {
+      "unit_id": "CHI:76",
+      "name": "OHARE",
+      "land_union_m2": 1499571.4205241408,
+      "positive_floor_reports": 1203
+    }
+  ],
+  "limits": "Arithmetic and local-source integrity checks do not establish common SP-Chicago measurement equivalence."
+}

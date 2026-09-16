@@ -1,5 +1,10 @@
 # São Paulo attribute documentation
 
+## Chicago documentation
+
+This document continues to describe the frozen **SP** release. For Chicago, use [CHICAGO_ATTRIBUTE_DOCUMENTATION.md](CHICAGO_ATTRIBUTE_DOCUMENTATION.md); its local-source definitions and acceptance statuses differ.
+
+
 This document describes the **implemented** release `sp_attributes_2026_09_11_v1`: 96 municipal districts, 13 families, 23 primary candidate columns and 77 total columns. M5 and U5 were removed. It covers inputs, source processing, formulas, interpretation and limitations. No similarity model has been fitted.
 
 Start with the [primary table](results/SP/tables/attributes_primary.csv), [full table](results/SP/tables/attributes_wide.csv), and [long table with provenance](results/SP/tables/attributes_long.parquet). Every exact output-column name is listed in the catalogue at the end. The [construction report](results/SP/reports/ATTRIBUTE_REPORT.md) records execution and validation; the [method decisions](notes/SP_METHOD_DECISIONS.md) explain the M2/M6/U2 experiments.
