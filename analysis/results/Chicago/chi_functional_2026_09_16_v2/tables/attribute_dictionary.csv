@@ -1,0 +1,9 @@
+family,feature,units,period,status,strict_cross_city_accepted
+U3,population_density_2020_gross_km2,residents/km2,Census 2020 / TIGER 2022 block geography,constructed_gross_area_allocation,False
+U2,jobs_density_2022_gross_km2,jobs/km2,LODES WAC S000 JT00 2022,extended_business_sensitivity_pending,False
+U4,bus_service_access_saturday_am_400m,scheduled departures per 2h per resident,September 16/19/20 2026; Census 2020 support,constructed_CTA_bus_only_paired_acceptance_pending,False
+U4,bus_service_access_saturday_am_800m,scheduled departures per 2h per resident,September 16/19/20 2026; Census 2020 support,constructed_CTA_bus_only_paired_acceptance_pending,False
+U4,bus_service_access_sunday_am_400m,scheduled departures per 2h per resident,September 16/19/20 2026; Census 2020 support,constructed_CTA_bus_only_paired_acceptance_pending,False
+U4,bus_service_access_sunday_am_800m,scheduled departures per 2h per resident,September 16/19/20 2026; Census 2020 support,constructed_CTA_bus_only_paired_acceptance_pending,False
+U4,bus_service_access_weekday_am_400m,scheduled departures per 2h per resident,September 16/19/20 2026; Census 2020 support,constructed_CTA_bus_only_paired_acceptance_pending,False
+U4,bus_service_access_weekday_am_800m,scheduled departures per 2h per resident,September 16/19/20 2026; Census 2020 support,constructed_CTA_bus_only_paired_acceptance_pending,False

@@ -1,0 +1,127 @@
+[
+  {
+    "path": "analysis/data/Chicago/Hydro_20260916.geojson",
+    "bytes": 2840576,
+    "sha256": "970f89278ebcb9c1799b0b2562165721979a7c10ecbbb8608206de27be0a2129"
+  },
+  {
+    "path": "analysis/data/Chicago/il_wac_S000_JT00_2022.csv",
+    "bytes": 12157496,
+    "sha256": "79ec0551bc164db4147c6036a95212b0da05f26022ad4f1d5396d6d7cf6aa6a1"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet",
+    "bytes": 844432,
+    "sha256": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.cpg",
+    "bytes": 5,
+    "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.dbf",
+    "bytes": 50687564,
+    "sha256": "72bc17c9e8e1b7bc965290517d5fdfe70252603d8ad2bf7cfb66f92c3e5abae8"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.prj",
+    "bytes": 165,
+    "sha256": "0b9041e921d9ebb43247d314608fe9e38a0b008ee793067fc1806199ea1fb9dd"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp",
+    "bytes": 253030380,
+    "sha256": "3d45f2384904abb1abd3c808542791c9ebf948a233cc5815f2b3ac512c3c1a87"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp.ea.iso.xml",
+    "bytes": 29046,
+    "sha256": "c5ee6ab0d5c21cb054710b78dcbc0c0cbba7dc8bdedecfa7f3c6a8ecc87ec854"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp.iso.xml",
+    "bytes": 52583,
+    "sha256": "9bb5e3609bc779b84482c1fdeac4cb37859712a43217b5c6e304cc4e00ff91aa"
+  },
+  {
+    "path": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shx",
+    "bytes": 2959924,
+    "sha256": "916cc6897cf96be9b9668386d1aa72a2a71a3efe2011f908d60cdbcf022deb47"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/agency.txt",
+    "bytes": 221,
+    "sha256": "cbcdf0fa2981959f2eda970a5d520a0413a30a39be52a9d67b28ebefd26bb30f"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/calendar.txt",
+    "bytes": 5085,
+    "sha256": "8303b79748d0d4d9d09594abe4aa057573de3855070c6d439e9e281c3f8f9dfa"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/calendar_dates.txt",
+    "bytes": 1605,
+    "sha256": "395c5f58183d6e93e967155eecad96dbc33a38bf5b697137bef95ab4c090db96"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/developers_license_agreement.htm",
+    "bytes": 19206,
+    "sha256": "da8a06d9688e1981d5787039bb671da073b987130f8c1e82f38b5de9ba4c27a6"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/frequencies.txt",
+    "bytes": 42,
+    "sha256": "5ba50d0c3af49afac0084c1e69c2b9019b6f0dd57f454cd4669f232e35eefab3"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/routes.txt",
+    "bytes": 10851,
+    "sha256": "39a63dec2f83fff7dea65ee507da19ce9150c44468681c0b60b934f201b0b75c"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/shapes.txt",
+    "bytes": 54423937,
+    "sha256": "f8716544c54874d89c96db5edf0558efe626e92a55cf8ce6f187575a872e3907"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/stop_times.txt",
+    "bytes": 367361926,
+    "sha256": "4a436b9e11ca814f87153db1477d98ee020f177316395c0ca05a7ffdd516d8d1"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/stops.txt",
+    "bytes": 1281406,
+    "sha256": "dee19f9d31a7ce1896d044ef8eda3683bede7309880ef8ef01f46f5021fe4928"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/transfers.txt",
+    "bytes": 2334,
+    "sha256": "2de6f47ab836c7ac0209b643cc303f5c81a50b387c8ec10edbc182afa511307d"
+  },
+  {
+    "path": "analysis/data/Chicago/google_transit/trips.txt",
+    "bytes": 6182916,
+    "sha256": "291681a2d47ae2915528a0490115b3e20ed2484c4214ccd789b5343814adc091"
+  },
+  {
+    "path": "analysis/scripts/prepare_chicago_functional.py",
+    "bytes": 16729,
+    "sha256": "8fe1f85d92084521cec7bc873455bfc1f35e59f1df37d99848402f55b70fd277"
+  },
+  {
+    "path": "analysis/config/chicago_functional_v2.json",
+    "bytes": 744,
+    "sha256": "322f51098825685a3a7b55ae1ed79c92fe5aa9852efb7a2ffa7dae082855a2f1"
+  },
+  {
+    "path": "analysis/scripts/harmonization/functional.py",
+    "bytes": 4003,
+    "sha256": "f9951ca216e5726ec88aa82f7ad3304d3e8c3d48359d9acc59e604b7b3c06115"
+  },
+  {
+    "path": "analysis/scripts/harmonization/geometry.py",
+    "bytes": 2917,
+    "sha256": "e094dc183f3e49d15158d70edc4abc6395703efbba7394355f9d62b7a712c78e"
+  }
+]

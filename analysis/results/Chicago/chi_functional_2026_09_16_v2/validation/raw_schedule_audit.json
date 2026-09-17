@@ -1,0 +1,9 @@
+{
+  "independent_pandas_raw_schedule_counts": {
+    "weekday_am": 148915,
+    "saturday_am": 100950,
+    "sunday_am": 89597
+  },
+  "matches_constructed_duckdb_counts": true,
+  "checked_prior_service_day": true
+}

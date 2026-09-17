@@ -1,0 +1,15 @@
+{
+  "release_id": "chi_functional_2026_09_16_v2",
+  "metric_crs": 26916,
+  "population_support": "whole-block gross projected area; positive block intersection; outside residual retained",
+  "grid_m": 250,
+  "radii_m": [400, 800],
+  "windows": [
+    {"label": "weekday_am", "date": "2026-09-16", "start": 25200, "end": 32400},
+    {"label": "saturday_am", "date": "2026-09-19", "start": 32400, "end": 39600},
+    {"label": "sunday_am", "date": "2026-09-20", "start": 32400, "end": 39600}
+  ],
+  "strict_cross_city_accepted": false,
+  "employment_status": "extended area allocation; business support sensitivity and RAIS equivalence pending",
+  "hydro_status": "supplied municipal polygons; historical edit dates, completeness review pending"
+}

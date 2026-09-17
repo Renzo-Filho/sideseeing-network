@@ -1,0 +1,36 @@
+table,column,definition
+functional_attributes,unit_id,Qualified Community Area ID; read as string
+functional_attributes,district_name,Reporting geography name
+functional_attributes,gross_area_m2,"Full projected polygon area, EPSG:26916"
+functional_attributes,cmap_proxy_water_m2,Water area from frozen v1 CMAP 5000 parcel proxy
+functional_attributes,population_allocated,Whole-block POP20 multiplied by positive gross intersection weight
+functional_attributes,jobs_allocated,Whole-block C000 multiplied by positive gross intersection weight
+functional_attributes,hydro_water_m2,Unioned supplied hydro polygons clipped to Community Area
+functional_attributes,hydro_land_m2,Gross area minus unioned hydro area
+functional_attributes,population_density_2020_gross_km2,Allocated population divided by gross area in km2
+functional_attributes,jobs_density_2022_gross_km2,Allocated jobs divided by gross area in km2
+bus_service_access,unit_id,Qualified Community Area ID; read as string
+bus_service_access,window,Configured dated weekday/Saturday/Sunday local service window
+bus_service_access,radius_m,Euclidean stop catchment in metres
+bus_service_access,population_weight,Sum of gross-block-area-based population weights
+bus_service_access,weighted_departures,Sum of population weight times reachable route/direction supply
+bus_service_access,expected_departures_per_resident,Weighted departures divided by population weight
+bus_service_access,population_reached,Weight of support points with positive reachable supply
+bus_service_access,reach_fraction,Population reached divided by total population weight; 1e-12 roundoff tolerance
+bus_service_access,support_points,Positive-population 250m grid/block/district representative points
+bus_service_access,strict_cross_city_accepted,False: common feature acceptance remains pending
+border_block_accounting,GEOID20,15-character Census block key
+border_block_accounting,COUNTYFP20,Three-character county FIPS
+border_block_accounting,POP20,Original whole-block 2020 DAS-adjusted population
+border_block_accounting,jobs,Original C000; absent sparse WAC records contribute zero published jobs
+border_block_accounting,wac_row_present,Presence of the block in supplied sparse WAC file
+border_block_accounting,inside_weight,Sum of district-piece areas divided by whole-block area
+border_block_accounting,outside_population,POP20 times one minus inside weight
+border_block_accounting,outside_jobs,Jobs times one minus inside weight
+population_period_diagnostic,unit_id,Qualified Community Area ID; read as string
+population_period_diagnostic,population_allocated,Whole-block POP20 multiplied by positive gross intersection weight
+population_period_diagnostic,population_density_acs_label2023,Frozen supplied ACS density; source period/provenance unresolved
+population_period_diagnostic,gross_area_m2,"Full projected polygon area, EPSG:26916"
+population_period_diagnostic,supplied_acs_population,Supplied ACS population reconstructed from its density and gross area
+population_period_diagnostic,census_minus_supplied_acs,Difference across periods/supports; not an equality test
+population_period_diagnostic,interpretation,Period and source-provenance qualification

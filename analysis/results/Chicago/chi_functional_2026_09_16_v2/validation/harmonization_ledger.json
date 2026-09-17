@@ -1,0 +1,21 @@
+{
+  "release_id": "chi_functional_2026_09_16_v2",
+  "complete_functional_construction": true,
+  "strict_cross_city_accepted": false,
+  "completed": [
+    "Census population and workplace area allocation with border residuals",
+    "CTA calendar-aware bus scenarios at 400/800m for all 77 units",
+    "municipal hydrography denominator diagnostics",
+    "matched Overture road/connector acquisition for SP and Chicago; Chicago buildings",
+    "163 independent checks, 41 tests, three independent raw schedule counts",
+    "verified identical-run stage resume; preserved 16 original Chicago release artifacts"
+  ],
+  "pending": [
+    "CMAP business-support jobs sensitivity and LODES/RAIS universe equivalence",
+    "physical road access/carriageway/arm and block definition tests",
+    "cadastral parcel/unit-parent and constructed-area semantics",
+    "common use ontology/weighting and paired SP companions",
+    "strict/common feature contract before any ranking"
+  ],
+  "next_entrypoint": "analysis/CHICAGO_FUNCTIONAL_EXTENSION.md"
+}

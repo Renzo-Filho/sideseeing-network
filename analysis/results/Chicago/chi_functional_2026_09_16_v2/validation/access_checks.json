@@ -1,0 +1,7 @@
+{
+  "rows": 462,
+  "units": 77,
+  "pointwise_radius_monotonicity": true,
+  "population_grid_conservation": true,
+  "population_support": "gross block area, 250m origin-zero grid intersections, representative points"
+}

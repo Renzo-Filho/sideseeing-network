@@ -1,0 +1,35 @@
+{
+  "reviewed_on": "2026-09-16",
+  "acquisition": "User-supplied extracted local inputs; exact original transfer URLs/checksums not supplied",
+  "sources": [
+    {
+      "source": "Census TIGER 2022 tabblock20",
+      "reference": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2022/TGRSHP2022_TechDoc.pdf",
+      "local_dictionary": "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp.ea.iso.xml",
+      "population_definition": "2020 Census Population Count Adjusted By Disclosure Avoidance System (DAS)",
+      "geography": "2020 blocks in 2022 TIGER release",
+      "license": "US Census public data"
+    },
+    {
+      "source": "LODES WAC 2022",
+      "reference": "https://lehd.ces.census.gov/data/lodes/LODES8/LODESTechDoc8.3.pdf",
+      "schema_reference": "https://lehd.ces.census.gov/data/lehd-code-samples/sections/appendix.html",
+      "universe": "S000 all workforce, JT00 all jobs, C000 total",
+      "limitations": "LODES release minor version and original compressed file identity not independently established; jobs include modeled administrative counts"
+    },
+    {
+      "source": "CTA GTFS",
+      "reference": "https://www.transitchicago.com/developers/gtfs/",
+      "license_file": "analysis/data/Chicago/google_transit/developers_license_agreement.htm",
+      "period": "calendar 20260911\u201320261130; scenarios explicitly configured",
+      "limitations": "Original ZIP/transfer lineage not supplied; extract internally validated"
+    },
+    {
+      "source": "Chicago Hydro",
+      "reference": "https://catalog.data.gov/dataset/hydro",
+      "publisher_dataset": "https://data.cityofchicago.org/d/knfe-65pw",
+      "period": "historical edit dates; exact observation vintage unresolved",
+      "limitations": "municipal portal lineage inferred from filename/schema; publisher API fetch failed in web tool; source completeness not certified"
+    }
+  ]
+}

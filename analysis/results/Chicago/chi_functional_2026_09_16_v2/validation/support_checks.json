@@ -1,0 +1,26 @@
+{
+  "state_blocks": 369978,
+  "state_population": 12812508,
+  "wac_rows": 91481,
+  "state_jobs": 5825390,
+  "unmatched_job_rows": 0,
+  "unmatched_jobs": 0,
+  "matched_jobs": 5825390,
+  "city_intersecting_blocks": 39498,
+  "positive_overlap_blocks": 39498,
+  "counties": [
+    "031",
+    "043"
+  ],
+  "uncovered_city_m2": 11884.19023965996,
+  "repaired_blocks": 0,
+  "repaired_hydro": 0,
+  "population_inside": 2745500.350813928,
+  "population_border_outside": 36978.64918607163,
+  "jobs_inside": 1409454.0399990275,
+  "jobs_border_outside": 48808.960000972525,
+  "jobs_matched_outside_city": 4415935.960000972,
+  "hydro_water_km2": 13.913977145884697,
+  "cmap_proxy_water_km2": 1.241076959414271,
+  "strict_cross_city_accepted": false
+}

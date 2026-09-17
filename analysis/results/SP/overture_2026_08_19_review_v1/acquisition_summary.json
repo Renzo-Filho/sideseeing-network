@@ -1,0 +1,32 @@
+[
+  {
+    "city": "SP",
+    "theme_type": "connector",
+    "release": "2026-08-19.0",
+    "records": 452539,
+    "unique_ids": 452539,
+    "manifest": "analysis/data/SP/overture_2026_08_19/connector/manifest.json",
+    "buffer_m": 2000,
+    "bbox": [
+      -46.845848935369744,
+      -24.0262281254834,
+      -46.34552745210288,
+      -23.338734786591615
+    ]
+  },
+  {
+    "city": "SP",
+    "theme_type": "segment",
+    "release": "2026-08-19.0",
+    "records": 423904,
+    "unique_ids": 423904,
+    "manifest": "analysis/data/SP/overture_2026_08_19/segment/manifest.json",
+    "buffer_m": 2000,
+    "bbox": [
+      -46.845848935369744,
+      -24.0262281254834,
+      -46.34552745210288,
+      -23.338734786591615
+    ]
+  }
+]

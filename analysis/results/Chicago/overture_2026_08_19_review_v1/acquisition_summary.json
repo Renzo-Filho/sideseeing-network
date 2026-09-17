@@ -1,0 +1,47 @@
+[
+  {
+    "city": "Chicago",
+    "theme_type": "building",
+    "release": "2026-08-19.0",
+    "records": 1381239,
+    "unique_ids": 1381239,
+    "manifest": "analysis/data/Chicago/overture_2026_08_19/building/manifest.json",
+    "buffer_m": 2000,
+    "bbox": [
+      -87.96425356806424,
+      41.626529705712606,
+      -87.50011189173813,
+      42.04105036854247
+    ]
+  },
+  {
+    "city": "Chicago",
+    "theme_type": "connector",
+    "release": "2026-08-19.0",
+    "records": 689832,
+    "unique_ids": 689832,
+    "manifest": "analysis/data/Chicago/overture_2026_08_19/connector/manifest.json",
+    "buffer_m": 2000,
+    "bbox": [
+      -87.96425356806424,
+      41.626529705712606,
+      -87.50011189173813,
+      42.04105036854247
+    ]
+  },
+  {
+    "city": "Chicago",
+    "theme_type": "segment",
+    "release": "2026-08-19.0",
+    "records": 350885,
+    "unique_ids": 350885,
+    "manifest": "analysis/data/Chicago/overture_2026_08_19/segment/manifest.json",
+    "buffer_m": 2000,
+    "bbox": [
+      -87.96425356806424,
+      41.626529705712606,
+      -87.50011189173813,
+      42.04105036854247
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "selected_segments": 53687,
+  "city_length_km": 7155.566140554878,
+  "assignment_difference_m": 1.30385160446167e-08,
+  "connector_candidates": 28336,
+  "referenced_connectors_missing_buffer": 0,
+  "access_restriction_records": 26732,
+  "selected_classes": [
+    "motorway",
+    "trunk",
+    "primary",
+    "secondary",
+    "tertiary",
+    "residential",
+    "living_street",
+    "unclassified",
+    "unknown"
+  ],
+  "policy": "exclude all service/alleys/driveways and nonmotor classes; retain link ramps; retain carriageways; access restrictions not yet applied",
+  "acceptance": "candidate only: unknown/access policies, physical arm duplication and consolidation unresolved"
+}

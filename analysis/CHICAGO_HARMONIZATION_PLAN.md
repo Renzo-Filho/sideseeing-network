@@ -1,5 +1,11 @@
 # São Paulo–Chicago attribute harmonization plan
 
+## September 16 continuation: new data processed
+
+The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.
+
+Matched Overture `2026-08-19.0` buildings for Chicago and road segments/connectors for both cities have also been acquired; paired candidate reviews are separate from the frozen releases. The older missing-data statements below describe the original v1 baseline. Current pending work concerns business-use jobs sensitivity, common morphology/entity definitions, paired SP companions and acceptance—not absence of blocks, bus schedules or workplace data.
+
 **Status (16 September 2026): local Chicago attribute baseline completed and validated; strict cross-city acceptance and rankings remain pending.** See the current [data requirements](CHICAGO_DATA_REQUIREMENTS.md), [Chicago attribute documentation](CHICAGO_ATTRIBUTE_DOCUMENTATION.md) and [execution report](CHICAGO_EXECUTION_REPORT.md). The corrected [SP model v2](results/SP/models/sp_urban_model_v2/README.md) and [revalidation](SP_MODEL_FIXES.md) provide the reference calculations. This plan defines how to make the measurements comparable before comparing Brás with Chicago Community Areas.
 
 The objective is comparable urban form and functional structure, not a convenient match between column names. Preserve the original SP attributes and v2 model. Any new shared measurement produces a separately versioned **harmonized SP–Chicago dataset**, including recomputed SP attributes where definitions change.

@@ -1,5 +1,7 @@
 # Copy-ready continuation prompt
 
+> **Latest continuation:** Read [CHICAGO_FUNCTIONAL_EXTENSION.md](CHICAGO_FUNCTIONAL_EXTENSION.md) first. The user added and we processed blocks/population, LODES, CTA GTFS and hydrography. Release `chi_functional_2026_09_16_v2` passed 163 independent checks; 41 repository tests pass. Matched Overture roads/connectors for both cities and Chicago buildings have been acquired. Original missing-input claims below are historical. Do not reacquire supplied functional data or rerun v1. Next review the new functional/source manifests and `overture_2026_08_19_review_v1` candidates, then resolve business-use weighting, common physical geometry, cadastral/use definitions and paired SP acceptance. No ranks are authorized by numerical completeness alone.
+
 Act as a senior Spatial Data Engineer, GIS Analyst and Data Science Engineer. Continue the existing São Paulo–Chicago urban similarity research in this repository. Read the project evidence before changing definitions. Implement, acquire data, validate and document the remaining attribute work; do not stop after restating a plan.
 
 ## Objective and current boundary

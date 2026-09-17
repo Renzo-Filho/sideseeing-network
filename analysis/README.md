@@ -1,6 +1,8 @@
 # Analysis workspace — start here
 
-## Chicago local attribute construction (September 2026)
+## Chicago attribute construction (September 2026)
+
+New: [functional extension and matched-source work](CHICAGO_FUNCTIONAL_EXTENSION.md) · [functional release](results/Chicago/chi_functional_2026_09_16_v2/README.md).
 
 **Continue in a new chat:** copy the complete [NEXT_AGENT_PROMPT.md](NEXT_AGENT_PROMPT.md).
 

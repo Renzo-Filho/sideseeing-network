@@ -1,5 +1,7 @@
 # Chicago results
 
-The current local-source release is [chi_local_2026_09_16_v1](chi_local_2026_09_16_v1/README.md). It contains 77 Community Area rows, descriptive/provisional attributes and explicit missing-family values. **It is not an accepted cross-city model input.**
+- [Functional extension](chi_functional_2026_09_16_v2/README.md): population/jobs, six bus-service scenarios and hydrography diagnostics; 163 independent checks passed.
+- [Matched-source review](overture_2026_08_19_review_v1/README.md): candidate common road measures and footprint pilots; not accepted morphology.
+- [Original local baseline](chi_local_2026_09_16_v1/README.md): preserved historical municipal construction.
 
-Start with [data requirements](../../CHICAGO_DATA_REQUIREMENTS.md), [attribute definitions](../../CHICAGO_ATTRIBUTE_DOCUMENTATION.md) and [execution report](../../CHICAGO_EXECUTION_REPORT.md). SP releases remain separate and unchanged.
+**None is an accepted cross-city model matrix.** See the [current methods and continuation](../../CHICAGO_FUNCTIONAL_EXTENSION.md). SP releases remain separate and unchanged.

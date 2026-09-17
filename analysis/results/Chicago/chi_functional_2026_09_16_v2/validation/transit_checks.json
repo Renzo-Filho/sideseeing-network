@@ -1,0 +1,45 @@
+{
+  "bus_routes": 124,
+  "bus_trips": 91196,
+  "all_stops": 11138,
+  "stop_time_rows": 5920320,
+  "bus_stop_time_rows": 5787775,
+  "max_departure_seconds": 91800,
+  "invalid_references": 0,
+  "invalid_times": 0,
+  "duplicate_sequences": 0,
+  "nonmonotonic_times": 0,
+  "trips_without_times": 0,
+  "calendar_range": [
+    "20260911",
+    "20261130"
+  ],
+  "exceptions_applied": true,
+  "frequency_rows": 0,
+  "windows": [
+    {
+      "label": "weekday_am",
+      "date": "2026-09-16",
+      "start": 25200,
+      "end": 32400
+    },
+    {
+      "label": "saturday_am",
+      "date": "2026-09-19",
+      "start": 32400,
+      "end": 39600
+    },
+    {
+      "label": "sunday_am",
+      "date": "2026-09-20",
+      "start": 32400,
+      "end": 39600
+    }
+  ],
+  "scheduled_stop_calls": {
+    "saturday_am": 100950,
+    "sunday_am": 89597,
+    "weekday_am": 148915
+  },
+  "pickup_policy": "pickup_type=1 excluded; conditional pickup types retained if present"
+}

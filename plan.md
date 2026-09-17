@@ -2,6 +2,8 @@
 
 ## Chicago construction status — September 16, 2026
 
+The [functional extension](analysis/CHICAGO_FUNCTIONAL_EXTENSION.md) now constructs U2/U3/U4 from the new supplied data and reviews hydrography. Matched Overture sources have been acquired for paired morphology work; common-feature acceptance remains pending.
+
 Local Chicago construction and remaining measurement gates are tracked in [analysis/CHICAGO_EXECUTION_REPORT.md](analysis/CHICAGO_EXECUTION_REPORT.md) and [data requirements](analysis/CHICAGO_DATA_REQUIREMENTS.md). Local arithmetic checks alone do not make the attributes ready for cross-city ranking.
 
 

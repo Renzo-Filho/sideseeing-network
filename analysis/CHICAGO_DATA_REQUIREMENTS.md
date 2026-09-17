@@ -1,5 +1,11 @@
 # Chicago data requirements and readiness
 
+## September 16 continuation: new data processed
+
+The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.
+
+Matched Overture `2026-08-19.0` buildings for Chicago and road segments/connectors for both cities have also been acquired; paired candidate reviews are separate from the frozen releases. The older missing-data statements below describe the original v1 baseline. Current pending work concerns business-use jobs sensitivity, common morphology/entity definitions, paired SP companions and acceptance—not absence of blocks, bus schedules or workplace data.
+
 Updated 16 September 2026. This document supersedes the pre-addition local inventory in the harmonization plan. The current construction target is `chi_local_2026_09_16_v1`: a **Chicago local-source baseline**, not an accepted SP–Chicago feature matrix. Original SP attributes and model v2 remain frozen.
 
 ## What the new files resolve
