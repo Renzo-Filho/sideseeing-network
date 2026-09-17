@@ -21,3 +21,11 @@ Attribute construction is complete; a primary SP similarity model has been imple
 [SP model validation](docs/archive/audits/SP_MODEL_VALIDATION.md) — reproduced baseline ranking, identified defects and remaining acceptance work.
 
 [Corrected SP model](docs/sp/SP_MODEL_FIXES.md) · [Chicago harmonization plan](docs/chicago/CHICAGO_HARMONIZATION_PLAN.md).
+
+## Development
+
+Use Python 3.12. `pyproject.toml` declares the project dependencies; `analysis/requirements.txt` records the exact tested environment used by the published releases. Run the repository tests with:
+
+```bash
+.venv/bin/python -m unittest discover -s analysis/tests -v
+```
