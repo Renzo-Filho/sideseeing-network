@@ -26,7 +26,7 @@ A read-only inspection of `analysis/data/Chicago` on 15 September 2026 found:
 
 At that earlier inspection, no complete Chicago building, physical-parcel, road-network, fine-scale population/job geography or GTFS source was found in this folder. **This absence statement is now superseded by the updated data requirements: municipal buildings, centerlines and observed land use have been supplied.** Presence of aggregate population or zoning does not make U1/U3/U4 complete.
 
-The exploratory `scripts/chi_01_fetch_boundaries.py` duplicates an already supplied boundary source, writes to a working-directory-dependent `../data/CHI/raw` location, and does not create its target directory. Do not run it as the Chicago pipeline. Replace or refactor it during acquisition to use repository-root paths, checksums, count verification and explicit failures. The existing local files should be profiled before any replacement download.
+The former exploratory boundary-fetch script duplicated an already supplied source and wrote to a working-directory-dependent `../data/CHI/raw` location. It was removed after the validated Chicago pipeline superseded it; the historical version remains available in Git history. Current acquisition must use repository-root paths, checksums, count verification and explicit failures. Existing local files should be profiled before any replacement download.
 
 ## 2. Geographic and temporal contract
 
