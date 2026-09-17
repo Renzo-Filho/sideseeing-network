@@ -10,4 +10,4 @@
 
 CSV is for inspection; Parquet preserves types for code. GeoPackage is for maps. Validation JSON is audit evidence, not another feature table. Prepared per-building/road/block data live only in `analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/`.
 
-M1/M6/B1/B2/U1 are local-source alternatives, U3 is provisional pending ACS provenance, and M3/M4 are experimental enclosures. M2/M7/B3/U2/U4 are null with reasons. All strict cross-city acceptance flags are false. Read [full definitions](../../../CHICAGO_ATTRIBUTE_DOCUMENTATION.md) and [requirements](../../../CHICAGO_DATA_REQUIREMENTS.md) before selecting features.
+M1/M6/B1/B2/U1 are local-source alternatives, U3 is provisional pending ACS provenance, and M3/M4 are experimental enclosures. M2/M7/B3/U2/U4 are null with reasons. All strict cross-city acceptance flags are false. Read [full definitions](../../../../docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md) and [requirements](../../../../docs/chicago/CHICAGO_DATA_REQUIREMENTS.md) before selecting features.

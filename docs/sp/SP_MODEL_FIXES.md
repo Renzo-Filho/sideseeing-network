@@ -1,6 +1,6 @@
 # SP model corrections and revalidation — 15 September 2026
 
-**The reported implementation defects have been fixed.** The corrected release is [sp_urban_model_v2](results/SP/models/sp_urban_model_v2/README.md). It preserves the original v1 primary ranking while adding input contracts, reusable fitted state, provenance and the missing sensitivity experiments. The original v1 outputs remain unchanged.
+**The reported implementation defects have been fixed.** The corrected release is [sp_urban_model_v2](../../analysis/results/SP/models/sp_urban_model_v2/README.md). It preserves the original v1 primary ranking while adding input contracts, reusable fitted state, provenance and the missing sensitivity experiments. The original v1 outputs remain unchanged.
 
 ## Corrections completed
 
@@ -45,7 +45,7 @@ The notebook's stale rendered outputs were cleared after the code edits. Both it
 
 M2 0/10/20 m variants and every U2 allocation alternative retain the primary top 10, although individual ranks/distances can shift. Observed-only M6 and gross-area B1 also retain those ten. Land-area U1 entropy retains eight, and two U4 variants retain nine. These are sensitivity findings, not validation of the underlying employment allocations or road classes.
 
-Nine districts are in the top 10 in at least 80% of the 500 weight perturbations: Belém, Bom Retiro, Cambuci, Pinheiros, Mooca, Tatuapé, Liberdade, Lapa and Vila Mariana. The threshold is prespecified and the frequency is conditional on this designed weight range; it is not a statistical probability of true urban equivalence. See [all scenario comparisons](results/SP/models/sp_urban_model_v2/tables/scenario_summary.csv) and [weight frequencies](results/SP/models/sp_urban_model_v2/tables/weight_stability.csv).
+Nine districts are in the top 10 in at least 80% of the 500 weight perturbations: Belém, Bom Retiro, Cambuci, Pinheiros, Mooca, Tatuapé, Liberdade, Lapa and Vila Mariana. The threshold is prespecified and the frequency is conditional on this designed weight range; it is not a statistical probability of true urban equivalence. See [all scenario comparisons](../../analysis/results/SP/models/sp_urban_model_v2/tables/scenario_summary.csv) and [weight frequencies](../../analysis/results/SP/models/sp_urban_model_v2/tables/weight_stability.csv).
 
 ## Remaining scientific limits
 
@@ -53,8 +53,8 @@ The corrected SP model is ready to serve as the **reference implementation for h
 
 ## Files and reproduction
 
-- [Model report](results/SP/models/sp_urban_model_v2/reports/MODEL_REPORT.md), [ranking](results/SP/models/sp_urban_model_v2/tables/bras_ranking.csv), [correct PCA loadings](results/SP/models/sp_urban_model_v2/tables/pca_loadings.csv).
-- [Configuration](config/sp_urban_model_v2.json), [CLI](scripts/model_sp_urban_similarity.py), [model tests](tests/test_sp_model.py), [independent audit](scripts/validate_sp_urban_model.py).
+- [Model report](../../analysis/results/SP/models/sp_urban_model_v2/reports/MODEL_REPORT.md), [ranking](../../analysis/results/SP/models/sp_urban_model_v2/tables/bras_ranking.csv), [correct PCA loadings](../../analysis/results/SP/models/sp_urban_model_v2/tables/pca_loadings.csv).
+- [Configuration](../../analysis/config/sp_urban_model_v2.json), [CLI](../../analysis/scripts/model_sp_urban_similarity.py), [model tests](../../analysis/tests/test_sp_model.py), [independent audit](../../analysis/scripts/validate_sp_urban_model.py).
 - Local audit: `work/reviews/sp_model_validation_2026_09_15_v2/audit.json`; original failed audit remains under the original dated directory.
 - Full fitted states, source/code/output hashes and scenario configurations: `work/runs/sp_urban_model_v2/` (local working data).
 

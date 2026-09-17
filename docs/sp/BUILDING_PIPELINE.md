@@ -9,7 +9,7 @@ This pipeline extracts Overture building polygons intersecting the bounding box 
 From the repository root, with a Python virtual environment:
 
 ```bash
-python -m pip install -r analysis/notes/requirements-buildings.txt
+python -m pip install -r analysis/requirements-buildings.txt
 python analysis/scripts/prepare_overture_sp.py
 python analysis/scripts/extract_sao_paulo_buildings.py --self-test
 python analysis/scripts/extract_sao_paulo_buildings.py

@@ -1,6 +1,6 @@
 # São Paulo urban model — independent validation
 
-> **Revalidation update:** the issues below were corrected in `sp_urban_model_v2`. All 26 independent audit checks and 30 automated tests now pass; 577 sensitivity scenarios completed. See [corrections and results](SP_MODEL_FIXES.md) and the [Chicago harmonization plan](CHICAGO_HARMONIZATION_PLAN.md). The original findings below remain as the historical audit record.
+> **Revalidation update:** the issues below were corrected in `sp_urban_model_v2`. All 26 independent audit checks and 30 automated tests now pass; 577 sensitivity scenarios completed. See [corrections and results](../../sp/SP_MODEL_FIXES.md) and the [Chicago harmonization plan](../../chicago/CHICAGO_HARMONIZATION_PLAN.md). The original findings below remain as the historical audit record.
 
 Reviewed **15 September 2026** against `URBAN_MODEL_IMPLEMENTATION_PLAN.md` and the released attributes. Reviewed both `model_analysis.ipynb` and the currently edited `model_analysis.py`, the CLI and `sp_model` modules, configuration, fitted parameters and saved rankings.
 
@@ -55,7 +55,7 @@ This verifies arithmetic for the chosen assumptions, not that these are objectiv
 
 Correct PC1 largest absolute coefficients include street density −0.427589, cadastral parcel density −0.402294, population density −0.390905, intersection density −0.385484 and floor-area density −0.363223. Correct PC2 largest absolute coefficients include land-use entropy −0.547550, floor P90 −0.362690 and formal-job density −0.322692. PCA signs may flip under an equivalent decomposition; feature labels must not.
 
-Evidence: [label-by-position audit](work/reviews/sp_model_validation_2026_09_15/pca_loading_label_audit.csv) and [correctly labeled loadings](work/reviews/sp_model_validation_2026_09_15/corrected_pca_loadings.csv).
+Evidence: [label-by-position audit](../../../analysis/work/reviews/sp_model_validation_2026_09_15/pca_loading_label_audit.csv) and [correctly labeled loadings](../../../analysis/work/reviews/sp_model_validation_2026_09_15/corrected_pca_loadings.csv).
 
 ### F2 — High: the CLI fails in the current project environment
 
@@ -167,4 +167,4 @@ The targeted audit records **17 passing checks and 8 failing checks**. The separ
 | Displayed radar range contains plotted values | PASS |
 | Reviewed code and published inputs/outputs unchanged | PASS |
 
-[Machine-readable audit and reviewed hashes](work/reviews/sp_model_validation_2026_09_15/audit.json), [CLI import traceback](work/reviews/sp_model_validation_2026_09_15/cli_import.log), and [independent ranking](work/reviews/sp_model_validation_2026_09_15/independent_bras_ranking.csv). The working evidence is intentionally local/ignored; this report and audit code preserve the findings for continuation.
+[Machine-readable audit and reviewed hashes](../../../analysis/work/reviews/sp_model_validation_2026_09_15/audit.json), [CLI import traceback](../../../analysis/work/reviews/sp_model_validation_2026_09_15/cli_import.log), and [independent ranking](../../../analysis/work/reviews/sp_model_validation_2026_09_15/independent_bras_ranking.csv). The working evidence is intentionally local/ignored; this report and audit code preserve the findings for continuation.

@@ -52,7 +52,7 @@ For each of the seven selected source codes, divide its assigned in-district len
 
 `scripts/audit_chicago_road_topology.py` preserves each single-part source line's coordinate direction, pairs its start/end with `fnode_id`/`tnode_id` and endpoint level, and counts incident arms per `(node ID, level)`. Exactly duplicated geometry has already been removed. Groups with three or more arms are candidates; zero/empty node IDs are excluded. Points intersecting multiple districts are assigned to the lowest ID, and outside-city candidates are kept in the audit residual.
 
-The supplied selected network has 35,873 node/level groups, with zero coordinate spread within each group. It yields 24,846 candidates: 24,652 inside Chicago and 194 outside. [The supplementary table](results/Chicago/chi_local_2026_09_16_v1/tables/m2_endpoint_candidates.csv) provides counts and gross-area densities for review. It is deliberately separate from the main feature matrix: incident-arm counts have not yet passed divided-road/ramp or common SP-definition tests. The principal M2 value remains unavailable.
+The supplied selected network has 35,873 node/level groups, with zero coordinate spread within each group. It yields 24,846 candidates: 24,652 inside Chicago and 194 outside. [The supplementary table](../../analysis/results/Chicago/chi_local_2026_09_16_v1/tables/m2_endpoint_candidates.csv) provides counts and gross-area densities for review. It is deliberately separate from the main feature matrix: incident-arm counts have not yet passed divided-road/ramp or common SP-definition tests. The principal M2 value remains unavailable.
 
 ## M3/M4: experimental planar enclosures
 

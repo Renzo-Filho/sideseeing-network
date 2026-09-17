@@ -1,6 +1,6 @@
 # Copy-ready continuation prompt
 
-> **Latest continuation:** Read [CHICAGO_FUNCTIONAL_EXTENSION.md](CHICAGO_FUNCTIONAL_EXTENSION.md) first. The user added and we processed blocks/population, LODES, CTA GTFS and hydrography. Release `chi_functional_2026_09_16_v2` passed 163 independent checks; 41 repository tests pass. Matched Overture roads/connectors for both cities and Chicago buildings have been acquired. Original missing-input claims below are historical. Do not reacquire supplied functional data or rerun v1. Next review the new functional/source manifests and `overture_2026_08_19_review_v1` candidates, then resolve business-use weighting, common physical geometry, cadastral/use definitions and paired SP acceptance. No ranks are authorized by numerical completeness alone.
+> **Latest continuation:** Read [CHICAGO_FUNCTIONAL_EXTENSION.md](../chicago/CHICAGO_FUNCTIONAL_EXTENSION.md) first. The user added and we processed blocks/population, LODES, CTA GTFS and hydrography. Release `chi_functional_2026_09_16_v2` passed 163 independent checks; 41 repository tests pass. Matched Overture roads/connectors for both cities and Chicago buildings have been acquired. Original missing-input claims below are historical. Do not reacquire supplied functional data or rerun v1. Next review the new functional/source manifests and `overture_2026_08_19_review_v1` candidates, then resolve business-use weighting, common physical geometry, cadastral/use definitions and paired SP acceptance. No ranks are authorized by numerical completeness alone.
 
 Act as a senior Spatial Data Engineer, GIS Analyst and Data Science Engineer. Continue the existing São Paulo–Chicago urban similarity research in this repository. Read the project evidence before changing definitions. Implement, acquire data, validate and document the remaining attribute work; do not stop after restating a plan.
 
@@ -23,13 +23,13 @@ The working tree contains earlier SP corrections and new Chicago work that were 
 
 ## Read first, in this order
 
-1. `analysis/CHICAGO_EXECUTION_REPORT.md` — completed tasks, issues/causes/treatments, exact validation findings and continuation instructions.
-2. `analysis/CHICAGO_DATA_REQUIREMENTS.md` — current source inventory, missing inputs, acceptance gates and official references.
-3. `analysis/CHICAGO_ATTRIBUTE_DOCUMENTATION.md` — actual local formulas and exclusions.
-4. `analysis/CHICAGO_HARMONIZATION_PLAN.md` — full shared-feature protocol, paired SP recomputation and model policy. Its original September 15 inventory is explicitly historical; the requirements document supersedes it.
+1. `docs/chicago/CHICAGO_EXECUTION_REPORT.md` — completed tasks, issues/causes/treatments, exact validation findings and continuation instructions.
+2. `docs/chicago/CHICAGO_DATA_REQUIREMENTS.md` — current source inventory, missing inputs, acceptance gates and official references.
+3. `docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md` — actual local formulas and exclusions.
+4. `docs/chicago/CHICAGO_HARMONIZATION_PLAN.md` — full shared-feature protocol, paired SP recomputation and model policy. Its original September 15 inventory is explicitly historical; the requirements document supersedes it.
 5. `analysis/README.md` and `plan.md` — project navigation and research objectives.
-6. `analysis/ATTRIBUTE_DOCUMENTATION.md` — frozen **SP** definitions, not Chicago definitions.
-7. `analysis/SP_MODEL_FIXES.md` and `analysis/URBAN_MODEL_IMPLEMENTATION_PLAN.md` — corrected SP mathematics and modeling protocol. `SP_MODEL_VALIDATION.md` preserves the original failed review with a resolved-status notice; do not confuse that historical failure with the corrected v2 result.
+6. `docs/sp/ATTRIBUTE_DOCUMENTATION.md` — frozen **SP** definitions, not Chicago definitions.
+7. `docs/sp/SP_MODEL_FIXES.md` and `docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md` — corrected SP mathematics and modeling protocol. `docs/archive/audits/SP_MODEL_VALIDATION.md` preserves the original failed review with a resolved-status notice; do not confuse that historical failure with the corrected v2 result.
 
 Read selectively after these entry points. Avoid dumping huge files or repeating completed full-city processing just to rediscover the current state.
 

@@ -2,7 +2,7 @@
 
 Version 3 — 10 September 2026. Current methods for 13 active families: M1–M4, M6–M7, B1–B3 and U1–U4. M5 and U5 remain removed. Pair this specification with `SP_DATA_RESOLUTION_HANDOFF.md` for observed data quality and completed work.
 
-**Execution boundary:** N10 was authorized and completed on 11 September 2026. All 96 districts have 77 numeric attributes/diagnostics/sensitivities across 13 families, with 23 primary candidate columns. U2 uses area-first allocation with unlocated jobs retained separately. M2/M6 use approved overlays. See the [construction report](../outputs/sp_attributes/sp_attributes_2026_09_11_v1/REPORT.md), current handoff and attribute dictionary. N11 fitting/ranking has not started.
+**Execution boundary:** N10 was authorized and completed on 11 September 2026. All 96 districts have 77 numeric attributes/diagnostics/sensitivities across 13 families, with 23 primary candidate columns. U2 uses area-first allocation with unlocated jobs retained separately. M2/M6 use approved overlays. See the [construction report](../../../analysis/outputs/sp_attributes/sp_attributes_2026_09_11_v1/REPORT.md), current handoff and attribute dictionary. N11 fitting/ranking has not started.
 
 **Baseline protection:** use `analysis/scripts/prepare_sp_v3.py` with `analysis/config/sp_preparation_v3.json`. The runner freezes raw/config hashes, checks output checkpoints and preserves the historical `sp_prep_2026_09_09_v2` baseline. Never run the old hard-coded v2 entry point against the expanded source folder. If inputs or frozen configuration change, create a new run ID.
 
@@ -224,7 +224,7 @@ Test fixtures should include: a square/rectangle block, a T-junction, a planar o
 
 ## 6. Next implementation sequence and deliverables
 
-The detailed N11 specification is now in [URBAN_MODEL_IMPLEMENTATION_PLAN.md](../URBAN_MODEL_IMPLEMENTATION_PLAN.md). Its proposed preprocessing, family distance, robustness protocol and implementation stages govern future model work; N11 remains unexecuted.
+The detailed N11 specification is now in [URBAN_MODEL_IMPLEMENTATION_PLAN.md](URBAN_MODEL_IMPLEMENTATION_PLAN.md). Its proposed preprocessing, family distance, robustness protocol and implementation stages govern future model work; N11 remains unexecuted.
 
 N01–N08 implement preparation; N09 audits it. Execution details and acceptance status are in the current handoff and `sp_prep_2026_09_10_v3/progress.json`. N05 produced unresolved crossing candidates, not accepted physical junctions. N07 conserved all exported job mass but located only 59.29%; it did not pass the 95% job-mass gate. The table below remains the work specification, not a claim that every acceptance criterion passed.
 

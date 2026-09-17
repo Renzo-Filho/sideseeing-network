@@ -26,4 +26,4 @@ Both versions are needed by the completed attribute run. Do not delete v2 merely
 
 The v2 folders use older descriptive names: `01_districts`, `02_parcels_tax`, `03_streets`, plus review, logs and run metadata. They remain frozen rather than being reorganized internally, because hashes, partition paths and later pipelines depend on them.
 
-Parquet contains prepared records; JSON contains provenance, assumptions and checks. For a human account of acceptance and limitations, read the [handoff](../../notes/SP_DATA_RESOLUTION_HANDOFF.md). Existing `analysis/processed/...` references resolve here through a compatibility link.
+Parquet contains prepared records; JSON contains provenance, assumptions and checks. For a human account of acceptance and limitations, read the [handoff](../../../docs/sp/SP_DATA_RESOLUTION_HANDOFF.md). Existing `analysis/processed/...` references resolve here through a compatibility link.

@@ -2,12 +2,12 @@
 
 ## Chicago documentation
 
-This document continues to describe the frozen **SP** release. For Chicago, use [CHICAGO_ATTRIBUTE_DOCUMENTATION.md](CHICAGO_ATTRIBUTE_DOCUMENTATION.md); its local-source definitions and acceptance statuses differ.
+This document continues to describe the frozen **SP** release. For Chicago, use [CHICAGO_ATTRIBUTE_DOCUMENTATION.md](../chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md); its local-source definitions and acceptance statuses differ.
 
 
 This document describes the **implemented** release `sp_attributes_2026_09_11_v1`: 96 municipal districts, 13 families, 23 primary candidate columns and 77 total columns. M5 and U5 were removed. It covers inputs, source processing, formulas, interpretation and limitations. No similarity model has been fitted.
 
-Start with the [primary table](results/SP/tables/attributes_primary.csv), [full table](results/SP/tables/attributes_wide.csv), and [long table with provenance](results/SP/tables/attributes_long.parquet). Every exact output-column name is listed in the catalogue at the end. The [construction report](results/SP/reports/ATTRIBUTE_REPORT.md) records execution and validation; the [method decisions](notes/SP_METHOD_DECISIONS.md) explain the M2/M6/U2 experiments.
+Start with the [primary table](../../analysis/results/SP/tables/attributes_primary.csv), [full table](../../analysis/results/SP/tables/attributes_wide.csv), and [long table with provenance](../../analysis/results/SP/tables/attributes_long.parquet). Every exact output-column name is listed in the catalogue at the end. The [construction report](../../analysis/results/SP/reports/ATTRIBUTE_REPORT.md) records execution and validation; the [method decisions](SP_METHOD_DECISIONS.md) explain the M2/M6/U2 experiments.
 
 ## 1. Shared definitions and processing
 
@@ -28,7 +28,7 @@ District preparation repairs geometries, assigns small inter-district overlaps t
 
 ### Inputs and lineage
 
-Paths below are relative to `analysis/`. `V3` means [work/prepared/SP/sp_prep_2026_09_10_v3](work/prepared/SP/sp_prep_2026_09_10_v3); `V2` means [work/prepared/SP/sp_prep_2026_09_09_v2](work/prepared/SP/sp_prep_2026_09_09_v2). Prepared records are intermediate inputs, not observed final district attributes.
+Paths below are relative to `analysis/`. `V3` means [work/prepared/SP/sp_prep_2026_09_10_v3](../../analysis/work/prepared/SP/sp_prep_2026_09_10_v3); `V2` means [work/prepared/SP/sp_prep_2026_09_09_v2](../../analysis/work/prepared/SP/sp_prep_2026_09_09_v2). Prepared records are intermediate inputs, not observed final district attributes.
 
 | Source | Processing and prepared input | Families |
 |---|---|---|
@@ -42,7 +42,7 @@ Paths below are relative to `analysis/`. `V3` means [work/prepared/SP/sp_prep_20
 | Census 2022 sectors and population | Unique sector records and district intersection-area allocation; `V3/N07/census_sectors.parquet`, `census_district_allocation.parquet` | U3/U4 |
 | Supplied bus GTFS | Validated keys, calendars, times/frequencies and expected stop departures; `V3/N08/stops.parquet`, `stop_route_service.parquet` | U4 |
 
-The [frozen source manifest](work/prepared/SP/sp_prep_2026_09_10_v3/N01/manifest.json) identifies exact raw paths and hashes. It is not a complete licensing catalogue. The [attribute configuration](config/sp_attributes_2026_09_11.json) binds methods; old `outputs`/`processed` paths still resolve through compatibility links. Mixed source years are intentional and must not be interpreted as one simultaneous city snapshot. Structures largely reference 2004; the GTFS scenario dates do not prove feed observation date. Source periods not established are recorded as mixed vintage rather than invented.
+The [frozen source manifest](../../analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N01/manifest.json) identifies exact raw paths and hashes. It is not a complete licensing catalogue. The [attribute configuration](../../analysis/config/sp_attributes_2026_09_11.json) binds methods; old `outputs`/`processed` paths still resolve through compatibility links. Mixed source years are intentional and must not be interpreted as one simultaneous city snapshot. Structures largely reference 2004; the GTFS scenario dates do not prove feed observation date. Source periods not established are recorded as mixed vintage rather than invented.
 
 ### Shared cadastral preparation
 
@@ -403,12 +403,12 @@ This catalogue is generated from the released dictionary and includes **every on
 
 ## 17. Reproduction references
 
-- [Construction entry point](scripts/construct_sp_attributes.py): pilot-first execution, validation and exports.
-- [Tabular calculations](scripts/sp_attributes/tabular.py): M1/M2/M3/M4/M6/M7/B2/B3/U1/U2/U3.
-- [Spatial calculations](scripts/sp_attributes/spatial.py): B1 unions and U4 population/service integration.
-- [Shared formulas and metadata](scripts/sp_attributes/core.py): quantification conventions and metadata defaults.
-- [U2 experiments](scripts/experiment_sp_allocations.py): CEP weighting and scenario construction.
-- [Release review](scripts/review_sp_attribute_release.py) and [synthetic tests](tests/test_sp_attributes.py).
-- [Workspace architecture](README.md) and [result navigation](results/SP/README.md).
+- [Construction entry point](../../analysis/scripts/construct_sp_attributes.py): pilot-first execution, validation and exports.
+- [Tabular calculations](../../analysis/scripts/sp_attributes/tabular.py): M1/M2/M3/M4/M6/M7/B2/B3/U1/U2/U3.
+- [Spatial calculations](../../analysis/scripts/sp_attributes/spatial.py): B1 unions and U4 population/service integration.
+- [Shared formulas and metadata](../../analysis/scripts/sp_attributes/core.py): quantification conventions and metadata defaults.
+- [U2 experiments](../../analysis/scripts/experiment_sp_allocations.py): CEP weighting and scenario construction.
+- [Release review](../../analysis/scripts/review_sp_attribute_release.py) and [synthetic tests](../../analysis/tests/test_sp_attributes.py).
+- [Workspace architecture](README.md) and [result navigation](../../analysis/results/SP/README.md).
 
-The release and its frozen inputs were not changed to produce this documentation. The canonical file is `analysis/ATTRIBUTE_DOCUMENTATION.md`, beside the analysis README. Historical source and output paths in code remain supported by compatibility links.
+The release and its frozen inputs were not changed to produce this documentation. This file is the canonical SP attribute reference. Historical source and output paths in code remain supported by compatibility links.

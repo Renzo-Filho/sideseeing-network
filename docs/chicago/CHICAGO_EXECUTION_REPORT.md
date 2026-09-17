@@ -50,7 +50,7 @@ Current definitions and source gates are in [CHICAGO_ATTRIBUTE_DOCUMENTATION.md]
 
 ## Generated artifacts
 
-Start with the [Chicago release README](results/Chicago/chi_local_2026_09_16_v1/README.md). It distinguishes feature tables, spatial output and validation evidence. Prepared per-object data stay under `work/prepared/Chicago/chi_local_2026_09_16_v1/`, which is ignored by Git. Published aggregates stay under `results/Chicago/chi_local_2026_09_16_v1/`.
+Start with the [Chicago release README](../../analysis/results/Chicago/chi_local_2026_09_16_v1/README.md). It distinguishes feature tables, spatial output and validation evidence. Prepared per-object data stay under `work/prepared/Chicago/chi_local_2026_09_16_v1/`, which is ignored by Git. Published aggregates stay under `results/Chicago/chi_local_2026_09_16_v1/`.
 
 The wide matrix preserves all 13 planned families structurally: M1/M6/B1/B2/U1 local measurements, U3 provisional density, M3/M4 experiments, and null M2/M7/B3/U2/U4 with explicit reasons. M5/U5 remain dropped. No common model-ready matrix is implied.
 

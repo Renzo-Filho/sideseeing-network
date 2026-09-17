@@ -2,7 +2,7 @@
 
 Population and workplace-job densities for all 77 Community Areas, six bus-service scenarios per area, and hydrographic denominator diagnostics. **163 independent checks pass; no cross-city model acceptance or rankings.**
 
-Start with [methods, sources and remaining work](../../../CHICAGO_FUNCTIONAL_EXTENSION.md).
+Start with [methods, sources and remaining work](../../../../docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md).
 
 - `tables/attributes_wide.csv` / `.parquet`: 77 units, eight functional features.
 - `tables/attributes_long.csv` / `.parquet`: 616 values with numerator, denominator, units, periods and quality flags.
