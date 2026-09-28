@@ -1,0 +1,30 @@
+{
+  "contract_version": "sp_chicago_harmonization_v2_full_scope_review",
+  "status": "scope_preserved_measurement_gates_open",
+  "target_units": {"SP": 96, "CHI": 77},
+  "target_family_ids": ["M1", "M2", "M3", "M4", "M6", "M7", "B1", "B2", "B3", "U1", "U2", "U3", "U4"],
+  "supplemental_family_ids": ["BV"],
+  "accepted_family_ids": [],
+  "fit_authorized": false,
+  "fit_rule": "Fit transformations, scales and family calibration on harmonized SP only; apply saved state unchanged to Chicago after all required family gates pass.",
+  "missing_rule": "No zeros, pairwise deletion, height-to-floors, or volume-to-floor-area substitution.",
+  "microsoft_global_ml_buildings": {
+    "release": "2026-08-13",
+    "status": "paired_eight_unit_pilot_complete_diagnostic_only_not_accepted_as_model_input",
+    "role": ["B1 source sensitivity", "footprint mapping completeness diagnostic"],
+    "cannot_resolve": ["M7 physical cadastral entities", "B2 reported floors", "B3 fiscal constructed floor area"],
+    "index_audit": "analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review/links_audit.json",
+    "tile_manifest": "analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review/selected_tiles.csv",
+    "organized_inventory": "analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review/organized_inventory.json",
+    "paired_pilot": "analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review/pilot/paired_microsoft_pilot.csv",
+    "height_finding": "All 2035929 records in the selected SP files report height=-1; no paired building-height sensitivity is supported by this release.",
+    "primary_B1_source": "Retain matched Overture 2026-08-19.0; Microsoft pilot differences are large and uneven in SP, especially Bras.",
+    "gates": ["Full 173-unit B1 source comparison only if a concrete alternative-source decision is needed", "Independent local reference checks for footprint accuracy and mapping completeness", "Do not use Microsoft height as paired BV without SP positive-height support"]
+  },
+  "historical_artifacts": [
+    "analysis/config/sp_chicago_harmonization_v1.json",
+    "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3",
+    "analysis/results/SP_CHI/harmonization_2026_09_22_h4_review"
+  ],
+  "completion_ledger": "docs/chicago/CHICAGO_13_FAMILY_COMPLETION_LEDGER.md"
+}

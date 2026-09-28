@@ -1,0 +1,95 @@
+{
+  "contract_version": "sp_chicago_harmonization_v1_H1_H3_candidates",
+  "status": "H1_H3_candidate_construction_complete_H4_review_required",
+  "authorization": "User approved plan and requested documentation of all steps",
+  "reporting_units": {
+    "SP": 96,
+    "CHI": 77,
+    "target": "SP:10"
+  },
+  "preserve": [
+    "sp_urban_model_v2",
+    "chi_local_2026_09_16_v1",
+    "chi_functional_2026_09_16_v2"
+  ],
+  "excluded_families": [
+    "M7",
+    "B2",
+    "B3"
+  ],
+  "candidate_core": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M6",
+    "B1",
+    "U3",
+    "U4"
+  ],
+  "candidate_extensions": [
+    "BV",
+    "U1",
+    "U2"
+  ],
+  "accepted_families": [],
+  "fit": {
+    "reference": "all_96_harmonized_SP",
+    "apply_same_state_to": "CHI",
+    "family_weights": "equal",
+    "missing": "no_imputation_or_pairwise_deletion",
+    "rank_before_acceptance": false
+  },
+  "ghsl": {
+    "release": "R2023A/V1-0",
+    "crs": "ESRI:54009",
+    "cell_size_m": 100,
+    "height_epoch": 2018,
+    "volume_epoch": 2020,
+    "height_primary_candidate": "ANBH valid-land-area-weighted grid mean including observed zero; not building-weighted",
+    "height_support": "all valid native cells with positive district-land overlap; report zero and missing area separately",
+    "volume": "sum V * overlap_area/full_cell_area divided by full district land area; withhold density for missing support",
+    "partial_cells": "uniform within-cell allocation; gross support sensitivity",
+    "nodata": "per-file mask, never universal sentinel; AGBH header -1 differs from technical PDF 255",
+    "transforms": {
+      "height": "log1p",
+      "volume": "log1p"
+    },
+    "weights": "one BV family budget; ANBH primary candidate; volume-only alternative; joint sensitivity split equally",
+    "metadata_evidence": "GHSL Data Package 2023 sections 2.2.1, 2.2.4, 2.3; printed pp26,31,33",
+    "no_new_source_required_for_grid_mean": true
+  },
+  "pending_H0_gates": [
+    "H4 review of physical junction/block withholding and resulting common-set scope",
+    "H4 acceptance of source completeness, water support and temporal qualifications"
+  ],
+  "next_checkpoint": "H4 review of withheld physical junction/block families and reduced common-set scope; no fit until accepted",
+  "road_policy": {
+    "release": "2026-08-19.0",
+    "classes": [
+      "motorway",
+      "trunk",
+      "primary",
+      "secondary",
+      "tertiary",
+      "residential",
+      "living_street",
+      "pedestrian",
+      "unclassified",
+      "unknown"
+    ],
+    "scope": "mapped physical streets regardless of legal access; not public-access network",
+    "ramps_carriageways": "retained",
+    "service_alleys_driveways_nonstreet_paths": "excluded",
+    "unknown": "explicit composition component",
+    "M2": "source-connector incidence candidate only; consolidated physical junction gate unresolved",
+    "M3_M4": "whole planar enclosures assigned by largest overlap; extraction-edge exclusion; width<6m and area>1km2 diagnostics; not accepted physical blocks"
+  },
+  "land_policy": "gross reporting geometry minus supplied hydrography in both cities; gross sensitivities retained; different water vintages/completeness remain H4 qualification",
+  "functional_policy": {
+    "U1": "withheld; use domain/ontology not comparable",
+    "U2": "extended only; Chicago business-support sensitivity completed in v2 with bounded roundoff normalization; RAIS/LODES coverage differences persist",
+    "U3": "gross source-area allocated population, SP2022 vs CHI2020",
+    "U4": "route_type=3 in both; recomputed SP576scenarios to remove16nonbus routes from legacy source; paired six local-date scenarios; 250m origin-zero grid, representative support points, route/direction stop maxima"
+  }
+}
