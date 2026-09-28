@@ -1,5 +1,8 @@
 # SP model corrections and revalidation — 15 September 2026
 
+**September 22 scope correction:** H3 found that the legacy SP U4 source included nine metro and seven rail routes. The new harmonized companion explicitly filters bus routes and recomputes all 576 scenarios. Original SP v2 is preserved, but its U4 should not be described as bus-only. See [execution documentation](../chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md). The earlier computational checks below remain historical evidence, not validation of that mode filter.
+
+
 **The reported implementation defects have been fixed.** The corrected release is [sp_urban_model_v2](../../analysis/results/SP/models/sp_urban_model_v2/README.md). It preserves the original v1 primary ranking while adding input contracts, reusable fitted state, provenance and the missing sensitivity experiments. The original v1 outputs remain unchanged.
 
 ## Corrections completed
