@@ -1,0 +1,17 @@
+case_id,osm_name,overture_id,overture_name,distance_m,overture_confidence
+SP_10_osm_only,Shopping All Brás,339f069a-c24c-4de6-b508-82eae132b2d6,Christian Modas,1.1719679746858878,0.45446038246154785
+SP_10_osm_only,Shopping All Brás,ece6c2b0-f5de-4141-b80b-e156987a0f5b,CDP - ALB_Dessert,2.2637412661769916,0.8
+SP_10_osm_only,Shopping All Brás,1142184c-fbb2-44bc-a1da-5637a93e93e1,CJ Modas,6.2932021480754825,0.7150692343711853
+SP_10_osm_only,Shopping All Brás,f7e208d6-5ba2-4f48-855a-aed803a66c35,Sapo Verdealesia modas,7.682413233618945,0.45971816778182983
+SP_10_osm_only,Shopping All Brás,ce9b15d9-2904-4a75-94c6-b014cedb4622,Modas Polares,13.672548633032736,0.4288907051086426
+SP_10_osm_only,Shopping All Brás,3bd5928b-ffe2-4d03-887e-8c01912938d8,Yasmim Modas,14.312021613773572,0.550487756729126
+SP_10_osm_only,Shopping All Brás,236ef3a9-3b00-47b2-b885-37a2d268816b,Vestuário roupa infantil,14.320537132708147,0.49847733974456787
+SP_10_osm_only,Shopping All Brás,6f459e34-7238-4bfa-ab60-6582bc176c67,Mega Amei,18.674055324968116,0.43448692560195923
+CHI_32_osm_only,Do-Rite Donuts,4492130f-6f94-4b3f-99e1-a4ce2e474a5b,Tirdjiswisgu Kufondsirtgand,12.663387017598883,0.2057395726442337
+CHI_32_osm_only,Do-Rite Donuts,3a5c75c0-1572-471d-838a-c9ac42981950,Fifth Third Mortgage - Stephanie Chisti,17.20031781391239,0.85
+CHI_32_osm_only,Do-Rite Donuts,5da7cf14-87fe-4d89-bc83-cdf18b08b27e,Skydeck Chicago,17.846016935904103,0.9585862159729004
+CHI_32_osm_only,Do-Rite Donuts,b2bca16e-4541-4812-bedf-cba40d060023,Rosexpressions,19.888568165036514,0.85
+CHI_32_osm_only,Do-Rite Donuts,1da368b4-a50e-4c4c-a94a-a33254c57871,Digrovo Fricriftfe,21.835160103104116,0.20637059211730957
+CHI_32_osm_only,Do-Rite Donuts,ddb94b7c-4a96-44e5-8d4d-477bcdadcf89,Fospuglonggu Nucontsishu,25.096131857201215,0.20637059211730957
+CHI_32_osm_only,Do-Rite Donuts,5e868bb7-a6e0-45af-b035-2f54a5b8cc88,Film Connection Film Institute,25.756953571740226,0.9199122190475464
+CHI_32_osm_only,Do-Rite Donuts,7eddb58c-6727-4a91-bbc6-c051d936c0a1,Ninabowo Nadrathe,27.298477456989257,0.19763951003551483

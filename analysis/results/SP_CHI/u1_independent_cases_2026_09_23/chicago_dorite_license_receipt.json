@@ -1,0 +1,15 @@
+{
+  "queried_utc": "2026-09-23",
+  "source_url": "https://data.cityofchicago.org/resource/uupf-x98q.json?$select=doing_business_as_name,address,license_description,latitude,longitude,license_number&$where=community_area%3D32%20and%20upper(doing_business_as_name)%20like%20%27%25DO-RITE%25%27&$limit=20",
+  "records": [
+    {
+      "doing_business_as_name": "DO-RITE DONUTS & CHICKEN",
+      "address": "233 S WACKER DR 1 L1-18",
+      "license_description": "Retail Food Establishment",
+      "latitude": "41.8785601536",
+      "longitude": "-87.6365238721",
+      "license_number": "2684113"
+    }
+  ],
+  "note": "Live current-active view; record is independent administrative support for a covered venue, not a complete POI census."
+}

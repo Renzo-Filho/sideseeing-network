@@ -1,0 +1,7 @@
+unit_id,osm_tagged_objects,osm_pois,osm_named,overture_pois,overture_named,overture_destinations_12,overture_unclassified_12,osm_named_with_exact_name_30m,overture_named_with_exact_name_30m
+SP:10,52,45,18,280,280,257,23,7,7
+SP:02,0,0,0,17,17,16,1,0,0
+SP:95,0,0,0,50,50,47,3,0,0
+CHI:32,159,49,49,1135,1131,943,192,18,18
+CHI:14,5,2,2,10,10,10,0,0,0
+CHI:23,5,2,2,11,11,11,0,1,1

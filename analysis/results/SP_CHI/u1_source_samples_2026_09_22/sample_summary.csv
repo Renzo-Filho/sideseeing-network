@@ -1,0 +1,7 @@
+city,unit_id,district_name,source_polygons_in_unit_bbox,sampled_land_points,sampled_source_polygons,point_category_counts,mapped_source_points,unmapped_source_points,known_park_without_cadastral_points,overlap_conflict_points
+SP,SP:10,BRAS,7199,20,20,"{""commerce_services"": 4, ""industrial"": 2, ""mixed_other"": 2, ""residential"": 4, ""source_unclassified"": 1, ""unmapped_source"": 6, ""vacant"": 1}",14,6,0,0
+SP,SP:02,ALTO DE PINHEIROS,8629,20,20,"{""commerce_services"": 2, ""mapped_park_without_cadastral_use"": 1, ""mixed_other"": 1, ""residential"": 8, ""source_unclassified"": 2, ""unmapped_source"": 5, ""vacant"": 1}",14,5,1,0
+SP,SP:95,SAO DOMINGOS,17216,20,20,"{""commerce_services"": 1, ""industrial"": 2, ""institutional"": 1, ""mixed_other"": 2, ""residential"": 8, ""source_unclassified"": 1, ""unmapped_source"": 4, ""vacant"": 1}",16,4,0,0
+CHI,CHI:32,LOOP,589,20,20,"{""commerce_services"": 6, ""institutional"": 1, ""open_space"": 4, ""residential"": 3, ""source_unclassified"": 4, ""transport_utilities"": 1, ""vacant"": 1}",20,0,0,0
+CHI,CHI:14,ALBANY PARK,1895,20,20,"{""commerce_services"": 1, ""institutional"": 1, ""residential"": 10, ""source_unclassified"": 7, ""transport_utilities"": 1}",20,0,0,0
+CHI,CHI:23,HUMBOLDT PARK,4903,20,20,"{""commerce_services"": 4, ""industrial"": 4, ""residential"": 5, ""source_unclassified"": 2, ""transport_utilities"": 4, ""vacant"": 1}",20,0,0,0

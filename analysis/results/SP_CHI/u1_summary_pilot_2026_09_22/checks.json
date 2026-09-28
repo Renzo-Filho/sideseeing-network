@@ -1,0 +1,23 @@
+{
+  "scope": "existing district summaries only; no raw parcel, IPTU, LUI geometry or POI reads",
+  "seed": 20260922,
+  "source_rows": {
+    "SP": 96,
+    "CHI": 77
+  },
+  "selected_rows": {
+    "SP": 6,
+    "CHI": 6
+  },
+  "source_sha256": {
+    "SP": "9d477f546c0fd825774ef0763b735335cf741ce2326952b8c20883b1442b6cea",
+    "CHI": "4de7921980e4be9c579a2f07d770155b3f638b5fdfd8950290cb9328fcf5d17e",
+    "SP_LONG": "2c72cf758c2ba362b8c026f8082c9aeaf53cba68e44840a3b472f20ca8f41e1b"
+  },
+  "unique_unit_ids": true,
+  "source_mass_max_abs_error": 3.3306690738754696e-16,
+  "candidate_plus_residual_max_abs_error": 0.0,
+  "candidate_entropy_finite_bounded": true,
+  "coverage_not_cross_city_comparable": true,
+  "semantic_accepted": false
+}

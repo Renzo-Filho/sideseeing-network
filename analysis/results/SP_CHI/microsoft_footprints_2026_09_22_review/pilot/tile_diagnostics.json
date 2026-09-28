@@ -1,0 +1,68 @@
+[
+  {
+    "city": "CHI",
+    "quadkey": "030222213",
+    "records": 189377,
+    "positive_height": 189220,
+    "height_missing_minus_one": 3,
+    "confidence_missing_minus_one": 88355,
+    "invalid_geometry": 2,
+    "intersect_city": 0,
+    "intersect_pilots": 0
+  },
+  {
+    "city": "CHI",
+    "quadkey": "030222230",
+    "records": 732783,
+    "positive_height": 700960,
+    "height_missing_minus_one": 31293,
+    "confidence_missing_minus_one": 398368,
+    "invalid_geometry": 1,
+    "intersect_city": 52,
+    "intersect_pilots": 52
+  },
+  {
+    "city": "CHI",
+    "quadkey": "030222231",
+    "records": 1413790,
+    "positive_height": 1105084,
+    "height_missing_minus_one": 308379,
+    "confidence_missing_minus_one": 829037,
+    "invalid_geometry": 8,
+    "intersect_city": 673473,
+    "intersect_pilots": 34451
+  },
+  {
+    "city": "SP",
+    "quadkey": "210311121",
+    "records": 1289330,
+    "positive_height": 0,
+    "height_missing_minus_one": 1289330,
+    "confidence_missing_minus_one": 166724,
+    "invalid_geometry": 82,
+    "intersect_city": 615946,
+    "intersect_pilots": 24700
+  },
+  {
+    "city": "SP",
+    "quadkey": "210311123",
+    "records": 211869,
+    "positive_height": 0,
+    "height_missing_minus_one": 211869,
+    "confidence_missing_minus_one": 519,
+    "invalid_geometry": 6,
+    "intersect_city": 4424,
+    "intersect_pilots": 0
+  },
+  {
+    "city": "SP",
+    "quadkey": "210311130",
+    "records": 534730,
+    "positive_height": 0,
+    "height_missing_minus_one": 534730,
+    "confidence_missing_minus_one": 225,
+    "invalid_geometry": 23,
+    "intersect_city": 36714,
+    "intersect_pilots": 0
+  }
+]

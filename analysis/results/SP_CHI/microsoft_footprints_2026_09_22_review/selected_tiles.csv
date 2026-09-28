@@ -1,0 +1,7 @@
+city,location,quadkey,url,advertised_size_bytes_approx,intersects_city,intersects_1500m_buffer
+CHI,UnitedStates,030222213,https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=UnitedStates/quadkey=030222213/part-00131-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz,20552090,False,True
+CHI,UnitedStates,030222230,https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=UnitedStates/quadkey=030222230/part-00150-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz,81264640,True,True
+CHI,UnitedStates,030222231,https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=UnitedStates/quadkey=030222231/part-00081-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz,128135987,True,True
+SP,Brazil,210311121,https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=Brazil/quadkey=210311121/part-00111-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz,155084390,True,True
+SP,Brazil,210311123,https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=Brazil/quadkey=210311123/part-00034-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz,21705523,True,True
+SP,Brazil,210311130,https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=Brazil/quadkey=210311130/part-00069-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz,56518246,True,True

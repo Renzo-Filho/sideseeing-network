@@ -1,0 +1,16 @@
+city,source_category,candidate_category,note
+SP,residential,residential,Source-specific meaning requires map review
+SP,commerce_services,commerce_services,Source-specific meaning requires map review
+SP,industry_warehouse,industrial,Source-specific meaning requires map review
+SP,institutional,institutional,Source-specific meaning requires map review
+SP,transport_utilities,transport_utilities,Source-specific meaning requires map review
+SP,vacant,vacant,Source-specific meaning requires map review
+SP,mixed_other,excluded_residual,Source-specific meaning requires map review
+CHI,residential,residential,Source-specific meaning requires map review
+CHI,commercial,commerce_services,CMAP commercial includes some primary mixed-use codes
+CHI,industrial,industrial,Source-specific meaning requires map review
+CHI,institutional,institutional,Source-specific meaning requires map review
+CHI,transport_utilities,transport_utilities,Source-specific meaning requires map review
+CHI,vacant_construction,vacant,Source-specific meaning requires map review
+CHI,agriculture,excluded_residual,Source-specific meaning requires map review
+CHI,open_space,excluded_residual,Source-specific meaning requires map review

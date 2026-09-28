@@ -1,0 +1,27 @@
+{
+  "seed": "20260923-u1-case-audit-v1",
+  "units_and_strata": {
+    "SP:10": [
+      "matched",
+      "osm_only"
+    ],
+    "SP:02": [
+      "overture_only"
+    ],
+    "SP:95": [
+      "overture_only"
+    ],
+    "CHI:32": [
+      "matched",
+      "osm_only",
+      "overture_only"
+    ]
+  },
+  "eligibility": "named OSM venue candidates and named Overture records within same clipped tile; exact normalized name and <=30m marks matched",
+  "selection": "minimum SHA-256 of seed:unit:case_type:source_id in each requested stratum",
+  "overture_release": "2026-08-19.0",
+  "remote_partitions": {
+    "SP": 4,
+    "CHI": 3
+  }
+}

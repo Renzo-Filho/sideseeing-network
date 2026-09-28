@@ -1,0 +1,71 @@
+{
+  "tiles": [
+    {
+      "city": "CHI",
+      "quadkey": "030222213",
+      "source_url": "https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=UnitedStates/quadkey=030222213/part-00131-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz",
+      "path": "analysis/data/Chicago/microsoft_buildings_2026_08_13/raw_tiles/030222213.geojsonl.gz",
+      "sha256": "6258091b1788f8d3bdad49a880c8d95f6dc8df21c1a350a68c00cfd39adff27b",
+      "compressed_bytes": 20576718,
+      "record_lines": 189377,
+      "deleted_redundant_plain_path": "predios_chicago_raw/CHI_30222213.geojsonl",
+      "deleted_plain_sha256": "96b38d6678d0f9004462f7040d57ebfa4cfc3817db426693f6fd38c85b986929"
+    },
+    {
+      "city": "CHI",
+      "quadkey": "030222230",
+      "source_url": "https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=UnitedStates/quadkey=030222230/part-00150-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz",
+      "path": "analysis/data/Chicago/microsoft_buildings_2026_08_13/raw_tiles/030222230.geojsonl.gz",
+      "sha256": "43739c30115615d03ad78b50149e4e47b0537420c8d07778f8c09c177323ee68",
+      "compressed_bytes": 81232727,
+      "record_lines": 732783,
+      "deleted_redundant_plain_path": "predios_chicago_raw/CHI_30222230.geojsonl",
+      "deleted_plain_sha256": "e7562fa5e1f4d4831cfeeb11369e296fbd22ba9a998209ba44f94435db6ccf94"
+    },
+    {
+      "city": "CHI",
+      "quadkey": "030222231",
+      "source_url": "https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=UnitedStates/quadkey=030222231/part-00081-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz",
+      "path": "analysis/data/Chicago/microsoft_buildings_2026_08_13/raw_tiles/030222231.geojsonl.gz",
+      "sha256": "651a1dccfd0727ec890e46e3757f5d6ced2aabde611bf0f7a8b4f215fd77d47f",
+      "compressed_bytes": 128158761,
+      "record_lines": 1413790,
+      "deleted_redundant_plain_path": "predios_chicago_raw/CHI_30222231.geojsonl",
+      "deleted_plain_sha256": "0680e60ebf649eca4a93a64dfb07529693101d26162616fc5eb25ab6ebe60dc5"
+    },
+    {
+      "city": "SP",
+      "quadkey": "210311121",
+      "source_url": "https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=Brazil/quadkey=210311121/part-00111-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz",
+      "path": "analysis/data/SP/microsoft_buildings_2026_08_13/raw_tiles/210311121.geojsonl.gz",
+      "sha256": "1ae2af7924f5f08870b27799841a275c5a7c9c41fd9291395f67e7376ef10596",
+      "compressed_bytes": 155045752,
+      "record_lines": 1289330,
+      "deleted_redundant_plain_path": "predios_sp_raw/SP_210311121.geojsonl",
+      "deleted_plain_sha256": "e29bd931449fcf2cd0c5ad0da88c72ddfa3140808c7cd0b60eb0f7c1aaa979ca"
+    },
+    {
+      "city": "SP",
+      "quadkey": "210311123",
+      "source_url": "https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=Brazil/quadkey=210311123/part-00034-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz",
+      "path": "analysis/data/SP/microsoft_buildings_2026_08_13/raw_tiles/210311123.geojsonl.gz",
+      "sha256": "e80c7b62c58a738779e4e8bc2617a40887f201819419d09365bf0a9d56f0b329",
+      "compressed_bytes": 21732471,
+      "record_lines": 211869,
+      "deleted_redundant_plain_path": "predios_sp_raw/SP_210311123.geojsonl",
+      "deleted_plain_sha256": "d7321ea271cbfca50064ee198f75027ce86fa8cf857029d33b4317c4ba803375"
+    },
+    {
+      "city": "SP",
+      "quadkey": "210311130",
+      "source_url": "https://bfppub.z5.web.core.windows.net/2026-08-13/global-buildings.geojsonl/RegionName=Brazil/quadkey=210311130/part-00069-110f5303-ff85-4c71-a2bf-c6070024fec8.c000.csv.gz",
+      "path": "analysis/data/SP/microsoft_buildings_2026_08_13/raw_tiles/210311130.geojsonl.gz",
+      "sha256": "e28c416365dd342d72eec0c160582da66ad5aff0fa649e9ae21f854f965806b9",
+      "compressed_bytes": 56481430,
+      "record_lines": 534730,
+      "deleted_redundant_plain_path": "predios_sp_raw/SP_210311130.geojsonl",
+      "deleted_plain_sha256": "7bc7af18352d80738653ddd668dc706f9e2493969efd921f6fecbf69448e71f2"
+    }
+  ],
+  "plain_copies_deleted": 6
+}

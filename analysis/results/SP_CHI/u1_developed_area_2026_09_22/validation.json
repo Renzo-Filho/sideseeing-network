@@ -1,0 +1,25 @@
+{
+  "six_units": [
+    "SP:10",
+    "SP:02",
+    "SP:95",
+    "CHI:32",
+    "CHI:14",
+    "CHI:23"
+  ],
+  "sp_adjacent_source_partitions_included": true,
+  "land_category_mass_conserved": true,
+  "sp_no_lot_block_context_reconciled": true,
+  "sp_original_sample_labels_stable_after_adjacent_correction": true,
+  "sp_mixed_dominance_reconciled_tolerance_m2": 0.1,
+  "sp_point_rows": 60,
+  "no_lot_point_context_rows": 15,
+  "poi_provider_profile_anchor_units": [
+    "SP:10",
+    "CHI:32"
+  ],
+  "poi_provider_mass_conserved": true,
+  "independent_truth_labels": false,
+  "u1_accepted": false,
+  "poi_variable_accepted": false
+}

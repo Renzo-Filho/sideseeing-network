@@ -1,0 +1,265 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "eight_expected_pilots",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_missing_reference_or_pilot_values",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:24_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:24_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:24_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:24_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:24_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:24_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:28_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:28_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:28_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:28_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:28_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:28_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:30_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:30_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:30_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:30_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:30_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:30_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:32_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:32_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:32_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:32_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:32_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:32_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:76_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:76_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:76_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:76_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:76_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CHI:76_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:10_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:10_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:10_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:10_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:10_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:10_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:30_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:30_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:30_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:30_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:30_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:30_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:35_land_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:35_gross_fraction_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:35_baseline_same_support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:35_source_union_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:35_difference_reconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "SP:35_height_support_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_SP_tile_heights_missing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "four_small_working_repairs",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

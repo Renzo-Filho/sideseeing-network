@@ -1,0 +1,32 @@
+{
+  "release": "2026-08-19.0",
+  "scope": "Br\u00e1s and Loop only, one geographic partition/bbox each; one thread",
+  "receipts": {
+    "SP": {
+      "partition": 4,
+      "bbox_rows": 7747,
+      "exact_unit_records": 5443,
+      "bbox": [
+        -46.62793954452922,
+        -23.554795694534125,
+        -46.60444892029257,
+        -23.532897654655738
+      ],
+      "source_url": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-08-19.0/theme=places/type=place/part-00004-e1b1066c-7a59-5692-b21d-7e03fafaf0a4-c000.zstd.parquet"
+    },
+    "CHI": {
+      "partition": 3,
+      "bbox_rows": 19350,
+      "exact_unit_records": 16569,
+      "bbox": [
+        -87.63828909968284,
+        41.86731465773961,
+        -87.60245571211203,
+        41.8906303369791
+      ],
+      "source_url": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-08-19.0/theme=places/type=place/part-00003-9e8cf04e-9fcc-5346-af85-9883ac4821d8-c000.zstd.parquet"
+    }
+  },
+  "independent_truth_labels": false,
+  "confidence_calibrated_across_providers": false
+}

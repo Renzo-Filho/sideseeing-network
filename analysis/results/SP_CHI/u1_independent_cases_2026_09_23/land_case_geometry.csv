@@ -1,0 +1,8 @@
+case_id,unit_id,sample_no,lon,lat,prior_source_status,nearest_municipal_street_m,nearest_street_name,image_source
+SP_10_09,SP:10,9,-46.621703531014376,-23.539470672863786,unmapped_source,42.76287617592581,R ANDRADE,"Esri World Imagery, capture date unverified"
+SP_10_20,SP:10,20,-46.61502871692198,-23.55356231276973,unmapped_source,9.225902515849697,R PIRATININGA,"Esri World Imagery, capture date unverified"
+SP_02_02,SP:02,2,-46.71452122696319,-23.54510897404125,unmapped_source,8.198354823953045,AV DIOGENES RIBEIRO DE LIMA,"Esri World Imagery, capture date unverified"
+SP_95_07,SP:95,7,-46.72827389873978,-23.508349251214803,unmapped_source,0.5379184429843828,R JOSE FERNANDES LOBO,"Esri World Imagery, capture date unverified"
+CHI_32_05,CHI:32,5,-87.63674175505321,41.87863814620828,source_unclassified,5.613012636143723,WACKER RAMP None,Cook County 2025 orthophoto
+CHI_14_03,CHI:14,3,-87.71383883623668,41.964465146168166,source_unclassified,32.45110191970516,WILSON AVE,Cook County 2025 orthophoto
+CHI_23_10,CHI:23,10,-87.73465353731049,41.89613292050194,source_unclassified,6.973552337889024,KOLIN AVE,Cook County 2025 orthophoto

@@ -1,0 +1,15 @@
+unit_id,landuse_tag,polygon_count,union_area_m2,crosswalk
+SP:10,residential,1,3976.505864324334,residential
+SP:02,brownfield,1,34.814930467495586,vacant
+SP:02,residential,1,5714.942936776526,residential
+SP:95,commercial,1,10309.658360263735,commerce_services
+CHI:32,commercial,10,79180.67179915306,commerce_services
+CHI:32,grass,2,1477.933366985923,open_other
+CHI:32,railway,1,1380.2521478538752,transport_utilities
+CHI:14,grass,1,2902.135309026413,open_other
+CHI:14,railway,3,3833.973272735908,transport_utilities
+CHI:14,residential,2,155697.10245140907,residential
+CHI:23,grass,6,225.47528591080885,open_other
+CHI:23,industrial,3,20047.221885988776,industrial
+CHI:23,residential,1,94913.46417760075,residential
+CHI:23,retail,1,4188.614691098137,commerce_services

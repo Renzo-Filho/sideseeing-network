@@ -1,0 +1,58 @@
+{
+  "release": "2026-08-19.0",
+  "seed": 20260922,
+  "units": {
+    "SP": [
+      "10",
+      "02",
+      "95"
+    ],
+    "CHI": [
+      "32",
+      "14",
+      "23"
+    ]
+  },
+  "remote_scope": "two geographic Places partitions, one combined bbox per city; one DuckDB thread",
+  "max_sampled_pois_per_unit": 20,
+  "fixed_destination_categories": [
+    "arts_and_entertainment",
+    "community_and_government",
+    "cultural_and_historic",
+    "education",
+    "food_and_drink",
+    "health_care",
+    "lifestyle_services",
+    "lodging",
+    "services_and_business",
+    "shopping",
+    "sports_and_recreation",
+    "travel_and_transportation"
+  ],
+  "city_receipts": {
+    "SP": {
+      "stac_partition": 4,
+      "source_url": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-08-19.0/theme=places/type=place/part-00004-e1b1066c-7a59-5692-b21d-7e03fafaf0a4-c000.zstd.parquet",
+      "combined_bbox": [
+        -46.77022761299992,
+        -23.562996428797963,
+        -46.60444892029257,
+        -23.4727636031807
+      ],
+      "bbox_rows": 129373
+    },
+    "CHI": {
+      "stac_partition": 3,
+      "source_url": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-08-19.0/theme=places/type=place/part-00003-9e8cf04e-9fcc-5346-af85-9883ac4821d8-c000.zstd.parquet",
+      "combined_bbox": [
+        -87.7479929359748,
+        41.86731465773961,
+        -87.60245571211203,
+        41.97611610736605
+      ],
+      "bbox_rows": 85155
+    }
+  },
+  "independent_truth_labels": false,
+  "semantic_accepted": false
+}

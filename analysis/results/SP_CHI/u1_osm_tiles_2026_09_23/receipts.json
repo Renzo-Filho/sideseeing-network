@@ -1,0 +1,121 @@
+{
+  "scope": "six 400 m tiles, one saved diagnostic point per unit",
+  "osm_api": "live current map API, not fixed historical snapshot",
+  "tag_filter": {
+    "landuse": true,
+    "shop": true,
+    "amenity": true,
+    "office": true,
+    "craft": true,
+    "tourism": true
+  },
+  "use_crosswalk": {
+    "residential": "residential",
+    "commercial": "commerce_services",
+    "retail": "commerce_services",
+    "industrial": "industrial",
+    "education": "institutional",
+    "institutional": "institutional",
+    "railway": "transport_utilities",
+    "highway": "transport_utilities",
+    "garages": "transport_utilities",
+    "depot": "transport_utilities",
+    "brownfield": "vacant",
+    "construction": "vacant",
+    "greenfield": "vacant",
+    "grass": "open_other",
+    "forest": "open_other",
+    "meadow": "open_other",
+    "recreation_ground": "open_other",
+    "cemetery": "open_other",
+    "farmland": "open_other",
+    "orchard": "open_other",
+    "allotments": "open_other"
+  },
+  "tiles": {
+    "SP:10": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-46.62366323%2C-23.54126730%2C-46.61974383%2C-23.53767405",
+      "retrieved_or_checked_utc": "2026-09-23T20:03:43.619368+00:00",
+      "bytes": 820311,
+      "sha256": "bf2d12f5d34d435e29b00f052007e496ecd48c719fe147728436dd2c12cc5c63",
+      "center_sample_no": 9,
+      "center_source_status": "unmapped_source",
+      "tile_bounds": [
+        -46.62366322934487,
+        -23.541267295213768,
+        -46.61974383268388,
+        -23.537674050513804
+      ]
+    },
+    "SP:02": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-46.71648101%2C-23.54690560%2C-46.71256144%2C-23.54331235",
+      "retrieved_or_checked_utc": "2026-09-23T20:03:43.872384+00:00",
+      "bytes": 850539,
+      "sha256": "18e03b172393efa46c14f232eaadad2e76e6a5590ae2373fcbf45ac4e38e5cf2",
+      "center_sample_no": 2,
+      "center_source_status": "unmapped_source",
+      "tile_bounds": [
+        -46.71648100931744,
+        -23.54690559639123,
+        -46.712561444608944,
+        -23.543312351691267
+      ]
+    },
+    "SP:95": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-46.74216707%2C-23.49058996%2C-46.73824918%2C-23.48699672",
+      "retrieved_or_checked_utc": "2026-09-23T20:03:43.995291+00:00",
+      "bytes": 110684,
+      "sha256": "4d88853774d81983acfae4dbf6171c4e843d1c7cfecdfc1f1bb614aa7fa5e597",
+      "center_sample_no": 1,
+      "center_source_status": "residential",
+      "tile_bounds": [
+        -46.74216706521795,
+        -23.490589961173313,
+        -46.738249176627214,
+        -23.48699671647335
+      ]
+    },
+    "CHI:32": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-87.63915475%2C41.87684152%2C-87.63432876%2C41.88043477",
+      "retrieved_or_checked_utc": "2026-09-23T20:03:44.032640+00:00",
+      "bytes": 5355075,
+      "sha256": "bc146d0a044a28f77cf03f1c6162755db32e92b93cd686fe51e2f28592ea3c37",
+      "center_sample_no": 5,
+      "center_source_status": "source_unclassified",
+      "tile_bounds": [
+        -87.63915475223027,
+        41.876841523858296,
+        -87.63432875787615,
+        41.88043476855827
+      ]
+    },
+    "CHI:14": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-87.71625508%2C41.96266852%2C-87.71142259%2C41.96626177",
+      "retrieved_or_checked_utc": "2026-09-23T20:03:44.803253+00:00",
+      "bytes": 917861,
+      "sha256": "a52b0ff1c7ac6e1b1e776e280d0751310adb3c6eba34299249cf189609d8b310",
+      "center_sample_no": 3,
+      "center_source_status": "source_unclassified",
+      "tile_bounds": [
+        -87.7162550812328,
+        41.96266852381818,
+        -87.71142259124055,
+        41.96626176851815
+      ]
+    },
+    "CHI:23": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-87.73706720%2C41.89433630%2C-87.73223988%2C41.89792954",
+      "retrieved_or_checked_utc": "2026-09-23T20:03:44.930835+00:00",
+      "bytes": 772033,
+      "sha256": "4616e6d7b6c490a92d89fa16fe3f4446283cd426dabd0e2d74b57a1bf9f7a604",
+      "center_sample_no": 10,
+      "center_source_status": "source_unclassified",
+      "tile_bounds": [
+        -87.73706719536733,
+        41.894336298151956,
+        -87.73223987925365,
+        41.89792954285193
+      ]
+    }
+  }
+}

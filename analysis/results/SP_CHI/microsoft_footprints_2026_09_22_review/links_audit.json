@@ -1,0 +1,51 @@
+{
+  "source_path": "/home/renzo/Downloads/dataset-links.csv",
+  "source_sha256": "de61b569b0c23c364d61173632d8c5487ea30bf20912c55b9fa1ab4a89d01148",
+  "index_rows": 30340,
+  "regions": 225,
+  "quadkey_lengths": {
+    "9": 30340
+  },
+  "upload_dates": [
+    "2026-08-13"
+  ],
+  "cities": {
+    "CHI": {
+      "boundary_path": "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet",
+      "reporting_units": 77,
+      "region_label": "UnitedStates",
+      "regional_index_rows": 2415,
+      "selected_tiles": 3,
+      "tiles_intersecting_city": 2,
+      "advertised_size_bytes_approx": 229952717,
+      "unindexed_city_support_m2": 0.0
+    },
+    "SP": {
+      "boundary_path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+      "reporting_units": 96,
+      "region_label": "Brazil",
+      "regional_index_rows": 1152,
+      "selected_tiles": 3,
+      "tiles_intersecting_city": 3,
+      "advertised_size_bytes_approx": 233308159,
+      "unindexed_city_support_m2": 0.0
+    }
+  },
+  "limitations": "Link-index intersection only; no building tiles fetched or feature-level coverage/height/accuracy verified.",
+  "chicago_overture_provenance": {
+    "path": "analysis/data/Chicago/overture_2026_08_19/building/part_0000.parquet",
+    "building_rows": 1381239,
+    "rows_with_positive_height": 1258170,
+    "rows_citing_microsoft_ml_buildings": 373434,
+    "rows_with_positive_num_floors": 429594,
+    "interpretation": "Source overlap, not polygon identity or evidence that the Microsoft 2026-08-13 release adds no buildings."
+  },
+  "sp_overture_provenance": {
+    "path": "analysis/data/SP/Edificacoes/sao_paulo_building_morphology.gpkg",
+    "building_rows": 7278768,
+    "rows_citing_microsoft_ml_buildings": 869479,
+    "rows_with_positive_height": 2090405,
+    "rows_with_positive_floor_count": 21250,
+    "interpretation": "Legacy Overture source-lineage overlap; not proof of feature equivalence to the Microsoft 2026-08-13 tiles."
+  }
+}

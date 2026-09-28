@@ -1,0 +1,13 @@
+{
+  "release": "2026-08-19.0",
+  "partitions": {
+    "SP": 4,
+    "CHI": 3
+  },
+  "remote_urls": {
+    "SP": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-08-19.0/theme=places/type=place/part-00004-e1b1066c-7a59-5692-b21d-7e03fafaf0a4-c000.zstd.parquet",
+    "CHI": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-08-19.0/theme=places/type=place/part-00003-9e8cf04e-9fcc-5346-af85-9883ac4821d8-c000.zstd.parquet"
+  },
+  "match_rule": "normalized exact name and <=30 m; diagnostic only",
+  "source_scope": "six bounded tile bbox queries, exact district/tile point filter"
+}

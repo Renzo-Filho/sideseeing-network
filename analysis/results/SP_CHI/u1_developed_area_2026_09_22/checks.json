@@ -1,0 +1,15 @@
+{
+  "units": [
+    "SP:10",
+    "SP:02",
+    "SP:95",
+    "CHI:32",
+    "CHI:14",
+    "CHI:23"
+  ],
+  "source_scope": "three SP districts plus their 50 m adjacent source partitions, and three Chicago CMAP bounding boxes",
+  "method": "exact per-category union, district-land clip, cross-category conflict isolation, complement as unmapped",
+  "category_mass_conserved": true,
+  "independent_truth_labels": false,
+  "u1_accepted": false
+}

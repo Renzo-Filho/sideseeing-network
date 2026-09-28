@@ -1,0 +1,8 @@
+unit_id,case_type,eligible_named_records
+SP:10,matched,7
+SP:10,osm_only,11
+SP:02,overture_only,17
+SP:95,overture_only,50
+CHI:32,matched,18
+CHI:32,osm_only,31
+CHI:32,overture_only,1113

@@ -1,0 +1,72 @@
+{
+  "source_urls": {
+    "metadata": "https://data.cityofchicago.org/api/views/uupf-x98q.json",
+    "aggregate": "https://data.cityofchicago.org/resource/uupf-x98q.json?$select=community_area_name,count(*)%20as%20n,count(location)%20as%20located,count(distinct%20license_number)%20as%20license_numbers&$where=community_area%20in(14,23,32)&$group=community_area_name&$limit=10",
+    "catalog": "https://api.us.socrata.com/api/catalog/v1?domains=data.cityofchicago.org&q=points%20of%20interest&limit=30"
+  },
+  "dataset_id": "uupf-x98q",
+  "dataset_name": "Business Licenses - Current Active",
+  "last_rows_updated_unix": 1790157648,
+  "field_names": [
+    "id",
+    "license_id",
+    "account_number",
+    "site_number",
+    "legal_name",
+    "doing_business_as_name",
+    "address",
+    "city",
+    "state",
+    "zip_code",
+    "ward",
+    "precinct",
+    "ward_precinct",
+    "police_district",
+    "community_area",
+    "community_area_name",
+    "neighborhood",
+    "license_code",
+    "license_description",
+    "business_activity_id",
+    "business_activity",
+    "license_number",
+    "application_type",
+    "application_created_date",
+    "application_requirements_complete",
+    "payment_date",
+    "conditional_approval",
+    "license_start_date",
+    "expiration_date",
+    "license_approved_for_issuance",
+    "date_issued",
+    "license_status",
+    "license_status_change_date",
+    "ssa",
+    "latitude",
+    "longitude",
+    "location"
+  ],
+  "bounded_aggregate": [
+    {
+      "community_area_name": "ALBANY PARK",
+      "n": "779",
+      "located": "776",
+      "license_numbers": "769"
+    },
+    {
+      "community_area_name": "HUMBOLDT PARK",
+      "n": "806",
+      "located": "800",
+      "license_numbers": "794"
+    },
+    {
+      "community_area_name": "LOOP",
+      "n": "3550",
+      "located": "3509",
+      "license_numbers": "3446"
+    }
+  ],
+  "catalog_query_result_count": 14,
+  "exact_citywide_poi_title_found": false,
+  "caveat": "An unsuccessful catalog title search does not prove no dataset exists; license rows are not unique venues."
+}

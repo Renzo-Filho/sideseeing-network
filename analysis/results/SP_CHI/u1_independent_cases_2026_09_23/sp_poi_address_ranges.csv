@@ -1,0 +1,5 @@
+case_id,published_address,road_name_filter,published_number_low,published_number_high,road_segments,matching_number_range_segments,min_distance_to_matching_range_m,nearest_same_street_m,nearest_same_street_even_range,nearest_same_street_odd_range,largest_street_number_in_source,distance_to_last_numbered_segment_m
+SP_10_matched,Rua Monsenhor Andrade 845,ANDRADE,845,845,29,1,384.01385098187853,31.46818967169106,186–338,187–339,1163,832.7195245846856
+SP_10_osm_only,Rua Rodrigues dos Santos 91–490,RODRIGUES DOS SANTOS,91,490,25,6,265.03017419230815,42.50462277013318,780–912,781–913,913,42.50462277013318
+SP_02_overture_only,Avenida Diógenes Ribeiro de Lima 1768,DIOGENES RIBEIRO DE LIMA,1768,1768,41,1,16.400058462075016,16.400058462075016,1712.0–1852.0,1713.0–1853.0,3575,1533.3289858500395
+SP_95_overture_only,Rua Joaquim Oliveira Freitas 2463,JOAQUIM OLIVEIRA FREITAS,2463,2463,29,0,,9.961816804673152,2–102,3–103,2459,2060.4490670362275

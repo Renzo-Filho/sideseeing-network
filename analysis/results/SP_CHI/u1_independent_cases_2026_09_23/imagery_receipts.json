@@ -1,0 +1,245 @@
+{
+  "run_utc": "2026-09-23T20:48:22.707872+00:00",
+  "cases_predeclared": [
+    [
+      "SP:10",
+      9
+    ],
+    [
+      "SP:10",
+      20
+    ],
+    [
+      "SP:02",
+      2
+    ],
+    [
+      "SP:95",
+      7
+    ],
+    [
+      "CHI:32",
+      5
+    ],
+    [
+      "CHI:14",
+      3
+    ],
+    [
+      "CHI:23",
+      10
+    ]
+  ],
+  "method": "small imagery chip and local municipal street centerline distance; visual labels stored separately",
+  "source_layers": {
+    "SP_streets": "analysis/data/SP/Cadastro e Vias/SIRGAS_GPKG_logradouronbl.gpkg",
+    "CHI_streets": "analysis/data/Chicago/steet_center_lines_20260915.geojson"
+  },
+  "cases": {
+    "SP_10_09": {
+      "image_source": "Esri World Imagery, capture date unverified",
+      "urls_and_sha256": [
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297432/194245",
+          "sha256": "26a5df5498282a19bcd95cd782dcc9ce3ec58ee28375d154f0baf3e262fd0dcd"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297432/194246",
+          "sha256": "6d8212d2cf0e614f53fa8a16407af9041d4822f7f00d1f8c05ed6993b3eb094b"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297432/194247",
+          "sha256": "6dba4cb1d228f6a5c06ba64f621fb510bf9949a8971a241f49577fc45ccdc48a"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297433/194245",
+          "sha256": "2113831b9f125f6b126415347cbb3a9239e8081eed154bf7ed83168db8d2e6b1"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297433/194246",
+          "sha256": "5f942641b933a9990b8e97902ae76fd8ef15b5e3ed21d12623353f0b20e66cf5"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297433/194247",
+          "sha256": "566da3c161e49564be5004d72703d761d8ad6ccde41b802c28d8bdaa5fac224c"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297434/194245",
+          "sha256": "40fff4a3aef030fd3aed1c7e14b00fa5aace9a53449d58363039d033dbbca19e"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297434/194246",
+          "sha256": "557e7100c88c5a8aa1df7f5eb0c262a11a79f7e711f1841ace9d747029c5e188"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297434/194247",
+          "sha256": "26b9de6475f5be1280354d48c5dc51e6071fe876d0d9c90a72d58b0cbc687fd6"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/SP_10_09_annotated.png",
+      "annotated_sha256": "7f8a80dbda790de2cc75f9d193a6560653cc7a40d845073d1146931432fa3622"
+    },
+    "SP_10_20": {
+      "image_source": "Esri World Imagery, capture date unverified",
+      "urls_and_sha256": [
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297454/194254",
+          "sha256": "a4b07a35beed754e13ebc6a4ab7c5dc0fab4ce3287b298bc03d0aa359197c43d"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297454/194255",
+          "sha256": "07b95a370a7160e035c4bbf0423f6409fe674c275887a0d02dc49efb4cde3a0a"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297454/194256",
+          "sha256": "b2d72b8cc4ed2180c17e68d4ab282d44675ceedf584f4414512bc6f32708ceb2"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297455/194254",
+          "sha256": "727bd05cfda7a2f654ea5ce0d8c9f3b5311243c3bd2f5caec83fd8eaf1f8f3dc"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297455/194255",
+          "sha256": "0b27309f3150f119772f051b8fdb9e769671b7f06c58419b00fd76cf5eadab73"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297455/194256",
+          "sha256": "1e0210802e5eed6b076d6b3cfea3f46d3c04499c38f7a7b49738e4b1dab7b2ac"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297456/194254",
+          "sha256": "1bb22f1c219dae8d90df57b4a54d74b05e611853cb27839cb5506d06319fc93b"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297456/194255",
+          "sha256": "40e9b77915dc472e618d304442c97118cb57e078a0f405c048177b4a3e51f898"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297456/194256",
+          "sha256": "2d0acc2e967b41f1001fe66f20019944a378bb13dd2f92f7d501e65d75fbbb05"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/SP_10_20_annotated.png",
+      "annotated_sha256": "ea7cef273077925014f0ef7e0a10a45dd14d0247bacadaa23decf98c6e8dae60"
+    },
+    "SP_02_02": {
+      "image_source": "Esri World Imagery, capture date unverified",
+      "urls_and_sha256": [
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297441/194110",
+          "sha256": "395781a722e46a5fa9e6ebe5e2b35c4c249a8766b2f42697416b9bdf15cd1eec"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297441/194111",
+          "sha256": "3189f95fca6291caae58f59ebe99e1d9305ca65f54871b0fbcbce01a739655f0"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297441/194112",
+          "sha256": "aef592c3a6c0aff1d62055558919469a8b52bfb89b47e343f09501f2275e4b98"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297442/194110",
+          "sha256": "28b1a2f4f084c82646fa8a77bbb051e5689a4e20f28679121bc030aecd49fed7"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297442/194111",
+          "sha256": "beab5be9524b19e12472f2d890e878837e09e0950f7f030ed172e660434e45e0"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297442/194112",
+          "sha256": "cb94d0139720ca5e5f1dd06d412b77411ac4da88c7470812b7eca26f7ce7a527"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297443/194110",
+          "sha256": "678f9723598ab14b57b346a7af3cb556453b117f2b07b689394e1b479433dcf4"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297443/194111",
+          "sha256": "a04d098f0da14be785a64c2bd728bca08f8d5d33db8bf198843348859f5f3a8f"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297443/194112",
+          "sha256": "16e77f5313b676cfcf89ef64f1eb68593dde548d8886c59d0ccd6fc6cf81854f"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/SP_02_02_annotated.png",
+      "annotated_sha256": "98b7ca5005bf2d9815e6bd133df9481470e28d021edbae164597d156223618cb"
+    },
+    "SP_95_07": {
+      "image_source": "Esri World Imagery, capture date unverified",
+      "urls_and_sha256": [
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297382/194090",
+          "sha256": "974035bd87b5ae94ba32c8996b51e9e8357b3022734843bc05b82ec337ba4b44"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297382/194091",
+          "sha256": "205f3e40825b1e35a8ad490922561f40433fb07dfa1e7e854a52ba14c408213b"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297382/194092",
+          "sha256": "1e5d1ae5d00f09df1202026643a8faf9bb630dded06b7a257ff734c99a80b2ef"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297383/194090",
+          "sha256": "a2d21dc14844b0958aaa619ead0c4edb20266b28ac559a1cd3215f934e8a376e"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297383/194091",
+          "sha256": "149f03f5a8dad3f14a540602447d3bcfd564144238bd9c0aa410a7d127c21881"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297383/194092",
+          "sha256": "c85d878391c9f9e3edd94d83014b4977dd2d5665d68c263e8f4ae4212be5319b"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297384/194090",
+          "sha256": "ca0be824e1e20ab5888ac3fcb754c452529e01f28b65c2d9eeef59a6db93fcd7"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297384/194091",
+          "sha256": "c38af9808771908f7f54a0f81a859ba1211ce09b40811bc521a952ffd51cbece"
+        },
+        {
+          "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/297384/194092",
+          "sha256": "0100674ede9830132a4a64710e78efcedddbc020b7df414e9958cf441068239b"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/SP_95_07_annotated.png",
+      "annotated_sha256": "f68c199da5c7cce1bd810ab785ef00b998eb7a14274c70867568c899f2668914"
+    },
+    "CHI_32_05": {
+      "image_source": "Cook County 2025 orthophoto",
+      "urls_and_sha256": [
+        {
+          "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.63758630%2C41.87800933%2C-87.63589721%2C41.87926696&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+          "sha256": "551a2573e74a2269e5e9d0e447248f625c5ef4aa891cc8fa1193fb337acfe32e"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/CHI_32_05_annotated.png",
+      "annotated_sha256": "63d72896ce3e60ea99eda330594fb301de03504527e6148cb5cbda03d33223ef"
+    },
+    "CHI_14_03": {
+      "image_source": "Cook County 2025 orthophoto",
+      "urls_and_sha256": [
+        {
+          "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.71468452%2C41.96383633%2C-87.71299315%2C41.96509396&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+          "sha256": "beeca73c5e13b0e7ae458ef2ead739f0c759c37c3d9ac14c837647ba2c42a317"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/CHI_14_03_annotated.png",
+      "annotated_sha256": "efce7a6863cc1fbdbc3cb9d44ae65705cb3d15bf2f61b2239f4fff25b05ee178"
+    },
+    "CHI_23_10": {
+      "image_source": "Cook County 2025 orthophoto",
+      "urls_and_sha256": [
+        {
+          "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.73549832%2C41.89550410%2C-87.73380876%2C41.89676174&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+          "sha256": "beb1e0f7c511a0c6bd7f812c21ac1a13f46687d78d92f74954a09cedd61b29d9"
+        }
+      ],
+      "annotated_local_path": "analysis/work/u1_independent_cases_2026_09_23/CHI_23_10_annotated.png",
+      "annotated_sha256": "17c10ae109377c873ddd4ad4df7bb0b9936d520d2ac57a329ae8d743905be022"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "city": "CHI",
+    "pilot_record_index": 7131,
+    "reason": "Self-intersection[440995.090809862 4633135.32073044]",
+    "area_before_m2": 574.8980252893462,
+    "area_after_m2": 574.898026671181,
+    "area_delta_m2": 1.381834863423137e-06
+  },
+  {
+    "city": "SP",
+    "pilot_record_index": 5465,
+    "reason": "Self-intersection[326955.657171526 7387602.18659777]",
+    "area_before_m2": 140.68326663272668,
+    "area_after_m2": 140.68326686443783,
+    "area_delta_m2": 2.3171114094111545e-07
+  },
+  {
+    "city": "SP",
+    "pilot_record_index": 13255,
+    "reason": "Self-intersection[326627.300661774 7371429.26687748]",
+    "area_before_m2": 204.7698881226016,
+    "area_after_m2": 204.76988811689102,
+    "area_delta_m2": -5.710575123885064e-09
+  },
+  {
+    "city": "SP",
+    "pilot_record_index": 19292,
+    "reason": "Self-intersection[328277.076637911 7371413.81356033]",
+    "area_before_m2": 324.7522604006662,
+    "area_after_m2": 324.7522593819931,
+    "area_delta_m2": -1.018673117414437e-06
+  }
+]

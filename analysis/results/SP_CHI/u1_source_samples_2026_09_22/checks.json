@@ -1,0 +1,20 @@
+{
+  "seed": 20260922,
+  "units": {
+    "SP": [
+      "SP:10",
+      "SP:02",
+      "SP:95"
+    ],
+    "CHI": [
+      "CHI:32",
+      "CHI:14",
+      "CHI:23"
+    ]
+  },
+  "point_rows": 120,
+  "polygon_rows": 120,
+  "source_scope": "three SP parcel partitions and three Chicago LUI bounding boxes; one projected-column DuckDB lookup in accepted SP metrics",
+  "independent_truth_labels": false,
+  "semantic_accepted": false
+}

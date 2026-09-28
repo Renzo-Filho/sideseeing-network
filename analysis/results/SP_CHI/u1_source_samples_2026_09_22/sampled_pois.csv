@@ -1,0 +1,121 @@
+city,unit_id,sample_no,id,lon,lat,name,basic_category,taxonomy_primary,top_category,confidence,candidate_duplicate
+SP,SP:10,1,f8c8b540-f6ed-4edf-a592-fb9e4e9681e0,-46.6184589,-23.5430962,Hora da Alegria,fashion_and_apparel_store,clothing_store,shopping,0.6272243857383728,False
+SP,SP:10,2,920c72c0-f6f4-4fc2-ad84-edfa0056f55b,-46.61305148,-23.53335738,Hank Vestuário,fashion_and_apparel_store,clothing_store,shopping,0.5209783315658569,False
+SP,SP:10,3,a56bc8f5-a1e4-4b9b-a317-1d3c6a349e73,-46.6132,-23.5364,Planet jeans,shopping,shopping,shopping,0.5764999389648438,False
+SP,SP:10,4,973ba514-c85b-4080-ac38-3f53cf441f61,-46.60531759,-23.545042,Cptran,police_station,police_station,community_and_government,0.9232059121131897,False
+SP,SP:10,5,103206a8-4069-44d6-bfa3-bec066c859a1,-46.6128856,-23.5383195,Diamille Modas,flowers_and_gifts_store,gift_shop,shopping,0.9655,False
+SP,SP:10,6,353127d9-c016-4e5a-b343-cbdfc6c7b3f2,-46.61274395,-23.54038898,COB Clínica Odontológica do Brás,dental_clinic,general_dentistry,health_care,0.9913380146026611,False
+SP,SP:10,7,ce51e8ea-693b-46af-8e69-adabedd52da4,-46.6227,-23.53508,Mallu Belt,,,,0.1867659091949463,False
+SP,SP:10,8,5d1740a2-447d-4f07-96ff-1035c0f2214d,-46.61862679,-23.53691308,Sr e Sra. Único Pastéis - Busca Busca,restaurant,restaurant,food_and_drink,0.2920255661010742,False
+SP,SP:10,9,48904da8-335f-417e-9529-c7a60cb9ef88,-46.62120919,-23.53524639,Amoa Plus Size,fashion_and_apparel_store,womens_clothing_store,shopping,0.21389858424663544,False
+SP,SP:10,10,e25ed02c-4957-429b-b143-24bc6966ac07,-46.621659,-23.535856,La Princesa Moda,fashion_and_apparel_store,womens_clothing_store,shopping,0.31522902846336365,False
+SP,SP:10,11,c6c90c23-f913-4ad1-9249-a17d5b1861dc,-46.61646551,-23.54152449,Santa Clara Lingerie,fashion_and_apparel_store,lingerie_store,shopping,0.9704523086547852,False
+SP,SP:10,12,00f82f32-5ffd-44aa-9a29-df06f5a30e86,-46.61329,-23.53798,Shaft Kids,fashion_and_apparel_store,childrens_clothing_store,shopping,0.7204136848449707,False
+SP,SP:10,13,ccc62250-050d-40c4-8886-ae4bb62f1972,-46.620246,-23.535788,Magnólia Creações,fashion_and_apparel_store,fashion_accessories_store,shopping,0.33911654353141785,False
+SP,SP:10,14,fddf6905-6237-415a-b7de-457e07d9194d,-46.62056519,-23.53704303,Mercadinho J.J.Ltda,food_and_beverage_store,grocery_store,shopping,0.4322543442249298,False
+SP,SP:10,15,d86a6ebd-0bcd-4d4c-8eee-b322adccca4a,-46.62024,-23.54242,Medusa,,,,0.19411738216876984,False
+SP,SP:10,16,e7da5a23-8693-4359-9575-fb634bfd63a4,-46.62063475,-23.53806788,Pisom Jeans,fashion_and_apparel_store,clothing_store,shopping,0.9056816101074219,False
+SP,SP:10,17,3126551f-699d-4101-aa8a-e7455bf378d4,-46.62185593,-23.5351921,Malipa Atacado,fashion_and_apparel_store,clothing_store,shopping,0.8219242095947266,False
+SP,SP:10,18,3b2dc580-5579-43ba-a8a9-f4f782945589,-46.61525905,-23.53769282,Cris Scarpe - Jack Calçados,fashion_and_apparel_store,shoe_store,shopping,0.9448967576026917,False
+SP,SP:10,19,a8cb838c-5476-4c78-978f-489a02eb3c7e,-46.61747053,-23.53960498,Modas Uma Bala Ltda,fashion_and_apparel_store,clothing_store,shopping,0.716763436794281,False
+SP,SP:10,20,00625bd5-d47c-45fd-b667-73d37db857e8,-46.61274967,-23.53709355,State School Eduardo Prado,place_of_learning,school,education,0.9915187954902649,False
+SP,SP:02,1,f21d73da-9fc1-4a54-ba81-1882922f42a7,-46.705632935482036,-23.54512687186053,Brand Boss Design,design_service,graphic_designer,services_and_business,0.23336336016654968,False
+SP,SP:02,2,963f1dc4-d60c-4d27-8d21-3b348750d95c,-46.70220815,-23.54075544,Ana Bella,personal_or_beauty_service,barber,lifestyle_services,0.0855473205447197,False
+SP,SP:02,3,45191e6c-1f0a-4575-a156-a1950c5bcde9,-46.70458534,-23.54479232,WS Consultores Imobiliários,real_estate_service,real_estate_agent,services_and_business,0.43246668577194214,False
+SP,SP:02,4,5cb3ef39-aa7f-4602-8551-f8a4b9ae8d73,-46.72255,-23.55051,Villa Lobos,fast_food_restaurant,fast_food_restaurant,food_and_drink,0.8931942462921143,False
+SP,SP:02,5,40ba6610-debc-48d4-8534-b145d83b2984,-46.7040407,-23.55186019,DC Parts Brasil,corporate_or_business_office,information_technology_company,services_and_business,0.2324283868074417,False
+SP,SP:02,6,e40e65ea-3b2d-43fd-a935-cbcfca6f68ea,-46.72740821,-23.54151647,Bike Point Villa Lobos | São Paulo SP,recreational_equipment_rental,bike_rental,sports_and_recreation,0.9717080062627792,False
+SP,SP:02,7,b8f86c62-a8ca-4019-9fc8-12c9b0b18555,-46.69431,-23.54401,Peluti.ink tattoo,personal_or_beauty_service,tattoo_and_piercing,lifestyle_services,0.27605313062667847,False
+SP,SP:02,8,bc0ab78b-22b6-4900-8ee5-8db18c7882b8,-46.69788113,-23.55030561,Cambapé Capoeira,gym,gym,sports_and_recreation,0.9763819575309753,False
+SP,SP:02,9,fc771610-23a5-4513-871f-1ed4fa995a7a,-46.69437118,-23.54619207,Condominio Residencial Porta do Sol,lodging,lodging,lodging,0.7487825155258179,False
+SP,SP:02,10,5e600f95-fc38-4b65-9b1a-4bc9e26c00e3,-46.71118139638046,-23.535733619424565,Moacir Gois Photo,professional_service,professional_service,services_and_business,0.3747153878211975,False
+SP,SP:02,11,b8d8a6b8-41c0-4b00-a010-df503f00a9ad,-46.72219579911546,-23.5515644417585,Multicoisas,hardware_home_and_garden_store,hardware_store,shopping,0.77,False
+SP,SP:02,12,a2586a56-d5de-417b-bdc1-2981b13c5231,-46.69943936,-23.55044799,B.Basic,fashion_and_apparel_store,clothing_store,shopping,0.9828786849975586,False
+SP,SP:02,13,a9e3884e-2531-4d3f-8318-aedf28f41ea6,-46.69832775,-23.55305723,Restauração e Lustração de Móveis,home_service,furniture_assembly,services_and_business,0.6440687775611877,False
+SP,SP:02,14,a3d8bc37-2c41-4e6f-9a55-67f49f849c58,-46.7161,-23.55486,Instituto Inova,outpatient_care_facility,outpatient_care_facility,health_care,0.8300524353981018,False
+SP,SP:02,15,3418f6bb-07f4-42fe-839c-94922ef1b25a,-46.7128716,-23.5564213,Seiko Brasil,fashion_and_apparel_store,jewelry_store,shopping,0.3154531419277191,False
+SP,SP:02,16,216ebcbe-1e7f-4921-b8b8-2653ff8dc0c8,-46.70780442,-23.5537955,Leo Dolci,casual_eatery,bakery,food_and_drink,0.9954342633485794,False
+SP,SP:02,17,97f7771d-6a9f-41f2-b888-7bea7ce18272,-46.7154073,-23.53903235,Torres & Marshall Engenharia e Projetos,building_or_construction_service,engineering_service,services_and_business,0.7302968502044678,False
+SP,SP:02,18,20b73869-ced4-42d7-a7b3-96179f7bf178,-46.71885435,-23.53790825,Tapeçaria e Decorações Skill,home_service,furniture_assembly,services_and_business,0.5417755246162415,False
+SP,SP:02,19,e1fe0c95-2055-4068-afdc-0764ac0d0b34,-46.70390763,-23.55589768,Coarq Arquitetura e Construção,design_service,architectural_designer,services_and_business,0.2851838171482086,False
+SP,SP:02,20,bdce306e-f4d9-47ac-9c72-999723690636,-46.7067821,-23.55859799,Banca Italus,books_music_and_video_store,bookstore,shopping,0.979926729798317,False
+SP,SP:95,1,d30b238e-1a2a-421d-8bb7-b9a9c556c941,-46.73880443,-23.50111663,Rosana bogik Estética,personal_or_beauty_service,beauty_salon,lifestyle_services,0.8655543327331543,False
+SP,SP:95,2,55465af8-a437-4b2b-8aab-7176c77e6879,-46.757015967939026,-23.48743962695475,Ipiranga,gas_station,gas_station,travel_and_transportation,0.9930510312318802,False
+SP,SP:95,3,09017740-4656-49f9-8920-aaef6dff8147,-46.744854011758,-23.494663527772,Studio Eu Gosto Assim,,,,0.5238990187644958,False
+SP,SP:95,4,e1d4c539-d4aa-43f7-b2ce-17a461a29036,-46.73966,-23.50413,QLX,health_care,health_care,health_care,0.34469613432884216,False
+SP,SP:95,5,7fe2f7fb-4ff3-4646-ac18-07c53fd4f04e,-46.73743365,-23.50598793,Associação Espírita de Amparo a Criança Carente Ama,christian_place_of_worship,christian_place_of_worship,cultural_and_historic,0.7736006379127502,False
+SP,SP:95,6,231c41d6-3a41-4f24-8b31-d77bb5efe67a,-46.74383193,-23.50430122,Pizzaria São Domingos,restaurant,pizza_restaurant,food_and_drink,0.8978516459465027,False
+SP,SP:95,7,b9826b8c-3503-4076-97d9-14285baea540,-46.74506279,-23.50555451,Neide Cabeleireira,personal_or_beauty_service,beauty_salon,lifestyle_services,0.6937631368637085,False
+SP,SP:95,8,ada52223-03c2-4ac9-b6fc-c72227130240,-46.7524074,-23.49266729,NG Decor,home_service,interior_design,services_and_business,0.753875732421875,False
+SP,SP:95,9,5eb6740a-c11d-4bd1-b690-be453807bb21,-46.74043259,-23.49915911,Floricultura,flowers_and_gifts_store,flowers_and_gifts_store,shopping,0.8415061831474304,False
+SP,SP:95,10,dddcbbcc-7248-4fc2-a837-684d167da4d2,-46.74893,-23.50667,Theo Banho e Tosa,animal_or_pet_service,animal_or_pet_service,lifestyle_services,0.5330324769020081,False
+SP,SP:95,11,40a2240a-4b0f-43a0-be77-c50ac253ab07,-46.73703887,-23.49204564,Centro Cultural de Artes Ballet Thatiana Orite,sport_or_fitness_facility,dance_studio,sports_and_recreation,0.9901466965675354,False
+SP,SP:95,12,e1e9291c-6757-4a8f-8978-6f633f902778,-46.76504334,-23.48263701,Mais Distribuidora,supplier_or_distributor,food_beverage_distributor,services_and_business,0.8539518117904663,False
+SP,SP:95,13,420ad6ac-779a-4109-8b25-3000e64fc2c3,-46.74693375208097,-23.495892827176508,Bous Tattoo,personal_or_beauty_service,tattoo_and_piercing,lifestyle_services,0.5962700247764587,False
+SP,SP:95,14,23d0eacf-0f12-4af5-ae65-325806c5f0fb,-46.72790388,-23.51056788,Ampm,convenience_store,convenience_store,shopping,0.85,False
+SP,SP:95,15,d6ac0534-519d-458a-8ebb-e398e4459aa6,-46.75705149,-23.47585566,Dog Walker Sol,animal_or_pet_service,dog_walker,lifestyle_services,0.2098476141691208,False
+SP,SP:95,16,2e7b257a-8bd3-4788-8c69-e0094548c171,-46.75146319,-23.48507505,Technins,b2b_service,b2b_surgical_appliances_and_supplies,services_and_business,0.5337755084037781,False
+SP,SP:95,17,8f5fdc01-6b03-4951-831f-83df2bdf8c35,-46.733410434235,-23.50169219832,PL4Y KIDS,event_or_party_service,caterer,services_and_business,0.6691175699234009,False
+SP,SP:95,18,088233c5-da86-4c98-a659-ef9a75148660,-46.74795,-23.49967,Monicajfjeventos,,,,0.2558286190032959,False
+SP,SP:95,19,896bef85-532c-44ca-b27a-fb3bcb7bc199,-46.747269395346,-23.500483345513,Prensado av 1,restaurant,hot_dog_restaurant,food_and_drink,0.945122241973877,False
+SP,SP:95,20,d8ff91e3-6012-4040-b77b-75b5c9a1f5f5,-46.73663,-23.49558,Only Negocios Imob,,,,0.16464544832706451,False
+CHI,CHI:32,1,129ee671-d4db-40dc-b4f4-88b63d3fb391,-87.6256103,41.8834838,"Batuta, Incorporated",health_care,health_care,health_care,0.95,False
+CHI,CHI:32,2,c917f228-7f8a-499b-8980-dafec5c9b2a1,-87.6215904,41.8845041,Lakeview Recruiters Inc.,b2b_office_and_professional_service,b2b_human_resource_service,services_and_business,0.9199122190475464,False
+CHI,CHI:32,3,b71efbef-41c3-4914-af09-791911c6bd81,-87.62478,41.87735,McCormick Place,music_venue,music_venue,arts_and_entertainment,0.9199122190475464,False
+CHI,CHI:32,4,1bdd0853-7788-4d67-9cd6-48abe8015d07,-87.62739,41.87121,Bloclusrirt Huhagrultpro,,,,0.2057395726442337,False
+CHI,CHI:32,5,605db147-c9bd-4ca4-9414-724d353851e7,-87.634001,41.877036,Direct Auto Insurance,financial_service,insurance_agency,services_and_business,0.3951946198940277,False
+CHI,CHI:32,6,d675e19f-af7f-4650-b128-220475be345c,-87.6305945,41.8832271,BMO Harris Bank ATM,bank_or_credit_union,bank_or_credit_union,services_and_business,0.9988268065869809,False
+CHI,CHI:32,7,fbac4f21-0903-4ed2-b2da-2af00b6bf8a0,-87.62880803,41.88062169,Illinois Restaurant Association,social_or_community_service,social_or_community_service,community_and_government,0.9902192950248718,False
+CHI,CHI:32,8,c162a71e-8413-4602-9e02-4a1710b7c74f,-87.6306345,41.873356,Chicago Veneers,dental_clinic,cosmetic_dentistry,health_care,0.9199122190475464,False
+CHI,CHI:32,9,44ab4bc9-046e-4df3-89ea-9b5add36ca8c,-87.620533,41.885875,Kuchebro Dithenghul,,,,0.2996438443660736,False
+CHI,CHI:32,10,803786c5-5f0f-4bcf-92e3-761489f1afbd,-87.632195,41.881382,Burrito Beach,restaurant,mexican_restaurant,food_and_drink,0.9808588624000549,False
+CHI,CHI:32,11,ca83ce97-4483-4257-b04a-7bf29bfc34ae,-87.63672307,41.88271657,Chicago Pizza Tours,food_and_beverage_store,food_and_beverage_store,shopping,0.9204215407371521,False
+CHI,CHI:32,12,76e8f8a0-f7b8-418f-b6af-4be28870a1a1,-87.6245873,41.8772904,Till School,educational_facility,,,0.65,False
+CHI,CHI:32,13,c725df0d-04f5-4d06-a31a-59aaf45fde44,-87.634581,41.876721,Anderson Carlye Garrett,,,,0.19501569867134094,False
+CHI,CHI:32,14,8e8f7a3f-daed-4847-b0fd-0ec0ff62d3b5,-87.623194,41.875687,Uuxn 全民超值選購,,,,0.19501569867134094,False
+CHI,CHI:32,15,bceae171-4688-4a82-9cea-f47bae4f0a2a,-87.61613202,41.88617231,The Lancaster,historic_site,historic_site,cultural_and_historic,0.7982560396194458,False
+CHI,CHI:32,16,b833e8d9-6cd9-4ae5-b867-bad72acff43e,-87.6289,41.872896,Thotspanblo Swelacaswing,,,,0.2057395726442337,False
+CHI,CHI:32,17,4bc0baad-cb67-44d8-acf4-746c1417812a,-87.6373887,41.8796679,Ultimate Discount Services Inc,discount_store,discount_store,shopping,0.65,False
+CHI,CHI:32,18,9e28c907-633d-4df9-a9fa-015249aef510,-87.63273,41.86754,The X Pot Bar - Chicago,restaurant,restaurant,food_and_drink,0.9093225598335266,False
+CHI,CHI:32,19,5b0a2187-d3ba-4af6-bf5a-1fc3f8785735,-87.6236938,41.8871412,"First Stop Health, Llc",health_care,health_care,health_care,0.95,False
+CHI,CHI:32,20,1fc1ec49-5c7a-427a-b77e-09b00e6ab28d,-87.636247,41.882065,Flosfrudra Sligackfind,,,,0.19958624243736267,False
+CHI,CHI:14,1,e6e5f74c-4b36-4246-b271-9018deb04afb,-87.71370567,41.9667737,Arzan Cafe,restaurant,halal_restaurant,food_and_drink,0.9814777374267578,False
+CHI,CHI:14,2,ef4a4f78-ac60-4ad8-851c-129f2c9acdc0,-87.710575,41.968964,Family Care Dental Center P.c,health_care,health_care,health_care,0.95,False
+CHI,CHI:14,3,8e64a598-9ab6-45c8-849c-5d3ea455a16c,-87.71718865,41.96845673,Palace of wedding,event_or_party_service,wedding_planning,services_and_business,0.9199122190475464,False
+CHI,CHI:14,4,c6829613-d069-42e3-a241-37bb378da8c6,-87.72586853,41.96104299,Buds N' Suds Dog Grooming,animal_or_pet_service,pet_groomer,lifestyle_services,0.9997458564937115,False
+CHI,CHI:14,5,3b183b27-6bfd-4528-86c9-989561203766,-87.71370752,41.96828561,Marcus Campos Sales,auto_dealer,used_auto_dealer,shopping,0.22703954577445984,False
+CHI,CHI:14,6,0c41638b-7f56-459f-bea9-bf5166b23c91,-87.70830066,41.96602301,Embody Pilates Studio,fitness_studio,pilates_studio,sports_and_recreation,0.9199122190475464,False
+CHI,CHI:14,7,3d2b273a-132e-41cc-ae79-29646ca470b9,-87.71210594695481,41.961338618935116,Chicago Grooming Academy,shopping,shopping,shopping,0.9199122190475464,False
+CHI,CHI:14,8,1f25946f-b4f5-4ec5-aadf-65cd989c4247,-87.71321169,41.96142275,Betty's & Nick's,personal_or_beauty_service,hair_salon,lifestyle_services,0.9902192950248718,False
+CHI,CHI:14,9,8895298a-e540-45a8-97ea-db19a4c901c2,-87.69549625,41.96138974,Christine Makarewicz-Villaire,behavioral_or_mental_health_clinic,,,0.9199122190475464,False
+CHI,CHI:14,10,3fab4122-0982-4591-b969-4479eaac496a,-87.70883975,41.9725164,Hanul Home Care,medical_service,home_health_care,health_care,0.2360820770263672,False
+CHI,CHI:14,11,c2e29772-7836-4a5d-bc47-ee9595bd4139,-87.72754153,41.96852362,Sala Evangelica,christian_place_of_worship,protestant_place_of_worship,cultural_and_historic,0.9902192950248718,False
+CHI,CHI:14,12,4cab6df9-eef1-469e-a2dc-09463815ef23,-87.71227336,41.96851569,Tristine Walker Imagery,professional_service,professional_service,services_and_business,0.9199122190475464,False
+CHI,CHI:14,13,d3a0086d-8c3d-4b18-b310-b468b81ed436,-87.70864599,41.96837532,Eagle 99 Cent Plus,convenience_store,convenience_store,shopping,0.9199122190475464,False
+CHI,CHI:14,14,f759ca1e-08a7-4dd8-b5cd-394456c7b1dd,-87.71476867,41.96832491,Nuevo Amanecer Kids Boutique,fashion_and_apparel_store,fashion_boutique,shopping,0.9199122190475464,False
+CHI,CHI:14,15,5cccd32b-e6f2-4e1f-88db-7cbe3eeb2a81,-87.72465323512145,41.96840797523651,Mayan Sol Latin Grill,restaurant,latin_american_restaurant,food_and_drink,0.9199122190475464,False
+CHI,CHI:14,16,ec773cf5-ab3d-40ca-b7f4-351d6634ec0b,-87.71257766,41.96126627,Mamacita's Fitness Studio,gym,gym,sports_and_recreation,0.9199122190475464,False
+CHI,CHI:14,17,fa36d242-863c-4f48-872e-33c97437c4c9,-87.70846469,41.97303545,North Park Auto Service,automotive_service,automotive_repair,travel_and_transportation,0.9902192950248718,False
+CHI,CHI:14,18,13820f50-de68-4413-b13a-63b4bda94ca3,-87.71054293,41.96838497,Great Sea Restaurant,restaurant,chinese_restaurant,food_and_drink,0.9902192950248718,False
+CHI,CHI:14,19,06075315-7d4f-4ddf-89c4-3abc71baddfa,-87.72736284161849,41.96197273413408,Dollar Stop +,discount_store,discount_store,shopping,0.9902192950248718,False
+CHI,CHI:14,20,9d5a272d-80e4-4a0e-be8d-b1fd85a64e11,-87.73720194337751,41.974136030258485,Systems Sencha,telecommunications_service,telecommunications_service,services_and_business,0.9199122190475464,False
+CHI,CHI:23,1,6bac82b7-d7e7-4696-881c-e6ae2ece9181,-87.7090888,41.8989316,A & G Auto Specialists Inc,automotive_service,automotive_repair,travel_and_transportation,0.9902192950248718,False
+CHI,CHI:23,2,a7d98aa7-4fcf-41fd-8e90-0526f123397c,-87.7297152,41.9028989,The Word Works Church,christian_place_of_worship,christian_place_of_worship,cultural_and_historic,0.9885,False
+CHI,CHI:23,3,d90be859-aa27-40b4-b360-b9cfa7fc0af9,-87.725984,41.901324,Iglesia Pentecostal Unida,religious_organization,religious_organization,cultural_and_historic,0.8880122900009155,False
+CHI,CHI:23,4,45ad135e-26d6-4657-9aa1-07f0bcaaa9a1,-87.7186112,41.902521,Division Quickstop,food_and_beverage_store,grocery_store,shopping,0.55,False
+CHI,CHI:23,5,c1a4c2c6-e130-4d52-a2b1-aa9544def966,-87.72499609,41.91111869,The Path Acting Studio,performing_arts_venue,performing_arts_venue,arts_and_entertainment,0.9199122190475464,False
+CHI,CHI:23,6,5bfa7dc6-8f27-4a95-ab55-731e3290821e,-87.72598,41.90141,Byron Vides,religious_organization,religious_organization,cultural_and_historic,0.2762317955493927,False
+CHI,CHI:23,7,61224048-5a59-437a-ba70-e2d05cc8188a,-87.71325124,41.91179761,AIPJ Templo Sol De Justicia,christian_place_of_worship,pentecostal_place_of_worship,cultural_and_historic,0.9199122190475464,False
+CHI,CHI:23,8,43faadda-872e-4284-95f4-7cd199abae8a,-87.72168022,41.90288223,Big T's Auto Repair,automotive_service,automotive_repair,travel_and_transportation,0.9199122190475464,False
+CHI,CHI:23,9,5f2faf38-d304-451d-9b38-a434baa6f3e1,-87.70630983661982,41.896271000323836,Martinez Family Landscaping,home_service,gardener,services_and_business,0.9199122190475464,False
+CHI,CHI:23,10,700375cc-881a-46b3-af65-f43d9582eaa1,-87.71039379,41.91054662,Dental,dental_clinic,general_dentistry,health_care,0.9199122190475464,False
+CHI,CHI:23,11,58285460-64d5-4cf0-a2d1-fe89893f966f,-87.7081443,41.8965093,Baskin-Robbins,casual_eatery,ice_cream_shop,food_and_drink,0.9199122190475464,False
+CHI,CHI:23,12,524d2015-4c94-4fea-b263-ef4ca0520089,-87.71801439,41.90288261,Iglesia De Dios Emanuel,christian_place_of_worship,christian_place_of_worship,cultural_and_historic,0.9199122190475464,False
+CHI,CHI:23,13,4827953e-5a1e-4e69-b288-d81fd850d4cf,-87.72934275961114,41.89468568357996,Department of Human Services,government_office,government_office,community_and_government,0.77,False
+CHI,CHI:23,14,aa95b946-8441-4b24-97c4-5e0eeb0f9a82,-87.7182317,41.90309649,Brigitte’s Tire & Auto Care,automotive_service,tire_dealer_and_repair,travel_and_transportation,0.4562661349773407,False
+CHI,CHI:23,15,ca30394f-3ea5-4bc2-9643-8e658f2fc19c,-87.71412744,41.90450915,Casals Public School,place_of_learning,public_school,education,0.9902747458219529,False
+CHI,CHI:23,16,ce375e39-b86d-4fb1-b7a2-616602b65f1c,-87.73101193,41.90061736,My Little Planet Daycare,family_service,day_care_preschool,services_and_business,0.9199122190475464,False
+CHI,CHI:23,17,426b5da8-d5fd-47a8-9ef8-a56220a12437,-87.724066,41.910156,Universal W. North Avenue IL,religious_organization,religious_organization,cultural_and_historic,0.4125789403915405,False
+CHI,CHI:23,18,38c85437-79b8-4436-9b15-a703667dcb6e,-87.70676448,41.89582026,Popeyes,fast_food_restaurant,fast_food_restaurant,food_and_drink,0.9999814096808434,False
+CHI,CHI:23,19,8c546e20-a475-40ec-9a9d-5e5908f8ecd7,-87.71014049,41.90981652,Tasty China,restaurant,chinese_restaurant,food_and_drink,0.9902192950248718,False
+CHI,CHI:23,20,a1e4357d-6f3d-407c-9a12-8adc660e22d1,-87.73795624,41.89868477,Augusta Playground,park,park,sports_and_recreation,0.9472025036811829,False

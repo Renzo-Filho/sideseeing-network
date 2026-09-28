@@ -1,0 +1,8 @@
+unit_id,name,source_id,lon,lat,osm_tag,overture_category,overture_primary,overture_confidence,case_type,other_id,selection_hash,case_id
+SP:10,Shopping Bolivia,way/1073597442,-46.62251001914067,-23.53784415,shop=mall,shopping,shopping_mall,0.9044063091278076,matched,ca239bbc-c8a8-4eb9-b584-7ad0bc303093,382852ebadd0353de8787ba2097075edb9590e8641a7d6894ec9973d218ee284,SP_10_matched
+SP:10,Shopping All Brás,way/484257447,-46.620895789134124,-23.539000350000002,shop=mall,,,,osm_only,,09cd466a9e5b2350c5cafb8d2896f58384cfb394362b243de283da96bc52a158,SP_10_osm_only
+SP:02,Casa de Repouso New Heaven,812d43f5-17e7-438c-b7e0-eaa597cb3d12,-46.71540157,-23.54351809,,services_and_business,retirement_home,0.9717884063720703,overture_only,,00ed4d7131419696118c23cfc5a2b3e25e0d66e2568b2c2460dd434d450945d8,SP_02_overture_only
+SP:95,Marcenaria Jotaefe,3bf6399f-2951-4954-9878-41564a1cc484,-46.7409609,-23.48818351,,services_and_business,contractor,0.28042277693748474,overture_only,,0689281abf3fd518bdfd9f44981d4fac77d5b4804029f6f5256b420d916a7129,SP_95_overture_only
+CHI:32,The Ledge,node/10945307447,-87.636323,41.8788896,tourism=attraction,travel_and_transportation,travel_service,0.9420596957206726,matched,38596a1c-665f-4cac-b8d2-69edbbc96f66,1eca6c9aaaab6aaa49b53ed4cc079d879e0767b84507397fa07492e139569623,CHI_32_matched
+CHI:32,Do-Rite Donuts,node/9294100631,-87.6357641,41.8784394,amenity=fast_food,,,,osm_only,,0728256d298592571ecd16eac1f19dc68e6347543a1df8f2d809bebd2a2236f5,CHI_32_osm_only
+CHI:32,Cwapkg恆通遠達D,84245ef7-5afd-4e80-8cb5-6be3ee7119a3,-87.637665,41.878828,,,,0.2057395726442337,overture_only,,0000e5fca4fa23239fcc96fe92cb47b7f86a56d61ca08d1a902a8f8dbf667bfa,CHI_32_overture_only

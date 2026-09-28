@@ -1,0 +1,19 @@
+unit_id,osm_name,overture_name,distance_m,osm_type,osm_id,overture_id
+SP:10,Mega São José,Mega São José,5.21093753135696,node,4586830605,bfb9a978-145c-429b-ba22-94a86eb3a3bc
+SP:10,Dariana Modas Ltda,Dariana Modas Ltda,24.308330327837286,node,4586830614,d3e04716-736a-43d5-ad44-ab588041ea91
+SP:10,Kleenew Jeans Modas,Kleenew Jeans Modas,0.0,node,4659568324,9cbf55c0-01c9-4389-b23e-40977ad0816e
+SP:10,Milli Lingerie e Sex Shop,Milli Lingerie e Sex Shop,18.367169550145633,node,4665243474,ba21272b-31d7-4506-bd6f-7349217d860b
+SP:10,Silvia Mochilas,Silvia Mochilas,0.0,node,4732222080,8d6dc648-a75c-484e-a284-5f419965b99e
+SP:10,Camaleão Lingerie,Camaleão Lingerie,13.381704321400534,node,4844426266,fae21330-cf0e-49f4-95f7-b3cee5ac05bd
+SP:10,Shopping Bolivia,Shopping Bolivia,26.095071771197514,way,1073597442,ca239bbc-c8a8-4eb9-b584-7ad0bc303093
+CHI:32,7-Eleven,7-Eleven,2.369149001404044,node,1639964356,7f03fe3a-683f-40c1-9da6-6f895e4753e0
+CHI:32,Dunkin',Dunkin',3.602578598607254,node,1951914729,9682a0b8-3959-47fc-9b08-0f79c52b325d
+CHI:32,Jimmy John's,Jimmy John's,9.545805334649597,node,1951914734,7b15ea8d-eaab-4e48-96f5-de72e78e368c
+CHI:32,Potbelly,Potbelly,21.366516704673348,node,2311635022,bdc709aa-63b1-4296-bc58-37de9452ca87
+CHI:32,Mojo Coffee,Mojo Coffee,20.781026994814468,node,6322774469,ae5a98f8-6ead-4d4e-b826-0698a69de9df
+CHI:32,Rustle & Roux,Rustle & Roux,13.673017964070187,node,6932857335,289bd77a-b6b6-4852-881d-099738eb389a
+CHI:32,Canopy by Hilton Chicago Central Loop,Canopy by Hilton Chicago Central Loop,15.451379885019136,node,9025081822,d17a318e-a104-4e4d-af40-33604be73f9d
+CHI:32,Charles Schwab,Charles Schwab,29.086831509664318,node,10945008438,7b2f2144-030c-4a5b-8356-bd7b68473683
+CHI:32,The Ledge,The Ledge,15.675262384457577,node,10945307447,38596a1c-665f-4cac-b8d2-69edbbc96f66
+CHI:32,Joe & The Juice,JOE & THE JUICE,29.585575617249038,node,10945307456,a9179b98-a447-4a09-bad0-efdf21462d7f
+CHI:23,Culver's,Culver's,19.780418496904655,way,1150610274,ae2c34ad-a67a-4e9e-830c-55e27baf2071
