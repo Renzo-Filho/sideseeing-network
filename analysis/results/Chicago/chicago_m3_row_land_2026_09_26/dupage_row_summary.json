@@ -1,0 +1,24 @@
+{
+  "source": "https://gis.dupageco.org/arcgis/rest/services/OpenData/ROW/MapServer/0",
+  "retrieved_features": 162,
+  "positive_area_ohare_features": 13,
+  "row_type_counts_positive_ohare": {
+    "2": 8,
+    "0": 2,
+    "<null>": 2,
+    "3": 1
+  },
+  "row_type_union_area_in_ohare_m2": {
+    "0": 6806.988795016441,
+    "2": 64130.93878424821,
+    "3": 12431.479442105927,
+    "nan": 16644.54780616613
+  },
+  "dupage_row_union_area_in_ohare_m2": 100013.95482752241,
+  "cook_active_road_row_area_in_ohare_m2": 871300.7928457308,
+  "dupage_row_overlap_with_held_dupage_parcels_m2": 1498.7088432353617,
+  "ordinary_road_edge_area_in_ohare_m2": 1578643.567254872,
+  "road_edge_outside_cook_row_fraction": 0.7374079910504667,
+  "road_edge_outside_combined_row_fraction": 0.736417953375493,
+  "status": "deeded ROW source; ROW_TYPE semantics and physical-road coverage require review"
+}

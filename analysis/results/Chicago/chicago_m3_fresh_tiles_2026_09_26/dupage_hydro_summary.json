@@ -1,0 +1,21 @@
+{
+  "source": "https://gis.dupageco.org/arcgis/rest/services/Hydrography/DPMS_LakesPonds_Service/MapServer/0",
+  "retrieved_features": 18,
+  "positive_area_ohare_features": 5,
+  "hydro_union_area_in_ohare_m2": 9843.676922556897,
+  "negative_point_checks": [
+    {
+      "reference_id": "N03",
+      "tile_id": "CHI_76_1",
+      "dupage_hydro_contains": false,
+      "matched_properties": []
+    },
+    {
+      "reference_id": "N04",
+      "tile_id": "CHI_76_2",
+      "dupage_hydro_contains": false,
+      "matched_properties": []
+    }
+  ],
+  "status": "hydrographic source with documented older imagery and updates; case diagnostic"
+}

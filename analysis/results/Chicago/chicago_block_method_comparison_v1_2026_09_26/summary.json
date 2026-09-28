@@ -1,0 +1,65 @@
+{
+  "scope": "diagnostic selected imagery references; no complete independent census",
+  "clear_positive_count": 16,
+  "ambiguous_positive_count": 2,
+  "negative_point_count": 12,
+  "development_median_iou": {
+    "momepy_iou": 0.7577484114357661,
+    "shapely_iou": 0.7577484114357661,
+    "row_candidate_iou": 0.826678763667199
+  },
+  "new_location_clear_median_iou": {
+    "momepy_iou": 0.8952192417550872,
+    "shapely_iou": 0.8952192417550872,
+    "row_candidate_iou": 0.7576068272939576
+  },
+  "pooled_clear_median_iou": {
+    "momepy_iou": 0.8283043590934773,
+    "shapely_iou": 0.8283043590934773,
+    "row_candidate_iou": 0.8079290903530647
+  },
+  "pooled_clear_iou_ge_half": {
+    "momepy_iou": 14,
+    "shapely_iou": 14,
+    "row_candidate_iou": 16
+  },
+  "pooled_clear_median_absolute_log_area_error": {
+    "momepy": 0.16743704434363083,
+    "row_candidate": 0.1581179283623394
+  },
+  "pooled_clear_median_absolute_compactness_error": {
+    "momepy": 0.014439170578674665,
+    "row_candidate": 0.09939261766172447
+  },
+  "momepy_beats_row_clear": 10,
+  "published_flag_clear_positives": 0,
+  "published_flag_negative_points": 3,
+  "published_threshold": 7.051690822747151,
+  "momepy_shapely_iou_max_absolute_difference": 0.0,
+  "momepy_shapely_exact_tile_face_sets": 14,
+  "tile_count": 14,
+  "momepy_positive_halo_touch_count": 0,
+  "notes": [
+    "The published filter was fitted to full municipal centerline faces, not to the reference sketches.",
+    "ROW candidate comparison uses different boundary source and processing; it is not algorithm-matched.",
+    "Negative points are targeted controls, not a census of false faces.",
+    "The current ROW candidate has no general source-gap repair and is not the full proposed method."
+  ],
+  "inputs_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/experimental_blocks.parquet": "307d179b65a3c7dd381de0bb849ca4861c334eb4b60209069f597a172b6fd923",
+    "analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26/tile_selection.json": "3f1c3bdb22ebde240e50b2c10a8ff47dbd0ab037fa6e35edd38949479421503a",
+    "analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26/visual_reference.json": "9cf369cd2a62d13443aa56e86b85a11dfcd1d433dad9cac1745fc3146cb0fb2b",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/tile_selection.json": "d9259bca60eefa0d6742c9eefcc7318af2950aa04abe193fd39fd12eeb547a52",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/visual_reference.json": "ebd4d87fbc1333964f5b49bf2b06570b6162080473f52d6ba38fe744225c28b1",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/reference_review.json": "28fb53d4f76ccb251bf091b476b611d50920ff3b8ebd1812eeec69618542855b",
+    "analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26/positive_reference_comparison.csv": "dd0384cfd587bb3aab6a2ee7fd3e307301610f8eef6d30e41d9d417681200343",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/positive_comparison.csv": "06df55a6ab05b1e436e8fcffcb7a17d1f352bb11ffec22194d3a78ea804b30fc",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/holdout_candidates.csv": "f6ebdf8941e39b273ca9d2149e2e1654b55d504480142d6444a0378873ec6247",
+    "analysis/scripts/evaluate_chicago_m3_established_methods_2026_09_26.py": "1e77f151ef7e7a237061082c767f0a4922f43f8f0003028fecc91280e1e5c307"
+  },
+  "versions": {
+    "momepy": "1.0.0",
+    "shapely": "2.1.2"
+  }
+}

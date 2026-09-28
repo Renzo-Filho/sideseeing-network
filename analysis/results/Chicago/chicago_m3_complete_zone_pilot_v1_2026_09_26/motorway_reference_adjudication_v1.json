@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-26",
+  "timing": "After viewing candidate overlays; frozen motorway_visual_reference_v1.json and motorway_reference_freeze.json remain unchanged.",
+  "cases": [
+    {
+      "reference_id": "MZ11_03",
+      "status": "exclude_incomplete_outline_from_geometry_accuracy",
+      "reason": "The frozen rough polygon ends at image row 897 while the enclosing south street is around row 1030. It truncates an otherwise visible residential block. Its 0.487 best IoU cannot be interpreted as a missed block."
+    },
+    {
+      "reference_id": "MZ11_04",
+      "status": "exclude_incomplete_outline_from_geometry_accuracy",
+      "reason": "The frozen rough polygon ends at image row 897 while the enclosing south street is around row 1030. Its passing IoU also cannot validate the full block boundary."
+    },
+    {
+      "reference_id": "MZ11_05",
+      "status": "exclude_incomplete_outline_from_geometry_accuracy",
+      "reason": "The frozen rough polygon ends at image row 897 before the south street and its eastern extent needs frontage-road status review. Its 0.370 best IoU is not a reliable construction failure estimate."
+    }
+  ],
+  "effect": "The original five-reference 3/5 score remains in the raw record but is not reported as accuracy. The two frontage-road wedges MZ11_01 and MZ11_02 remain provisional positive controls; their public-road status still needs independent review. The 18-face inventory and motorway-filter false-removal finding remain valid diagnostics. No precision/recall estimate is made from this core."
+}

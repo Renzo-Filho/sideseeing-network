@@ -1,0 +1,194 @@
+[
+  {
+    "tile_id": "CHI_11_1",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "436998.496,4646807.093,437318.496,4647127.093",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:46:59.277126+00:00",
+    "sha256": "bbe8864d150a298f02119cfbccdb4a4e3177172d1999b3a6334395aedb560b13",
+    "bytes": 159880,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_11_1_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_11_2",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "435718.336,4647054.472,436038.336,4647374.472",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:01.260948+00:00",
+    "sha256": "d4a7c653596d16ade19618a3a07ecf01cbbfb0a410ab789252097a9ca1a90e7f",
+    "bytes": 165184,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_11_2_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_49_1",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "447607.384,4618130.141,447927.384,4618450.141",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:02.553479+00:00",
+    "sha256": "94470f45a8db994ba0dd2f0d700d1e8cbc1d85e0d02f3e80095b01b75ff810c5",
+    "bytes": 171177,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_49_1_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_49_2",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "448438.238,4618770.068,448758.238,4619090.068",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:04.116558+00:00",
+    "sha256": "30b9f8b775a05358e98743062f75e613de227509c7c197ff054b65d945e5f451",
+    "bytes": 182769,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_49_2_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_57_1",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "438687.601,4629268.208,439007.601,4629588.208",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:06.474692+00:00",
+    "sha256": "0c3843920be0003400a1dfc60176f949e5c28c1a8ccc410a44a7a8ce95d68412",
+    "bytes": 136618,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_57_1_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_57_2",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "439023.325,4628047.555,439343.325,4628367.555",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:07.890660+00:00",
+    "sha256": "3c4a530bf95b4d0316e3879d7af7414bac955035c3c70812bda7512c3b3da8a1",
+    "bytes": 168183,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_57_2_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_63_1",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "441072.792,4626421.582,441392.792,4626741.582",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:09.773404+00:00",
+    "sha256": "6c598dba01535434a3fdf7d2f4f5ad80e35f0c383c358031adeb071687112837",
+    "bytes": 187227,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_63_1_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_63_2",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "440770.515,4627342.778,441090.515,4627662.778",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:11.017271+00:00",
+    "sha256": "ea3c4290de44f1744293d219c24b6620a5b41e79a8b1ce256a4aa5685619f9fc",
+    "bytes": 155332,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_63_2_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_32_1",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "447574.565,4636484.872,447894.565,4636804.872",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:12.547361+00:00",
+    "sha256": "2057e8fc30fad64cef068672ddd6eb4fe5d91e79b6e1558f1a108521d0759526",
+    "bytes": 157824,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_32_1_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_32_2",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "448995.717,4637153.173,449315.717,4637473.173",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:14.198640+00:00",
+    "sha256": "6248647c945fa9a734d597557df86a160521e94e139ae87f3116b047cbaf8ef9",
+    "bytes": 147121,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_32_2_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_76_1",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "429306.854,4647616.624,429626.854,4647936.624",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:16.141439+00:00",
+    "sha256": "e75bdafca9165d4c4b93e5e69eac460f1d8bf6bb4c440c4788f93c4485183ed9",
+    "bytes": 112146,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_76_1_raw.jpg"
+  },
+  {
+    "tile_id": "CHI_76_2",
+    "source": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+    "query": {
+      "bbox": "425388.384,4645723.270,425708.384,4646043.270",
+      "bboxSR": "26916",
+      "imageSR": "26916",
+      "size": "800,800",
+      "format": "jpg",
+      "f": "image"
+    },
+    "retrieved_utc": "2026-09-26T15:47:17.752061+00:00",
+    "sha256": "9f016632e0ed8aa050580e5d7c708f9be7747f929bdac4f8c6a497cd1f19aebd",
+    "bytes": 82534,
+    "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_76_2_raw.jpg"
+  }
+]

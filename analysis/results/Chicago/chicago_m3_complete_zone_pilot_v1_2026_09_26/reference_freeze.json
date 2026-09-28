@@ -1,0 +1,14 @@
+{
+  "frozen_utc": "2026-09-26T20:08:12.435747+00:00",
+  "status": "candidate geometry has not been viewed in these zones; references are single-analyst rough imagery traces",
+  "sha256": {
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/zone_selection.json": "1a5e338b40d1c5949b1f6c6e645fdc045f2e123840a109b7444122def3e5eb1f",
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/visual_reference_v1.json": "d4fb77bc76b566a6fbf91279f7635fa59894e7c7d0897400c587280617ac8690",
+    "analysis/work/chicago_m3_complete_zone_pilot_v1_2026_09_26/CHI_11_Z1_ortho.jpg": "67965a10799da447c254cf9192f1cadf366e6f4f04b42b8a3ceea14a0b56f928",
+    "analysis/work/chicago_m3_complete_zone_pilot_v1_2026_09_26/CHI_32_Z1_ortho.jpg": "03597f47a955845094c66fadc84f8d210bbd4fc50140c670f28ba73c1b669e31",
+    "analysis/work/chicago_m3_complete_zone_pilot_v1_2026_09_26/CHI_49_Z1_ortho.jpg": "e3ddf89c7574ce1e47e45f1c2635e05e3bf4f82515428a7b75b33283cd3cd092",
+    "analysis/work/chicago_m3_complete_zone_pilot_v1_2026_09_26/CHI_57_Z1_ortho.jpg": "2b27c0736d63cbf05a9b611aa4c91b11262e37ade955f6e838f0ca40277a6899"
+  },
+  "reference_positive_polygons": 19,
+  "zones": 4
+}

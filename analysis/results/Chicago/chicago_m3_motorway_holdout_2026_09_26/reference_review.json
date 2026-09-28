@@ -1,0 +1,10 @@
+{
+  "review_time": "after frozen candidate overlay",
+  "rule": "Do not edit or silently replace the frozen visual_reference.json rings; record ambiguity explicitly.",
+  "cases": [
+    {"reference_id":"H3_R03","status":"uncertain_boundary","reason":"The sketched freeway-edge wedge includes an ambiguously curved ordinary street/expressway margin; candidate P08 is smaller and shifted relative to the rough polygon. This is not independent surveyed boundary truth."},
+    {"reference_id":"H4_R01","status":"uncertain_unit","reason":"The imagery contains a curving cul-de-sac or loop road inside the sketched rectangle. The ROW complement splits it into two land components P06 and P08. The sketch may have combined two physical blocks and cannot score one-to-one recall without a street-status and topology ruling."}
+  ],
+  "census_audit": "A post-overlay check also found visibly complete blocks in the north row of H3 that the initial seven-sketch file omitted. The file is therefore a sampled reference, not a complete true-block census; no precision or recall is calculated.",
+  "interpretation": "Five of seven frozen sketches are unambiguous ordinary blocks with IoU at least 0.5 and none is motorway-flagged. The two uncertain sketches retain their original measured IoUs in positive_comparison.csv and are not counted as successful matches."
+}

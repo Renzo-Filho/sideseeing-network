@@ -1,0 +1,43 @@
+{
+  "seed": 20260926,
+  "selection_basis": "Community Area interiors and >=700 m distance from old tile centers; no candidate geometry, imagery or labels",
+  "zones": [
+    {
+      "zone_id": "CHI_11_Z1",
+      "unit_id": "CHI:11",
+      "x": 436329.67797173915,
+      "y": 4648263.890990309,
+      "half_width_m": 300,
+      "image_size_px": 1200
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "unit_id": "CHI:32",
+      "x": 448078.120314132,
+      "y": 4635804.208658515,
+      "half_width_m": 300,
+      "image_size_px": 1200
+    },
+    {
+      "zone_id": "CHI_49_Z1",
+      "unit_id": "CHI:49",
+      "x": 447861.4573076488,
+      "y": 4616235.459146828,
+      "half_width_m": 300,
+      "image_size_px": 1200
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "unit_id": "CHI:57",
+      "x": 439888.0682773494,
+      "y": 4629577.97308123,
+      "half_width_m": 300,
+      "image_size_px": 1200
+    }
+  ],
+  "input_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f",
+    "analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26/tile_selection.json": "3f1c3bdb22ebde240e50b2c10a8ff47dbd0ab037fa6e35edd38949479421503a",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/tile_selection.json": "d9259bca60eefa0d6742c9eefcc7318af2950aa04abe193fd39fd12eeb547a52"
+  }
+}

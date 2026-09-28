@@ -1,0 +1,42 @@
+{
+  "status": "candidate_blind_single_analyst_rough_imagery_reference",
+  "date": "2026-09-26",
+  "method": "Four centers were selected from Community Area geometry and distance to old tiles, before viewing imagery or candidates at these centers. A single analyst viewed only the frozen 2025 Cook orthophotos and traced approximate landward street edges. Every visibly complete ordinary-street block with its approximate centroid in each declared pixel core is included. Internal alleys and grade-separated rail do not split a ground-level street block. No candidate overlay was viewed before this file was frozen.",
+  "limits": "One analyst, approximate image tracing, no second reviewer or recorded plat. Core selection after viewing imagery may favor legible blocks. This is a complete census only for the declared small cores, not a representative Chicago sample or surveyed geometry reference.",
+  "coordinate_system": "1200x1200 image pixels, origin upper left; each image spans 600x600 metres in EPSG:26916",
+  "cores": [
+    {"zone_id": "CHI_11_Z1", "bounds_px": [120, 450, 570, 700], "context": "ordinary residential grid"},
+    {"zone_id": "CHI_32_Z1", "bounds_px": [350, 250, 740, 900], "context": "Loop grid and elevated rail"},
+    {"zone_id": "CHI_49_Z1", "bounds_px": [500, 280, 1000, 930], "context": "residential grid and school campus"},
+    {"zone_id": "CHI_57_Z1", "bounds_px": [350, 550, 520, 1000], "context": "industrial and residential edge"}
+  ],
+  "positive_polygons": [
+    {"id": "Z11_01", "zone_id": "CHI_11_Z1", "context": "residential with internal alley", "pixel_ring": [[80, 402], [254, 402], [254, 778], [80, 778]]},
+    {"id": "Z11_02", "zone_id": "CHI_11_Z1", "context": "residential with internal alley", "pixel_ring": [[281, 402], [442, 402], [442, 778], [281, 778]]},
+    {"id": "Z11_03", "zone_id": "CHI_11_Z1", "context": "residential with internal alley", "pixel_ring": [[468, 402], [631, 402], [631, 778], [468, 778]]},
+
+    {"id": "Z32_01", "zone_id": "CHI_32_Z1", "context": "Loop commercial, elevated rail overhead", "pixel_ring": [[327, 155], [559, 155], [559, 422], [327, 422]]},
+    {"id": "Z32_02", "zone_id": "CHI_32_Z1", "context": "Loop commercial", "pixel_ring": [[583, 155], [805, 155], [805, 422], [583, 422]]},
+    {"id": "Z32_03", "zone_id": "CHI_32_Z1", "context": "Loop commercial, elevated rail overhead", "pixel_ring": [[327, 450], [559, 450], [559, 704], [327, 704]]},
+    {"id": "Z32_04", "zone_id": "CHI_32_Z1", "context": "Loop commercial", "pixel_ring": [[583, 450], [805, 450], [805, 704], [583, 704]]},
+    {"id": "Z32_05", "zone_id": "CHI_32_Z1", "context": "Loop commercial, elevated rail overhead", "pixel_ring": [[327, 732], [559, 732], [559, 1002], [327, 1002]]},
+    {"id": "Z32_06", "zone_id": "CHI_32_Z1", "context": "Loop commercial", "pixel_ring": [[583, 732], [805, 732], [805, 1002], [583, 1002]]},
+
+    {"id": "Z49_01", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[401, 210], [760, 210], [760, 389], [401, 389]]},
+    {"id": "Z49_02", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[788, 210], [1137, 210], [1137, 389], [788, 389]]},
+    {"id": "Z49_03", "zone_id": "CHI_49_Z1", "context": "school campus, alley status unverified", "pixel_ring": [[401, 416], [760, 416], [760, 590], [401, 590]]},
+    {"id": "Z49_04", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[788, 416], [1137, 416], [1137, 590], [788, 590]]},
+    {"id": "Z49_05", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[401, 617], [760, 617], [760, 786], [401, 786]]},
+    {"id": "Z49_06", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[788, 617], [1137, 617], [1137, 786], [788, 786]]},
+    {"id": "Z49_07", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[401, 814], [760, 814], [760, 992], [401, 992]]},
+    {"id": "Z49_08", "zone_id": "CHI_49_Z1", "context": "residential with internal alley", "pixel_ring": [[788, 814], [1137, 814], [1137, 992], [788, 992]]},
+
+    {"id": "Z57_01", "zone_id": "CHI_57_Z1", "context": "industrial block", "pixel_ring": [[224, 502], [552, 502], [552, 711], [224, 711]]},
+    {"id": "Z57_02", "zone_id": "CHI_57_Z1", "context": "residential and commercial edge", "pixel_ring": [[224, 735], [552, 735], [552, 1122], [224, 1122]]}
+  ],
+  "context_checks": [
+    {"id": "Z32_N01", "zone_id": "CHI_32_Z1", "label": "rail corridor is not an ordinary at-grade street block", "pixel_xy": [1090, 570]},
+    {"id": "Z57_N01", "zone_id": "CHI_57_Z1", "label": "ordinary street pavement", "pixel_xy": [581, 600]},
+    {"id": "Z49_N01", "zone_id": "CHI_49_Z1", "label": "ordinary street pavement", "pixel_xy": [779, 699]}
+  ]
+}

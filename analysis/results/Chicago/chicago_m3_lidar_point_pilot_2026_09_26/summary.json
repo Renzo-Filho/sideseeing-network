@@ -1,0 +1,45 @@
+{
+  "source": {
+    "url": "https://clearinghouse.isgs.illinois.edu/distribute/district1/cook/2022/cook-las3.zip",
+    "member": "13259350.las",
+    "member_header_offset": 561661162323,
+    "compressed_range": [
+      561661162365,
+      562294890756
+    ],
+    "compressed_bytes": 633728392,
+    "uncompressed_bytes": 1046669819,
+    "compressed_sha256": "47d77c44f7ce29e71a9369801482ba449141ece37ad2c1c878f42afb9ad9082c",
+    "zip_crc32": 251665191
+  },
+  "las_header": {
+    "version": "1.4",
+    "point_offset": 377,
+    "point_format": 6,
+    "point_record_length": 30,
+    "point_count": 34888939,
+    "xyz_scales": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "xyz_offsets": [
+      1133750.0,
+      1936250.0,
+      0.0
+    ]
+  },
+  "target_candidate_indices": [
+    52,
+    56,
+    57,
+    69,
+    71,
+    72,
+    74,
+    75,
+    79
+  ],
+  "candidate_geometry_sha256": "d9c78d3790052ea2db2bdab5ffa15cb0aed126e846ae70db126a56d9975cf41c",
+  "status": "single-tile targeted class diagnostic; not a complete block validation"
+}

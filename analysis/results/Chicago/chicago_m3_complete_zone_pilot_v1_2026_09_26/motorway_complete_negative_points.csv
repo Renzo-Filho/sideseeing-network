@@ -1,0 +1,16 @@
+method,reference_id,context,candidate_at_point,motorway_exposure,motorway_flag
+municipal_momepy,MZ11_N01,motorway pavement,,,
+municipal_momepy,MZ11_N02,rail/motorway corridor,,,
+municipal_momepy,MZ11_N03,motorway pavement,,,
+municipal_momepy,MZ11_N04,freeway-edge landscape,,,
+municipal_momepy,MZ11_N05,freeway/frontage-road verge,31.0,0.5986025059637169,True
+cook_row_edge_alley_open_1m,MZ11_N01,motorway pavement,,,
+cook_row_edge_alley_open_1m,MZ11_N02,rail/motorway corridor,,,
+cook_row_edge_alley_open_1m,MZ11_N03,motorway pavement,,,
+cook_row_edge_alley_open_1m,MZ11_N04,freeway-edge landscape,,,
+cook_row_edge_alley_open_1m,MZ11_N05,freeway/frontage-road verge,,,
+cook_row_edge_alley_open_3m,MZ11_N01,motorway pavement,,,
+cook_row_edge_alley_open_3m,MZ11_N02,rail/motorway corridor,,,
+cook_row_edge_alley_open_3m,MZ11_N03,motorway pavement,,,
+cook_row_edge_alley_open_3m,MZ11_N04,freeway-edge landscape,,,
+cook_row_edge_alley_open_3m,MZ11_N05,freeway/frontage-road verge,,,

@@ -1,0 +1,57 @@
+{
+  "scope": "Chicago-only physical street blocks; existing development and small new-location pilot",
+  "source_inputs": {
+    "analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26/positive_reference_comparison.csv": "dd0384cfd587bb3aab6a2ee7fd3e307301610f8eef6d30e41d9d417681200343",
+    "analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26/visual_reference.json": "9cf369cd2a62d13443aa56e86b85a11dfcd1d433dad9cac1745fc3146cb0fb2b",
+    "analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26/component_inventory.csv": "ec72590d02921481ceb762b29e0e21e7971901ccf6278c73273fbfe4ea9efe70",
+    "analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26/inventory_review.csv": "6231a7f4511d474f9f8958850a8d38fd47ccc20b37ae5941290cddec4b73263f",
+    "analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26/motorway_context.csv": "61905a6cb34ec3a985dcc0965a0e6be22653cada0204a547c10c3941a5910f98",
+    "analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26/parcel_candidate_support.csv": "31e6e36a980d7ed32007826498f8a636eddbc5d526a49bdd160b3519006f69c4",
+    "analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26/parcel_positive_comparison.csv": "ce4973eb8e8538fc2fe92b60c82e78f6a4ebe072165c2cd5b4d7f4135435ce53",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/holdout_candidates.csv": "f6ebdf8941e39b273ca9d2149e2e1654b55d504480142d6444a0378873ec6247",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/positive_comparison.csv": "06df55a6ab05b1e436e8fcffcb7a17d1f352bb11ffec22194d3a78ea804b30fc",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/negative_comparison.csv": "ee85f1331643fc3970969b13bd727f80a0a70ea0202a324498034d883881ecf4",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/visual_reference.json": "ebd4d87fbc1333964f5b49bf2b06570b6162080473f52d6ba38fe744225c28b1",
+    "analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26/reference_review.json": "28fb53d4f76ccb251bf091b476b611d50920ff3b8ebd1812eeec69618542855b",
+    "analysis/config/chicago_m3_motorway_candidate_v1.json": "535d98b2cfa7e3534adf5c5bf340e8d7a0c22aaa65c9a05cdbff9170018e3a6c",
+    "analysis/results/Chicago/chicago_block_protocol_pilot_v1_2026_09_26/momepy_baseline_positive_comparison.csv": "aa906f84b9e8f1a366fce21f257015cf79f078c206fd4716a3a483b191f1396b",
+    "analysis/results/Chicago/chicago_block_protocol_pilot_v1_2026_09_26/momepy_baseline_summary.json": "fc45ca03884933f38e13f304cdf31d4902aab29864b1899fdaab812cfac2d91a"
+  },
+  "gates": {
+    "ordinary_alley_reconnection": {
+      "status": "pilot_support",
+      "evidence": "11 fresh rough sketches improve from raw ROW median IoU 0.386 to alley-open median 0.827"
+    },
+    "established_method_comparison": {
+      "status": "pilot_tested_not_decisive",
+      "evidence": "momepy.enclosures municipal centerlines median IoU 0.758 versus ROW/alley 0.827 on 11 rough sketches; momepy wins 5 individual sketches"
+    },
+    "motorway_island_filter": {
+      "status": "pilot_support_only",
+      "evidence": "9/9 known development islands flagged; in four new CHI:49 tiles, 22/35 candidates flagged, 0/5 clear positives flagged, 0/8 negative controls inside kept candidates"
+    },
+    "parcel_block_identity": {
+      "status": "rejected",
+      "evidence": "two distinct Loop sketches share a PIN group; false freeway islands have high parcel support"
+    },
+    "street_gap_repair": {
+      "status": "failed_open",
+      "evidence": "West Veterans Place is named in municipal/OSM linework but absent from Cook ROW/Road Edge; current land candidate merges"
+    },
+    "complete_independent_reference": {
+      "status": "not_met",
+      "evidence": "fresh sketches are selected positives, holdout omits visible full blocks and has two uncertain outlines"
+    },
+    "citywide_m3_m4_release": {
+      "status": "not_authorized_by_evidence",
+      "evidence": "gap, context and independent precision/recall gates open"
+    }
+  },
+  "not_estimated": [
+    "citywide precision",
+    "citywide recall",
+    "boundary displacement",
+    "M4 shape error distribution",
+    "77-area block totals"
+  ]
+}

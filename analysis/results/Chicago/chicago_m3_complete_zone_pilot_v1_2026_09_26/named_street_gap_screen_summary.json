@@ -1,0 +1,51 @@
+{
+  "units": [
+    "CHI:11",
+    "CHI:32",
+    "CHI:49",
+    "CHI:57",
+    "CHI:63"
+  ],
+  "municipal_named_segments_screened": 3183,
+  "gap_alert_segments": 11,
+  "gap_alert_unique_streets": 9,
+  "alignment_tolerance_m": 5,
+  "longest_uncovered_run_threshold_m": 30,
+  "west_veterans": [
+    {
+      "unit_id": "CHI:11",
+      "trans_id": "154550",
+      "street": "W VETERANS PL",
+      "longest_uncovered_run_m": 71.05053188466364,
+      "gap_alert": true
+    }
+  ],
+  "by_unit": {
+    "CHI:11": {
+      "sum": 1,
+      "count": 611
+    },
+    "CHI:32": {
+      "sum": 8,
+      "count": 593
+    },
+    "CHI:49": {
+      "sum": 0,
+      "count": 1191
+    },
+    "CHI:57": {
+      "sum": 1,
+      "count": 320
+    },
+    "CHI:63": {
+      "sum": 1,
+      "count": 468
+    }
+  },
+  "source_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/data/Chicago/steet_center_lines_20260915.geojson": "ebfabc5fde1ddfec2c161a405900601263e525942790e7510d791ea2057cf959",
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f"
+  },
+  "interpretation": "Screen only: a long line outside the county mask can reflect missing ROW, alignment, grade, private or inactive status. Each alert requires source and imagery adjudication before a repair."
+}

@@ -1,0 +1,13 @@
+reference_id,tile_id,context,mode,inside_road_mask,land_component_area_m2,land_component_touches_tile_edge
+N01,CHI_49_1,freeway/interchange grass median,cook_row_raw,False,5306.034800447675,False
+N01,CHI_49_1,freeway/interchange grass median,cook_row_alley_open,False,5306.034800447675,False
+N01,CHI_49_1,freeway/interchange grass median,cook_row_plus_road_edge_alley_open,False,872.5909136462056,False
+N02,CHI_32_2,marina water,cook_row_raw,False,64802.50041942153,True
+N02,CHI_32_2,marina water,cook_row_alley_open,False,64802.50041942153,True
+N02,CHI_32_2,marina water,cook_row_plus_road_edge_alley_open,False,64483.3212378507,True
+N03,CHI_76_1,airport open land without enclosing public streets,cook_row_raw,False,102400.0,True
+N03,CHI_76_1,airport open land without enclosing public streets,cook_row_alley_open,False,102400.0,True
+N03,CHI_76_1,airport open land without enclosing public streets,cook_row_plus_road_edge_alley_open,False,102400.0,True
+N04,CHI_76_2,airport water,cook_row_raw,False,102400.0,True
+N04,CHI_76_2,airport water,cook_row_alley_open,False,102400.0,True
+N04,CHI_76_2,airport water,cook_row_plus_road_edge_alley_open,False,102400.0,True

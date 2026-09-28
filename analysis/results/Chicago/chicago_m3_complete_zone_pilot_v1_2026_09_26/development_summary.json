@@ -1,0 +1,273 @@
+{
+  "zone_ids": [
+    "CHI_11_Z1",
+    "CHI_32_Z1",
+    "CHI_57_Z1"
+  ],
+  "reference_count": 11,
+  "iou_match_cutoff": 0.5,
+  "halo_half_width_m": 450,
+  "reference_sha256": "d4fb77bc76b566a6fbf91279f7635fa59894e7c7d0897400c587280617ac8690",
+  "source_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/zone_selection.json": "1a5e338b40d1c5949b1f6c6e645fdc045f2e123840a109b7444122def3e5eb1f",
+    "analysis/config/chicago_m3_alley_repair_v2.json": "cd56c2fc6a23f04b5755b2b64051d30d0edb8ea8e525277e0a3af0bae0fe6acf"
+  },
+  "method_summary": [
+    {
+      "zone_id": "CHI_11_Z1",
+      "method": "municipal_momepy",
+      "reference_count": 3,
+      "candidate_faces_in_core": 3,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_11_Z1",
+      "method": "cook_row_raw",
+      "reference_count": 3,
+      "candidate_faces_in_core": 4,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 3,
+      "unmatched_candidate_count": 4,
+      "provisional_recall": 0.0,
+      "provisional_precision": 0.0,
+      "unmatched_candidate_indices": [
+        76,
+        79,
+        80,
+        82
+      ]
+    },
+    {
+      "zone_id": "CHI_11_Z1",
+      "method": "cook_row_alley_open",
+      "reference_count": 3,
+      "candidate_faces_in_core": 3,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_11_Z1",
+      "method": "cook_row_edge_alley_open",
+      "reference_count": 3,
+      "candidate_faces_in_core": 3,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_11_Z1",
+      "method": "cook_row_alley_open_3m",
+      "reference_count": 3,
+      "candidate_faces_in_core": 3,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_11_Z1",
+      "method": "cook_row_edge_alley_open_3m",
+      "reference_count": 3,
+      "candidate_faces_in_core": 3,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "method": "municipal_momepy",
+      "reference_count": 6,
+      "candidate_faces_in_core": 6,
+      "matched_reference_count": 6,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "method": "cook_row_raw",
+      "reference_count": 6,
+      "candidate_faces_in_core": 9,
+      "matched_reference_count": 2,
+      "unmatched_reference_count": 4,
+      "unmatched_candidate_count": 7,
+      "provisional_recall": 0.3333333333333333,
+      "provisional_precision": 0.2222222222222222,
+      "unmatched_candidate_indices": [
+        39,
+        40,
+        41,
+        43,
+        44,
+        46,
+        47
+      ]
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "method": "cook_row_alley_open",
+      "reference_count": 6,
+      "candidate_faces_in_core": 11,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 3,
+      "unmatched_candidate_count": 8,
+      "provisional_recall": 0.5,
+      "provisional_precision": 0.2727272727272727,
+      "unmatched_candidate_indices": [
+        38,
+        39,
+        41,
+        42,
+        44,
+        45,
+        52,
+        53
+      ]
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "method": "cook_row_edge_alley_open",
+      "reference_count": 6,
+      "candidate_faces_in_core": 11,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 3,
+      "unmatched_candidate_count": 8,
+      "provisional_recall": 0.5,
+      "provisional_precision": 0.2727272727272727,
+      "unmatched_candidate_indices": [
+        49,
+        50,
+        52,
+        53,
+        55,
+        56,
+        65,
+        66
+      ]
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "method": "cook_row_alley_open_3m",
+      "reference_count": 6,
+      "candidate_faces_in_core": 6,
+      "matched_reference_count": 6,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_32_Z1",
+      "method": "cook_row_edge_alley_open_3m",
+      "reference_count": 6,
+      "candidate_faces_in_core": 6,
+      "matched_reference_count": 6,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "method": "municipal_momepy",
+      "reference_count": 2,
+      "candidate_faces_in_core": 1,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 1,
+      "provisional_recall": 0.0,
+      "provisional_precision": 0.0,
+      "unmatched_candidate_indices": [
+        7
+      ]
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "method": "cook_row_raw",
+      "reference_count": 2,
+      "candidate_faces_in_core": 0,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 0.0,
+      "provisional_precision": null,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "method": "cook_row_alley_open",
+      "reference_count": 2,
+      "candidate_faces_in_core": 0,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 0.0,
+      "provisional_precision": null,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "method": "cook_row_edge_alley_open",
+      "reference_count": 2,
+      "candidate_faces_in_core": 1,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 1,
+      "provisional_recall": 0.0,
+      "provisional_precision": 0.0,
+      "unmatched_candidate_indices": [
+        18
+      ]
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "method": "cook_row_alley_open_3m",
+      "reference_count": 2,
+      "candidate_faces_in_core": 0,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 0.0,
+      "provisional_precision": null,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_57_Z1",
+      "method": "cook_row_edge_alley_open_3m",
+      "reference_count": 2,
+      "candidate_faces_in_core": 1,
+      "matched_reference_count": 0,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 1,
+      "provisional_recall": 0.0,
+      "provisional_precision": 0.0,
+      "unmatched_candidate_indices": [
+        18
+      ]
+    }
+  ],
+  "status": "single-analyst candidate-blind but rough small-core reference; diagnostic only",
+  "holdout_only": false
+}

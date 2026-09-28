@@ -1,0 +1,19 @@
+zone_id,method,reference_count,candidate_faces_in_core,matched_reference_count,unmatched_reference_count,unmatched_candidate_count,provisional_recall,provisional_precision,unmatched_candidate_indices
+CHI_11_Z1,municipal_momepy,3,3,3,0,0,1.0,1.0,[]
+CHI_11_Z1,cook_row_raw,3,4,0,3,4,0.0,0.0,"[76, 79, 80, 82]"
+CHI_11_Z1,cook_row_alley_open,3,3,3,0,0,1.0,1.0,[]
+CHI_11_Z1,cook_row_edge_alley_open,3,3,3,0,0,1.0,1.0,[]
+CHI_11_Z1,cook_row_alley_open_3m,3,3,3,0,0,1.0,1.0,[]
+CHI_11_Z1,cook_row_edge_alley_open_3m,3,3,3,0,0,1.0,1.0,[]
+CHI_32_Z1,municipal_momepy,6,6,6,0,0,1.0,1.0,[]
+CHI_32_Z1,cook_row_raw,6,9,2,4,7,0.3333333333333333,0.2222222222222222,"[39, 40, 41, 43, 44, 46, 47]"
+CHI_32_Z1,cook_row_alley_open,6,11,3,3,8,0.5,0.2727272727272727,"[38, 39, 41, 42, 44, 45, 52, 53]"
+CHI_32_Z1,cook_row_edge_alley_open,6,11,3,3,8,0.5,0.2727272727272727,"[49, 50, 52, 53, 55, 56, 65, 66]"
+CHI_32_Z1,cook_row_alley_open_3m,6,6,6,0,0,1.0,1.0,[]
+CHI_32_Z1,cook_row_edge_alley_open_3m,6,6,6,0,0,1.0,1.0,[]
+CHI_57_Z1,municipal_momepy,2,1,0,2,1,0.0,0.0,[7]
+CHI_57_Z1,cook_row_raw,2,0,0,2,0,0.0,,[]
+CHI_57_Z1,cook_row_alley_open,2,0,0,2,0,0.0,,[]
+CHI_57_Z1,cook_row_edge_alley_open,2,1,0,2,1,0.0,0.0,[18]
+CHI_57_Z1,cook_row_alley_open_3m,2,0,0,2,0,0.0,,[]
+CHI_57_Z1,cook_row_edge_alley_open_3m,2,1,0,2,1,0.0,0.0,[18]

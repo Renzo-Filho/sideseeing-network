@@ -1,0 +1,14 @@
+{
+  "source": "https://gis.dupageco.org/arcgis/rest/services/Hydrography/DPMS_LakesPonds_Service/MapServer/0",
+  "ids_query": {
+    "where": "1=1",
+    "geometry": "-87.94313154,41.93503505,-87.83177930,42.01123954",
+    "geometryType": "esriGeometryEnvelope",
+    "inSR": 4326,
+    "spatialRel": "esriSpatialRelIntersects"
+  },
+  "features": 18,
+  "sha256": "fbad39c5209a297f975f3907eab63afe0d02eb9897c7ab7bd6bdc6d18054236d",
+  "raw_path": "analysis/work/chicago_m3_fresh_tiles_2026_09_26/CHI_76_dupage_hydro.geojson",
+  "retrieved_utc": "2026-09-26T15:54:28.898622+00:00"
+}

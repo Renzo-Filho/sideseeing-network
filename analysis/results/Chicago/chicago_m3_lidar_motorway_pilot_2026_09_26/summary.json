@@ -1,0 +1,58 @@
+{
+  "purpose": "structural signal only, not block classification or independent validation",
+  "zone_id": "CHI_11_MZ1",
+  "bbox_epsg26916": [
+    435050.01589436206,
+    4647489.815287433,
+    435650.01589436206,
+    4648089.815287433
+  ],
+  "raster_export_pixel_size_m": 0.5,
+  "candidate_count": 18,
+  "candidate_source_sha256": "d9c78d3790052ea2db2bdab5ffa15cb0aed126e846ae70db126a56d9975cf41c",
+  "receipts": {
+    "dtm": {
+      "service_url": "https://data.isgs.illinois.edu/arcgis/rest/services/Elevation/IL_Cook_DTM_2022/ImageServer",
+      "service_metadata_sha256": "d7314b439f683c3f6ae7ca2d56ab6a48424dd054d05e68996a1707210682a5e6",
+      "path": "analysis/work/chicago_m3_lidar_motorway_pilot_2026_09_26/CHI_11_MZ1_dtm_2022.tif",
+      "sha256": "b30f9c0186bd7f3f4cb73efcb3f226c3f3282d4daccd7ee468fd1975f085e776",
+      "crs": "EPSG:26916",
+      "bounds": [
+        435050.01589436206,
+        4647489.815287433,
+        435650.01589436206,
+        4648089.815287433
+      ],
+      "shape": [
+        1200,
+        1200
+      ],
+      "dtype": "float32",
+      "nodata": null
+    },
+    "dsm": {
+      "service_url": "https://data.isgs.illinois.edu/arcgis/rest/services/Elevation/IL_Cook_DSM_2022/ImageServer",
+      "service_metadata_sha256": "3eee67d04e33de4fe8a007b88912ff2a22dc7a44ff8eaaa4f317cb48e562e4e9",
+      "path": "analysis/work/chicago_m3_lidar_motorway_pilot_2026_09_26/CHI_11_MZ1_dsm_2022.tif",
+      "sha256": "3a70ed955e29abc761c3c1597dc5f8765e1eeca4c9f28bd8e9ae81799ca2d8e4",
+      "crs": "EPSG:26916",
+      "bounds": [
+        435050.01589436206,
+        4647489.815287433,
+        435650.01589436206,
+        4648089.815287433
+      ],
+      "shape": [
+        1200,
+        1200
+      ],
+      "dtype": "float32",
+      "nodata": null
+    }
+  },
+  "cautions": [
+    "DTM/DSM differ by buildings, vegetation and elevated structures; a flat true block may have zero height signal.",
+    "The 2022 LiDAR predates the 2025 orthophoto and may not show later change.",
+    "This diagnostic uses rasters, not classified point-cloud road/bridge returns."
+  ]
+}

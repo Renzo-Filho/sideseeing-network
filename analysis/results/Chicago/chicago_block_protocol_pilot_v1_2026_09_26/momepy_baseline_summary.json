@@ -1,0 +1,11 @@
+{
+  "method": "momepy.enclosures on Chicago eligible municipal centerline barriers, 450m half-width halo; same 11 rough sketches; no lake/parcel/ROW filters",
+  "momepy_version": "1.0.0",
+  "reference_count": 11,
+  "momepy_median_iou": 0.7577484114357661,
+  "row_alley_open_median_iou": 0.826678763667199,
+  "momepy_iou_ge_0_5": 9,
+  "row_alley_open_iou_ge_0_5": 11,
+  "halo_touched_best_faces": 0,
+  "caveat": "Same selected rough sketches used to choose the ROW/alley method; this is a diagnostic direct baseline, not independent superiority evidence or citywide benchmark."
+}

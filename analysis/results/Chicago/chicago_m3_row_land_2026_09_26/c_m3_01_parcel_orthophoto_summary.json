@@ -1,0 +1,76 @@
+{
+  "candidate_area_m2": 8666.639783223913,
+  "candidate_base_parcel_count": 6,
+  "candidate_parcel_pin10": [
+    "1309323015",
+    "1309323016",
+    "1309323017",
+    "1309323018",
+    "1309323019",
+    "1309323020"
+  ],
+  "candidate_parcel_tax_groups": [
+    "1309323"
+  ],
+  "adjacent_70m_parcel_count": 41,
+  "adjacent_70m_tax_groups": [
+    "1309322",
+    "1309324",
+    "1309329",
+    "1309330",
+    "1309331",
+    "1309332",
+    "1309500"
+  ],
+  "candidate_road_row_overlap_m2": 2541.1960587094027,
+  "candidate_ordinary_road_edge_overlap_m2": 1772.2199763184321,
+  "road_row_features_near_candidate": 7,
+  "ordinary_road_edge_features_near_candidate": 9,
+  "alley_features_near_candidate": 6,
+  "municipal_veterans_place_trans_id": "154550",
+  "municipal_centerline_length_within_north_8m_band_m": 97.94554001446595,
+  "street_gap_sensitivity": [
+    {
+      "municipal_centerline_search_width_m": 6,
+      "inferred_gap_area_m2": 973.1081101989665,
+      "best_component_area_m2": 5728.282049417797,
+      "best_component_iou_to_candidate_land": 1.0,
+      "best_component_touches_roi_edge": false
+    },
+    {
+      "municipal_centerline_search_width_m": 8,
+      "inferred_gap_area_m2": 1217.9128885026284,
+      "best_component_area_m2": 15714.815547061513,
+      "best_component_iou_to_candidate_land": 0.3592562596062676,
+      "best_component_touches_roi_edge": true
+    },
+    {
+      "municipal_centerline_search_width_m": 10,
+      "inferred_gap_area_m2": 1380.2489496842434,
+      "best_component_area_m2": 15552.479485880347,
+      "best_component_iou_to_candidate_land": 0.36299509543989855,
+      "best_component_touches_roi_edge": true
+    },
+    {
+      "municipal_centerline_search_width_m": 12,
+      "inferred_gap_area_m2": 1542.5804107940194,
+      "best_component_area_m2": 15390.148024770231,
+      "best_component_iou_to_candidate_land": 0.36681269651603776,
+      "best_component_touches_roi_edge": true
+    },
+    {
+      "municipal_centerline_search_width_m": 15,
+      "inferred_gap_area_m2": 1787.530132804423,
+      "best_component_area_m2": 5645.043809672132,
+      "best_component_iou_to_candidate_land": 0.9999999999999831,
+      "best_component_touches_roi_edge": false
+    },
+    {
+      "municipal_centerline_search_width_m": 20,
+      "inferred_gap_area_m2": 2194.400152273691,
+      "best_component_area_m2": 5644.614575810315,
+      "best_component_iou_to_candidate_land": 0.9999999999993584,
+      "best_component_touches_roi_edge": false
+    }
+  ]
+}

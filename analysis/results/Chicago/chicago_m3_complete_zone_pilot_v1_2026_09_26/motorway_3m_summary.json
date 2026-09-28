@@ -1,0 +1,12 @@
+{
+  "tile_count": 4,
+  "candidate_count": 35,
+  "motorway_flagged_count": 22,
+  "clear_positive_count": 5,
+  "clear_positive_iou_ge_half": 5,
+  "clear_positive_flagged": 0,
+  "negative_point_count": 8,
+  "negative_points_in_candidates": 2,
+  "negative_points_in_kept_candidates": 0,
+  "status": "selected earlier motorway stress points, not complete reference inventory"
+}

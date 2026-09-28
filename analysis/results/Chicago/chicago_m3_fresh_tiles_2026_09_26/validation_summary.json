@@ -1,0 +1,15 @@
+{
+  "reference_positive_polygons": 11,
+  "reference_negative_points": 4,
+  "positive_median_iou_by_mode": {
+    "cook_row_alley_open": 0.826678763667199,
+    "cook_row_plus_road_edge_alley_open": 0.823882568676855,
+    "cook_row_raw": 0.3857526859345113
+  },
+  "positive_iou_ge_0_5_by_mode": {
+    "cook_row_alley_open": 11,
+    "cook_row_plus_road_edge_alley_open": 11,
+    "cook_row_raw": 3
+  },
+  "status": "single-analyst rough imagery sketches; small source-blind diagnostic, not citywide acceptance"
+}

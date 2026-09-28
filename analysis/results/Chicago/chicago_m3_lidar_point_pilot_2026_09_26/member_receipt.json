@@ -1,0 +1,13 @@
+{
+  "url": "https://clearinghouse.isgs.illinois.edu/distribute/district1/cook/2022/cook-las3.zip",
+  "member": "13259350.las",
+  "member_header_offset": 561661162323,
+  "compressed_range": [
+    561661162365,
+    562294890756
+  ],
+  "compressed_bytes": 633728392,
+  "uncompressed_bytes": 1046669819,
+  "compressed_sha256": "47d77c44f7ce29e71a9369801482ba449141ece37ad2c1c878f42afb9ad9082c",
+  "zip_crc32": 251665191
+}

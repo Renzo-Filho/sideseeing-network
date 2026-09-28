@@ -1,0 +1,91 @@
+{
+  "reference_count": 5,
+  "negative_point_count": 5,
+  "method_summary": [
+    {
+      "method": "municipal_momepy",
+      "reference_count": 5,
+      "candidate_faces_in_core": 5,
+      "matched_reference_count": 2,
+      "unmatched_reference_count": 3,
+      "unmatched_candidate_count": 3,
+      "provisional_recall": 0.4,
+      "provisional_precision": 0.4,
+      "unmatched_candidate_indices": [
+        21,
+        23,
+        31
+      ]
+    },
+    {
+      "method": "cook_row_edge_alley_open_1m",
+      "reference_count": 5,
+      "candidate_faces_in_core": 18,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 15,
+      "provisional_recall": 0.6,
+      "provisional_precision": 0.16666666666666666,
+      "unmatched_candidate_indices": [
+        56,
+        57,
+        60,
+        65,
+        68,
+        69,
+        71,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        81
+      ]
+    },
+    {
+      "method": "cook_row_edge_alley_open_3m",
+      "reference_count": 5,
+      "candidate_faces_in_core": 18,
+      "matched_reference_count": 3,
+      "unmatched_reference_count": 2,
+      "unmatched_candidate_count": 15,
+      "provisional_recall": 0.6,
+      "provisional_precision": 0.16666666666666666,
+      "unmatched_candidate_indices": [
+        56,
+        57,
+        60,
+        65,
+        68,
+        69,
+        71,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        81
+      ]
+    }
+  ],
+  "method_negative_points": {
+    "cook_row_edge_alley_open_1m": {
+      "inside_closed_face": 0,
+      "inside_unflagged_closed_face": 0
+    },
+    "cook_row_edge_alley_open_3m": {
+      "inside_closed_face": 0,
+      "inside_unflagged_closed_face": 0
+    },
+    "municipal_momepy": {
+      "inside_closed_face": 1,
+      "inside_unflagged_closed_face": 0
+    }
+  },
+  "reference_sha256": "44e70ccb501201db134a6e034ca1b37deb5e3a27e93dd48f135153397d73db5c",
+  "status": "new candidate-blind motorway core; visual reference is single-analyst and needs street-status adjudication"
+}

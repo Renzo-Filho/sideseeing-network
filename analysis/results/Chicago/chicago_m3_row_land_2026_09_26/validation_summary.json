@@ -1,0 +1,36 @@
+{
+  "source_extracts": 12,
+  "case_rows": 29,
+  "unique_case_polygons": 26,
+  "visually_plausible_unique": 15,
+  "visually_false_unique": 11,
+  "false_fully_in_active_road_row": [
+    "M3_05",
+    "M3_03",
+    "H_M3_06",
+    "C_M3_03",
+    "C_M3_04",
+    "M3_01",
+    "H_M3_01",
+    "C_M3_08"
+  ],
+  "false_inside_larger_land_component": [
+    "M3_06",
+    "H_M3_04"
+  ],
+  "plausible_alley_open_iou_ge_0_9": 14,
+  "plausible_alley_open_iou_below_0_9": [
+    "C_M3_01"
+  ],
+  "plausible_centerline_compactness_median": 0.6961419632752159,
+  "plausible_land_component_compactness_median": 0.5779896855753052,
+  "road_edge_outside_row_fraction_by_unit": {
+    "CHI:11": 0.1146511215019906,
+    "CHI:49": 0.1314856061711325,
+    "CHI:57": 0.0871625593151083,
+    "CHI:63": 0.0384023837655884,
+    "CHI:32": 0.2327492128416468,
+    "CHI:76": 0.7374079910504678
+  },
+  "status": "bounded diagnostic; old polygon is not a surveyed reference; no accepted M3/M4 release"
+}

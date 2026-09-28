@@ -1,0 +1,13 @@
+sample,reference_id,tile_id,context,momepy_face_at_point,momepy_face_touches_halo,published_face_index,published_artifact_flag,shapely_face_at_point,shapely_face_touches_halo
+development,N02,CHI_32_2,marina water,True,True,12.303595493227583,False,True,True
+development,N01,CHI_49_1,freeway/interchange grass median,True,False,7.045095372780995,True,True,False
+development,N03,CHI_76_1,airport open land without enclosing public streets,True,True,13.104026883340833,False,True,True
+development,N04,CHI_76_2,airport water,True,True,13.049197240967162,False,True,True
+new_location,H1_N01,CHI_49_H1,expressway north landscape,True,False,8.07145527127736,False,True,False
+new_location,H1_N02,CHI_49_H1,expressway center median,True,False,6.668505134352988,True,True,False
+new_location,H1_N03,CHI_49_H1,expressway south landscape,True,False,8.01658640192297,False,True,False
+new_location,H2_N01,CHI_49_H2,expressway north landscape,True,True,7.9307758091563665,False,True,True
+new_location,H2_N02,CHI_49_H2,expressway center median,True,True,7.122342006507065,False,True,True
+new_location,H2_N03,CHI_49_H2,expressway south landscape,True,True,7.87284970311987,False,True,True
+new_location,H3_N01,CHI_49_H3,expressway edge landscape,True,False,7.314844519407204,False,True,False
+new_location,H4_N01,CHI_49_H4,expressway edge landscape,True,True,6.911158364353651,True,True,True

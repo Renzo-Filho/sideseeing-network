@@ -1,0 +1,40 @@
+{
+  "source": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/8",
+  "point_checks": [
+    {
+      "reference_id": "N02",
+      "tile_id": "CHI_32_2",
+      "retrieved_features": 1,
+      "cook_lake_contains": true,
+      "matching_features": [
+        {
+          "OBJECTID": 8275,
+          "Type": "3",
+          "Name": "LAKE MICHIGAN",
+          "Source": "Ortho",
+          "Source_Year": 2020,
+          "County": null,
+          "WaterPresent": "YES"
+        }
+      ]
+    },
+    {
+      "reference_id": "N04",
+      "tile_id": "CHI_76_2",
+      "retrieved_features": 1,
+      "cook_lake_contains": true,
+      "matching_features": [
+        {
+          "OBJECTID": 6654,
+          "Type": "StandingWater",
+          "Name": "LAKE O'HARE",
+          "Source": "LIDAR",
+          "Source_Year": 2022,
+          "County": "Cook",
+          "WaterPresent": null
+        }
+      ]
+    }
+  ],
+  "status": "bounded water control; no all-Chicago completeness claim"
+}

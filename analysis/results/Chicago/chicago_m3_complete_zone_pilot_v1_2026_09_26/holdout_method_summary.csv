@@ -1,0 +1,7 @@
+zone_id,method,reference_count,candidate_faces_in_core,matched_reference_count,unmatched_reference_count,unmatched_candidate_count,provisional_recall,provisional_precision,unmatched_candidate_indices
+CHI_49_Z1,municipal_momepy,8,8,8,0,0,1.0,1.0,[]
+CHI_49_Z1,cook_row_raw,8,6,1,7,5,0.125,0.16666666666666666,"[66, 67, 69, 74, 75]"
+CHI_49_Z1,cook_row_alley_open,8,5,2,6,3,0.25,0.4,"[42, 43, 44]"
+CHI_49_Z1,cook_row_edge_alley_open,8,8,8,0,0,1.0,1.0,[]
+CHI_49_Z1,cook_row_alley_open_3m,8,5,2,6,3,0.25,0.4,"[42, 43, 44]"
+CHI_49_Z1,cook_row_edge_alley_open_3m,8,8,8,0,0,1.0,1.0,[]

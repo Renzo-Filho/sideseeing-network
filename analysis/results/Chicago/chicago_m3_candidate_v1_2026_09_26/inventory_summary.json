@@ -1,0 +1,21 @@
+{
+  "tiles": 12,
+  "all_components": 126,
+  "tile_contained_components": 42,
+  "diagnostic_candidates": 26,
+  "candidate_counts_by_tile": {
+    "CHI_11_1": 2,
+    "CHI_11_2": 4,
+    "CHI_32_1": 3,
+    "CHI_32_2": 0,
+    "CHI_49_1": 10,
+    "CHI_49_2": 2,
+    "CHI_57_1": 0,
+    "CHI_57_2": 3,
+    "CHI_63_1": 2,
+    "CHI_63_2": 0,
+    "CHI_76_1": 0,
+    "CHI_76_2": 0
+  },
+  "declared_rule": "Cook active ROW + ordinary Road Edge + available Cook Lake masks; remove mapped alley buffer 1m; retain tile-contained land polygons >=1000 m\u00b2. This is a diagnostic rule, not final Chicago construction."
+}

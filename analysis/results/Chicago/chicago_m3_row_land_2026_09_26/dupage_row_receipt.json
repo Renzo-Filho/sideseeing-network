@@ -1,0 +1,14 @@
+{
+  "source": "https://gis.dupageco.org/arcgis/rest/services/OpenData/ROW/MapServer/0",
+  "ids_query": {
+    "where": "1=1",
+    "geometry": "-87.94313154,41.93503505,-87.83177930,42.01123954",
+    "geometryType": "esriGeometryEnvelope",
+    "inSR": 4326,
+    "spatialRel": "esriSpatialRelIntersects"
+  },
+  "features": 162,
+  "sha256": "56bc5ec886c4e39e72fc25c3435b54a88ac9e6df8a7a1d47ff8291103ba6fad3",
+  "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_76_dupage_row.geojson",
+  "retrieved_utc": "2026-09-26T15:39:47.620922+00:00"
+}

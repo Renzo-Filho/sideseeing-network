@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-26",
+  "timing": "After baseline candidate overlays; original visual_reference_v1.json and reference_freeze.json retained unchanged.",
+  "cases": [
+    {
+      "reference_id": "Z57_01",
+      "status": "exclude_invalid_complete_block_reference",
+      "reason": "The sketched west edge follows an apparent internal drive. The municipal enclosure crossing this area touches the 450 m analysis halo, and the Cook ROW land face extends beyond the image to the west. The image alone did not establish a closed public-street block at the sketched extent.",
+      "evidence": ["CHI_57_Z1_source_diagnostic.png", "CHI_57_Z1_municipal_momepy_overlay.png", "CHI_57_Z1_cook_row_edge_alley_open_overlay.png"],
+      "next_check": "Check street status and a larger orthophoto/plat before drawing an industrial block reference."
+    },
+    {
+      "reference_id": "Z57_02",
+      "status": "exclude_invalid_merged_reference",
+      "reason": "The single sketched residential polygon crosses S Komensky Avenue, a named active at-grade class-4 municipal street (trans_id 131966) between W 43rd and W 44th Streets. It therefore merges multiple ordinary street blocks; internal alleys are separate narrower corridors.",
+      "evidence": ["steet_center_lines_20260915.geojson:trans_id=131966", "CHI_57_Z1_source_diagnostic.png"],
+      "next_check": "Create a new, separately versioned reference with the named-street split, preferably independently reviewed; do not revise the frozen sketch in place."
+    }
+  ],
+  "effect": "The CHI:57 core is not used for precision/recall or M3/M4 geometry accuracy. It remains a diagnostic of why imagery-only single-analyst references can fail."
+}

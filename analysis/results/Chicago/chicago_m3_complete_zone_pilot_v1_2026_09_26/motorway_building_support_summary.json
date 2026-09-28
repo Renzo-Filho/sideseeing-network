@@ -1,0 +1,16 @@
+{
+  "complete_motorway_core": {
+    "candidate_count": 18,
+    "motorway_exposure_ge_0_3": 14,
+    "high_exposure_without_buildings": 13,
+    "high_exposure_with_buildings": 1,
+    "fully_exposed_under_1000_m2_without_buildings": 13
+  },
+  "prior_motorway_spots": {
+    "candidate_count": 35,
+    "motorway_exposure_ge_0_3": 22,
+    "high_exposure_without_buildings": 18,
+    "high_exposure_with_buildings": 4,
+    "fully_exposed_under_1000_m2_without_buildings": 0
+  }
+}

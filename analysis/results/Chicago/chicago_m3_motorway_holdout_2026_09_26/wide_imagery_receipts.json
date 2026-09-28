@@ -1,0 +1,26 @@
+[
+  {
+    "tile_id": "CHI_49_H1",
+    "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=448317.894%2C4617868.544%2C448797.894%2C4618348.544&bboxSR=26916&imageSR=26916&size=1000%2C1000&format=jpg&f=image",
+    "sha256": "262bc8f7948639b717ec95f89135d4b101e945f1cd08df6e03c93ab030a8d573",
+    "bytes": 306893
+  },
+  {
+    "tile_id": "CHI_49_H2",
+    "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=448879.989%2C4617877.300%2C449359.989%2C4618357.300&bboxSR=26916&imageSR=26916&size=1000%2C1000&format=jpg&f=image",
+    "sha256": "7762eaace821816a94ec62282c3fa2c12d8c2fc1cdb5e9d186cf1d944e9f2a48",
+    "bytes": 272980
+  },
+  {
+    "tile_id": "CHI_49_H3",
+    "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=447637.605%2C4618587.704%2C448117.605%2C4619067.704&bboxSR=26916&imageSR=26916&size=1000%2C1000&format=jpg&f=image",
+    "sha256": "016a8d8d845d3363220455a317d1a89924ae39b447af85026d6e6ffc2b3bee08",
+    "bytes": 300801
+  },
+  {
+    "tile_id": "CHI_49_H4",
+    "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=447990.884%2C4619442.866%2C448470.884%2C4619922.866&bboxSR=26916&imageSR=26916&size=1000%2C1000&format=jpg&f=image",
+    "sha256": "f91ee1e0966ca1f93e56a58bc7fc0b2fd502aa3db76e6f86a930b7a55ca96b85",
+    "bytes": 285963
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "zone_id": "CHI_11_MZ1",
+  "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=435050.016%2C4647489.815%2C435650.016%2C4648089.815&bboxSR=26916&imageSR=26916&size=1200%2C1200&format=jpg&f=image",
+  "retrieved_utc": "2026-09-26T20:29:30.938723+00:00",
+  "sha256": "afd100c4f7e475f9e51c53db16c629cfeb6261561c709e187ef26946e00f382d",
+  "bytes": 415188
+}

@@ -1,0 +1,13 @@
+{
+  "seed": 20260943,
+  "selection_basis": "CHI:11 inner district, Overture motorway distance <40m, >700m from previous tile/zone centers; no ROW candidate or image viewed",
+  "zone": {
+    "zone_id": "CHI_11_MZ1",
+    "unit_id": "CHI:11",
+    "x": 435350.01589436206,
+    "y": 4647789.815287433,
+    "half_width_m": 300,
+    "image_size_px": 1200,
+    "motorway_distance_m": 38.09373396002788
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "part_files_scanned": 625,
+  "base_parcels_retained": 2211,
+  "tax_groups_retained": 126,
+  "reference_count": 11,
+  "median_dominant_group_coverage": 0.7713443845077218,
+  "median_dominant_group_iou": 0.7543874420748529,
+  "negative_points_with_tax_group": 2,
+  "caveat": "Group union is truncated to parcels in 50 m expanded reference tiles; seven-digit PIN may denote tax block or quarter section."
+}

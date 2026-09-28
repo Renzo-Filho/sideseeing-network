@@ -1,0 +1,27 @@
+{
+  "method": "One analyst traced approximate property-side land outlines in 2025 orthophotos after tile locations were frozen, before seeing ROW land components in these tiles. Pixel origin is upper left of the 800x800 image. Only visibly closed blocks wholly inside a tile were selected; this is a small diagnostic, not a complete block census or surveyed boundary truth.",
+  "definition": "Contiguous ground land bounded by ordinary through streets; interior alleys do not divide it. Parks bounded by ordinary streets count. Highway medians, waterways and airport open land do not count. Public/private status of ambiguous internal access ways requires separate review.",
+  "positive_polygons": [
+    {"id":"R01","tile_id":"CHI_11_1","context":"park block","pixel_ring":[[65,348],[533,348],[533,550],[65,550]]},
+    {"id":"R02","tile_id":"CHI_11_2","context":"residential block with internal alley","pixel_ring":[[281,149],[529,149],[529,516],[281,516]]},
+    {"id":"R03","tile_id":"CHI_11_2","context":"residential block","pixel_ring":[[549,152],[775,152],[775,515],[549,515]]},
+    {"id":"R04","tile_id":"CHI_49_2","context":"mixed commercial and residential block","pixel_ring":[[196,65],[444,65],[444,523],[196,523]]},
+    {"id":"R05","tile_id":"CHI_49_2","context":"mixed commercial and residential block","pixel_ring":[[476,63],[687,63],[687,520],[476,520]]},
+    {"id":"R06","tile_id":"CHI_57_2","context":"residential block with internal alley","pixel_ring":[[172,218],[401,218],[401,686],[172,686]]},
+    {"id":"R07","tile_id":"CHI_57_2","context":"residential block with internal alley","pixel_ring":[[428,218],[637,218],[637,686],[428,686]]},
+    {"id":"R08","tile_id":"CHI_63_1","context":"residential block with internal alley","pixel_ring":[[191,159],[426,159],[426,641],[191,641]]},
+    {"id":"R09","tile_id":"CHI_63_1","context":"residential block with internal alley","pixel_ring":[[456,159],[696,159],[696,641],[456,641]]},
+    {"id":"R10","tile_id":"CHI_32_1","context":"Loop commercial block","pixel_ring":[[226,213],[494,213],[494,373],[226,373]]},
+    {"id":"R11","tile_id":"CHI_32_1","context":"Loop commercial block","pixel_ring":[[226,395],[494,395],[494,529],[226,529]]}
+  ],
+  "negative_points": [
+    {"id":"N01","tile_id":"CHI_49_1","context":"freeway/interchange grass median","pixel_xy":[420,192]},
+    {"id":"N02","tile_id":"CHI_32_2","context":"marina water","pixel_xy":[685,424]},
+    {"id":"N03","tile_id":"CHI_76_1","context":"airport open land without enclosing public streets","pixel_xy":[426,447]},
+    {"id":"N04","tile_id":"CHI_76_2","context":"airport water","pixel_xy":[588,391]}
+  ],
+  "unadjudicated_tiles": [
+    {"tile_id":"CHI_57_1","reason":"industrial private circulation and possible rail boundary"},
+    {"tile_id":"CHI_63_2","reason":"institution and residential edge needs street/public status review"}
+  ]
+}

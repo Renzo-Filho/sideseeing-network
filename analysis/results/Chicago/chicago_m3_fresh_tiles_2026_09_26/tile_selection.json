@@ -1,0 +1,107 @@
+{
+  "seed": 20260926,
+  "source_blind_to": [
+    "block candidates",
+    "Census blocks",
+    "imagery",
+    "OSM"
+  ],
+  "tiles": [
+    {
+      "tile_id": "CHI_11_1",
+      "unit_id": "CHI:11",
+      "x": 437158.49593053927,
+      "y": 4646967.0934748575,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_11_2",
+      "unit_id": "CHI:11",
+      "x": 435878.3364584244,
+      "y": 4647214.471569047,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_49_1",
+      "unit_id": "CHI:49",
+      "x": 447767.3841095973,
+      "y": 4618290.141362647,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_49_2",
+      "unit_id": "CHI:49",
+      "x": 448598.238280122,
+      "y": 4618930.06773209,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_57_1",
+      "unit_id": "CHI:57",
+      "x": 438847.60100970324,
+      "y": 4629428.207598066,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_57_2",
+      "unit_id": "CHI:57",
+      "x": 439183.3250838654,
+      "y": 4628207.555373874,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_63_1",
+      "unit_id": "CHI:63",
+      "x": 441232.79234122986,
+      "y": 4626581.582079768,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_63_2",
+      "unit_id": "CHI:63",
+      "x": 440930.5146712692,
+      "y": 4627502.778188981,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_32_1",
+      "unit_id": "CHI:32",
+      "x": 447734.5651715944,
+      "y": 4636644.871861005,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_32_2",
+      "unit_id": "CHI:32",
+      "x": 449155.71709088393,
+      "y": 4637313.173017602,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_76_1",
+      "unit_id": "CHI:76",
+      "x": 429466.8537940834,
+      "y": 4647776.6241665175,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    },
+    {
+      "tile_id": "CHI_76_2",
+      "unit_id": "CHI:76",
+      "x": 425548.3839815188,
+      "y": 4645883.2699522935,
+      "half_width_m": 160,
+      "selection_rule": "fixed-seed uniform district interior; >=500m apart; >=280m from prior saved case centers; no block candidate, reference polygon, OSM or imagery used"
+    }
+  ]
+}

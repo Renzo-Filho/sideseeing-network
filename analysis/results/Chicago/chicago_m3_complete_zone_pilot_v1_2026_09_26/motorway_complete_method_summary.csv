@@ -1,0 +1,4 @@
+method,reference_count,candidate_faces_in_core,matched_reference_count,unmatched_reference_count,unmatched_candidate_count,provisional_recall,provisional_precision,unmatched_candidate_indices
+municipal_momepy,5,5,2,3,3,0.4,0.4,"[21, 23, 31]"
+cook_row_edge_alley_open_1m,5,18,3,2,15,0.6,0.16666666666666666,"[56, 57, 60, 65, 68, 69, 71, 73, 74, 75, 76, 77, 78, 79, 81]"
+cook_row_edge_alley_open_3m,5,18,3,2,15,0.6,0.16666666666666666,"[56, 57, 60, 65, 68, 69, 71, 73, 74, 75, 76, 77, 78, 79, 81]"

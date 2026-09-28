@@ -1,0 +1,11 @@
+{
+  "frozen_utc": "2026-09-26T20:32:01.026221+00:00",
+  "status": "candidate geometry not viewed in this new zone; single-analyst rough orthophoto reference",
+  "sha256": {
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/motorway_zone_selection.json": "05a972117e4dd8391e20df0dce27e4846d859c43cd3946ba8070cf6fcaf8ab1a",
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/motorway_visual_reference_v1.json": "44e70ccb501201db134a6e034ca1b37deb5e3a27e93dd48f135153397d73db5c",
+    "analysis/work/chicago_m3_complete_zone_pilot_v1_2026_09_26/CHI_11_MZ1_ortho.jpg": "afd100c4f7e475f9e51c53db16c629cfeb6261561c709e187ef26946e00f382d"
+  },
+  "positive_polygons": 5,
+  "nonblock_points": 5
+}

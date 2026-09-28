@@ -1,0 +1,42 @@
+{
+  "seed": 20260927,
+  "selection_basis": "CHI:49 district and Overture motorway distances only; 500m from previous tiles, 280m from old cases, 550m from each other; no ROW candidate or imagery used",
+  "tiles": [
+    {
+      "tile_id": "CHI_49_H1",
+      "unit_id": "CHI:49",
+      "x": 448557.89350515924,
+      "y": 4618108.543836538,
+      "half_width_m": 160,
+      "stratum": "motorway_core",
+      "motorway_distance_m": 2.5797251419502167
+    },
+    {
+      "tile_id": "CHI_49_H2",
+      "unit_id": "CHI:49",
+      "x": 449119.9892397973,
+      "y": 4618117.299841035,
+      "half_width_m": 160,
+      "stratum": "motorway_core",
+      "motorway_distance_m": 0.12612165356742625
+    },
+    {
+      "tile_id": "CHI_49_H3",
+      "unit_id": "CHI:49",
+      "x": 447877.6054814779,
+      "y": 4618827.704442449,
+      "half_width_m": 160,
+      "stratum": "motorway_neighbor",
+      "motorway_distance_m": 141.52666038634877
+    },
+    {
+      "tile_id": "CHI_49_H4",
+      "unit_id": "CHI:49",
+      "x": 448230.8839316066,
+      "y": 4619682.866087414,
+      "half_width_m": 160,
+      "stratum": "motorway_neighbor",
+      "motorway_distance_m": 142.826783273305
+    }
+  ]
+}

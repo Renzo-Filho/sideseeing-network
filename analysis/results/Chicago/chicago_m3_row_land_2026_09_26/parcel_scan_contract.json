@@ -1,0 +1,7 @@
+{
+  "source": "analysis/data/Chicago/chicago_cadastral_2026_09_18/cook_parcels_2024",
+  "part_files_scanned": 625,
+  "parcel_rows_in_case_300m_envelopes": 14125,
+  "base_parcel_rows": 14007,
+  "method": "positive-area case intersections; dominant first-seven-digit PIN10 tax grouping as diagnostic, not certified physical block; group may extend beyond 300m ROI"
+}

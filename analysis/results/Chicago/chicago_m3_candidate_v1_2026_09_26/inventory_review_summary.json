@@ -1,0 +1,8 @@
+{
+  "tile_contained_candidates": 26,
+  "matched_frozen_positive_sketches": 11,
+  "visually_obvious_highway_islands": 9,
+  "unadjudicated_candidates": 6,
+  "minimum_obvious_false_candidate_fraction": 0.34615384615384615,
+  "interpretation": "Targeted candidate audit, not precision/recall: positive sketches are incomplete, same analyst reviewed highway islands after seeing candidate outlines, and no complete missed-block inventory exists."
+}

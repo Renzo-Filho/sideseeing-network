@@ -1,0 +1,19 @@
+stage,sample,metric,value,denominator,interpretation
+raw Cook ROW,fresh 12 tiles,positive sketch median IoU,0.3857526859345113,11,diagnostic
+ROW with mapped alleys reopened,fresh 12 tiles,positive sketch median IoU,0.826678763667199,11,diagnostic
+"ROW + ordinary Road Edge, alleys reopened",fresh 12 tiles,positive sketch median IoU,0.823882568676855,11,diagnostic
+momepy.enclosures municipal centerline baseline,same 11 rough sketches,positive sketch median IoU,0.7577484114357661,11,"direct established-method baseline, not independent superiority test"
+momepy.enclosures municipal centerline baseline,same 11 rough sketches,positive sketches IoU >= 0.5,9.0,11,diagnostic
+ROW with mapped alleys reopened,same 11 rough sketches,positive sketches IoU >= 0.5,11.0,11,diagnostic
+candidate inventory,development 12 tiles,tile-contained candidates,26.0,12,not a citywide block count
+candidate inventory,development 12 tiles,known freeway-island false candidates,9.0,26,lower bound in selected tiles
+frozen motorway rule,development 12 tiles,known false islands flagged,9.0,9,threshold selected on these tiles
+frozen motorway rule,development 12 tiles,sketched positives flagged,0.0,11,threshold selected on these tiles
+candidate inventory,development 12 tiles,median candidate area m2 before motorway flag,5808.993541700864,26,"selected tiles, not Chicago M3"
+frozen motorway rule,development 12 tiles,median candidate area m2 after motorway flag,14440.94629283778,15,"selected tiles, not Chicago M3"
+frozen motorway rule,new CHI:49 tiles,all candidates flagged,22.0,35,"new centers, same Community Area"
+candidate inventory,new CHI:49 tiles,median candidate area m2 before motorway flag,2339.259175717256,35,"selected tiles, not Chicago M3"
+frozen motorway rule,new CHI:49 tiles,median candidate area m2 after motorway flag,14288.350048557557,13,"selected tiles, not Chicago M3"
+frozen motorway rule,new CHI:49 tiles,negative controls inside kept candidates,0.0,8,"point controls, not full false-candidate census"
+frozen motorway rule,new CHI:49 tiles,clear positive sketches flagged,0.0,5,two other sketches unresolved
+frozen motorway rule,new CHI:49 tiles,clear positive sketches IoU >= 0.5,5.0,5,"rough imagery outlines, not surveyed truth"

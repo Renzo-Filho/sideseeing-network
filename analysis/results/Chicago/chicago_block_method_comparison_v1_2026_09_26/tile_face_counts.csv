@@ -1,0 +1,15 @@
+sample,tile_id,municipal_segments_in_halo,momepy_face_count,shapely_face_count,face_sets_exactly_equal
+development,CHI_11_1,110,52,52,True
+development,CHI_11_2,117,57,57,True
+development,CHI_32_1,144,71,71,True
+development,CHI_32_2,92,38,38,True
+development,CHI_49_1,138,62,62,True
+development,CHI_49_2,67,38,38,True
+development,CHI_57_2,90,48,48,True
+development,CHI_63_1,83,45,45,True
+development,CHI_76_1,13,8,8,True
+development,CHI_76_2,13,8,8,True
+new_location,CHI_49_H1,133,65,65,True
+new_location,CHI_49_H2,88,40,40,True
+new_location,CHI_49_H3,127,63,63,True
+new_location,CHI_49_H4,130,54,54,True

@@ -1,0 +1,104 @@
+{
+  "zone_ids": [
+    "CHI_49_Z1"
+  ],
+  "reference_count": 8,
+  "iou_match_cutoff": 0.5,
+  "halo_half_width_m": 450,
+  "reference_sha256": "d4fb77bc76b566a6fbf91279f7635fa59894e7c7d0897400c587280617ac8690",
+  "source_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/zone_selection.json": "1a5e338b40d1c5949b1f6c6e645fdc045f2e123840a109b7444122def3e5eb1f",
+    "analysis/config/chicago_m3_alley_repair_v2.json": "cd56c2fc6a23f04b5755b2b64051d30d0edb8ea8e525277e0a3af0bae0fe6acf"
+  },
+  "method_summary": [
+    {
+      "zone_id": "CHI_49_Z1",
+      "method": "municipal_momepy",
+      "reference_count": 8,
+      "candidate_faces_in_core": 8,
+      "matched_reference_count": 8,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_49_Z1",
+      "method": "cook_row_raw",
+      "reference_count": 8,
+      "candidate_faces_in_core": 6,
+      "matched_reference_count": 1,
+      "unmatched_reference_count": 7,
+      "unmatched_candidate_count": 5,
+      "provisional_recall": 0.125,
+      "provisional_precision": 0.16666666666666666,
+      "unmatched_candidate_indices": [
+        66,
+        67,
+        69,
+        74,
+        75
+      ]
+    },
+    {
+      "zone_id": "CHI_49_Z1",
+      "method": "cook_row_alley_open",
+      "reference_count": 8,
+      "candidate_faces_in_core": 5,
+      "matched_reference_count": 2,
+      "unmatched_reference_count": 6,
+      "unmatched_candidate_count": 3,
+      "provisional_recall": 0.25,
+      "provisional_precision": 0.4,
+      "unmatched_candidate_indices": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "zone_id": "CHI_49_Z1",
+      "method": "cook_row_edge_alley_open",
+      "reference_count": 8,
+      "candidate_faces_in_core": 8,
+      "matched_reference_count": 8,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    },
+    {
+      "zone_id": "CHI_49_Z1",
+      "method": "cook_row_alley_open_3m",
+      "reference_count": 8,
+      "candidate_faces_in_core": 5,
+      "matched_reference_count": 2,
+      "unmatched_reference_count": 6,
+      "unmatched_candidate_count": 3,
+      "provisional_recall": 0.25,
+      "provisional_precision": 0.4,
+      "unmatched_candidate_indices": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "zone_id": "CHI_49_Z1",
+      "method": "cook_row_edge_alley_open_3m",
+      "reference_count": 8,
+      "candidate_faces_in_core": 8,
+      "matched_reference_count": 8,
+      "unmatched_reference_count": 0,
+      "unmatched_candidate_count": 0,
+      "provisional_recall": 1.0,
+      "provisional_precision": 1.0,
+      "unmatched_candidate_indices": []
+    }
+  ],
+  "status": "single-analyst candidate-blind but rough small-core reference; diagnostic only",
+  "holdout_only": true
+}

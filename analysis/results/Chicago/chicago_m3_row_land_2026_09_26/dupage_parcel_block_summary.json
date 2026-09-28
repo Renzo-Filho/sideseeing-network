@@ -1,0 +1,12 @@
+{
+  "source": "https://gis.dupageco.org/arcgis/rest/services/ParcelSearch/DuPageAssessmentParcelViewer/MapServer/0",
+  "retrieved_features": 196,
+  "positive_area_ohare_block_polygons": 27,
+  "dupage_chicago_parcels": 81,
+  "dupage_parcel_union_m2": 5856442.3203897225,
+  "block_union_overlap_with_dupage_parcels_fraction": 0.9994207401848791,
+  "block_union_ohare_area_m2": 5856970.049844537,
+  "block_pin_nonnull": 27,
+  "block_pin_unique": 27,
+  "status": "cadastral parcel blocks; physical street-block equivalence and airport relevance unverified"
+}

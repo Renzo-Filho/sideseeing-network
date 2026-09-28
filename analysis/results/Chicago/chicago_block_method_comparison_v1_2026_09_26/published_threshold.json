@@ -1,0 +1,38 @@
+{
+  "peak_positions": [
+    6.0587197134084505,
+    9.252329497497783
+  ],
+  "valley_positions": [
+    3.1066434424015057,
+    7.051690822747151
+  ],
+  "threshold": 7.051690822747151,
+  "city_face_count": 19359,
+  "valid_index_count": 19359,
+  "city_faces_below_threshold": 1806,
+  "city_faces_edge_flag_count": 505,
+  "non_edge_sensitivity": {
+    "face_count": 18854,
+    "fit": {
+      "peak_positions": [
+        6.065888410723428,
+        9.255941151038282
+      ],
+      "valley_positions": [
+        3.117100163373564,
+        7.0577535484683835
+      ],
+      "threshold": 7.0577535484683835
+    },
+    "faces_below_threshold": 1801
+  },
+  "formula": "log(area_m2 * (area_m2 / minimum_bounding_circle_area_m2))",
+  "fit_population": "existing Chicago experimental municipal planar faces, including boundary faces",
+  "parameters": {
+    "kde": "Silverman",
+    "grid_points": 1000,
+    "peak_min_height": 0.008,
+    "peak_min_prominence": 0.00075
+  }
+}

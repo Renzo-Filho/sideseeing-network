@@ -1,0 +1,23 @@
+{
+  "method": "One analyst viewed the four raw 2025 Cook orthophotos at 480 m width after source-blind center selection and before viewing ROW land candidates or motorway-exposure values. Approximate 1000-pixel rings identify every visibly complete ordinary street-bounded block in these four views, subject to ambiguity at the expressway edge. Points mark non-block freeway/ramp landscape. This is not surveyed boundary truth.",
+  "positive_polygons": [
+    {"id":"H3_R01","tile_id":"CHI_49_H3","context":"residential ordinary block west of freeway","pixel_ring":[[145,415],[363,415],[363,850],[145,850]]},
+    {"id":"H3_R02","tile_id":"CHI_49_H3","context":"residential ordinary block west of freeway","pixel_ring":[[374,415],[537,415],[537,850],[374,850]]},
+    {"id":"H3_R03","tile_id":"CHI_49_H3","context":"residential wedge by curving ordinary street","pixel_ring":[[548,415],[669,415],[618,850],[548,850]]},
+    {"id":"H4_R01","tile_id":"CHI_49_H4","context":"residential block next to expressway, with cul-de-sac","pixel_ring":[[259,69],[510,69],[510,489],[259,489]]},
+    {"id":"H4_R02","tile_id":"CHI_49_H4","context":"residential block next to expressway","pixel_ring":[[263,505],[510,505],[510,918],[263,918]]},
+    {"id":"H4_R03","tile_id":"CHI_49_H4","context":"ordinary residential block","pixel_ring":[[520,70],[781,70],[781,488],[520,488]]},
+    {"id":"H4_R04","tile_id":"CHI_49_H4","context":"ordinary residential block","pixel_ring":[[520,505],[781,505],[781,918],[520,918]]}
+  ],
+  "negative_points": [
+    {"id":"H1_N01","tile_id":"CHI_49_H1","context":"expressway north landscape","pixel_xy":[400,333]},
+    {"id":"H1_N02","tile_id":"CHI_49_H1","context":"expressway center median","pixel_xy":[520,460]},
+    {"id":"H1_N03","tile_id":"CHI_49_H1","context":"expressway south landscape","pixel_xy":[400,557]},
+    {"id":"H2_N01","tile_id":"CHI_49_H2","context":"expressway north landscape","pixel_xy":[650,374]},
+    {"id":"H2_N02","tile_id":"CHI_49_H2","context":"expressway center median","pixel_xy":[690,480]},
+    {"id":"H2_N03","tile_id":"CHI_49_H2","context":"expressway south landscape","pixel_xy":[650,546]},
+    {"id":"H3_N01","tile_id":"CHI_49_H3","context":"expressway edge landscape","pixel_xy":[776,554]},
+    {"id":"H4_N01","tile_id":"CHI_49_H4","context":"expressway edge landscape","pixel_xy":[222,700]}
+  ],
+  "caveat": "The H3 wedge street status is visual only; needs street-source check before a definitive block label. The original narrower 320 m images lacked enough full blocks, so the same frozen centers were re-exported at 480 m width before candidate viewing."
+}

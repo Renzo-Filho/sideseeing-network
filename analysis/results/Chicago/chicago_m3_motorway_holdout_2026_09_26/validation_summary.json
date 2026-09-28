@@ -1,0 +1,13 @@
+{
+  "tiles": 4,
+  "positive_sketches": 7,
+  "negative_points": 8,
+  "tile_contained_candidates": 35,
+  "motorway_flagged_candidates": 22,
+  "positive_sketches_with_iou_ge_0_5": 5,
+  "positive_sketches_flagged": 0,
+  "negative_points_in_candidates_before_motorway_flag": 2,
+  "negative_points_in_kept_candidates": 0,
+  "median_positive_iou": 0.7506112944288468,
+  "limits": "One-analyst approximate imagery references; new selected centers in one Community Area, not citywide acceptance."
+}

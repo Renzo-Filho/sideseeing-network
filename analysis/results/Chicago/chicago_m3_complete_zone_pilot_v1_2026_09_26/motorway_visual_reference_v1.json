@@ -1,0 +1,21 @@
+{
+  "status": "candidate_blind_single_analyst_rough_imagery_reference",
+  "method": "The zone was selected by district and Overture motorway proximity before viewing county imagery or candidate geometry. A single analyst traced all visibly complete ordinary-street blocks with approximate centroids inside the declared core, then selected non-block pavement/rail/landscape points from imagery. Internal alleys do not divide blocks. These are rough visual references, not surveyed property lines.",
+  "zone_id": "CHI_11_MZ1",
+  "core_bounds_px": [360, 350, 900, 850],
+  "positive_polygons": [
+    {"id": "MZ11_01", "context": "residential frontage-road wedge", "pixel_ring": [[331, 327], [513, 470], [513, 608], [331, 608]]},
+    {"id": "MZ11_02", "context": "residential frontage-road wedge", "pixel_ring": [[531, 487], [722, 620], [531, 608]]},
+    {"id": "MZ11_03", "context": "residential with internal alley", "pixel_ring": [[331, 628], [513, 628], [513, 897], [331, 897]]},
+    {"id": "MZ11_04", "context": "residential with internal alley", "pixel_ring": [[531, 628], [723, 628], [723, 897], [531, 897]]},
+    {"id": "MZ11_05", "context": "residential by diagonal frontage road", "pixel_ring": [[744, 699], [932, 833], [932, 897], [744, 897]]}
+  ],
+  "nonblock_points": [
+    {"id": "MZ11_N01", "context": "motorway pavement", "pixel_xy": [650, 370]},
+    {"id": "MZ11_N02", "context": "rail/motorway corridor", "pixel_xy": [810, 440]},
+    {"id": "MZ11_N03", "context": "motorway pavement", "pixel_xy": [850, 620]},
+    {"id": "MZ11_N04", "context": "freeway-edge landscape", "pixel_xy": [990, 805]},
+    {"id": "MZ11_N05", "context": "freeway/frontage-road verge", "pixel_xy": [680, 567]}
+  ],
+  "limits": "Frontage-road wedges and landscaped margins need public-road/grade confirmation. The reference is a small development stress core selected for a motorway context, not a representative Chicago sample."
+}

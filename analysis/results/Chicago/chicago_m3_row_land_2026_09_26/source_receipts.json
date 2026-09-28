@@ -1,0 +1,242 @@
+[
+  {
+    "unit_id": "CHI:11",
+    "source": "row",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.79141672,41.96514307,-87.74958073,41.99986938",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 321,
+    "sha256": "fe2d77d4ecd01b91c2f6b1201f567531c43ff3c74efd1793a9be0a6e700d14dc",
+    "bytes": 2033180,
+    "retrieved_utc": "2026-09-26T06:09:37.077573+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_row.geojson"
+  },
+  {
+    "unit_id": "CHI:11",
+    "source": "road_edge",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.79141672,41.96514307,-87.74958073,41.99986938",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 652,
+    "sha256": "2763dc9e7d809d8d0dd515ec57fd5bd3d887e658d2e01e02719cf2836acbca2a",
+    "bytes": 2348834,
+    "retrieved_utc": "2026-09-26T06:09:40.149937+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_road_edge.geojson"
+  },
+  {
+    "unit_id": "CHI:49",
+    "source": "row",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.64618646,41.68281120,-87.59981504,41.74190649",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 511,
+    "sha256": "5978735ebc31cd6a9f686a5735daf66fc517cb8f683efc6df86c0e9e40f5db24",
+    "bytes": 3972267,
+    "retrieved_utc": "2026-09-26T06:09:52.786023+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_49_row.geojson"
+  },
+  {
+    "unit_id": "CHI:49",
+    "source": "road_edge",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.64618646,41.68281120,-87.59981504,41.74190649",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 1398,
+    "sha256": "b47bab2e6edfb4625552af014aa136c05d88d8bd1f39e1257bd79b6e516aaeeb",
+    "bytes": 3998935,
+    "retrieved_utc": "2026-09-26T06:10:03.393788+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_49_road_edge.geojson"
+  },
+  {
+    "unit_id": "CHI:57",
+    "source": "row",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.74167692,41.79301736,-87.71063921,41.82859358",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 281,
+    "sha256": "c85821cbf31e6995c3c1421f7e4941a7d57ac331d074f7caf1bd204783775cce",
+    "bytes": 1345171,
+    "retrieved_utc": "2026-09-26T06:10:16.066816+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_row.geojson"
+  },
+  {
+    "unit_id": "CHI:57",
+    "source": "road_edge",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.74167692,41.79301736,-87.71063921,41.82859358",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 268,
+    "sha256": "4d0dae7a1a16b2b1c29f4d4b7f831f573fa754b4a5aee9b67cc9065cf27931bc",
+    "bytes": 4542936,
+    "retrieved_utc": "2026-09-26T06:10:19.227871+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_road_edge.geojson"
+  },
+  {
+    "unit_id": "CHI:63",
+    "source": "row",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.71681879,41.78381712,-87.67569982,41.80714442",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 240,
+    "sha256": "f7b95388c4e69e08cabf453faf3ee5c4bfdaa43f8c9eb0bd64e008dc311b5168",
+    "bytes": 1730142,
+    "retrieved_utc": "2026-09-26T06:10:27.543381+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_row.geojson"
+  },
+  {
+    "unit_id": "CHI:63",
+    "source": "road_edge",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.71681879,41.78381712,-87.67569982,41.80714442",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 408,
+    "sha256": "b9126e7cf9c7d9b9900a2d8867498b27394dac95768737226be3146ba713af2c",
+    "bytes": 5388246,
+    "retrieved_utc": "2026-09-26T06:10:31.340065+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_road_edge.geojson"
+  },
+  {
+    "unit_id": "CHI:32",
+    "source": "row",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.64142215,41.86502563,-87.59922707,41.89294451",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 414,
+    "sha256": "7a77f8b4ce08cb9e5d32ee2bfa475e271763d4882ba5817669b452d277820b2f",
+    "bytes": 730712,
+    "retrieved_utc": "2026-09-26T06:10:32.269480+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_row.geojson"
+  },
+  {
+    "unit_id": "CHI:32",
+    "source": "road_edge",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.64142215,41.86502563,-87.59922707,41.89294451",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 159,
+    "sha256": "dc2d6c5c24b2ea1bfc9a36e8f6606a32d5bbec8a2ff31b9e4a67792ccd381288",
+    "bytes": 1099934,
+    "retrieved_utc": "2026-09-26T06:10:33.428420+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_road_edge.geojson"
+  },
+  {
+    "unit_id": "CHI:76",
+    "source": "row",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/RightOfWay_Cadastre/MapServer/2025/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.94342345,41.93431112,-87.83174584,42.01179356",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 1037,
+    "sha256": "a3fdf59f8cdd1001c61343b51992b356b1292e064dfdd38f7c91859b5e20eac5",
+    "bytes": 2497574,
+    "retrieved_utc": "2026-09-26T06:10:40.822078+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_76_row.geojson"
+  },
+  {
+    "unit_id": "CHI:76",
+    "source": "road_edge",
+    "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+    "ids_url": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query",
+    "ids_query": {
+      "where": "1=1",
+      "geometry": "-87.94342345,41.93431112,-87.83174584,42.01179356",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 4326,
+      "spatialRel": "esriSpatialRelIntersects",
+      "returnIdsOnly": "true",
+      "f": "json"
+    },
+    "feature_count": 939,
+    "sha256": "79038483a744df88aa2ae289cbd71d0f4497fd12f5da354f22e237318d7334ae",
+    "bytes": 10540822,
+    "retrieved_utc": "2026-09-26T06:10:48.233698+00:00",
+    "raw_path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_76_road_edge.geojson"
+  }
+]

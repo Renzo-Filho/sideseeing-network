@@ -1,0 +1,27 @@
+component_id,tile_id,status,reference_id,area_m2,basis
+CHI_11_1_P01,CHI_11_1,sketched_positive,R01,15185.611938728622,frozen imagery sketch; rough boundary
+CHI_11_1_P02,CHI_11_1,unadjudicated,,15115.855091442105,requires independent street-boundary review
+CHI_11_2_P01,CHI_11_2,sketched_positive,R02,14535.202217508924,frozen imagery sketch; rough boundary
+CHI_11_2_P02,CHI_11_2,unadjudicated,,14440.94629283778,requires independent street-boundary review
+CHI_11_2_P03,CHI_11_2,sketched_positive,R03,10913.672442330078,frozen imagery sketch; rough boundary
+CHI_11_2_P07,CHI_11_2,unadjudicated,,1333.6533795187947,requires independent street-boundary review
+CHI_49_1_P04,CHI_49_1,unadjudicated,,5980.321451448071,requires independent street-boundary review
+CHI_49_1_P05,CHI_49_1,nonblock_highway_island,,3112.7840744791474,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P06,CHI_49_1,nonblock_highway_island,,2426.68597363896,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P07,CHI_49_1,nonblock_highway_island,,2286.025074277221,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P08,CHI_49_1,nonblock_highway_island,,2067.6435857051506,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P09,CHI_49_1,nonblock_highway_island,,1831.106806674904,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P10,CHI_49_1,nonblock_highway_island,,1491.8834022019792,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P11,CHI_49_1,nonblock_highway_island,,1224.4945350763433,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P12,CHI_49_1,nonblock_highway_island,,1085.814974057682,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_1_P13,CHI_49_1,nonblock_highway_island,,1044.8648697727226,image review: grassy or wooded land within freeway/ramp complex
+CHI_49_2_P01,CHI_49_2,sketched_positive,R04,14372.011756200902,frozen imagery sketch; rough boundary
+CHI_49_2_P02,CHI_49_2,sketched_positive,R05,14370.435399343727,frozen imagery sketch; rough boundary
+CHI_57_2_P01,CHI_57_2,sketched_positive,R06,15108.71672349749,frozen imagery sketch; rough boundary
+CHI_57_2_P02,CHI_57_2,sketched_positive,R07,14992.075637034855,frozen imagery sketch; rough boundary
+CHI_57_2_P05,CHI_57_2,unadjudicated,,6903.317959768954,requires independent street-boundary review
+CHI_63_1_P01,CHI_63_1,sketched_positive,R08,14965.682475321004,frozen imagery sketch; rough boundary
+CHI_63_1_P02,CHI_63_1,sketched_positive,R09,14940.302300016569,frozen imagery sketch; rough boundary
+CHI_32_1_P07,CHI_32_1,sketched_positive,R11,5637.665631953658,frozen imagery sketch; rough boundary
+CHI_32_1_P08,CHI_32_1,sketched_positive,R10,5274.286030668684,frozen imagery sketch; rough boundary
+CHI_32_1_P12,CHI_32_1,unadjudicated,,2168.385127327643,requires independent street-boundary review
