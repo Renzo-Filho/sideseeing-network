@@ -1,0 +1,27 @@
+{
+  "version": "chicago_m3_alley_repair_v2",
+  "frozen_utc": "2026-09-26T20:18:18.237467+00:00",
+  "scope": "small Chicago Cook-side physical-block pilot only",
+  "reference_development_zones": [
+    "CHI_11_Z1",
+    "CHI_32_Z1"
+  ],
+  "untouched_holdout_zone": "CHI_49_Z1",
+  "boundary_sources": [
+    "Cook ROW ROWTYPE 1/4/5",
+    "Cook Road Edge TYPE 1 ordinary",
+    "Cook Road Edge TYPE 5 alley"
+  ],
+  "masks": {
+    "row_alley_open_3m": "ROW mask minus 3m buffer of Road Edge TYPE 5",
+    "row_edge_alley_open_3m": "union ROW and ordinary Road Edge masks minus 3m buffer of Road Edge TYPE 5"
+  },
+  "chosen_alley_buffer_m": 3,
+  "selection_reason": "Smallest integer buffer in the development sweep that fully reconnects all nine valid residential/Loop reference blocks while retaining nine separate candidates; 5m starts merging CHI:11 and 6m merges CHI:32. This is a development choice, not citywide certification.",
+  "match_iou_cutoff": 0.5,
+  "input_sha256": {
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/visual_reference_v1.json": "d4fb77bc76b566a6fbf91279f7635fa59894e7c7d0897400c587280617ac8690",
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/reference_adjudication_v1.json": "b0a288aeadf16208a3af3db4e17f32a8bf9fe3f3cc5574a704d0c7c08122084e",
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/alley_repair_sweep_summary.csv": "1f5909d5f0b2a5fd261096734d47292be9841208b763fae96bacac8db3969aed"
+  }
+}

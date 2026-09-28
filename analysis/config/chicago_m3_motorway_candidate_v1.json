@@ -1,0 +1,12 @@
+{
+  "purpose": "Frozen diagnostic candidate rule for the four new CHI:49 motorway holdout tiles; not an accepted Chicago physical-block method.",
+  "road_mask": "Cook ROW ROWTYPE in {1,4,5} union Cook Road Edge TYPE=1",
+  "alley_opening": "subtract a 1 m buffer of Cook Road Edge TYPE=5 from the road mask",
+  "water_mask": "Cook Lake polygon where queried",
+  "candidate": "closed tile-contained land component with area >= 1000 m2",
+  "motorway_source": "local Overture transportation-segment 2026-08-19 class=motorway including link subclass",
+  "motorway_corridor_width_m": 40,
+  "flag_if_candidate_area_in_motorway_corridor_fraction_ge": 0.3,
+  "frozen_before_holdout_candidate_view": true,
+  "warning": "This threshold was chosen from the preceding development tiles; holdout assessment must count false removals and remaining nonblocks."
+}
