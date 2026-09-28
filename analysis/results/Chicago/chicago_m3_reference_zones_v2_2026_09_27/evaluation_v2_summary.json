@@ -1,0 +1,89 @@
+{
+  "reference_sha256": "4460997613cd4af9373846cdab9b24783020b5a463d56d163db1e7ea6adc926b",
+  "originally_declared_complete_zones": [
+    "CHI_49_R2",
+    "CHI_63_R2",
+    "CHI_76_R2",
+    "CHI_57_R2"
+  ],
+  "reference_inventory_complete": false,
+  "iou_cutoff": 0.5,
+  "postfreeze_excluded_positive_ids": [
+    "CHI57_B1"
+  ],
+  "method_summary": [
+    {
+      "zone_id": "CHI_49_R2",
+      "method": "municipal_momepy",
+      "references": 6,
+      "matched_ge_0_5": 6,
+      "median_best_iou": 0.7580623577887209,
+      "median_matched_area_error": 0.3191556053406427,
+      "median_matched_compactness_error": 0.023613421508309695,
+      "median_matched_hull_compactness_error": 0.02475646116013197,
+      "median_simplify10_area_change": 0.001145883130114822,
+      "median_boundary_p95_m": 13.522127662475219
+    },
+    {
+      "zone_id": "CHI_49_R2",
+      "method": "row_edge_alley3",
+      "references": 6,
+      "matched_ge_0_5": 6,
+      "median_best_iou": 0.9079255323529913,
+      "median_matched_area_error": 0.03357201297024809,
+      "median_matched_compactness_error": 0.08478216921950665,
+      "median_matched_hull_compactness_error": 0.019219804524089446,
+      "median_simplify10_area_change": 0.011988265089032446,
+      "median_boundary_p95_m": 4.897751821995696
+    },
+    {
+      "zone_id": "CHI_57_R2",
+      "method": "municipal_momepy",
+      "references": 5,
+      "matched_ge_0_5": 5,
+      "median_best_iou": 0.7443353297263835,
+      "median_matched_area_error": 0.3434804987257536,
+      "median_matched_compactness_error": 0.02891172993691926,
+      "median_matched_hull_compactness_error": 0.03012514537429012,
+      "median_simplify10_area_change": 0.0011269154446567065,
+      "median_boundary_p95_m": 14.871479951576143
+    },
+    {
+      "zone_id": "CHI_57_R2",
+      "method": "row_edge_alley3",
+      "references": 5,
+      "matched_ge_0_5": 5,
+      "median_best_iou": 0.8721997036154423,
+      "median_matched_area_error": 0.010475859276425914,
+      "median_matched_compactness_error": 0.10645939951021677,
+      "median_matched_hull_compactness_error": 0.07713304700335599,
+      "median_simplify10_area_change": 0.030690513926032947,
+      "median_boundary_p95_m": 6.801118487254542
+    },
+    {
+      "zone_id": "CHI_63_R2",
+      "method": "municipal_momepy",
+      "references": 4,
+      "matched_ge_0_5": 4,
+      "median_best_iou": 0.750966741484586,
+      "median_matched_area_error": 0.28002319054854363,
+      "median_matched_compactness_error": 0.019400991142653312,
+      "median_matched_hull_compactness_error": 0.019632190091128432,
+      "median_simplify10_area_change": 0.0006021245884086368,
+      "median_boundary_p95_m": 16.449912787630637
+    },
+    {
+      "zone_id": "CHI_63_R2",
+      "method": "row_edge_alley3",
+      "references": 4,
+      "matched_ge_0_5": 4,
+      "median_best_iou": 0.85019746670736,
+      "median_matched_area_error": 0.07638671021688287,
+      "median_matched_compactness_error": 0.10956263125260479,
+      "median_matched_hull_compactness_error": 0.030084158343373857,
+      "median_simplify10_area_change": 0.015922000662690505,
+      "median_boundary_p95_m": 9.705525976747927
+    }
+  ],
+  "status": "single-analyst approximate references; CHI:57/63 core inventory incomplete; selected-outline diagnostics, not M3/M4 acceptance"
+}

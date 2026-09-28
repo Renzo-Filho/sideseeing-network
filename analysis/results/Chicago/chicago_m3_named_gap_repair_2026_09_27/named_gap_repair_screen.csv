@@ -1,0 +1,12 @@
+unit_id,trans_id,street,street_class,uncovered_run_m,full_line_length_m,line_inside_baseparcels_fraction,local_baseparcel_count,new_corridor_area_m2,baseline_closed_faces,repaired_closed_faces,closed_face_count_delta,baseline_closed_face_areas_m2,repaired_closed_face_areas_m2,screen_status
+CHI:11,154550,W VETERANS PL,4,71.05053188466364,97.94554001446595,0.0,62,1379.3606772212095,1,2,1,[270.0],"[270.0, 5585.6]",requires road-grade/status and property-side review
+CHI:32,119138,E CONGRESS DR,4,118.86049439332017,148.87862189224293,0.03956798918288922,2,2318.294345597415,2,2,0,"[1104.5, 2495.3]","[177.0, 1104.5]",requires road-grade/status and property-side review
+CHI:32,153035,E CONGRESS DR,4,32.73581036161102,38.85990394142431,1.0,2,46.3335653292928,2,2,0,"[454.2, 1104.5]","[454.2, 1104.5]",requires road-grade/status and property-side review
+CHI:32,149825,E WACKER DR,4,60.21518775630574,131.44542474299496,0.753869807310758,47,2.246613314655613,2,2,0,"[1284.4, 4447.0]","[1284.4, 4447.0]",requires road-grade/status and property-side review
+CHI:32,149908,E WACKER DR,4,65.9451591002232,96.03124479185033,0.0,0,2234.2797448345646,0,0,0,[],[],requires road-grade/status and property-side review
+CHI:32,149835,E WACKER LOWER DR,7,67.62130555678193,127.61908588679402,0.7669131149572349,46,3.6500972237267444,2,2,0,"[1284.4, 4447.0]","[1284.4, 4447.0]",requires road-grade/status and property-side review
+CHI:32,162331,E WATERSIDE DR,4,41.77534897504391,116.4252755361469,1.0,21,8.696665551527278,0,0,0,[],[],requires road-grade/status and property-side review
+CHI:32,154017,S LA SALLE ST,4,56.93528372898536,140.28056724212698,0.47713634326744586,61,41.27181761946454,3,3,0,"[2523.5, 5453.0, 16364.5]","[2523.5, 5453.0, 16323.2]",requires road-grade/status and property-side review
+CHI:32,154025,W TAYLOR ST,4,67.32033676207976,87.66099764771998,0.8302355909817025,17,5.463560970512179,1,1,0,[3940.2],[3934.7],requires road-grade/status and property-side review
+CHI:57,150737,W 38TH ST,4,56.372136736262505,56.372136736262505,1.0,18,0.0,0,0,0,[],[],requires road-grade/status and property-side review
+CHI:63,154152,W 51ST PL,4,134.68004483493087,158.64113536837903,0.9337821638287128,129,23.091684095183872,1,1,0,[347.1],[347.1],requires road-grade/status and property-side review

@@ -1,0 +1,29 @@
+{
+  "case": "CHI57_B1",
+  "municipal_w46_trans_id": "154478",
+  "municipal_w46_length_m": 44.01031653355244,
+  "municipal_w46_nearest_endpoint_to_tripp_m": 64.78002523225447,
+  "municipal_w46_grade_levels": [
+    "0",
+    "0"
+  ],
+  "nearby_overture_w46": [
+    {
+      "id": "b20de89f-6ea7-417b-a21f-c054d13964e4",
+      "length_m": 40.98036552535852,
+      "distance_to_municipal_m": 0.2163475314876637,
+      "distance_to_tripp_m": 68.52762311909916
+    },
+    {
+      "id": "e9957b1a-0454-4558-b974-ae676ddc6335",
+      "length_m": 100.39997620091508,
+      "distance_to_municipal_m": 0.7439741462702587,
+      "distance_to_tripp_m": 109.50484120231279
+    }
+  ],
+  "source_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/data/Chicago/overture_2026_08_19/segment/part_0000.parquet": "755e08ebcbb15111871443a358ec6324ee0f20d26feff65b32c3dbdf9727ff5d"
+  },
+  "interpretation": "Visible pavement west of the mapped W 46th Street stub is not established as a through public street by either mapped street source; image-only block outline must be adjudicated, not scored as truth."
+}

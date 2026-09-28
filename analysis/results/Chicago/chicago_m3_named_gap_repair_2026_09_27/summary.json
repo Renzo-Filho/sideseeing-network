@@ -1,0 +1,27 @@
+{
+  "alert_count": 11,
+  "street_names": 9,
+  "units": [
+    "CHI:11",
+    "CHI:32",
+    "CHI:57",
+    "CHI:63"
+  ],
+  "source_sha256": {
+    "analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26/named_street_gap_screen.csv": "e7254b74b51badf898017067c82c6f18fba430b484425469b45aa6b3c93680d4",
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_row.geojson": "fe2d77d4ecd01b91c2f6b1201f567531c43ff3c74efd1793a9be0a6e700d14dc",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_road_edge.geojson": "2763dc9e7d809d8d0dd515ec57fd5bd3d887e658d2e01e02719cf2836acbca2a",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_row.geojson": "7a77f8b4ce08cb9e5d32ee2bfa475e271763d4882ba5817669b452d277820b2f",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_road_edge.geojson": "dc2d6c5c24b2ea1bfc9a36e8f6606a32d5bbec8a2ff31b9e4a67792ccd381288",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_row.geojson": "c85821cbf31e6995c3c1421f7e4941a7d57ac331d074f7caf1bd204783775cce",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_road_edge.geojson": "4d0dae7a1a16b2b1c29f4d4b7f831f573fa754b4a5aee9b67cc9065cf27931bc",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_row.geojson": "f7b95388c4e69e08cabf453faf3ee5c4bfdaa43f8c9eb0bd64e008dc311b5168",
+    "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_road_edge.geojson": "b9126e7cf9c7d9b9900a2d8867498b27394dac95768737226be3146ba713af2c"
+  },
+  "closed_face_delta_counts": {
+    "0": 10,
+    "1": 1
+  },
+  "status": "topology and source-support screen only; none of the 11 alerts is an accepted repair"
+}

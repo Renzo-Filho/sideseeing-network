@@ -1,0 +1,44 @@
+[
+  {
+    "zone_id": "CHI_11_R2",
+    "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=436222.804%2C4647239.841%2C436922.804%2C4647939.841&bboxSR=26916&imageSR=26916&size=1400%2C1400&format=jpg&f=image",
+    "retrieved_utc": "2026-09-28T00:28:36.449100+00:00",
+    "sha256": "d7f21cc5c69a5a5d54b04f3aea35b4b830e33d506bb467a04f9a24435eaf3680",
+    "bytes": 603221
+  },
+  {
+    "zone_id": "CHI_32_R2",
+    "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=448196.128%2C4636782.578%2C448896.128%2C4637482.578&bboxSR=26916&imageSR=26916&size=1400%2C1400&format=jpg&f=image",
+    "retrieved_utc": "2026-09-28T00:28:40.334562+00:00",
+    "sha256": "e882d0f57b47e242e1a1884ecebddf79b130301d0d60281617926bf14f2b6e2f",
+    "bytes": 585401
+  },
+  {
+    "zone_id": "CHI_49_R2",
+    "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=446772.439%2C4615081.333%2C447472.439%2C4615781.333&bboxSR=26916&imageSR=26916&size=1400%2C1400&format=jpg&f=image",
+    "retrieved_utc": "2026-09-28T00:28:45.279615+00:00",
+    "sha256": "995dbe5a931f2e3c37c45dd41645fe8cc8047596248d5f50d2c590c91926f510",
+    "bytes": 604976
+  },
+  {
+    "zone_id": "CHI_57_R2",
+    "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=439209.147%2C4628342.479%2C439909.147%2C4629042.479&bboxSR=26916&imageSR=26916&size=1400%2C1400&format=jpg&f=image",
+    "retrieved_utc": "2026-09-28T00:28:50.517376+00:00",
+    "sha256": "2b6c5e4f7323532ef911018f850831246eb8ff0e20913347a7b0efc6fae10fa9",
+    "bytes": 559747
+  },
+  {
+    "zone_id": "CHI_63_R2",
+    "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=441325.564%2C4627078.945%2C442025.564%2C4627778.945&bboxSR=26916&imageSR=26916&size=1400%2C1400&format=jpg&f=image",
+    "retrieved_utc": "2026-09-28T00:28:55.424495+00:00",
+    "sha256": "c706cdcd63cf361a40976c9ae5b9d8d1ed5649a4eb0bc1739893da2b89efefe3",
+    "bytes": 628168
+  },
+  {
+    "zone_id": "CHI_76_R2",
+    "source_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=425932.625%2C4645684.320%2C426632.625%2C4646384.320&bboxSR=26916&imageSR=26916&size=1400%2C1400&format=jpg&f=image",
+    "retrieved_utc": "2026-09-28T00:28:59.777240+00:00",
+    "sha256": "f5d0ff65b22fa6ca94b2daac1906c8b05af3297f9ee2d400aa83f465945e8cbd",
+    "bytes": 350078
+  }
+]

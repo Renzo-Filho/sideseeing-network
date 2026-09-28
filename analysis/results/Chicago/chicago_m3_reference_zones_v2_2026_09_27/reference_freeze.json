@@ -1,0 +1,14 @@
+{
+  "reference_file": "analysis/results/Chicago/chicago_m3_reference_zones_v2_2026_09_27/visual_reference_v1.json",
+  "sha256": "f816e3a7fc909ecea32d635a992a5a6c8064464ca6fdb22f167d2ce1daacd657",
+  "ortho_sha256": {
+    "CHI_11_R2": "d7f21cc5c69a5a5d54b04f3aea35b4b830e33d506bb467a04f9a24435eaf3680",
+    "CHI_32_R2": "e882d0f57b47e242e1a1884ecebddf79b130301d0d60281617926bf14f2b6e2f",
+    "CHI_49_R2": "995dbe5a931f2e3c37c45dd41645fe8cc8047596248d5f50d2c590c91926f510",
+    "CHI_57_R2": "2b6c5e4f7323532ef911018f850831246eb8ff0e20913347a7b0efc6fae10fa9",
+    "CHI_63_R2": "c706cdcd63cf361a40976c9ae5b9d8d1ed5649a4eb0bc1739893da2b89efefe3",
+    "CHI_76_R2": "f5d0ff65b22fa6ca94b2daac1906c8b05af3297f9ee2d400aa83f465945e8cbd"
+  },
+  "freeze_rule": "No edit after viewing candidate output; corrections in separate adjudication file",
+  "status": "single-analyst provisional reference, 3 of 6 zones adjudicated"
+}

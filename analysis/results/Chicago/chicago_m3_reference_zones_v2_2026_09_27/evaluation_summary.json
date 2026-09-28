@@ -1,0 +1,52 @@
+{
+  "reference_sha256": "f816e3a7fc909ecea32d635a992a5a6c8064464ca6fdb22f167d2ce1daacd657",
+  "complete_zones": [
+    "CHI_49_R2",
+    "CHI_63_R2",
+    "CHI_76_R2"
+  ],
+  "iou_cutoff": 0.5,
+  "method_summary": [
+    {
+      "zone_id": "CHI_49_R2",
+      "method": "municipal_momepy",
+      "references": 6,
+      "matched_ge_0_5": 6,
+      "median_best_iou": 0.7580623577887209,
+      "median_matched_area_error": 0.3191556053406427,
+      "median_matched_compactness_error": 0.023613421508309695,
+      "median_boundary_p95_m": 13.522127662475219
+    },
+    {
+      "zone_id": "CHI_49_R2",
+      "method": "row_edge_alley3",
+      "references": 6,
+      "matched_ge_0_5": 6,
+      "median_best_iou": 0.9079255323529913,
+      "median_matched_area_error": 0.03357201297024809,
+      "median_matched_compactness_error": 0.08478216921950665,
+      "median_boundary_p95_m": 4.897751821995696
+    },
+    {
+      "zone_id": "CHI_63_R2",
+      "method": "municipal_momepy",
+      "references": 4,
+      "matched_ge_0_5": 4,
+      "median_best_iou": 0.750966741484586,
+      "median_matched_area_error": 0.28002319054854363,
+      "median_matched_compactness_error": 0.019400991142653312,
+      "median_boundary_p95_m": 16.449912787630637
+    },
+    {
+      "zone_id": "CHI_63_R2",
+      "method": "row_edge_alley3",
+      "references": 4,
+      "matched_ge_0_5": 4,
+      "median_best_iou": 0.85019746670736,
+      "median_matched_area_error": 0.07638671021688287,
+      "median_matched_compactness_error": 0.10956263125260479,
+      "median_boundary_p95_m": 9.705525976747927
+    }
+  ],
+  "status": "single-analyst approximate reference; provisional diagnostics, not M3/M4 acceptance"
+}

@@ -1,0 +1,37 @@
+{
+  "reference_version": 1,
+  "reviewer": "single analyst, 2026-09-27",
+  "construction": "Traced on raw Cook 2025 orthophotos before viewing block candidate geometry in these zones",
+  "geometry_role": "approximate visible landward street edges; not surveyed or legal boundaries",
+  "rule": "Ground-level land faces bounded by ordinary public streets are core blocks; internal alleys do not split; rail-edge and airport operating land are separate contexts",
+  "core_bounds_px": [300, 300, 1100, 1100],
+  "complete_zones": ["CHI_49_R2", "CHI_63_R2", "CHI_76_R2"],
+  "not_yet_adjudicated_zones": ["CHI_11_R2", "CHI_32_R2", "CHI_57_R2"],
+  "positive_polygons": [
+    {"id":"CHI49_B1","zone_id":"CHI_49_R2","context":"ordinary_grid","pixel_ring":[[373,333],[534,333],[534,700],[373,700]]},
+    {"id":"CHI49_B2","zone_id":"CHI_49_R2","context":"ordinary_grid","pixel_ring":[[572,333],[741,333],[741,700],[572,700]]},
+    {"id":"CHI49_B3","zone_id":"CHI_49_R2","context":"ordinary_grid","pixel_ring":[[776,333],[942,333],[942,700],[776,700]]},
+    {"id":"CHI49_B4","zone_id":"CHI_49_R2","context":"ordinary_grid","pixel_ring":[[373,742],[534,742],[534,1112],[373,1112]]},
+    {"id":"CHI49_B5","zone_id":"CHI_49_R2","context":"ordinary_grid","pixel_ring":[[572,742],[741,742],[741,1112],[572,1112]]},
+    {"id":"CHI49_B6","zone_id":"CHI_49_R2","context":"ordinary_grid","pixel_ring":[[776,742],[942,742],[942,1112],[776,1112]]},
+    {"id":"CHI63_B1","zone_id":"CHI_63_R2","context":"alley_heavy_residential","pixel_ring":[[441,579],[804,579],[804,742],[441,742]]},
+    {"id":"CHI63_B2","zone_id":"CHI_63_R2","context":"alley_heavy_residential","pixel_ring":[[843,579],[1209,579],[1209,742],[843,742]]},
+    {"id":"CHI63_B3","zone_id":"CHI_63_R2","context":"alley_heavy_residential","pixel_ring":[[441,781],[804,781],[804,973],[441,973]]},
+    {"id":"CHI63_B4","zone_id":"CHI_63_R2","context":"alley_heavy_residential","pixel_ring":[[843,781],[1209,781],[1209,973],[843,973]]}
+  ],
+  "special_context_points": [
+    {"id":"CHI49_RAIL_N","zone_id":"CHI_49_R2","pixel_xy":[1060,520],"reason":"rail-edge land not enclosed by ordinary streets"},
+    {"id":"CHI49_RAIL_S","zone_id":"CHI_49_R2","pixel_xy":[1060,900],"reason":"rail-edge land not enclosed by ordinary streets"}
+  ],
+  "negative_points": [
+    {"id":"CHI76_APRON","zone_id":"CHI_76_R2","pixel_xy":[860,850],"reason":"airport operating apron"},
+    {"id":"CHI76_TAXIWAY","zone_id":"CHI_76_R2","pixel_xy":[900,490],"reason":"airport taxiway corridor"},
+    {"id":"CHI76_ISLAND","zone_id":"CHI_76_R2","pixel_xy":[540,705],"reason":"landscape island within airport taxiways"}
+  ],
+  "review_limitations": [
+    "single reviewer",
+    "street legal status is not verified by a recorded plat",
+    "visible edges may differ from cadastral or surveyed landward boundaries",
+    "three additional frozen zones remain unadjudicated"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "reference_v2_sha256": "4460997613cd4af9373846cdab9b24783020b5a463d56d163db1e7ea6adc926b",
+  "review_timing": "post candidate-output inventory audit",
+  "finding": "CHI:49 has six traced ordinary blocks and two labeled rail-edge controls; CHI:76 has an airport exclusion control. CHI:57 and CHI:63 still contain candidate faces without any reference adjudication. The v1/v2 complete_zones declaration is superseded for pooled precision/recall.",
+  "counts": [
+    {
+      "zone_id": "CHI_49_R2",
+      "candidate_faces_with_representative_in_core": 8,
+      "matched_reference_faces": 6,
+      "unadjudicated_candidate_faces": 0,
+      "control_labeled_faces": 2
+    },
+    {
+      "zone_id": "CHI_57_R2",
+      "candidate_faces_with_representative_in_core": 8,
+      "matched_reference_faces": 6,
+      "unadjudicated_candidate_faces": 2,
+      "control_labeled_faces": 0
+    },
+    {
+      "zone_id": "CHI_63_R2",
+      "candidate_faces_with_representative_in_core": 11,
+      "matched_reference_faces": 4,
+      "unadjudicated_candidate_faces": 7,
+      "control_labeled_faces": 0
+    },
+    {
+      "zone_id": "CHI_76_R2",
+      "candidate_faces_with_representative_in_core": 1,
+      "matched_reference_faces": 0,
+      "unadjudicated_candidate_faces": 0,
+      "control_labeled_faces": 1
+    }
+  ],
+  "excluded_positive_ids": [
+    "CHI57_B1"
+  ],
+  "excluded_positive_reason": "The apparent northern through-street in the image is mapped as only a 44.0 m W 46th Street stub. Municipal and Overture lines terminate 64.8 m and 68.5 m before S Tripp Avenue, respectively. The visible western pavement is not established as a through public street; see CHI_57_B1_street_status.json.",
+  "decision": "Exclude CHI57_B1 from shape/area matching and do not estimate pooled complete-zone precision/recall or accept citywide M3/M4 from this reference",
+  "next_reference_rule": "Before candidate output: tile a small core, enumerate every visible street-bounded face and every nonblock/special face whose representative point is inside it, trace property-side boundary, and mark ambiguous cases; use an independent second review where possible."
+}
