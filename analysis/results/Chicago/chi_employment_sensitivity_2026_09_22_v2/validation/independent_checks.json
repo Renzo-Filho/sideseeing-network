@@ -1,0 +1,699 @@
+{
+  "passed": 138,
+  "failed": 0,
+  "sample_blocks": 16,
+  "checks": [
+    {
+      "name": "unique block/scenario/unit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "154 unique district/scenario rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "finite allocation outputs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "nonnegative jobs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no strict acceptance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "every block conserves jobs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "allocation numerator denominator",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fallback reproduces gross area within recorded roundoff",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "roundoff residual bounded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "roundoff residual recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fallback iff support negligible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "density and differences",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fallback fraction bounded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "CSV Parquet agreement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "business_core complete district universe",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "business_core aggregate reconstruction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "business_core inside outside balance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "business_plus_tcu complete district universe",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "business_plus_tcu aggregate reconstruction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "business_plus_tcu inside outside balance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_core CHI:17 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_core CHI:15 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_plus_tcu CHI:17 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_plus_tcu CHI:15 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170311701001000 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312306001001 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312306001001 business_core CHI:23 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312306001001 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312306001001 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312306001001 business_plus_tcu CHI:23 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312306001001 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312312004001 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312312004001 business_core CHI:23 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312312004001 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312312004001 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312312004001 business_plus_tcu CHI:23 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170312312004001 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170313201022001 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170313201022001 business_core CHI:32 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170313201022001 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170313201022001 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170313201022001 business_plus_tcu CHI:32 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170313201022001 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170314503004002 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170314503004002 business_core CHI:45 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170314503004002 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170314503004002 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170314503004002 business_plus_tcu CHI:45 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170314503004002 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_core CHI:70 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_core CHI:65 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_plus_tcu CHI:70 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_plus_tcu CHI:65 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170316505003016 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_core CHI:71 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_core CHI:70 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_plus_tcu CHI:71 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_plus_tcu CHI:70 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317001002000 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707001009 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707001009 business_core CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707001009 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707001009 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707001009 business_plus_tcu CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707001009 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707002030 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707002030 business_core CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707002030 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707002030 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707002030 business_plus_tcu CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170317707002030 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_core CHI:56 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_core CHI:30 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_plus_tcu CHI:56 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_plus_tcu CHI:30 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318305001025 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318314001030 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318314001030 business_core CHI:25 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318314001030 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318314001030 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318314001030 business_plus_tcu CHI:25 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318314001030 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318387003008 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318387003008 business_core CHI:29 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318387003008 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318387003008 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318387003008 business_plus_tcu CHI:29 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318387003008 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318391001081 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318391001081 business_core CHI:32 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318391001081 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318391001081 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318391001081 business_plus_tcu CHI:32 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318391001081 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318422001044 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318422001044 business_core CHI:08 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318422001044 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318422001044 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318422001044 business_plus_tcu CHI:08 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170318422001044 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001000 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001000 business_core CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001000 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001000 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001000 business_plus_tcu CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001000 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001001 business_core independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001001 business_core CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001001 business_core OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001001 business_plus_tcu independent support",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001001 business_plus_tcu CHI:76 independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "170319800001001 business_plus_tcu OUTSIDE_CHICAGO independent allocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/config/chicago_employment_sensitivity_v2.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/scripts/prepare_chicago_employment_sensitivity_v2.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/scripts/harmonization/employment_v2.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/scripts/harmonization/geometry.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/data/Chicago/LUI_2023_view_332920193481040239.gpkg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/blocks.parquet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/block_district_pieces.parquet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input/code unchanged analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/functional_attributes.parquet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "artifact analysis/work/prepared/Chicago/chi_employment_sensitivity_2026_09_22_v2/block_allocations.parquet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "artifact analysis/work/prepared/Chicago/chi_employment_sensitivity_2026_09_22_v2/block_support_diagnostics.parquet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "artifact analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/district_job_sensitivity.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "artifact analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/district_job_sensitivity.parquet",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "artifact analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/mass_and_fallback_summary.csv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "artifact analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/validation/construction_checks.json",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "strict_cross_city_accepted": false,
+  "audit_code_sha256": "58a58838f3d0d4cf221b068e6d6710a71e532518e3eff2875452c87bc96841a2"
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": "chi_employment_sensitivity_2026_09_17_v1",
+  "metric_crs": 26916,
+  "scenarios": {"business_core": ["12", "13", "14"], "business_plus_tcu": ["12", "13", "14", "15"]},
+  "support_epsilon_m2": 0.000001,
+  "chunk_size": 1000,
+  "policy": "Primary LANDUSE code support only; include mixed commercial 1216 without estimating floor shares; LANDUSE2 diagnostic only; union same exact code; exclude overlap between any distinct primary codes; gross-area fallback at zero/numerically negligible support; ascending district overlap ownership; whole-block outside residual preserved",
+  "periods": "LODES jobs 2022; CMAP primary use 2023; 2020 Census blocks in TIGER 2022",
+  "strict_cross_city_accepted": false,
+  "references": ["https://cmap-repos.github.io/LUI-wiki/field_guide_index.html", "https://cmap-repos.github.io/LUI-wiki/1200_Commercial.html", "https://cmap-repos.github.io/LUI-wiki/1500_TransportationCommunicationsUtilities.html", "https://cmap-repos.github.io/LUI-wiki/CodingMultipleUses.html"]
+}

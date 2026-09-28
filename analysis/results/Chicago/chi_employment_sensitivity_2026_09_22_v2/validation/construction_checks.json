@@ -1,0 +1,38 @@
+{
+  "per_block_conservation": true,
+  "baseline_reproduced": true,
+  "district_rows": 154,
+  "positive_job_blocks": 14990,
+  "zero_job_blocks_skipped": 24508,
+  "strict_cross_city_accepted": false,
+  "summary": [
+    {
+      "scenario": "business_core",
+      "whole_intersecting_block_jobs": 1458263.0,
+      "inside_jobs": 1408280.5848151504,
+      "outside_jobs": 49982.415184849706,
+      "positive_job_blocks": 14990,
+      "fallback_blocks": 5817,
+      "whole_block_fallback_jobs": 162670.0,
+      "inside_fallback_jobs": 162057.45481830192,
+      "ambiguous_area_m2": 698.3103685289843,
+      "min_cmap_coverage_fraction": 0.5879675976078521,
+      "blocks_with_under_99pct_cmap_coverage": 14,
+      "low_support_positive_blocks_under_1m2": 8
+    },
+    {
+      "scenario": "business_plus_tcu",
+      "whole_intersecting_block_jobs": 1458263.0,
+      "inside_jobs": 1409711.99927958,
+      "outside_jobs": 48551.000720420205,
+      "positive_job_blocks": 14990,
+      "fallback_blocks": 5125,
+      "whole_block_fallback_jobs": 73595.0,
+      "inside_fallback_jobs": 73283.79248118355,
+      "ambiguous_area_m2": 698.3103685289843,
+      "min_cmap_coverage_fraction": 0.5879675976078521,
+      "blocks_with_under_99pct_cmap_coverage": 14,
+      "low_support_positive_blocks_under_1m2": 17
+    }
+  ]
+}

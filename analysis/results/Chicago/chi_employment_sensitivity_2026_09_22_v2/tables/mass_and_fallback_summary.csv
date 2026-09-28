@@ -1,0 +1,3 @@
+scenario,whole_intersecting_block_jobs,inside_jobs,outside_jobs,positive_job_blocks,fallback_blocks,whole_block_fallback_jobs,inside_fallback_jobs,ambiguous_area_m2,min_cmap_coverage_fraction,blocks_with_under_99pct_cmap_coverage,low_support_positive_blocks_under_1m2
+business_core,1458263.0,1408280.5848151504,49982.415184849706,14990,5817,162670.0,162057.45481830192,698.3103685289843,0.5879675976078521,14,8
+business_plus_tcu,1458263.0,1409711.99927958,48551.000720420205,14990,5125,73595.0,73283.79248118355,698.3103685289843,0.5879675976078521,14,17

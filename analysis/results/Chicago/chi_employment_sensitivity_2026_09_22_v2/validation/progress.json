@@ -1,0 +1,74 @@
+{
+  "signature": "16a652ae3dad4e4a529600756b9a0174a95f1714f8e1b7205b64d13daf93e6db",
+  "chunks": {
+    "00000": {
+      "sha256": "c3f55197f70339a9fc159408b9f4ebd5bd4d433711936f1e1bd4a0e4286a358c",
+      "positive_job_blocks": 1000
+    },
+    "01000": {
+      "sha256": "5b5a8cb5d2cf3011102810ce52f2130c8f5574bd0071f8d58383efa6ec5234b0",
+      "positive_job_blocks": 1000
+    },
+    "02000": {
+      "sha256": "3be29366219655de05cc5a362f890bb61da7fc9acba8e53a2c1170de428c6af4",
+      "positive_job_blocks": 1000
+    },
+    "03000": {
+      "sha256": "88dbbdc3b9fab3707878b63d7246681f340b3f072a622d37e73d5a124de549b0",
+      "positive_job_blocks": 1000
+    },
+    "04000": {
+      "sha256": "3232cc19c879e96f8549e9327697870f680361735d79aee00a81d2e618506cf1",
+      "positive_job_blocks": 1000
+    },
+    "05000": {
+      "sha256": "0884be999437ba52bfa1d6c0f1a36ee6f4fa2e9c15d2d7ca092df9aac5b0fb6b",
+      "positive_job_blocks": 1000
+    },
+    "06000": {
+      "sha256": "f20230b69277f237fff0254f36bfc10c8ecff8265f80b1bfc001bbc550eba82b",
+      "positive_job_blocks": 1000
+    },
+    "07000": {
+      "sha256": "49ac996c997bdf2621b5f64a7d819f8011fd1ce3eff04f85fab703bb43dd649e",
+      "positive_job_blocks": 1000
+    },
+    "08000": {
+      "sha256": "4e373dba1b10d2dcf0b86966aee12b894dcd28c22773811fb7ebd2e8de794e8c",
+      "positive_job_blocks": 1000
+    },
+    "09000": {
+      "sha256": "d8c4ace67149312368f95da4d816a8fbd85db34cbbe314b9d6d2c17d613f4f90",
+      "positive_job_blocks": 1000
+    },
+    "10000": {
+      "sha256": "4fe140341e2678510d38cad4f6608b49e099f668825bf55e9c818f7d061bc36c",
+      "positive_job_blocks": 1000
+    },
+    "11000": {
+      "sha256": "60e80d3e9be165526efb65c811f3353df13bf71de4e7f9fc601f65f4cdb39b72",
+      "positive_job_blocks": 1000
+    },
+    "12000": {
+      "sha256": "84c020fb1587d9f19902ed5e26824fd39ae733be5059b2e09c941c76149ead43",
+      "positive_job_blocks": 1000
+    },
+    "13000": {
+      "sha256": "e567242517193cac9af60e65fd9f2daa65c922a3fc083111c45ca35246d14add",
+      "positive_job_blocks": 1000
+    },
+    "14000": {
+      "sha256": "92e5d38020f5599a23010890a1264eb4f9960d4f54f94d2c72772ca98e92a1ed",
+      "positive_job_blocks": 990
+    }
+  },
+  "status": "complete_construction_pending_independent_audit",
+  "artifacts": {
+    "analysis/work/prepared/Chicago/chi_employment_sensitivity_2026_09_22_v2/block_allocations.parquet": "a98ac6a0845fef05ea41a1e1ac0420453da94af6f2903abc66f454b613ada488",
+    "analysis/work/prepared/Chicago/chi_employment_sensitivity_2026_09_22_v2/block_support_diagnostics.parquet": "70cb9ab21b38973327c805056a18d411a0aa168d6d645d76623275ecdc3a28bb",
+    "analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/district_job_sensitivity.csv": "34cc00853ea236724c5d9f2ebe1a0c77c89f2b0d6c8a3014910e7489fe79313e",
+    "analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/district_job_sensitivity.parquet": "a990318e5d0c9f752fe95969c4811c0bd394ccc30c611d9fd8f35b6d30ff4c06",
+    "analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/mass_and_fallback_summary.csv": "49224febdb82cb7376557d421ad902aa29c84fd126dc42675312f8971778fb5f",
+    "analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/validation/construction_checks.json": "a7708bc6e8b67f20f1c523953b839390bad4387c30ab7f2c7fb9eb5a5d7231ec"
+  }
+}
