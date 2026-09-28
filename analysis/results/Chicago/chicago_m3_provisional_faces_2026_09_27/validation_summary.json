@@ -1,0 +1,8 @@
+{
+  "status": "passed computational QA; physical block truth remains unreviewed",
+  "units": 77,
+  "faces": 23204,
+  "overlaps_over_0_01_m2": 0,
+  "stitch_area_error_m2": 5.960464477539063e-08,
+  "free_gib": 12.57391357421875
+}

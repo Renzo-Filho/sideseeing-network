@@ -1,0 +1,15 @@
+{
+  "screened_named_segments": 47010,
+  "alert_segments": 355,
+  "alerts_with_candidate_link": 355,
+  "alignment_tolerance_m": 5,
+  "minimum_uncovered_run_m": 30,
+  "source_sha256": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/eligible_roads.parquet": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "analysis/data/Chicago/steet_center_lines_20260915.geojson": "ebfabc5fde1ddfec2c161a405900601263e525942790e7510d791ea2057cf959",
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f"
+  },
+  "status": "review queue only; no automated boundary repair",
+  "candidate_geometry_sha256": "d8afad614772b00094c9fefbce96595957a1c84e1bc46f1a3e1468471d1d068c",
+  "candidate_link_status": "relinked to corrected candidate geometry; source-gap geometries unchanged"
+}

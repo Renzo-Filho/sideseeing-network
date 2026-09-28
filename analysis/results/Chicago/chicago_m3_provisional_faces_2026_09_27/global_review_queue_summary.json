@@ -1,0 +1,12 @@
+{
+  "all_provisional_candidates": 23204,
+  "flagged_first": 3756,
+  "routine_full_census": 19448,
+  "small_under_1000_m2": 2793,
+  "large_over_100000_m2": 354,
+  "low_raw_compactness_under_0_2": 1219,
+  "faces_with_nonclass99_street_alerts": 122,
+  "faces_with_class99_special_alerts": 1,
+  "street_alert_rows": 355,
+  "status": "unreviewed queue only; flags do not reject or accept faces"
+}

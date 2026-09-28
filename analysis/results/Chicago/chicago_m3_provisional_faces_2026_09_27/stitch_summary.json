@@ -1,0 +1,13 @@
+{
+  "fragment_count": 23694,
+  "global_face_count": 23204,
+  "stitch_links": 506,
+  "stitched_groups": 402,
+  "unjoined_internal_district_edge_count": 9,
+  "touches_city_edge_count": 184,
+  "area_before_m2": 464712328.6202915,
+  "area_after_m2": 464712328.6202914,
+  "area_error_m2": 5.960464477539063e-08,
+  "global_file_bytes": 32784800,
+  "status": "provisional; shared-line stitch only; no source-gap repairs or nonblock filtering"
+}

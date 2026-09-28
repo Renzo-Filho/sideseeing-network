@@ -1,0 +1,21 @@
+{
+  "case_id": "C_M3_01",
+  "replaces_candidate_id": "M3C_GLOBAL_0c95e935f86f2fa81549",
+  "municipal_trans_id": "154550",
+  "search_width_m": 10.0,
+  "old_face_area_m2": 17192.046399967763,
+  "proposed_face_areas_m2": [
+    10226.53142733747,
+    5586.0939216334655
+  ],
+  "removed_corridor_area_m2": 1379.421050998158,
+  "parcel_core_area_m2": 5726.284043398762,
+  "max_proposal_parcel_coverage": 0.9744980711864388,
+  "source_sha256": {
+    "global_provisional_faces": "d8afad614772b00094c9fefbce96595957a1c84e1bc46f1a3e1468471d1d068c",
+    "roads": "51dcc12edabbcdc81c7c44ea510ab48133be6d6dccdba1957b41ac330e73bbdf",
+    "case": "7f3409d258e293c8fe41e23be660b17852bd68d0d6e887c0228e797026ff7802"
+  },
+  "status": "proposed_unadjudicated; independent public-road and property-side edge review required before applying",
+  "output_sha256": "3e06df9be481d43a1c8a7f614f7a1795e6b3b04966cd02bdee198e52c893ebf2"
+}

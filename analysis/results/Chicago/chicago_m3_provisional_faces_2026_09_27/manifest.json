@@ -1,0 +1,2714 @@
+{
+  "stage": "provisional_unreviewed",
+  "generated_utc": "2026-09-28T04:01:00.402410+00:00",
+  "definition": "Cook ROW types 1/4/5 union Road Edge type 1, minus 3 m Road Edge type 5 alley buffer; source barrier 0.01 m precision, original district boundaries; no face deleted",
+  "district_boundary_warning": "requires_stitch faces are district-clipped fragments, not whole blocks",
+  "units": [
+    {
+      "unit_id": "CHI:01",
+      "face_count": 197,
+      "requires_stitch_count": 10,
+      "small_under_1000m2_count": 8,
+      "min_face_area_m2": 4.61609999989844,
+      "max_face_area_m2": 298226.2413120631,
+      "domain_area_m2": 4758656.228015077,
+      "road_mask_area_in_domain_m2": 1168897.628706209,
+      "face_area_sum_m2": 3589758.5993089043,
+      "conservation_error_m2": 1.3969838619232178e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_01_row.geojson",
+          "sha256": "fe202f8357c485b3d8f124d13f4f2f6a2eeac783851122a6ca6fbd82afc36d24",
+          "features_all": 261,
+          "features_selected": 105
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_01_road_edge.geojson",
+          "sha256": "c93791860a5e1187aa39747fab75ebfa0e079476c3bafd16abb19038a8793b2b",
+          "features_all": 348,
+          "features_selected": 88
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_01_road_edge.geojson",
+          "sha256": "c93791860a5e1187aa39747fab75ebfa0e079476c3bafd16abb19038a8793b2b",
+          "features_all": 348,
+          "features_selected": 245
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_01_provisional_faces.parquet",
+      "output_sha256": "2c2403adc14cb54b41da0e96c8d4359dddc2f5fbc87f23a5872a5598b224c1a6",
+      "output_bytes": 294567
+    },
+    {
+      "unit_id": "CHI:02",
+      "face_count": 374,
+      "requires_stitch_count": 5,
+      "small_under_1000m2_count": 5,
+      "min_face_area_m2": 90.6783500001212,
+      "max_face_area_m2": 418394.47060003964,
+      "domain_area_m2": 9137658.14084154,
+      "road_mask_area_in_domain_m2": 2224960.7392250793,
+      "face_area_sum_m2": 6912697.401616422,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_02_row.geojson",
+          "sha256": "5a66e3f27c7d74315b02d617af638716c2dc286f1bf3ebe84e314876231f8f50",
+          "features_all": 288,
+          "features_selected": 129
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_02_road_edge.geojson",
+          "sha256": "972a7f65f17b4c0dc729a23813fd2255ff84758a51f239dc219fb024541152ee",
+          "features_all": 797,
+          "features_selected": 86
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_02_road_edge.geojson",
+          "sha256": "972a7f65f17b4c0dc729a23813fd2255ff84758a51f239dc219fb024541152ee",
+          "features_all": 797,
+          "features_selected": 506
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_02_provisional_faces.parquet",
+      "output_sha256": "d3b5590f9f60d5de2303bfe69c90397356f487e76d7aaf551ea4df8f9ae716a8",
+      "output_bytes": 548197
+    },
+    {
+      "unit_id": "CHI:03",
+      "face_count": 177,
+      "requires_stitch_count": 1,
+      "small_under_1000m2_count": 4,
+      "min_face_area_m2": 19.094399998861505,
+      "max_face_area_m2": 674129.1251810145,
+      "domain_area_m2": 6043042.934366598,
+      "road_mask_area_in_domain_m2": 1204414.191085519,
+      "face_area_sum_m2": 4838628.743281051,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_03_row.geojson",
+          "sha256": "977abf9314b6816ecd35e5e4574cacce8e6514fdae1a1245db697c739e407cc3",
+          "features_all": 231,
+          "features_selected": 94
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_03_road_edge.geojson",
+          "sha256": "1a385ba5733954664e23c38c48c23a7d82de74e484efed915955cfb12e2398eb",
+          "features_all": 255,
+          "features_selected": 74
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_03_road_edge.geojson",
+          "sha256": "1a385ba5733954664e23c38c48c23a7d82de74e484efed915955cfb12e2398eb",
+          "features_all": 255,
+          "features_selected": 169
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_03_provisional_faces.parquet",
+      "output_sha256": "3d90e21141e1fd0419e5689ed6dd6412ababdb02ab09a979b3a93c826bfb7d1d",
+      "output_bytes": 323687
+    },
+    {
+      "unit_id": "CHI:04",
+      "face_count": 260,
+      "requires_stitch_count": 5,
+      "small_under_1000m2_count": 4,
+      "min_face_area_m2": 2.150900000051735,
+      "max_face_area_m2": 1274416.8495502113,
+      "domain_area_m2": 6623966.103541163,
+      "road_mask_area_in_domain_m2": 1454755.336794198,
+      "face_area_sum_m2": 5169210.76674697,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_04_row.geojson",
+          "sha256": "e67c5c1ff2f17876b0e782a79ae178bc336241f713414c943407bb27bf1a5bc2",
+          "features_all": 230,
+          "features_selected": 118
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_04_road_edge.geojson",
+          "sha256": "8c29695934717a812fbcf8dceb167d34e4b1024e3fa401bf6f0db40497ed91c4",
+          "features_all": 513,
+          "features_selected": 67
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_04_road_edge.geojson",
+          "sha256": "8c29695934717a812fbcf8dceb167d34e4b1024e3fa401bf6f0db40497ed91c4",
+          "features_all": 513,
+          "features_selected": 365
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_04_provisional_faces.parquet",
+      "output_sha256": "1fa40559b29b5398ee268f0d94ec0f4aeb7db325d88c59af16a3f1afdf5510ea",
+      "output_bytes": 383449
+    },
+    {
+      "unit_id": "CHI:05",
+      "face_count": 242,
+      "requires_stitch_count": 13,
+      "small_under_1000m2_count": 14,
+      "min_face_area_m2": 0.01865000003793975,
+      "max_face_area_m2": 294426.3900633875,
+      "domain_area_m2": 5296593.106232864,
+      "road_mask_area_in_domain_m2": 1303669.1452337715,
+      "face_area_sum_m2": 3992923.96099911,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_05_row.geojson",
+          "sha256": "640fb245695b0ce45a8e7895bc325fc762a70b09056f024afacfb4c29cb04795",
+          "features_all": 218,
+          "features_selected": 113
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_05_road_edge.geojson",
+          "sha256": "4e20836f3fe5c9eac7cf2580795a429a0526cc21999cff2e14a61c1f9e84daec",
+          "features_all": 388,
+          "features_selected": 77
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_05_road_edge.geojson",
+          "sha256": "4e20836f3fe5c9eac7cf2580795a429a0526cc21999cff2e14a61c1f9e84daec",
+          "features_all": 388,
+          "features_selected": 247
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_05_provisional_faces.parquet",
+      "output_sha256": "428b121a43a2ad93e43cfb7d9517497bd3a9772e8c75c0be070ba2ca12cb684e",
+      "output_bytes": 400088
+    },
+    {
+      "unit_id": "CHI:06",
+      "face_count": 350,
+      "requires_stitch_count": 12,
+      "small_under_1000m2_count": 21,
+      "min_face_area_m2": 0.017950000007532073,
+      "max_face_area_m2": 511586.13041149103,
+      "domain_area_m2": 8096437.499658218,
+      "road_mask_area_in_domain_m2": 2097783.330066379,
+      "face_area_sum_m2": 5998654.169591888,
+      "conservation_error_m2": 9.313225746154785e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_06_row.geojson",
+          "sha256": "2ffb50bde90a0a05eb2e9b91deae508c6c33e2516ce750afefb18a4d95ae3861",
+          "features_all": 398,
+          "features_selected": 184
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_06_road_edge.geojson",
+          "sha256": "2a92aba21dd7f2cf0fe461c36fd8a3cdad6ae83e1699fab446adcfc79fa44bac",
+          "features_all": 476,
+          "features_selected": 121
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_06_road_edge.geojson",
+          "sha256": "2a92aba21dd7f2cf0fe461c36fd8a3cdad6ae83e1699fab446adcfc79fa44bac",
+          "features_all": 476,
+          "features_selected": 324
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_06_provisional_faces.parquet",
+      "output_sha256": "9fb04a316d7f9a3de150937f68423776c508ad68e41db5ae98b9d6c9e775e50a",
+      "output_bytes": 565603
+    },
+    {
+      "unit_id": "CHI:07",
+      "face_count": 336,
+      "requires_stitch_count": 15,
+      "small_under_1000m2_count": 28,
+      "min_face_area_m2": 0.05459999995850958,
+      "max_face_area_m2": 228084.76058084308,
+      "domain_area_m2": 8198678.660118646,
+      "road_mask_area_in_domain_m2": 1851286.4864721783,
+      "face_area_sum_m2": 6347392.173646467,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_07_row.geojson",
+          "sha256": "b2becf8ce41df2db3e4983d8c72f1132b5610ee892d74c610650f6da9c3c788a",
+          "features_all": 591,
+          "features_selected": 214
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_07_road_edge.geojson",
+          "sha256": "ceec02e13d18a0e7ef5e9efa196224b190aa5843d5389feeb1663ea216c27541",
+          "features_all": 512,
+          "features_selected": 126
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_07_road_edge.geojson",
+          "sha256": "ceec02e13d18a0e7ef5e9efa196224b190aa5843d5389feeb1663ea216c27541",
+          "features_all": 512,
+          "features_selected": 366
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_07_provisional_faces.parquet",
+      "output_sha256": "af6b6ad347aeceb218eceb4c28a4b2769c1f57979e97daf98e56a454de61d0fb",
+      "output_bytes": 500948
+    },
+    {
+      "unit_id": "CHI:08",
+      "face_count": 425,
+      "requires_stitch_count": 26,
+      "small_under_1000m2_count": 50,
+      "min_face_area_m2": 3.471138923096884e-07,
+      "max_face_area_m2": 373872.5839499171,
+      "domain_area_m2": 7118003.341570558,
+      "road_mask_area_in_domain_m2": 2184612.4814009117,
+      "face_area_sum_m2": 4933390.860169609,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_08_row.geojson",
+          "sha256": "cb1889d14c29705510328ab74315ae7b2cbb1d5fcf10d1600627fadfcbcd3ea3",
+          "features_all": 723,
+          "features_selected": 202
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_08_road_edge.geojson",
+          "sha256": "44e5d36f3aa16f85f7682ba065015cc1de421ad5436206dfff157df3f7921360",
+          "features_all": 382,
+          "features_selected": 164
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_08_road_edge.geojson",
+          "sha256": "44e5d36f3aa16f85f7682ba065015cc1de421ad5436206dfff157df3f7921360",
+          "features_all": 382,
+          "features_selected": 212
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_08_provisional_faces.parquet",
+      "output_sha256": "e78cf5b38d5bada469c3633338875e7ca9c1699ee9eae88c6b800af85551676f",
+      "output_bytes": 345417
+    },
+    {
+      "unit_id": "CHI:09",
+      "face_count": 137,
+      "requires_stitch_count": 9,
+      "small_under_1000m2_count": 1,
+      "min_face_area_m2": 263.29996496136175,
+      "max_face_area_m2": 97059.84064999355,
+      "domain_area_m2": 2937112.005044956,
+      "road_mask_area_in_domain_m2": 759170.1160473089,
+      "face_area_sum_m2": 2177941.888997645,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_09_row.geojson",
+          "sha256": "0d83fe7c04097f0fed58e5d61363162e4dc964a96db165420fa9e5479a34e19f",
+          "features_all": 93,
+          "features_selected": 43
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_09_road_edge.geojson",
+          "sha256": "39a1651d5987d0943e1a4169975c3faf169f9946bd32a326499adde29ded51dc",
+          "features_all": 245,
+          "features_selected": 18
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_09_road_edge.geojson",
+          "sha256": "39a1651d5987d0943e1a4169975c3faf169f9946bd32a326499adde29ded51dc",
+          "features_all": 245,
+          "features_selected": 198
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_09_provisional_faces.parquet",
+      "output_sha256": "d4b15c5ee4daa78426f080d85cd704d54c90259818015e6270b95412e2ef7f39",
+      "output_bytes": 222281
+    },
+    {
+      "unit_id": "CHI:10",
+      "face_count": 602,
+      "requires_stitch_count": 34,
+      "small_under_1000m2_count": 123,
+      "min_face_area_m2": 0.21170000004100153,
+      "max_face_area_m2": 263938.5320197547,
+      "domain_area_m2": 11322618.219300324,
+      "road_mask_area_in_domain_m2": 3091895.878733446,
+      "face_area_sum_m2": 8230722.340566876,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_10_row.geojson",
+          "sha256": "f371b011f52a71bc686a98c5d559f17b822b4d0af1cef52740c22987c22b3e4f",
+          "features_all": 343,
+          "features_selected": 132
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_10_road_edge.geojson",
+          "sha256": "a0a4eb6b26cbed4d8bc0131b88b60765bf39187225a353adab31800e0b01d356",
+          "features_all": 712,
+          "features_selected": 94
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_10_road_edge.geojson",
+          "sha256": "a0a4eb6b26cbed4d8bc0131b88b60765bf39187225a353adab31800e0b01d356",
+          "features_all": 712,
+          "features_selected": 544
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_10_provisional_faces.parquet",
+      "output_sha256": "294e30dff8271275369ad659a9bd0f9ad052bb18e9e58e3ba780a046badf2268",
+      "output_bytes": 677202
+    },
+    {
+      "unit_id": "CHI:11",
+      "face_count": 354,
+      "requires_stitch_count": 2,
+      "small_under_1000m2_count": 83,
+      "min_face_area_m2": 0.3356000001530396,
+      "max_face_area_m2": 384717.0132836568,
+      "domain_area_m2": 6022237.97074972,
+      "road_mask_area_in_domain_m2": 1592371.0629499748,
+      "face_area_sum_m2": 4429866.9077997515,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_row.geojson",
+          "sha256": "fe2d77d4ecd01b91c2f6b1201f567531c43ff3c74efd1793a9be0a6e700d14dc",
+          "features_all": 321,
+          "features_selected": 136
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_road_edge.geojson",
+          "sha256": "2763dc9e7d809d8d0dd515ec57fd5bd3d887e658d2e01e02719cf2836acbca2a",
+          "features_all": 652,
+          "features_selected": 86
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_11_road_edge.geojson",
+          "sha256": "2763dc9e7d809d8d0dd515ec57fd5bd3d887e658d2e01e02719cf2836acbca2a",
+          "features_all": 652,
+          "features_selected": 459
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_11_provisional_faces.parquet",
+      "output_sha256": "e5fc6033c0f61c3d74e49368f20af6ed93522522c7345703b887c547c22d2d07",
+      "output_bytes": 453759
+    },
+    {
+      "unit_id": "CHI:12",
+      "face_count": 395,
+      "requires_stitch_count": 15,
+      "small_under_1000m2_count": 16,
+      "min_face_area_m2": 0.027900000227172844,
+      "max_face_area_m2": 813695.1310025506,
+      "domain_area_m2": 8274696.336238334,
+      "road_mask_area_in_domain_m2": 2038481.432606801,
+      "face_area_sum_m2": 6236214.9036315475,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_12_row.geojson",
+          "sha256": "8454ef14b194a534aa2c74af6c166d0574aa13dbf03eeed4145d1e0459aedb09",
+          "features_all": 680,
+          "features_selected": 289
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_12_road_edge.geojson",
+          "sha256": "d49c53859d66c94c31dedc5d8465eb1680cd986c86783c6aaa3f05b17e62c3c9",
+          "features_all": 1120,
+          "features_selected": 196
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_12_road_edge.geojson",
+          "sha256": "d49c53859d66c94c31dedc5d8465eb1680cd986c86783c6aaa3f05b17e62c3c9",
+          "features_all": 1120,
+          "features_selected": 713
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_12_provisional_faces.parquet",
+      "output_sha256": "b7b75af228d5db575e89808ea7a86c2ba1d5c50fa2685b670ad96b8c506a3adc",
+      "output_bytes": 393403
+    },
+    {
+      "unit_id": "CHI:13",
+      "face_count": 151,
+      "requires_stitch_count": 14,
+      "small_under_1000m2_count": 7,
+      "min_face_area_m2": 25.125399999336594,
+      "max_face_area_m2": 1148343.0998638067,
+      "domain_area_m2": 6525331.184540938,
+      "road_mask_area_in_domain_m2": 1013999.313742506,
+      "face_area_sum_m2": 5511331.87079842,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_13_row.geojson",
+          "sha256": "8de68d49c7b320ef74f2f6e057c869aec8d214229ba83b93d769cd54e726755b",
+          "features_all": 196,
+          "features_selected": 114
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_13_road_edge.geojson",
+          "sha256": "745c0b709204ba51820a547b8a8c818ccfba698efbefece174804ffd950fb53c",
+          "features_all": 378,
+          "features_selected": 72
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_13_road_edge.geojson",
+          "sha256": "745c0b709204ba51820a547b8a8c818ccfba698efbefece174804ffd950fb53c",
+          "features_all": 378,
+          "features_selected": 287
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_13_provisional_faces.parquet",
+      "output_sha256": "304cba491964e2137b10aa0b11a0fc69a52418193d417b5d1fa5bba86cb947ea",
+      "output_bytes": 266150
+    },
+    {
+      "unit_id": "CHI:14",
+      "face_count": 231,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 11,
+      "min_face_area_m2": 0.014699771188179575,
+      "max_face_area_m2": 108842.57570006858,
+      "domain_area_m2": 4970648.800632658,
+      "road_mask_area_in_domain_m2": 1297160.9690060613,
+      "face_area_sum_m2": 3673487.8316266057,
+      "conservation_error_m2": 4.656612873077393e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_14_row.geojson",
+          "sha256": "ab7c4088ec733037d69a051530e73b6e6e197074ab46fbbfeb8ba198d7d9ee86",
+          "features_all": 185,
+          "features_selected": 97
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_14_road_edge.geojson",
+          "sha256": "5e9ec95ebfc34c8c9cb90108eb11e11e5bdb815e38914bc2ab72b1b30cc4f1e2",
+          "features_all": 450,
+          "features_selected": 63
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_14_road_edge.geojson",
+          "sha256": "5e9ec95ebfc34c8c9cb90108eb11e11e5bdb815e38914bc2ab72b1b30cc4f1e2",
+          "features_all": 450,
+          "features_selected": 337
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_14_provisional_faces.parquet",
+      "output_sha256": "5f3d3ce4c1ef69392366ac5ce24ca32623cc78c90a05c8b74e8948c6cb7e249e",
+      "output_bytes": 407290
+    },
+    {
+      "unit_id": "CHI:15",
+      "face_count": 468,
+      "requires_stitch_count": 9,
+      "small_under_1000m2_count": 26,
+      "min_face_area_m2": 0.005200000005029142,
+      "max_face_area_m2": 147577.43039999003,
+      "domain_area_m2": 10230362.674821753,
+      "road_mask_area_in_domain_m2": 2650360.6379074235,
+      "face_area_sum_m2": 7580002.036914328,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_15_row.geojson",
+          "sha256": "34ab73ccd90b6a51d4a47cad994764cd788e1903d84b5d716b05a285ad0065ca",
+          "features_all": 247,
+          "features_selected": 125
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_15_road_edge.geojson",
+          "sha256": "80e2ae20003963061f9409505dd836497011e7431913b608ebe87ecee7269e49",
+          "features_all": 641,
+          "features_selected": 96
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_15_road_edge.geojson",
+          "sha256": "80e2ae20003963061f9409505dd836497011e7431913b608ebe87ecee7269e49",
+          "features_all": 641,
+          "features_selected": 513
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_15_provisional_faces.parquet",
+      "output_sha256": "149c2663c324ebe51534804bf75f27a3c69383171897ec9fb7d9f2e63c23cb31",
+      "output_bytes": 687550
+    },
+    {
+      "unit_id": "CHI:16",
+      "face_count": 451,
+      "requires_stitch_count": 10,
+      "small_under_1000m2_count": 94,
+      "min_face_area_m2": 0.024750000023981533,
+      "max_face_area_m2": 243542.16773767507,
+      "domain_area_m2": 8319173.245334982,
+      "road_mask_area_in_domain_m2": 2386945.902975453,
+      "face_area_sum_m2": 5932227.342359523,
+      "conservation_error_m2": 3.725290298461914e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_16_row.geojson",
+          "sha256": "d2a2b1d7a36832a7b7e3c9a2c75efa5ea9b252437bf20e9d716088fb6a7fabb0",
+          "features_all": 362,
+          "features_selected": 166
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_16_road_edge.geojson",
+          "sha256": "5add4fa8e1ea8be62d49a436fc6afc4e319561bd90217a90495628241d1bee0a",
+          "features_all": 809,
+          "features_selected": 131
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_16_road_edge.geojson",
+          "sha256": "5add4fa8e1ea8be62d49a436fc6afc4e319561bd90217a90495628241d1bee0a",
+          "features_all": 809,
+          "features_selected": 607
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_16_provisional_faces.parquet",
+      "output_sha256": "552b31811d907fb2e1ec26dfcca2c98b456c9612dabf31f8acccf9d1194584c3",
+      "output_bytes": 552906
+    },
+    {
+      "unit_id": "CHI:17",
+      "face_count": 373,
+      "requires_stitch_count": 1,
+      "small_under_1000m2_count": 17,
+      "min_face_area_m2": 24.514849981908778,
+      "max_face_area_m2": 509520.1595499888,
+      "domain_area_m2": 9617716.436107114,
+      "road_mask_area_in_domain_m2": 2203736.125260738,
+      "face_area_sum_m2": 7413980.310846394,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_17_row.geojson",
+          "sha256": "cfd028204edb9439fe5eae97296988ec4529881ede299d761f1d242b4d3c81a0",
+          "features_all": 182,
+          "features_selected": 91
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_17_road_edge.geojson",
+          "sha256": "3c0c9d0564335dd75336518d8e702952a941dd36bddee8644155dcd30d1cf3be",
+          "features_all": 595,
+          "features_selected": 51
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_17_road_edge.geojson",
+          "sha256": "3c0c9d0564335dd75336518d8e702952a941dd36bddee8644155dcd30d1cf3be",
+          "features_all": 595,
+          "features_selected": 520
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_17_provisional_faces.parquet",
+      "output_sha256": "2db17da7c3f703b45f1e01c52d938bd7cc6790f95fe566a41d44a5bf4c1057b7",
+      "output_bytes": 612243
+    },
+    {
+      "unit_id": "CHI:18",
+      "face_count": 110,
+      "requires_stitch_count": 7,
+      "small_under_1000m2_count": 1,
+      "min_face_area_m2": 798.8660472311418,
+      "max_face_area_m2": 154333.56436176345,
+      "domain_area_m2": 2560171.673085884,
+      "road_mask_area_in_domain_m2": 619093.3825589548,
+      "face_area_sum_m2": 1941078.290526953,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_18_row.geojson",
+          "sha256": "9dbe198a25543d0082486f3fcde0f85a30bd4573e34233be455c0a8c8b89529b",
+          "features_all": 71,
+          "features_selected": 39
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_18_road_edge.geojson",
+          "sha256": "7829728a64c49944e6e3cee1a234b4884858e3e689f061c5001a66ccb291f4a0",
+          "features_all": 170,
+          "features_selected": 11
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_18_road_edge.geojson",
+          "sha256": "7829728a64c49944e6e3cee1a234b4884858e3e689f061c5001a66ccb291f4a0",
+          "features_all": 170,
+          "features_selected": 128
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_18_provisional_faces.parquet",
+      "output_sha256": "cf2bce60ec7607a08113095dee3d9145220dd2a157e28a43c777ac7df4ac1757",
+      "output_bytes": 187209
+    },
+    {
+      "unit_id": "CHI:19",
+      "face_count": 422,
+      "requires_stitch_count": 16,
+      "small_under_1000m2_count": 1,
+      "min_face_area_m2": 57.712800000144625,
+      "max_face_area_m2": 241373.89219996196,
+      "domain_area_m2": 10128559.056784386,
+      "road_mask_area_in_domain_m2": 2486590.503731689,
+      "face_area_sum_m2": 7641968.553052735,
+      "conservation_error_m2": 3.725290298461914e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_19_row.geojson",
+          "sha256": "7f55db59ef76195f8529316ae7315fd476aa7433b812a559001bf2b2735399c2",
+          "features_all": 223,
+          "features_selected": 109
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_19_road_edge.geojson",
+          "sha256": "ce18afd1e23d5df06bc8230b551d444dd25b540846fa158434deb30fd10b20d4",
+          "features_all": 587,
+          "features_selected": 69
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_19_road_edge.geojson",
+          "sha256": "ce18afd1e23d5df06bc8230b551d444dd25b540846fa158434deb30fd10b20d4",
+          "features_all": 587,
+          "features_selected": 458
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_19_provisional_faces.parquet",
+      "output_sha256": "e6cfcdfea566d46f1275233a8fc131fca13dd6b64530830c6d11a1c806532303",
+      "output_bytes": 763909
+    },
+    {
+      "unit_id": "CHI:20",
+      "face_count": 123,
+      "requires_stitch_count": 14,
+      "small_under_1000m2_count": 2,
+      "min_face_area_m2": 29.88924999847298,
+      "max_face_area_m2": 92029.63503295436,
+      "domain_area_m2": 3026664.271465896,
+      "road_mask_area_in_domain_m2": 755851.0244936083,
+      "face_area_sum_m2": 2270813.246972287,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_20_row.geojson",
+          "sha256": "9b68baea072592f0b7d8c0ceb84c2674597b73da36bae17401aee112aafdb5a5",
+          "features_all": 224,
+          "features_selected": 89
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_20_road_edge.geojson",
+          "sha256": "8db15f34fd3b50e6a8c1cb72d0b829e3a5569e0a4d3eb79920ec7b96d60d61ad",
+          "features_all": 274,
+          "features_selected": 65
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_20_road_edge.geojson",
+          "sha256": "8db15f34fd3b50e6a8c1cb72d0b829e3a5569e0a4d3eb79920ec7b96d60d61ad",
+          "features_all": 274,
+          "features_selected": 183
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_20_provisional_faces.parquet",
+      "output_sha256": "d428fd9d29a0a3c0f1c22548e1491c744673504093ecc4662fe3e7307605bc9b",
+      "output_bytes": 221016
+    },
+    {
+      "unit_id": "CHI:21",
+      "face_count": 283,
+      "requires_stitch_count": 4,
+      "small_under_1000m2_count": 72,
+      "min_face_area_m2": 0.008199999816785566,
+      "max_face_area_m2": 221419.77214996095,
+      "domain_area_m2": 5132936.209682022,
+      "road_mask_area_in_domain_m2": 1358612.036084721,
+      "face_area_sum_m2": 3774324.173597317,
+      "conservation_error_m2": 4.656612873077393e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_21_row.geojson",
+          "sha256": "3fc7ba4347a2cfd1cf92e4c62df1cbdf78b4f0ffa78893d34581772ff1a5e63a",
+          "features_all": 193,
+          "features_selected": 86
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_21_road_edge.geojson",
+          "sha256": "08a58e3c1b5e62ef8c044e536c2b438a3c3d2e684fe7288808e47f85854c8f7b",
+          "features_all": 391,
+          "features_selected": 69
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_21_road_edge.geojson",
+          "sha256": "08a58e3c1b5e62ef8c044e536c2b438a3c3d2e684fe7288808e47f85854c8f7b",
+          "features_all": 391,
+          "features_selected": 266
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_21_provisional_faces.parquet",
+      "output_sha256": "58d2c206465a29d4fc32d3c6077714b3abbdaaa5829b96a0eca5cdeddeb24044",
+      "output_bytes": 357723
+    },
+    {
+      "unit_id": "CHI:22",
+      "face_count": 555,
+      "requires_stitch_count": 32,
+      "small_under_1000m2_count": 119,
+      "min_face_area_m2": 2.173899998589617,
+      "max_face_area_m2": 184852.1409499414,
+      "domain_area_m2": 9288854.881953834,
+      "road_mask_area_in_domain_m2": 2700787.0891302936,
+      "face_area_sum_m2": 6588067.792823593,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_22_row.geojson",
+          "sha256": "98344a4953e3a3bc402ffba6598efefa8af0935b76e24508b86e37d4eb0b8f05",
+          "features_all": 705,
+          "features_selected": 271
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_22_road_edge.geojson",
+          "sha256": "aaf458f50975033e739a795db400f5963842fd0983e6e68794069a6a4ae7112a",
+          "features_all": 926,
+          "features_selected": 186
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_22_road_edge.geojson",
+          "sha256": "aaf458f50975033e739a795db400f5963842fd0983e6e68794069a6a4ae7112a",
+          "features_all": 926,
+          "features_selected": 627
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_22_provisional_faces.parquet",
+      "output_sha256": "02d819b68fa5fc10b304c4868ed1593cad6d9aeed89503b8eb69c854c99df7a8",
+      "output_bytes": 737684
+    },
+    {
+      "unit_id": "CHI:23",
+      "face_count": 359,
+      "requires_stitch_count": 29,
+      "small_under_1000m2_count": 13,
+      "min_face_area_m2": 0.22250000559957697,
+      "max_face_area_m2": 515322.8100999622,
+      "domain_area_m2": 9328244.684562545,
+      "road_mask_area_in_domain_m2": 2220371.5536309304,
+      "face_area_sum_m2": 7107873.130931647,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_23_row.geojson",
+          "sha256": "18742a2c8f07e67355d5d5942fca7a6dda969d32123ccc046ee9d5ea3a671835",
+          "features_all": 479,
+          "features_selected": 201
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_23_road_edge.geojson",
+          "sha256": "b226324fb5257ec7d61d73aa6bf85cfebba4aa0e6d344d44449e84fc97da7825",
+          "features_all": 642,
+          "features_selected": 159
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_23_road_edge.geojson",
+          "sha256": "b226324fb5257ec7d61d73aa6bf85cfebba4aa0e6d344d44449e84fc97da7825",
+          "features_all": 642,
+          "features_selected": 462
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_23_provisional_faces.parquet",
+      "output_sha256": "7a153a40ebcc03c8d5f90c7ee82af5dd5f3d17454a6deffc06b7c8d2568601e7",
+      "output_bytes": 606560
+    },
+    {
+      "unit_id": "CHI:24",
+      "face_count": 727,
+      "requires_stitch_count": 13,
+      "small_under_1000m2_count": 127,
+      "min_face_area_m2": 0.0023999999922467395,
+      "max_face_area_m2": 241731.42574994313,
+      "domain_area_m2": 11842194.028135978,
+      "road_mask_area_in_domain_m2": 3369310.4736572485,
+      "face_area_sum_m2": 8472883.554478755,
+      "conservation_error_m2": 3.725290298461914e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_24_row.geojson",
+          "sha256": "10b92a31c8a58b5fa188a85926f38b0b72dd6dacdb54da95eaad9af4bcf7a40b",
+          "features_all": 1002,
+          "features_selected": 298
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_24_road_edge.geojson",
+          "sha256": "2df0ca68581854f0b33c62045b5baef06f6ccf56059b11a226f758cb2cbfc591",
+          "features_all": 943,
+          "features_selected": 270
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_24_road_edge.geojson",
+          "sha256": "2df0ca68581854f0b33c62045b5baef06f6ccf56059b11a226f758cb2cbfc591",
+          "features_all": 943,
+          "features_selected": 602
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_24_provisional_faces.parquet",
+      "output_sha256": "540e17ae8c477f7f1210efb9d1573dec3a668540c10036533884b1afc561f007",
+      "output_bytes": 896573
+    },
+    {
+      "unit_id": "CHI:25",
+      "face_count": 733,
+      "requires_stitch_count": 30,
+      "small_under_1000m2_count": 33,
+      "min_face_area_m2": 9.532400000326941,
+      "max_face_area_m2": 485795.98320002423,
+      "domain_area_m2": 18498319.92524273,
+      "road_mask_area_in_domain_m2": 4505030.334701322,
+      "face_area_sum_m2": 13993289.590541374,
+      "conservation_error_m2": 9.313225746154785e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_25_row.geojson",
+          "sha256": "fd36e541b27bbb6df2fa9eca71c8edf762665e8f71ed2e55de61bf5f535c1c5e",
+          "features_all": 962,
+          "features_selected": 360
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_25_road_edge.geojson",
+          "sha256": "3162fae803b558f2a8cd7ed8ca5a2f558f17d6d158ef5fd103f7dd9b7687680b",
+          "features_all": 1594,
+          "features_selected": 247
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_25_road_edge.geojson",
+          "sha256": "3162fae803b558f2a8cd7ed8ca5a2f558f17d6d158ef5fd103f7dd9b7687680b",
+          "features_all": 1594,
+          "features_selected": 1286
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_25_provisional_faces.parquet",
+      "output_sha256": "dd967c48c7780fb119b5734080b8369a1d08b9daeda6fa922aa3633378bb04a0",
+      "output_bytes": 1116998
+    },
+    {
+      "unit_id": "CHI:26",
+      "face_count": 207,
+      "requires_stitch_count": 21,
+      "small_under_1000m2_count": 27,
+      "min_face_area_m2": 1.8129000007853842,
+      "max_face_area_m2": 68485.10341437439,
+      "domain_area_m2": 3350730.606758987,
+      "road_mask_area_in_domain_m2": 1012604.9138051608,
+      "face_area_sum_m2": 2338125.692953816,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_26_row.geojson",
+          "sha256": "e42849a0ac01ac9e2d1020175f21220330bb0afb38bf39a56eaa107c0f6d5099",
+          "features_all": 210,
+          "features_selected": 69
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_26_road_edge.geojson",
+          "sha256": "61835a39e9fa4576ae9c0c13f65ec2e9d4c13ddb4eb54ce0dba865752d03f176",
+          "features_all": 240,
+          "features_selected": 64
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_26_road_edge.geojson",
+          "sha256": "61835a39e9fa4576ae9c0c13f65ec2e9d4c13ddb4eb54ce0dba865752d03f176",
+          "features_all": 240,
+          "features_selected": 176
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_26_provisional_faces.parquet",
+      "output_sha256": "9d6203556b7f4916dff807fce0d7defe052451d81c31093c8afadeb72e62b41b",
+      "output_bytes": 306698
+    },
+    {
+      "unit_id": "CHI:27",
+      "face_count": 301,
+      "requires_stitch_count": 25,
+      "small_under_1000m2_count": 74,
+      "min_face_area_m2": 0.07829999986470211,
+      "max_face_area_m2": 108856.24416067431,
+      "domain_area_m2": 5002269.903132768,
+      "road_mask_area_in_domain_m2": 1344572.0964423479,
+      "face_area_sum_m2": 3657697.80669037,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_27_row.geojson",
+          "sha256": "893b6f071271e98c18a6233dc4bc0f47abf09c1c578c293f78bb5bb8a57caed2",
+          "features_all": 416,
+          "features_selected": 123
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_27_road_edge.geojson",
+          "sha256": "08807b6b482f5b8c67c09934a5d8f710c1a513eea65ae66e100eb869c24cfaf8",
+          "features_all": 271,
+          "features_selected": 74
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_27_road_edge.geojson",
+          "sha256": "08807b6b482f5b8c67c09934a5d8f710c1a513eea65ae66e100eb869c24cfaf8",
+          "features_all": 271,
+          "features_selected": 188
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_27_provisional_faces.parquet",
+      "output_sha256": "c424648572a562ba8936582c59e37d39ae0b96807955a6249348824de8a157ae",
+      "output_bytes": 342114
+    },
+    {
+      "unit_id": "CHI:28",
+      "face_count": 1066,
+      "requires_stitch_count": 41,
+      "small_under_1000m2_count": 343,
+      "min_face_area_m2": 0.0026999999398365617,
+      "max_face_area_m2": 401492.3836000296,
+      "domain_area_m2": 14713428.325045448,
+      "road_mask_area_in_domain_m2": 4222740.113912666,
+      "face_area_sum_m2": 10490688.21113278,
+      "conservation_error_m2": 1.1175870895385742e-08,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_28_row.geojson",
+          "sha256": "99bf09d765cb80641bd77031434d4cbe444a46f2fad96cf4c78ae00e41911a75",
+          "features_all": 1556,
+          "features_selected": 420
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_28_road_edge.geojson",
+          "sha256": "07187947c3fffd18dda0b46907e2a6adf39cd085f45076371f8144c7dc6222ab",
+          "features_all": 729,
+          "features_selected": 325
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_28_road_edge.geojson",
+          "sha256": "07187947c3fffd18dda0b46907e2a6adf39cd085f45076371f8144c7dc6222ab",
+          "features_all": 729,
+          "features_selected": 352
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_28_provisional_faces.parquet",
+      "output_sha256": "9c163377432f2c33d2dcad4f85a1505a0e0c9e817f0326da4e5b1d82084dd57f",
+      "output_bytes": 746931
+    },
+    {
+      "unit_id": "CHI:29",
+      "face_count": 319,
+      "requires_stitch_count": 20,
+      "small_under_1000m2_count": 21,
+      "min_face_area_m2": 0.0016500000141328201,
+      "max_face_area_m2": 183729.6144000066,
+      "domain_area_m2": 8307642.494482472,
+      "road_mask_area_in_domain_m2": 2039372.729958256,
+      "face_area_sum_m2": 6268269.764524264,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_29_row.geojson",
+          "sha256": "d0e2032c77ca70071de6d8c775db88ededc01b5ecdef8e9271723cfdf0da2b31",
+          "features_all": 630,
+          "features_selected": 238
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_29_road_edge.geojson",
+          "sha256": "f5b0c8a480bb6541aa48038d3cec1888ad1cfdd2e96dde039a06783ac7b3ad29",
+          "features_all": 669,
+          "features_selected": 200
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_29_road_edge.geojson",
+          "sha256": "f5b0c8a480bb6541aa48038d3cec1888ad1cfdd2e96dde039a06783ac7b3ad29",
+          "features_all": 669,
+          "features_selected": 447
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_29_provisional_faces.parquet",
+      "output_sha256": "73d62a9cc6a40ca157a7a8da2122eae3bb44a70cf4325ea22f42bdeb85f9c5f2",
+      "output_bytes": 532317
+    },
+    {
+      "unit_id": "CHI:30",
+      "face_count": 364,
+      "requires_stitch_count": 21,
+      "small_under_1000m2_count": 22,
+      "min_face_area_m2": 0.06534078012472633,
+      "max_face_area_m2": 1404098.0025513843,
+      "domain_area_m2": 11882815.954581944,
+      "road_mask_area_in_domain_m2": 2278134.7714493875,
+      "face_area_sum_m2": 9604681.183132548,
+      "conservation_error_m2": 7.450580596923828e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_30_row.geojson",
+          "sha256": "87285534bdac41342fd498641664aab452b605b84dd91ddc1e6582070c701f99",
+          "features_all": 685,
+          "features_selected": 276
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_30_road_edge.geojson",
+          "sha256": "e38f636d88e6cf2cd5a6ff4e0eba4397918e5cbbf20ee87808077435712a1207",
+          "features_all": 756,
+          "features_selected": 225
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_30_road_edge.geojson",
+          "sha256": "e38f636d88e6cf2cd5a6ff4e0eba4397918e5cbbf20ee87808077435712a1207",
+          "features_all": 756,
+          "features_selected": 456
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_30_provisional_faces.parquet",
+      "output_sha256": "3bfb165f00f64ea7bdfe9333caabd9f47e1f743c0f7fdf491583a870c56bb90d",
+      "output_bytes": 578876
+    },
+    {
+      "unit_id": "CHI:31",
+      "face_count": 338,
+      "requires_stitch_count": 20,
+      "small_under_1000m2_count": 55,
+      "min_face_area_m2": 0.007159215857919171,
+      "max_face_area_m2": 802037.7019000773,
+      "domain_area_m2": 7570662.2062242115,
+      "road_mask_area_in_domain_m2": 1613499.956814028,
+      "face_area_sum_m2": 5957162.249410168,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_31_row.geojson",
+          "sha256": "11de8f122d0815abf849062d618a7949c4b0aed15e354339ceb1712541d0eba7",
+          "features_all": 644,
+          "features_selected": 230
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_31_road_edge.geojson",
+          "sha256": "8a29d91d7d9ed9f640a40e7c3c1bfff9f07a44a781f704f299cf1c1ed0cfa3a7",
+          "features_all": 660,
+          "features_selected": 269
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_31_road_edge.geojson",
+          "sha256": "8a29d91d7d9ed9f640a40e7c3c1bfff9f07a44a781f704f299cf1c1ed0cfa3a7",
+          "features_all": 660,
+          "features_selected": 342
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_31_provisional_faces.parquet",
+      "output_sha256": "72c12eb77c8b7c04e9df06815001e4ba1668ff68a9070f837ce2fb98e9b4d51e",
+      "output_bytes": 366657
+    },
+    {
+      "unit_id": "CHI:32",
+      "face_count": 252,
+      "requires_stitch_count": 20,
+      "small_under_1000m2_count": 40,
+      "min_face_area_m2": 0.00215000000516884,
+      "max_face_area_m2": 361967.40391373966,
+      "domain_area_m2": 4301423.448060153,
+      "road_mask_area_in_domain_m2": 1295001.1288715773,
+      "face_area_sum_m2": 3006422.3191886353,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_row.geojson",
+          "sha256": "7a77f8b4ce08cb9e5d32ee2bfa475e271763d4882ba5817669b452d277820b2f",
+          "features_all": 414,
+          "features_selected": 99
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_road_edge.geojson",
+          "sha256": "dc2d6c5c24b2ea1bfc9a36e8f6606a32d5bbec8a2ff31b9e4a67792ccd381288",
+          "features_all": 159,
+          "features_selected": 71
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_32_road_edge.geojson",
+          "sha256": "dc2d6c5c24b2ea1bfc9a36e8f6606a32d5bbec8a2ff31b9e4a67792ccd381288",
+          "features_all": 159,
+          "features_selected": 88
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_32_provisional_faces.parquet",
+      "output_sha256": "76daea620b8554bacad52c623d1ac8b17b9694349b6c7e60257a3928e88a13c1",
+      "output_bytes": 123962
+    },
+    {
+      "unit_id": "CHI:33",
+      "face_count": 225,
+      "requires_stitch_count": 12,
+      "small_under_1000m2_count": 101,
+      "min_face_area_m2": 0.0023500000075786375,
+      "max_face_area_m2": 974626.1541875002,
+      "domain_area_m2": 4620205.2120612515,
+      "road_mask_area_in_domain_m2": 1069189.7516576191,
+      "face_area_sum_m2": 3551015.460403622,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_33_row.geojson",
+          "sha256": "6cd0201c3edcf6a606440b070e22697964ee03230e47f648987a60d9dc51641a",
+          "features_all": 333,
+          "features_selected": 112
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_33_road_edge.geojson",
+          "sha256": "9a4aa4c051f92f98d853f02f7cb0ffb7d782b847af51a4cacdbe6bb4d5844259",
+          "features_all": 229,
+          "features_selected": 161
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_33_road_edge.geojson",
+          "sha256": "9a4aa4c051f92f98d853f02f7cb0ffb7d782b847af51a4cacdbe6bb4d5844259",
+          "features_all": 229,
+          "features_selected": 68
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_33_provisional_faces.parquet",
+      "output_sha256": "e05ec0d14a1e40c4e73fe6712e13c920a750b55a4352788a7d0c67a1ccefcd87",
+      "output_bytes": 165292
+    },
+    {
+      "unit_id": "CHI:34",
+      "face_count": 276,
+      "requires_stitch_count": 17,
+      "small_under_1000m2_count": 119,
+      "min_face_area_m2": 0.0019000000012107192,
+      "max_face_area_m2": 184519.89053025199,
+      "domain_area_m2": 2577601.841831905,
+      "road_mask_area_in_domain_m2": 926957.5404583553,
+      "face_area_sum_m2": 1650644.3013735698,
+      "conservation_error_m2": 4.656612873077393e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_34_row.geojson",
+          "sha256": "7261e1deb4b09c9d7a1b7fec55ea553610f051cf86d206148280d25313b5d119",
+          "features_all": 277,
+          "features_selected": 78
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_34_road_edge.geojson",
+          "sha256": "6cbb80440807c681d15ca18789f3b467b2d87659504015d3a2e1b8e02f451596",
+          "features_all": 265,
+          "features_selected": 133
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_34_road_edge.geojson",
+          "sha256": "6cbb80440807c681d15ca18789f3b467b2d87659504015d3a2e1b8e02f451596",
+          "features_all": 265,
+          "features_selected": 132
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_34_provisional_faces.parquet",
+      "output_sha256": "a282eb19ee7d427c81f0228ad578ad4faa2369e2be40ac351976faa1e38b8184",
+      "output_bytes": 166500
+    },
+    {
+      "unit_id": "CHI:35",
+      "face_count": 169,
+      "requires_stitch_count": 17,
+      "small_under_1000m2_count": 20,
+      "min_face_area_m2": 0.007099999840930104,
+      "max_face_area_m2": 278505.26962621155,
+      "domain_area_m2": 4270688.521222364,
+      "road_mask_area_in_domain_m2": 1032874.6117103834,
+      "face_area_sum_m2": 3237813.90951197,
+      "conservation_error_m2": 4.656612873077393e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_35_row.geojson",
+          "sha256": "c98a4f1bb43e6fd0c44bca4144eb80cbd609d078169baffa6ecd622391d27196",
+          "features_all": 354,
+          "features_selected": 119
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_35_road_edge.geojson",
+          "sha256": "ab2bdf1262ab0e409711fe181896910a439c43090a9b6a51a9130eab2d01cbdc",
+          "features_all": 140,
+          "features_selected": 74
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_35_road_edge.geojson",
+          "sha256": "ab2bdf1262ab0e409711fe181896910a439c43090a9b6a51a9130eab2d01cbdc",
+          "features_all": 140,
+          "features_selected": 66
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_35_provisional_faces.parquet",
+      "output_sha256": "5beeefb33b720f29c8ac2cf58d697570760210e2df2f7f10f3d0df2aa11ea179",
+      "output_bytes": 147700
+    },
+    {
+      "unit_id": "CHI:36",
+      "face_count": 71,
+      "requires_stitch_count": 6,
+      "small_under_1000m2_count": 12,
+      "min_face_area_m2": 0.023050000442820573,
+      "max_face_area_m2": 319281.42340919113,
+      "domain_area_m2": 1570141.2414192385,
+      "road_mask_area_in_domain_m2": 363545.1060107108,
+      "face_area_sum_m2": 1206596.1354085386,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_36_row.geojson",
+          "sha256": "a64a941475b8a1b875915f137f4d9123c175624613c4fc94175b2eb009c6463f",
+          "features_all": 131,
+          "features_selected": 59
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_36_road_edge.geojson",
+          "sha256": "d57ca894aaabd3ad384ba9fa387d0e87d333120f03a3743d9aa3dd58d15ff710",
+          "features_all": 81,
+          "features_selected": 21
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_36_road_edge.geojson",
+          "sha256": "d57ca894aaabd3ad384ba9fa387d0e87d333120f03a3743d9aa3dd58d15ff710",
+          "features_all": 81,
+          "features_selected": 59
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_36_provisional_faces.parquet",
+      "output_sha256": "60c2c0b31a6d5747fab40088329fe4ae1f29805a258319926d11a0b51d575f73",
+      "output_bytes": 94774
+    },
+    {
+      "unit_id": "CHI:37",
+      "face_count": 153,
+      "requires_stitch_count": 14,
+      "small_under_1000m2_count": 69,
+      "min_face_area_m2": 0.018400000242074027,
+      "max_face_area_m2": 114434.23562380811,
+      "domain_area_m2": 1848913.626373443,
+      "road_mask_area_in_domain_m2": 666974.2779906506,
+      "face_area_sum_m2": 1181939.3483827906,
+      "conservation_error_m2": 4.656612873077393e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_37_row.geojson",
+          "sha256": "1f988a5e65e3e9cd9c8bf818b71fe2e163e3cddf5c7a1ce6dcb2a2abab26b8ef",
+          "features_all": 170,
+          "features_selected": 50
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_37_road_edge.geojson",
+          "sha256": "5e206b4e47fbd50e55f1275c0f08cdbaac843666e71b1d68983df8a92e2245a0",
+          "features_all": 146,
+          "features_selected": 107
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_37_road_edge.geojson",
+          "sha256": "5e206b4e47fbd50e55f1275c0f08cdbaac843666e71b1d68983df8a92e2245a0",
+          "features_all": 146,
+          "features_selected": 39
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_37_provisional_faces.parquet",
+      "output_sha256": "666bf2e6db489bf2019d6acb44e3900d2ddeb195b0c01f59637a824e0064ae54",
+      "output_bytes": 127246
+    },
+    {
+      "unit_id": "CHI:38",
+      "face_count": 196,
+      "requires_stitch_count": 5,
+      "small_under_1000m2_count": 6,
+      "min_face_area_m2": 0.021200000513298435,
+      "max_face_area_m2": 128744.57269998726,
+      "domain_area_m2": 4501641.174230013,
+      "road_mask_area_in_domain_m2": 1296339.8254828395,
+      "face_area_sum_m2": 3205301.3487471775,
+      "conservation_error_m2": 2.3283064365386963e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_38_row.geojson",
+          "sha256": "4318ee55dcb3ba31a46b3464d0dde00ac29662d85f1a9686e4d8752c5ec95d19",
+          "features_all": 249,
+          "features_selected": 104
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_38_road_edge.geojson",
+          "sha256": "f5377f2af480d4833c1534994481c8f1ad305656c87602f64807da748527628d",
+          "features_all": 241,
+          "features_selected": 72
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_38_road_edge.geojson",
+          "sha256": "f5377f2af480d4833c1534994481c8f1ad305656c87602f64807da748527628d",
+          "features_all": 241,
+          "features_selected": 169
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_38_provisional_faces.parquet",
+      "output_sha256": "74466f74d520ee88d09285e8ddbcd260393e9b24606ab89fcc410d690b88d0ff",
+      "output_bytes": 290598
+    },
+    {
+      "unit_id": "CHI:39",
+      "face_count": 78,
+      "requires_stitch_count": 4,
+      "small_under_1000m2_count": 8,
+      "min_face_area_m2": 7.721399999554992,
+      "max_face_area_m2": 179004.85529937578,
+      "domain_area_m2": 2698752.5193461874,
+      "road_mask_area_in_domain_m2": 612539.1202330607,
+      "face_area_sum_m2": 2086213.3991130865,
+      "conservation_error_m2": 1.1641532182693481e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_39_row.geojson",
+          "sha256": "d3d6d11df28b7df3a77a6ffa8d28c218c8728abb4e83531d0383688aee9f587c",
+          "features_all": 77,
+          "features_selected": 27
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_39_road_edge.geojson",
+          "sha256": "ff4759f7d0f133d430d4b4ebf87bdde8794bb861316572e309b3c87b39c27425",
+          "features_all": 91,
+          "features_selected": 37
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_39_road_edge.geojson",
+          "sha256": "ff4759f7d0f133d430d4b4ebf87bdde8794bb861316572e309b3c87b39c27425",
+          "features_all": 91,
+          "features_selected": 53
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_39_provisional_faces.parquet",
+      "output_sha256": "fe519dd7701c5c2566ebc52032c8462b231d2b5fdb16d2fbdeb5450d1b917872",
+      "output_bytes": 164595
+    },
+    {
+      "unit_id": "CHI:40",
+      "face_count": 93,
+      "requires_stitch_count": 7,
+      "small_under_1000m2_count": 2,
+      "min_face_area_m2": 574.1541036926147,
+      "max_face_area_m2": 533194.8077999218,
+      "domain_area_m2": 3933639.2311044564,
+      "road_mask_area_in_domain_m2": 810088.3766977091,
+      "face_area_sum_m2": 3123550.854406749,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_40_row.geojson",
+          "sha256": "7d031b1d28f37b2348e4731ceb66288d736ae1584d80644cdc110572f507a5d8",
+          "features_all": 187,
+          "features_selected": 72
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_40_road_edge.geojson",
+          "sha256": "3ed3f9d8628487010fa49e76e3b488e09aedf211a97e8fcf04770861cbb2f467",
+          "features_all": 204,
+          "features_selected": 98
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_40_road_edge.geojson",
+          "sha256": "3ed3f9d8628487010fa49e76e3b488e09aedf211a97e8fcf04770861cbb2f467",
+          "features_all": 204,
+          "features_selected": 106
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_40_provisional_faces.parquet",
+      "output_sha256": "61bb6a725bf7fe0068d2d2328a37f2029aceb7e1c15d821641fb4d37986061ea",
+      "output_bytes": 152756
+    },
+    {
+      "unit_id": "CHI:41",
+      "face_count": 150,
+      "requires_stitch_count": 3,
+      "small_under_1000m2_count": 16,
+      "min_face_area_m2": 0.700700000040594,
+      "max_face_area_m2": 330075.7113439911,
+      "domain_area_m2": 4187160.273554516,
+      "road_mask_area_in_domain_m2": 934709.6771126884,
+      "face_area_sum_m2": 3252450.596441859,
+      "conservation_error_m2": 4.656612873077393e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_41_row.geojson",
+          "sha256": "96170790cf77e8fb2f60b150666412488ff65850a02f61f78dc340a0075efb20",
+          "features_all": 147,
+          "features_selected": 45
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_41_road_edge.geojson",
+          "sha256": "d1b1169fecbea304a3c8942e0b12472af70234549b1dfce827c63110c61c645e",
+          "features_all": 116,
+          "features_selected": 49
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_41_road_edge.geojson",
+          "sha256": "d1b1169fecbea304a3c8942e0b12472af70234549b1dfce827c63110c61c645e",
+          "features_all": 116,
+          "features_selected": 67
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_41_provisional_faces.parquet",
+      "output_sha256": "9d5ecdea6b9424288ad25064d9e4e044b098ed2da23a8946dde344571548b871",
+      "output_bytes": 226633
+    },
+    {
+      "unit_id": "CHI:42",
+      "face_count": 175,
+      "requires_stitch_count": 4,
+      "small_under_1000m2_count": 8,
+      "min_face_area_m2": 0.3045499993693537,
+      "max_face_area_m2": 422509.12390604033,
+      "domain_area_m2": 5367025.069098742,
+      "road_mask_area_in_domain_m2": 1114256.3016933326,
+      "face_area_sum_m2": 4252768.767405356,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_42_row.geojson",
+          "sha256": "865fdf83c0746285960bbbd2df22131ace1151f8b788994753f4db3cc90b96fc",
+          "features_all": 247,
+          "features_selected": 79
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_42_road_edge.geojson",
+          "sha256": "df2220ce0ff870659053e8cce1c44d690e46e5aed66b4013375561b762b4753a",
+          "features_all": 322,
+          "features_selected": 88
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_42_road_edge.geojson",
+          "sha256": "df2220ce0ff870659053e8cce1c44d690e46e5aed66b4013375561b762b4753a",
+          "features_all": 322,
+          "features_selected": 234
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_42_provisional_faces.parquet",
+      "output_sha256": "1e8c8fe93e2c26675a484e88a245af325da1ceca2414e38d8e1a2496641fabfd",
+      "output_bytes": 331593
+    },
+    {
+      "unit_id": "CHI:43",
+      "face_count": 360,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 16,
+      "min_face_area_m2": 3.7630999996588566,
+      "max_face_area_m2": 413448.1623051533,
+      "domain_area_m2": 7594657.399805894,
+      "road_mask_area_in_domain_m2": 1940088.82571889,
+      "face_area_sum_m2": 5654568.574087035,
+      "conservation_error_m2": 5.587935447692871e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_43_row.geojson",
+          "sha256": "392d69919d29e6175efc55f2cda1318992c08889d8065a898f62c37fe274b5ce",
+          "features_all": 307,
+          "features_selected": 108
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_43_road_edge.geojson",
+          "sha256": "adddb24a59e10923ba3980bec528e0d63cd96a4c680f14e060fc60a4a40852f7",
+          "features_all": 379,
+          "features_selected": 98
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_43_road_edge.geojson",
+          "sha256": "adddb24a59e10923ba3980bec528e0d63cd96a4c680f14e060fc60a4a40852f7",
+          "features_all": 379,
+          "features_selected": 279
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_43_provisional_faces.parquet",
+      "output_sha256": "d49d0cab9c9917d03cd156f55e719205a91dbe2ea828761d02cb62937d31f2eb",
+      "output_bytes": 468512
+    },
+    {
+      "unit_id": "CHI:44",
+      "face_count": 340,
+      "requires_stitch_count": 14,
+      "small_under_1000m2_count": 29,
+      "min_face_area_m2": 0.31636318988511025,
+      "max_face_area_m2": 239490.29560266732,
+      "domain_area_m2": 7641960.258714579,
+      "road_mask_area_in_domain_m2": 2041050.4099504764,
+      "face_area_sum_m2": 5600909.848764097,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_44_row.geojson",
+          "sha256": "ea92bb91e3771ef7a22e3bfcac93c28eafa58c890f199bdaca5e1d8ee4296067",
+          "features_all": 232,
+          "features_selected": 115
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_44_road_edge.geojson",
+          "sha256": "820079f07828234fdd37764deba57aef00cb5e551412da9fc1272eebe92fcc5d",
+          "features_all": 628,
+          "features_selected": 109
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_44_road_edge.geojson",
+          "sha256": "820079f07828234fdd37764deba57aef00cb5e551412da9fc1272eebe92fcc5d",
+          "features_all": 628,
+          "features_selected": 387
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_44_provisional_faces.parquet",
+      "output_sha256": "642c63ee26dcbcc99edb56e7ec0bc77cdb227f722c94ec91087efe628eb6937c",
+      "output_bytes": 469044
+    },
+    {
+      "unit_id": "CHI:45",
+      "face_count": 173,
+      "requires_stitch_count": 9,
+      "small_under_1000m2_count": 37,
+      "min_face_area_m2": 0.009999999983701855,
+      "max_face_area_m2": 196954.9314472486,
+      "domain_area_m2": 3235392.223975368,
+      "road_mask_area_in_domain_m2": 942103.5597359806,
+      "face_area_sum_m2": 2293288.664239382,
+      "conservation_error_m2": 1.3969838619232178e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_45_row.geojson",
+          "sha256": "0f43b910eef519b7410b446fb28a07515a20022275a94f38dfd17e587afbd730",
+          "features_all": 196,
+          "features_selected": 89
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_45_road_edge.geojson",
+          "sha256": "626dedf4d8dddb7de5ab3164afb237ce0b007adb727661e80752b68ceb6a824c",
+          "features_all": 339,
+          "features_selected": 77
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_45_road_edge.geojson",
+          "sha256": "626dedf4d8dddb7de5ab3164afb237ce0b007adb727661e80752b68ceb6a824c",
+          "features_all": 339,
+          "features_selected": 233
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_45_provisional_faces.parquet",
+      "output_sha256": "40b6b288164e92dce213ad12ab7cda06657125a837d3a2d098214544469ac810",
+      "output_bytes": 249075
+    },
+    {
+      "unit_id": "CHI:46",
+      "face_count": 284,
+      "requires_stitch_count": 5,
+      "small_under_1000m2_count": 10,
+      "min_face_area_m2": 0.013350000083365066,
+      "max_face_area_m2": 954130.7338099945,
+      "domain_area_m2": 8658353.316413738,
+      "road_mask_area_in_domain_m2": 1855354.8346016165,
+      "face_area_sum_m2": 6802998.481812097,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_46_row.geojson",
+          "sha256": "f85efe5cb8d922b0c653144e48c386a80b520e293b7b543ee31877dc2719fbf5",
+          "features_all": 417,
+          "features_selected": 199
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_46_road_edge.geojson",
+          "sha256": "fbfd8fb9ac438438ba7313444c591cd7a96cb645ba6987f2c48b1eee82282dd4",
+          "features_all": 708,
+          "features_selected": 148
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_46_road_edge.geojson",
+          "sha256": "fbfd8fb9ac438438ba7313444c591cd7a96cb645ba6987f2c48b1eee82282dd4",
+          "features_all": 708,
+          "features_selected": 543
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_46_provisional_faces.parquet",
+      "output_sha256": "26c0351a91e30bede27db503907f9eb2eb35c5cff36db0cbeabe3955fa526a51",
+      "output_bytes": 492344
+    },
+    {
+      "unit_id": "CHI:47",
+      "face_count": 30,
+      "requires_stitch_count": 4,
+      "small_under_1000m2_count": 0,
+      "min_face_area_m2": 13983.757050004882,
+      "max_face_area_m2": 384979.88211017346,
+      "domain_area_m2": 1577750.4900127081,
+      "road_mask_area_in_domain_m2": 233922.7749105197,
+      "face_area_sum_m2": 1343827.7151021913,
+      "conservation_error_m2": 2.3283064365386963e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_47_row.geojson",
+          "sha256": "dd3fa8ecc4dc7c8a179497adbf1d56432ad27182ddebb4ae34761206137ae0ef",
+          "features_all": 70,
+          "features_selected": 44
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_47_road_edge.geojson",
+          "sha256": "49de572327b33745de6592d1ca56f9a1a1803433dc2e04d8b79763a41d2d356c",
+          "features_all": 131,
+          "features_selected": 35
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_47_road_edge.geojson",
+          "sha256": "49de572327b33745de6592d1ca56f9a1a1803433dc2e04d8b79763a41d2d356c",
+          "features_all": 131,
+          "features_selected": 83
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_47_provisional_faces.parquet",
+      "output_sha256": "83aa90c7aefc19f4db3f88dd96e9f7970b4e9a5fa1e63e576cf02032c18128c6",
+      "output_bytes": 74597
+    },
+    {
+      "unit_id": "CHI:48",
+      "face_count": 219,
+      "requires_stitch_count": 8,
+      "small_under_1000m2_count": 21,
+      "min_face_area_m2": 0.0002499999993015082,
+      "max_face_area_m2": 201228.3194925787,
+      "domain_area_m2": 4532529.506122129,
+      "road_mask_area_in_domain_m2": 1290294.3750595292,
+      "face_area_sum_m2": 3242235.131062611,
+      "conservation_error_m2": 2.3283064365386963e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_48_row.geojson",
+          "sha256": "0136d65817a7efbadbe96a1f037571220b448523ed7f5fb18752de60006ef19d",
+          "features_all": 189,
+          "features_selected": 85
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_48_road_edge.geojson",
+          "sha256": "3a01b457bdd3d7c79d56a2992a86357b9060e8b4cecda9683b4ee4f97338d00c",
+          "features_all": 436,
+          "features_selected": 106
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_48_road_edge.geojson",
+          "sha256": "3a01b457bdd3d7c79d56a2992a86357b9060e8b4cecda9683b4ee4f97338d00c",
+          "features_all": 436,
+          "features_selected": 303
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_48_provisional_faces.parquet",
+      "output_sha256": "c5c4c514d0a259693d88f5a47ae8083fc8d8a46340497b49755ca9feae41900d",
+      "output_bytes": 389954
+    },
+    {
+      "unit_id": "CHI:49",
+      "face_count": 678,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 132,
+      "min_face_area_m2": 0.008000000005587935,
+      "max_face_area_m2": 592022.0926500576,
+      "domain_area_m2": 12468599.090501223,
+      "road_mask_area_in_domain_m2": 3221191.66608437,
+      "face_area_sum_m2": 9247407.424416814,
+      "conservation_error_m2": 3.725290298461914e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_49_row.geojson",
+          "sha256": "5978735ebc31cd6a9f686a5735daf66fc517cb8f683efc6df86c0e9e40f5db24",
+          "features_all": 511,
+          "features_selected": 235
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_49_road_edge.geojson",
+          "sha256": "b47bab2e6edfb4625552af014aa136c05d88d8bd1f39e1257bd79b6e516aaeeb",
+          "features_all": 1398,
+          "features_selected": 202
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_49_road_edge.geojson",
+          "sha256": "b47bab2e6edfb4625552af014aa136c05d88d8bd1f39e1257bd79b6e516aaeeb",
+          "features_all": 1398,
+          "features_selected": 919
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_49_provisional_faces.parquet",
+      "output_sha256": "66cb371ceb37eebedf54717eb57c9a3ad68f39c97d7656a53d596dfb8313f84c",
+      "output_bytes": 897919
+    },
+    {
+      "unit_id": "CHI:50",
+      "face_count": 98,
+      "requires_stitch_count": 1,
+      "small_under_1000m2_count": 12,
+      "min_face_area_m2": 6.658900001908617,
+      "max_face_area_m2": 1128017.3637997042,
+      "domain_area_m2": 5477165.108303168,
+      "road_mask_area_in_domain_m2": 1443392.7531794724,
+      "face_area_sum_m2": 4033772.355123694,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_50_row.geojson",
+          "sha256": "59802c0c5efea61c917102f4b3cf981b9419fc9f1ca008aaaa7d90acbe29ef99",
+          "features_all": 149,
+          "features_selected": 103
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_50_road_edge.geojson",
+          "sha256": "fed4fd24a973d243150944f74c115c2d116419407257e775370308fc99e8087e",
+          "features_all": 277,
+          "features_selected": 132
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_50_road_edge.geojson",
+          "sha256": "fed4fd24a973d243150944f74c115c2d116419407257e775370308fc99e8087e",
+          "features_all": 277,
+          "features_selected": 115
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_50_provisional_faces.parquet",
+      "output_sha256": "b43e862b927d37ac08287170e5222ef7153244bb64c99dc32388407e8d145754",
+      "output_bytes": 152098
+    },
+    {
+      "unit_id": "CHI:51",
+      "face_count": 443,
+      "requires_stitch_count": 20,
+      "small_under_1000m2_count": 33,
+      "min_face_area_m2": 1.6285500001777429,
+      "max_face_area_m2": 7515108.992499816,
+      "domain_area_m2": 28201380.17173013,
+      "road_mask_area_in_domain_m2": 2970280.7922173454,
+      "face_area_sum_m2": 25231099.37951276,
+      "conservation_error_m2": 3.725290298461914e-08,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_51_row.geojson",
+          "sha256": "2edc5fd08868afa957e8e8f091726dac1586e10719c6523494c19611bdf7028c",
+          "features_all": 616,
+          "features_selected": 319
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_51_road_edge.geojson",
+          "sha256": "141777914f8ac654d88ed95991f727eb2dba8b29f47f2e6d1103f6be0855cf64",
+          "features_all": 533,
+          "features_selected": 298
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_51_road_edge.geojson",
+          "sha256": "141777914f8ac654d88ed95991f727eb2dba8b29f47f2e6d1103f6be0855cf64",
+          "features_all": 533,
+          "features_selected": 225
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_51_provisional_faces.parquet",
+      "output_sha256": "f5f4b7405d3cb1d9a175b0286366e70e9366e9201cedff2cc23d9bcfcf9efed3",
+      "output_bytes": 465342
+    },
+    {
+      "unit_id": "CHI:52",
+      "face_count": 248,
+      "requires_stitch_count": 20,
+      "small_under_1000m2_count": 32,
+      "min_face_area_m2": 0.01699999999353895,
+      "max_face_area_m2": 1242642.6131949662,
+      "domain_area_m2": 7727178.703392426,
+      "road_mask_area_in_domain_m2": 1480895.493471351,
+      "face_area_sum_m2": 6246283.209921077,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_52_row.geojson",
+          "sha256": "00015700a2d7f9ca54f64c5b86908a4fbb131b0ee3c3875258c8c0f01da31406",
+          "features_all": 217,
+          "features_selected": 89
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_52_road_edge.geojson",
+          "sha256": "4d38ca009b41c483fc1d503fe9a74ebbbbf17f04a1eac300109e076153c6e5f5",
+          "features_all": 316,
+          "features_selected": 68
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_52_road_edge.geojson",
+          "sha256": "4d38ca009b41c483fc1d503fe9a74ebbbbf17f04a1eac300109e076153c6e5f5",
+          "features_all": 316,
+          "features_selected": 227
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_52_provisional_faces.parquet",
+      "output_sha256": "1125b2265222834b483948e455e1697e8622f7796ad636349bf35faf24170b22",
+      "output_bytes": 401912
+    },
+    {
+      "unit_id": "CHI:53",
+      "face_count": 367,
+      "requires_stitch_count": 7,
+      "small_under_1000m2_count": 8,
+      "min_face_area_m2": 26.31839999692278,
+      "max_face_area_m2": 478558.5982569572,
+      "domain_area_m2": 9224313.72146977,
+      "road_mask_area_in_domain_m2": 2163421.1219608304,
+      "face_area_sum_m2": 7060892.599508921,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_53_row.geojson",
+          "sha256": "db0069cf68af14f530524d0a25c996a47d5cf94f5feb01ad0be3b3fc6bff72a3",
+          "features_all": 326,
+          "features_selected": 137
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_53_road_edge.geojson",
+          "sha256": "7177175c97a9d1e235c2ffd089205abb0e342116b6e4b6fcfd53061adbd3c902",
+          "features_all": 627,
+          "features_selected": 82
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_53_road_edge.geojson",
+          "sha256": "7177175c97a9d1e235c2ffd089205abb0e342116b6e4b6fcfd53061adbd3c902",
+          "features_all": 627,
+          "features_selected": 509
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_53_provisional_faces.parquet",
+      "output_sha256": "6d104beea336337643df39144bf8613480a27af06c5d500b4f7f98b051dd9016",
+      "output_bytes": 654174
+    },
+    {
+      "unit_id": "CHI:54",
+      "face_count": 124,
+      "requires_stitch_count": 9,
+      "small_under_1000m2_count": 16,
+      "min_face_area_m2": 0.07044237882755983,
+      "max_face_area_m2": 2326501.615636199,
+      "domain_area_m2": 9133600.2635281,
+      "road_mask_area_in_domain_m2": 1113049.9742746141,
+      "face_area_sum_m2": 8020550.2892534975,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_54_row.geojson",
+          "sha256": "dd0e3a052da5ab45fce794471b707b5243e0067ef557698a525151757d618885",
+          "features_all": 296,
+          "features_selected": 147
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_54_road_edge.geojson",
+          "sha256": "754cadf38dbdead544935f402946dbeeb61cd1c34f2cdb593f5e2fd756eb7bae",
+          "features_all": 359,
+          "features_selected": 157
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_54_road_edge.geojson",
+          "sha256": "754cadf38dbdead544935f402946dbeeb61cd1c34f2cdb593f5e2fd756eb7bae",
+          "features_all": 359,
+          "features_selected": 105
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_54_provisional_faces.parquet",
+      "output_sha256": "21085d2cc0cf4e1d0e04ce35d1c20599dae90a6edd0ebfc85b9e22d783ae14a5",
+      "output_bytes": 125912
+    },
+    {
+      "unit_id": "CHI:55",
+      "face_count": 299,
+      "requires_stitch_count": 25,
+      "small_under_1000m2_count": 22,
+      "min_face_area_m2": 0.07980000007878987,
+      "max_face_area_m2": 3885509.904634158,
+      "domain_area_m2": 13549805.897309886,
+      "road_mask_area_in_domain_m2": 1667357.3192125158,
+      "face_area_sum_m2": 11882448.578097336,
+      "conservation_error_m2": 1.862645149230957e-08,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_55_row.geojson",
+          "sha256": "aeba2518fbf8920cc2408640bb4be1d977e93032e9d8a4febca321b59d4f9db4",
+          "features_all": 378,
+          "features_selected": 180
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_55_road_edge.geojson",
+          "sha256": "6fc5c2e481b1e55b2dc9964221b5c9a55fcafa4d9a807504fabce7e6b587abf7",
+          "features_all": 341,
+          "features_selected": 142
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_55_road_edge.geojson",
+          "sha256": "6fc5c2e481b1e55b2dc9964221b5c9a55fcafa4d9a807504fabce7e6b587abf7",
+          "features_all": 341,
+          "features_selected": 145
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_55_provisional_faces.parquet",
+      "output_sha256": "4dfe2ce04e0761d7cc6f6b40ce04284065194e714d9b525432d77e87b6d1bfda",
+      "output_bytes": 338176
+    },
+    {
+      "unit_id": "CHI:56",
+      "face_count": 405,
+      "requires_stitch_count": 24,
+      "small_under_1000m2_count": 8,
+      "min_face_area_m2": 0.010450000015972183,
+      "max_face_area_m2": 1362109.5654197237,
+      "domain_area_m2": 10944726.480271464,
+      "road_mask_area_in_domain_m2": 2430520.53749279,
+      "face_area_sum_m2": 8514205.942778835,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_56_row.geojson",
+          "sha256": "7c567984b84f2848a034ca4385b1ff69e81f59bba0d8e88d18028ad65a24152e",
+          "features_all": 450,
+          "features_selected": 157
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_56_road_edge.geojson",
+          "sha256": "8ad44ffaea31e35161b9ff66da563a91c219ca8a7f061228cc4f4764a2d85733",
+          "features_all": 701,
+          "features_selected": 139
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_56_road_edge.geojson",
+          "sha256": "8ad44ffaea31e35161b9ff66da563a91c219ca8a7f061228cc4f4764a2d85733",
+          "features_all": 701,
+          "features_selected": 505
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_56_provisional_faces.parquet",
+      "output_sha256": "a0e82822a1757b1687d4b180fd459140a9c044b0227fbdd92491a36d9b79e32e",
+      "output_bytes": 682392
+    },
+    {
+      "unit_id": "CHI:57",
+      "face_count": 127,
+      "requires_stitch_count": 9,
+      "small_under_1000m2_count": 3,
+      "min_face_area_m2": 0.0036499999186140487,
+      "max_face_area_m2": 936293.0945564207,
+      "domain_area_m2": 5191636.034741252,
+      "road_mask_area_in_domain_m2": 984121.6486949987,
+      "face_area_sum_m2": 4207514.386046266,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_row.geojson",
+          "sha256": "c85821cbf31e6995c3c1421f7e4941a7d57ac331d074f7caf1bd204783775cce",
+          "features_all": 281,
+          "features_selected": 91
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_road_edge.geojson",
+          "sha256": "4d0dae7a1a16b2b1c29f4d4b7f831f573fa754b4a5aee9b67cc9065cf27931bc",
+          "features_all": 268,
+          "features_selected": 76
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_57_road_edge.geojson",
+          "sha256": "4d0dae7a1a16b2b1c29f4d4b7f831f573fa754b4a5aee9b67cc9065cf27931bc",
+          "features_all": 268,
+          "features_selected": 192
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_57_provisional_faces.parquet",
+      "output_sha256": "4bd96b5f499cbceeed382a8d0006643805533192e3485e85c657bce295abd11b",
+      "output_bytes": 234884
+    },
+    {
+      "unit_id": "CHI:58",
+      "face_count": 229,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 4,
+      "min_face_area_m2": 0.2569999990432989,
+      "max_face_area_m2": 697839.1968333703,
+      "domain_area_m2": 7045514.692655271,
+      "road_mask_area_in_domain_m2": 1622134.870910612,
+      "face_area_sum_m2": 5423379.821744706,
+      "conservation_error_m2": 4.6566128730773926e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_58_row.geojson",
+          "sha256": "278609388edc4f297535b83887e34fd74765d4dd724587a41bf2b1cf77f146a4",
+          "features_all": 311,
+          "features_selected": 111
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_58_road_edge.geojson",
+          "sha256": "76478cb7dbc26feed860d7f1ff2ab2c1f57255e8f6030036fe118cababf42f2f",
+          "features_all": 430,
+          "features_selected": 122
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_58_road_edge.geojson",
+          "sha256": "76478cb7dbc26feed860d7f1ff2ab2c1f57255e8f6030036fe118cababf42f2f",
+          "features_all": 430,
+          "features_selected": 218
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_58_provisional_faces.parquet",
+      "output_sha256": "12f6bea3dac94780ff485c2ffdd2fb6a31a21530d900e5faa4b723fed5dab71a",
+      "output_bytes": 422812
+    },
+    {
+      "unit_id": "CHI:59",
+      "face_count": 142,
+      "requires_stitch_count": 7,
+      "small_under_1000m2_count": 9,
+      "min_face_area_m2": 0.48170000010590297,
+      "max_face_area_m2": 247427.59384977233,
+      "domain_area_m2": 3660611.3185833413,
+      "road_mask_area_in_domain_m2": 912867.0701331109,
+      "face_area_sum_m2": 2747744.2484502257,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_59_row.geojson",
+          "sha256": "36a2d23854ca297ed4f0791240abf2911049bffbdd70282b7c832a894b3d33f5",
+          "features_all": 239,
+          "features_selected": 89
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_59_road_edge.geojson",
+          "sha256": "4c446a8609f321cca9b5bb21e0f4afc15f8b3a3b6ae69cffdd67b506179866a3",
+          "features_all": 231,
+          "features_selected": 92
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_59_road_edge.geojson",
+          "sha256": "4c446a8609f321cca9b5bb21e0f4afc15f8b3a3b6ae69cffdd67b506179866a3",
+          "features_all": 231,
+          "features_selected": 119
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_59_provisional_faces.parquet",
+      "output_sha256": "21247e365339a4a1cc069de650b641b8c7f2471a4f160872abd4ff2673710e0b",
+      "output_bytes": 225459
+    },
+    {
+      "unit_id": "CHI:60",
+      "face_count": 329,
+      "requires_stitch_count": 16,
+      "small_under_1000m2_count": 101,
+      "min_face_area_m2": 0.13802478556487466,
+      "max_face_area_m2": 190543.06387828733,
+      "domain_area_m2": 5411376.26288976,
+      "road_mask_area_in_domain_m2": 1378868.9525313764,
+      "face_area_sum_m2": 4032507.310358404,
+      "conservation_error_m2": 3.259629011154175e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_60_row.geojson",
+          "sha256": "a01e0010a0ef825b54e58884e1de007831bcd038a5a85436ad5a8ef627aea288",
+          "features_all": 299,
+          "features_selected": 112
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_60_road_edge.geojson",
+          "sha256": "b2f58f337e12ca79ad9473ec3717af1beaee4a6795ff43c0d7823acc3476fb86",
+          "features_all": 339,
+          "features_selected": 115
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_60_road_edge.geojson",
+          "sha256": "b2f58f337e12ca79ad9473ec3717af1beaee4a6795ff43c0d7823acc3476fb86",
+          "features_all": 339,
+          "features_selected": 220
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_60_provisional_faces.parquet",
+      "output_sha256": "5036586e201e13a46296f3fc3e5873bf141f97921df9f02837ee773cb642058e",
+      "output_bytes": 363434
+    },
+    {
+      "unit_id": "CHI:61",
+      "face_count": 366,
+      "requires_stitch_count": 14,
+      "small_under_1000m2_count": 9,
+      "min_face_area_m2": 2.8609500000547388,
+      "max_face_area_m2": 1161832.5530999047,
+      "domain_area_m2": 12498811.102789551,
+      "road_mask_area_in_domain_m2": 2403934.3909571236,
+      "face_area_sum_m2": 10094876.711832475,
+      "conservation_error_m2": 9.313225746154785e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_61_row.geojson",
+          "sha256": "8cd543b9673caaf75a49e5a4887e95670a078161a6b26e5561cceac22949ddb2",
+          "features_all": 469,
+          "features_selected": 172
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_61_road_edge.geojson",
+          "sha256": "84f2e9bf840b043037327433b7cc603a70ff8b73ae252e199e38796b4e3cb800",
+          "features_all": 586,
+          "features_selected": 202
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_61_road_edge.geojson",
+          "sha256": "84f2e9bf840b043037327433b7cc603a70ff8b73ae252e199e38796b4e3cb800",
+          "features_all": 586,
+          "features_selected": 347
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_61_provisional_faces.parquet",
+      "output_sha256": "63600193e4d9b1fc138747d11f4a37261820987b2ee28a1d092eb0d9afb865d7",
+      "output_bytes": 596866
+    },
+    {
+      "unit_id": "CHI:62",
+      "face_count": 137,
+      "requires_stitch_count": 12,
+      "small_under_1000m2_count": 5,
+      "min_face_area_m2": 0.2669999986963809,
+      "max_face_area_m2": 93244.35713458418,
+      "domain_area_m2": 3036772.3278312637,
+      "road_mask_area_in_domain_m2": 754966.2333936593,
+      "face_area_sum_m2": 2281806.094437593,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_62_row.geojson",
+          "sha256": "7ec34784c8a9b571c6e2116a99bde1430d1cccf0128b729d78e0498dbfc74142",
+          "features_all": 158,
+          "features_selected": 43
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_62_road_edge.geojson",
+          "sha256": "92dfcfb8d3e9411c20540f73c1074a6df17620571e9d9be554d072b1180ccee6",
+          "features_all": 217,
+          "features_selected": 29
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_62_road_edge.geojson",
+          "sha256": "92dfcfb8d3e9411c20540f73c1074a6df17620571e9d9be554d072b1180ccee6",
+          "features_all": 217,
+          "features_selected": 188
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_62_provisional_faces.parquet",
+      "output_sha256": "5ef8aa8679316564a8364f41028f7d955dae5beaded4f590501a96e790effe44",
+      "output_bytes": 323428
+    },
+    {
+      "unit_id": "CHI:63",
+      "face_count": 223,
+      "requires_stitch_count": 16,
+      "small_under_1000m2_count": 10,
+      "min_face_area_m2": 0.24830510840118972,
+      "max_face_area_m2": 282453.13335998764,
+      "domain_area_m2": 5689383.197588823,
+      "road_mask_area_in_domain_m2": 1321875.2283515278,
+      "face_area_sum_m2": 4367507.969237287,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_row.geojson",
+          "sha256": "f7b95388c4e69e08cabf453faf3ee5c4bfdaa43f8c9eb0bd64e008dc311b5168",
+          "features_all": 240,
+          "features_selected": 65
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_road_edge.geojson",
+          "sha256": "b9126e7cf9c7d9b9900a2d8867498b27394dac95768737226be3146ba713af2c",
+          "features_all": 408,
+          "features_selected": 74
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_63_road_edge.geojson",
+          "sha256": "b9126e7cf9c7d9b9900a2d8867498b27394dac95768737226be3146ba713af2c",
+          "features_all": 408,
+          "features_selected": 329
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_63_provisional_faces.parquet",
+      "output_sha256": "326c6f5ff5a7685c20f6cb251493e98fac46c82af95977548cc76afc3c58d2f4",
+      "output_bytes": 466304
+    },
+    {
+      "unit_id": "CHI:64",
+      "face_count": 214,
+      "requires_stitch_count": 7,
+      "small_under_1000m2_count": 10,
+      "min_face_area_m2": 0.01769999960514251,
+      "max_face_area_m2": 1291801.3798306894,
+      "domain_area_m2": 6604979.639871065,
+      "road_mask_area_in_domain_m2": 1341276.359428451,
+      "face_area_sum_m2": 5263703.28044239,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_64_row.geojson",
+          "sha256": "0e545fd6407839c9695ed7f3fe19c4bea3c17ae61bb3616ad689a9c06ba9e276",
+          "features_all": 228,
+          "features_selected": 108
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_64_road_edge.geojson",
+          "sha256": "5c0187f65abf66fec7f6260b487a504e1bfb1c792af7b5495c35b42cb464a3db",
+          "features_all": 322,
+          "features_selected": 33
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_64_road_edge.geojson",
+          "sha256": "5c0187f65abf66fec7f6260b487a504e1bfb1c792af7b5495c35b42cb464a3db",
+          "features_all": 322,
+          "features_selected": 243
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_64_provisional_faces.parquet",
+      "output_sha256": "a27a9f060cf3ce323e3ce4cdd81e43f1c63529ba14946e0f4fd08309de86b1d8",
+      "output_bytes": 400766
+    },
+    {
+      "unit_id": "CHI:65",
+      "face_count": 255,
+      "requires_stitch_count": 25,
+      "small_under_1000m2_count": 18,
+      "min_face_area_m2": 1.7157568518862925,
+      "max_face_area_m2": 1724932.5255501464,
+      "domain_area_m2": 7641846.6241053315,
+      "road_mask_area_in_domain_m2": 1463344.9899677082,
+      "face_area_sum_m2": 6178501.63413759,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_65_row.geojson",
+          "sha256": "24f0b9e8e2808a025d6449640d866c70a64211a30e5e00269f95c7aef670623a",
+          "features_all": 146,
+          "features_selected": 66
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_65_road_edge.geojson",
+          "sha256": "267e179a385a2305e69484f7dda4b1903410673bc0ead0c022455cfbff9ddb1c",
+          "features_all": 325,
+          "features_selected": 62
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_65_road_edge.geojson",
+          "sha256": "267e179a385a2305e69484f7dda4b1903410673bc0ead0c022455cfbff9ddb1c",
+          "features_all": 325,
+          "features_selected": 261
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_65_provisional_faces.parquet",
+      "output_sha256": "b04a1513d86bc3a76ccd219c0cf06b2ed8840ec05e1d438935980c4974e4d188",
+      "output_bytes": 598725
+    },
+    {
+      "unit_id": "CHI:66",
+      "face_count": 363,
+      "requires_stitch_count": 24,
+      "small_under_1000m2_count": 5,
+      "min_face_area_m2": 0.01870000001853332,
+      "max_face_area_m2": 389331.6697500064,
+      "domain_area_m2": 9123770.849222558,
+      "road_mask_area_in_domain_m2": 2083836.5096502942,
+      "face_area_sum_m2": 7039934.33957226,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_66_row.geojson",
+          "sha256": "9b045feacdb40d4f80d9e51af5d25e883c29bf6b39cc3a2e010ba1f3bca9ec1f",
+          "features_all": 146,
+          "features_selected": 62
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_66_road_edge.geojson",
+          "sha256": "e30684ff42d553a218e4cbd88e8d4ee7dd2d93d432dbe73786f1ec9a1686213f",
+          "features_all": 448,
+          "features_selected": 86
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_66_road_edge.geojson",
+          "sha256": "e30684ff42d553a218e4cbd88e8d4ee7dd2d93d432dbe73786f1ec9a1686213f",
+          "features_all": 448,
+          "features_selected": 355
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_66_provisional_faces.parquet",
+      "output_sha256": "e4ff0075a6b202b6fd0c89cfe969c115f63489dc619e8a3027b0266e440d44f8",
+      "output_bytes": 794327
+    },
+    {
+      "unit_id": "CHI:67",
+      "face_count": 388,
+      "requires_stitch_count": 13,
+      "small_under_1000m2_count": 3,
+      "min_face_area_m2": 0.0022881863152639766,
+      "max_face_area_m2": 217113.8858699697,
+      "domain_area_m2": 8164513.351020754,
+      "road_mask_area_in_domain_m2": 2121298.4437236954,
+      "face_area_sum_m2": 6043214.907297101,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_67_row.geojson",
+          "sha256": "01957c4012ed3f1a8ee765870804dcf6265bc07fc08201c806db8df4dca25268",
+          "features_all": 204,
+          "features_selected": 77
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_67_road_edge.geojson",
+          "sha256": "cfb1f1694db9f350f3bf4c880c1906ad13eaa8aa092af83bb328f057510a29b6",
+          "features_all": 561,
+          "features_selected": 114
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_67_road_edge.geojson",
+          "sha256": "cfb1f1694db9f350f3bf4c880c1906ad13eaa8aa092af83bb328f057510a29b6",
+          "features_all": 561,
+          "features_selected": 390
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_67_provisional_faces.parquet",
+      "output_sha256": "00f2de190cee78be923482eb6ebdc470fa4ebf0b67a09d456fa09174bfecffb7",
+      "output_bytes": 648603
+    },
+    {
+      "unit_id": "CHI:68",
+      "face_count": 446,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 86,
+      "min_face_area_m2": 0.025550000069127415,
+      "max_face_area_m2": 176243.75314995382,
+      "domain_area_m2": 7951338.819003335,
+      "road_mask_area_in_domain_m2": 2193793.597742012,
+      "face_area_sum_m2": 5757545.221261322,
+      "conservation_error_m2": 7.450580596923828e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_68_row.geojson",
+          "sha256": "d9caf97ac6cf863e046aae14da3b479ef068e15c96f581d90a742123c5c2aae5",
+          "features_all": 500,
+          "features_selected": 212
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_68_road_edge.geojson",
+          "sha256": "74d55c8aa40e2490d7ef97af7ddaf161ce755692f6b07e9d52f689cb9167a2de",
+          "features_all": 638,
+          "features_selected": 233
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_68_road_edge.geojson",
+          "sha256": "74d55c8aa40e2490d7ef97af7ddaf161ce755692f6b07e9d52f689cb9167a2de",
+          "features_all": 638,
+          "features_selected": 403
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_68_provisional_faces.parquet",
+      "output_sha256": "3c7d6ebfc2e78d33b6d9d92d56bf3c1918e01cea16cce2ef8c7323d00ae17bcc",
+      "output_bytes": 553289
+    },
+    {
+      "unit_id": "CHI:69",
+      "face_count": 500,
+      "requires_stitch_count": 8,
+      "small_under_1000m2_count": 163,
+      "min_face_area_m2": 0.3624500002484536,
+      "max_face_area_m2": 794076.2056663005,
+      "domain_area_m2": 9176699.438654505,
+      "road_mask_area_in_domain_m2": 2463615.963843955,
+      "face_area_sum_m2": 6713083.474810541,
+      "conservation_error_m2": 3.725290298461914e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_69_row.geojson",
+          "sha256": "63349c1e6fa45c9756b2ae6183cd40b9c1da9b12f51ca1d2cf2cbf2f034b24c4",
+          "features_all": 466,
+          "features_selected": 176
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_69_road_edge.geojson",
+          "sha256": "3405303645fff50a3ed3443856b8f15a2b052c4f3800619934532f1b84bd8667",
+          "features_all": 760,
+          "features_selected": 253
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_69_road_edge.geojson",
+          "sha256": "3405303645fff50a3ed3443856b8f15a2b052c4f3800619934532f1b84bd8667",
+          "features_all": 760,
+          "features_selected": 497
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_69_provisional_faces.parquet",
+      "output_sha256": "50c32c3ae7fe400f1c1748581cc5bf6ec067a3abf7c37ac78df6cffd6b9be939",
+      "output_bytes": 543808
+    },
+    {
+      "unit_id": "CHI:70",
+      "face_count": 463,
+      "requires_stitch_count": 19,
+      "small_under_1000m2_count": 27,
+      "min_face_area_m2": 0.03834685557174373,
+      "max_face_area_m2": 543612.0340905159,
+      "domain_area_m2": 12575528.458546674,
+      "road_mask_area_in_domain_m2": 2834076.4249859178,
+      "face_area_sum_m2": 9741452.033560777,
+      "conservation_error_m2": 7.450580596923828e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_70_row.geojson",
+          "sha256": "fbe6d2d04a24baef2b4ce6532198b7c71c24cec264fc43b855d44aaf58a6a14b",
+          "features_all": 312,
+          "features_selected": 140
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_70_road_edge.geojson",
+          "sha256": "3d712f0038765631fb9a368022eb6f1b2fab25a9a710a60c04d7674e30066935",
+          "features_all": 665,
+          "features_selected": 91
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_70_road_edge.geojson",
+          "sha256": "3d712f0038765631fb9a368022eb6f1b2fab25a9a710a60c04d7674e30066935",
+          "features_all": 665,
+          "features_selected": 436
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_70_provisional_faces.parquet",
+      "output_sha256": "68e64fa28b68e806e93767193980fc548d2c73eca47f7e629b0f583cd95d17b7",
+      "output_bytes": 1123938
+    },
+    {
+      "unit_id": "CHI:71",
+      "face_count": 438,
+      "requires_stitch_count": 27,
+      "small_under_1000m2_count": 13,
+      "min_face_area_m2": 0.5107397747518438,
+      "max_face_area_m2": 217206.34071069083,
+      "domain_area_m2": 9753564.39047053,
+      "road_mask_area_in_domain_m2": 2520082.3370535187,
+      "face_area_sum_m2": 7233482.053416943,
+      "conservation_error_m2": 9.313225746154785e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_71_row.geojson",
+          "sha256": "4ade42c2b75fa72aa509c87d6e627b8906cf72d8443d7fc8e9ca10ce330a3445",
+          "features_all": 392,
+          "features_selected": 130
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_71_road_edge.geojson",
+          "sha256": "8604ec62d881bc2528a370ffd78580cd9da559f3982ad3b6c888505672517de8",
+          "features_all": 757,
+          "features_selected": 113
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_71_road_edge.geojson",
+          "sha256": "8604ec62d881bc2528a370ffd78580cd9da559f3982ad3b6c888505672517de8",
+          "features_all": 757,
+          "features_selected": 501
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_71_provisional_faces.parquet",
+      "output_sha256": "3a7b3ee91a2c89eba761e75bcd2a44c01c8d12d211267a317a495792ee9e70f7",
+      "output_bytes": 736264
+    },
+    {
+      "unit_id": "CHI:72",
+      "face_count": 279,
+      "requires_stitch_count": 7,
+      "small_under_1000m2_count": 1,
+      "min_face_area_m2": 3.7470000002484887,
+      "max_face_area_m2": 435289.21611002425,
+      "domain_area_m2": 8241752.41919864,
+      "road_mask_area_in_domain_m2": 1875466.537265758,
+      "face_area_sum_m2": 6366285.881932928,
+      "conservation_error_m2": 0.0,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_72_row.geojson",
+          "sha256": "3e859bbf896a82248d242b4fc388c810279a0f7f3e0d4efed9096ad22e394279",
+          "features_all": 395,
+          "features_selected": 175
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_72_road_edge.geojson",
+          "sha256": "688fe93e71734cda8734be0b557f0ef8cbc8c58cf64d6be631cefed6ff859600",
+          "features_all": 660,
+          "features_selected": 42
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_72_road_edge.geojson",
+          "sha256": "688fe93e71734cda8734be0b557f0ef8cbc8c58cf64d6be631cefed6ff859600",
+          "features_all": 660,
+          "features_selected": 408
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_72_provisional_faces.parquet",
+      "output_sha256": "85c11ce0813e7129f804bb245fa8506067dc858e3ace8471365390b3097e1292",
+      "output_bytes": 353292
+    },
+    {
+      "unit_id": "CHI:73",
+      "face_count": 497,
+      "requires_stitch_count": 16,
+      "small_under_1000m2_count": 129,
+      "min_face_area_m2": 0.18020000090782998,
+      "max_face_area_m2": 162294.15084963848,
+      "domain_area_m2": 7392825.464327746,
+      "road_mask_area_in_domain_m2": 2140449.8802932436,
+      "face_area_sum_m2": 5252375.58403448,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_73_row.geojson",
+          "sha256": "7a0e4cd0a809a2fbab672a93073230b3c27aa4f82407f90df3eb62ce0e362642",
+          "features_all": 366,
+          "features_selected": 146
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_73_road_edge.geojson",
+          "sha256": "67d5024c2800864ceb4593f4d6863fb44ae6b8a7f3f582f69dc09ae6fdb5aaf4",
+          "features_all": 602,
+          "features_selected": 53
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_73_road_edge.geojson",
+          "sha256": "67d5024c2800864ceb4593f4d6863fb44ae6b8a7f3f582f69dc09ae6fdb5aaf4",
+          "features_all": 602,
+          "features_selected": 434
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_73_provisional_faces.parquet",
+      "output_sha256": "a12d8b9c74b8781923ff111e386cba9b43604a94254c2a370890352c0c7b65ef",
+      "output_bytes": 547133
+    },
+    {
+      "unit_id": "CHI:74",
+      "face_count": 185,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 3,
+      "min_face_area_m2": 8.918400001001682,
+      "max_face_area_m2": 1226807.5697003019,
+      "domain_area_m2": 7016921.1373001775,
+      "road_mask_area_in_domain_m2": 1321789.9028822223,
+      "face_area_sum_m2": 5695131.234417942,
+      "conservation_error_m2": 1.862645149230957e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_74_row.geojson",
+          "sha256": "a07c54057c78723525526cb8bc609fad3c68d35b8789d79d0c3216a41178cdea",
+          "features_all": 233,
+          "features_selected": 119
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_74_road_edge.geojson",
+          "sha256": "12954bb25c9951f2a3dd5f86ac5106f08a1cd6ed3e59a3ca7c11b63de908b92d",
+          "features_all": 240,
+          "features_selected": 40
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_74_road_edge.geojson",
+          "sha256": "12954bb25c9951f2a3dd5f86ac5106f08a1cd6ed3e59a3ca7c11b63de908b92d",
+          "features_all": 240,
+          "features_selected": 184
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_74_provisional_faces.parquet",
+      "output_sha256": "bf1f0aec74a2a902ab8281a3ec3d4918e647c480aabab5761340d5b4683b932f",
+      "output_bytes": 297330
+    },
+    {
+      "unit_id": "CHI:75",
+      "face_count": 378,
+      "requires_stitch_count": 11,
+      "small_under_1000m2_count": 68,
+      "min_face_area_m2": 0.022450000022026018,
+      "max_face_area_m2": 386034.785564502,
+      "domain_area_m2": 8529326.80246866,
+      "road_mask_area_in_domain_m2": 2129847.470734692,
+      "face_area_sum_m2": 6399479.331733957,
+      "conservation_error_m2": 2.7939677238464355e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_75_row.geojson",
+          "sha256": "2c7adb199a24a9879ef2d5e14b69e38e5b2ae6e899f4b7007acaebdd14bcceca",
+          "features_all": 317,
+          "features_selected": 152
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_75_road_edge.geojson",
+          "sha256": "84ac3232057d71af54836d4d3ded41c7b2cb7db47682a5863485cad17e5ee15d",
+          "features_all": 491,
+          "features_selected": 57
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_75_road_edge.geojson",
+          "sha256": "84ac3232057d71af54836d4d3ded41c7b2cb7db47682a5863485cad17e5ee15d",
+          "features_all": 491,
+          "features_selected": 319
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_75_provisional_faces.parquet",
+      "output_sha256": "93524bdf92024fed11710349c30617899c922a3ed64cd36d588244a51ecad767",
+      "output_bytes": 419608
+    },
+    {
+      "unit_id": "CHI:76",
+      "face_count": 220,
+      "requires_stitch_count": 48,
+      "small_under_1000m2_count": 55,
+      "min_face_area_m2": 0.003999999910534825,
+      "max_face_area_m2": 21181570.627899714,
+      "domain_area_m2": 34522423.5838005,
+      "road_mask_area_in_domain_m2": 2031576.1362475962,
+      "face_area_sum_m2": 32490847.44755283,
+      "conservation_error_m2": 7.450580596923828e-09,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_76_row.geojson",
+          "sha256": "a3fdf59f8cdd1001c61343b51992b356b1292e064dfdd38f7c91859b5e20eac5",
+          "features_all": 1037,
+          "features_selected": 505
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_76_road_edge.geojson",
+          "sha256": "79038483a744df88aa2ae289cbd71d0f4497fd12f5da354f22e237318d7334ae",
+          "features_all": 939,
+          "features_selected": 442
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_76_road_edge.geojson",
+          "sha256": "79038483a744df88aa2ae289cbd71d0f4497fd12f5da354f22e237318d7334ae",
+          "features_all": 939,
+          "features_selected": 278
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_76_provisional_faces.parquet",
+      "output_sha256": "6d713b0b37a888d7cff3fac83fd7766bcb1f80eaa519aa03fc681db81c862a88",
+      "output_bytes": 231858
+    },
+    {
+      "unit_id": "CHI:77",
+      "face_count": 179,
+      "requires_stitch_count": 3,
+      "small_under_1000m2_count": 3,
+      "min_face_area_m2": 1.0041999999932711,
+      "max_face_area_m2": 260779.6267513168,
+      "domain_area_m2": 4497787.52675187,
+      "road_mask_area_in_domain_m2": 1120391.8564723914,
+      "face_area_sum_m2": 3377395.6702794614,
+      "conservation_error_m2": 9.313225746154785e-10,
+      "source": {
+        "row": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_77_row.geojson",
+          "sha256": "8fa4439e4c74d0ca75da065d64fa7ff75068fceff6593ef5766835c04b107f12",
+          "features_all": 154,
+          "features_selected": 71
+        },
+        "road_edge_ordinary": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_77_road_edge.geojson",
+          "sha256": "f53caf8685c32acae39a9354103db0a1b4cad3f0a90d96d7f2daa38933340903",
+          "features_all": 274,
+          "features_selected": 55
+        },
+        "road_edge_alley": {
+          "path": "analysis/work/chicago_m3_row_land_2026_09_26/CHI_77_road_edge.geojson",
+          "sha256": "f53caf8685c32acae39a9354103db0a1b4cad3f0a90d96d7f2daa38933340903",
+          "features_all": 274,
+          "features_selected": 195
+        }
+      },
+      "output_path": "analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27/CHI_77_provisional_faces.parquet",
+      "output_sha256": "083f96cc6e63a07f4dc8667fd0b034f657b2435d2aec557999561860d1614341",
+      "output_bytes": 351579
+    }
+  ],
+  "total_faces": 23694,
+  "output_bytes": 33482812,
+  "free_bytes_after": 13506457600,
+  "storage_guards": {
+    "minimum_free_bytes": 8589934592,
+    "maximum_output_bytes": 3221225472
+  },
+  "input_sha256": {
+    "districts": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f",
+    "script": "db73de93120c5b45b2afb4703d0a6aaf729a38d16974cdbd8a12e49d54f940a7"
+  }
+}
