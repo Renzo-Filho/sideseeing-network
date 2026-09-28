@@ -1,0 +1,74 @@
+[
+  {
+    "name": "dupage-chicago-exact-count",
+    "url": "https://gis.dupageco.org/arcgis/rest/services/DuPage_County_IL/ParcelsWithRealEstateCC/FeatureServer/0/query?f=json&where=UPPER%28MUNICIPALITY%29+%3D+%27CHICAGO%27&returnCountOnly=true",
+    "ok": true,
+    "rows": 0,
+    "count": 504,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:58.544506+00:00"
+  },
+  {
+    "name": "dupage-chicago-exact-sample",
+    "url": "https://gis.dupageco.org/arcgis/rest/services/DuPage_County_IL/ParcelsWithRealEstateCC/FeatureServer/0/query?f=json&where=UPPER%28MUNICIPALITY%29+%3D+%27CHICAGO%27&outFields=OBJECTID%2CPIN%2CACREAGE%2CMUNICIPALITY%2CREA017_PROP_CLASS&returnGeometry=true&resultRecordCount=10",
+    "ok": true,
+    "rows": 10,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:58.528889+00:00"
+  },
+  {
+    "name": "benchmark-sample",
+    "url": "https://data.cityofchicago.org/resource/xq83-jr8c.json?%24select=data_year%2Cid%2Creporting_status%2Cgross_floor_area_buildings_sq_ft%2Cof_buildings%2Cprimary_property_type&%24limit=100",
+    "ok": true,
+    "rows": 100,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:58.513694+00:00"
+  },
+  {
+    "name": "benchmark-count",
+    "url": "https://data.cityofchicago.org/resource/xq83-jr8c.json?%24select=data_year%2Ccount%28%2A%29+as+n&%24group=data_year&%24order=data_year+DESC",
+    "ok": true,
+    "rows": 10,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:59.069360+00:00"
+  },
+  {
+    "name": "benchmark-covered-sample",
+    "url": "https://data.cityofchicago.org/resource/g5i5-yz37.json?%24select=building_id%2Ccohort_sector%2Ccohort_size%2Ccommunity_area_number&%24limit=100",
+    "ok": true,
+    "rows": 100,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:59.067075+00:00"
+  },
+  {
+    "name": "benchmark-covered-count",
+    "url": "https://data.cityofchicago.org/resource/g5i5-yz37.json?%24select=count%28%2A%29+as+n",
+    "ok": true,
+    "rows": 1,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:59.328882+00:00"
+  },
+  {
+    "name": "commercial-2024-coverage",
+    "url": "https://datacatalog.cookcountyil.gov/resource/csik-bsws.json?%24where=year%3D2024&%24select=count%28%2A%29+as+n%2Ccount%28stories%29+as+stories_present%2Ccount%28bldgsf%29+as+bldgsf_present%2Ccount%28gross_building_area%29+as+gba_present%2Ccount%28netrentablesf%29+as+nra_present",
+    "ok": true,
+    "rows": 1,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:18:59.550229+00:00"
+  },
+  {
+    "name": "residential-story-categories",
+    "url": "https://datacatalog.cookcountyil.gov/resource/x54s-btds.json?%24where=year%3D2024&%24select=char_type_resd%2Ccount%28%2A%29+as+n&%24group=char_type_resd&%24limit=100",
+    "ok": true,
+    "rows": 6,
+    "count": null,
+    "error": null,
+    "retrieved_utc": "2026-09-18T15:19:11.167373+00:00"
+  }
+]

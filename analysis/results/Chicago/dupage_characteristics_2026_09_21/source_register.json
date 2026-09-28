@@ -1,0 +1,27 @@
+[
+  {
+    "name": "DuPage Townships (PLSS)",
+    "source": "https://www.arcgis.com/home/item.html?id=480184791b4b485abff29d6a69378df0",
+    "purpose": "Select the responsible township for Chicago-only building-record acquisition; support M7 joins",
+    "status": "10 source polygons retrieved; one positive-area Chicago intersection retained; geometry valid",
+    "file": "analysis/data/Chicago/dupage_characteristics_2026_09_21/chicago_township_intersections.parquet"
+  },
+  {
+    "name": "Addison Assessor Office",
+    "source": "https://www.addisontownship.com/assessors-office/",
+    "purpose": "Official route to B2/B3 building characteristics",
+    "status": "Page and property-search link verified; no bulk building export identified on these pages"
+  },
+  {
+    "name": "Addison property search and disclaimer",
+    "source": "https://www.addisontownship.com/property-search/",
+    "purpose": "Source conditions and jurisdiction",
+    "status": "Read; publisher describes potentially outdated or uncertified assessment data and includes Chicago/O Hare in service area"
+  },
+  {
+    "name": "Addison public assessor database",
+    "source": "https://search.addisontownship.com/webdb/sd/addison/assessordb/search.aspx",
+    "purpose": "Potential PIN-level stories/area records",
+    "status": "Search form verified; pilot 0312300007 returned no saved result before browser session was stopped; no characteristic field validated"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "township_source_features": 10,
+  "chicago_intersections": [
+    {
+      "township": "ADDISON",
+      "area_m2": 5957496.144084782,
+      "parcel_positive_intersections": 81
+    }
+  ],
+  "parcel_count": 81,
+  "pin_prefixes": {
+    "03": 81
+  },
+  "parcel_area_outside_addison_m2": 0.6073819394059934,
+  "maximum_parcel_area_outside_addison_m2": 0.08100690391217483,
+  "crs": 26916,
+  "geometry_valid": true,
+  "source_sha256": "0b01a56a444617707c1b0b0da74df4c7b9a2062ae8734e1ae036f87dff7755f6"
+}

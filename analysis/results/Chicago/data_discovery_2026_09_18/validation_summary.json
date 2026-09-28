@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-18",
+  "selected_sources": 10,
+  "evidence_files_hash_verified": 48,
+  "api_requests_succeeded": 22,
+  "api_requests_timed_out": 2,
+  "timeouts": [
+    "universe whole-history year counts",
+    "residential whole-history year counts"
+  ],
+  "geometry_samples": 40,
+  "sample_rings": 44,
+  "invalid_sample_rings": 0,
+  "full_city_coverage_validated": false,
+  "complete_datasets_downloaded": false,
+  "modeling_paused": true,
+  "handoff_copies_identical": true
+}

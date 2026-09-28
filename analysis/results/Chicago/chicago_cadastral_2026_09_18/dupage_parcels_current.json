@@ -1,0 +1,27 @@
+{
+  "run": "chicago_cadastral_2026_09_18",
+  "boundary": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+  "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+  "metric_crs": 26916,
+  "modeling": false,
+  "dataset": "dupage_parcels_current",
+  "source": "https://gis.dupageco.org/arcgis/rest/services/DuPage_County_IL/ParcelsWithRealEstateCC/FeatureServer/0",
+  "source_schema_sha256": "263a5d761d14277a50deb7f7a53be9c8b1e3c1219df205505306f5ea8965ee86",
+  "remote_candidates": 125,
+  "rows": 81,
+  "filter": "positive-area intersection with exact Chicago community-area union; geometries clipped; original area retained separately",
+  "parts": [
+    {
+      "part": "part_00000.parquet",
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "candidate_rows": 125,
+      "rows": 81,
+      "source_invalid_geometries": 0,
+      "sha256": "270933b2acd37a65f25edadccdcea0469c060d23cd2cfbb68d8982b73d28da51",
+      "bytes": 34426,
+      "city_area_m2": 10127549.093112467,
+      "crossing_rows": 41
+    }
+  ],
+  "complete": true
+}

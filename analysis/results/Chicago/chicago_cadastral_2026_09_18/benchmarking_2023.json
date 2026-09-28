@@ -1,0 +1,27 @@
+{
+  "run": "chicago_cadastral_2026_09_18",
+  "boundary": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+  "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+  "metric_crs": 26916,
+  "modeling": false,
+  "dataset": "benchmarking_2023",
+  "source": "https://data.cityofchicago.org/resource/xq83-jr8c.json",
+  "where": "data_year=2023",
+  "order": ":id",
+  "source_slice_rows": 3438,
+  "rows": 3434,
+  "filter": "reported coordinates covered by exact Chicago boundary",
+  "parts": [
+    {
+      "missing_coordinates": 0,
+      "part": "part_00000.parquet",
+      "candidate_rows": 3438,
+      "rows": 3434,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "85c98336f16e65551d4c09a0837517f631079373a85b6d637336b5e8a8d8dab2",
+      "bytes": 481595
+    }
+  ],
+  "complete": true,
+  "limitations": "Commercial entity attributes may describe an entity spanning the boundary; area not allocated. Source updates during paging remain a snapshot-consistency risk."
+}

@@ -1,0 +1,103 @@
+{
+  "run": "chicago_cadastral_2026_09_18",
+  "boundary": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+  "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+  "metric_crs": 26916,
+  "modeling": false,
+  "dataset": "cook_condo_2024",
+  "source": "https://datacatalog.cookcountyil.gov/resource/3r7i-mrz4.csv",
+  "where": "year=2024",
+  "method": "bulk CSV",
+  "source_slice_rows": 457304,
+  "source_unique_ids": 457304,
+  "source_duplicate_ids": 0,
+  "rejected_outside_chicago": 170115,
+  "raw_csv": "analysis/work/evidence/chicago_cadastral_2026_09_18/cook_condo_2024/bulk.csv",
+  "raw_csv_sha256": "8438bce9cbfd6302948a5551cbf3999ed2d916cbde425825bc6e7b1293cc3cb0",
+  "rows": 287189,
+  "filter": "PIN10 matches Cook parcels with positive-area intersection inside exact Chicago boundary; commercial any associated PIN matches",
+  "parts": [
+    {
+      "part": "part_00000.parquet",
+      "candidate_rows": 50000,
+      "rows": 2516,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "a137db22a0fef8637806469f30c94703e7dcf3a112e2f7ea4dea127632ca94d1",
+      "bytes": 181634
+    },
+    {
+      "part": "part_00001.parquet",
+      "candidate_rows": 50000,
+      "rows": 1711,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "e09d166c7ef540daf6b550bc1bfc1db8e376452bc0c086ee0f17286b9e38231a",
+      "bytes": 81835
+    },
+    {
+      "part": "part_00002.parquet",
+      "candidate_rows": 50000,
+      "rows": 36880,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "a1dcbed79c1051d46a9f34bfc6792da8f9cce5b1a55caff0ed658c8f57d92cbf",
+      "bytes": 1529521
+    },
+    {
+      "part": "part_00003.parquet",
+      "candidate_rows": 50000,
+      "rows": 50000,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "c4aa95bb70dd7abc2b9787c80ac5c1dc81a83b592ca290fc6c484c53d86a6fc3",
+      "bytes": 2025305
+    },
+    {
+      "part": "part_00004.parquet",
+      "candidate_rows": 50000,
+      "rows": 39773,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "78bd2da99454eb1350c83567398797963de8aa1f06dcd2f57e7ab3d59bb5d284",
+      "bytes": 1668414
+    },
+    {
+      "part": "part_00005.parquet",
+      "candidate_rows": 50000,
+      "rows": 48479,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "89d9543475a362f2d266dc50217db262e34906bae7e719bcd085594fd3e4354d",
+      "bytes": 1944478
+    },
+    {
+      "part": "part_00006.parquet",
+      "candidate_rows": 50000,
+      "rows": 50000,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "040f09dd4fd51f1a37463170285f3e24ad8fba757a15feccc677ea055a07f78f",
+      "bytes": 1814072
+    },
+    {
+      "part": "part_00007.parquet",
+      "candidate_rows": 50000,
+      "rows": 43040,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "1f9b210b15cdfec1e5fefa7d8d058fe84e8ec7ad8a5a1b1f2a69f4e8da8cb77e",
+      "bytes": 1624823
+    },
+    {
+      "part": "part_00008.parquet",
+      "candidate_rows": 50000,
+      "rows": 14790,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "bfde4a37509a73617001f5ec34a68a1a3d2bfa019055c86453755576682b4aac",
+      "bytes": 614502
+    },
+    {
+      "part": "part_00009.parquet",
+      "candidate_rows": 7304,
+      "rows": 0,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "7b1384fa8444b91d7e5086ac7d34a17ae29f0f0eb53c190826c955956bfd859c",
+      "bytes": 12237
+    }
+  ],
+  "complete": true,
+  "limitations": "Commercial entities can cross the city boundary. Source area is not allocated; PIN10 does not prove physical building identity."
+}

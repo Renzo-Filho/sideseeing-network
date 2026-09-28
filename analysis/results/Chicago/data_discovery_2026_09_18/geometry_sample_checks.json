@@ -1,0 +1,34 @@
+[
+  {
+    "source": "cook-parcels",
+    "features_sampled": 10,
+    "rings": 10,
+    "invalid_rings": 0,
+    "empty_rings": 0,
+    "scope": "ring validity only; no city-wide topology, overlap, or coverage test"
+  },
+  {
+    "source": "cook-buildings",
+    "features_sampled": 10,
+    "rings": 10,
+    "invalid_rings": 0,
+    "empty_rings": 0,
+    "scope": "ring validity only; no city-wide topology, overlap, or coverage test"
+  },
+  {
+    "source": "dupage",
+    "features_sampled": 10,
+    "rings": 10,
+    "invalid_rings": 0,
+    "empty_rings": 0,
+    "scope": "ring validity only; no city-wide topology, overlap, or coverage test"
+  },
+  {
+    "source": "dupage-chicago-exact",
+    "features_sampled": 10,
+    "rings": 14,
+    "invalid_rings": 0,
+    "empty_rings": 0,
+    "scope": "ring validity only; no city-wide topology, overlap, or coverage test"
+  }
+]

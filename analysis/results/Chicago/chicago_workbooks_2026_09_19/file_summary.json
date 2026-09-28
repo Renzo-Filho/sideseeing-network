@@ -1,0 +1,58 @@
+{
+  "2024.T75.PublicModel TJS_RPSC.xlsx": {
+    "rows": 1153,
+    "keypins": 1129,
+    "extra_keypins": 0,
+    "bldg_sf": 1140,
+    "net_rentable_sf": 102
+  },
+  "2024.T77.PublicModel_2.xlsx": {
+    "rows": 7166,
+    "keypins": 7082,
+    "extra_keypins": 2,
+    "bldg_sf": 7157,
+    "net_rentable_sf": 1408
+  },
+  "2024.T71.PublicModel.xlsx": {
+    "rows": 6394,
+    "keypins": 6291,
+    "extra_keypins": 1,
+    "bldg_sf": 6384,
+    "net_rentable_sf": 1102
+  },
+  "2024.T74.PublicModel.xlsx": {
+    "rows": 1749,
+    "keypins": 1735,
+    "extra_keypins": 97,
+    "bldg_sf": 1730,
+    "net_rentable_sf": 680
+  },
+  "2024.T76.PublicModel.xlsx": {
+    "rows": 2045,
+    "keypins": 2035,
+    "extra_keypins": 2,
+    "bldg_sf": 2038,
+    "net_rentable_sf": 647
+  },
+  "2024.T72.PublicModel.xlsx": {
+    "rows": 5300,
+    "keypins": 5247,
+    "extra_keypins": 0,
+    "bldg_sf": 5295,
+    "net_rentable_sf": 1058
+  },
+  "2024.T73.PublicModel_LV.xlsx": {
+    "rows": 4229,
+    "keypins": 4146,
+    "extra_keypins": 0,
+    "bldg_sf": 2349,
+    "net_rentable_sf": 509
+  },
+  "2024.T70.PublicModel 12-09-2025.xlsx": {
+    "rows": 4195,
+    "keypins": 4140,
+    "extra_keypins": 1,
+    "bldg_sf": 4175,
+    "net_rentable_sf": 481
+  }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "page": "https://www.cookcountyassessor.com/rogers-park-2024-commercial",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T75.PublicModel%20TJS_RPSC.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T75.PublicModel TJS_RPSC.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T75.PublicModel%20TJS_RPSC.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T75-workbook.json",
+    "markdown_characters": 322397,
+    "extraction_sha256": "e47d0b556441495e9b88260d9f5afad77162636756b19d878c62faf2e3adeec7",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/west-chicago-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T77.PublicModel_2.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T77.PublicModel_2.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T77.PublicModel_2.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T77-workbook.json",
+    "markdown_characters": 2026974,
+    "extraction_sha256": "f1dd17c1e9f62e132dfaf143744523f9b45498a3cd42ba2a69179bf1c3db5e2f",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/jefferson-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T71.PublicModel.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T71.PublicModel.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T71.PublicModel.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T71-workbook.json",
+    "markdown_characters": 1763907,
+    "extraction_sha256": "0697cfb626fe1a8e0da17f6d4999de38c0f14bb18afeaa4a9584a92743df616c",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/north-chicago-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T74.PublicModel.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T74.PublicModel.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T74.PublicModel.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T74-workbook.json",
+    "markdown_characters": 515069,
+    "extraction_sha256": "7c402dd202ddbbee0d2038317ae8be4fc7cf586b93ce4feba483a7853116bfb4",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/south-chicago-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T76.PublicModel.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T76.PublicModel.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T76.PublicModel.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T76-workbook.json",
+    "markdown_characters": 621752,
+    "extraction_sha256": "95b12a9342dc897305d3e0aca76f83ad9f3cb998a3caf86567aaf0d7c78e83c2",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/lake-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T72.PublicModel.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T72.PublicModel.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T72.PublicModel.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T72-workbook.json",
+    "markdown_characters": 1486660,
+    "extraction_sha256": "a02872b223546d06669b0a97a3489e0ca8240eddbe2c7652ff5698883bea156c",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/lake-view-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T73.PublicModel_LV.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T73.PublicModel_LV.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024/2024.T73.PublicModel_LV.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T73-workbook.json",
+    "markdown_characters": 1151485,
+    "extraction_sha256": "02faa724f684b2f7e687c40621233ec21984c8bb34ff32978034ee4dea537e2e",
+    "original_binary_acquired": false
+  },
+  {
+    "page": "https://www.cookcountyassessor.com/hyde-park-commercial-valuations",
+    "url": "https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024.T70.PublicModel%2012-09-2025.xlsx",
+    "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T70.PublicModel 12-09-2025.xlsx",
+    "ok": false,
+    "error": "403 Client Error: Forbidden for url: https://prodassets.cookcountyassessoril.gov/s3fs-public/reports/2024.T70.PublicModel%2012-09-2025.xlsx",
+    "extraction_file": ".firecrawl/chicago-commercial-workbooks-2026-09-19/T70-workbook.json",
+    "markdown_characters": 1169653,
+    "extraction_sha256": "d7be8fbabbd29f6211c4001a27b98bdd6a6a2c1b5b91869fe4ac5c2e9238017e",
+    "original_binary_acquired": false
+  }
+]

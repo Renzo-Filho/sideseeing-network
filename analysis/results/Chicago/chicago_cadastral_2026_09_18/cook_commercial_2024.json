@@ -1,0 +1,31 @@
+{
+  "run": "chicago_cadastral_2026_09_18",
+  "boundary": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+  "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+  "metric_crs": 26916,
+  "modeling": false,
+  "dataset": "cook_commercial_2024",
+  "source": "https://datacatalog.cookcountyil.gov/resource/csik-bsws.csv",
+  "where": "year=2024",
+  "method": "bulk CSV",
+  "source_slice_rows": 32931,
+  "source_unique_ids": 32931,
+  "source_duplicate_ids": 0,
+  "rejected_outside_chicago": 1,
+  "raw_csv": "analysis/work/evidence/chicago_cadastral_2026_09_18/cook_commercial_2024/bulk.csv",
+  "raw_csv_sha256": "8257925defe9e5672d85592076fef9664831394108b526ecf78061273270bbf6",
+  "rows": 32930,
+  "filter": "PIN10 matches Cook parcels with positive-area intersection inside exact Chicago boundary; commercial any associated PIN matches",
+  "parts": [
+    {
+      "part": "part_00000.parquet",
+      "candidate_rows": 32931,
+      "rows": 32930,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "722f94431d17c5afa6c40bec3443083af83bf5fc820fdb2e0a01041f0f3849e0",
+      "bytes": 2177394
+    }
+  ],
+  "complete": true,
+  "limitations": "Commercial entities can cross the city boundary. Source area is not allocated; PIN10 does not prove physical building identity."
+}

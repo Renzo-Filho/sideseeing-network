@@ -1,0 +1,11 @@
+id,dataset,attributes,evidence_prefix,validation
+D01,Cook parcels 2024,M7;U1,cook-parcels,County count and 10 geometry samples; city coverage not tested
+D02,Cook Parcel Universe,M7;B2;B3;U1,universe,Schema and 100 2024 samples; historical count timed out
+D03,Cook residential improvements,B2;B3;M7;U1,residential,100 samples and complete 2024 story category counts
+D04,Cook condo characteristics,M7;B3;U1,condo,100 samples and annual row counts; parent matching untested
+D05,Cook commercial valuation,M7;B2;B3;U1,commercial,100 samples and 2024 field counts; stories/GFA null
+D06,DuPage ParcelsRealEstate,M7;U1,dupage,County/exact-label counts and samples; city spatial coverage untested
+D07,Cook buildings 2022,B1,cook-buildings,County count and 10 geometry samples; height units unresolved
+D08,Chicago Energy Benchmarking,B3;U1,benchmark,100 samples and annual counts; large-property subset
+D09,Benchmarking covered buildings,B3 QA;U1 QA,benchmark-covered,100 samples and total count; coverage register
+D10,Cook class definitions,U1;M7;B2;B3,cook-class-codes,Official PDF text extracted; historical applicability unverified

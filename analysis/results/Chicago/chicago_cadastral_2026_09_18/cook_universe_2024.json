@@ -1,0 +1,327 @@
+{
+  "run": "chicago_cadastral_2026_09_18",
+  "boundary": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+  "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+  "metric_crs": 26916,
+  "modeling": false,
+  "dataset": "cook_universe_2024",
+  "source": "https://datacatalog.cookcountyil.gov/resource/nj4t-kc8j.csv",
+  "where": "year=2024",
+  "method": "bulk CSV",
+  "source_slice_rows": 1864107,
+  "source_unique_ids": 1864107,
+  "source_duplicate_ids": 0,
+  "rejected_outside_chicago": 980510,
+  "raw_csv": "analysis/work/evidence/chicago_cadastral_2026_09_18/cook_universe_2024/bulk.csv",
+  "raw_csv_sha256": "557d6d8e4c5737aebf3d0ec828d604c85ee8bcc48a843a97af41ea6e9e1b7c66",
+  "rows": 883597,
+  "filter": "PIN10 matches Cook parcels with positive-area intersection inside exact Chicago boundary; commercial any associated PIN matches",
+  "parts": [
+    {
+      "part": "part_00000.parquet",
+      "candidate_rows": 50000,
+      "rows": 24351,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "1a2fe23d83028b3976bd5b0c82e541f131b591d37ed0187be837373b010523e1",
+      "bytes": 1683809
+    },
+    {
+      "part": "part_00001.parquet",
+      "candidate_rows": 50000,
+      "rows": 23100,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "5c8d380a4bd02d5beef15560ed4d405c20a84d07077deb5d99705e25174f11c9",
+      "bytes": 1595453
+    },
+    {
+      "part": "part_00002.parquet",
+      "candidate_rows": 50000,
+      "rows": 22754,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "ce8777a0f0047d04ec44281b08d0e216366670abe9ffad35d2196fed6da9f1b3",
+      "bytes": 1588883
+    },
+    {
+      "part": "part_00003.parquet",
+      "candidate_rows": 50000,
+      "rows": 23913,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "e60bc5b3916a947352d67a21cf877283b658f25dcfbd6b683bb5e67ba985ad21",
+      "bytes": 1669129
+    },
+    {
+      "part": "part_00004.parquet",
+      "candidate_rows": 50000,
+      "rows": 20352,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "151b2dfc3e50ea770f924ba675d749b7f18cc5c8d709dd297139eee20aab44cd",
+      "bytes": 1475045
+    },
+    {
+      "part": "part_00005.parquet",
+      "candidate_rows": 50000,
+      "rows": 18866,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "75931efd53fef8d768be55031c57ce4a04b2ac6286afcce5d7e63dc730a963df",
+      "bytes": 1348683
+    },
+    {
+      "part": "part_00006.parquet",
+      "candidate_rows": 50000,
+      "rows": 21239,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "43e36d80951401986b2c8d3422e573a5db380749bb2c1a72b0ee6822f821146e",
+      "bytes": 1520758
+    },
+    {
+      "part": "part_00007.parquet",
+      "candidate_rows": 50000,
+      "rows": 22939,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "f3f3804cba08b31d56b711967b54b6c45725dc13c867433e4fa90d11e1ccd2f3",
+      "bytes": 1610014
+    },
+    {
+      "part": "part_00008.parquet",
+      "candidate_rows": 50000,
+      "rows": 23999,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "ef42c94218d23af16a11305711ff84695074bcaa463cf1da23a013d6e8fb3b52",
+      "bytes": 1639618
+    },
+    {
+      "part": "part_00009.parquet",
+      "candidate_rows": 50000,
+      "rows": 24680,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "76788b7ec1875552d5492314fdef87e7e61f8f58cb0890b417f4a5108754c273",
+      "bytes": 1733526
+    },
+    {
+      "part": "part_00010.parquet",
+      "candidate_rows": 50000,
+      "rows": 23938,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "70fa1e67d16cf5aa5e6fafdabf9814ea97cee5ec0d3a4519c818adcbe583ffb2",
+      "bytes": 1668622
+    },
+    {
+      "part": "part_00011.parquet",
+      "candidate_rows": 50000,
+      "rows": 24980,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "f95225b9706e3eb15df82c81764ba3b7c773530efe7ca22cc1e5039039b833a4",
+      "bytes": 1743670
+    },
+    {
+      "part": "part_00012.parquet",
+      "candidate_rows": 50000,
+      "rows": 23821,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "99c9a7963e67931e9c4f71c2539d725003cfe9cfaffe104ba4e05f7ab98e265e",
+      "bytes": 1630499
+    },
+    {
+      "part": "part_00013.parquet",
+      "candidate_rows": 50000,
+      "rows": 26048,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "67d1fe857f5e6c6118ed953387bee8a859f85e1446203ee7b3a957cbb328b946",
+      "bytes": 1785856
+    },
+    {
+      "part": "part_00014.parquet",
+      "candidate_rows": 50000,
+      "rows": 25796,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "774dfecdbf71254fa56229601e645d04d3df17f47cf170d1a4b1ba36a1f479b0",
+      "bytes": 1704651
+    },
+    {
+      "part": "part_00015.parquet",
+      "candidate_rows": 50000,
+      "rows": 24642,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "e5d9d358f6f2a07aa0243f768b66a539ee43c8b66778c71f840d860c2556ac2a",
+      "bytes": 1678316
+    },
+    {
+      "part": "part_00016.parquet",
+      "candidate_rows": 50000,
+      "rows": 25070,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "ca5b870b63653afeef4bc12db2374ded9d54614d4263d6687b8f824f8e78c8f3",
+      "bytes": 1707997
+    },
+    {
+      "part": "part_00017.parquet",
+      "candidate_rows": 50000,
+      "rows": 25711,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "30a1cd47b0dfa0076d29f88ce871d26ff2ced005f18074e0f2df1bde11eb3868",
+      "bytes": 1736043
+    },
+    {
+      "part": "part_00018.parquet",
+      "candidate_rows": 50000,
+      "rows": 21745,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "cfd016c00701e4e4de84731ad1eb2324c6e0366ffefc766580bf83df7bb1865f",
+      "bytes": 1514250
+    },
+    {
+      "part": "part_00019.parquet",
+      "candidate_rows": 50000,
+      "rows": 21292,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "4b708b9278c2e7d3dd47d5d4d4d12ba9e0ebc6d01753dd502f5d303fb9386f39",
+      "bytes": 1491085
+    },
+    {
+      "part": "part_00020.parquet",
+      "candidate_rows": 50000,
+      "rows": 22823,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "2817d284670868a9b80eeef43b095ac8bd83c1f7dc3ae32e8fe19216041b4453",
+      "bytes": 1578217
+    },
+    {
+      "part": "part_00021.parquet",
+      "candidate_rows": 50000,
+      "rows": 24283,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "f9246242c7689f6fc5532b6d194aa463447216af7f9fea777d5fa53a23e9dfa2",
+      "bytes": 1685200
+    },
+    {
+      "part": "part_00022.parquet",
+      "candidate_rows": 50000,
+      "rows": 24171,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "3d5d151f12d307822a35654199ba62d53e0d41bc603038b921c44ebc55599350",
+      "bytes": 1666508
+    },
+    {
+      "part": "part_00023.parquet",
+      "candidate_rows": 50000,
+      "rows": 24774,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "4169026e6060c9bbb8490927e24441f61a674825b90ddcee1138d7a75993f7b3",
+      "bytes": 1701455
+    },
+    {
+      "part": "part_00024.parquet",
+      "candidate_rows": 50000,
+      "rows": 24393,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "d4977efb15ac0c2357aceb2821c454217458699e2ee9f94195cce921b76f1b94",
+      "bytes": 1702297
+    },
+    {
+      "part": "part_00025.parquet",
+      "candidate_rows": 50000,
+      "rows": 24425,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "5465dac70900fa7b04bd250cc8f99cb19c61781fa0fabb3644076a5137d4efcc",
+      "bytes": 1726636
+    },
+    {
+      "part": "part_00026.parquet",
+      "candidate_rows": 50000,
+      "rows": 24125,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "f74db7e02abd88c68a08bc5568c9b758a22b02771904854406e5cd0693a6d217",
+      "bytes": 1660430
+    },
+    {
+      "part": "part_00027.parquet",
+      "candidate_rows": 50000,
+      "rows": 23964,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "3677ae46f528939d816abeb41fc6f317a89f85ed9822d6187deebd9636cbfd37",
+      "bytes": 1650174
+    },
+    {
+      "part": "part_00028.parquet",
+      "candidate_rows": 50000,
+      "rows": 25833,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "12ada431779952ec45996a2f465f98be50c4062abdb915c16c5089c7ccd6e272",
+      "bytes": 1796573
+    },
+    {
+      "part": "part_00029.parquet",
+      "candidate_rows": 50000,
+      "rows": 25024,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "77b90a7e6e88b6a3c33952151bda50784c13289ec9d97cb7d485f865eb45394f",
+      "bytes": 1753421
+    },
+    {
+      "part": "part_00030.parquet",
+      "candidate_rows": 50000,
+      "rows": 24543,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "37ef9a2e18db56880c2a6b24e272a05bd9c9945a8f0a22c58ec260ffe2746811",
+      "bytes": 1681792
+    },
+    {
+      "part": "part_00031.parquet",
+      "candidate_rows": 50000,
+      "rows": 23786,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "49fbefb8e61a2060aee02fdd8937be6effcb168010f11b276ec11219700bbe86",
+      "bytes": 1642155
+    },
+    {
+      "part": "part_00032.parquet",
+      "candidate_rows": 50000,
+      "rows": 22431,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "189fb550af0aa5beb7dabf0c71279bbf443883c0427d53a6e268cda49304cdff",
+      "bytes": 1560199
+    },
+    {
+      "part": "part_00033.parquet",
+      "candidate_rows": 50000,
+      "rows": 23713,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "dcc315165b69bd15de6fb2e2f89ba713c352ca7b4bf256d239220898dc8cd8b2",
+      "bytes": 1638921
+    },
+    {
+      "part": "part_00034.parquet",
+      "candidate_rows": 50000,
+      "rows": 23667,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "553cfdf0992be677a3a9f9caf175f49d1ccd0e92abb625a6ab5e824f3dd5e86d",
+      "bytes": 1634351
+    },
+    {
+      "part": "part_00035.parquet",
+      "candidate_rows": 50000,
+      "rows": 23126,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "b262bad868832d29f0c4fe43f642b57745e21594ecd03b8f6f43d4a0086e7bfc",
+      "bytes": 1617896
+    },
+    {
+      "part": "part_00036.parquet",
+      "candidate_rows": 50000,
+      "rows": 22229,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "41d0e8e2a459847f2b099f76eff5b626f69784eebc6b9155c8215fc59bb70304",
+      "bytes": 1595262
+    },
+    {
+      "part": "part_00037.parquet",
+      "candidate_rows": 14107,
+      "rows": 7051,
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "sha256": "8a59e232cba04f43b528a67885fed983d64597ee7750f92c63b5878a82436d76",
+      "bytes": 509496
+    }
+  ],
+  "complete": true,
+  "limitations": "Commercial entities can cross the city boundary. Source area is not allocated; PIN10 does not prove physical building identity."
+}

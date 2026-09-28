@@ -1,0 +1,56 @@
+{
+  "cook_residential_2024": {
+    "rows": 439730,
+    "fields": {
+      "char_bldg_sf": {
+        "present": 439730,
+        "positive_numeric": 439693
+      },
+      "char_type_resd": {
+        "present": 439719,
+        "categories": {
+          "2 Story": 188168,
+          "1 Story": 155746,
+          "1.5 Story": 54330,
+          "3 Story +": 32525,
+          "Split Level": 8950,
+          "": 11
+        }
+      }
+    }
+  },
+  "cook_condo_2024": {
+    "rows": 287189,
+    "fields": {
+      "char_building_sf": {
+        "present": 73251,
+        "positive_numeric": 73251
+      },
+      "char_unit_sf": {
+        "present": 41860,
+        "positive_numeric": 41860
+      }
+    }
+  },
+  "cook_commercial_2024": {
+    "rows": 32930,
+    "fields": {
+      "stories": {
+        "present": 0,
+        "positive_numeric": 0
+      },
+      "bldgsf": {
+        "present": 30165,
+        "positive_numeric": 29976
+      },
+      "gross_building_area": {
+        "present": 0,
+        "positive_numeric": 0
+      },
+      "netrentablesf": {
+        "present": 5983,
+        "positive_numeric": 5983
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "files": 8,
+  "property_tables": 72,
+  "detail_records": 32231,
+  "unique_keypins": 31805,
+  "parse_issues": [
+    {
+      "file": "analysis/work/evidence/chicago_workbooks_2026_09_19/2024.T72.PublicModel.xlsx",
+      "sheet": "T72-Specials",
+      "line": 1203,
+      "reason": "no recognizable PIN"
+    }
+  ],
+  "all_retained_records_match_chicago": true,
+  "relevant_fields": {
+    "Bldg SF": {
+      "rows_with_column": 32231,
+      "nonempty": 30268
+    },
+    "Net Rentable SF": {
+      "rows_with_column": 6022,
+      "nonempty": 5987
+    }
+  },
+  "api_comparison": {
+    "api_rows": 32930,
+    "api_unique_keypins": 31702,
+    "common_keypins": 31702,
+    "extract_only_keypins": 103,
+    "api_only_keypins": 0
+  },
+  "binary_completeness_verified": false,
+  "notes": [
+    "Firecrawl markdown values; no formula, hidden-sheet or original binary validation.",
+    "Summary/split-class tables excluded from detail records to avoid obvious repeated listings; other duplicates remain possible.",
+    "Missing numeric values are not zero. Entity areas are not clipped to Chicago."
+  ]
+}

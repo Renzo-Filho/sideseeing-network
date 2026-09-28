@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-21",
+  "files": [
+    {
+      "path": ".firecrawl/dupage-townships-item-2026-09-21.json",
+      "bytes": 19332,
+      "sha256": "dd0a3de16d9a69f8493bb1bc6e7711cb5aeadd31660a2300618fe940b2c76db7"
+    },
+    {
+      "path": ".firecrawl/dupage-townships-service-2026-09-21.json",
+      "bytes": 4834,
+      "sha256": "5e672db4c51d3de0870746e8d5904bf3c442620a11deb2861dbee784fbaa92ad"
+    },
+    {
+      "path": ".firecrawl/dupage-townships-2026-09-21.geojson",
+      "bytes": 33288,
+      "sha256": "0b01a56a444617707c1b0b0da74df4c7b9a2062ae8734e1ae036f87dff7755f6"
+    },
+    {
+      "path": ".firecrawl/addison-assessor-2026-09-21.json",
+      "bytes": 22950,
+      "sha256": "760c45f83b07e1861e3c98703147416f6313e5aca0daa885cb2ba4865bbe51b0"
+    },
+    {
+      "path": ".firecrawl/addison-property-search-2026-09-21.json",
+      "bytes": 19430,
+      "sha256": "721b1797bdad6dbc21791dbf9978eb1b13ae3087916f91665af2ca6616460d18"
+    },
+    {
+      "path": ".firecrawl/addison-search-form-2026-09-21.json",
+      "bytes": 3265,
+      "sha256": "5847d5e1f7aa82a6dbf2e1e121f3fa31f97a4528b52326d1cebe399b5f5e7ff1"
+    },
+    {
+      "path": "analysis/data/Chicago/dupage_characteristics_2026_09_21/chicago_township_intersections.parquet",
+      "bytes": 26025,
+      "sha256": "5140f0d10aef0dc35b76708628a6086586976104f08e96a935a56b94c68699ab"
+    },
+    {
+      "path": "analysis/data/Chicago/dupage_characteristics_2026_09_21/chicago_parcel_lookup_list.csv",
+      "bytes": 1616,
+      "sha256": "d3a8675aff1258a6a37fb088f45084bb101ae749a69cfe866b25acc19f5bcd68"
+    }
+  ],
+  "lookup_characteristics_acquired": false,
+  "remote_browser_session_stopped": true
+}

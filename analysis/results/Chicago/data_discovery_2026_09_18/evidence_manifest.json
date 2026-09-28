@@ -1,0 +1,246 @@
+{
+  "date": "2026-09-18",
+  "raw_cache_gitignored": true,
+  "files": [
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/assessor-codebook.md",
+      "bytes": 26088,
+      "sha256": "e309ad95606d663e9b357aa7a802ead8ae4ca2b660faa32bfc76f72668ec67a0"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/benchmark-count.json",
+      "bytes": 330,
+      "sha256": "de09bb44ee7cb0e4867e2b7809447985ee6f8fa985a5011671d0fbdd27c8479e"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/benchmark-covered-count.json",
+      "bytes": 15,
+      "sha256": "fb0e7c2d9d71594b9dd0fe3bfef6ee259695749808e160095ee3590e8ddea995"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/benchmark-covered-sample.json",
+      "bytes": 11516,
+      "sha256": "fbb924f4ac35864026a9bd31bce8213aca7d8c5f4a650fabaf01717d2234cfa9"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/benchmark-covered-schema.json",
+      "bytes": 25560,
+      "sha256": "76faf309a6a231ac08d576b9d601db524b70df5e433c88968dcf8a4483a7c22b"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/benchmark-sample.json",
+      "bytes": 15485,
+      "sha256": "ee2d0bbe954cef51af4dc1d2cb72838ebaa3fd4b44b1df2dd9378d2554aaf1b4"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/benchmark-schema.json",
+      "bytes": 62199,
+      "sha256": "e90a10046108d62d2c81dc15589170388b406a9dff00d4c922d063712aab7f9f"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/commercial-2024-coverage.json",
+      "bytes": 102,
+      "sha256": "4d9d14a665f31433d66c8a7e5b49ceafe2e4ebb4eb2121ea3e15fa73ca2c67f2"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/commercial-sample.json",
+      "bytes": 10921,
+      "sha256": "ab704cb44f650bfcaa58fcaa0014f68c416f76c1a11e75b4159d31a6705cc8ae"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/commercial-schema.json",
+      "bytes": 129570,
+      "sha256": "6f06b47c5c47a675479f5cba0347dedc864183f2d2c46bd0ce9cec72cbf2a19d"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/commercial-years.json",
+      "bytes": 146,
+      "sha256": "a315a27160b3c91bf57f73c8f7ceda0452a8d9b0bd89f44602b91694b8a785e1"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/commercial.md",
+      "bytes": 11586,
+      "sha256": "e7d5ff7cf2c9b67ce2c8f105f335c30957a7b8307c0a70fb7457473d44bf65a0"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/condo-sample.json",
+      "bytes": 14727,
+      "sha256": "7d4de0691351688b89490656df69017edcd5e62229b51c4f0cbea04ac938add6"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/condo-schema.json",
+      "bytes": 42418,
+      "sha256": "8b08c184d2687d51135fcc807f1d4e57babbb3e140e37f11164401dd17dd3dbb"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/condo-years.json",
+      "bytes": 845,
+      "sha256": "e140a381f800f98d76f640a92fb1748d947b72c0b09418f65483f081318834d6"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/condo.md",
+      "bytes": 11292,
+      "sha256": "8d05360c527c9931c842de723c3133e4ccc601a83786ee04fef52743a3b472b5"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-buildings-count.json",
+      "bytes": 17,
+      "sha256": "b554d76f4e5c799a3e1fe566ffd7ce93011f710c0ea4d779f66554445f6667f2"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-buildings-item.json",
+      "bytes": 5264,
+      "sha256": "2567348b95e9fa5ccde53e7eed4f802d125aecfb87279a90b7f37fbd960e53f2"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-buildings-sample.json",
+      "bytes": 27073,
+      "sha256": "2980c63c086fc0c2dfff82f0901648180cacc60d264c00bcf599e40f596efd48"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-buildings-schema.json",
+      "bytes": 6278,
+      "sha256": "a9f64a7dc3b841d9739841fcd12920e44dcf09cb699aa15bcc47ad6e31b339c1"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-buildings.md",
+      "bytes": 6825,
+      "sha256": "0a149e33ffc0d43f64b2182c27572138b0d07260f1ca65a558cd9d7e44776ee1"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-class-codes.md",
+      "bytes": 18252,
+      "sha256": "aeee37d0aa7aef87e5c49d92f1a032e6309c2a386f7d4e681dfce81cd3bb0ede"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-parcels-count.json",
+      "bytes": 17,
+      "sha256": "914e5970ed61f945641586e54637029775eeebb55f48ec37446e9b9e48d585f3"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-parcels-item.json",
+      "bytes": 5017,
+      "sha256": "70fad7ec51dc472b4ac1cbd20df66708903c6dcb6516c0764a7eacd9d5dc5a7e"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-parcels-sample.json",
+      "bytes": 6944,
+      "sha256": "cb3e35ccd188120503a33b891360fb009e34766e33a95c6be8cb599ce9ca645a"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/cook-parcels-schema.json",
+      "bytes": 8935,
+      "sha256": "7649080212f09795211bd6ed37608684de37369aaea0b13ead26e8a70c947ad0"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-assessors.md",
+      "bytes": 23725,
+      "sha256": "b2789848bb6a8e5acc1766f411eec05c31fe81934989e56ba02e96326511772d"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-chicago-count.json",
+      "bytes": 14,
+      "sha256": "2d853dd99c46a664297cad21625570e12299978fa95fe7d41d2b60adc57a78cb"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-chicago-exact-count.json",
+      "bytes": 13,
+      "sha256": "5edf2992f6a53091749c18dd05a322ac385c0a86c3da4c68706ab5abd512f4af"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-chicago-exact-sample.json",
+      "bytes": 6895,
+      "sha256": "5c439a38cbb621ce57dd1f5f2b68d94230bc2053be123c277f22e352f4dcdc18"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-chicago-sample.json",
+      "bytes": 7444,
+      "sha256": "c9037548d7e81e012ad9a653963a7cbcbf97c36f42c8d19e05f6985a6392131a"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-count.json",
+      "bytes": 16,
+      "sha256": "188ed0687fd18d6dafc81ad7699c0c070866942563f93b8faf3dbc963978accf"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-item.json",
+      "bytes": 27294,
+      "sha256": "4feaa57cc7933855c5813f18aeb46e8890652b95ca12bbc5a74acae0e9df7470"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-sample.json",
+      "bytes": 6836,
+      "sha256": "e92943e2574797d802ad2decd352062d2e166750b40e9caa03d70661b16e9958"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/dupage-schema.json",
+      "bytes": 28707,
+      "sha256": "88982da6cabbb16e0651b2245e7fc06a2abb1dbbb84ee6a191a0a42ae742038a"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/followup-validation.json",
+      "bytes": 2963,
+      "sha256": "b8907e8448d7a9aa8752e43a1661482569ee6268ecc343ff21a479703e26f9c9"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/request-validation.json",
+      "bytes": 5757,
+      "sha256": "cee46128cfff3ba10820fd803c746015b04505f3278fd79bef8d31f181fcfa61"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/residential-sample.json",
+      "bytes": 12050,
+      "sha256": "d330a08331d655192d39ce401dbe9499e7793a2415f9fcb86ace4c4e03454c98"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/residential-schema.json",
+      "bytes": 20310,
+      "sha256": "39c25565880b298c63b33555ed3d62aa125a938518aba8f26a25964333974670"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/residential-source.md",
+      "bytes": 15882,
+      "sha256": "fc87b90472287cf2c437e0c668b425b88778be5caed63cec606fb36044c116b9"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/residential-story-categories.json",
+      "bytes": 234,
+      "sha256": "561a0ce8d53dfcf6d7f07f3027e8117aa0963cacaaa0c85c1b625c89a06cf652"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/residential.md",
+      "bytes": 11099,
+      "sha256": "4eef3ccdd87fef4900ab3615541ddbf750a5bc914585f8b1bde2fd508e21d751"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/search-benchmarking.json",
+      "bytes": 42200,
+      "sha256": "91958e98f0dd3bee481c9f243c086172d948e806504b7b70f674f06289db0bff"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/search-cook.json",
+      "bytes": 132662,
+      "sha256": "250bb0795d9f2f36f1dbd7ce3d4ae03a43e929eff3d0613bc6d4091f7eadcee7"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/search-dupage.json",
+      "bytes": 86378,
+      "sha256": "57c32a0accd3867a047b89ff5bf5e8cfeef923ec957d3d528301e67455ecc1a2"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/search-parcels.json",
+      "bytes": 75518,
+      "sha256": "d6a028e338830284ba8eded0798655a1b3d38d80da8887aa3d6e26b4a99e83cd"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/universe-sample.json",
+      "bytes": 7631,
+      "sha256": "e36b9a563dbfd141e6f4409d19468a16bebf624cef272554a4612a3d4985585d"
+    },
+    {
+      "file": ".firecrawl/chicago-data-2026-09-18/universe-schema.json",
+      "bytes": 52604,
+      "sha256": "891bd90b7faf799be0fbe5c06dd2d2a4a90c7ac8e368acff86ef15afe8de4907"
+    }
+  ]
+}
