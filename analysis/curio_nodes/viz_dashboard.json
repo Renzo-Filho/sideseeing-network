@@ -1,0 +1,540 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Chicago neighborhood similarity · PCA-weighted model",
+    "subtitle": "Choose a community area below. All three views update together; rankings use the retained PCA space."
+  },
+  "data": {
+    "name": "data"
+  },
+  "params": [
+    {
+      "name": "focus",
+      "value": "01",
+      "bind": {
+        "input": "select",
+        "options": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77"
+        ],
+        "labels": [
+          "ROGERS PARK (CHI:01)",
+          "WEST RIDGE (CHI:02)",
+          "UPTOWN (CHI:03)",
+          "LINCOLN SQUARE (CHI:04)",
+          "NORTH CENTER (CHI:05)",
+          "LAKE VIEW (CHI:06)",
+          "LINCOLN PARK (CHI:07)",
+          "NEAR NORTH SIDE (CHI:08)",
+          "EDISON PARK (CHI:09)",
+          "NORWOOD PARK (CHI:10)",
+          "JEFFERSON PARK (CHI:11)",
+          "FOREST GLEN (CHI:12)",
+          "NORTH PARK (CHI:13)",
+          "ALBANY PARK (CHI:14)",
+          "PORTAGE PARK (CHI:15)",
+          "IRVING PARK (CHI:16)",
+          "DUNNING (CHI:17)",
+          "MONTCLARE (CHI:18)",
+          "BELMONT CRAGIN (CHI:19)",
+          "HERMOSA (CHI:20)",
+          "AVONDALE (CHI:21)",
+          "LOGAN SQUARE (CHI:22)",
+          "HUMBOLDT PARK (CHI:23)",
+          "WEST TOWN (CHI:24)",
+          "AUSTIN (CHI:25)",
+          "WEST GARFIELD PARK (CHI:26)",
+          "EAST GARFIELD PARK (CHI:27)",
+          "NEAR WEST SIDE (CHI:28)",
+          "NORTH LAWNDALE (CHI:29)",
+          "SOUTH LAWNDALE (CHI:30)",
+          "LOWER WEST SIDE (CHI:31)",
+          "LOOP (CHI:32)",
+          "NEAR SOUTH SIDE (CHI:33)",
+          "ARMOUR SQUARE (CHI:34)",
+          "DOUGLAS (CHI:35)",
+          "OAKLAND (CHI:36)",
+          "FULLER PARK (CHI:37)",
+          "GRAND BOULEVARD (CHI:38)",
+          "KENWOOD (CHI:39)",
+          "WASHINGTON PARK (CHI:40)",
+          "HYDE PARK (CHI:41)",
+          "WOODLAWN (CHI:42)",
+          "SOUTH SHORE (CHI:43)",
+          "CHATHAM (CHI:44)",
+          "AVALON PARK (CHI:45)",
+          "SOUTH CHICAGO (CHI:46)",
+          "BURNSIDE (CHI:47)",
+          "CALUMET HEIGHTS (CHI:48)",
+          "ROSELAND (CHI:49)",
+          "PULLMAN (CHI:50)",
+          "SOUTH DEERING (CHI:51)",
+          "EAST SIDE (CHI:52)",
+          "WEST PULLMAN (CHI:53)",
+          "RIVERDALE (CHI:54)",
+          "HEGEWISCH (CHI:55)",
+          "GARFIELD RIDGE (CHI:56)",
+          "ARCHER HEIGHTS (CHI:57)",
+          "BRIGHTON PARK (CHI:58)",
+          "MCKINLEY PARK (CHI:59)",
+          "BRIDGEPORT (CHI:60)",
+          "NEW CITY (CHI:61)",
+          "WEST ELSDON (CHI:62)",
+          "GAGE PARK (CHI:63)",
+          "CLEARING (CHI:64)",
+          "WEST LAWN (CHI:65)",
+          "CHICAGO LAWN (CHI:66)",
+          "WEST ENGLEWOOD (CHI:67)",
+          "ENGLEWOOD (CHI:68)",
+          "GREATER GRAND CROSSING (CHI:69)",
+          "ASHBURN (CHI:70)",
+          "AUBURN GRESHAM (CHI:71)",
+          "BEVERLY (CHI:72)",
+          "WASHINGTON HEIGHTS (CHI:73)",
+          "MOUNT GREENWOOD (CHI:74)",
+          "MORGAN PARK (CHI:75)",
+          "OHARE (CHI:76)",
+          "EDGEWATER (CHI:77)"
+        ],
+        "name": "Community area: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum['d_'+focus]",
+      "as": "distance"
+    }
+  ],
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "title": {
+            "text": "PCA neighborhood space",
+            "subtitle": "PC1/PC2 display only; highlighted matches use the retained PCA distance"
+          },
+          "width": 470,
+          "height": 355,
+          "transform": [
+            {
+              "calculate": "datum.area_numbe === focus ? 1 : 0",
+              "as": "is_selected"
+            },
+            {
+              "window": [
+                {
+                  "op": "row_number",
+                  "as": "distance_order"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "is_selected",
+                  "order": "descending"
+                },
+                {
+                  "field": "distance",
+                  "order": "ascending"
+                },
+                {
+                  "field": "unit_id",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "calculate": "datum.is_selected ? 'Selected' : datum.distance_order <= 11 ? 'Top 10 match' : 'Other'",
+              "as": "relation"
+            }
+          ],
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "stroke": "#ffffff",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {
+              "field": "PC1",
+              "type": "quantitative",
+              "scale": {
+                "zero": false
+              },
+              "title": "PC1"
+            },
+            "y": {
+              "field": "PC2",
+              "type": "quantitative",
+              "scale": {
+                "zero": false
+              },
+              "title": "PC2"
+            },
+            "color": {
+              "field": "relation",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Selected",
+                  "Top 10 match",
+                  "Other"
+                ],
+                "range": [
+                  "#111827",
+                  "#E11D48",
+                  "#94A3B8"
+                ]
+              },
+              "legend": {
+                "title": null
+              }
+            },
+            "size": {
+              "condition": [
+                {
+                  "test": "datum.relation === 'Selected'",
+                  "value": 280
+                },
+                {
+                  "test": "datum.relation === 'Top 10 match'",
+                  "value": 125
+                }
+              ],
+              "value": 52
+            },
+            "opacity": {
+              "condition": {
+                "test": "datum.relation === 'Other'",
+                "value": 0.5
+              },
+              "value": 1
+            },
+            "tooltip": [
+              {
+                "field": "community",
+                "title": "Community area"
+              },
+              {
+                "field": "unit_id",
+                "title": "ID"
+              },
+              {
+                "field": "distance",
+                "title": "PCA distance",
+                "format": ".3f"
+              },
+              {
+                "field": "PC1",
+                "format": ".3f"
+              },
+              {
+                "field": "PC2",
+                "format": ".3f"
+              },
+              {
+                "field": "relation",
+                "title": "Role"
+              }
+            ]
+          }
+        },
+        {
+          "title": {
+            "text": "Ten closest neighborhoods",
+            "subtitle": "The selected area is excluded"
+          },
+          "width": 405,
+          "height": 355,
+          "transform": [
+            {
+              "filter": "datum.area_numbe !== focus"
+            },
+            {
+              "window": [
+                {
+                  "op": "row_number",
+                  "as": "neighbor_rank"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "distance",
+                  "order": "ascending"
+                },
+                {
+                  "field": "unit_id",
+                  "order": "ascending"
+                }
+              ]
+            },
+            {
+              "filter": "datum.neighbor_rank <= 10"
+            }
+          ],
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 3
+          },
+          "encoding": {
+            "y": {
+              "field": "community",
+              "type": "nominal",
+              "sort": {
+                "field": "neighbor_rank",
+                "order": "descending"
+              },
+              "title": null,
+              "axis": {
+                "labelLimit": 165
+              }
+            },
+            "x": {
+              "field": "distance",
+              "type": "quantitative",
+              "title": "PCA distance (lower = closer)",
+              "scale": {
+                "zero": true
+              }
+            },
+            "color": {
+              "value": "#2A66B7"
+            },
+            "tooltip": [
+              {
+                "field": "neighbor_rank",
+                "title": "Rank"
+              },
+              {
+                "field": "community",
+                "title": "Community area"
+              },
+              {
+                "field": "unit_id",
+                "title": "ID"
+              },
+              {
+                "field": "distance",
+                "title": "PCA distance",
+                "format": ".3f"
+              }
+            ]
+          }
+        }
+      ],
+      "spacing": 30
+    },
+    {
+      "title": {
+        "text": "Chicago community area similarity map",
+        "subtitle": "Blue = closer; red = farther. White and black outline = selected area."
+      },
+      "width": 650,
+      "height": 525,
+    "projection": {
+      "type": "mercator",
+      "center": [
+        -87.7321,
+        41.8338
+      ],
+      "scale": 52000,
+      "translate": [325, 262.5]
+    },
+      "layer": [
+        {
+          "mark": {
+            "type": "geoshape",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7
+          },
+          "encoding": {
+            "shape": {
+              "field": "geometry",
+              "type": "geojson"
+            },
+            "color": {
+              "field": "distance",
+              "type": "quantitative",
+              "scale": {
+                "scheme": "turbo"
+              },
+              "title": "PCA distance"
+            },
+            "tooltip": [
+              {
+                "field": "community",
+                "title": "Community area"
+              },
+              {
+                "field": "unit_id",
+                "title": "ID"
+              },
+              {
+                "field": "distance",
+                "title": "PCA distance",
+                "format": ".3f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.area_numbe === focus"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fillOpacity": 0,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 7
+          },
+          "encoding": {
+            "shape": {
+              "field": "geometry",
+              "type": "geojson"
+            },
+            "tooltip": [
+              {
+                "field": "community",
+                "title": "Community area"
+              },
+              {
+                "field": "unit_id",
+                "title": "ID"
+              },
+              {
+                "field": "distance",
+                "title": "PCA distance",
+                "format": ".3f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.area_numbe === focus"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fillOpacity": 0,
+            "stroke": "#111827",
+            "strokeWidth": 3.5
+          },
+          "encoding": {
+            "shape": {
+              "field": "geometry",
+              "type": "geojson"
+            },
+            "tooltip": [
+              {
+                "field": "community",
+                "title": "Community area"
+              },
+              {
+                "field": "unit_id",
+                "title": "ID"
+              },
+              {
+                "field": "distance",
+                "title": "PCA distance",
+                "format": ".3f"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 26,
+  "config": {
+    "view": {
+      "stroke": "#D0D7DE"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "title": {
+      "fontSize": 15,
+      "subtitleFontSize": 12
+    }
+  }
+}
