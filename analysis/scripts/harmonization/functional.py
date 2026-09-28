@@ -80,3 +80,20 @@ def supply(points, stops, service, radius):
     maxima = joined.groupby(['point_id', 'route_id', 'direction_id']).departures.max()
     values = maxima.groupby('point_id').sum()
     return points.point_id.map(values).fillna(0).to_numpy()
+
+
+def supply_windows(points, stops, service, radii=(400,800)):
+    """Reuse one spatial join for all windows; preserve route/direction maxima."""
+    a,b=stops.sindex.query(points.geometry,predicate='dwithin',distance=max(radii))
+    pairs=pd.DataFrame({'point_id':points.point_id.values[a],
+                        'stop_id':stops.stop_id.values[b],
+                        'distance_m':shapely.distance(points.geometry.values[a],stops.geometry.values[b])})
+    joined=pairs.merge(service,on='stop_id',validate='many_to_many')
+    result={}
+    for radius in radii:
+        part=joined.loc[joined.distance_m.le(radius)]
+        sums=part.groupby(['point_id','window','route_id','direction_id']).departures.max().groupby(['point_id','window']).sum()
+        for window in service.window.unique():
+            values=sums.xs(window,level='window') if window in sums.index.get_level_values('window') else pd.Series(dtype=float)
+            result[(window,radius)]=points.point_id.map(values).fillna(0).to_numpy()
+    return result
