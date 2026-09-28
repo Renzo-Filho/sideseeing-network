@@ -53,3 +53,7 @@ Thumbs.db
 *.lock
 /notebooks/cache/
 /notebooks/
+
+# Firecrawl source research cache
+.firecrawl/
+export/
