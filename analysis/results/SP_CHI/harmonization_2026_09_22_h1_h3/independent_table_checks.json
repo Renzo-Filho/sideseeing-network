@@ -1,0 +1,131 @@
+{
+  "passed": 31,
+  "failed": 0,
+  "strict_cross_city_accepted": false,
+  "checks": [
+    {
+      "check": "roads exact unique cohort",
+      "passed": true
+    },
+    {
+      "check": "footprints exact unique cohort",
+      "passed": true
+    },
+    {
+      "check": "population exact unique cohort",
+      "passed": true
+    },
+    {
+      "check": "road density numerator",
+      "passed": true
+    },
+    {
+      "check": "class composition",
+      "passed": true
+    },
+    {
+      "check": "intersection diagnostic formula",
+      "passed": true
+    },
+    {
+      "check": "footprint land ratio",
+      "passed": true
+    },
+    {
+      "check": "footprint land bounded",
+      "passed": true
+    },
+    {
+      "check": "footprint gross ratio",
+      "passed": true
+    },
+    {
+      "check": "footprint gross bounded",
+      "passed": true
+    },
+    {
+      "check": "water decomposition",
+      "passed": true
+    },
+    {
+      "check": "GHSL unique173x6",
+      "passed": true
+    },
+    {
+      "check": "GHSL support balance",
+      "passed": true
+    },
+    {
+      "check": "GHSL coverage ratio",
+      "passed": true
+    },
+    {
+      "check": "volume density",
+      "passed": true
+    },
+    {
+      "check": "population density",
+      "passed": true
+    },
+    {
+      "check": "bus ratios",
+      "passed": true
+    },
+    {
+      "check": "bus cohorts",
+      "passed": true
+    },
+    {
+      "check": "long unique keys",
+      "passed": true
+    },
+    {
+      "check": "wide long replay",
+      "passed": true
+    },
+    {
+      "check": "no premature acceptance",
+      "passed": true
+    },
+    {
+      "check": "U1 explicit missing",
+      "passed": true
+    },
+    {
+      "check": "M2-M4 withheld",
+      "passed": true
+    },
+    {
+      "check": "excluded fiscal families absent",
+      "passed": true
+    },
+    {
+      "check": "U2 not promoted",
+      "passed": true
+    },
+    {
+      "check": "ghsl all stage checks pass",
+      "passed": true
+    },
+    {
+      "check": "footprints all stage checks pass",
+      "passed": true
+    },
+    {
+      "check": "functional all stage checks pass",
+      "passed": true
+    },
+    {
+      "check": "source cell recovery 0",
+      "passed": true
+    },
+    {
+      "check": "source cell recovery 1",
+      "passed": true
+    },
+    {
+      "check": "source cell recovery 2",
+      "passed": true
+    }
+  ]
+}

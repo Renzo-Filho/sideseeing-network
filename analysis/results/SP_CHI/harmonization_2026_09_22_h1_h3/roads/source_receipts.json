@@ -1,0 +1,26 @@
+[
+  {
+    "path": "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet",
+    "sha256": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f"
+  },
+  {
+    "path": "analysis/data/Chicago/overture_2026_08_19/segment/part_0000.parquet",
+    "sha256": "755e08ebcbb15111871443a358ec6324ee0f20d26feff65b32c3dbdf9727ff5d"
+  },
+  {
+    "path": "analysis/data/Chicago/overture_2026_08_19/connector/part_0000.parquet",
+    "sha256": "0cc9fbedb5db93d96a54dd1ecba8bc992036b812f14885555920bdc684f9cf05"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+    "sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0"
+  },
+  {
+    "path": "analysis/data/SP/overture_2026_08_19/segment/part_0000.parquet",
+    "sha256": "41743533133e680ff199f9dd9e8ac0521b6214792ea129a705627b2c53d8bf55"
+  },
+  {
+    "path": "analysis/data/SP/overture_2026_08_19/connector/part_0000.parquet",
+    "sha256": "556cb5caa454e80308da9ff19ee41c06254cb505d1f443020f2a3442800bff24"
+  }
+]

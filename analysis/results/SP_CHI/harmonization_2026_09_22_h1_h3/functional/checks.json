@@ -1,0 +1,8686 @@
+[
+  {
+    "check": "SP no sector overallocated",
+    "passed": true
+  },
+  {
+    "check": "SP source mass retained",
+    "passed": true
+  },
+  {
+    "check": "CHI no block overallocated",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 population reconstruction",
+    "passed": true
+  },
+  {
+    "check": "CHI source mass retained",
+    "passed": true
+  },
+  {
+    "check": "SP:01 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:01 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:01 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:01 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:01 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:01 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:01 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:01 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:01 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:01 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:01 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:01 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:02 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:02 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:02 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:02 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:02 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:02 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:02 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:02 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:02 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:02 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:02 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:02 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:03 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:03 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:03 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:03 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:03 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:03 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:03 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:03 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:03 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:03 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:03 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:03 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:04 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:04 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:04 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:04 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:04 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:04 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:04 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:04 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:04 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:04 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:04 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:04 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:05 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:05 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:05 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:05 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:05 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:05 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:05 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:05 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:05 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:05 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:05 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:05 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:06 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:06 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:06 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:06 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:06 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:06 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:06 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:06 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:06 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:06 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:06 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:06 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:07 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:07 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:07 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:07 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:07 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:07 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:07 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:07 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:07 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:07 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:07 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:07 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:08 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:08 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:08 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:08 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:08 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:08 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:08 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:08 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:08 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:08 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:08 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:08 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:09 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:09 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:09 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:09 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:09 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:09 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:09 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:09 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:09 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:09 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:09 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:09 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:10 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:10 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:10 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:10 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:10 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:10 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:10 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:10 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:10 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:10 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:10 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:10 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:11 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:11 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:11 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:11 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:11 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:11 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:11 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:11 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:11 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:11 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:11 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:11 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:12 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:12 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:12 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:12 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:12 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:12 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:12 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:12 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:12 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:12 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:12 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:12 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:13 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:13 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:13 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:13 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:13 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:13 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:13 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:13 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:13 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:13 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:13 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:13 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:14 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:14 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:14 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:14 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:14 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:14 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:14 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:14 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:14 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:14 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:14 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:14 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:15 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:15 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:15 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:15 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:15 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:15 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:15 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:15 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:15 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:15 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:15 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:15 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:16 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:16 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:16 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:16 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:16 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:16 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:16 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:16 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:16 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:16 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:16 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:16 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:17 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:17 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:17 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:17 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:17 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:17 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:17 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:17 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:17 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:17 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:17 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:17 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:18 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:18 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:18 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:18 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:18 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:18 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:18 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:18 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:18 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:18 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:18 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:18 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:19 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:19 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:19 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:19 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:19 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:19 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:19 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:19 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:19 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:19 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:19 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:19 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:20 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:20 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:20 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:20 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:20 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:20 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:20 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:20 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:20 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:20 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:20 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:20 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:21 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:21 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:21 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:21 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:21 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:21 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:21 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:21 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:21 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:21 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:21 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:21 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:22 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:22 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:22 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:22 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:22 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:22 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:22 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:22 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:22 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:22 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:22 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:22 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:23 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:23 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:23 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:23 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:23 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:23 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:23 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:23 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:23 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:23 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:23 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:23 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:24 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:24 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:24 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:24 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:24 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:24 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:24 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:24 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:24 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:24 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:24 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:24 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:25 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:25 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:25 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:25 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:25 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:25 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:25 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:25 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:25 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:25 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:25 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:25 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:26 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:26 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:26 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:26 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:26 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:26 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:26 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:26 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:26 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:26 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:26 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:26 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:27 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:27 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:27 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:27 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:27 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:27 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:27 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:27 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:27 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:27 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:27 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:27 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:28 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:28 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:28 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:28 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:28 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:28 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:28 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:28 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:28 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:28 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:28 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:28 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:29 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:29 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:29 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:29 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:29 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:29 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:29 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:29 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:29 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:29 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:29 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:29 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:30 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:30 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:30 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:30 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:30 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:30 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:30 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:30 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:30 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:30 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:30 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:30 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:31 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:31 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:31 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:31 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:31 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:31 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:31 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:31 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:31 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:31 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:31 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:31 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:32 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:32 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:32 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:32 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:32 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:32 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:32 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:32 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:32 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:32 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:32 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:32 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:33 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:33 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:33 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:33 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:33 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:33 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:33 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:33 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:33 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:33 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:33 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:33 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:34 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:34 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:34 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:34 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:34 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:34 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:34 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:34 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:34 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:34 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:34 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:34 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:35 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:35 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:35 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:35 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:35 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:35 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:35 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:35 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:35 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:35 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:35 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:35 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:36 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:36 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:36 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:36 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:36 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:36 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:36 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:36 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:36 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:36 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:36 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:36 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:37 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:37 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:37 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:37 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:37 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:37 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:37 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:37 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:37 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:37 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:37 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:37 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:38 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:38 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:38 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:38 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:38 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:38 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:38 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:38 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:38 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:38 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:38 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:38 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:39 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:39 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:39 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:39 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:39 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:39 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:39 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:39 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:39 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:39 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:39 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:39 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:40 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:40 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:40 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:40 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:40 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:40 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:40 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:40 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:40 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:40 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:40 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:40 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:41 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:41 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:41 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:41 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:41 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:41 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:41 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:41 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:41 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:41 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:41 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:41 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:42 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:42 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:42 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:42 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:42 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:42 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:42 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:42 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:42 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:42 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:42 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:42 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:43 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:43 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:43 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:43 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:43 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:43 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:43 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:43 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:43 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:43 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:43 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:43 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:44 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:44 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:44 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:44 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:44 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:44 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:44 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:44 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:44 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:44 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:44 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:44 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:45 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:45 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:45 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:45 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:45 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:45 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:45 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:45 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:45 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:45 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:45 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:45 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:46 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:46 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:46 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:46 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:46 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:46 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:46 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:46 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:46 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:46 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:46 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:46 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:47 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:47 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:47 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:47 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:47 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:47 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:47 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:47 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:47 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:47 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:47 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:47 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:48 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:48 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:48 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:48 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:48 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:48 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:48 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:48 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:48 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:48 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:48 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:48 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:49 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:49 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:49 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:49 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:49 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:49 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:49 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:49 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:49 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:49 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:49 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:49 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:50 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:50 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:50 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:50 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:50 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:50 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:50 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:50 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:50 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:50 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:50 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:50 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:51 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:51 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:51 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:51 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:51 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:51 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:51 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:51 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:51 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:51 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:51 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:51 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:52 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:52 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:52 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:52 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:52 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:52 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:52 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:52 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:52 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:52 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:52 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:52 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:53 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:53 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:53 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:53 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:53 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:53 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:53 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:53 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:53 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:53 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:53 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:53 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:54 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:54 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:54 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:54 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:54 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:54 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:54 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:54 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:54 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:54 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:54 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:54 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:55 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:55 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:55 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:55 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:55 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:55 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:55 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:55 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:55 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:55 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:55 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:55 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:56 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:56 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:56 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:56 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:56 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:56 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:56 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:56 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:56 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:56 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:56 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:56 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:57 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:57 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:57 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:57 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:57 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:57 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:57 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:57 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:57 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:57 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:57 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:57 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:58 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:58 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:58 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:58 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:58 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:58 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:58 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:58 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:58 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:58 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:58 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:58 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:59 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:59 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:59 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:59 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:59 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:59 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:59 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:59 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:59 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:59 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:59 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:59 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:60 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:60 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:60 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:60 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:60 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:60 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:60 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:60 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:60 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:60 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:60 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:60 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:61 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:61 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:61 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:61 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:61 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:61 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:61 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:61 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:61 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:61 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:61 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:61 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:62 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:62 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:62 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:62 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:62 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:62 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:62 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:62 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:62 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:62 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:62 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:62 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:63 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:63 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:63 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:63 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:63 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:63 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:63 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:63 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:63 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:63 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:63 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:63 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:64 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:64 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:64 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:64 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:64 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:64 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:64 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:64 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:64 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:64 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:64 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:64 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:65 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:65 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:65 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:65 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:65 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:65 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:65 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:65 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:65 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:65 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:65 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:65 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:66 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:66 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:66 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:66 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:66 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:66 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:66 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:66 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:66 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:66 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:66 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:66 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:67 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:67 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:67 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:67 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:67 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:67 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:67 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:67 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:67 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:67 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:67 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:67 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:68 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:68 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:68 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:68 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:68 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:68 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:68 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:68 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:68 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:68 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:68 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:68 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:69 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:69 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:69 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:69 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:69 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:69 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:69 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:69 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:69 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:69 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:69 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:69 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:70 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:70 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:70 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:70 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:70 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:70 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:70 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:70 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:70 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:70 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:70 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:70 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:71 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:71 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:71 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:71 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:71 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:71 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:71 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:71 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:71 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:71 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:71 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:71 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:72 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:72 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:72 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:72 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:72 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:72 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:72 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:72 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:72 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:72 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:72 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:72 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:73 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:73 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:73 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:73 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:73 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:73 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:73 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:73 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:73 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:73 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:73 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:73 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:74 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:74 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:74 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:74 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:74 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:74 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:74 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:74 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:74 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:74 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:74 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:74 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:75 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:75 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:75 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:75 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:75 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:75 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:75 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:75 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:75 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:75 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:75 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:75 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:76 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:76 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:76 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:76 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:76 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:76 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:76 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:76 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:76 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:76 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:76 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:76 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:77 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:77 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:77 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:77 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:77 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:77 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:77 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:77 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:77 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:77 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:77 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:77 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:78 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:78 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:78 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:78 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:78 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:78 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:78 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:78 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:78 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:78 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:78 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:78 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:79 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:79 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:79 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:79 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:79 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:79 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:79 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:79 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:79 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:79 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:79 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:79 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:80 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:80 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:80 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:80 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:80 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:80 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:80 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:80 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:80 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:80 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:80 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:80 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:81 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:81 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:81 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:81 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:81 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:81 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:81 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:81 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:81 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:81 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:81 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:81 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:82 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:82 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:82 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:82 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:82 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:82 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:82 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:82 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:82 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:82 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:82 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:82 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:83 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:83 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:83 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:83 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:83 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:83 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:83 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:83 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:83 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:83 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:83 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:83 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:84 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:84 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:84 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:84 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:84 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:84 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:84 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:84 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:84 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:84 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:84 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:84 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:85 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:85 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:85 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:85 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:85 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:85 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:85 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:85 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:85 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:85 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:85 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:85 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:86 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:86 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:86 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:86 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:86 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:86 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:86 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:86 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:86 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:86 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:86 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:86 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:87 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:87 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:87 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:87 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:87 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:87 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:87 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:87 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:87 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:87 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:87 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:87 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:88 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:88 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:88 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:88 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:88 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:88 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:88 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:88 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:88 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:88 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:88 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:88 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:89 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:89 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:89 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:89 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:89 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:89 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:89 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:89 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:89 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:89 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:89 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:89 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:90 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:90 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:90 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:90 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:90 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:90 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:90 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:90 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:90 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:90 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:90 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:90 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:91 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:91 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:91 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:91 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:91 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:91 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:91 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:91 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:91 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:91 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:91 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:91 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:92 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:92 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:92 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:92 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:92 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:92 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:92 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:92 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:92 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:92 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:92 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:92 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:93 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:93 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:93 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:93 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:93 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:93 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:93 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:93 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:93 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:93 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:93 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:93 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:94 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:94 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:94 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:94 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:94 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:94 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:94 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:94 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:94 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:94 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:94 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:94 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:95 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:95 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:95 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:95 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:95 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:95 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:95 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:95 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:95 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:95 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:95 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:95 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:96 saturday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:96 saturday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:96 sunday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:96 sunday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:96 weekday_am400 population",
+    "passed": true
+  },
+  {
+    "check": "SP:96 weekday_am400 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:96 saturday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:96 saturday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:96 sunday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:96 sunday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "SP:96 weekday_am800 population",
+    "passed": true
+  },
+  {
+    "check": "SP:96 weekday_am800 supply ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:01 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:02 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:03 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:04 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:05 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:06 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:07 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:08 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:09 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:10 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:11 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:12 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:13 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:14 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:15 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:16 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:17 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:18 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:19 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:20 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:21 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:22 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:23 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:24 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:25 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:26 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:27 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:28 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:29 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:30 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:31 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:32 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:33 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:34 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:35 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:36 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:37 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:38 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:39 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:40 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:41 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:42 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:43 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:44 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:45 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:46 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:47 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:48 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:49 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:50 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:51 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:52 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:53 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:54 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:55 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:56 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:57 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:58 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:59 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:60 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:61 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:62 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:63 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:64 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:65 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:66 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:67 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:68 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:69 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:70 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:71 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:72 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:73 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:74 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:75 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:76 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 saturday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 saturday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 saturday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 saturday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 sunday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 sunday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 sunday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 sunday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 weekday_am400 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 weekday_am400 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 weekday_am800 bus population",
+    "passed": true
+  },
+  {
+    "check": "CHI:77 weekday_am800 bus ratio",
+    "passed": true
+  },
+  {
+    "check": "SP bus-only filtered route universe",
+    "passed": true
+  },
+  {
+    "check": "SP no prohibited pickup rows included",
+    "passed": true
+  },
+  {
+    "check": "SP service contains only bus routes",
+    "passed": true
+  },
+  {
+    "check": "SP10 independent bus-only pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "SP30 independent bus-only pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "SP35 independent bus-only pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "CHI24 independent pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "CHI28 independent pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "CHI30 independent pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "CHI32 independent pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "CHI76 independent pilot aggregate",
+    "passed": true
+  },
+  {
+    "check": "173 population rows",
+    "passed": true
+  },
+  {
+    "check": "1038 unique bus scenarios",
+    "passed": true
+  },
+  {
+    "check": "bus radius monotonicity",
+    "passed": true
+  }
+]

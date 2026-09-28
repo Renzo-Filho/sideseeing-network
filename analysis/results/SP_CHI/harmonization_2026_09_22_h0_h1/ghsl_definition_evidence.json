@@ -1,0 +1,9 @@
+{
+  "pdf": "analysis/work/evidence/ghsl_2026_09_21/GHSL_Data_Package_2023.pdf",
+  "sha256": "8b856f6e7e51066be62cb18e48476492f839211c89b40986259658de20bbde08",
+  "sections": {
+    "2.2.1": "ANBH = volume / built surface; AGBH = volume / entire cell surface",
+    "2.3": "Temporal volume uses 2018 height times time-specific built surface; not independent height observations each epoch"
+  },
+  "metadata_discrepancy": "PDF Table15 gives 255 for AGBH; delivered city GeoTIFF headers give -1. Use actual masks; preserve discrepancy."
+}

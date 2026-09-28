@@ -1,0 +1,15 @@
+{
+  "signature": "6f85d19551dc754099dac192f1ff668fbac25b3dad84e7236a647ee7f7b982dc",
+  "route_types": {
+    "3": 1346,
+    "1": 9,
+    "2": 7
+  },
+  "removed_service_rows": 1212,
+  "removed_expected_stop_calls": {
+    "saturday_am": 12221.704761904763,
+    "sunday_am": 12221.704761904763,
+    "weekday_am": 16881.288095238095
+  },
+  "source_legacy_unchanged": true
+}

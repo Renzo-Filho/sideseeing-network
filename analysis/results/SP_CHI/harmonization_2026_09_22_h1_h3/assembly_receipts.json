@@ -1,0 +1,34 @@
+[
+  {
+    "path": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/roads/paired_road_candidates.csv",
+    "sha256": "b56d89d8279bdcca5715955c4f12fe16f8b7ebedf0c127a9e084bcdaeb200fbe"
+  },
+  {
+    "path": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/footprints/footprint_candidates.csv",
+    "sha256": "10fc466a45105ebdc18efdfab55c6fd49e04dc975fbc69826e05e293520047e9"
+  },
+  {
+    "path": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/ghsl/ghsl_attributes.csv",
+    "sha256": "916be9bf0494d2b2665fed36fb534726c375038ed6d662d6ad163afd1b87f492"
+  },
+  {
+    "path": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/functional/population_candidates.csv",
+    "sha256": "8efc61a8a6fecf4851e6f7218068c65469eedadcdc1a45b580461dba1dc20dcd"
+  },
+  {
+    "path": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/functional/bus_candidates.csv",
+    "sha256": "243c236fbe112e25075140d8ac1ebe527d82b8a0091a3e1128f07d341ac1dc56"
+  },
+  {
+    "path": "analysis/results/SP/tables/attributes_long.parquet",
+    "sha256": "2c72cf758c2ba362b8c026f8082c9aeaf53cba68e44840a3b472f20ca8f41e1b"
+  },
+  {
+    "path": "analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/functional_attributes.csv",
+    "sha256": "4502325f45772445332a5a9a0eb868d2c6ac8f6003cc5d4f90a332ad31f2b3b0"
+  },
+  {
+    "path": "analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/district_job_sensitivity.csv",
+    "sha256": "34cc00853ea236724c5d9f2ebe1a0c77c89f2b0d6c8a3014910e7489fe79313e"
+  }
+]

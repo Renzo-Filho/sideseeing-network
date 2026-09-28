@@ -1,0 +1,14 @@
+{
+  "status": "H1_H3_candidate_construction_complete_with_open_semantic_gates",
+  "units": 173,
+  "long_rows": 6209,
+  "features": 37,
+  "H1": "paired arithmetic pilots complete; M2/M3/M4 semantic gates fail readiness",
+  "H2": "full paired candidate physical tables complete",
+  "H3": "paired U3 and corrected bus-only U4; U2 sensitivity complete; U1 withheld",
+  "H4": "pending review of failed gates and reduced common-set scope",
+  "H5": "not started",
+  "H6": "not started",
+  "strict_cross_city_accepted": false,
+  "running_jobs": []
+}

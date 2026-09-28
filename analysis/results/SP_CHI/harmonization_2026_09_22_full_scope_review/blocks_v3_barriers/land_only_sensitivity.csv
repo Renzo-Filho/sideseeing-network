@@ -1,0 +1,17 @@
+unit_id,boundary_mode,source_polygon_count,removed_majority_water,candidate_count,reference_count,candidate_share_best_iou_ge_050,reference_share_best_iou_ge_050,status
+CHI:32,no_links_water_land_only,410,17,393,343,0.3944020356234097,0.4518950437317784,diagnostic_only_not_accepted_M3_M4
+CHI:32,no_links_rail_water_land_only,448,17,431,343,0.3665893271461717,0.4606413994169096,diagnostic_only_not_accepted_M3_M4
+SP:10,no_links_water_land_only,203,0,203,153,0.6896551724137931,0.9150326797385621,diagnostic_only_not_accepted_M3_M4
+SP:10,no_links_rail_water_land_only,229,0,229,153,0.611353711790393,0.9150326797385621,diagnostic_only_not_accepted_M3_M4
+CHI:24,no_links_water_land_only,680,10,670,1125,0.49850746268656715,0.29688888888888887,diagnostic_only_not_accepted_M3_M4
+CHI:24,no_links_rail_water_land_only,734,10,724,1125,0.4613259668508287,0.29688888888888887,diagnostic_only_not_accepted_M3_M4
+CHI:28,no_links_water_land_only,778,10,768,908,0.6380208333333334,0.539647577092511,diagnostic_only_not_accepted_M3_M4
+CHI:28,no_links_rail_water_land_only,1416,10,1406,908,0.3534850640113798,0.5473568281938326,diagnostic_only_not_accepted_M3_M4
+CHI:30,no_links_water_land_only,305,8,297,663,0.3434343434343434,0.15384615384615385,diagnostic_only_not_accepted_M3_M4
+CHI:30,no_links_rail_water_land_only,409,10,399,663,0.2731829573934837,0.16440422322775264,diagnostic_only_not_accepted_M3_M4
+CHI:76,no_links_water_land_only,234,71,163,244,0.3128834355828221,0.20901639344262296,diagnostic_only_not_accepted_M3_M4
+CHI:76,no_links_rail_water_land_only,253,71,182,244,0.2802197802197802,0.20901639344262296,diagnostic_only_not_accepted_M3_M4
+SP:30,no_links_water_land_only,1793,262,1531,1481,0.7942521227955585,0.8210668467251857,diagnostic_only_not_accepted_M3_M4
+SP:30,no_links_rail_water_land_only,1800,262,1538,1481,0.7906371911573472,0.8210668467251857,diagnostic_only_not_accepted_M3_M4
+SP:35,no_links_water_land_only,788,14,774,564,0.6886304909560723,0.9450354609929078,diagnostic_only_not_accepted_M3_M4
+SP:35,no_links_rail_water_land_only,800,14,786,564,0.678117048346056,0.9450354609929078,diagnostic_only_not_accepted_M3_M4

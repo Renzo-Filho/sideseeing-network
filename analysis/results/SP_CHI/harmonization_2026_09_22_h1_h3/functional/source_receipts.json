@@ -1,0 +1,90 @@
+[
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+    "sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N07/census_district_allocation.parquet",
+    "sha256": "367d98a6bf83b8c586758bd839801b6cab7d7e7c4ebdab801fc5b80a1b78e17e"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N07/census_sectors.parquet",
+    "sha256": "7517c637dd53ea377e8d6e3e447d0a063383a69c664b8d0f5bc3a09d60a717ba"
+  },
+  {
+    "path": "analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/functional_attributes.parquet",
+    "sha256": "d5d8178117504d726b67f11a66a8cbc1d7c000ed88eb7228a75492c6d4856032"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/block_district_pieces.parquet",
+    "sha256": "5697d725a995b85b5625885b3a0890eba87eb50d8e19e1424c2a26fb9ff911b3"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/blocks.parquet",
+    "sha256": "d482e194bfa643afba39071452489569dadf47d10a9dea0d5836cb831cd72f98"
+  },
+  {
+    "path": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/functional/sp_bus_only_recomputed.csv",
+    "sha256": "ab520f824769d8b6219963dfd8b3c56eaa9ca6c46741284595356629018f7585"
+  },
+  {
+    "path": "analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/bus_service_access.parquet",
+    "sha256": "220a92f163a8f6fcf023c6d18fa09cc835e9bfb06b228b3a96bcb6280530576f"
+  },
+  {
+    "path": "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/routes.txt",
+    "sha256": "0241f1bf3c904d569e99b703eaa34f4b0196e301fbda58af678bc9c19639c34a"
+  },
+  {
+    "path": "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/stop_times.txt",
+    "sha256": "58558b1e4b85fc37d56ae4f22aba4bf875fc27a6adf7ae29db37f6795fe9b57b"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N08/stops.parquet",
+    "sha256": "6a8a940a9898c7ef206f3daa22e7b7856a83a1b8e3197bbfa8fd4000b8e6bf71"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N08/stop_route_service.parquet",
+    "sha256": "82278c2b1a803cec059be3ab78e35dd922eece49191a8136618e4942eb12cab0"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/population_points_10.parquet",
+    "sha256": "ea7c03774cd6bc4d3c57ab6564132e994a0aeb43eb6af0fd5109bfe192cdb1b6"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/population_points_30.parquet",
+    "sha256": "e24e7ce3cda5251e7a888e365672f3ab0ee0198f5e507def300610e4442360d1"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/population_points_35.parquet",
+    "sha256": "75feeb153ee908b130bbe5ac55658aab48007917af63e9bd0c99e23f632d8bc8"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/stops.parquet",
+    "sha256": "138026823e0ca920854b67f540201c653977c4d415e5d4642d7ab3e00d18934b"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/stop_route_service.parquet",
+    "sha256": "e68c3d3398d6179c732a99df1a5efd80376d7c4aa79d2f78429febcabbbbc349"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/population_points/CHI_24.parquet",
+    "sha256": "283a7ba8b34d8a306b17ed7f282d062e4bc39b2b86174526f06355c877c3786c"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/population_points/CHI_28.parquet",
+    "sha256": "5d3bdc563585c38ecbbd29197776b87d8851db52b47c2aed132f673c646fed05"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/population_points/CHI_30.parquet",
+    "sha256": "b22681b8fd726f37f22d5e41d8eeae5394b77dc83967aedad85686578bd39d58"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/population_points/CHI_32.parquet",
+    "sha256": "1f72fed3a0d9ca04c87576d7ef0dd2cd9dfc0d548dac518a6ac1c2aeac9a4876"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/population_points/CHI_76.parquet",
+    "sha256": "44406d57804a60eaea06b8975d951f77d957b922b11af1c4fa84461807a95b42"
+  }
+]

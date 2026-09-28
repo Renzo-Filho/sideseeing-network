@@ -1,0 +1,374 @@
+[
+  {
+    "city": "Chicago",
+    "unit_id": "CHI:32",
+    "label": "loop_stacked_roads",
+    "connector_ids": [
+      "22240ae1-e54d-4fc2-9ffb-97558fadd02e",
+      "5a317b77-497f-41f6-8c64-dbf3ab41df38"
+    ],
+    "coordinates_metric": {
+      "22240ae1-e54d-4fc2-9ffb-97558fadd02e": [
+        448511.5817185141,
+        4637138.978001402
+      ],
+      "5a317b77-497f-41f6-8c64-dbf3ab41df38": [
+        448509.69339955656,
+        4637140.601637712
+      ]
+    },
+    "segments": [
+      {
+        "id": "1c773ee1-6869-44b1-96dd-6e8f6b251204",
+        "primary_name": "Upper North Columbus Drive",
+        "class": "tertiary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": 1,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_bridge"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "22240ae1-e54d-4fc2-9ffb-97558fadd02e",
+            "at": 1.0
+          }
+        ]
+      },
+      {
+        "id": "3dcdf1a1-172f-4367-acf0-b5408b924baf",
+        "primary_name": "North Columbus Drive",
+        "class": "secondary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": -1,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_covered"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "5a317b77-497f-41f6-8c64-dbf3ab41df38",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "65c8b0c6-2dd0-43d7-909f-6dd867f5ef31",
+        "primary_name": "East Randolph Drive",
+        "class": "secondary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": -2,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_covered"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "5a317b77-497f-41f6-8c64-dbf3ab41df38",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "82446ce0-af7b-4f07-b11e-251759571d78",
+        "primary_name": "East Randolph Street",
+        "class": "tertiary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": 1,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_bridge"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "22240ae1-e54d-4fc2-9ffb-97558fadd02e",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "83a3d1d5-e22e-4004-b578-4ddebcead750",
+        "primary_name": "East Randolph Drive",
+        "class": "secondary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": 1,
+            "between": [
+              0.0,
+              0.021514607
+            ]
+          },
+          {
+            "value": -1,
+            "between": [
+              0.021514607,
+              0.478753736
+            ]
+          },
+          {
+            "value": -2,
+            "between": [
+              0.478753736,
+              1.0
+            ]
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_covered"
+            ],
+            "between": [
+              0.190231331,
+              1.0
+            ]
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "5a317b77-497f-41f6-8c64-dbf3ab41df38",
+            "at": 1.0
+          }
+        ]
+      },
+      {
+        "id": "8f124ebf-1506-4b3d-89f4-a550aad26561",
+        "primary_name": "East Randolph Street",
+        "class": "tertiary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": 1,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_bridge"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "22240ae1-e54d-4fc2-9ffb-97558fadd02e",
+            "at": 1.0
+          }
+        ]
+      },
+      {
+        "id": "ba8fb568-5492-4fbf-ae28-b47dff2224c2",
+        "primary_name": "Upper North Columbus Drive",
+        "class": "tertiary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": 1,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_bridge"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "22240ae1-e54d-4fc2-9ffb-97558fadd02e",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "bd8cd1c4-2ab2-41f0-909c-7e4a4c64b79f",
+        "primary_name": "North Columbus Drive",
+        "class": "secondary",
+        "subclass": null,
+        "level_rules": [
+          {
+            "value": -1,
+            "between": null
+          }
+        ],
+        "road_flags": [
+          {
+            "values": [
+              "is_covered"
+            ],
+            "between": null
+          }
+        ],
+        "fixture_connectors": [
+          {
+            "connector_id": "5a317b77-497f-41f6-8c64-dbf3ab41df38",
+            "at": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "city": "SP",
+    "unit_id": "SP:10",
+    "label": "bras_short_same_street_link",
+    "connector_ids": [
+      "0956a567-99f7-43ee-8861-b331010b8bb1",
+      "9a85f3e4-da15-4163-9099-8626fa6c9d8c"
+    ],
+    "coordinates_metric": {
+      "0956a567-99f7-43ee-8861-b331010b8bb1": [
+        334496.16532340855,
+        7395335.079660724
+      ],
+      "9a85f3e4-da15-4163-9099-8626fa6c9d8c": [
+        334501.13114310685,
+        7395328.457466638
+      ]
+    },
+    "segments": [
+      {
+        "id": "049f167f-8cd1-418c-abbc-c26fbdda1ab0",
+        "primary_name": "Rua do Gasômetro",
+        "class": "primary",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "9a85f3e4-da15-4163-9099-8626fa6c9d8c",
+            "at": 1.0
+          }
+        ]
+      },
+      {
+        "id": "2a6706b0-76ed-45f4-bc21-757e4e6492a3",
+        "primary_name": "Rua Monsenhor Andrade",
+        "class": "tertiary",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "0956a567-99f7-43ee-8861-b331010b8bb1",
+            "at": 1.0
+          }
+        ]
+      },
+      {
+        "id": "444f99b5-f54c-4f52-9ab8-0c4cbdd4d199",
+        "primary_name": "Rua do Gasômetro",
+        "class": "primary",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "0956a567-99f7-43ee-8861-b331010b8bb1",
+            "at": 1.0
+          }
+        ]
+      },
+      {
+        "id": "7f20c778-5134-4468-bf93-6a5735a78699",
+        "primary_name": "Rua do Gasômetro",
+        "class": "primary",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "9a85f3e4-da15-4163-9099-8626fa6c9d8c",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "c00004e3-e120-41b9-b245-a6b842749bd2",
+        "primary_name": "Rua do Gasômetro",
+        "class": "primary",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "0956a567-99f7-43ee-8861-b331010b8bb1",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "c35e58b6-2406-4d7a-8782-ecda0fd37938",
+        "primary_name": "Rua Monsenhor Andrade",
+        "class": "residential",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "9a85f3e4-da15-4163-9099-8626fa6c9d8c",
+            "at": 0.0
+          }
+        ]
+      },
+      {
+        "id": "c52de261-89cd-45a9-b831-7cb8919f26ba",
+        "primary_name": "Rua Monsenhor Andrade",
+        "class": "tertiary",
+        "subclass": null,
+        "level_rules": null,
+        "road_flags": null,
+        "fixture_connectors": [
+          {
+            "connector_id": "0956a567-99f7-43ee-8861-b331010b8bb1",
+            "at": 0.0
+          },
+          {
+            "connector_id": "9a85f3e4-da15-4163-9099-8626fa6c9d8c",
+            "at": 1.0
+          }
+        ]
+      }
+    ]
+  }
+]

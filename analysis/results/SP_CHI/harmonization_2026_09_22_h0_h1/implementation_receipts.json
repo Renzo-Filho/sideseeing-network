@@ -1,0 +1,18 @@
+[
+  {
+    "path": "analysis/scripts/pilot_harmonized_ghsl.py",
+    "sha256": "483e61c1ab6d45ab83ced8323261a7a3626141ca2489639c79e4a1013e2fc7cc"
+  },
+  {
+    "path": "analysis/scripts/harmonization/rasters.py",
+    "sha256": "11f66077494ed618666762d4486d03692b14c578505288e1f000b4e0c74883c1"
+  },
+  {
+    "path": "analysis/tests/test_harmonization_rasters.py",
+    "sha256": "dd78729ce28e2c1290abd0a3e9685e8472b2e9795e5faaa77b4eb2231dff231c"
+  },
+  {
+    "path": "analysis/config/sp_chicago_harmonization_v1.json",
+    "sha256": "023cd8d20329b46836535d78b74953c798e4ba51e325bdd5715886c9643de4e7"
+  }
+]

@@ -1,0 +1,322 @@
+{
+  "run": "ghsl_public_2026_09_21",
+  "source_release": "R2023A",
+  "height_epoch": 2018,
+  "volume_epoch": 2020,
+  "tiles": {
+    "Chicago": [
+      "R4_C11",
+      "R5_C11"
+    ],
+    "SP": [
+      "R12_C14"
+    ]
+  },
+  "source_downloads": [
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_H_GLOBE_R2023A/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R12_C14.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R12_C14.zip",
+      "bytes": 16084685,
+      "sha256": "f9a564c616ea76d203758bc97a211dc5490dc04e6cbae1d3901cea772bab0bd7",
+      "retrieved_utc": "2026-09-21T23:15:31.412624+00:00",
+      "last_modified": "Mon, 27 Jan 2025 16:55:59 GMT",
+      "etag": "\"f56ecd-62cb2f3681d43\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_H_GLOBE_R2023A/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip",
+      "bytes": 14338689,
+      "sha256": "7d4de95c1ecadb41087c18d5e3622873701a6d116984443e1eba2708ae4f95e5",
+      "retrieved_utc": "2026-09-21T23:15:32.022846+00:00",
+      "last_modified": "Mon, 27 Jan 2025 16:56:16 GMT",
+      "etag": "\"daca81-62cb2f4642cfc\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_H_GLOBE_R2023A/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R5_C11.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R5_C11.zip",
+      "bytes": 32924139,
+      "sha256": "c717b5fb1a94767378151496d4bff3a784a844aa8c7af6eca35a73b5cefee229",
+      "retrieved_utc": "2026-09-21T23:15:39.841158+00:00",
+      "last_modified": "Mon, 27 Jan 2025 16:56:19 GMT",
+      "etag": "\"1f661eb-62cb2f4957209\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_H_GLOBE_R2023A/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R12_C14.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R12_C14.zip",
+      "bytes": 37261404,
+      "sha256": "87f2fd3e3c3accfe4c535a4cab5d3055163f481243834e532c279a77778fa4a7",
+      "retrieved_utc": "2026-09-21T23:15:51.149428+00:00",
+      "last_modified": "Mon, 27 Jan 2025 16:55:03 GMT",
+      "etag": "\"238905c-62cb2f0101d49\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_H_GLOBE_R2023A/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip",
+      "bytes": 40207939,
+      "sha256": "6791329508b8ef13b54e9d6c8eb026d64c9e8d90c4c98ac0689fa84daf23ea8b",
+      "retrieved_utc": "2026-09-21T23:15:51.134807+00:00",
+      "last_modified": "Mon, 27 Jan 2025 16:55:22 GMT",
+      "etag": "\"2658643-62cb2f1295db3\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_H_GLOBE_R2023A/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R5_C11.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R5_C11.zip",
+      "bytes": 97005924,
+      "sha256": "40ac2bf52c74ceb0bbf1ac8bfc44c9e6bc0e75e13c7797ec2aa98c252d0ee040",
+      "retrieved_utc": "2026-09-21T23:16:12.482409+00:00",
+      "last_modified": "Mon, 27 Jan 2025 16:55:27 GMT",
+      "etag": "\"5c83164-62cb2f174d1b3\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_V_GLOBE_R2023A/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R12_C14.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R12_C14.zip",
+      "bytes": 21012878,
+      "sha256": "ceeef21424caf2fa739bb056c7a439e1cc86f55f5b7602cf33921bc341f84ab4",
+      "retrieved_utc": "2026-09-21T23:16:19.738794+00:00",
+      "last_modified": "Mon, 27 Jan 2025 18:15:52 GMT",
+      "etag": "\"140a18e-62cb4110f6674\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_V_GLOBE_R2023A/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip",
+      "bytes": 22504642,
+      "sha256": "ea4ef8c3b1600a37a2f700fee59f2a32583799d1f18b2095da9406834100faa3",
+      "retrieved_utc": "2026-09-21T23:16:22.916259+00:00",
+      "last_modified": "Mon, 27 Jan 2025 18:16:09 GMT",
+      "etag": "\"15764c2-62cb41211cf7f\""
+    },
+    {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_V_GLOBE_R2023A/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/V1-0/tiles/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R5_C11.zip",
+      "file": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R5_C11.zip",
+      "bytes": 52630414,
+      "sha256": "f9924738f18fb45d22cefdf20dfeff1e917d0870f2e973f0eb78b51d12804df8",
+      "retrieved_utc": "2026-09-21T23:16:31.701637+00:00",
+      "last_modified": "Mon, 27 Jan 2025 18:16:13 GMT",
+      "etag": "\"323138e-62cb4124cb931\""
+    }
+  ],
+  "outputs": [
+    {
+      "city": "Chicago",
+      "product": "GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100",
+      "epoch": 2018,
+      "units": "metres",
+      "path": "analysis/data/Chicago/ghsl_public_2026_09_21/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100.tif",
+      "sha256": "4bd88d319e4472057535aade164b44cce72a6c1b50fd3bb4253458a59b381805",
+      "bytes": 205256,
+      "source_tiles": [
+        "R4_C11",
+        "R5_C11"
+      ],
+      "source_crs": "ESRI:54009",
+      "resolution": [
+        100.0,
+        100.0
+      ],
+      "shape": [
+        1,
+        420,
+        307
+      ],
+      "nodata": 255.0,
+      "dtype": "float32",
+      "source_scales": [
+        1.0
+      ],
+      "source_offsets": [
+        0.0
+      ],
+      "city_mask_cells": 61509,
+      "source_nodata_inside_mask": 0,
+      "boundary_path": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "mask_policy": "native 100m cells intersecting city; outside cells set to source NoData; boundary-cell values NOT fractionally allocated",
+      "scientific_validation": "not performed; acquisition only"
+    },
+    {
+      "city": "SP",
+      "product": "GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100",
+      "epoch": 2018,
+      "units": "metres",
+      "path": "analysis/data/SP/ghsl_public_2026_09_21/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100.tif",
+      "sha256": "bc467714a4483e6aefb5de053b0672effa228434a1e0580d86a705f62cb5d7bb",
+      "bytes": 376072,
+      "source_tiles": [
+        "R12_C14"
+      ],
+      "source_crs": "ESRI:54009",
+      "resolution": [
+        100.0,
+        100.0
+      ],
+      "shape": [
+        1,
+        780,
+        465
+      ],
+      "nodata": 255.0,
+      "dtype": "float32",
+      "source_scales": [
+        1.0
+      ],
+      "source_offsets": [
+        0.0
+      ],
+      "city_mask_cells": 155174,
+      "source_nodata_inside_mask": 0,
+      "boundary_path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+      "boundary_sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0",
+      "mask_policy": "native 100m cells intersecting city; outside cells set to source NoData; boundary-cell values NOT fractionally allocated",
+      "scientific_validation": "not performed; acquisition only"
+    },
+    {
+      "city": "Chicago",
+      "product": "GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100",
+      "epoch": 2018,
+      "units": "metres",
+      "path": "analysis/data/Chicago/ghsl_public_2026_09_21/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100.tif",
+      "sha256": "c199d59e3305920b28b10ce56a067b7335267b4e6ada37fbf69b8c49228aae10",
+      "bytes": 218700,
+      "source_tiles": [
+        "R4_C11",
+        "R5_C11"
+      ],
+      "source_crs": "ESRI:54009",
+      "resolution": [
+        100.0,
+        100.0
+      ],
+      "shape": [
+        1,
+        420,
+        307
+      ],
+      "nodata": -1.0,
+      "dtype": "float32",
+      "source_scales": [
+        1.0
+      ],
+      "source_offsets": [
+        0.0
+      ],
+      "city_mask_cells": 61509,
+      "source_nodata_inside_mask": 0,
+      "boundary_path": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "mask_policy": "native 100m cells intersecting city; outside cells set to source NoData; boundary-cell values NOT fractionally allocated",
+      "scientific_validation": "not performed; acquisition only"
+    },
+    {
+      "city": "SP",
+      "product": "GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100",
+      "epoch": 2018,
+      "units": "metres",
+      "path": "analysis/data/SP/ghsl_public_2026_09_21/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100.tif",
+      "sha256": "e52d3ce2f8f07b5dc774e5ed0e8538c7d4d703b645272ff5a9034316271c65db",
+      "bytes": 402682,
+      "source_tiles": [
+        "R12_C14"
+      ],
+      "source_crs": "ESRI:54009",
+      "resolution": [
+        100.0,
+        100.0
+      ],
+      "shape": [
+        1,
+        780,
+        465
+      ],
+      "nodata": -1.0,
+      "dtype": "float32",
+      "source_scales": [
+        1.0
+      ],
+      "source_offsets": [
+        0.0
+      ],
+      "city_mask_cells": 155174,
+      "source_nodata_inside_mask": 0,
+      "boundary_path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+      "boundary_sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0",
+      "mask_policy": "native 100m cells intersecting city; outside cells set to source NoData; boundary-cell values NOT fractionally allocated",
+      "scientific_validation": "not performed; acquisition only"
+    },
+    {
+      "city": "Chicago",
+      "product": "GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100",
+      "epoch": 2020,
+      "units": "cubic metres per source cell",
+      "path": "analysis/data/Chicago/ghsl_public_2026_09_21/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100.tif",
+      "sha256": "1380d7921359508dcbfdc273e1e0ccff0fdfd9a7e71b36f6044e4afa9924a935",
+      "bytes": 168508,
+      "source_tiles": [
+        "R4_C11",
+        "R5_C11"
+      ],
+      "source_crs": "ESRI:54009",
+      "resolution": [
+        100.0,
+        100.0
+      ],
+      "shape": [
+        1,
+        420,
+        307
+      ],
+      "nodata": 4294967295.0,
+      "dtype": "uint32",
+      "source_scales": [
+        1.0
+      ],
+      "source_offsets": [
+        0.0
+      ],
+      "city_mask_cells": 61509,
+      "source_nodata_inside_mask": 0,
+      "boundary_path": "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson",
+      "boundary_sha256": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16",
+      "mask_policy": "native 100m cells intersecting city; outside cells set to source NoData; boundary-cell values NOT fractionally allocated",
+      "scientific_validation": "not performed; acquisition only"
+    },
+    {
+      "city": "SP",
+      "product": "GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100",
+      "epoch": 2020,
+      "units": "cubic metres per source cell",
+      "path": "analysis/data/SP/ghsl_public_2026_09_21/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100.tif",
+      "sha256": "fae2c213df92c09d98a74a61282cd9678a05d3eac608ad1129755bc8d8f5fd80",
+      "bytes": 311488,
+      "source_tiles": [
+        "R12_C14"
+      ],
+      "source_crs": "ESRI:54009",
+      "resolution": [
+        100.0,
+        100.0
+      ],
+      "shape": [
+        1,
+        780,
+        465
+      ],
+      "nodata": 4294967295.0,
+      "dtype": "uint32",
+      "source_scales": [
+        1.0
+      ],
+      "source_offsets": [
+        0.0
+      ],
+      "city_mask_cells": 155174,
+      "source_nodata_inside_mask": 0,
+      "boundary_path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+      "boundary_sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0",
+      "mask_policy": "native 100m cells intersecting city; outside cells set to source NoData; boundary-cell values NOT fractionally allocated",
+      "scientific_validation": "not performed; acquisition only"
+    }
+  ],
+  "complete": true,
+  "scientific_validation": false,
+  "model_modified": false
+}

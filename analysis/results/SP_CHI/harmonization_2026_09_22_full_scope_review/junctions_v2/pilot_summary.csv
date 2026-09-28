@@ -1,0 +1,9 @@
+unit_id,raw_connector_candidates,near_pairs_10m,near_pairs_with_short_source_link,short_source_links_20m,linked_components,components_within_35m_diameter,components_over_35m_diameter,candidate_connectors_in_small_components,max_component_size,status
+CHI:24,885,61,55,94,70,70,0,155,4,diagnostic_only_not_accepted_M2
+CHI:28,1078,54,50,189,130,126,4,290,8,diagnostic_only_not_accepted_M2
+CHI:30,385,1,1,9,8,7,1,14,3,diagnostic_only_not_accepted_M2
+CHI:32,389,71,34,114,74,74,0,175,6,diagnostic_only_not_accepted_M2
+CHI:76,344,5,5,45,36,35,1,76,3,diagnostic_only_not_accepted_M2
+SP:10,399,13,13,51,37,36,1,77,8,diagnostic_only_not_accepted_M2
+SP:30,3596,198,180,453,305,296,9,684,9,diagnostic_only_not_accepted_M2
+SP:35,1513,52,40,187,137,133,4,289,12,diagnostic_only_not_accepted_M2

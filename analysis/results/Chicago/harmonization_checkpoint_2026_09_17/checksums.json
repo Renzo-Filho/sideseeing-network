@@ -1,0 +1,11 @@
+{
+  "input_code_checksums.json": "86982f48168d9c34b1dbadc5564d7736c17a04cb8f35e1e15e79320a4445b859",
+  "progress.json": "a3fc5645b02833d301285cb388562c7e0b6da50c1c69ab2452e5980160ed2ff8",
+  "road_policy_diagnostics.csv": "9b39e1cfb0adb3b222cdb2f0175b837f9d92b15d05fabd2ac985d2cd7ff03d7f",
+  "independent_footprint_unions.csv": "b4b0e0a3d2a5b415966e61065601ee066589ea3edf3d7ed3146bfdd042bc749e",
+  "README.md": "58a5ea46c86d197c977faf0f8c777ec5670daa88b55cac45f389d1b3e45dd747",
+  "footprint_source_differences.csv": "388c4896ea67b85dbc1d42c12413f59edc61673503e364324640cc9b02ba106f",
+  "checks.json": "453990a0099cf4a1090382bdea248611fa1623b2d3c2508aaa44259905ec1a51",
+  "repository_tests.log": "dab17247217c8f71e91f2f54e6904faf67eee569156bde6a18041869b8f6f07d",
+  "execution.log": "3abd2c668953df71c75af34e5a708397d008cdf644eb359014cf7a4b3fcc9756"
+}

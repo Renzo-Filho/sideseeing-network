@@ -1,0 +1,100 @@
+{
+  "status": "technical_readiness_passed_scope_approval_pending",
+  "fit_authorized": false,
+  "families": {
+    "M1": {
+      "columns": [
+        "mapped_street_density_km_km2"
+      ],
+      "type": "scalar",
+      "transform": "log",
+      "weight": 0.16666666666666666
+    },
+    "M6": {
+      "columns": [
+        "M6_share_motorway",
+        "M6_share_trunk",
+        "M6_share_primary",
+        "M6_share_secondary",
+        "M6_share_tertiary",
+        "M6_share_residential",
+        "M6_share_living_street",
+        "M6_share_pedestrian",
+        "M6_share_unclassified",
+        "M6_share_unknown"
+      ],
+      "type": "composition",
+      "transform": "joint_sqrt_hellinger",
+      "weight": 0.16666666666666666
+    },
+    "B1": {
+      "columns": [
+        "footprint_coverage_land"
+      ],
+      "type": "scalar",
+      "transform": "identity",
+      "weight": 0.16666666666666666
+    },
+    "BV": {
+      "columns": [
+        "net_grid_height_land"
+      ],
+      "type": "scalar",
+      "transform": "log1p",
+      "weight": 0.16666666666666666
+    },
+    "U3": {
+      "columns": [
+        "population_density_gross_km2"
+      ],
+      "type": "scalar",
+      "transform": "log",
+      "weight": 0.16666666666666666
+    },
+    "U4": {
+      "columns": [
+        "bus_supply_weekday_am_400m"
+      ],
+      "type": "scalar",
+      "transform": "log1p",
+      "weight": 0.16666666666666666
+    }
+  },
+  "cohort": {
+    "SP": 96,
+    "CHI": 77,
+    "target": "SP:10"
+  },
+  "fit_reference": "harmonized SP only; apply unchanged to CHI",
+  "scaling": "SP median/IQR with documented SD fallback",
+  "family_calibration": "SP positive-pair median distances",
+  "excluded": [
+    "M2",
+    "M3",
+    "M4",
+    "M7",
+    "B2",
+    "B3",
+    "U1",
+    "U2"
+  ],
+  "excluded_reason": "M2/M3/M4 physical semantics unaccepted; M7/B2/B3 unavailable common fiscal definitions; U1 incompatible use domain; U2 extended-only",
+  "qualifications": [
+    "mapped roads regardless of access; source completeness differs",
+    "local hydrography coverage/vintage differ",
+    "GHSL height2018 and volume2020 use related estimates",
+    "population SP2022/CHI2020",
+    "bus-only service dates one week apart; frequency vs scheduled supply"
+  ],
+  "required_sensitivities": [
+    "core_without_BV",
+    "volume_instead_of_height_same_BV_budget",
+    "gross_denominators_for_B1_BV",
+    "M6_omission",
+    "bus800m_and_weekend",
+    "family_weight_and_city_balanced_fit"
+  ],
+  "source_matrix": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/tables/candidate_attributes_wide.parquet",
+  "source_sha256": "cd9331e9735fc30d0cc39e120197366d15cfb591ad49c819ecf83835b3eee0e7",
+  "no_ranking_inspected": true
+}

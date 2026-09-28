@@ -1,0 +1,885 @@
+[
+  {
+    "unit_id": "CHI:01",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:02",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:03",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:04",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:05",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:06",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:07",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:08",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:09",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:10",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:11",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:12",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:13",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:14",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:15",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:16",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:17",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:18",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:19",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:20",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:21",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:22",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:23",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:24",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:25",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:26",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:27",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:28",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:29",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:30",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:31",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:32",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:33",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:34",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:35",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:36",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:37",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:38",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:39",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:40",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:41",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:42",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:43",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:44",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:45",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:46",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:47",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:48",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:49",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:50",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:51",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:52",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:53",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:54",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:55",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:56",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:57",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:58",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:59",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:60",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:61",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:62",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:63",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:64",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:65",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:66",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:67",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:68",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:69",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:70",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:71",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:72",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:73",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:74",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:75",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:76",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "CHI:77",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:01",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:02",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:03",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:04",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:05",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:06",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:07",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:08",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:09",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:10",
+    "check": "SP_reuse_reconstructed_shared_algorithm",
+    "max_delta_m2": 0.0,
+    "passed": true
+  },
+  {
+    "unit_id": "SP:10",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:11",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:12",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:13",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:14",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:15",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:16",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:17",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:18",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:19",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:20",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:21",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:22",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:23",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:24",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:25",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:26",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:27",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:28",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:29",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:30",
+    "check": "SP_reuse_reconstructed_shared_algorithm",
+    "max_delta_m2": 0.0,
+    "passed": true
+  },
+  {
+    "unit_id": "SP:30",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:31",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:32",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:33",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:34",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:35",
+    "check": "SP_reuse_reconstructed_shared_algorithm",
+    "max_delta_m2": 0.0,
+    "passed": true
+  },
+  {
+    "unit_id": "SP:35",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:36",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:37",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:38",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:39",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:40",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:41",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:42",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:43",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:44",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:45",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:46",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:47",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:48",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:49",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:50",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:51",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:52",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:53",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:54",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:55",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:56",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:57",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:58",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:59",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:60",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:61",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:62",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:63",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:64",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:65",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:66",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:67",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:68",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:69",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:70",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:71",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:72",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:73",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:74",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:75",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:76",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:77",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:78",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:79",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:80",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:81",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:82",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:83",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:84",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:85",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:86",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:87",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:88",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:89",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:90",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:91",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:92",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:93",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:94",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:95",
+    "check": "footprint_bounds",
+    "passed": true
+  },
+  {
+    "unit_id": "SP:96",
+    "check": "footprint_bounds",
+    "passed": true
+  }
+]

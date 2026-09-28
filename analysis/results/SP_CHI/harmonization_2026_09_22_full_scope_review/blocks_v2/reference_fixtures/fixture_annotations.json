@@ -1,0 +1,95 @@
+[
+  {
+    "fixture_id": "CHI:32:stacked_connector_pair",
+    "family": "M2",
+    "evidence_class": "source_verified",
+    "connector_ids": [
+      "22240ae1-e54d-4fc2-9ffb-97558fadd02e",
+      "5a317b77-497f-41f6-8c64-dbf3ab41df38"
+    ],
+    "observation": "2.49 m apart; upper streets at level +1 and bridge-flagged; lower streets at level -1/-2 and covered; no short common source-road span",
+    "review_decision": "do_not_merge_by_distance",
+    "physical_arm_count": null,
+    "source": "junctions_v2/fixture_source_evidence.json"
+  },
+  {
+    "fixture_id": "SP:10:linked_connector_pair",
+    "family": "M2",
+    "evidence_class": "source_verified_topology_only",
+    "connector_ids": [
+      "0956a567-99f7-43ee-8861-b331010b8bb1",
+      "9a85f3e4-da15-4163-9099-8626fa6c9d8c"
+    ],
+    "observation": "8.28 m apart on a directly connecting Rua Monsenhor Andrade source span; no recorded grade flag",
+    "review_decision": "needs_physical_arm_adjudication",
+    "physical_arm_count": null,
+    "source": "junctions_v2/fixture_source_evidence.json"
+  },
+  {
+    "fixture_id": "CHI:32:stacked_road_sliver",
+    "family": "M3/M4",
+    "evidence_class": "map_and_census_reference_diagnostic",
+    "object": {
+      "candidate_id": "CHI:32:all_mapped_streets:0325",
+      "area_m2": 3.014198128204826,
+      "minimum_rectangle_width_m": 1.6255311959167558,
+      "best_reference_id": "170313201012005",
+      "best_reference_iou": 0.001019043449440016
+    },
+    "observation": "3.01 m2 polygon, 1.63 m minimum rectangle width, negligible best Census block overlap at stacked-road fixture",
+    "review_decision": "apparent_line_network_sliver_not_certified_physical_block",
+    "source": "blocks_v2/reference_fixtures/CHI_32_reference_comparison.png"
+  },
+  {
+    "fixture_id": "CHI:32:interval_gap",
+    "family": "M3/M4",
+    "evidence_class": "map_and_census_reference_diagnostic",
+    "center_metric": [
+      448511.6,
+      4637139.0
+    ],
+    "radius_m": 140,
+    "interval_candidate_count": 0,
+    "census_reference_count": 13,
+    "sample_reference_ids": [
+      "170313201022014",
+      "170313201022003",
+      "170313201012002",
+      "170313201012007",
+      "170313201012003"
+    ],
+    "observation": "Interval-aware mode produces no owned candidate polygon within 140 m of stacked-road center although 13 owned Census block polygons intersect the circle",
+    "review_decision": "reject_interval_mode_as_complete_block_boundary_in_this_fixture",
+    "source": "blocks_v2/reference_fixtures/CHI_32_reference_comparison.png"
+  },
+  {
+    "fixture_id": "SP:10:unmatched_wedge",
+    "family": "M3/M4",
+    "evidence_class": "map_and_municipal_reference_diagnostic",
+    "object": {
+      "candidate_id": "SP:10:all_mapped_streets:0150",
+      "area_m2": 51.794468105934065,
+      "minimum_rectangle_width_m": 6.740868598515017,
+      "best_reference_id": null,
+      "best_reference_iou": 0.0
+    },
+    "observation": "51.79 m2 source-line enclosure at Brás junction, no overlap with eligible municipal Quadra",
+    "review_decision": "unresolved_small_wedge_review_against_imagery",
+    "source": "blocks_v2/reference_fixtures/SP_10_reference_comparison.png"
+  },
+  {
+    "fixture_id": "SP:10:aligned_quadra",
+    "family": "M3/M4",
+    "evidence_class": "municipal_reference_diagnostic",
+    "object": {
+      "candidate_id": "SP:10:all_mapped_streets:0149",
+      "area_m2": 7293.934957606411,
+      "minimum_rectangle_width_m": 62.3050623583504,
+      "best_reference_id": "40587",
+      "best_reference_iou": 0.8140473941735836
+    },
+    "observation": "Candidate polygon has strong overlap with municipal Quadra 40587",
+    "review_decision": "reference_aligned_but_not_common_ontology_verified",
+    "source": "blocks_v2/reference_fixtures/SP_10_reference_comparison.png"
+  }
+]

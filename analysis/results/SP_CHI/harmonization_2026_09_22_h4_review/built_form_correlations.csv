@@ -1,0 +1,7 @@
+city,feature_a,feature_b,spearman_rho
+SP,net_grid_height_land,volume_density_land,0.952685838307108
+SP,footprint_coverage_land,net_grid_height_land,0.5111096039066739
+SP,footprint_coverage_land,volume_density_land,0.6634291915355399
+CHI,net_grid_height_land,volume_density_land,0.9330669330669331
+CHI,footprint_coverage_land,net_grid_height_land,0.5367001419632998
+CHI,footprint_coverage_land,volume_density_land,0.7514853567485147

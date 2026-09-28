@@ -1,0 +1,410 @@
+[
+  {
+    "path": "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet",
+    "sha256": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f"
+  },
+  {
+    "path": "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/district_hydro_land.parquet",
+    "sha256": "27c4363a8a562f906d8da6cc82ddb8a7b8710947d7732e0aade60b853149debe"
+  },
+  {
+    "path": "analysis/data/Chicago/overture_2026_08_19/building/part_0000.parquet",
+    "sha256": "8c8ed0b844cd505a9fbfe33da63af749cedd9010fbbfe25a7d5f0b883c6f96ec"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet",
+    "sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0"
+  },
+  {
+    "path": "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/district_land.parquet",
+    "sha256": "aee648428515f3d2b346379c018ffbd7d6229cb8eb08bcfb7c67e5b7ea67ebeb"
+  },
+  {
+    "path": "analysis/data/SP/Edificacoes/sao_paulo_building_morphology.gpkg",
+    "sha256": "6af07e1012f8353bff2cda4971836dd4a6fab6bf3ed01e954ebe97653685f6b4"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_01.json",
+    "sha256": "d44d6e1757079ea901729743f17aa60f218f95a79ababf299658ff15a0160feb"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_02.json",
+    "sha256": "c4141de015484fe49e7760c1a81ffe60e32152cffc9dfea78198f2271d1f18d8"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_03.json",
+    "sha256": "368feca103ab2b26359f187bf31ba3d129a5c10de9a291f97fe35d49fec5f3bd"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_04.json",
+    "sha256": "e36ac126e3548b297890bc0c0a1b4f38c85a8a582c20ac78a3b7a25a6661932b"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_05.json",
+    "sha256": "64b539170136a0f92edba7261e8b7cf842c287639c5318235a63b14f0d7f970f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_06.json",
+    "sha256": "ce1d7a8ba5250a5f0fe96cc4fd1fff8dbfc0731fc4d81a17a3902362eb5a5326"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_07.json",
+    "sha256": "774deeb006756ea4e49a87ccb6541d5ffdd26bcb257630ab57119d9461f4a2bc"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_08.json",
+    "sha256": "5f90023dc2005e5da14917d81d4517042f11ae9a30af494a4a05bfb7bf0facee"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_09.json",
+    "sha256": "bbd1c975588ed3104889ae67676b3993016a2ab0259fbbabc402f3b62a71df58"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_10.json",
+    "sha256": "0e45cd270867a1c42cb09ec5d73d4604bb0f010888be65d1c84dcd465efc8f8a"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_11.json",
+    "sha256": "c892983f93efa98f91519580b5ef161bf96ce4fbc175611b45dbc51e7f786ef1"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_12.json",
+    "sha256": "ae61a7901f5d890dbd004eecbb553f03f840f9ba774979ca285f6f0c468a4b2b"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_13.json",
+    "sha256": "0edde9486f6b8adc004276012e93b2930a9d0c2373d670310f4d20be06d73373"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_14.json",
+    "sha256": "76a685114b2b1d4ddd38cf098f95f56348f916f2a6d239563f592ef5af03418b"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_15.json",
+    "sha256": "857c02e2c0d65798fe90e01bbb55fbab3ef83500a4829533e649f0315329614d"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_16.json",
+    "sha256": "72aedfeefb71555e762bf3ad417e68096d5a7d1edb687b821f72b5ae993f63b3"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_17.json",
+    "sha256": "6f5d19f63ad99466364321850103f26ecd262e649b3a4368c0d154856e705687"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_18.json",
+    "sha256": "9e9fbb4e7974b50fd1cb91701b12067b888f1ecbc6dd58865e6899e98515bc9d"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_19.json",
+    "sha256": "668979e58972e4977aac7cdeacc5a56349f5a2eb31be3dea2b2703d366bb4bd8"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_20.json",
+    "sha256": "000af44de2441ab63c507236930f45b9708f8a5b0384060a673efe3a1d095a4f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_21.json",
+    "sha256": "e8e89d64226da1e2f0750fabc205fa7e845471df63e3e1a025393ec7e8f9bdc2"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_22.json",
+    "sha256": "c657c43e6d720f5e02cf673c4f23e60e90e6e556f880d9a5d00108f62e28b7f4"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_23.json",
+    "sha256": "8b84a3c084da836720a8e7564df532fdaf125df1dd220452dc571e7a0d532ea3"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_24.json",
+    "sha256": "eb19ef172d561ec4628f2ae9016d9267799adecb51f8d397f23cd052a8c3973c"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_25.json",
+    "sha256": "7fcd3de00c62f903a890a7578dcdc0201a928859f0385d331de88ce060020b33"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_26.json",
+    "sha256": "b97b5a849bd12f1c21d85d9b5ff1a16bc53c090dfbc00554318be16cc01afa05"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_27.json",
+    "sha256": "484ed13fe6a2e42b25909d160d0106a93b06bd89306c5b3a3890c615754ff6e5"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_28.json",
+    "sha256": "12fab3401b77d1bb52561d7914ad6ee117d5b9f7691cfa58e6f074eada8daa4d"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_29.json",
+    "sha256": "6b2c983f09b7fbc82a2157ec3b3709fffd1ee6f286fb0ca4c37b4e6af79cb82f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_30.json",
+    "sha256": "e8e24e385c0e54600694e7f9f4c3dcd3756fcabc3654a89291c839749356509a"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_31.json",
+    "sha256": "c119c1840bbd286977b60a5b3086384cbc30486716f8a4b41a3af1760fe8ed14"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_32.json",
+    "sha256": "bfcd36e304a2e615c2ecf35b3d2a768047cb9f3f67f70238a1864db5bd78d610"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_33.json",
+    "sha256": "b802652b337ac56475c9642ebb56413539fe10a47fa109030733acfb555a2713"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_34.json",
+    "sha256": "a399a2a4f42f3f47f80bad0df732d6f4b67fb3d0fd616e45ff65b0017db39967"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_35.json",
+    "sha256": "52eadbad0acef6517a82a50fddcf26a132dcd08ab23b4e66c772ee078b4d6925"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_36.json",
+    "sha256": "3bcc7b889737522e25eb0842bc575fa325f1ee02f7b5a28570518a06f89d9fec"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_37.json",
+    "sha256": "7eae22b5c5f367d98e711bfb96568e66869fb297f63845131d99d3df597de84b"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_38.json",
+    "sha256": "4252259e087318b753ceef4eb71283cd532d52921a9e381ffcb89716bab1713f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_39.json",
+    "sha256": "6b2d75e12de84be41dfbe0ae9628876373604f036b0b93d8026fdd5a6bfea4b9"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_40.json",
+    "sha256": "4a77fdbd1d285b82f8ef508ed46c290ba0de2a6c8e6b797ef9bba17620556b6c"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_41.json",
+    "sha256": "8f5de5623be06733f45a2a0508288915cc428b5abe32104c562ef3b7eb9e7bdf"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_42.json",
+    "sha256": "a25244dd6d0a95d4d5a2e06e57410b5e7aee76007ebb750b01f5eeb0fc0056c6"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_43.json",
+    "sha256": "5dcedf41defedac951f7e4a506df157b43b6e4e515f6849b8328b7658591cf7f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_44.json",
+    "sha256": "0312d8c83287366cd5a24b7e19499309029551b1bfce5f5817a96f5d719ddc29"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_45.json",
+    "sha256": "c11389831fa44a613170ffa130fa80c142f7a137d20f44c4d26b5bd7aa23046f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_46.json",
+    "sha256": "0fd40af0b637531b2efd3e78c9550cba44b49a74476076d28f1c5359d3bd2c0b"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_47.json",
+    "sha256": "a5fae01ef3b9292af3350a15a5445049ed3893b8756ddbdc1cda2021fcce4bd0"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_48.json",
+    "sha256": "2981825ba7280f532f8c836598651dffec0b59b89218ec1af4b6fd12b8be0073"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_49.json",
+    "sha256": "1fec50f22cda476cd0ac6d91d23a18dfc3444efb4039a0e614f7136c8cad8c4f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_50.json",
+    "sha256": "a236d2e1a71afc19ca18cf7e7ecfff91430f9f97e9c0b1a4047d884d34dbd44c"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_51.json",
+    "sha256": "492c4c1a2d29640b3eec5b32d7c63d494afa44659b175d1abdf9df99ff89acb3"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_52.json",
+    "sha256": "45f3bf0979bf71866451eb247f865cfa6981fc336c975a06fb7ca677969d1172"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_53.json",
+    "sha256": "8df2a1b091981e61d3f2557345784bd3fa718a144d6e378a7d32ef66a13b4241"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_54.json",
+    "sha256": "bc0717113622181b4bf08b1f113bab0d89017fe6ed762b52f0f3bb7813176001"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_55.json",
+    "sha256": "27f1c15569f1db9beec5e2c997d9ac7981caf3eb40d2bd3ede34a44c6f548bc5"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_56.json",
+    "sha256": "fe83fa959aed75f78de2c2f2a6858b850d92a53953aa822dbe709f2a095e0ced"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_57.json",
+    "sha256": "6f640574d34d373c16495af862be8c3e6cf0952fa872aa54c68f4e022605250e"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_58.json",
+    "sha256": "0fea7d5d89f7f6e7274eec146a2a6d7cda708112a980b41d314b842b33dabbc5"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_59.json",
+    "sha256": "988951aeb3b7e95ec40ab982cf4c81796fc3226d43a64a84085ac6389ea0efac"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_60.json",
+    "sha256": "a07fcd646d87487e901e091632099071b5ab10beb073caf0668e15e0587d2145"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_61.json",
+    "sha256": "a260aad203d8dadecb1368439466f5f97f83a8ee0746de6d11bcd992b17b6199"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_62.json",
+    "sha256": "e2cb363a86db21053fb6e20977ee671a294f4bad8554e1b8fc9a3132c3014df2"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_63.json",
+    "sha256": "e2c6f9090d0fbf6d83533c5385e647f7957ffa78d8997f4f4de3af978fa23304"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_64.json",
+    "sha256": "b6f89132ee23f9441dc6623b7e61a58595fb4225acbd6875d053a6a91cf1d4ba"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_65.json",
+    "sha256": "e8a45b5f88ff3d743094a33eff2cb492ff6614eb7e355f1581cd10716a937b63"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_66.json",
+    "sha256": "866d0896ab417b85c2adc6178d3675cb3240c8a334210b82ee10ca94d486906c"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_67.json",
+    "sha256": "8e489de526ddda63257032bc93ec82aa40d80a1658bbd6d170b1844de3e213b6"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_68.json",
+    "sha256": "0f4e6dbb427c81dc8844659fc6d250523d91d3581bf5f0cf5ea04d8d8297f9af"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_69.json",
+    "sha256": "8c91b91b98af101d46574caa2b77a857834420eefbd85fd461a32c4c65487ad7"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_70.json",
+    "sha256": "9748551d2fc45f8883962ec6b2edc73dcf7dc159251132552de92d96e55a23f0"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_71.json",
+    "sha256": "4f0381575531d6e5b101d767f2152d0b6a88a61e54b632528bdfc6f801a341fe"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_72.json",
+    "sha256": "5f08a7408b1e0cc5767c8f644fa2b6868b731fc9cebe862b32787d55ec5ccec4"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_73.json",
+    "sha256": "1917f58ac0d51240c46a2defde45db64c7e77cd6ac2e908f35995d8032183727"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_74.json",
+    "sha256": "9825c37025132f47c48aa2c0e6b1c4dd4b0b83cefa993ced0efc1e3cb9dc6e87"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_75.json",
+    "sha256": "47e32f815452341c8743e95e39fb27d58cf750e9281952c676e5627fc9b2d4fd"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_76.json",
+    "sha256": "2bfa129ac8ff00b41495dea85a6c6d71d6bfc4ea2587e19cdace78bcb7e44274"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_77.json",
+    "sha256": "7a0a5dd82faad01bedda24d7159b38502cca954f2f590a854573f3e2583c214e"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_78.json",
+    "sha256": "96432f4b0754fbb7663ec3014e773d39464edcd7ff4f26fcb6aecc67ea65fbed"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_79.json",
+    "sha256": "2bedc8ebb3cef64bf8c244c6c6e2cb722c7a9a8358c5d6b2b1c9ad258bfde642"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_80.json",
+    "sha256": "46cb2eda351927df6f86f3194a2bf15f555fea3cde8b0b153cebda0d831ff213"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_81.json",
+    "sha256": "46aa31c1cb3cec59183b5532f836d55b4bd47d561a319a4c3ff130cbd606fbf2"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_82.json",
+    "sha256": "4f173cf0753eb6f2016d13f837d075355cca37db5963f0189e04471451e53d3c"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_83.json",
+    "sha256": "09610d5ae26a0ebcda09c789a33b9b397b16cfa0edc49ac79e1bace00d3a8cc9"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_84.json",
+    "sha256": "f28a49d1d36b16059b205aebe504af619f294416bcc65a6533b865c5c87ff0d1"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_85.json",
+    "sha256": "edd7b1064d5d63d68daa8f8c7ba899776f44cfeae4151e0dc91f130f80c812e1"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_86.json",
+    "sha256": "b93b7b211ff38042d3ac117d2055f3452d634d17410ad3632228236aa032a693"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_87.json",
+    "sha256": "aaca0e0bd278914dbf06766c8f64519384d9a1a871d99f8f493fca27083575d4"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_88.json",
+    "sha256": "293fabec199423646b277b0c9a4d6b4ac211799de3f9ce11f3e8b7ffb376a996"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_89.json",
+    "sha256": "4944fd4509c30e2f6971ce6ef5f900bd1f9aa2977c8cb3f08c858e1d8d1646c6"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_90.json",
+    "sha256": "3bfe397581e948a472b29efa368b7d9e9657bc34601010546ccb91ca21bd1ff5"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_91.json",
+    "sha256": "07069ea92ea9802a886d6faff02cb556531c4f16215b591d85b3be6e0104ec8f"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_92.json",
+    "sha256": "c7fb6b1c7e2b173a5e47bfe423af9c3d061482b021be7e452d54d3ecc3e4e5db"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_93.json",
+    "sha256": "728b59a6b70e4ad2b083895e3bf3df9daa56f1c7e1e07b18424d50438c84d681"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_94.json",
+    "sha256": "22a6ca18e15206b2ce3178df25c9fb3c1964fe9c843e7561c4fa68351ad37abc"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_95.json",
+    "sha256": "3a4626ab7c230b8c3685c4391eb2eab6ea3ece90962b2c624839e253caacdf4a"
+  },
+  {
+    "path": "analysis/work/runs/sp_attributes_2026_09_11_v1/intermediates/buildings_96.json",
+    "sha256": "cc69345440ec8d7dfc34eef02da014a5dd3f2265b92397f510cfad3c25056acc"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "city": "Chicago",
+    "product": "AGBH",
+    "unit_id": "CHI:13",
+    "row": 28,
+    "col": 241,
+    "x": -7309850.0,
+    "y": 5011450.0,
+    "source_value": 3.1725268363952637,
+    "source_archive": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_AGBH_E2018_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip"
+  },
+  {
+    "city": "Chicago",
+    "product": "ANBH",
+    "unit_id": "CHI:13",
+    "row": 28,
+    "col": 241,
+    "x": -7309850.0,
+    "y": 5011450.0,
+    "source_value": 9.463872909545898,
+    "source_archive": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100/GHS_BUILT_H_ANBH_E2018_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip"
+  },
+  {
+    "city": "Chicago",
+    "product": "VOLUME",
+    "unit_id": "CHI:13",
+    "row": 28,
+    "col": 241,
+    "x": -7309850.0,
+    "y": 5011450.0,
+    "source_value": 31770.0,
+    "source_archive": "analysis/data/shared/ghsl_public_2026_09_21/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100/GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0_R4_C11.zip"
+  }
+]

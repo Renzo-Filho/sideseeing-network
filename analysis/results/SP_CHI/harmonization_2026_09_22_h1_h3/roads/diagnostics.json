@@ -1,0 +1,30 @@
+[
+  {
+    "city": "Chicago",
+    "connector_references_outside_acquired_extent": 6,
+    "missing_connector_references_within_100m_city": 0,
+    "road_length_m": 7164454.289290696,
+    "boundary_ownership_delta_m": 1.30385160446167e-08,
+    "connector_candidates": 28389,
+    "enclosure_candidates": 22461,
+    "narrow_under_6m": 441,
+    "large_over_1km2": 36,
+    "extraction_edge": 1,
+    "M2_gate": "physical junction consolidation and divided-road arm equivalence not established; diagnostic only",
+    "M3_M4_gate": "planar enclosures retain carriageway slivers and barriers unresolved; diagnostic only"
+  },
+  {
+    "city": "SP",
+    "connector_references_outside_acquired_extent": 1,
+    "missing_connector_references_within_100m_city": 0,
+    "road_length_m": 17917142.712375987,
+    "boundary_ownership_delta_m": -1.043081283569336e-07,
+    "connector_candidates": 115240,
+    "enclosure_candidates": 61303,
+    "narrow_under_6m": 703,
+    "large_over_1km2": 95,
+    "extraction_edge": 4,
+    "M2_gate": "physical junction consolidation and divided-road arm equivalence not established; diagnostic only",
+    "M3_M4_gate": "planar enclosures retain carriageway slivers and barriers unresolved; diagnostic only"
+  }
+]

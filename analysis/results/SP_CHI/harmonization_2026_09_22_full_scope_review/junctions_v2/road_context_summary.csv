@@ -1,0 +1,9 @@
+unit_id,short_source_links,links_on_possible_ramp_or_grade,links_on_link_subclass,links_on_grade_flagged_segment
+CHI:24,94,2,1,1
+CHI:28,189,4,1,3
+CHI:30,9,1,1,0
+CHI:32,114,40,5,37
+CHI:76,45,5,4,1
+SP:10,51,7,7,0
+SP:30,453,10,9,1
+SP:35,187,5,5,0

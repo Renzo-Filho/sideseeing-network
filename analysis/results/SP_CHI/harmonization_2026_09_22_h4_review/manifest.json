@@ -1,0 +1,18 @@
+{
+  "source": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/tables/candidate_attributes_wide.parquet",
+  "source_sha256": "cd9331e9735fc30d0cc39e120197366d15cfb591ad49c819ecf83835b3eee0e7",
+  "script": "analysis/scripts/review_harmonization_h4.py",
+  "script_sha256": "ff25dabb60ecbee71a70a1aaee9cc3fe14ed19ffd8d51d6e20a392d7ca63d370",
+  "outputs": {
+    "README.md": "6c533a701fe8634d3ca73491fc4325dedba494f57615960ca0936522f8f6df78",
+    "built_form_correlations.csv": "8447cfe334b901f3ca45ee22247fe5562ff272ba8680da14759bf3f1c587a9b5",
+    "progress.json": "45bb53af5db60b65244f1ce4fd5d88cdcb8cc2d3b3f840436673c8b525308276",
+    "proposed_contract.json": "b39a3038cd6701ab16e44836018f823846a4a758c18102f49f90b378cade2747",
+    "proposed_matrix.csv": "f74133da1b9807cfbd8b076a697d89c7a89b949a817361316b102ac983f92f73",
+    "proposed_matrix.parquet": "9a8f17ee5b653b671335669bbfac2acc3bd52d83d94601165b484c2d6d5a28cd",
+    "raw_domain_review.csv": "53a360f0a5f8ce1c528daae179f86f2a2e5d8576a5c8cc1dc16f75cc63b27f0f",
+    "readiness_checks.json": "271b0bf52ef3d8550d816b0b03ddba9e1d4568facfc663c6597fda2e7d05bf13"
+  },
+  "fit_performed": false,
+  "scope_approval_pending": true
+}

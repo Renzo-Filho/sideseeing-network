@@ -1,0 +1,13 @@
+unit_id,corridor_width_m,all_candidate_count,excluded_corridor_majority,land_candidate_count,candidate_share_best_iou_ge_050,reference_share_best_iou_ge_050,status
+CHI:32,10,400,12,388,0.35309278350515466,0.39941690962099125,diagnostic_only_not_accepted_M3_M4
+CHI:32,20,388,10,378,0.36507936507936506,0.40233236151603496,diagnostic_only_not_accepted_M3_M4
+CHI:32,30,391,12,379,0.3641160949868074,0.40233236151603496,diagnostic_only_not_accepted_M3_M4
+CHI:28,10,1029,114,915,0.5322404371584699,0.5363436123348018,diagnostic_only_not_accepted_M3_M4
+CHI:28,20,959,102,857,0.5647607934655776,0.5330396475770925,diagnostic_only_not_accepted_M3_M4
+CHI:28,30,954,107,847,0.564344746162928,0.526431718061674,diagnostic_only_not_accepted_M3_M4
+SP:10,10,223,7,216,0.6481481481481481,0.9150326797385621,diagnostic_only_not_accepted_M3_M4
+SP:10,20,221,7,214,0.6495327102803738,0.9084967320261438,diagnostic_only_not_accepted_M3_M4
+SP:10,30,227,11,216,0.6435185185185185,0.9084967320261438,diagnostic_only_not_accepted_M3_M4
+SP:30,10,1538,4,1534,0.7920469361147328,0.8203916272788656,diagnostic_only_not_accepted_M3_M4
+SP:30,20,1538,6,1532,0.7930809399477807,0.8203916272788656,diagnostic_only_not_accepted_M3_M4
+SP:30,30,1543,11,1532,0.7930809399477807,0.8203916272788656,diagnostic_only_not_accepted_M3_M4

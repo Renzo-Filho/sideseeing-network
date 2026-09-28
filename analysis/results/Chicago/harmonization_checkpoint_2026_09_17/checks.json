@@ -1,0 +1,271 @@
+{
+  "passed": 50,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Chicago qualified IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago finite/nonnegative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago density reconstruction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago nine unit-sum shares",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago total length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago connector accounting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago not accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chicago separate class inventory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP qualified IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP finite/nonnegative",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP density reconstruction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP nine unit-sum shares",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP total length",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP connector accounting",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP not accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SP separate class inventory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ten unique footprint pilot/source rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "footprint fractions bounded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "union bounded by individual areas",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:24 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:24 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:24 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:28 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:28 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:28 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:30 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:30 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:30 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:32 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:32 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:32 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:76 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:76 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "overture CHI:76 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:24 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:24 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:24 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:28 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:28 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:28 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:30 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:30 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:30 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:32 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:32 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:32 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:76 untiled gross",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:76 untiled land",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "municipal_2015 CHI:76 denominators",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "functional numeric artifact integrity",
+      "passed": true,
+      "detail": [
+        {
+          "path": "README.md",
+          "expected": "becf92f55b1241233594e12c2e492dbd4862e20a7a045ea0df16ae0fdc617754",
+          "actual": "d8d2aed3e5c99b0b40d7124efd4d3d8127278ce0dc076d4765b2a436d526eb0b"
+        }
+      ]
+    }
+  ],
+  "functional_checksum_drift": [
+    {
+      "path": "README.md",
+      "expected": "becf92f55b1241233594e12c2e492dbd4862e20a7a045ea0df16ae0fdc617754",
+      "actual": "d8d2aed3e5c99b0b40d7124efd4d3d8127278ce0dc076d4765b2a436d526eb0b"
+    }
+  ],
+  "strict_cross_city_accepted": false,
+  "limits": "Accounting and untiled unions do not validate mapping completeness, access policy, topology, or common entities."
+}

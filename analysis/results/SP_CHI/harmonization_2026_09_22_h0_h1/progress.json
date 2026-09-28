@@ -1,0 +1,8 @@
+{
+  "status": "ghsl_pilot_complete_contract_partial",
+  "pilot_rows": 48,
+  "checks_passed": 56,
+  "strict_cross_city_accepted": false,
+  "model_fitted": false,
+  "running_jobs": []
+}

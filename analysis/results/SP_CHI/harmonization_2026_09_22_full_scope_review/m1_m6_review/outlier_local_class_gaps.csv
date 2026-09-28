@@ -1,0 +1,10 @@
+unit_id,local_class,local_length_m,local_near_overture_15m_fraction,local_unmatched_approx_m,sample_spacing_max_m,reference_role
+CHI:76,1,9480.463422050969,1.0,0.0,20,city_specific_class_diagnostic_not_common_input
+CHI:76,2,18754.371767579643,0.8513485861090978,2787.8638798863326,20,city_specific_class_diagnostic_not_common_input
+CHI:76,3,11060.702382920419,0.8412110055210927,1756.3178096143868,20,city_specific_class_diagnostic_not_common_input
+CHI:76,4,19953.062269251368,0.9435586673381304,1126.1774251618147,20,city_specific_class_diagnostic_not_common_input
+CHI:76,9,1603.1571800741217,1.0,0.0,20,city_specific_class_diagnostic_not_common_input
+CHI:76,99,141201.63892626387,0.20652178116303999,112040.42495207141,20,city_specific_class_diagnostic_not_common_input
+SP:52,COLETORA,2492.8586761587912,1.0,0.0,20,city_specific_class_diagnostic_not_common_input
+SP:52,LOCAL,209752.00801212242,0.5721101948821554,89750.74583138364,20,city_specific_class_diagnostic_not_common_input
+SP:52,nan,85771.8727617041,0.4689420441439843,45549.83541877285,20,city_specific_class_diagnostic_not_common_input

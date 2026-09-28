@@ -1,0 +1,114 @@
+[
+  {
+    "city": "Chicago",
+    "layer": "land",
+    "row": 1,
+    "before_area_m2": 9125177.034536967,
+    "after_area_m2": 9125177.035185957,
+    "reason": "Self-intersection[-7309014.40842169 5011410.60962349]"
+  },
+  {
+    "city": "Chicago",
+    "layer": "land",
+    "row": 9,
+    "before_area_m2": 11324342.839900222,
+    "after_area_m2": 11324342.839900771,
+    "reason": "Self-intersection[-7315432.04877597 5011764.85916149]"
+  },
+  {
+    "city": "Chicago",
+    "layer": "land",
+    "row": 12,
+    "before_area_m2": 6419722.921915321,
+    "after_area_m2": 6419722.921964468,
+    "reason": "Self-intersection[-7309042.29618 5011409.92957133]"
+  },
+  {
+    "city": "Chicago",
+    "layer": "land",
+    "row": 53,
+    "before_area_m2": 8182500.451750463,
+    "after_area_m2": 8182500.451914049,
+    "reason": "Self-intersection[-7326111.97345535 4972968.11085792]"
+  },
+  {
+    "city": "Chicago",
+    "layer": "land",
+    "row": 54,
+    "before_area_m2": 10816961.69652132,
+    "after_area_m2": 10816966.593113732,
+    "reason": "Self-intersection[-7317100.82916602 4974975.81414195]"
+  },
+  {
+    "city": "SP",
+    "layer": "districts",
+    "row": 42,
+    "before_area_m2": 36529695.46587629,
+    "after_area_m2": 36529695.465876356,
+    "reason": "Self-intersection[-4441593.09791768 -2897800.19877498]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 23,
+    "before_area_m2": 10384090.497762881,
+    "after_area_m2": 10384090.497762887,
+    "reason": "Self-intersection[-4415160.9585436 -2881285.67120629]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 30,
+    "before_area_m2": 8909094.40088566,
+    "after_area_m2": 8909094.40088565,
+    "reason": "Self-intersection[-4409117.44756628 -2880115.24035543]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 42,
+    "before_area_m2": 36442070.60477822,
+    "after_area_m2": 36442070.60477809,
+    "reason": "Self-intersection[-4441593.09791768 -2897800.19877498]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 45,
+    "before_area_m2": 25986678.560286965,
+    "after_area_m2": 25986869.53740062,
+    "reason": "Self-intersection[-4435254.88037572 -2893932.36215907]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 47,
+    "before_area_m2": 10213623.400780533,
+    "after_area_m2": 10213860.050299495,
+    "reason": "Self-intersection[-4436329.51252683 -2875306.34983954]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 51,
+    "before_area_m2": 207822069.58192024,
+    "after_area_m2": 207822069.58192018,
+    "reason": "Self-intersection[-4422372.14704453 -2929241.02728443]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 78,
+    "before_area_m2": 11791710.227163553,
+    "after_area_m2": 11791710.227163538,
+    "reason": "Self-intersection[-4435010.1092801 -2893091.09044808]"
+  },
+  {
+    "city": "SP",
+    "layer": "land",
+    "row": 95,
+    "before_area_m2": 8813647.507381039,
+    "after_area_m2": 8813647.507381067,
+    "reason": "Too few points in geometry component[-4409957.16920021 -2878090.14151475]"
+  }
+]

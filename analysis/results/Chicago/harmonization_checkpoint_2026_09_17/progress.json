@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-17",
+  "status": "bounded_milestone_complete_user_requested_early_stop",
+  "audit_passed": 50,
+  "audit_failed": 0,
+  "repository_tests_passed": 41,
+  "strict_cross_city_accepted": false,
+  "running_jobs": [],
+  "next_task": "U2 CMAP business-support sensitivity with whole-block outside support and flagged gross-area fallback",
+  "next_inputs": [
+    "analysis/data/Chicago/LUI_2023_view_332920193481040239.gpkg",
+    "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/blocks.parquet",
+    "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/block_district_pieces.parquet"
+  ],
+  "known_drift": "Only functional release README differs from historical release checksums; numeric artifacts unchanged",
+  "quota_snapshot_remaining_percent": {
+    "five_hour": 36,
+    "weekly": 29
+  }
+}

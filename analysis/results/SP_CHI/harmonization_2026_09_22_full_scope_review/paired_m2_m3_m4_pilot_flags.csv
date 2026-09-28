@@ -1,0 +1,9 @@
+unit_id,connector_candidates,connector_pairs_within_10m,connectors_in_near_pairs,enclosure_candidates,enclosures_touching_extraction_edge,enclosures_narrow_under_6m,enclosures_large_over_1km2
+CHI:24,885,61,87,719,0,55,0
+CHI:28,1078,54,98,952,0,25,0
+CHI:30,385,1,2,313,0,5,2
+CHI:32,389,71,84,455,0,125,0
+CHI:76,344,5,10,313,0,5,6
+SP:10,399,13,26,244,0,2,0
+SP:30,3596,198,328,1561,0,13,6
+SP:35,1513,52,71,926,0,12,0

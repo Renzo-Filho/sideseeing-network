@@ -1,0 +1,4 @@
+unit_id,municipal_quadra_count,municipal_quadra_median_area_m2,reference_role
+SP:10,153,12340.6214766351,city_specific_diagnostic_not_common_input
+SP:30,1481,7827.999673074913,city_specific_diagnostic_not_common_input
+SP:35,564,9376.495060779263,city_specific_diagnostic_not_common_input

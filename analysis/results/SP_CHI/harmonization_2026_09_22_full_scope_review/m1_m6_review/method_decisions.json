@@ -1,0 +1,35 @@
+{
+  "review_date": "2026-09-22",
+  "status": "method_locked_source_coverage_open",
+  "strict_cross_city_accepted": false,
+  "fit_authorized": false,
+  "families": {
+    "M1": {
+      "measurement": "clipped mapped eligible Overture street length / gross area",
+      "classes": [
+        "motorway",
+        "trunk",
+        "primary",
+        "secondary",
+        "tertiary",
+        "residential",
+        "living_street",
+        "pedestrian",
+        "unclassified",
+        "unknown"
+      ],
+      "links_retained": true,
+      "carriageways_retained": true,
+      "legal_access": "not asserted; rule presence reported",
+      "coverage_gate": "resolve O Hare airfield code 99 and Marsilac rural source gaps; assess other ratio outliers"
+    },
+    "M6": {
+      "measurement": "eligible M1 length shares by exact Overture class",
+      "unknown": "separate undetermined category; no imputation",
+      "unclassified": "known paved lower-order road; separate from unknown",
+      "ontology_gate": "assess class mapping and source coverage in extreme units"
+    }
+  },
+  "morphology_consistency": "future M2/M3/M4 road source must include pedestrian class or justify separate boundary universe",
+  "sealed_h1_h3_outputs_modified": false
+}

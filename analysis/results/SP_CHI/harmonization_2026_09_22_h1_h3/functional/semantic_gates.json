@@ -1,0 +1,7 @@
+{
+  "U3": "candidate common gross-area density; census2020 vs2022 retained; source-area allocation uncertainty",
+  "U4": "candidate comparable bus supply; valid local weekdays/weekends one week apart; SP frequency estimates vs CTA scheduled departures; no pedestrian routing or rail",
+  "U1": "withheld: CMAP polygon-area domain and SP cadastral-use entities do not yet share observed-use domain/ontology; no forced crosswalk",
+  "U2": "extended diagnostics only: RAIS/LODES coverage not equivalent; completed Chicago business allocation sensitivity must not imply universe equivalence",
+  "strict_cross_city_accepted": false
+}

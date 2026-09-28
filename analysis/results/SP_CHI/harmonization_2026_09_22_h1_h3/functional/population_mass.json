@@ -1,0 +1,12 @@
+{
+  "SP": {
+    "source_population": 11451999.0,
+    "inside": 11446054.473149512,
+    "outside": 5944.526850488037
+  },
+  "CHI": {
+    "whole_intersecting_block_population": 2782479.0,
+    "inside": 2745500.3508139285,
+    "outside": 36978.649186071474
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "passed": 13,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "published source hash",
+      "passed": true
+    },
+    {
+      "check": "exact173 unique IDs",
+      "passed": true
+    },
+    {
+      "check": "15 feature columns",
+      "passed": true
+    },
+    {
+      "check": "all selected values finite",
+      "passed": true
+    },
+    {
+      "check": "no selected missing",
+      "passed": true
+    },
+    {
+      "check": "composition sums1",
+      "passed": true
+    },
+    {
+      "check": "composition bounded",
+      "passed": true
+    },
+    {
+      "check": "B1 bounded",
+      "passed": true
+    },
+    {
+      "check": "M1 positive log domain",
+      "passed": true
+    },
+    {
+      "check": "BV nonnegative domain",
+      "passed": true
+    },
+    {
+      "check": "U3 positive log domain",
+      "passed": true
+    },
+    {
+      "check": "U4 nonnegative domain",
+      "passed": true
+    },
+    {
+      "check": "equal family weights sum1",
+      "passed": true
+    }
+  ],
+  "fit_performed": false,
+  "scope_approval_pending": true
+}

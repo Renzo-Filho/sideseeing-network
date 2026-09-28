@@ -1,0 +1,21 @@
+{
+  "classes": [
+    "motorway",
+    "trunk",
+    "primary",
+    "secondary",
+    "tertiary",
+    "residential",
+    "living_street",
+    "pedestrian",
+    "unclassified",
+    "unknown"
+  ],
+  "access": "physical mapped-street universe regardless of legal access; not public-access network; rule presence quantified, absent not presumed public",
+  "carriageways": "retained",
+  "ramps": "retained",
+  "service_alleys_driveways": "excluded",
+  "pedestrian": "designated pedestrian class included; footways/paths/steps excluded",
+  "unknown": "explicit category; never imputed local",
+  "M2_M3_M4": "diagnostic candidates only pending failed semantic gates"
+}
