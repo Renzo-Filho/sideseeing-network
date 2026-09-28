@@ -1,0 +1,8 @@
+unit_id,pin10,stratum,assessor_tax_pins,parcel_features,parcel_type_sequence,condo_rows,distinct_condo_tieback_keys,distinct_building_pin_count_values,building_pin_count_min,building_pin_count_max,physical_entity_count,interpretation
+CHI:11,1308208021,other,1,1,BaseParcel,0,0,0,,,,key_cardinality_and_geometry_only
+CHI:11,1308311047,condominium,16,1,CondominiumParcel,16,1,1,16.0,16.0,,key_cardinality_and_geometry_only
+CHI:32,1716238028,condominium,1286,1,CondominiumParcel,1286,5,1,1286.0,1286.0,,key_cardinality_and_geometry_only
+CHI:32,1710400048,condominium,950,1,CondominiumParcel,934,934,1,934.0,934.0,,key_cardinality_and_geometry_only
+CHI:32,1710318058,condominium,815,3,CondominiumParcel|NULL|NULL,815,1,1,815.0,815.0,,key_cardinality_and_geometry_only
+CHI:32,1709419111,commercial,1,2,BaseParcel|ElevatedParcel,0,0,0,,,,key_cardinality_and_geometry_only
+CHI:57,1903201036,exempt,1,2,BaseParcel|BaseParcel,0,0,0,,,,key_cardinality_and_geometry_only

@@ -1,0 +1,9 @@
+case_id,provisional_label,visual_rationale,reviewer
+C_M3_01,plausible physical block,Single commercial building and lot bounded by visible public streets; duplicated as C_M3_02.,single analyst visual review of Cook County 2025 orthophoto
+C_M3_02,plausible physical block,Same polygon as C_M3_01 under rail-ROW candidate mode.,single analyst visual review of Cook County 2025 orthophoto
+C_M3_03,exclude road median,Polygon encloses a landscaped traffic median within a public roadway.,single analyst visual review of Cook County 2025 orthophoto
+C_M3_04,exclude rail-edge sliver,Long narrow strip between rear lots and rail corridor; no street-enclosed block.,single analyst visual review of Cook County 2025 orthophoto
+C_M3_05,plausible physical block,Mixed residential/commercial block bounded by visible streets; duplicated as C_M3_06.,single analyst visual review of Cook County 2025 orthophoto
+C_M3_06,plausible physical block,Same polygon as C_M3_05 under rail-ROW candidate mode.,single analyst visual review of Cook County 2025 orthophoto
+C_M3_07,exclude industrial-yard fragment,"Interior storage-yard fragment, not street enclosed.",single analyst visual review of Cook County 2025 orthophoto
+C_M3_08,exclude traffic-island fragment,"Triangular roadway/park edge fragment, not a land block enclosed by streets.",single analyst visual review of Cook County 2025 orthophoto

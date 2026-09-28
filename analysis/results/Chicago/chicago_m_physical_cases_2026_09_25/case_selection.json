@@ -1,0 +1,117 @@
+{
+  "selection_policy": "Four M2 near pairs across three areas including the only unlinked pair; six M3/M4 contrasts across four areas. Selected before imagery review.",
+  "cases": [
+    {
+      "case_id": "M2_01",
+      "family": "M2",
+      "queue_id": "2e54fe9f-715c-483b-9bfa-ad80da121ad0",
+      "unit_id": "CHI:57",
+      "category": "near_with_short_source_link",
+      "x": 439867.8913432538,
+      "y": 4630403.040787164,
+      "half_width_m": 90
+    },
+    {
+      "case_id": "M2_02",
+      "family": "M2",
+      "queue_id": "09969acb-7fc6-428b-bb95-4043fd98996d",
+      "unit_id": "CHI:49",
+      "category": "near_with_short_source_link",
+      "x": 447706.7822215461,
+      "y": 4619271.549192236,
+      "half_width_m": 90
+    },
+    {
+      "case_id": "M2_03",
+      "family": "M2",
+      "queue_id": "27f91440-9e48-4367-aed0-ff8908b20dfa",
+      "unit_id": "CHI:11",
+      "category": "near_with_short_source_link",
+      "x": 437220.1933676872,
+      "y": 4646494.003736097,
+      "half_width_m": 90
+    },
+    {
+      "case_id": "M2_04",
+      "family": "M2",
+      "queue_id": "b0370867-8a9a-4499-ac65-b430e79796d2",
+      "unit_id": "CHI:11",
+      "category": "near_without_short_source_link",
+      "x": 436568.1344169172,
+      "y": 4647459.37602466,
+      "half_width_m": 90
+    },
+    {
+      "case_id": "M3_01",
+      "family": "M3/M4",
+      "queue_id": "CHI:57:all_streets:90",
+      "unit_id": "CHI:57",
+      "category": "all_streets",
+      "x": 439865.62674864766,
+      "y": 4630371.78976609,
+      "half_width_m": 90,
+      "area_m2": 9.80145914765458,
+      "reference_iou": 0.000132223102451
+    },
+    {
+      "case_id": "M3_02",
+      "family": "M3/M4",
+      "queue_id": "CHI:63:no_links:39",
+      "unit_id": "CHI:63",
+      "category": "no_links",
+      "x": 442663.894479619,
+      "y": 4626769.815295031,
+      "half_width_m": 153.66,
+      "area_m2": 41019.32756345941,
+      "reference_iou": 0.993020032367141
+    },
+    {
+      "case_id": "M3_03",
+      "family": "M3/M4",
+      "queue_id": "CHI:49:no_links_rail_row:27",
+      "unit_id": "CHI:49",
+      "category": "no_links_rail_row",
+      "x": 449246.8567810223,
+      "y": 4616252.548578318,
+      "half_width_m": 90,
+      "area_m2": 15.156542796805455,
+      "reference_iou": 0.0003788880544019
+    },
+    {
+      "case_id": "M3_04",
+      "family": "M3/M4",
+      "queue_id": "CHI:11:all_streets:14",
+      "unit_id": "CHI:11",
+      "category": "all_streets",
+      "x": 436259.78470622783,
+      "y": 4646876.0135256015,
+      "half_width_m": 200,
+      "area_m2": 34578.21244953909,
+      "reference_iou": 0.9912860296561272
+    },
+    {
+      "case_id": "M3_05",
+      "family": "M3/M4",
+      "queue_id": "CHI:11:no_links:22",
+      "unit_id": "CHI:11",
+      "category": "no_links",
+      "x": 437220.22034228756,
+      "y": 4646490.494698055,
+      "half_width_m": 90,
+      "area_m2": 50.36889955160851,
+      "reference_iou": 0.0019229633239511
+    },
+    {
+      "case_id": "M3_06",
+      "family": "M3/M4",
+      "queue_id": "CHI:49:no_links:285",
+      "unit_id": "CHI:49",
+      "category": "no_links",
+      "x": 449319.5668699477,
+      "y": 4619061.908753694,
+      "half_width_m": 90,
+      "area_m2": 568.2141949314635,
+      "reference_iou": 0.0007942797641155
+    }
+  ]
+}

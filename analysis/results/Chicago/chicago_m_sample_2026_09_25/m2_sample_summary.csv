@@ -1,0 +1,5 @@
+unit_id,candidate_connectors,near_pairs_10m,near_pairs_with_short_source_link,short_source_links_20m,linked_components,components_over_35m,status
+CHI:57,172,2,2,9,6,1,diagnostic_only_no_physical_arm_labels
+CHI:63,268,0,0,1,1,0,diagnostic_only_no_physical_arm_labels
+CHI:49,651,5,5,33,28,0,diagnostic_only_no_physical_arm_labels
+CHI:11,377,6,5,8,8,0,diagnostic_only_no_physical_arm_labels

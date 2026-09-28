@@ -1,0 +1,57 @@
+{
+  "osm_tiles": 30,
+  "labeled_block_case_rows": 29,
+  "source_accuracy_estimate": false,
+  "reason": "Small purposive cases, one visual reviewer; challenge cases deliberately selected for low Census overlap.",
+  "cohorts": {
+    "previously_labeled": {
+      "case_rows": 13,
+      "unique_polygons": 13,
+      "visual_plausible": 5,
+      "visual_exclude": 8,
+      "old_rule_agreements": 12,
+      "new_rule_agreements": 13,
+      "new_false_retained": [],
+      "boundary_buffer_sensitivity": {
+        "3": 13,
+        "5": 13,
+        "8": 13,
+        "12": 13
+      }
+    },
+    "new_source_blind": {
+      "case_rows": 8,
+      "unique_polygons": 8,
+      "visual_plausible": 8,
+      "visual_exclude": 0,
+      "old_rule_agreements": 8,
+      "new_rule_agreements": 8,
+      "new_false_retained": [],
+      "boundary_buffer_sensitivity": {
+        "3": 8,
+        "5": 8,
+        "8": 8,
+        "12": 8
+      }
+    },
+    "low_census_challenge": {
+      "case_rows": 8,
+      "unique_polygons": 6,
+      "visual_plausible": 2,
+      "visual_exclude": 4,
+      "old_rule_agreements": 2,
+      "new_rule_agreements": 3,
+      "new_false_retained": [
+        "C_M3_03",
+        "C_M3_04",
+        "C_M3_08"
+      ],
+      "boundary_buffer_sensitivity": {
+        "3": 4,
+        "5": 3,
+        "8": 3,
+        "12": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "official_source_notes": "Public service metadata and seven PIN10 attributes only. Published description mentions underlying PIN/Ref_PIN/condo tables; this inspection checks what these REST services actually expose.",
+  "parcel_2024_service_tables": [],
+  "parcel_2024_layer_relationships": [],
+  "parcel_2024_layer_has_ref_pin": false,
+  "parcel_2024_layer_has_polytype": false,
+  "parcel_2024_layer_has_pin10": true,
+  "parcel_2024_layer_has_name_pin14": true,
+  "hosted_2022_service_tables": [],
+  "public_query_count": 11,
+  "receipts": {
+    "parcel_2024_service": {
+      "url": "https://gis.cookcountyil.gov/traditional/rest/services/parcelHistorical/MapServer?f=json",
+      "sha256": "c75db12c938ca81c424b342e20d3a4fd6a9de59ab5b116acf78592b645a19efc",
+      "cached_path": "analysis/work/chicago_m_holdout_2026_09_25/cook_parent_publication/parcel_2024_service.json"
+    },
+    "parcel_2024_layer": {
+      "url": "https://gis.cookcountyil.gov/traditional/rest/services/parcelHistorical/MapServer/2024?f=json",
+      "sha256": "d1027987a91ce4a11af4f962e8b54f0be8177a2ccce10a2654755afa7df7baff",
+      "cached_path": "analysis/work/chicago_m_holdout_2026_09_25/cook_parent_publication/parcel_2024_layer.json"
+    },
+    "hosted_2022_service": {
+      "url": "https://gis.cookcountyil.gov/hosting/rest/services/Hosted/Parcel_2022/FeatureServer?f=json",
+      "sha256": "c1b01c15ed8e953b0eb61bb73e33116f63ab0551ce1b317a0f643e65e5ac74c8",
+      "cached_path": "analysis/work/chicago_m_holdout_2026_09_25/cook_parent_publication/hosted_2022_service.json"
+    },
+    "parcel_2024_seven_keys": {
+      "url": "https://gis.cookcountyil.gov/traditional/rest/services/parcelHistorical/MapServer/2024/query?where=PIN10+IN+%28%271308208021%27%2C%271308311047%27%2C%271716238028%27%2C%271710400048%27%2C%271710318058%27%2C%271709419111%27%2C%271903201036%27%29&outFields=OBJECTID%2CName%2CPIN10%2CPARCELTYPE&returnGeometry=false&f=json",
+      "sha256": "5ca3da9b8941f49c97fcb0e1e7d5eba3b0a90d6d4ca1bd6309eac6c65b9b723c",
+      "cached_path": "analysis/work/chicago_m_holdout_2026_09_25/cook_parent_publication/parcel_2024_seven_keys.json"
+    }
+  }
+}

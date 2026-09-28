@@ -1,0 +1,5 @@
+unit_id,district_name,m1_quartile,street_density_municipal_km_km2,selection
+CHI:57,ARCHER HEIGHTS,0,9.37753991191127,one seeded draw per full-cohort M1 quartile; prior pilot units excluded
+CHI:63,GAGE PARK,1,12.339930502380591,one seeded draw per full-cohort M1 quartile; prior pilot units excluded
+CHI:49,ROSELAND,2,13.726010085847395,one seeded draw per full-cohort M1 quartile; prior pilot units excluded
+CHI:11,JEFFERSON PARK,3,14.44717111832642,one seeded draw per full-cohort M1 quartile; prior pilot units excluded

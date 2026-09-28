@@ -1,0 +1,14 @@
+case_id,family,prediction,provisional_label,physical_arms,confidence,source_a_arms,source_b_arms,linked_pair_arm_formula,formula_matches_tentative_visual_arms,observed_class,rule_agrees
+H_M2_01,M2,merge_if_same_grade_and_one_visible_crossing,one_surface_junction_tentative,5_tentative,medium,3.0,4.0,5.0,True,,
+H_M2_02,M2,merge_if_same_grade_and_one_visible_crossing,one_surface_junction,4,medium,3.0,3.0,4.0,True,,
+H_M2_03,M2,merge_if_same_grade_and_one_visible_crossing,one_surface_junction_tentative,5_tentative,medium,4.0,3.0,5.0,True,,
+H_M2_04,M2,one_three_arm_junction,one_surface_T_junction,3,high,,,,,,
+H_M2_05,M2,one_three_arm_junction,one_surface_T_junction,3,medium,,,,,,
+H_M2_06,M2,do_not_merge_distinct_levels,two_grade_separated_junctions,unresolved,high,,,,,,
+H_M3_01,M3/M4,exclude,exclude_interchange_island,,high,,,,,exclude,True
+H_M3_02,M3/M4,retain,plausible_street_bounded_block,,medium,,,,,retain,True
+H_M3_03,M3/M4,exclude,exclude_rail_crossing_sliver,,high,,,,,exclude,True
+H_M3_04,M3/M4,retain,exclude_industrial_yard_fragment,,high,,,,,exclude,False
+H_M3_05,M3/M4,retain,plausible_street_bounded_block,,medium,,,,,retain,True
+H_M3_06,M3/M4,exclude,exclude_rail_edge_turn_fragment,,high,,,,,exclude,True
+H_M3_07,M3/M4,retain,plausible_street_bounded_block,,medium,,,,,retain,True

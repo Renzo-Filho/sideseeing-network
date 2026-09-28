@@ -1,0 +1,152 @@
+[
+  {
+    "case_id": "M3_01",
+    "bytes": 1005511,
+    "sha256": "f3a131e1b64bfe8ac7fb8090fd1d3ad8f525bc8968fd9b4b27a674aa2ec1b0bc"
+  },
+  {
+    "case_id": "M3_02",
+    "bytes": 636164,
+    "sha256": "20450fa7b34c061717a3ba8e6b43e3c91ef91d326d951a46cd0e79edaa2812df"
+  },
+  {
+    "case_id": "M3_03",
+    "bytes": 337301,
+    "sha256": "9bc5d0c1ef794094aa3c433786acf2238f4651e13c188926e3d39059ee80f89a"
+  },
+  {
+    "case_id": "M3_04",
+    "bytes": 1052192,
+    "sha256": "d7f766a968ea0a7b18c4e676385064209176c758c639de84355113add5438947"
+  },
+  {
+    "case_id": "M3_05",
+    "bytes": 422624,
+    "sha256": "b1d03f92662fabc09cca586c4503433f65f4cfe64b2cff2c1331f85e01e08bd6"
+  },
+  {
+    "case_id": "M3_06",
+    "bytes": 672365,
+    "sha256": "78f12b904f36563d4ad93796843c73f1318af4e9260ad7246dff560bf146fd4d"
+  },
+  {
+    "case_id": "H_M2_06",
+    "bytes": 1263885,
+    "sha256": "e50047c34fa43735ae1d3124158a855e8f1264dfaac757c6e6c319eb884abc1d"
+  },
+  {
+    "case_id": "H_M3_01",
+    "bytes": 1006302,
+    "sha256": "b43aaadb20c99ac38b0cd39061c651b252bc1fde8e6f84dfde1d9ddbdcf279aa"
+  },
+  {
+    "case_id": "H_M3_02",
+    "bytes": 413160,
+    "sha256": "de078641932d199af12fe792a36400235f456278bb3ba541b1e02e7868cc31b9"
+  },
+  {
+    "case_id": "H_M3_03",
+    "bytes": 295095,
+    "sha256": "dde50b1859db4d6d7dc7c38d683aa321d663092f68e8284bd82647d6630359e3"
+  },
+  {
+    "case_id": "H_M3_04",
+    "bytes": 65864,
+    "sha256": "9d72a07c02c6035bb6f7d817d47d626877f1383d7c2d0c8c3e0ed17898913393"
+  },
+  {
+    "case_id": "H_M3_05",
+    "bytes": 765748,
+    "sha256": "79cfccd338cce9edb338acfdda0bf0507340b1b3701cdfb091bffa7e36b2891d"
+  },
+  {
+    "case_id": "H_M3_06",
+    "bytes": 1246376,
+    "sha256": "4e209c8855a9bbe22860b0306b324b7778dce26c110dcffc0328cd4456495a7c"
+  },
+  {
+    "case_id": "H_M3_07",
+    "bytes": 584516,
+    "sha256": "b7d38e8a9f0f7182f6e9ab8b602f1ee7ed4d197e1b30805da061bf59cd791551"
+  },
+  {
+    "case_id": "V_M3_01",
+    "bytes": 856719,
+    "sha256": "1de27509e47d5a0ae691300bc5357f0f49edbb90e4cf4cef2b849461499ab809"
+  },
+  {
+    "case_id": "V_M3_02",
+    "bytes": 1578358,
+    "sha256": "17f98ffb3e3d5db0f2f904d69814a51413596d216d0348ca84e52e4732ffa2c9"
+  },
+  {
+    "case_id": "V_M3_03",
+    "bytes": 952280,
+    "sha256": "7a25860f81ce58d056ef65893430105d42f628dffc39a0ae52c306790ea169e0"
+  },
+  {
+    "case_id": "V_M3_04",
+    "bytes": 795962,
+    "sha256": "8892aba17b1be8bd8949fb4728b48d75027c2fd6d24495a3f110fb631ac0b100"
+  },
+  {
+    "case_id": "V_M3_05",
+    "bytes": 782564,
+    "sha256": "26183675828ce964a4a3e385f2c8099c74aa402acebd6d252d5eb4908deb5f4d"
+  },
+  {
+    "case_id": "V_M3_06",
+    "bytes": 661842,
+    "sha256": "49ea7601be7d5a81ea15844664c6f25ab1eb13935c551e5c37f10447be906f43"
+  },
+  {
+    "case_id": "V_M3_07",
+    "bytes": 767607,
+    "sha256": "0ca63dd3a75fc3b25e049bc314bf187f41602ce18028bbcaf1f489e9864fccb9"
+  },
+  {
+    "case_id": "V_M3_08",
+    "bytes": 817620,
+    "sha256": "8fcbc0b629646a4869f708d113df399193dccd1e99180766f0a1a1b7bbf02497"
+  },
+  {
+    "case_id": "C_M3_01",
+    "bytes": 864933,
+    "sha256": "8195afc8036635703754951ad26ebd4a84a58b7cb832c481c5daea714096dab4"
+  },
+  {
+    "case_id": "C_M3_02",
+    "bytes": 864933,
+    "sha256": "99bb4c33b5de54eddb36f0160d5d06dd20172abbdde0a0225b787c019f2a0941"
+  },
+  {
+    "case_id": "C_M3_03",
+    "bytes": 1631185,
+    "sha256": "927a4e6fe4e05e57cdc5aac934288375e4aa0b8ff9a96d414001b6a9b6cb238a"
+  },
+  {
+    "case_id": "C_M3_04",
+    "bytes": 965717,
+    "sha256": "43f4d374cf283fefee30f053c6dc339bc640ff89f4db7a345facd39dc798dd82"
+  },
+  {
+    "case_id": "C_M3_05",
+    "bytes": 530992,
+    "sha256": "cd203f5266914faa5dad356fe2a26ad7ac5fec016f983d5757cdc22fd305be90"
+  },
+  {
+    "case_id": "C_M3_06",
+    "bytes": 530992,
+    "sha256": "8afc194f7347bf3ea40c0c3433037d927959423d36e2e7ab0896a79cc4870c08"
+  },
+  {
+    "case_id": "C_M3_07",
+    "bytes": 65864,
+    "sha256": "a7ec1f18d029b3355773398657a3026be384cf7289ddbf3440b5724e161be332"
+  },
+  {
+    "case_id": "C_M3_08",
+    "bytes": 338439,
+    "sha256": "011bdfbdbd6f2ce42ac921eaa222b61bf3d9d60a66943a2fe3168899486ac22a"
+  }
+]

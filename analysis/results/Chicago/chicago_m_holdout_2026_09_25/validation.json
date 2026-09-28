@@ -1,0 +1,12 @@
+{
+  "case_count": 13,
+  "image_hashes_verified": 26,
+  "block_cases": 7,
+  "block_simple_rule_agreements": 6,
+  "block_false_retain_case_ids": [
+    "H_M3_04"
+  ],
+  "linked_near_pair_cases": 3,
+  "tentative_arm_formula_matches": 3,
+  "scope": "purposive held-out queue contrasts; not an error-rate estimate or accepted method"
+}

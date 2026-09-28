@@ -1,0 +1,11 @@
+case_id,family,provisional_label,confidence,visible_evidence,important_limit
+M2_01,M2,complex_junction_unresolved,low,"Two markers lie in a large paved interchange with multiple ramps and a road over rail; marked roads have bridge flags.","Image alone cannot distinguish all navigable arms or levels; linked pair is not accepted as one junction."
+M2_02,M2,one_visible_surface_junction,medium,"Two markers fall within one ordinary four-way paved crossing on residential streets.","One reviewer; source connector relation and actual turn permissions still require checking."
+M2_03,M2,one_visible_surface_junction,medium,"Two markers fall within the same local street crossing immediately beside a rail corridor and expressway.","Nearby grade-separated infrastructure must not be treated as incident road arms."
+M2_04,M2,one_visible_surface_junction,medium,"Two unlinked markers fall within one diagonal residential street crossing.","Visual proximity supports a merge hypothesis; one image cannot establish every legal movement."
+M3_01,M3/M4,exclude_paved_intersection_fragment,high,"The 9.8 m2 polygon lies inside broad paved interchange space.","Reject under the provisional land-block definition."
+M3_02,M3/M4,plausible_street_bounded_block,medium,"The approximately 41019 m2 school grounds are enclosed by surrounding streets.","Internal drive and campus use do not decide where a different block ontology would split it."
+M3_03,M3/M4,exclude_rail_edge_fragment,high,"The 15.2 m2 rail-ROW-mode polygon is a tiny fragment by buildings and rail tracks.","An imagery label is not a surveyed rail boundary."
+M3_04,M3/M4,plausible_street_bounded_block,medium,"The approximately 34578 m2 residential land unit is bounded by visible streets.","End boundaries and alleys require explicit inclusion rules."
+M3_05,M3/M4,exclude_paved_crossing_fragment,high,"The 50.4 m2 polygon lies in local road pavement at a crossing next to rail and expressway.","Reject under the provisional land-block definition."
+M3_06,M3/M4,exclude_traffic_island_from_neighborhood_blocks,medium,"The 568.2 m2 polygon follows a curved turn lane and landscaped traffic island.","It is road-bounded land; whether to include it depends on the stated block ontology."

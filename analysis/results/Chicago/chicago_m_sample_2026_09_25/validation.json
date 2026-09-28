@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": {
+    "quartile_scope": true,
+    "m1_m6_reconciliation": true,
+    "m2_fixture_scope": true,
+    "m3_m4_geometry_and_scope": true,
+    "m7_bounded_source_cardinality": true
+  },
+  "sample_units": [
+    "CHI:57",
+    "CHI:63",
+    "CHI:49",
+    "CHI:11"
+  ],
+  "m2_pairs_for_review": 13,
+  "m3_m4_polygons_for_review": 85,
+  "m7_cook_pin10_groups_for_review": 62,
+  "m7_dupage_rows_for_review": 10
+}

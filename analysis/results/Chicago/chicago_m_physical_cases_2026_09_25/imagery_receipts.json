@@ -1,0 +1,289 @@
+{
+  "run_utc": "2026-09-25T22:03:46.242319+00:00",
+  "epsg": 26916,
+  "source_year": 2025,
+  "cases": [
+    {
+      "case_id": "M2_01",
+      "family": "M2",
+      "queue_id": "2e54fe9f-715c-483b-9bfa-ad80da121ad0",
+      "unit_id": "CHI:57",
+      "category": "near_with_short_source_link",
+      "x": 439867.8913432538,
+      "y": 4630403.040787164,
+      "half_width_m": 90,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.72515045%2C41.82240995%2C-87.72300142%2C41.82404474&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.72515045%2C41.82240995%2C-87.72300142%2C41.82404474&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.72515045,
+        "ymin": 41.82215283,
+        "xmax": -87.72300142,
+        "ymax": 41.82430186,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "c8e5e9a44a8a92f8c38f4523fa9a8d4770714f95debc1bcd6f3f34d023e12ff0",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_01_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_01_overlay.png",
+      "overlay_sha256": "b40af9a9fd78538e5c5ac42f86bf3b10b04d46fd4e9fab02f5a25e8b9d4acc0d"
+    },
+    {
+      "case_id": "M2_02",
+      "family": "M2",
+      "queue_id": "09969acb-7fc6-428b-bb95-4043fd98996d",
+      "unit_id": "CHI:49",
+      "category": "near_with_short_source_link",
+      "x": 447706.7822215461,
+      "y": 4619271.549192236,
+      "half_width_m": 90,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.62978472%2C41.72271148%2C-87.62763655%2C41.72434451&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.62978472%2C41.72271148%2C-87.62763655%2C41.72434451&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.62978472,
+        "ymin": 41.72245391,
+        "xmax": -87.62763655,
+        "ymax": 41.72460208,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "cd092844fe771597b16b4fcf308fb0a684aa4d87dd0f9705b79df28b66b19077",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_02_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_02_overlay.png",
+      "overlay_sha256": "0c1ec6d8b534139d44b06ce26dcf7e4e93ff8a988d62db60590453bb1a12d8da"
+    },
+    {
+      "case_id": "M2_03",
+      "family": "M2",
+      "queue_id": "27f91440-9e48-4367-aed0-ff8908b20dfa",
+      "unit_id": "CHI:11",
+      "category": "near_with_short_source_link",
+      "x": 437220.1933676872,
+      "y": 4646494.003736097,
+      "half_width_m": 90,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.75874277%2C41.96712019%2C-87.75658981%2C41.96875560&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.75874277%2C41.96712019%2C-87.75658981%2C41.96875560&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.75874277,
+        "ymin": 41.966861415000004,
+        "xmax": -87.75658981,
+        "ymax": 41.96901437500001,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "3b4266274bc1f7b566c92f80f202c3d16b72a6da9ac4e4636ef541e153525030",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_03_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_03_overlay.png",
+      "overlay_sha256": "c12da4f75a7df79db3bc493e382bd573100800819ba60bb3257f6f58d0a1e365"
+    },
+    {
+      "case_id": "M2_04",
+      "family": "M2",
+      "queue_id": "b0370867-8a9a-4499-ac65-b430e79796d2",
+      "unit_id": "CHI:11",
+      "category": "near_without_short_source_link",
+      "x": 436568.1344169172,
+      "y": 4647459.37602466,
+      "half_width_m": 90,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.76671571%2C41.97576197%2C-87.76456267%2C41.97739752&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.76671571%2C41.97576197%2C-87.76456267%2C41.97739752&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.76671571,
+        "ymin": 41.975503225,
+        "xmax": -87.76456267,
+        "ymax": 41.97765626499999,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "96939fc0b7acb2a2c8200e9a71802787e609ef28cd73128d6da921b68f7e66bb",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_04_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M2_04_overlay.png",
+      "overlay_sha256": "e0e902fbfbaf2a3157d5fdd9b98c8d4fb384dca4409e55cd3b0d736df10ce3a2"
+    },
+    {
+      "case_id": "M3_01",
+      "family": "M3/M4",
+      "queue_id": "CHI:57:all_streets:90",
+      "unit_id": "CHI:57",
+      "category": "all_streets",
+      "x": 439865.62674864766,
+      "y": 4630371.78976609,
+      "half_width_m": 90,
+      "area_m2": 9.80145914765458,
+      "reference_iou": 0.000132223102451,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.72517454%2C41.82212833%2C-87.72302553%2C41.82376311&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.72517454%2C41.82212833%2C-87.72302553%2C41.82376311&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.72517453999998,
+        "ymin": 41.821871215,
+        "xmax": -87.72302552999999,
+        "ymax": 41.824020225,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "54abd6764a6d75721638d67930baf402b9178fffd699d2663b59c704e6298bc8",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_01_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_01_overlay.png",
+      "overlay_sha256": "cb4b7d3311a724aed0efb63be29ceb6817c670cef8c28cbab4455c7a72cc2d19"
+    },
+    {
+      "case_id": "M3_02",
+      "family": "M3/M4",
+      "queue_id": "CHI:63:no_links:39",
+      "unit_id": "CHI:63",
+      "category": "no_links",
+      "x": 442663.894479619,
+      "y": 4626769.815295031,
+      "half_width_m": 153.66,
+      "area_m2": 41019.32756345941,
+      "reference_iou": 0.993020032367141,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.69189361%2C41.78931762%2C-87.68822486%2C41.79210767&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.69189361%2C41.78931762%2C-87.68822486%2C41.79210767&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.69189361000001,
+        "ymin": 41.788878270000005,
+        "xmax": -87.68822486000002,
+        "ymax": 41.79254701999999,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "cb323d9ad1a9f08375ad5b284ae1ed72b496081b7af64e746ee326445debe7a8",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_02_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_02_overlay.png",
+      "overlay_sha256": "d17a638ea437c5627f2212414b0e4a55d76bc8765f54634d743cec8c5a978b76"
+    },
+    {
+      "case_id": "M3_03",
+      "family": "M3/M4",
+      "queue_id": "CHI:49:no_links_rail_row:27",
+      "unit_id": "CHI:49",
+      "category": "no_links_rail_row",
+      "x": 449246.8567810223,
+      "y": 4616252.548578318,
+      "half_width_m": 90,
+      "area_m2": 15.156542796805455,
+      "reference_iou": 0.0003788880544019,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.61101245%2C41.69562050%2C-87.60886469%2C41.69725317&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.61101245%2C41.69562050%2C-87.60886469%2C41.69725317&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.61101245,
+        "ymin": 41.695362955,
+        "xmax": -87.60886469,
+        "ymax": 41.697510715,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "c09d281491f00daa1ec20b960aca63cc4152f8798681970b6ee5f82ea9663be2",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_03_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_03_overlay.png",
+      "overlay_sha256": "08276ec5f7a76bc897e5a6b68dd697e4a959344a9539b39b582a225cb24926e1"
+    },
+    {
+      "case_id": "M3_04",
+      "family": "M3/M4",
+      "queue_id": "CHI:11:all_streets:14",
+      "unit_id": "CHI:11",
+      "category": "all_streets",
+      "x": 436259.78470622783,
+      "y": 4646876.0135256015,
+      "half_width_m": 200,
+      "area_m2": 34578.21244953909,
+      "reference_iou": 0.9912860296561272,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.77168941%2C41.96948379%2C-87.76690547%2C41.97311850&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.77168941%2C41.96948379%2C-87.76690547%2C41.97311850&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.77168941,
+        "ymin": 41.968909175,
+        "xmax": -87.76690547,
+        "ymax": 41.973693114999996,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "eea9774fbd21e719a75c85c02d96b61d4c8840ecaff510cfd16adf9adc2d4c1b",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_04_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_04_overlay.png",
+      "overlay_sha256": "05a20a270ba059c6dd69c685ee547c587db8103c863eab5a5e4c08557bb457a5"
+    },
+    {
+      "case_id": "M3_05",
+      "family": "M3/M4",
+      "queue_id": "CHI:11:no_links:22",
+      "unit_id": "CHI:11",
+      "category": "no_links",
+      "x": 437220.22034228756,
+      "y": 4646490.494698055,
+      "half_width_m": 90,
+      "area_m2": 50.36889955160851,
+      "reference_iou": 0.0019229633239511,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.75874207%2C41.96708859%2C-87.75658911%2C41.96872400&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.75874207%2C41.96708859%2C-87.75658911%2C41.96872400&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.75874206999998,
+        "ymin": 41.966829815000004,
+        "xmax": -87.75658910999998,
+        "ymax": 41.96898277500001,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "e8ca34fa563399fdae7e9daec1de916ff799d4956ec682ebf418dca3401a1085",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_05_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_05_overlay.png",
+      "overlay_sha256": "ce801cabdd393b83f50ecd5157158950d7f9caaf60e5ccfa479ec23bccc4dff8"
+    },
+    {
+      "case_id": "M3_06",
+      "family": "M3/M4",
+      "queue_id": "CHI:49:no_links:285",
+      "unit_id": "CHI:49",
+      "category": "no_links",
+      "x": 449319.5668699477,
+      "y": 4619061.908753694,
+      "half_width_m": 90,
+      "area_m2": 568.2141949314635,
+      "reference_iou": 0.0007942797641155,
+      "source": "Cook County 2025 orthophoto ImageServer",
+      "url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.61037800%2C41.72092797%2C-87.60822939%2C41.72256063&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=image",
+      "metadata_url": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=-87.61037800%2C41.72092797%2C-87.60822939%2C41.72256063&bboxSR=4326&imageSR=4326&size=800%2C800&format=jpg&f=json",
+      "returned_extent": {
+        "xmin": -87.610378,
+        "ymin": 41.720669995,
+        "xmax": -87.60822939,
+        "ymax": 41.72281860499999,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "image_sha256": "8b35f08ee996212a043978c337952f2031e8628408bcc758e85876adf7dbd299",
+      "raw_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_06_raw.jpg",
+      "overlay_path": "analysis/work/chicago_m_physical_cases_2026_09_25/M3_06_overlay.png",
+      "overlay_sha256": "48cc6da8a4e7fcce80b08db77d764d7fc4d30afededcce477f7126c1f8772086"
+    }
+  ]
+}
