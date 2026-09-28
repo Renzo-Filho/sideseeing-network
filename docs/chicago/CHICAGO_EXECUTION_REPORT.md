@@ -1,5 +1,11 @@
 # Chicago construction report and continuation handoff
 
+**Scope update — 25 September 2026:** M2 is deferred from the planned Chicago model and future SP–Chicago common score. Its null field and endpoint audit below remain historical diagnostics, not a pending construction gate. See the [current model status](../MODEL_STATUS.md) and [decision record](../OPEN_DISCUSSION.md). The prior local release and its files remain unchanged.
+
+## September 17 checkpoint
+
+The [independent harmonization audit](../../analysis/results/Chicago/harmonization_checkpoint_2026_09_17/README.md) passed **50 checks**, with **41 current repository tests** passing. Both cities’ road candidates reconcile, and all five Chicago footprint pilots for both sources agree with untiled union reconstruction. Source equivalence, access/topology and common-feature acceptance remain pending. The rewritten [handoff](../operations/NEXT_AGENT_PROMPT.md) reflects the current `docs/` layout and completed acquisitions. Next: CMAP business-support employment sensitivity with whole-block outside accounting. Work stopped at this checkpoint per the user’s quota request.
+
 ## September 16 continuation: new data processed
 
 The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.

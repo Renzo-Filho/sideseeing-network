@@ -1,32 +1,39 @@
 # São Paulo–Chicago attribute harmonization plan
 
-## September 16 continuation: new data processed
+**Current scope review — 25 September 2026:** the user reopened the earlier [six-family proposal](SIX_FAMILY_PLAN_REASSESSMENT.md) and has now **deferred M2 from both the Chicago and future cross-city models**. The [B1/BV decision](B1_BV_HARMONIZATION_DECISION.md) confirms feasible paired methods and retains both families in the planned model scope, subject to independent source-accuracy checks. The [model status](../MODEL_STATUS.md) tracks the remaining scope; the [original ledger](CHICAGO_13_FAMILY_COMPLETION_LEDGER.md) and [v2 contract](../../analysis/config/sp_chicago_harmonization_v2_full_scope.json) preserve the historical 13-family proposal. The next contract must omit M2; the existing one remains fit-blocked. Six supplied Microsoft tiles were organized and tested in [paired B1 pilots](../../analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review/README.md); Overture remains the primary B1 source. The six-family matrix is technically ready but not scientifically accepted, and no model has been fitted. Earlier M2 inclusion statements below are historical.
 
-The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.
 
-Matched Overture `2026-08-19.0` buildings for Chicago and road segments/connectors for both cities have also been acquired; paired candidate reviews are separate from the frozen releases. The older missing-data statements below describe the original v1 baseline. Current pending work concerns business-use jobs sensitivity, common morphology/entity definitions, paired SP companions and acceptance—not absence of blocks, bus schedules or workplace data.
+**Approved for execution — 22 September 2026.** The user authorized proceeding and requested documentation for every step. See the [cumulative execution document](SP_CHICAGO_HARMONIZATION_EXECUTION.md) for current status, decisions, evidence and outputs. Approval permits construction and targeted checks; feature acceptance still precedes model fitting.
 
-**Status (16 September 2026): local Chicago attribute baseline completed and validated; strict cross-city acceptance and rankings remain pending.** See the current [data requirements](CHICAGO_DATA_REQUIREMENTS.md), [Chicago attribute documentation](CHICAGO_ATTRIBUTE_DOCUMENTATION.md) and [execution report](CHICAGO_EXECUTION_REPORT.md). The corrected [SP model v2](../../analysis/results/SP/models/sp_urban_model_v2/README.md) and [revalidation](../sp/SP_MODEL_FIXES.md) provide the reference calculations. This plan defines how to make the measurements comparable before comparing Brás with Chicago Community Areas.
+## 1. Proposed outcome and current evidence
 
-The objective is comparable urban form and functional structure, not a convenient match between column names. Preserve the original SP attributes and v2 model. Any new shared measurement produces a separately versioned **harmonized SP–Chicago dataset**, including recomputed SP attributes where definitions change.
+Build a Chicago model and a separately versioned **updated SP harmonized model** using the same accepted definitions and fitted reference state. Preserve the original 96-district SP attributes and `sp_urban_model_v2`, and the existing Chicago local/functional releases. The new SP model is a companion release, not an overwrite or a continuation of the old 13-family calibration.
 
-## 1. Historical inventory before the September 16 additions
+Deliver district profiles for 96 SP districts and 77 Chicago Community Areas, an updated SP-to-Brás ranking, and Chicago-to-Brás comparisons with family contributions and uncertainty. A single common measurement space supports these outputs; do not fit a separate Chicago normalization for the main comparison.
 
-A read-only inspection of `analysis/data/Chicago` on 15 September 2026 found:
+### What is already available
 
-| File / source | Observed condition | Role |
-|---|---|---|
-| `Boundaries_-_Community_Areas_20260831.geojson` | 77 records; EPSG:4326; all geometries valid; IDs in `area_numbe`/`area_num_1` | Starting reporting geography; still check ID agreement, municipal coverage, overlaps, holes and lake treatment |
-| `Boundaries_-_Zoning_Districts_(current)_20260831.geojson` | 14,929 records; EPSG:4326; **118 invalid geometries**; at least one malformed date surfaced during parsing | Regulatory/context layer; repair audit if used; not observed land use |
-| `chicago_acs_community_areas.csv` | 77 rows labeled `acs_year=2023`; population/demographic fields | Aggregate cross-check after verifying source vintage, period, definitions and geography joins |
-| `cook_county_tracts_pop_2019.csv` | 1,319 tract rows; population and land-area fields; no geometry in this CSV | Historical auxiliary population table; not a direct Community Area or current bus-access population support |
-| `morphological_data.csv` | One row: `ca=99`, **Brás (São Paulo)**, zero-valued placeholder metrics | Exclude completely from Chicago feature construction; zeros are not observed Chicago absence |
-| `Socioeconomically_Disadvantaged_Areas_20260831.geojson` | 254 valid geometries | Context only; not an input to morphology similarity |
-| `chicagosidewalks/` | Shapefile components present | Reserve for the later pedestrian-outcome study; do not use as street-network or morphology ground truth |
+| Inputs | Current evidence / remaining work |
+|---|---|
+| Reporting boundaries, hydrography, local roads, footprints and observed use | Available; common denominator, topology and use definitions still need acceptance |
+| Overture buildings and road segments/connectors for both cities | Matched `2026-08-19.0` acquisition complete; paired road and footprint candidates audited September 17; shared-source completeness and measurement equivalence remain open |
+| Chicago Census 2020 blocks/counts, LODES WAC 2022 and CTA GTFS | Processed in `chi_functional_2026_09_16_v2`; 163 historical checks passed. Reuse artifacts, then construct matched SP companions and review temporal/coverage differences |
+| Cook/DuPage parcels and Cook assessor tables, benchmarking | Nine Chicago-scoped acquisitions complete; restricted supplemental records are no longer a prerequisite |
+| Commercial workbook evidence | Eight text extracts and seven user-supplied original XLSX files. T76 original is optional. These do not establish complete stories/GFA |
+| GHSL ANBH/AGBH height (2018) and total built volume (2020) | Nine source ZIPs and six city extracts acquired; R2023A/V1-0, native 100 m ESRI:54009. Acquisition receipts exist; scientific interpretation/aggregation remains to be checked after approval |
+| Original SP model v2 | Corrected and previously validated reference implementation; retain its data, state and outputs unchanged |
 
-At that earlier inspection, no complete Chicago building, physical-parcel, road-network, fine-scale population/job geography or GTFS source was found in this folder. **This absence statement is now superseded by the updated data requirements: municipal buildings, centerlines and observed land use have been supplied.** Presence of aggregate population or zoning does not make U1/U3/U4 complete.
+Evidence: [harmonization audit](../../analysis/results/Chicago/harmonization_checkpoint_2026_09_17/README.md), [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), [cadastral acquisition](../../analysis/results/Chicago/chicago_cadastral_2026_09_18/README.md), [public-data proposal](../../analysis/results/Chicago/public_data_alternative_2026_09_21/README.md), [GHSL acquisition](../../analysis/results/SP_CHI/ghsl_public_2026_09_21/README.md), [SP corrections](../sp/SP_MODEL_FIXES.md). Historical check counts are evidence of completed work, not acceptance of the new model.
 
-The former exploratory boundary-fetch script duplicated an already supplied source and wrote to a working-directory-dependent `../data/CHI/raw` location. It was removed after the validated Chicago pipeline superseded it; the historical version remains available in Git history. Current acquisition must use repository-root paths, checksums, count verification and explicit failures. Existing local files should be profiled before any replacement download.
+### Decisions proposed for approval
+
+- Exclude **M7 physical cadastral entity density, B2 reported floors and B3 fiscal constructed area** from both cities' common model. Keep them only as existing city-specific diagnostics; do not pursue restricted records to unblock the build.
+- Construct a core from accepted common morphology, footprint coverage and resident density; add bus supply only after its paired support/calendar gate passes. No family is accepted merely because its source exists.
+- Evaluate GHSL under a new **BV — vertical form** family, with separate height and volume variants. Never relabel these as B2/B3. Keep a core-only comparison so the older estimated products' influence is visible.
+- Treat U1 land use and U2 employment as gated functional extensions. Their current city-specific definitions do not yet justify entry into the primary core.
+- Fit new transformations, scales and family calibration on harmonized SP, then apply that saved state to Chicago. Publish new SP results alongside the unchanged v2 reference.
+
+No additional bulk dataset is currently a known prerequisite for this route. If source review reveals a specific indispensable gap, document the affected attribute and a bounded acquisition or symmetric omission; do not restart broad data hunting.
 
 ## 2. Geographic and temporal contract
 
@@ -36,10 +43,12 @@ The former exploratory boundary-fetch script duplicated an already supplied sour
 - Retain SP EPSG:31983. Use **NAD83 / UTM zone 16N, EPSG:26916**, in metres for Chicago calculations. Validate source CRSs rather than assuming a shapefile is WGS84; never calculate areas in longitude/latitude or Web Mercator. Store coordinate operations and units.
 - Recompute geometry-based area. Do not assume `shape_area` or assessor area fields are m². For attribute fields explicitly documented as square feet, use `m² = ft² × 0.09290304`; geometric area comes from metric projected geometry.
 - Use municipal support for reporting and a buffered extraction area for boundary-crossing features. At least 800 m beyond the city is required for the largest bus catchment; use a larger recorded geometry margin when constructing whole blocks or road topology.
-- Union the water mask, clip it to each unit, and save gross, water and land area. Check Lake Michigan, river corridors, airport boundaries and islands explicitly. Parks remain land. Use the **same denominator convention in both cities**: preserve gross-area density formulas and land-area B1/B3 in the first compatibility comparison; publish land-denominator density sensitivities for both cities if water fractions materially affect ranks.
+- Union the water mask, clip it to each unit, and save gross, water and land area. Check Lake Michigan, river corridors, airport boundaries and islands explicitly. Parks remain land. Use the **same denominator convention in both cities**: preserve gross-area density formulas and land-area B1 and the separately defined GHSL volume intensity in the first compatibility comparison; publish land-denominator density sensitivities for both cities if water fractions materially affect ranks.
 - Community Areas and SP districts differ in size and history. District-level rankings are the first descriptive support, not proof that scales are equivalent. Later 250/500 m matched grids must be constructed from source objects in both cities; the U4 population grid is not a morphology grid.
 
 ### Time contract
+
+GHSL height is 2018 and volume is 2020; Overture is a 2026 release. Use the same edition of each product in both cities, but do not describe the combined model as a single-year city snapshot. Record source-age limitations and compare core-only, height and volume variants.
 
 Maintain a source register with observation period, release date, extraction date, geography vintage, units, license/attribution, original URL and hash. Do not use a downloaded filename as the measurement year.
 
@@ -47,19 +56,15 @@ Prefer the same Overture snapshot for shared physical geometry. Freeze RAIS/LODE
 
 For transit, select valid nonholiday local weekday/weekend scenarios in both feeds. If the matching September 2026 feeds are not archived/available, choose documented comparable local windows and mark the temporal mismatch. Do not invent historical service from a current feed. Keep 07:00–09:00 weekday and 09:00–11:00 weekend windows initially, using each city's local service calendar and timezone.
 
-## 3. Source strategy
+## 3. Source reuse and evidence closure
 
-Use cloud/API extraction with explicit pagination and spatial filtering. Verify counts and completion; do not rely on a default 1,000-record API response or a fixed maximum feature count. Write source manifests and resumable partitions before deriving attributes.
+Start from the acquired manifests and frozen releases in section 1. Do not repeat completed downloads or unchanged historical validation suites. Target checks at changed definitions, new paired calculations and unresolved source semantics.
 
-- **Shared roads:** evaluate one frozen Overture Transportation release in both cities. Its official model uses road segments and connectors with common source classes. This offers a common representation, but does not establish equally complete mapping or independently correct connectivity. Use the [official transportation guide and schema](https://docs.overturemaps.org/guides/transportation/) to freeze the exact contract. Chicago's municipal [Transportation Centerline layer](https://gisapps.cityofchicago.org/arcgis/rest/services/ExternalApps/TransLegend/MapServer/1) is an independent source comparison, not an automatically interchangeable primary network.
-- **Shared footprints:** prefer Overture Buildings using the same snapshot as SP where available; reuse SP's existing GeoPackage. The [Overture buildings guide](https://docs.overturemaps.org/guides/buildings/) is the extraction/schema reference. Chicago's [building-footprint source](https://data.cityofchicago.org/Buildings/Building-Footprints-current-/hz9b-7nh8/about) is a local completeness and geometry comparison. Its portal label “current” is not a guaranteed observation date or verified floor-count field.
-- **Parcel/fiscal semantics:** investigate Cook County parcel geometry, parcel universe, residential improvement, condominium-unit and commercial records. The Assessor's [property detail guide](https://prodassets.cookcountyassessoril.gov/s3fs-public/event/2022%20Ressessments/Assessor%20Property%20Detail%20-%20Navigation%20Guide%20and%20FAQ%20%28002%29.pdf) distinguishes parcel and building record groups; the [commercial valuation catalogue](https://dev.socrata.com/foundry/datacatalog.cookcountyil.gov/csik-bsws/embed) is a candidate source. Exact schemas, vintage, units, coverage and record-level versus building-level area semantics must still be tested. Do not assume every property class is covered by one residential table.
-- **Observed use:** CMAP's [Land Use Inventory](https://cmap.illinois.gov/data/land-use/land-use-inventory/) is a GIS survey with multiple categories and historical inventories. It can support an observed-use alternative, but its polygon-area mix is not automatically comparable to SP's cadastral entity-count mix. Zoning remains contextual.
-- **Population geography:** obtain compatible Census population tables and [TIGER/Line geography](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html). Census statistical blocks are population supports, not automatically physical urban street blocks.
-- **Workplace employment:** use LODES **WAC**, which totals jobs by workplace census block; do not use residence counts or OD flows as workplace totals. The Census [LODES examples and schema links](https://lehd.ces.census.gov/data/lehd-code-samples/sections/lodes/basic_examples.html) identify the products. Start by evaluating all-job totals against RAIS active job links; do not silently choose primary jobs, which count a different concept. Verify job-type definitions, reference timing, coverage and disclosure treatments from the release documentation.
-- **Transit:** retrieve the licensed [CTA static GTFS feed](https://www.transitchicago.com/developers/gtfs/). Derive bus-only supply for the first SP-compatible operator scope; do not combine CTA rail with SP's bus-only index. Treat Pace/intermunicipal services as a separate extension requiring comparable operator-scope review in SP.
+Use existing municipal and assessor inputs as diagnostics for common Overture geometry. Use CMAP observed use and SP observed-use inputs only under an explicit shared ontology and weighting. Census blocks support population/jobs allocation, not physical street blocks. CTA versus SP bus-only supply is the initial operator scope; rail/Pace expansion is deferred.
 
-These are verified source candidates, not claims that their contents have already passed local schema or coverage validation. The original planning task did not execute acquisition or construction. The September 16 local-source implementation is tracked separately in the execution report.
+Review the locally saved GHSL Data Package 2023 PDF, source copyright files and per-raster metadata before selecting a height denominator or interpreting zeros. Retain exact URLs, source years, resolution, units, hashes and transformations. Source ZIPs contain surrounding regions; city extracts retain intersecting cells, not fractionally allocated city totals.
+
+Any necessary incremental acquisition must be geographically scoped, resumable and documented. Agency contact, subscriptions, restricted supplemental records and the optional T76 binary are outside this build's prerequisites.
 
 ## 4. Family-by-family harmonization decisions
 
@@ -72,6 +77,8 @@ These are verified source candidates, not claims that their contents have alread
 Use the same duplicate/self-retrace handling, line clipping, boundary ownership and inclusion rules. Compare the new SP M1 with the municipal-line baseline before accepting the shared source. Street names and identical API column names are insufficient evidence of equivalence.
 
 ### M2 — Intersection density
+
+**Current decision:** exclude M2 from new Chicago and SP–Chicago scores. The method and gate below are retained as historical design notes for an explicitly approved future reopening; no M2 construction or acceptance task is scheduled.
 
 **Keep:** at least three incident eligible road arms per accepted counting point / gross area.
 
@@ -95,7 +102,9 @@ Audit boundary-truncated blocks, very large peripheral polygons, traffic islands
 
 Do not copy SP's “all unknown Local” assumption to Chicago without a new declared decision. A shared version can retain unknown as an explicit category and test complete-case or imputation alternatives in both cities. Unknown mass may encode mapping coverage rather than physical hierarchy: review asymmetric coverage and exclude M6 from the strict set if it dominates the comparison. This changes the SP representation and requires a new fit/calibration; do not mix new Chicago classes with the old six-vector.
 
-### M7 — Physical cadastral parcel density
+### M7 — Physical cadastral parcel density (excluded from proposed common model)
+
+**Current decision:** no acquisition or reconstruction is scheduled for this family. The criteria below explain its exclusion and apply only if a future separately approved extension revisits it.
 
 **Keep:** one accepted physical entity per location, whole-object assignment, count / gross area.
 
@@ -107,9 +116,11 @@ Build `physical_entity_id`, unit links, geometry lineage and ambiguity exclusion
 
 **Keep:** exact union of clipped footprint polygons on land / land area; gross-area and overlap-excess diagnostics.
 
-**Need:** Chicago Overture polygons at a matched release and a reviewed land mask. Use the same metric tiled-union algorithm and positive-area intersection rule. Compare both sources on dense high-rise, industrial, residential and peripheral samples. Avoid adding building parts and parent footprints twice. This is a strong candidate for the strict common model once mapped coverage and water handling pass; source uniformity alone is not proof of equal completeness.
+**Available:** matched Chicago/SP Overture polygons. **Remaining gate:** a reviewed common land-mask method and source-completeness comparison. Use the same metric tiled-union algorithm and positive-area intersection rule. Compare both sources on dense high-rise, industrial, residential and peripheral samples. Avoid adding building parts and parent footprints twice. This is a strong candidate for the strict common model once mapped coverage and water handling pass; source uniformity alone is not proof of equal completeness.
 
-### B2 — Reported floors
+### B2 — Reported floors (excluded from proposed common model)
+
+**Current decision:** no acquisition or reconstruction is scheduled for this family. The criteria below explain its exclusion and apply only if a future separately approved extension revisits it.
 
 **Keep only if matched:** unweighted median/P90 of one eligible positive floor report per accepted comparable entity.
 
@@ -117,7 +128,9 @@ Build `physical_entity_id`, unit links, geometry lineage and ambiguity exclusion
 
 If coverage/units cannot be aligned, exclude B2 from the strict common model. A shared building-level height/floors alternative requires new attributes in **both** cities and must not be labeled equivalent to the existing cadastral B2.
 
-### B3 — Constructed floor-area intensity
+### B3 — Constructed floor-area intensity (excluded from proposed common model)
+
+**Current decision:** no acquisition or reconstruction is scheduled for this family. The criteria below explain its exclusion and apply only if a future separately approved extension revisits it.
 
 **Keep only if matched:** accepted unique constructed-area mass / land area.
 
@@ -137,7 +150,7 @@ CMAP area-based observed use can support an alternative only if SP gets a compar
 
 **Keep:** allocated workplace job links / gross area, with unresolved mass and uncertainty tiers.
 
-**Need:** LODES WAC for the selected Illinois year/job universe plus the matching block geography. Deduplicate by geography/job-type/segment and use the published total field once. Include workplace blocks intersecting the city; preserve outside mass. For border blocks, choose a documented positive-area/ancillary workplace allocation and test it—do not apply population residential weights automatically to employment.
+**Available:** Chicago LODES WAC 2022 and matching block support. **Remaining gate:** verify the paired employment definition and allocation sensitivity using these existing artifacts. Deduplicate by geography/job-type/segment and use the published total field once. Include workplace blocks intersecting the city; preserve outside mass. For border blocks, choose a documented positive-area/ancillary workplace allocation and test it—do not apply population residential weights automatically to employment.
 
 Compare coverage/reference definitions with RAIS active links, including public/federal work, multiple jobs, disclosure treatments and noncovered employment. LODES is not a direct individual-employer census with exact within-block locations. SP CEP weights and Chicago block allocation have different uncertainty structures; report those differences. Do not apply a CEP rule to Chicago block data merely to make algorithms look alike.
 
@@ -147,7 +160,7 @@ U2 should start in the extended functional comparison. The SP U2 variants kept t
 
 **Keep:** unique population mass allocated to reporting units / gross area, with outside residual preserved.
 
-**Need:** Chicago Census block geometries and counts; compare their Community Area totals with the provided aggregate ACS data as a vintage-aware diagnostic. Area-intersection allocation must conserve source counts; do not join on imperfect Community Area names without an ID crosswalk.
+**Available:** Chicago Census 2020 block geometries and counts; compare their Community Area totals with the provided aggregate ACS data as a vintage-aware diagnostic. Area-intersection allocation must conserve source counts; do not join on imperfect Community Area names without an ID crosswalk.
 
 A separate ACS update can use documented estimates and uncertainties, but the 2023 label must first be traced to its one-/five-year period and source. Do not discard margins of error or fabricate exact block-level current populations from Community Area totals. Record the 2020-versus-2022 census gap and test the effect of the chosen population support on U4.
 
@@ -155,16 +168,42 @@ A separate ACS update can use documented estimates and uncertainties, but the 20
 
 **Keep:** sector/block ∩ district ∩ origin-zero 250 m grid support; proportional population; within-piece representative points; 400 m weekday primary and 800 m/weekend sensitivities; maximum reachable stop supply per route/direction followed by sum, then population-weighted mean.
 
-**Need:** CTA static GTFS and fine-scale population. Filter bus service explicitly; validate service calendar/exceptions, after-midnight times, routes/directions, stop identities, scheduled departures and any frequency templates. Include stops outside Community Areas and city borders within the catchment. Preserve agency in keys when testing multiple feeds.
+**Available:** CTA static GTFS and fine-scale population. **Remaining gate:** matched SP support, service scenarios and operator scope. Filter bus service explicitly; validate service calendar/exceptions, after-midnight times, routes/directions, stop identities, scheduled departures and any frequency templates. Include stops outside Community Areas and city borders within the catchment. Preserve agency in keys when testing multiple feeds.
 
 Compare city-operated bus scopes first (CTA versus the supplied SP bus operator scope), then label broader metropolitan bus/rail coverage as a separate two-city alternative. Frequency coverage, Euclidean barriers and timing differences remain limitations. Never add rail only in Chicago or interpret supply as observed ridership/access to jobs.
 
+### BV — Public vertical form (new GHSL family)
+
+This is a new grid-based measure for both cities, not a building-level floor distribution or legal GFA. Use the acquired ANBH/AGBH 2018 and total volume 2020 products. Do not convert metres to stories or volume to constructed floor area. Detailed product interpretation is a first implementation checkpoint, not a claim already validated in this plan.
+
+**Proposed candidates:**
+
+| Candidate | Definition to implement after source-definition review | Role |
+|---|---|---|
+| `BV_height_net_mean_m` | ANBH mean weighted by valid cell–district land intersection area, on the explicitly documented height-support domain | Preferred height candidate; a spatial grid summary, not building-weighted mean height |
+| `BV_height_gross_mean_m` | AGBH mean under its documented denominator and corresponding area weights | Alternative diagnostic; not an additional full-weight coordinate beside ANBH |
+| `BV_volume_density_m3_m2` | Sum of cell volume multiplied by its district-land intersection fraction of full source-cell area, divided by district land area | Volume alternative; assumes uniform within-cell volume allocation |
+
+For height, freeze valid-support and zero handling from product documentation before calculation. Preserve genuine zero; exclude source NoData and report its area separately. If the proposed area-weighted ANBH statistic is not supported by the documented product semantics, revise its definition before freezing the contract. Do not invent built-area weights from contemporary Overture footprints or infer them by combining 2018 height with 2020 volume. Any genuinely necessary companion raster requires an explicit, targeted acquisition decision.
+
+Intersect reporting units and the reviewed land mask with the **native Mollweide source cells**; compute overlap fractions in that source equal-area CRS. Keep input rasters unchanged, with no bilinear interpolation. Check that allocated volume plus outside/water residuals reconciles to source mass within a declared numerical tolerance. A cell touching multiple districts must not contribute its full volume to each. Record that area fractions are an allocation assumption, not observed subcell building locations. Report gross-area allocation/denominator as a sensitivity.
+
+Publish per-unit valid coverage, NoData area, boundary-cell share and denominators. Insufficient support produces a documented missing result, not an imputed zero. Acceptance requires a common support policy and finite valid inputs for the declared comparison cohort. If a family cannot support the complete 96/77 cohort without unjustified imputation, withhold it from the primary model in both cities.
+
+**Weight policy:** primary extension candidate is one height coordinate in one BV family. Run volume-only as an alternative; a combined height/volume sensitivity may split the single BV budget equally after coordinate scaling. ANBH, AGBH and volume must not become three independent full-weight families. Compare omission of BV and B1 to disclose overlapping built-form information. Freeze the primary choice before looking at cross-city rankings.
+
 ## 5. Comparison sets and modeling policy
 
-Do not require all 13 families to pass by weakening definitions. Establish two explicit sets **before inspecting cross-city neighbor rankings**:
+Freeze the following comparison sets before inspecting neighbor rankings:
 
-1. **Strict common set:** only families with matched entity, geometry, universe, units, weighting and temporal treatment. Candidate first targets are common-source M1/M2/M3/M4/M6, B1 and U3; none is accepted until its gates pass. U4 can join after bus/population support alignment.
-2. **Extended functional/cadastral set:** add M7/B2/B3/U1/U2 only when their documented crosswalks and coverage are adequate. Otherwise present separate city-specific profiles or explicitly labeled alternatives.
+| Set | Candidate families | Acceptance and purpose |
+|---|---|---|
+| Common core | M1/M3/M4/M6, B1, U3; U4 if its gate passes | M2 is excluded by decision; each retained family must pass its paired definition/coverage gate |
+| Core + vertical form | Accepted core + BV | Proposed main public-data extension; report core-only and height/volume variants alongside it |
+| Functional sensitivity | Accepted core, optionally BV, plus U1 and/or U2 | Add only after observed-use weighting and RAIS/LODES coverage/allocation gates pass; otherwise retain descriptive profiles |
+| Legacy city diagnostics | M7/B2/B3 and existing local alternatives | Outside common distances; original SP v2 remains available separately |
+
+Use equal weights across accepted families as the proposed default, with one budget for BV. Recompute normalization after a family exclusion. Also evaluate equal-domain weighting and bounded family-weight perturbations with fixed seeds and documented ranges. Final family acceptance and any changed primary definition must be recorded before rankings, with unresolved material changes brought back for review.
 
 Every excluded family is excluded in both cities and its weight is redistributed explicitly. Never zero-fill an unavailable Chicago attribute or silently use pair-specific available features. Publish the shared family list and reason for every exclusion. A reduced set is a new model, not a result from the original 13-family SP metric.
 
@@ -178,21 +217,25 @@ As a sensitivity, compare a jointly fitted 173-unit model with an explicit city-
 
 Evaluate source variants, family omissions, weighting perturbations, water denominators, population vintage and district/grid support. Inspect domain shift and city separation, not just nearest-neighbor rank. No supervised accuracy or causal interpretation is available without independent labels/outcomes.
 
-## 6. Execution sequence and deliverables
+## 6. Approval gate, checkpoints and deliverables
 
-| Task | Work | Required output / gate |
+**Approval received.** Proceed through the bounded checkpoints below and record each in the cumulative execution document.
+
+After approval, work in bounded checkpoints and update the handoff at each stop. Reuse completed acquisitions and historical checks. Run new checks only where the new work requires them.
+
+| Checkpoint | Work after approval | Concrete deliverable / exit gate |
 |---|---|---|
-| CHI-H01 — Freeze local inventory | Hash existing files; validate schemas, IDs, periods, placeholder exclusions | Source register, 77-ID crosswalk, explicit missing-input list; no duplicate boundary download |
-| CHI-H02 — Establish geography | Metric CRS, boundary union, water mask, buffered extraction support | Gross/land/water conservation; overlap/gap/repair log; lake/airport review |
-| CHI-H03 — Acquire shared physical sources | Frozen common roads/connectors and footprints for Chicago and required SP companion measures | Complete paginated/cloud extraction; source hashes, IDs, schema and attribution |
-| CHI-H04 — Pilot shared geometry methods | Road universe/topology, physical blocks, class mapping and footprint unions | Synthetic bridge/loop/dual-carriageway/alley/water fixtures; reviewed maps in both cities |
-| CHI-H05 — Resolve cadastral semantics | Cook parcel/unit/parent keys, stories and area scopes; SP crosswalk comparison | Entity and area conservation, ambiguity queues; accept or exclude each M7/B2/B3 family |
-| CHI-H06 — Prepare use, jobs and population | Observed-use ontology; LODES WAC; Census supports and ACS metadata | Crosswalks, valid geographic joins, conserved source totals, unknown/unlocated mass |
-| CHI-H07 — Prepare bus service | CTA mode/calendar/time validation, comparable operator scope and support points | Six scenario windows/radii, population conservation and no route-stop double counting |
-| CHI-H08 — Freeze harmonization contract | Family inclusion, units, source universes, denominators, support and fit policy | Machine-readable attribute crosswalk; approve the common set before ranking |
-| CHI-H09 — Construct paired attributes | Process both cities under the accepted common methods | City-keyed long/wide matrices, coverage metadata, dictionaries and validation |
-| CHI-H10 — Fit and compare | SP-anchored reference, pooled sensitivity, explanations and source/weight tests | Chicago-to-Brás rankings with contribution and uncertainty profiles; no outcome leakage |
-| CHI-H11 — Spatial robustness and release | 250/500 m matched grids if required for cross-scale claims; inspect candidates | Versioned report, tests, manifests, handoff and explicit deferred claims |
+| H0 — Freeze measurement decisions | Read GHSL technical definitions; fix road/access/topology rules, land support, height support, family tiers, dates and weights; inventory existing artifacts without reacquisition | Versioned machine-readable contract and acceptance ledger. No ranking; resolve or explicitly defer every primary-definition ambiguity |
+| H1 — Paired physical pilots | Same road topology, block construction, hierarchy and footprint methods in both cities; pilot GHSL partial-cell allocation and height support | Paired fixture maps/tables, coverage and conservation evidence. Symmetric exclusions for failed families; no city-specific shortcut |
+| H2 — Paired physical attributes | Compute accepted morphology/B1/BV for all 96 SP districts and 77 Chicago Community Areas | City-qualified long/wide tables with numerators, denominators, coverage, source years and source hashes |
+| H3 — Paired functional attributes | Reuse population/GTFS results; build SP companions; finish the paused employment sensitivity only if U2 is retained; attempt U1 only with a common observed-area/entity definition | Population and jobs residual accounting, matched bus scenarios, U1/U2 acceptance or explicit exclusion. No claim that all functional families pass |
+| H4 — Freeze common matrix | Review full paired outputs and acceptance ledger; lock included features, family budgets and source qualifications | Complete finite 96/77 matrices for included families, frozen dictionary/config and independent checks of changed computations, before fitting/ranking |
+| H5 — Fit new SP reference and apply to Chicago | New SP-anchored transforms/calibration; save/apply identical state; derive SP and Chicago distances to Brás | Updated SP harmonized model, Chicago profiles/ranks, family contributions, domain-shift flags and reproducible saved state |
+| H6 — Robustness and release | Core vs BV, height vs volume, functional exclusions, water/partial-cell assumptions, source uncertainty and weights; city-balanced pooled fit as sensitivity | Model report, rank stability, source/feature manifest, limitations and updated handoff; original models intact |
+
+A failed gate triggers correction or explicit symmetric omission before downstream fitting. Do not compensate with pairwise available-feature distances or zero-filled inputs. If failure materially changes the proposed main model, stop at the checkpoint and present the revised contract for review.
+
+Matched 250/500 m morphology grids and pedestrian outcomes are deferred follow-up work. District-level release does not require those acquisitions or computations, but cannot claim spatial-scale invariance or predictive validity.
 
 Pilot geography: use supplied Chicago IDs for Loop, Near West Side, West Town, South Lawndale and O'Hare after validating name-to-ID mapping. Together they provide dense, industrial/mixed, residential and edge/airport cases. They are processing fixtures, **not prespecified Brás analogues**. Retain Brás, Itaim Bibi and Grajaú as SP contrast cases; do not select pilots based on resulting similarity.
 
@@ -208,7 +251,8 @@ analysis/tests/test_harmonization.py
 analysis/work/prepared/Chicago/<run>/
 analysis/work/runs/sp_chicago_harmonization_v1/
 analysis/results/Chicago/<release>/     # tables, spatial, reports, validation
-analysis/results/SP_CHI/<model>/        # common-feature comparison and sensitivity
+analysis/results/SP/<harmonized_release>/ # new SP attributes/model, distinct from v2
+analysis/results/SP_CHI/<model>/        # shared fit, comparisons and sensitivity
 ```
 
 Keep acquisition/preparation intermediates local under existing ignore rules. Publish compact aggregate results, source metadata and code. Do not modify the frozen SP v2 model or overwrite Chicago source data. Store country/city-qualified IDs, effective periods, source field mappings, entity counts, area/job/population numerators, denominators, source/allocated coverage and uncertainty flags in the long table.
@@ -217,8 +261,8 @@ The current model loader correctly enforces the SP-only 96-ID contract. A cross-
 
 ## 8. Acceptance and limits
 
-Require exact identities and no row multiplication; valid metric geometry; mapped source completeness checks; conserved population/jobs/areas with explicit outside or unresolved buckets; common floor/use/parcel semantics; deterministic joins; transformed finite values; identical model state for both cities; and independently reconstructed distances/contributions. Tests must include square-foot conversion, duplicated condominium units, false planar overpasses, border blocks, zero support, multiple nearby same-route stops and mutually exclusive city IDs.
+Require exact identities and no row multiplication; valid metric geometry; mapped source completeness checks; conserved population/jobs/areas with explicit outside or unresolved buckets; common semantics for included families; GHSL valid-support and partial-cell accounting; deterministic joins; transformed finite values; identical model state for both cities; and independently reconstructed distances/contributions. Targeted tests must include false planar overpasses, border blocks/cells, NoData versus genuine zero, volume conservation, zero support, multiple nearby same-route stops and mutually exclusive city IDs. Add independent raster-aggregation fixtures, transform/state replay, and distance/contribution reconstruction. Cadastral conversion and condominium tests are unnecessary unless those excluded families are explicitly reopened.
 
 Coverage percentages describe their specific source universe. Do not replace unknown physical completeness with a generic 95% threshold or hide unmatched mass in zero-valued features. Publish exclusions and differences before the cross-city ranking.
 
-**Current next steps:** close the common-source, topology, employment, fine-population, bus and cadastral gates listed in [CHICAGO_DATA_REQUIREMENTS.md](CHICAGO_DATA_REQUIREMENTS.md). Local values are descriptive/provisional, not yet paired harmonized features. Cross-city fitting remains deferred until common definitions and the SP companion reconstruction pass.
+**Current next step:** H4 review of H1–H3 candidate outputs under a newly versioned M2-excluded scope. M2 remains a historical diagnostic; M3/M4 remain unaccepted candidates after their semantic gates. U1 is withheld and U2 extended-only. SP bus supply was recomputed after discovering nonbus routes in the legacy input. No model fitting or acceptance has occurred. Consult the model status and execution ledger before resuming.

@@ -1,5 +1,9 @@
 # Chicago functional extension and matched-source acquisition
 
+## September 17 checkpoint
+
+The [independent harmonization audit](../../analysis/results/Chicago/harmonization_checkpoint_2026_09_17/README.md) passed **50 checks**, with **41 current repository tests** passing. Both cities’ road candidates reconcile, and all five Chicago footprint pilots for both sources agree with untiled union reconstruction. Source equivalence, access/topology and common-feature acceptance remain pending. The rewritten [handoff](../operations/NEXT_AGENT_PROMPT.md) reflects the current `docs/` layout and completed acquisitions. Next: CMAP business-support employment sensitivity with whole-block outside accounting. Work stopped at this checkpoint per the user’s quota request.
+
 16 September 2026. New functional release: `chi_functional_2026_09_16_v2`. The previous local Chicago release and all original SP measurements remain unchanged. This is a completed construction milestone when its independent audit passes, **not completion of cross-city harmonization**.
 
 ## New supplied inputs

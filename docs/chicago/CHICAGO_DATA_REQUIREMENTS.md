@@ -1,5 +1,9 @@
 # Chicago data requirements and readiness
 
+## September 17 checkpoint
+
+The [independent harmonization audit](../../analysis/results/Chicago/harmonization_checkpoint_2026_09_17/README.md) passed **50 checks**, with **41 current repository tests** passing. Both cities’ road candidates reconcile, and all five Chicago footprint pilots for both sources agree with untiled union reconstruction. Source equivalence, access/topology and common-feature acceptance remain pending. The rewritten [handoff](../operations/NEXT_AGENT_PROMPT.md) reflects the current `docs/` layout and completed acquisitions. Next: CMAP business-support employment sensitivity with whole-block outside accounting. Work stopped at this checkpoint per the user’s quota request.
+
 ## September 16 continuation: new data processed
 
 The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.
@@ -33,7 +37,7 @@ The complete local source file list, byte sizes and SHA-256 values are in the re
 | Family | Local construction | Requirement before a shared model |
 |---|---|---|
 | M1 | Municipal line density, declared source-code/status filter | Validate status N and code 4 semantics; obtain matched Overture segments for both cities; reconcile alleys, ramps, carriageways and completeness |
-| M2 | Principal measure withheld; separate endpoint candidate experiment | Validate endpoint node/level topology, overpasses and divided roads; implement the same counting/consolidation rule in SP. Existing SP 5 m exclusion is not a transferable Chicago graph rule |
+| M2 | **Deferred from the planned Chicago model and future cross-city score**; endpoint experiment remains historical | No current acquisition or construction requirement. Reopening would require an explicit decision and paired physical-junction/grade validation; the SP 5 m proxy is not a transferable Chicago graph rule. |
 | M3/M4 | Experimental planar road-enclosure size and shape | Shared physical-block definition and paired SP reconstruction; eliminate carriageway slivers, review barriers, city-edge exclusions and large peripheral enclosures. Experimental values must not enter similarity fitting |
 | M6 | Seven raw-source-code length shares | Shared ontology and unknown-mass review in both cities. Chicago 99 stays unclassified; SP's prior “unclassified = Local” decision does not silently change Chicago |
 | M7 | Missing | Cook physical parcel polygons, dated tax/parent keys, condominium-unit crosswalk; distinguish tax units from physical entities |
