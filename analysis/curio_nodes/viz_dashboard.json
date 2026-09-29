@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Chicago neighborhood similarity · PCA-weighted model",
-    "subtitle": "Choose a community area below. All three views update together; rankings use the retained PCA space."
+    "text": "Chicago neighborhood similarity \u00b7 PCA-weighted model",
+    "subtitle": "Choose a community area below. All four views update together; rankings use the retained PCA space."
   },
   "data": {
     "name": "data"
@@ -400,127 +400,398 @@
       "spacing": 30
     },
     {
-      "title": {
-        "text": "Chicago community area similarity map",
-        "subtitle": "Blue = closer; red = farther. White and black outline = selected area."
-      },
-      "width": 650,
-      "height": 525,
-    "projection": {
-      "type": "mercator",
-      "center": [
-        -87.7321,
-        41.8338
-      ],
-      "scale": 52000,
-      "translate": [325, 262.5]
-    },
-      "layer": [
+      "hconcat": [
         {
-          "mark": {
-            "type": "geoshape",
-            "stroke": "#FFFFFF",
-            "strokeWidth": 0.7
+          "title": {
+            "text": "Chicago community area similarity map",
+            "subtitle": "Blue = closer; red = farther. White and black outline = selected area."
           },
-          "encoding": {
-            "shape": {
-              "field": "geometry",
-              "type": "geojson"
-            },
-            "color": {
-              "field": "distance",
-              "type": "quantitative",
-              "scale": {
-                "scheme": "turbo"
-              },
-              "title": "PCA distance"
-            },
-            "tooltip": [
-              {
-                "field": "community",
-                "title": "Community area"
-              },
-              {
-                "field": "unit_id",
-                "title": "ID"
-              },
-              {
-                "field": "distance",
-                "title": "PCA distance",
-                "format": ".3f"
-              }
+          "width": 650,
+          "height": 525,
+          "projection": {
+            "type": "mercator",
+            "center": [
+              -87.7321,
+              41.8338
+            ],
+            "scale": 52000,
+            "translate": [
+              325,
+              262.5
             ]
-          }
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "geoshape",
+                "stroke": "#FFFFFF",
+                "strokeWidth": 0.7
+              },
+              "encoding": {
+                "shape": {
+                  "field": "geometry",
+                  "type": "geojson"
+                },
+                "color": {
+                  "field": "distance",
+                  "type": "quantitative",
+                  "scale": {
+                    "scheme": "turbo"
+                  },
+                  "title": "PCA distance"
+                },
+                "tooltip": [
+                  {
+                    "field": "community",
+                    "title": "Community area"
+                  },
+                  {
+                    "field": "unit_id",
+                    "title": "ID"
+                  },
+                  {
+                    "field": "distance",
+                    "title": "PCA distance",
+                    "format": ".3f"
+                  }
+                ]
+              }
+            },
+            {
+              "transform": [
+                {
+                  "filter": "datum.area_numbe === focus"
+                }
+              ],
+              "mark": {
+                "type": "geoshape",
+                "fillOpacity": 0,
+                "stroke": "#FFFFFF",
+                "strokeWidth": 7
+              },
+              "encoding": {
+                "shape": {
+                  "field": "geometry",
+                  "type": "geojson"
+                },
+                "tooltip": [
+                  {
+                    "field": "community",
+                    "title": "Community area"
+                  },
+                  {
+                    "field": "unit_id",
+                    "title": "ID"
+                  },
+                  {
+                    "field": "distance",
+                    "title": "PCA distance",
+                    "format": ".3f"
+                  }
+                ]
+              }
+            },
+            {
+              "transform": [
+                {
+                  "filter": "datum.area_numbe === focus"
+                }
+              ],
+              "mark": {
+                "type": "geoshape",
+                "fillOpacity": 0,
+                "stroke": "#111827",
+                "strokeWidth": 3.5
+              },
+              "encoding": {
+                "shape": {
+                  "field": "geometry",
+                  "type": "geojson"
+                },
+                "tooltip": [
+                  {
+                    "field": "community",
+                    "title": "Community area"
+                  },
+                  {
+                    "field": "unit_id",
+                    "title": "ID"
+                  },
+                  {
+                    "field": "distance",
+                    "title": "PCA distance",
+                    "format": ".3f"
+                  }
+                ]
+              }
+            }
+          ]
         },
         {
+          "title": {
+            "text": "Selected neighborhood \u00b7 model feature profile",
+            "subtitle": [
+              "Share of weighted difference from Chicago\u2019s average (before PCA).",
+              "Eight included families; each neighborhood totals 100%."
+            ]
+          },
+          "width": 500,
+          "height": 440,
+          "data": {
+            "name": "data"
+          },
           "transform": [
             {
               "filter": "datum.area_numbe === focus"
-            }
-          ],
-          "mark": {
-            "type": "geoshape",
-            "fillOpacity": 0,
-            "stroke": "#FFFFFF",
-            "strokeWidth": 7
-          },
-          "encoding": {
-            "shape": {
-              "field": "geometry",
-              "type": "geojson"
             },
-            "tooltip": [
-              {
-                "field": "community",
-                "title": "Community area"
-              },
-              {
-                "field": "unit_id",
-                "title": "ID"
-              },
-              {
-                "field": "distance",
-                "title": "PCA distance",
-                "format": ".3f"
-              }
-            ]
-          }
-        },
-        {
-          "transform": [
             {
-              "filter": "datum.area_numbe === focus"
+              "fold": [
+                "radar_M1",
+                "radar_M6",
+                "radar_B1",
+                "radar_BV",
+                "radar_U1",
+                "radar_U2",
+                "radar_U3",
+                "radar_U4"
+              ],
+              "as": [
+                "feature",
+                "share_pct"
+              ]
+            },
+            {
+              "calculate": "indexof([\"radar_M1\",\"radar_M6\",\"radar_B1\",\"radar_BV\",\"radar_U1\",\"radar_U2\",\"radar_U3\",\"radar_U4\"], datum.feature)",
+              "as": "axis_order"
+            },
+            {
+              "calculate": "2 * PI * datum.axis_order / 8 - PI / 2",
+              "as": "angle"
+            },
+            {
+              "calculate": "datum.share_pct * cos(datum.angle)",
+              "as": "radar_x"
+            },
+            {
+              "calculate": "datum.share_pct * sin(datum.angle)",
+              "as": "radar_y"
+            },
+            {
+              "calculate": "80 * cos(datum.angle)",
+              "as": "axis_x"
+            },
+            {
+              "calculate": "80 * sin(datum.angle)",
+              "as": "axis_y"
+            },
+            {
+              "calculate": "95 * cos(datum.angle)",
+              "as": "label_x"
+            },
+            {
+              "calculate": "95 * sin(datum.angle)",
+              "as": "label_y"
+            },
+            {
+              "calculate": "datum.feature === 'radar_M1' ? 'M1 \u00b7 Streets' : datum.feature === 'radar_M6' ? 'M6 \u00b7 Street mix' : datum.feature === 'radar_B1' ? 'B1 \u00b7 Coverage' : datum.feature === 'radar_BV' ? 'BV \u00b7 Volume' : datum.feature === 'radar_U1' ? 'U1 \u00b7 Use mix' : datum.feature === 'radar_U2' ? 'U2 \u00b7 Jobs' : datum.feature === 'radar_U3' ? 'U3 \u00b7 Population' : datum.feature === 'radar_U4' ? 'U4 \u00b7 Bus' : datum.feature",
+              "as": "feature_label"
             }
           ],
-          "mark": {
-            "type": "geoshape",
-            "fillOpacity": 0,
-            "stroke": "#111827",
-            "strokeWidth": 3.5
-          },
-          "encoding": {
-            "shape": {
-              "field": "geometry",
-              "type": "geojson"
-            },
-            "tooltip": [
-              {
-                "field": "community",
-                "title": "Community area"
+          "layer": [
+            {
+              "data": {
+                "values": [
+                  {
+                    "size": 3490.6585039886595
+                  },
+                  {
+                    "size": 13962.634015954638
+                  },
+                  {
+                    "size": 31415.926535897932
+                  },
+                  {
+                    "size": 55850.53606381855
+                  }
+                ]
               },
-              {
-                "field": "unit_id",
-                "title": "ID"
+              "mark": {
+                "type": "point",
+                "shape": "circle",
+                "filled": false,
+                "stroke": "#CBD5E1",
+                "strokeWidth": 1
               },
-              {
-                "field": "distance",
-                "title": "PCA distance",
-                "format": ".3f"
+              "encoding": {
+                "x": {
+                  "datum": 0,
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "y": {
+                  "datum": 0,
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "size": {
+                  "field": "size",
+                  "type": "quantitative",
+                  "scale": null
+                }
               }
-            ]
+            },
+            {
+              "mark": {
+                "type": "rule",
+                "stroke": "#CBD5E1",
+                "strokeWidth": 1
+              },
+              "encoding": {
+                "x": {
+                  "datum": 0,
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "y": {
+                  "datum": 0,
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "x2": {
+                  "field": "axis_x",
+                  "type": "quantitative"
+                },
+                "y2": {
+                  "field": "axis_y",
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "mark": {
+                "type": "line",
+                "interpolate": "linear-closed",
+                "stroke": "#1D4ED8",
+                "strokeWidth": 3,
+                "point": {
+                  "filled": true,
+                  "fill": "#E11D48",
+                  "size": 85
+                }
+              },
+              "encoding": {
+                "x": {
+                  "field": "radar_x",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "y": {
+                  "field": "radar_y",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "order": {
+                  "field": "axis_order",
+                  "type": "ordinal"
+                },
+                "tooltip": [
+                  {
+                    "field": "community",
+                    "title": "Community area"
+                  },
+                  {
+                    "field": "feature_label",
+                    "title": "Model family"
+                  },
+                  {
+                    "field": "share_pct",
+                    "title": "Share of weighted deviation",
+                    "format": ".1f"
+                  }
+                ]
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "fontSize": 11,
+                "fontWeight": "bold",
+                "fill": "#334155"
+              },
+              "encoding": {
+                "x": {
+                  "field": "label_x",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "y": {
+                  "field": "label_y",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      -150,
+                      150
+                    ]
+                  },
+                  "axis": null
+                },
+                "text": {
+                  "field": "feature_label",
+                  "type": "nominal"
+                }
+              }
+            }
+          ],
+          "config": {
+            "view": {
+              "stroke": null
+            }
           }
         }
-      ]
+      ],
+      "spacing": 35
     }
   ],
   "spacing": 26,

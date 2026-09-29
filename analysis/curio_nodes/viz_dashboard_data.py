@@ -11,7 +11,7 @@ from shapely.geometry import mapping
 ids = [f'CHI:{number:02d}' for number in range(1, 78)]
 if not isinstance(arg, (tuple, list)) or len(arg) != 6:
     raise ValueError('Expected the six-part PCA model application output')
-raw, pca_pairs, _pca_parameters, matrix, scores, _pca_loadings = arg
+raw, pca_pairs, _pca_parameters, matrix, scores, pca_loadings = arg
 
 if not isinstance(raw, pd.DataFrame) or raw.unit_id.tolist() != ids:
     raise ValueError('Raw model rows must be ordered CHI:01–CHI:77')
@@ -53,6 +53,39 @@ if not np.allclose(pca_pairs.distance.to_numpy(dtype=float),
                    distance_values[row_a, row_b], rtol=1e-10, atol=1e-10):
     raise ValueError('PCA pairs disagree with the distance matrix')
 
+# The radar shows each model family's share of an area's full weighted
+# deviation from Chicago's mean. All PC scores and loadings reconstruct the
+# centered calibrated embedding; retained-PC distances mix the families and
+# cannot be split into independent family contributions.
+families = ['M1', 'M6', 'B1', 'BV', 'U1', 'U2', 'U3', 'U4']
+components = [f'PC{i}' for i in range(1, 18)]
+if (not isinstance(pca_loadings, pd.DataFrame) or
+        len(pca_loadings) != 17 or
+        not {'family', 'coordinate', *components}.issubset(pca_loadings.columns) or
+        not set(components).issubset(scores.columns)):
+    raise ValueError('Expected all 17 PCA scores and family-labelled loadings')
+family_labels = pca_loadings.family.tolist()
+if set(family_labels) != set(families) or any(
+        family_labels.count(family) != (10 if family == 'M6' else 1)
+        for family in families):
+    raise ValueError('PCA loadings do not represent the eight model families')
+centered_embedding = (scores[components].to_numpy(dtype=float) @
+                      pca_loadings[components].to_numpy(dtype=float).T)
+if not np.isfinite(centered_embedding).all():
+    raise ValueError('Reconstructed weighted embedding is nonfinite')
+if not np.allclose(
+        np.linalg.norm(centered_embedding[row_a] - centered_embedding[row_b], axis=1),
+        pca_pairs.baseline_distance.to_numpy(dtype=float), rtol=1e-9, atol=1e-9):
+    raise ValueError('Radar embedding does not reproduce the full model distance')
+family_squared = np.column_stack([
+    np.square(centered_embedding[:, np.array(family_labels) == family]).sum(axis=1)
+    for family in families
+])
+total_squared = family_squared.sum(axis=1)
+if not np.isfinite(total_squared).all() or (total_squared <= 0).any():
+    raise ValueError('Radar family deviations are invalid')
+radar_shares = 100 * family_squared / total_squared[:, None]
+
 areas = gpd.read_file(curio_dataset_path('data.cityofchicago.community-areas-sideseeing'))
 if len(areas) != 77 or not {'area_numbe', 'community', 'geometry'}.issubset(areas):
     raise ValueError('Expected the 77 Community Area polygons with IDs and names')
@@ -73,7 +106,9 @@ if areas.community.isna().any() or areas.community.astype(str).str.strip().eq(''
 # Curio's DataFrame codec and is rendered by Vega-Lite's geoshape mark.
 dashboard = pd.DataFrame({
     'type': ['Feature'] * 77,
-    'geometry': [mapping(orient_polygons(geom, exterior_cw=False)) for geom in areas.geometry],
+    # Vega's D3 geoshape treats clockwise outer rings as the small polygon;
+    # counterclockwise rings fill the globe outside each Community Area.
+    'geometry': [mapping(orient_polygons(geom, exterior_cw=True)) for geom in areas.geometry],
     'unit_id': ids,
     'area_numbe': [f'{number:02d}' for number in range(1, 78)],
     'community': areas.community.astype(str).str.strip().tolist(),
@@ -82,7 +117,9 @@ dashboard = pd.DataFrame({
 })
 for number, unit_id in enumerate(ids, start=1):
     dashboard[f'd_{number:02d}'] = distance_values[:, number - 1]
+for index, family in enumerate(families):
+    dashboard[f'radar_{family}'] = radar_shares[:, index]
 
-if dashboard.shape != (77, 84):
-    raise ValueError('Dashboard payload must have 77 rows and 84 columns')
+if dashboard.shape != (77, 92):
+    raise ValueError('Dashboard payload must have 77 rows and 92 columns')
 return dashboard

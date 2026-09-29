@@ -66,8 +66,11 @@ def main():
         print(nodes[node_id]['title'], result['dataType'], flush=True)
         if node_id == PIPELINE[-2]:
             assert value[3].shape == (77, 78)
-    assert value.shape == (77, 84)
+    assert value.shape == (77, 92)
     assert value['geometry'].map(lambda item: item['type'] in ('Polygon', 'MultiPolygon')).all()
+    assert (value[[f'radar_{family}' for family in
+                   ('M1', 'M6', 'B1', 'BV', 'U1', 'U2', 'U3', 'U4')]]
+            .sum(axis=1).sub(100).abs().max() < 1e-9)
     Path('/tmp/chicago_dashboard_rows.json').write_text(
         value.to_json(orient='records'))
     print('Curio executor completed matrix, transform, weighted distance, PCA, and chart data', flush=True)
