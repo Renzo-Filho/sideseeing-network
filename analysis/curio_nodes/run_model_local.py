@@ -25,7 +25,7 @@ fitted = timed('Fit transforms', module('model_fit'), matrix)
 raw, pairs, parameters, distances, embedding = timed('Pairwise distances', module('model_distances'), fitted)
 assert raw.shape == (77, 18)
 assert pairs.shape == (2926, 12)
-assert distances.shape == (77, 77)
+assert distances.shape == (77, 78)
 assert embedding.shape == (77, 18)
 assert len(parameters) == 16
 print('CHI:01 to CHI:02', pairs.loc[(pairs.unit_id_a == 'CHI:01') &
@@ -35,7 +35,7 @@ pca = timed('PCA-90 model application', module('model_pca'),
 pca_raw, pca_pairs, pca_parameters, pca_distances, pca_scores, pca_loadings = pca
 assert pca_raw.shape == (77, 18)
 assert pca_pairs.shape == (2926, 5)
-assert pca_distances.shape == (77, 77)
+assert pca_distances.shape == (77, 78)
 assert pca_scores.shape == (77, 20)
 assert pca_loadings.shape == (17, 19)
 k = int(pca_parameters.retained_components.iat[0])

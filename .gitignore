@@ -30,6 +30,7 @@ Thumbs.db
 /analysis/cache/
 /SP data/
 /Chicago data/
+test/
 
 # Local compatibility aliases and historical paths
 /analysis/.compat/

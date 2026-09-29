@@ -11,8 +11,11 @@ if not isinstance(raw, pd.DataFrame) or raw.unit_id.tolist() != ids:
     raise ValueError('Raw model identities differ from the PCA cohort')
 if not isinstance(embedding, pd.DataFrame) or embedding.unit_id.tolist() != ids:
     raise ValueError('Expected the ordered 77-area weighted embedding')
-if not baseline_matrix.index.tolist() == ids or not baseline_matrix.columns.tolist() == ids:
+if (not isinstance(baseline_matrix, pd.DataFrame) or
+        baseline_matrix.unit_id.tolist() != ids or
+        baseline_matrix.columns.tolist() != ['unit_id'] + ids):
     raise ValueError('Baseline matrix identities differ from the embedding')
+baseline_matrix = baseline_matrix.set_index('unit_id')
 if not isinstance(baseline_pairs, pd.DataFrame) or len(baseline_pairs) != 2926:
     raise ValueError('Expected 2,926 baseline pairs')
 if not isinstance(baseline_parameters, pd.DataFrame) or len(baseline_parameters) != 16:
@@ -81,6 +84,7 @@ if len(pca_pairs) != 2926 or (pca_pairs['distance'] < 0).any():
     raise ValueError('Expected 2,926 valid unordered PCA pairs')
 pca_distance_matrix = pd.DataFrame(distance, index=ids, columns=ids)
 pca_distance_matrix.index.name = 'unit_id'
+pca_distance_matrix.insert(0, 'unit_id', ids)
 
 pca_scores = pd.DataFrame({'unit_id': ids})
 for component in range(scores_array.shape[1]):

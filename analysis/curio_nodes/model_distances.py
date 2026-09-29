@@ -65,6 +65,7 @@ parameters = pd.concat([scalar_parameters, pd.DataFrame(family_rows)],
 parameters.insert(0, 'model_id', 'chicago_only_8_family_candidate_v0')
 distance_matrix = pd.DataFrame(distances, index=ids, columns=ids)
 distance_matrix.index.name = 'unit_id'
+distance_matrix.insert(0, 'unit_id', ids)
 
 # This is the exact weighted Euclidean embedding used by the Sao Paulo PCA
 # calculation. Its full-space distances must reproduce the family metric.

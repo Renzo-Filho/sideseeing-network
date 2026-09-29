@@ -4,6 +4,8 @@
 
 New: [functional extension and matched-source work](../docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md) · [functional release](results/Chicago/chi_functional_2026_09_16_v2/README.md).
 
+[Chicago Curio model notebook](chicago_curio_model_analysis.ipynb) reproduces the saved feature construction, eight-family PCA model, and three linked views for comparison with [São Paulo model analysis](model_analysis.ipynb).
+
 **Continue in a new chat:** copy the complete [NEXT_AGENT_PROMPT.md](../docs/operations/NEXT_AGENT_PROMPT.md).
 
 [Data requirements](../docs/chicago/CHICAGO_DATA_REQUIREMENTS.md) · [Attribute documentation](../docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md) · [Execution report and handoff](../docs/chicago/CHICAGO_EXECUTION_REPORT.md) · [Chicago outputs](results/Chicago/README.md)

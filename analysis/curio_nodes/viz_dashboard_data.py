@@ -23,10 +23,11 @@ coordinates = scores[['PC1', 'PC2']].to_numpy(dtype=float)
 if not np.isfinite(coordinates).all():
     raise ValueError('PCA plot coordinates must be finite')
 
-if not isinstance(matrix, pd.DataFrame) or matrix.shape != (77, 77):
-    raise ValueError('Expected a 77-by-77 PCA distance matrix')
-if matrix.index.tolist() != ids or matrix.columns.tolist() != ids:
+if not isinstance(matrix, pd.DataFrame) or matrix.shape != (77, 78):
+    raise ValueError('Expected a 77-by-77 PCA distance matrix with explicit IDs')
+if matrix.unit_id.tolist() != ids or matrix.columns.tolist() != ['unit_id'] + ids:
     raise ValueError('PCA distance matrix must be ordered CHI:01–CHI:77 on both axes')
+matrix = matrix.set_index('unit_id')
 distance_values = matrix.to_numpy(dtype=float)
 if not np.isfinite(distance_values).all() or (distance_values < -1e-10).any():
     raise ValueError('PCA distances must be finite and nonnegative')
