@@ -58,3 +58,9 @@ test/
 # Firecrawl source research cache
 .firecrawl/
 export/
+
+# Local tool state
+.curio/
+.agents/
+.codex/
+analysis/curio_nodes/backup_spec_rev_*.json
