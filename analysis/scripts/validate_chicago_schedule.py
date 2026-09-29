@@ -1,3 +1,4 @@
+"""Independently recount CTA bus stop calls from raw GTFS and assert they match the Chicago functional v2 transit checks."""
 from pathlib import Path
 import datetime as dt,json
 import pandas as pd

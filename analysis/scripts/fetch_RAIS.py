@@ -1,3 +1,4 @@
+"""Download 2022 RAIS formal jobs for São Paulo from Base dos Dados, aggregated by CEP (needs GOOGLE_CLOUD_PROJECT)."""
 import os
 import basedosdados as bd
 

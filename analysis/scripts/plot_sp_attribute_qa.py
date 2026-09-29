@@ -1,3 +1,4 @@
+"""Plot the six-feature SP attribute pilot bar chart (Brás, Itaim Bibi, Grajaú) for QA."""
 from pathlib import Path
 import os
 os.environ.setdefault('MPLCONFIGDIR','/tmp/sp-attribute-matplotlib')
