@@ -4,7 +4,7 @@
 
 Can the unresolved Chicago morphology and cadastral families be constructed from the installed sources without mistaking source records for physical entities? This is a **bounded diagnostic**, not a citywide run or acceptance test. It follows the [four-area source sample](../chicago_m_sample_2026_09_25/README.md). The four M2 and six M3/M4 cases were frozen in [case_selection.json](case_selection.json) **before** viewing imagery. They intentionally contrast awkward and ordinary cases; the resulting fractions are not error rates. Seven previously sampled Cook PIN10 groups were selected for source-key and geometry checks. No DuPage entity conclusion follows from these Cook cases.
 
-The scripts are [physical imagery audit](../../../scripts/audit_chicago_m_physical_cases_2026_09_25.py) and [M7 relation audit](../../../scripts/audit_chicago_m7_case_relations_2026_09_25.py). Reproduce with:
+The scripts are [physical imagery audit](../../../scripts/_archive/chicago_m_pilots_2026_09_25.zip) and [M7 relation audit](../../../scripts/_archive/chicago_m_pilots_2026_09_25.zip). Reproduce with:
 
 ```bash
 .venv/bin/python analysis/scripts/audit_chicago_m_physical_cases_2026_09_25.py --select-only

@@ -1,6 +1,6 @@
 # U1 alternatives: six small OSM tiles, Overture comparison, Chicago portal check
 
-**23 September 2026. Diagnostic pilot only.** No U1 replacement, destination-diversity variable, model fit, or family weight is accepted. This report follows the [exact six-unit U1 area audit](../u1_developed_area_2026_09_22/README.md) and the [open discussion](../../../../docs/OPEN_DISCUSSION.md). The six sites were chosen to inspect known source problems, so their results are **not representative estimates** for the districts or cities.
+**23 September 2026. Diagnostic pilot only.** No U1 replacement, destination-diversity variable, model fit, or family weight is accepted. This report follows the [exact six-unit U1 area audit](../u1_developed_area_2026_09_22/README.md) and the [open discussion](../../../../docs/DECISIONS.md). The six sites were chosen to inspect known source problems, so their results are **not representative estimates** for the districts or cities.
 
 ## Question and sample
 

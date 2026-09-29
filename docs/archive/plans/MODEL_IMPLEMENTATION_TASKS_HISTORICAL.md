@@ -1,6 +1,6 @@
 # Historical model implementation checklist
 
-This checklist was moved from `docs/README.md` on 22 September 2026. It records an earlier implementation outline and is not the current completion status. See [current model status](../../MODEL_STATUS.md).
+This checklist was moved from `docs/README.md` on 22 September 2026. It records an earlier implementation outline and is not the current completion status. See [current model status](../../STATUS.md).
 
 ## Model Implementation Tasks
 

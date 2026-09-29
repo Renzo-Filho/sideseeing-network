@@ -18,7 +18,7 @@ Local data: `analysis/data/Chicago/chicago_cadastral_2026_09_18/` (approximately
 | `benchmarking_2023` | 3,434 | Large-property GFA checks |
 | `benchmarking_covered_current` | 3,693 | Benchmarking coverage register |
 
-Counts are source features/records, not mutually exclusive buildings. Full descriptions, publisher links and terms remain in the [discovery report](../../../../docs/chicago/CHICAGO_DATA_DISCOVERY_2026_09_18.md). [download_register.csv](download_register.csv) records exact dataset endpoints and local locations.
+Counts are source features/records, not mutually exclusive buildings. Full descriptions, publisher links and terms remain in the [discovery report](../../../../docs/chicago/DATA_SOURCES.md). [download_register.csv](download_register.csv) records exact dataset endpoints and local locations.
 
 ## Chicago-only rule and validation
 

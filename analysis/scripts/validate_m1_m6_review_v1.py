@@ -31,7 +31,6 @@ def main():
     rail=pd.read_csv(BASE/'blocks_v4_local_rail/paired_local_rail_envelope_sensitivity.csv')
     assert len(rail)==8 and rail.unit_id.nunique()==8
     assert (rail.all_candidate_count==rail.removed_mask_majority+rail.land_candidate_count).all()
-    assert (ROOT/'analysis/NEXT_AGENT_PROMPT.md').read_bytes()==(ROOT/'docs/operations/NEXT_AGENT_PROMPT.md').read_bytes()
-    print('Validated 173 M1/M6 rows, 30 positional comparisons, class-gap mass, 8 pedestrian pilots, 8 local-rail pilots and handoff copies')
+    print('Validated 173 M1/M6 rows, 30 positional comparisons, class-gap mass, 8 pedestrian pilots and 8 local-rail pilots')
 
 if __name__=='__main__':main()

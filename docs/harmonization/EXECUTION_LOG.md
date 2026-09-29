@@ -1,10 +1,6 @@
 # São Paulo–Chicago harmonization: execution documentation
 
-**New scope review:** the user requested restoration of the prior [six-family proposal](SIX_FAMILY_PLAN_REASSESSMENT.md) for renewed pros/cons assessment. The prior rejection remains part of the historical record; the sealed H4 matrix is unchanged. Scope and scientific acceptance remain open, and no fit or bulk processing has resumed. The [model status](../MODEL_STATUS.md) is the current entry point.
-
-**Current work mode:** the user paused large-scale processing for a manual [source/entity definition review](ENTITY_SOURCE_DECISION_BRIEF.md). The [model status](../MODEL_STATUS.md) is the current entry point. No fit or new bulk rebuild is authorized during this review.
-
-**Current status — 22 September 2026:** six supplied Microsoft tiles were organized and the paired footprint pilot is complete. The user has reopened the prior [six-family proposal](SIX_FAMILY_PLAN_REASSESSMENT.md) for scope review; the original [13-family route](CHICAGO_13_FAMILY_COMPLETION_LEDGER.md) remains documented. The scope decision and semantic gates are open, and no new shared model has been fitted. Earlier contrary statements in this cumulative record are historical.
+**Current status — 22 September 2026:** six supplied Microsoft tiles were organized and the paired footprint pilot is complete. The user has reopened the prior [six-family proposal](PLAN.md) for scope review; the original [13-family route](PLAN.md) remains documented. The scope decision and semantic gates are open, and no new shared model has been fitted. Earlier contrary statements in this cumulative record are historical.
 
 ## Local rail envelopes and M1/M6 matched-road review
 
@@ -61,7 +57,7 @@ The existing Chicago Overture building file cites Microsoft ML Buildings on 373,
 To continue the original M2/M3/M4 family gates, `analysis/scripts/review_paired_junction_block_pilots.py` summarized the sealed connector/enclosure candidates in the same eight pilot areas. [Pilot flags](../../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/README.md) show Loop with 71 connector pairs within 10 m and 125 narrow enclosures, compared with Brás at 13 and 2. Those are inspection flags, not physical junction/block corrections. The next stage is to annotate matched junction and barrier cases, implement a common consolidation/block-boundary method, then independently review its paired outputs. No M2/M3/M4 candidate was promoted into the model.
 
 
-Started 22 September 2026. This is the cumulative documentation for the [approved harmonization plan](CHICAGO_HARMONIZATION_PLAN.md). It will record every H0–H6 step, its inputs, definitions, implementation, checks, artifacts and limitations. **The model build is in progress; this is not a completed-model report.**
+Started 22 September 2026. This is the cumulative documentation for the [approved harmonization plan](PLAN.md). It will record every H0–H6 step, its inputs, definitions, implementation, checks, artifacts and limitations. **The model build is in progress; this is not a completed-model report.**
 
 ## Authorization and release boundaries
 

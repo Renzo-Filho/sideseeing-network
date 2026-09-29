@@ -2,13 +2,13 @@
 
 ## Chicago attribute construction (September 2026)
 
-New: [functional extension and matched-source work](../docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md) · [functional release](results/Chicago/chi_functional_2026_09_16_v2/README.md).
+New: [functional extension and matched-source work](../docs/chicago/ATTRIBUTES.md) · [functional release](results/Chicago/chi_functional_2026_09_16_v2/README.md).
 
 [Chicago Curio model notebook](chicago_curio_model_analysis.ipynb) reproduces the saved feature construction, eight-family PCA model, and three linked views for comparison with [São Paulo model analysis](model_analysis.ipynb).
 
-**Continue in a new chat:** copy the complete [NEXT_AGENT_PROMPT.md](../docs/operations/NEXT_AGENT_PROMPT.md).
+**Continue in a new chat:** copy the complete [NEXT_AGENT_PROMPT.md](../docs/HANDOFF.md).
 
-[Data requirements](../docs/chicago/CHICAGO_DATA_REQUIREMENTS.md) · [Attribute documentation](../docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md) · [Execution report and handoff](../docs/chicago/CHICAGO_EXECUTION_REPORT.md) · [Chicago outputs](results/Chicago/README.md)
+[Data requirements](../docs/chicago/DATA_SOURCES.md) · [Attribute documentation](../docs/chicago/ATTRIBUTES.md) · [Execution report and handoff](../docs/chicago/EXECUTION_LOG.md) · [Chicago outputs](results/Chicago/README.md)
 
 
 **To analyze the completed São Paulo attributes, open [results/SP](results/SP/README.md).** There are 96 districts, 13 feature families, 23 primary candidate columns and 77 total attribute/diagnostic columns. The primary SP model is implemented; the corrected v2 release and robustness results are available below.
@@ -16,7 +16,7 @@ New: [functional extension and matched-source work](../docs/chicago/CHICAGO_FUNC
 | Folder | Purpose | Should I open it? |
 |---|---|---|
 | [results/SP](results/SP/README.md) | Final tables, district map, report, figures and validation | **Yes — start here** |
-| [project documentation](../docs/README.md) | Current SP/Chicago methods, handoff, historical plans and audits | For methodology and next steps |
+| [project documentation](../README.md) | Current SP/Chicago methods, handoff, historical plans and audits | For methodology and next steps |
 | data/ | Original downloaded/input datasets; SP and Chicago sources | Only for source investigation; preserve originals |
 | [work](work/README.md) | Prepared datasets, supporting experiments and execution checkpoints | For reproduction or debugging |
 | config/ | Versioned method choices and input bindings | For pipeline development |
@@ -57,7 +57,7 @@ File roles: **CSV** for inspection and interchange (read district IDs as strings
 - Original executable paths remain supported through relative symbolic links. Preserve symlinks when copying the repository; on systems without symlink support, use a copy tool that dereferences links and check disk requirements.
 - The folder migration is recorded in [work/organization_manifest.json](work/organization_manifest.json), including old/new locations and SHA-256 checks of all pre-existing output/prepared files. Reproduction entry points in the existing documentation remain valid. The migration script is `scripts/organize_analysis_workspace.py` and safely exits if already applied.
 
-[Attribute documentation](../docs/sp/ATTRIBUTE_DOCUMENTATION.md) — definitions, input processing, formulas, all 77 columns, and limitations.
+[Attribute documentation](../docs/sp/ATTRIBUTES.md) — definitions, input processing, formulas, all 77 columns, and limitations.
 
 [Urban model implementation plan](../docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md) — proposed N11 preprocessing, family distances, Brás comparisons, robustness tests and deliverables; the primary implementation now exists; see the v2 corrections report for completed modeling and robustness work.
 
@@ -71,4 +71,4 @@ Legacy scripts still address `analysis/outputs` and `analysis/processed`. To rep
 
 [SP model validation](../docs/archive/audits/SP_MODEL_VALIDATION.md) — reproduced baseline ranking, identified defects and remaining acceptance work.
 
-[Corrected SP model](../docs/sp/SP_MODEL_FIXES.md) · [Chicago harmonization plan](../docs/chicago/CHICAGO_HARMONIZATION_PLAN.md).
+[Corrected SP model](../docs/sp/MODEL.md) · [Chicago harmonization plan](../docs/harmonization/PLAN.md).

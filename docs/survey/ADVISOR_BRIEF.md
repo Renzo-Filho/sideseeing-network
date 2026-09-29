@@ -13,7 +13,7 @@
 | Common cadastral/floor-area definitions unsupported by current evidence | **M7, B2, B3** | SP measurements and partial CHI inputs exist. Chicago’s available records do not yet establish equivalent counting units and property coverage. |
 | Functional comparison unresolved | **U1, U2** | Local use/job values and pilot alternatives exist; their categories, weighting, employment coverage or geographic assignment need reconciliation. |
 
-The **six-family proposal is M1 + M6 + B1 + BV + U3 + U4**: five original families plus a new vertical-form family, BV. It has a complete numerical input table for **96 SP districts and 77 CHI Community Areas**. It addresses several original problems and provides a narrower route forward. It does **not** complete the eight omitted families. Neither proposed common model has been fitted or scientifically accepted. [Current status](../MODEL_STATUS.md) · [Six-family review](../chicago/SIX_FAMILY_PLAN_REASSESSMENT.md)
+The **six-family proposal is M1 + M6 + B1 + BV + U3 + U4**: five original families plus a new vertical-form family, BV. It has a complete numerical input table for **96 SP districts and 77 CHI Community Areas**. It addresses several original problems and provides a narrower route forward. It does **not** complete the eight omitted families. Neither proposed common model has been fitted or scientifically accepted. [Current status](../STATUS.md) · [Six-family review](../harmonization/PLAN.md)
 
 ## The distinction that matters
 
@@ -71,7 +71,7 @@ Below, **observed** examples come from project audits; **illustrations** are hyp
 
 **Illustration.** Compactness is `4π × area / perimeter²`. A 100 × 100 m square scores **0.785**. An artificial division into two 50 × 100 m rectangles gives **0.698** each; elongation changes from 1 to 2. Identical land appears less compact and more elongated.
 
-**Current position.** **Outside the six-family proposal.** Shape calculations exist, but their physical interpretation needs common block identities and perimeter rules. [Definitions and acceptance conditions](../chicago/CHICAGO_13_FAMILY_COMPLETION_LEDGER.md)
+**Current position.** **Outside the six-family proposal.** Shape calculations exist, but their physical interpretation needs common block identities and perimeter rules. [Definitions and acceptance conditions](../harmonization/PLAN.md)
 
 ## M6 — Street hierarchy composition
 
@@ -83,7 +83,7 @@ Below, **observed** examples come from project audits; **illustrations** are hyp
 
 **Observed example.** **23.85% of SP’s legacy street length was assigned to Local by assumption.** Comparing this with a source that keeps unclassified records separate would partly compare missing-data policies rather than street hierarchy.
 
-**Current position.** **Retained in the six-family proposal.** Both cities now use ten common classes without that imputation. Overture’s known lower-order `unclassified` class remains separate from genuinely undetermined `unknown`. This resolves a concrete definition problem; geographic coverage still needs review. [SP rule](../sp/ATTRIBUTE_DOCUMENTATION.md) · [Shared rule](../../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/m1_m6_review/README.md)
+**Current position.** **Retained in the six-family proposal.** Both cities now use ten common classes without that imputation. Overture’s known lower-order `unclassified` class remains separate from genuinely undetermined `unknown`. This resolves a concrete definition problem; geographic coverage still needs review. [SP rule](../sp/ATTRIBUTES.md) · [Shared rule](../../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/m1_m6_review/README.md)
 
 ## M7 — Cadastral entity density
 
@@ -95,7 +95,7 @@ Below, **observed** examples come from project audits; **illustrations** are hyp
 
 **Illustration.** A condominium with 100 separately taxed apartments could count as **one physical entity or 100 tax records**. That difference reflects registration practice, not 100 times more physical subdivision.
 
-**Current position.** **Outside the six-family proposal.** A common entity definition and verified record relationships are still needed. Neither building footprints nor BV grid height identify legal property subdivision. [Entity audit](../chicago/ENTITY_SOURCE_DECISION_BRIEF.md)
+**Current position.** **Outside the six-family proposal.** A common entity definition and verified record relationships are still needed. Neither building footprints nor BV grid height identify legal property subdivision. [Entity audit](../DECISIONS.md)
 
 ## B1 — Building footprint coverage
 
@@ -131,7 +131,7 @@ Below, **observed** examples come from project audits; **illustrations** are hyp
 
 **Illustration.** A building with **10,000 m² gross area and 7,000 m² rentable area** appears 30% smaller if the second source reports only rentable space, despite identical physical construction.
 
-**Current position.** **Outside the six-family proposal.** No equivalent Chicago quantity covering the intended property stock is established. BV volume measures cubic metres, not square metres of floor space. [Area/entity audit](../chicago/ENTITY_SOURCE_DECISION_BRIEF.md)
+**Current position.** **Outside the six-family proposal.** No equivalent Chicago quantity covering the intended property stock is established. BV volume measures cubic metres, not square metres of floor space. [Area/entity audit](../DECISIONS.md)
 
 ## U1 — Land-use diversity
 
@@ -155,7 +155,7 @@ Below, **observed** examples come from project audits; **illustrations** are hyp
 
 **Observed example.** Switching SP from area-first to address-first allocation redistributes **275,226.71 job links**; 11 districts change by over 10%. Another **508,844 jobs remain unlocated** under the primary policy. These are uncertainty indicators, not measured allocation errors.
 
-**Current position.** **Outside the six-family proposal.** Job-density candidates exist in both cities; common interpretation remains unresolved. Resident density U3 cannot substitute for workplace concentration. [Allocation experiments](../sp/SP_METHOD_DECISIONS.md)
+**Current position.** **Outside the six-family proposal.** Job-density candidates exist in both cities; common interpretation remains unresolved. Resident density U3 cannot substitute for workplace concentration. [Allocation experiments](../DECISIONS.md)
 
 ## U3 — Population density
 
@@ -189,7 +189,7 @@ It makes three distinct kinds of progress:
 2. **Adds a different vertical measure:** **BV uses GHSL, the Global Human Settlement Layer**, with estimated height on a 100 m grid. Both cities use the same 2018 height product and aggregation rule. This avoids dependence on incompatible fiscal floor reports while recovering some information about vertical form. The result summarizes grid estimates, not individual buildings’ floors. A 2020 volume product is an alternative within BV, not another independently weighted family.
 3. **Leaves unresolved concepts outside the proposed comparison:** it omits M2/M3/M4, M7/B2/B3 and U1/U2. This makes a smaller numerical model feasible, but it loses physical junction/block structure, property subdivision, reported floors, constructed area, land-use mix and workplace intensity. Those problems remain open.
 
-The saved proposal has **173 complete rows, 15 raw columns and six family weights**: ten columns are M6 shares forming one family. Its **13/13 readiness checks** establish properties such as complete inputs, valid numerical ranges and consistent weights. They do not establish mapping accuracy, equivalent coverage or valid urban-similarity conclusions. Remaining review includes source completeness, grid estimates, dates, calendars and sensitivity to weights and definitions. [Six-family scope and conditions](../chicago/SIX_FAMILY_PLAN_REASSESSMENT.md) · [Numerical readiness evidence](../../analysis/results/SP_CHI/harmonization_2026_09_22_h4_review/README.md)
+The saved proposal has **173 complete rows, 15 raw columns and six family weights**: ten columns are M6 shares forming one family. Its **13/13 readiness checks** establish properties such as complete inputs, valid numerical ranges and consistent weights. They do not establish mapping accuracy, equivalent coverage or valid urban-similarity conclusions. Remaining review includes source completeness, grid estimates, dates, calendars and sensitivity to weights and definitions. [Six-family scope and conditions](../harmonization/PLAN.md) · [Numerical readiness evidence](../../analysis/results/SP_CHI/harmonization_2026_09_22_h4_review/README.md)
 
 **Illustration of the tradeoff:** two districts could match on roads, footprint coverage, height, resident density and bus supply while one is predominantly residential and the other has much more employment and commerce. The six-family model would have limited ability to distinguish that functional difference. Equal family weights also do not make the inputs independent: M1/M6 share roads, and U3/U4 share population information.
 

@@ -1,6 +1,6 @@
 # São Paulo urban model — independent validation
 
-> **Revalidation update:** the issues below were corrected in `sp_urban_model_v2`. All 26 independent audit checks and 30 automated tests now pass; 577 sensitivity scenarios completed. See [corrections and results](../../sp/SP_MODEL_FIXES.md) and the [Chicago harmonization plan](../../chicago/CHICAGO_HARMONIZATION_PLAN.md). The original findings below remain as the historical audit record.
+> **Revalidation update:** the issues below were corrected in `sp_urban_model_v2`. All 26 independent audit checks and 30 automated tests now pass; 577 sensitivity scenarios completed. See [corrections and results](../../sp/MODEL.md) and the [Chicago harmonization plan](../../harmonization/PLAN.md). The original findings below remain as the historical audit record.
 
 Reviewed **15 September 2026** against `URBAN_MODEL_IMPLEMENTATION_PLAN.md` and the released attributes. Reviewed both `model_analysis.ipynb` and the currently edited `model_analysis.py`, the CLI and `sp_model` modules, configuration, fitted parameters and saved rankings.
 

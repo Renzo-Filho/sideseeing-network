@@ -1,14 +1,14 @@
-# Chicago construction report and continuation handoff
+# Chicago construction log
 
-**Scope update — 25 September 2026:** M2 is deferred from the planned Chicago model and future SP–Chicago common score. Its null field and endpoint audit below remain historical diagnostics, not a pending construction gate. See the [current model status](../MODEL_STATUS.md) and [decision record](../OPEN_DISCUSSION.md). The prior local release and its files remain unchanged.
+**Scope update — 25 September 2026:** M2 is deferred from the planned Chicago model and future SP–Chicago common score. Its null field and endpoint audit below remain historical diagnostics, not a pending construction gate. See the [current model status](../STATUS.md) and [decision record](../DECISIONS.md). The prior local release and its files remain unchanged.
 
 ## September 17 checkpoint
 
-The [independent harmonization audit](../../analysis/results/Chicago/harmonization_checkpoint_2026_09_17/README.md) passed **50 checks**, with **41 current repository tests** passing. Both cities’ road candidates reconcile, and all five Chicago footprint pilots for both sources agree with untiled union reconstruction. Source equivalence, access/topology and common-feature acceptance remain pending. The rewritten [handoff](../operations/NEXT_AGENT_PROMPT.md) reflects the current `docs/` layout and completed acquisitions. Next: CMAP business-support employment sensitivity with whole-block outside accounting. Work stopped at this checkpoint per the user’s quota request.
+The [independent harmonization audit](../../analysis/results/Chicago/harmonization_checkpoint_2026_09_17/README.md) passed **50 checks**, with **41 current repository tests** passing. Both cities’ road candidates reconcile, and all five Chicago footprint pilots for both sources agree with untiled union reconstruction. Source equivalence, access/topology and common-feature acceptance remain pending. The rewritten [handoff](../HANDOFF.md) reflects the current `docs/` layout and completed acquisitions. Next: CMAP business-support employment sensitivity with whole-block outside accounting. Work stopped at this checkpoint per the user’s quota request.
 
 ## September 16 continuation: new data processed
 
-The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](CHICAGO_FUNCTIONAL_EXTENSION.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.
+The newly supplied Census blocks, LODES WAC, CTA GTFS and hydrography have been processed in a separate [functional extension](ATTRIBUTES.md), release `chi_functional_2026_09_16_v2`. It contains population/job densities for 77 Community Areas, six population-weighted bus-service scenarios (462 rows), hydrographic denominator diagnostics and explicit border residuals. **163 independent checks and 41 repository tests passed.** All strict cross-city flags remain false.
 
 Matched Overture `2026-08-19.0` buildings for Chicago and road segments/connectors for both cities have also been acquired; paired candidate reviews are separate from the frozen releases. The older missing-data statements below describe the original v1 baseline. Current pending work concerns business-use jobs sensitivity, common morphology/entity definitions, paired SP companions and acceptance—not absence of blocks, bus schedules or workplace data.
 
@@ -18,7 +18,7 @@ Matched Overture `2026-08-19.0` buildings for Chicago and road segments/connecto
 
 The user supplied additional Chicago data and authorized attribute construction under the harmonization plan. We implemented a separate Chicago pipeline to turn supported local sources into inspectable Community Area measurements, expose missing information, and preserve the frozen SP reference. This is the local construction stage of harmonization, not completion of the common model or a Chicago-to-Brás ranking.
 
-Current definitions and source gates are in [CHICAGO_ATTRIBUTE_DOCUMENTATION.md](CHICAGO_ATTRIBUTE_DOCUMENTATION.md) and [CHICAGO_DATA_REQUIREMENTS.md](CHICAGO_DATA_REQUIREMENTS.md). The updated [harmonization plan](CHICAGO_HARMONIZATION_PLAN.md) retains its original inventory explicitly as history and links to current readiness, rather than leaving obsolete absence claims as current facts.
+Current definitions and source gates are in [CHICAGO_ATTRIBUTE_DOCUMENTATION.md](ATTRIBUTES.md) and [CHICAGO_DATA_REQUIREMENTS.md](DATA_SOURCES.md). The updated [harmonization plan](../harmonization/PLAN.md) retains its original inventory explicitly as history and links to current readiness, rather than leaving obsolete absence claims as current facts.
 
 ## Executed work and decisions
 

@@ -1,6 +1,6 @@
 # Chicago data discovery — 18 September 2026
 
-See the [full source-by-source report](../../../../docs/chicago/CHICAGO_DATA_DISCOVERY_2026_09_18.md).
+See the [full source-by-source report](../../../../docs/chicago/DATA_SOURCES.md).
 
 - `dataset_register.csv`: ten selected datasets/documentation sources and attribute mapping.
 - `request-validation.json`, `followup-validation.json`: exact public API request URLs, retrieval outcomes and counts. Two whole-history aggregations timed out; successful samples are not full-data completeness checks.

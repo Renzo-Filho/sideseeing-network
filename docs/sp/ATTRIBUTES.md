@@ -1,13 +1,8 @@
 # São Paulo attribute documentation
 
-## Chicago documentation
+This document describes the **implemented** release `sp_attributes_2026_09_11_v1`: 96 municipal districts, 13 families, 23 primary candidate columns and 77 total columns. M5 and U5 were removed. It covers inputs, source processing, formulas, interpretation and limitations. No similarity model has been fitted in this release. For Chicago, see the [Chicago attributes](../chicago/ATTRIBUTES.md); its local-source definitions and acceptance statuses differ.
 
-This document continues to describe the frozen **SP** release. For Chicago, use [CHICAGO_ATTRIBUTE_DOCUMENTATION.md](../chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md); its local-source definitions and acceptance statuses differ.
-
-
-This document describes the **implemented** release `sp_attributes_2026_09_11_v1`: 96 municipal districts, 13 families, 23 primary candidate columns and 77 total columns. M5 and U5 were removed. It covers inputs, source processing, formulas, interpretation and limitations. No similarity model has been fitted.
-
-Start with the [primary table](../../analysis/results/SP/tables/attributes_primary.csv), [full table](../../analysis/results/SP/tables/attributes_wide.csv), and [long table with provenance](../../analysis/results/SP/tables/attributes_long.parquet). Every exact output-column name is listed in the catalogue at the end. The [construction report](../../analysis/results/SP/reports/ATTRIBUTE_REPORT.md) records execution and validation; the [method decisions](SP_METHOD_DECISIONS.md) explain the M2/M6/U2 experiments.
+Start with the [primary table](../../analysis/results/SP/tables/attributes_primary.csv), [full table](../../analysis/results/SP/tables/attributes_wide.csv), and [long table with provenance](../../analysis/results/SP/tables/attributes_long.parquet). Every exact output-column name is listed in the catalogue at the end. The [construction report](../../analysis/results/SP/reports/ATTRIBUTE_REPORT.md) records execution and validation; the [method decisions](../DECISIONS.md#sp-method-decisions-m6-classification-u2-allocation-and-m2-simplification) explain the M2/M6/U2 experiments.
 
 ## 1. Shared definitions and processing
 
@@ -409,6 +404,6 @@ This catalogue is generated from the released dictionary and includes **every on
 - [Shared formulas and metadata](../../analysis/scripts/sp_attributes/core.py): quantification conventions and metadata defaults.
 - [U2 experiments](../../analysis/scripts/experiment_sp_allocations.py): CEP weighting and scenario construction.
 - [Release review](../../analysis/scripts/review_sp_attribute_release.py) and [synthetic tests](../../analysis/tests/test_sp_attributes.py).
-- [Workspace architecture](README.md) and [result navigation](../../analysis/results/SP/README.md).
+- [Workspace architecture](../../README.md) and [result navigation](../../analysis/results/SP/README.md).
 
 The release and its frozen inputs were not changed to produce this documentation. This file is the canonical SP attribute reference. Historical source and output paths in code remain supported by compatibility links.

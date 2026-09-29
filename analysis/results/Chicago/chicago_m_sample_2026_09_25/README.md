@@ -57,4 +57,4 @@ The [DuPage queue](m7_dupage_stratified_queue.csv) contains 10 rows drawn by sou
 
 **M7:** review selected condo, elevated parcel, commercial and exempt groups on parcel maps and assessor records. Establish parcel↔PIN↔condo parent↔building cardinality for each. Request new parent/improvement data only for relationships unresolved by these cases. The single PIN10 and `tieback_key_pin` fields are not yet accepted physical-entity identifiers.
 
-No M2/M3/M4/M7 family is promoted by this sample. Source years and observation universes remain as documented in the [Chicago 13-family ledger](../../../../docs/chicago/CHICAGO_13_FAMILY_COMPLETION_LEDGER.md) and [entity decision brief](../../../../docs/chicago/ENTITY_SOURCE_DECISION_BRIEF.md).
+No M2/M3/M4/M7 family is promoted by this sample. Source years and observation universes remain as documented in the [Chicago 13-family ledger](../../../../docs/harmonization/PLAN.md) and [entity decision brief](../../../../docs/DECISIONS.md).

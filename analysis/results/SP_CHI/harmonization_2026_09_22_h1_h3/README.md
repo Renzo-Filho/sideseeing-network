@@ -35,4 +35,4 @@ These numerical checks do not prove source accuracy or scientific measurement eq
 
 H4 must review the proposed reduced common set (M1/M6/B1/U3/U4, with BV extension), or require improved junction/block methods before accepting M2/M3/M4. That scope choice precedes fitting. Source completeness, land-mask differences and source years remain acceptance qualifications. No zero-filled missing family, pairwise feature deletion or city-specific normalization is permitted.
 
-Full decisions, formulas, code commands, failures/fixes and limitations: [execution documentation](../../../../docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md). H5/H6 are not started. No construction jobs remain running after finalization.
+Full decisions, formulas, code commands, failures/fixes and limitations: [execution documentation](../../../../docs/harmonization/EXECUTION_LOG.md). H5/H6 are not started. No construction jobs remain running after finalization.
