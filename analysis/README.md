@@ -1,74 +1,46 @@
-# Analysis workspace — start here
+# Analysis workspace
 
-## Chicago attribute construction (September 2026)
+What each folder is for and the rules for adding to it. Project entry point and documentation map: [root README](../README.md).
 
-New: [functional extension and matched-source work](../docs/chicago/ATTRIBUTES.md) · [functional release](results/Chicago/chi_functional_2026_09_16_v2/README.md).
+## Folders
 
-[Chicago Curio model notebook](chicago_curio_model_analysis.ipynb) reproduces the saved feature construction, eight-family PCA model, and three linked views for comparison with [São Paulo model analysis](model_analysis.ipynb).
+| Folder | What it holds | Tracked | Rule |
+|---|---|---|---|
+| [results/](results/) | Published outputs, one folder per release: `SP/`, `Chicago/`, `SP_CHI/` (paired cross-city work). Each release has its own README, tables and validation receipts | yes | Never overwrite a release; publish a new dated/versioned folder. Start with [SP](results/SP/README.md) or [Chicago](results/Chicago/README.md) |
+| [scripts/](scripts/INDEX.md) | Pipeline, pilot and validation scripts (flat), library packages `harmonization/`, `sp_attributes/`, `sp_model/`, `sp_v3/`, and finished scripts in `_archive/*.zip` | yes | Keep flat: scripts find the repo root with `parents[2]` and import each other. Regenerate [INDEX.md](scripts/INDEX.md) with `make_index.py` |
+| config/ | Frozen, versioned method contracts (JSON) and one lookup CSV read by scripts; see [config bindings in INDEX.md](scripts/INDEX.md#config-bindings-analysisconfig) | yes | Never edit in place: a change is a new file with the next version. Keep superseded versions; published results cite them |
+| tests/ | Unit tests (`unittest`) | yes | Run from the repo root: `.venv/bin/python -m unittest discover -s analysis/tests` |
+| [curio_nodes/](curio_nodes/README.md) | Chicago feature and model nodes installed in the Curio dataflow, and install/sync scripts | yes | Curio spec backups (`backup_spec_rev_*.json`) stay local |
+| data/ | Original downloads (SP, Chicago, shared), ~16 GB | no | Never edit |
+| cache/ | Regenerable download caches (Overture SP extraction), ~0.8 GB | no | Safe to rebuild |
+| [work/](work/README.md) | Local intermediates, ~8 GB: `prepared/`, `evidence/`, `runs/`, plus dated pilot folders | no | Not published. New pilots write to `work/runs/<name>_<date>/` |
+| `outputs` → `.compat/outputs/`, `processed` → `work/prepared` | Legacy symlinks from the 11 September 2026 reorganization; `.compat/` holds only links (below) | — | Keep; do not use for new work |
 
-**Continue in a new chat:** copy the complete [NEXT_AGENT_PROMPT.md](../docs/HANDOFF.md).
+Notebooks: [chicago_curio_model_analysis.ipynb](chicago_curio_model_analysis.ipynb) reproduces the Chicago Curio feature construction, eight-family candidate model and three linked views; [model_analysis.ipynb](model_analysis.ipynb) and `model_analysis.py` analyze the São Paulo model v2.
 
-[Data requirements](../docs/chicago/DATA_SOURCES.md) · [Attribute documentation](../docs/chicago/ATTRIBUTES.md) · [Execution report and handoff](../docs/chicago/EXECUTION_LOG.md) · [Chicago outputs](results/Chicago/README.md)
+### Legacy links: `outputs`, `processed` and `.compat/`
 
-
-**To analyze the completed São Paulo attributes, open [results/SP](results/SP/README.md).** There are 96 districts, 13 feature families, 23 primary candidate columns and 77 total attribute/diagnostic columns. The primary SP model is implemented; the corrected v2 release and robustness results are available below.
-
-| Folder | Purpose | Should I open it? |
-|---|---|---|
-| [results/SP](results/SP/README.md) | Final tables, district map, report, figures and validation | **Yes — start here** |
-| [project documentation](../README.md) | Current SP/Chicago methods, handoff, historical plans and audits | For methodology and next steps |
-| data/ | Original downloaded/input datasets; SP and Chicago sources | Only for source investigation; preserve originals |
-| [work](work/README.md) | Prepared datasets, supporting experiments and execution checkpoints | For reproduction or debugging |
-| config/ | Versioned method choices and input bindings | For pipeline development |
-| scripts/, tests/ | Processing code and validation tests | For pipeline development |
-| cache/ | Auxiliary working cache | Not a published result |
-
-`outputs` and `processed` are **compatibility links**, not additional datasets. Existing scripts, frozen manifests and older documentation use those names. `outputs` points to a hidden legacy-path index; `processed` points to `work/prepared`. Use `results/` and `work/` for browsing. No large datasets were copied, and no source or numerical output was changed.
-
-## Layout
+The 11 September reorganization moved SP outputs into `work/` and kept the old names working through links. `.compat/` contains no data:
 
 ```text
-analysis/
-  results/SP/
-    tables/                 primary, full and metadata-rich attribute tables
-    spatial/                district GeoPackage
-    reports/                readable construction report
-    figures/                pilot figure
-    validation/
-      tables/               outliers, distributions and coverage summaries
-      checks/               machine-readable validation results
-  ../docs/                 project methodology, status, handoff and archive
-  data/                     original inputs
-  work/
-    prepared/SP/            current v3 preparation and historical v2 baseline
-    evidence/               source reviews and M2/M6/U2 experiments
-    runs/                   checkpoints, intermediate calculations and logs
-    organization_manifest.json
-  config/  scripts/  tests/  cache/
+outputs -> .compat/outputs/
+  sp_attributes/sp_attributes_2026_09_11_v1   -> work/runs/sp_attributes_2026_09_11_v1
+  sp_allocation_experiments_2026_09_10        -> work/evidence/job_allocation_experiments
+  sp_audit                                    -> work/evidence/source_inventory
+  sp_readiness_2026_09_09                     -> work/evidence/historical_readiness
+  sp_resolution_review_2026_09_10             -> work/evidence/data_resolution
+  sp_simplification_review_2026_09_10         -> work/evidence/road_classification_and_crossings
+processed -> work/prepared
 ```
 
-File roles: **CSV** for inspection and interchange (read district IDs as strings); **Parquet** for efficient typed Python/GIS tables; **GPKG** for spatial analysis; **Markdown** for documentation; **JSON** for machine-readable parameters, checks and provenance; **logs/TXT** for execution traces. Files are grouped by purpose first, with human reports and machine checks separated.
+The frozen SP pipeline (`sp_v3/common.py`, `sp_attributes/`, several SP scripts) and the frozen configs `sp_current_methods.json` and `sp_attributes_2026_09_11.json` still address these paths, so the links must stay until that pipeline is retired. Preserve symlinks when copying the repository. The migration is recorded in `work/organization_manifest.json` (local), with old/new locations and SHA-256 checks.
 
-## Working conventions
+## File formats
 
-- Read final results from `results/SP`; use the long table for coverage and quality metadata.
-- Keep raw inputs and frozen v2/v3 preparations unchanged. Never treat temporary or prepared records as final model attributes.
-- New model work belongs in a new versioned run under `work/runs`; publish its accepted outputs separately. Do not overwrite this completed attribute release while exploring results.
-- Original executable paths remain supported through relative symbolic links. Preserve symlinks when copying the repository; on systems without symlink support, use a copy tool that dereferences links and check disk requirements.
-- The folder migration is recorded in [work/organization_manifest.json](work/organization_manifest.json), including old/new locations and SHA-256 checks of all pre-existing output/prepared files. Reproduction entry points in the existing documentation remain valid. The migration script is `scripts/organize_analysis_workspace.py` and safely exits if already applied.
+**CSV** for inspection and interchange (read district IDs as strings); **Parquet** for typed Python/GIS tables; **GPKG/GeoJSON** for spatial data; **Markdown** for human reports; **JSON** for parameters, checks and provenance; **logs/TXT** for execution traces. Human reports and machine checks are kept separate.
 
-[Attribute documentation](../docs/sp/ATTRIBUTES.md) — definitions, input processing, formulas, all 77 columns, and limitations.
+## Git checkout versus local data
 
-[Urban model implementation plan](../docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md) — proposed N11 preprocessing, family distances, Brás comparisons, robustness tests and deliverables; the primary implementation now exists; see the v2 corrections report for completed modeling and robustness work.
+Git tracks code, configs, documentation, tests and the published `results/`. Original downloads, prepared records, evidence, caches and intermediates are excluded by `.gitignore` and remain on the original workstation. A fresh checkout can read the published results but cannot rebuild them; full reconstruction requires the documented raw/prepared inputs, which this repository does not bundle. Result reports sometimes link to local-only evidence on purpose.
 
-## GitHub checkout and local data
-
-Git tracks analysis code, versioned configurations, documentation, tests and the compact **district-level release** in `results/SP` (about 5.5 MB). Original downloads, record-level prepared data, allocation evidence, caches and execution intermediates are intentionally excluded by `.gitignore`; they remain on the original workstation. A fresh checkout can inspect the published attributes without those large datasets.
-
-For development, use Python 3.12 and install `analysis/requirements.txt` into a virtual environment. Run `python -m unittest discover -s analysis/tests -p 'test_sp*.py' -v` for synthetic tests. Full source reconstruction additionally requires the documented raw/prepared inputs; this repository does not bundle them or claim they can be recovered from the district tables.
-
-Legacy scripts still address `analysis/outputs` and `analysis/processed`. To reproduce a historical run, restore the original directory layout from your data backup, or restore the organized `work/` datasets and compatibility links using the original workstation's organization manifest. The one-time `organize_analysis_workspace.py` is a migration tool for a complete pre-organization workspace, not a fresh-checkout bootstrap command. Reports link to some excluded local evidence intentionally; their absence on GitHub is not missing published district results. The obsolete generic acquisition prototype was removed after the dedicated SP and Chicago pipelines superseded its older labels, bounded requests and parallel data paths; it remains recoverable from Git history. The RAIS fetcher requires a local `GOOGLE_CLOUD_PROJECT` environment variable and separately configured credentials.
-
-[SP model validation](../docs/archive/audits/SP_MODEL_VALIDATION.md) — reproduced baseline ranking, identified defects and remaining acceptance work.
-
-[Corrected SP model](../docs/sp/MODEL.md) · [Chicago harmonization plan](../docs/harmonization/PLAN.md).
+The RAIS fetcher (`scripts/fetch_RAIS.py`) requires a local `GOOGLE_CLOUD_PROJECT` environment variable and separately configured credentials.

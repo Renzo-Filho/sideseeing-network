@@ -19,14 +19,14 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | `evaluate_chicago_m3_alley_repair_v2_2026_09_26.py` | Diagnostic alley-opening width sweep on the frozen valid development cores. | — | analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26 |
 | `evaluate_chicago_m3_complete_zones_v1_2026_09_26.py` | Compare Chicago physical-block candidates with frozen complete small-zone refs. | evaluate_chicago_m3_alley_repair_v2_2026_09_26, evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26 | analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26 |
 | `evaluate_chicago_m3_established_methods_2026_09_26.py` | Diagnostic Chicago comparison of established centerline faces and ROW candidates. | — | analysis/results/Chicago/chicago_block_method_comparison_v1_2026_09_26 |
-| `evaluate_chicago_m3_fresh_tiles_2026_09_26.py` | Compare frozen visual tile references with polygon-first ROW variants. | audit_chicago_m3_motorway_building_support_2026_09_26, audit_chicago_m3_named_gap_repairs_2026_09_27, audit_chicago_m3_named_street_gaps_2026_09_26, evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_alley_repair_v2_2026_09_26, evaluate_chicago_m3_complete_zones_v1_2026_09_26, evaluate_chicago_m3_established_methods_2026_09_26, evaluate_chicago_m3_momepy_baseline_2026_09_26, evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26, evaluate_chicago_m3_motorway_holdout_2026_09_26, evaluate_chicago_m3_parcel_references_2026_09_26, evaluate_chicago_m3_reference_v2_2026_09_27, inventory_chicago_m3_tiles_2026_09_26, queue_chicago_m3_named_street_gaps_2026_09_27, review_chicago_m3_inventory_2026_09_26 | analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
-| `evaluate_chicago_m3_momepy_baseline_2026_09_26.py` | Run established momepy street-enclosure baseline on frozen Chicago tiles. | — | analysis/results/Chicago/chicago_block_protocol_pilot_v1_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
+| `evaluate_chicago_m3_fresh_tiles_2026_09_26.py` | Compare frozen visual tile references with polygon-first ROW variants. | audit_chicago_m3_motorway_building_support_2026_09_26, audit_chicago_m3_named_gap_repairs_2026_09_27, audit_chicago_m3_named_street_gaps_2026_09_26, evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_alley_repair_v2_2026_09_26, evaluate_chicago_m3_complete_zones_v1_2026_09_26, evaluate_chicago_m3_established_methods_2026_09_26, evaluate_chicago_m3_momepy_baseline_2026_09_26, evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26, evaluate_chicago_m3_motorway_holdout_2026_09_26, evaluate_chicago_m3_parcel_references_2026_09_26, evaluate_chicago_m3_reference_v2_2026_09_27, inventory_chicago_m3_tiles_2026_09_26, queue_chicago_m3_named_street_gaps_2026_09_27, review_chicago_m3_inventory_2026_09_26 | analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
+| `evaluate_chicago_m3_momepy_baseline_2026_09_26.py` | Run established momepy street-enclosure baseline on frozen Chicago tiles. | — | analysis/results/Chicago/chicago_block_protocol_pilot_v1_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
 | `evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26.py` | Score frozen motorway-core block and nonblock references before adjudication. | — | analysis/results/Chicago/chicago_m3_complete_zone_pilot_v1_2026_09_26 |
-| `evaluate_chicago_m3_motorway_context_2026_09_26.py` | Measure Overture motorway exposure around tile-contained land components. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
-| `evaluate_chicago_m3_motorway_holdout_2026_09_26.py` | Evaluate the frozen motorway rule on new source-blind centers and imagery refs. | evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_established_methods_2026_09_26 | analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
-| `evaluate_chicago_m3_parcel_references_2026_09_26.py` | Compare Cook BaseParcel PIN groups with frozen, rough imagery references. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
+| `evaluate_chicago_m3_motorway_context_2026_09_26.py` | Measure Overture motorway exposure around tile-contained land components. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
+| `evaluate_chicago_m3_motorway_holdout_2026_09_26.py` | Evaluate the frozen motorway rule on new source-blind centers and imagery refs. | evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_established_methods_2026_09_26 | analysis/results/Chicago/chicago_m3_motorway_holdout_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
+| `evaluate_chicago_m3_parcel_references_2026_09_26.py` | Compare Cook BaseParcel PIN groups with frozen, rough imagery references. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
 | `evaluate_chicago_m3_reference_v2_2026_09_27.py` | Evaluate frozen candidate-blind Chicago block reference zones. | — | analysis/results/Chicago/chicago_m3_reference_zones_v2_2026_09_27 |
-| `inventory_chicago_m3_tiles_2026_09_26.py` | Inventory tile-contained ROW land components under a declared diagnostic rule. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
+| `inventory_chicago_m3_tiles_2026_09_26.py` | Inventory tile-contained ROW land components under a declared diagnostic rule. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
 | `link_chicago_m3_frozen_controls_2026_09_28.py` | Link candidate-blind visual controls to the stitched citywide face IDs. | — | analysis/results/Chicago/chicago_m3_provisional_faces_2026_09_27 |
 | `pilot_chicago_m3_classified_lidar_2026_09_26.py` | Extract one Cook 2022 LAS ZIP member and audit point classes in M3 faces. | pilot_chicago_m3_veterans_lidar_2026_09_26, render_chicago_m3_veterans_lidar_2026_09_26 | analysis/results/Chicago/chicago_m3_lidar_point_pilot_2026_09_26 |
 | `pilot_chicago_m3_cook_lake_2026_09_26.py` | Bounded Cook Lake polygon check for fresh Loop and O'Hare water controls. | — | analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26 |
@@ -44,7 +44,7 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | `render_chicago_m3_reference_v2_2026_09_27.py` | Render candidate-blind M3/M4 reference annotations for visual QA. | — | — |
 | `render_chicago_m3_veterans_lidar_2026_09_26.py` | Render 2022 road-class points over 2025 ortho at the West Veterans gap. | — | analysis/results/Chicago/chicago_m3_lidar_point_pilot_2026_09_26 |
 | `review_chicago_m3_c_m3_01_2026_09_26.py` | Inspect the C_M3_01 ROW merge against parcels and the cached orthophoto. | pilot_chicago_m3_veterans_repair_2026_09_27 | analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26 |
-| `review_chicago_m3_inventory_2026_09_26.py` | Link frozen visual sketches and obvious highway islands to the inventory. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
+| `review_chicago_m3_inventory_2026_09_26.py` | Link frozen visual sketches and obvious highway islands to the inventory. | — | analysis/results/Chicago/chicago_m3_candidate_v1_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
 | `select_chicago_m3_fresh_tiles_2026_09_26.py` | Freeze independent Chicago block review locations and cache orthophoto tiles. | — | analysis/results/Chicago/chicago_m3_fresh_tiles_2026_09_26 |
 | `select_chicago_m3_independent_zones_2026_09_26.py` | Freeze candidate-blind Chicago block reference zones and fetch orthophotos. | select_chicago_m3_motorway_complete_zone_2026_09_26 | — |
 | `select_chicago_m3_motorway_complete_zone_2026_09_26.py` | Freeze one new CHI:11 motorway core before viewing candidates there. | — | — |
@@ -57,35 +57,35 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
-| `review_block_barrier_pilots_v3.py` | Test rail and water line additions on paired no-link road block pilots. | review_rail_corridor_pilots_v3 | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `review_block_boundary_pilots_v2.py` | Compare paired M3/M4 boundary-network sensitivities on eight pilots. | review_block_reference_fixtures_v2 | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `review_block_reference_fixtures_v2.py` | Compare two paired block fixtures with independent local block references. | review_block_barrier_pilots_v3, review_block_water_land_filter_v3, review_local_rail_envelopes_v1, review_pedestrian_street_boundaries_v1, review_rail_corridor_pilots_v3, test_block_reference_fixtures_v2 | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+2) |
-| `review_block_water_land_filter_v3.py` | Evaluate excluding majority-water polygons from saved shoreline variants. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `review_local_rail_envelopes_v1.py` | Use city-local rail polygons as validation of paired block boundary candidates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `review_paired_junction_block_pilots.py` | Summarize unresolved M2/M3/M4 fixture pressure in both cities. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md |
-| `review_pedestrian_street_boundaries_v1.py` | Measure the omitted Overture pedestrian class in diagnostic M3/M4 pilots. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `review_rail_corridor_pilots_v3.py` | Sensitivity of physical-block pilots to dissolved rail corridor widths. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `summarize_chicago_block_protocol_pilot_v1.py` | Consolidate frozen Chicago M3/M4 pilots into an auditable gate assessment. | — | analysis/results/Chicago/chicago_block_protocol_pilot_v1_2026_09_26<br>docs/chicago/CHICAGO_PHYSICAL_BLOCK_PROTOCOL_V1.md |
-| `validate_block_barrier_pilots_v3.py` | Independent arithmetic and lineage checks for paired barrier diagnostics. | — | docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md |
+| `review_block_barrier_pilots_v3.py` | Test rail and water line additions on paired no-link road block pilots. | review_rail_corridor_pilots_v3 | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `review_block_boundary_pilots_v2.py` | Compare paired M3/M4 boundary-network sensitivities on eight pilots. | review_block_reference_fixtures_v2 | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `review_block_reference_fixtures_v2.py` | Compare two paired block fixtures with independent local block references. | review_block_barrier_pilots_v3, review_block_water_land_filter_v3, review_local_rail_envelopes_v1, review_pedestrian_street_boundaries_v1, review_rail_corridor_pilots_v3, test_block_reference_fixtures_v2 | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
+| `review_block_water_land_filter_v3.py` | Evaluate excluding majority-water polygons from saved shoreline variants. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `review_local_rail_envelopes_v1.py` | Use city-local rail polygons as validation of paired block boundary candidates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `review_paired_junction_block_pilots.py` | Summarize unresolved M2/M3/M4 fixture pressure in both cities. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md |
+| `review_pedestrian_street_boundaries_v1.py` | Measure the omitted Overture pedestrian class in diagnostic M3/M4 pilots. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `review_rail_corridor_pilots_v3.py` | Sensitivity of physical-block pilots to dissolved rail corridor widths. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `summarize_chicago_block_protocol_pilot_v1.py` | Consolidate frozen Chicago M3/M4 pilots into an auditable gate assessment. | — | analysis/results/Chicago/chicago_block_protocol_pilot_v1_2026_09_26<br>docs/chicago/BLOCKS_M3_M4.md |
+| `validate_block_barrier_pilots_v3.py` | Independent arithmetic and lineage checks for paired barrier diagnostics. | — | docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md |
 
 ## U1 land-use pilots
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
-| `audit_u1_land_cases.py` | Bounded independent physical-cover audit of saved U1 diagnostic points. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/REPRODUCIBILITY.md |
-| `audit_u1_poi_address_ranges.py` | Check four fixed São Paulo POI points against municipal address-range lines. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/REPRODUCIBILITY.md |
-| `audit_u1_poi_cases.py` | Preselect seven named POI cases from the six-tile OSM/Overture comparison. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/REPRODUCIBILITY.md |
-| `audit_u1_poi_neighbors.py` | Inspect nearby pinned Overture records for selected OSM-only POIs. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/REPRODUCIBILITY.md |
-| `pilot_u1_clipped_area.py` | Exact six-unit U1 land support check; no citywide U1 construction. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
-| `pilot_u1_dominant_use.py` | Six-unit SP explicit-dominance sensitivity for mixed/other fiscal use. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `pilot_u1_gap_context.py` | Local reference context for SP sample points lacking raw cadastral lots. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/REPRODUCIBILITY.md |
-| `pilot_u1_mixed_labels.py` | Inspect mixed-use coding in three selected districts per city. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `audit_u1_land_cases.py` | Bounded independent physical-cover audit of saved U1 diagnostic points. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
+| `audit_u1_poi_address_ranges.py` | Check four fixed São Paulo POI points against municipal address-range lines. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
+| `audit_u1_poi_cases.py` | Preselect seven named POI cases from the six-tile OSM/Overture comparison. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
+| `audit_u1_poi_neighbors.py` | Inspect nearby pinned Overture records for selected OSM-only POIs. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
+| `pilot_u1_clipped_area.py` | Exact six-unit U1 land support check; no citywide U1 construction. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
+| `pilot_u1_dominant_use.py` | Six-unit SP explicit-dominance sensitivity for mixed/other fiscal use. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `pilot_u1_gap_context.py` | Local reference context for SP sample points lacking raw cadastral lots. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
+| `pilot_u1_mixed_labels.py` | Inspect mixed-use coding in three selected districts per city. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
 | `pilot_u1_osm_overture_overlap.py` | Compare bounded OSM tile destinations with pinned Overture Places points. | — | analysis/results/SP_CHI/u1_osm_tiles_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `pilot_u1_osm_tiles.py` | Six bounded OSM XML tiles at previously sampled U1 diagnostic points. | audit_u1_poi_cases, pilot_u1_osm_overture_overlap | analysis/results/SP_CHI/u1_osm_tiles_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `pilot_u1_poi_quality.py` | Bounded Overture Places quality/provenance check for Brás and Loop only. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
-| `pilot_u1_poi_samples.py` | Bounded Overture Places screen for six previously selected U1 districts. | audit_u1_poi_cases, audit_u1_poi_neighbors, pilot_u1_osm_overture_overlap, pilot_u1_poi_quality | analysis/results/SP_CHI/u1_source_samples_2026_09_22<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
-| `pilot_u1_source_samples.py` | Bounded source-level U1 sampling in three selected districts per city. | pilot_u1_clipped_area, pilot_u1_dominant_use, pilot_u1_gap_context, pilot_u1_mixed_labels | analysis/results/SP_CHI/u1_source_samples_2026_09_22<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
-| `pilot_u1_summary_ontology.py` | Bounded U1 ontology screen using published district summaries only. | — | analysis/results/SP_CHI/u1_summary_pilot_2026_09_22<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/REPRODUCIBILITY.md (+1) |
+| `pilot_u1_poi_quality.py` | Bounded Overture Places quality/provenance check for Brás and Loop only. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
+| `pilot_u1_poi_samples.py` | Bounded Overture Places screen for six previously selected U1 districts. | audit_u1_poi_cases, audit_u1_poi_neighbors, pilot_u1_osm_overture_overlap, pilot_u1_poi_quality | analysis/results/SP_CHI/u1_source_samples_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
+| `pilot_u1_source_samples.py` | Bounded source-level U1 sampling in three selected districts per city. | pilot_u1_clipped_area, pilot_u1_dominant_use, pilot_u1_gap_context, pilot_u1_mixed_labels | analysis/results/SP_CHI/u1_source_samples_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
+| `pilot_u1_summary_ontology.py` | Bounded U1 ontology screen using published district summaries only. | — | analysis/results/SP_CHI/u1_summary_pilot_2026_09_22<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md (+1) |
 
 ## M1/M6 street-network review
 
@@ -102,46 +102,46 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
-| `prepare_chicago_employment_sensitivity_v2.py` | Checkpointed employment sensitivity; preserves functional v2 and source files. | — | analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2<br>analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md (+1) |
-| `validate_chicago_employment_sensitivity_v2.py` | Independent accounting, sampled geometry and artifact checks for U2 sensitivity. | — | analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2<br>analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md (+1) |
+| `prepare_chicago_employment_sensitivity_v2.py` | Checkpointed employment sensitivity; preserves functional v2 and source files. | — | analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2<br>analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md (+1) |
+| `validate_chicago_employment_sensitivity_v2.py` | Independent accounting, sampled geometry and artifact checks for U2 sensitivity. | — | analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2<br>analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md (+1) |
 
 ## SP–Chicago harmonization (H0–H4)
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
 | `acquire_ghsl_city_rasters.py` | Acquire public GHSL candidates; preserve native cells, no model fitting or audit suite. | — | analysis/results/SP_CHI/ghsl_public_2026_09_21<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `acquire_harmonized_overture.py` | Acquire matched, buffered Overture sources with STAC pruning and atomic partitions. | — | docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `assemble_harmonized_candidates.py` | Publish H1–H3 candidate companions, preserving all model acceptance gates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+2) |
+| `acquire_harmonized_overture.py` | Acquire matched, buffered Overture sources with STAC pruning and atomic partitions. | — | docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `assemble_harmonized_candidates.py` | Publish H1–H3 candidate companions, preserving all model acceptance gates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
 | `audit_harmonization_checkpoint.py` | Read-only audit of existing candidate releases; write a separate dated checkpoint. | — | analysis/results/Chicago/harmonization_checkpoint_2026_09_17<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `audit_microsoft_building_links.py` | Locate Microsoft global building tiles for the paired city supports. | — | analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `finalize_harmonization_checkpoint.py` | Seal candidate construction receipts without accepting or fitting a common model. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/operations/NEXT_AGENT_PROMPT.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `pilot_harmonized_ghsl.py` | Paired GHSL pilots; report candidate statistics, never fit a model. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h0_h1<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `pilot_microsoft_buildings.py` | Paired Microsoft footprint/height pilots, with unchanged Overture B1 reference. | — | analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `prepare_harmonized_footprints.py` | Full Chicago footprint union, paired SP reuse and independent SP pilot checks. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+2) |
-| `prepare_harmonized_functional.py` | Paired U3/U4 companions from frozen support; explicit U1/U2 semantic gates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+2) |
-| `prepare_harmonized_ghsl.py` | Full paired GHSL candidates; no model fitting or acceptance. | test_harmonization_new_methods | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+2) |
-| `prepare_harmonized_roads.py` | H1/H2 paired roads and diagnostic enclosures; no model acceptance or fitting. | test_harmonization_new_methods | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+2) |
-| `rebuild_sp_bus_companion.py` | Rebuild SP bus-only supply, preserving the historic multimodal-contaminated release. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+1) |
-| `review_harmonization_h4.py` | Bounded H4 readiness review. Produces a proposed matrix, never fits or ranks. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h4_review<br>docs/operations/NEXT_AGENT_PROMPT.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `review_matched_overture.py` | Paired road candidates and Chicago footprint pilots; explicitly not model acceptance. | — | docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `validate_harmonized_candidates.py` | Independent table-level audit of H1–H3 candidates; no family acceptance. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/operations/NEXT_AGENT_PROMPT.md (+1) |
-| `validate_microsoft_building_pilot.py` | Independent arithmetic and source-support checks for the paired pilot. | — | docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `audit_microsoft_building_links.py` | Locate Microsoft global building tiles for the paired city supports. | — | analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `finalize_harmonization_checkpoint.py` | Seal candidate construction receipts without accepting or fitting a common model. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `pilot_harmonized_ghsl.py` | Paired GHSL pilots; report candidate statistics, never fit a model. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h0_h1<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `pilot_microsoft_buildings.py` | Paired Microsoft footprint/height pilots, with unchanged Overture B1 reference. | — | analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `prepare_harmonized_footprints.py` | Full Chicago footprint union, paired SP reuse and independent SP pilot checks. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
+| `prepare_harmonized_functional.py` | Paired U3/U4 companions from frozen support; explicit U1/U2 semantic gates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
+| `prepare_harmonized_ghsl.py` | Full paired GHSL candidates; no model fitting or acceptance. | test_harmonization_new_methods | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
+| `prepare_harmonized_roads.py` | H1/H2 paired roads and diagnostic enclosures; no model acceptance or fitting. | test_harmonization_new_methods | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
+| `rebuild_sp_bus_companion.py` | Rebuild SP bus-only supply, preserving the historic multimodal-contaminated release. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+1) |
+| `review_harmonization_h4.py` | Bounded H4 readiness review. Produces a proposed matrix, never fits or ranks. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h4_review<br>docs/HANDOFF.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `review_matched_overture.py` | Paired road candidates and Chicago footprint pilots; explicitly not model acceptance. | — | docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `validate_harmonized_candidates.py` | Independent table-level audit of H1–H3 candidates; no family acceptance. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+1) |
+| `validate_microsoft_building_pilot.py` | Independent arithmetic and source-support checks for the paired pilot. | — | docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md |
 
 ## Chicago local attributes and sources
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
-| `acquire_chicago_assessor_bulk.py` | Stream source-year CSV exports and retain only Chicago parcel-linked rows. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/RESEARCH_METHODS_FIELD_GUIDE.md |
-| `acquire_chicago_cadastral.py` | Download Chicago-only cadastral candidates; no model attributes are constructed. | acquire_chicago_assessor_bulk | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/RESEARCH_METHODS_FIELD_GUIDE.md |
+| `acquire_chicago_assessor_bulk.py` | Stream source-year CSV exports and retain only Chicago parcel-linked rows. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
+| `acquire_chicago_cadastral.py` | Download Chicago-only cadastral candidates; no model attributes are constructed. | acquire_chicago_assessor_bulk | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
 | `audit_cook_parent_publication_2026_09_25.py` | Check only public Cook parcel-service metadata and seven saved M7 keys. | — | analysis/results/Chicago/chicago_m_holdout_2026_09_25 |
 | `export_chicago_curio_catalog.py` | Export Chicago model inputs into a local Curio Data Catalog. | — | — |
-| `plot_chicago_attribute_qa.py` | Compact descriptive maps; not a similarity-model visualization. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `plot_chicago_attribute_qa.py` | Compact descriptive maps; not a similarity-model visualization. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `plot_chicago_functional.py` | Descriptive QA maps for the functional extension, not a similarity ranking. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2 |
-| `prepare_chicago.py` | Build a transparent local Chicago baseline. Does not fit cross-city similarity. Run from any directory: <repo>/.venv/bin/python <repo>/analysis/scripts/prepare_chicago.py | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md<br>docs/chicago/CHICAGO_EXECUTION_REPORT.md (+2) |
-| `prepare_chicago_functional.py` | Versioned functional extension; resume only when input/code/output hashes match. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
-| `validate_chicago_attributes.py` | Independent release checks and pilot reconstruction for Chicago's local baseline. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/CHICAGO_ATTRIBUTE_DOCUMENTATION.md<br>docs/chicago/CHICAGO_EXECUTION_REPORT.md (+1) |
-| `validate_chicago_cadastral_acquisition.py` | Independent read-only checks for downloaded Chicago-only candidates. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/RESEARCH_METHODS_FIELD_GUIDE.md |
-| `validate_chicago_functional.py` | Independent release audit and publication of the Chicago functional extension. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/CHICAGO_FUNCTIONAL_EXTENSION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `prepare_chicago.py` | Build a transparent local Chicago baseline. Does not fit cross-city similarity. Run from any directory: <repo>/.venv/bin/python <repo>/analysis/scripts/prepare_chicago.py | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/chicago/EXECUTION_LOG.md (+2) |
+| `prepare_chicago_functional.py` | Versioned functional extension; resume only when input/code/output hashes match. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `validate_chicago_attributes.py` | Independent release checks and pilot reconstruction for Chicago's local baseline. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/chicago/EXECUTION_LOG.md (+1) |
+| `validate_chicago_cadastral_acquisition.py` | Independent read-only checks for downloaded Chicago-only candidates. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
+| `validate_chicago_functional.py` | Independent release audit and publication of the Chicago functional extension. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `validate_chicago_schedule.py` | Independently recount CTA bus stop calls from raw GTFS and assert they match the Chicago functional v2 transit checks. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `validate_chicago_workbook_extracts.py` | Validate Firecrawl workbook table extracts and retain Chicago-linked records. Original XLSX downloads returned 403; extraction does not prove binary completeness. | — | analysis/results/Chicago/chicago_workbooks_2026_09_19<br>docs/survey/EXPERIMENT_LEDGER.md |
 
@@ -150,18 +150,18 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
 | `check_sp_population_support.py` | 125 m pilot sensitivity for the frozen 250 m U4 population approximation. | — | analysis/results/SP/reports |
-| `construct_sp_attributes.py` | Checkpointed N10 attribute construction, pilots before municipal release. No model fit. | — | analysis/results/SP/reports<br>docs/sp/ATTRIBUTE_DOCUMENTATION.md<br>docs/sp/SP_DATA_RESOLUTION_HANDOFF.md (+1) |
-| `experiment_sp_allocations.py` | M2 approved proxy and U2 mass-conserving experiments; no model attributes. | test_sp_allocations | docs/sp/ATTRIBUTE_DOCUMENTATION.md<br>docs/sp/SP_DATA_RESOLUTION_HANDOFF.md<br>docs/sp/SP_METHOD_DECISIONS.md (+2) |
-| `extract_sao_paulo_buildings.py` | Cloud-native Overture building morphology extraction for metropolitan São Paulo. | — | docs/sp/BUILDING_PIPELINE.md |
-| `fetch_RAIS.py` | Download 2022 RAIS formal jobs for São Paulo from Base dos Dados, aggregated by CEP (needs GOOGLE_CLOUD_PROJECT). | — | — |
-| `model_sp_urban_similarity.py` | Versioned, immutable SP model release, including prespecified robustness experiments. | — | docs/archive/audits/SP_MODEL_VALIDATION.md<br>docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md<br>docs/sp/SP_MODEL_FIXES.md |
+| `construct_sp_attributes.py` | Checkpointed N10 attribute construction, pilots before municipal release. No model fit. | — | analysis/results/SP/reports<br>docs/sp/ATTRIBUTES.md<br>docs/sp/PREPARATION.md (+1) |
+| `experiment_sp_allocations.py` | M2 approved proxy and U2 mass-conserving experiments; no model attributes. | test_sp_allocations | docs/DECISIONS.md<br>docs/sp/ATTRIBUTES.md<br>docs/sp/PREPARATION.md (+2) |
+| `extract_sao_paulo_buildings.py` | Cloud-native Overture building morphology extraction for metropolitan São Paulo. | — | docs/sp/PREPARATION.md |
+| `fetch_RAIS.py` | Download 2022 RAIS formal jobs for São Paulo from Base dos Dados, aggregated by CEP (needs GOOGLE_CLOUD_PROJECT). | — | analysis/README.md |
+| `model_sp_urban_similarity.py` | Versioned, immutable SP model release, including prespecified robustness experiments. | — | docs/archive/audits/SP_MODEL_VALIDATION.md<br>docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md<br>docs/sp/MODEL.md |
 | `plot_sp_attribute_qa.py` | Plot the six-feature SP attribute pilot bar chart (Brás, Itaim Bibi, Grajaú) for QA. | — | analysis/results/SP/reports |
-| `prepare_overture_sp.py` | Discover official metropolitan geography and pinned Overture release inputs. | — | docs/sp/BUILDING_PIPELINE.md |
-| `prepare_sp_inputs.py` | Prepare SP inputs for plan Sections 1–3. Deliberately does not build attributes. | — | analysis/tests/test_sp_preparation.py<br>docs/chicago/SP_CHICAGO_HARMONIZATION_EXECUTION.md |
-| `prepare_sp_v3.py` | Isolated, checkpointed N01–N09 preparation. Does not construct attributes. | — | docs/archive/plans/SP_ATTRIBUTE_IMPLEMENTATION_PLAN.md<br>docs/sp/BUILDING_PIPELINE.md<br>docs/sp/README.md (+2) |
-| `review_sp_attribute_release.py` | Independent release review, documentation and artifact inventory for N10. | — | analysis/results/SP/reports<br>docs/sp/ATTRIBUTE_DOCUMENTATION.md |
-| `review_sp_v3.py` | Generate pilot input QA maps; no model attributes. | — | docs/sp/SP_DATA_RESOLUTION_HANDOFF.md |
-| `validate_sp_urban_model.py` | Read-only audit of the user model; writes separate review evidence, never model outputs. | — | docs/archive/audits/SP_MODEL_VALIDATION.md<br>docs/sp/SP_MODEL_FIXES.md |
+| `prepare_overture_sp.py` | Discover official metropolitan geography and pinned Overture release inputs. | — | docs/sp/PREPARATION.md |
+| `prepare_sp_inputs.py` | Prepare SP inputs for plan Sections 1–3. Deliberately does not build attributes. | — | analysis/tests/test_sp_preparation.py<br>docs/harmonization/EXECUTION_LOG.md |
+| `prepare_sp_v3.py` | Isolated, checkpointed N01–N09 preparation. Does not construct attributes. | — | docs/archive/plans/SP_ATTRIBUTE_IMPLEMENTATION_PLAN.md<br>docs/sp/PREPARATION.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `review_sp_attribute_release.py` | Independent release review, documentation and artifact inventory for N10. | — | analysis/results/SP/reports<br>docs/sp/ATTRIBUTES.md |
+| `review_sp_v3.py` | Generate pilot input QA maps; no model attributes. | — | docs/sp/PREPARATION.md |
+| `validate_sp_urban_model.py` | Read-only audit of the user model; writes separate review evidence, never model outputs. | — | docs/archive/audits/SP_MODEL_VALIDATION.md<br>docs/sp/MODEL.md |
 
 ## Library packages
 
@@ -171,6 +171,28 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | `sp_attributes/` | SP attribute construction (core, spatial, tabular) |
 | `sp_model/` | SP similarity model: inputs, transforms, distances, sensitivity, reporting, review |
 | `sp_v3/` | SP v3 preparation stages (geography, fiscal, network, demography, transit, acceptance) |
+
+## Config bindings (`analysis/config/`)
+
+Frozen method contracts; a change is a new versioned file, never an edit. "Read by" lists live code naming the file; archived scripts are not searched.
+
+| Config | Read by |
+|---|---|
+| `chicago_attributes_v1.json` | prepare_chicago |
+| `chicago_employment_sensitivity_v1.json` | — (cited by docs only) |
+| `chicago_employment_sensitivity_v2.json` | finalize_harmonization_checkpoint, prepare_chicago_employment_sensitivity_v2, validate_chicago_employment_sensitivity_v2 |
+| `chicago_functional_v2.json` | prepare_chicago_functional |
+| `chicago_m3_alley_repair_v2.json` | evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_complete_zones_v1_2026_09_26, evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26 |
+| `chicago_m3_motorway_candidate_v1.json` | evaluate_chicago_m3_motorway_holdout_2026_09_26, summarize_chicago_block_protocol_pilot_v1 |
+| `sp_attributes_2026_09_11.json` | core, review_sp_attribute_release, sp_current_methods.json |
+| `sp_chicago_harmonization_v1.json` | finalize_harmonization_checkpoint, sp_chicago_harmonization_v2_full_scope.json |
+| `sp_chicago_harmonization_v2_full_scope.json` | — (cited by docs only) |
+| `sp_current_methods.json` | review_sp_attribute_release |
+| `sp_district_subprefeitura.csv` | sp_urban_model_v2.json |
+| `sp_preparation_v2.json` | prepare_sp_inputs |
+| `sp_preparation_v3.json` | prepare_sp_v3, review_sp_v3, test_sp_v3 |
+| `sp_urban_model_v1.json` | review, validate_sp_urban_model |
+| `sp_urban_model_v2.json` | model_sp_urban_similarity, test_sp_model, validate_sp_urban_model |
 
 ## Archived (`_archive/*.zip`)
 

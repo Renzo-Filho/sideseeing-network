@@ -73,7 +73,18 @@ lines += ['## Library packages', '',
           '| `sp_attributes/` | SP attribute construction (core, spatial, tabular) |',
           '| `sp_model/` | SP similarity model: inputs, transforms, distances, sensitivity, reporting, review |',
           '| `sp_v3/` | SP v3 preparation stages (geography, fiscal, network, demography, transit, acceptance) |', '',
-          '## Archived (`_archive/*.zip`)', '',
+          '## Config bindings (`analysis/config/`)', '',
+          'Frozen method contracts; a change is a new versioned file, never an edit. '
+          '"Read by" lists live code naming the file; archived scripts are not searched.', '',
+          '| Config | Read by |', '|---|---|']
+code = {p: p.read_text() for p in [*HERE.glob('*.py'), *HERE.glob('*/*.py'),
+                                   *(ROOT / 'analysis/tests').glob('*.py'), *(ROOT / 'analysis/curio_nodes').glob('*.py')]}
+configs = sorted((ROOT / 'analysis/config').iterdir())
+for c in configs:
+    users = sorted(p.stem for p, text in code.items() if c.name in text and p.stem != 'make_index')
+    users += [o.name for o in configs if o != c and o.suffix == '.json' and c.name in o.read_text()]
+    lines.append(f'| `{c.name}` | {", ".join(users) or "— (cited by docs only)"} |')
+lines += ['', '## Archived (`_archive/*.zip`)', '',
           'Finished leaf scripts; nothing live imports them. To run one, unzip it into this folder '
           '(`unzip _archive/<zip> <script>.py`). Originals are also at git tag `pre-restructure`.', '',
           '| Archive | Scripts |', '|---|---|']

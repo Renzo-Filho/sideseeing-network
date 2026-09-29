@@ -1,31 +1,45 @@
 # sideseeing-network
 
-## Chicago analysis update
+Urban-form similarity research: characterize São Paulo's municipal districts (reference: Brás, district `10`) and Chicago's 77 Community Areas with street-morphology (M), built-form (B) and urban-function (U) feature families, then compare places descriptively. The current stage is a **Chicago-only model**; the São Paulo–Chicago common model is a later stage.
 
-Chicago local-source attributes, updated data requirements and the execution handoff are documented in [docs/chicago/CHICAGO_EXECUTION_REPORT.md](docs/chicago/EXECUTION_LOG.md). Strict SP–Chicago harmonization remains a separate acceptance gate.
+## Start here
 
+| I want to… | Open |
+|---|---|
+| Know where the project stands and what is next | [docs/STATUS.md](docs/STATUS.md) — the only page with dated status |
+| Continue work in a new agent session | [docs/HANDOFF.md](docs/HANDOFF.md) |
+| Understand the research design | [docs/PROTOCOL.md](docs/PROTOCOL.md) |
+| See why a feature was kept, deferred or changed | [docs/DECISIONS.md](docs/DECISIONS.md) |
+| Read Chicago feature definitions and sources | [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
+| Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |
+| Read the future SP–Chicago harmonization work | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
+| Find paper-oriented evidence | [survey](docs/survey/README.md) · [advisor brief](docs/survey/ADVISOR_BRIEF.md) · [experiment ledger](docs/survey/EXPERIMENT_LEDGER.md) |
+| Browse published results | [SP](analysis/results/SP/README.md) · [Chicago](analysis/results/Chicago/README.md) · `analysis/results/SP_CHI/` |
+| Run or find a script | [analysis/scripts/INDEX.md](analysis/scripts/INDEX.md) |
+| Work in Curio | [analysis/curio_nodes/README.md](analysis/curio_nodes/README.md) |
 
-São Paulo district morphology and Brás similarity research.
+Superseded plans and audits are kept unchanged in [docs/archive/](docs/archive/).
 
-- [Analysis workspace guide](analysis/README.md) — folder architecture and file roles.
-- [Documentation map](README.md) — current methods, status, handoff and historical material.
-- [Completed São Paulo attributes](analysis/results/SP/README.md) — tables, map, report and validation.
-- [Research plan](docs/PROTOCOL.md) — scope and methodology.
+## Layout
 
-Attribute construction is complete; a primary SP similarity model has been implemented and independently reproduced, with the reported defects corrected and the v2 release validated.
-
-[Attribute documentation](docs/sp/ATTRIBUTES.md) — definitions, input processing, formulas, all 77 columns, and limitations.
-
-[Urban model implementation plan](docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md) — proposed N11 preprocessing, family distances, Brás comparisons, robustness tests and deliverables; the primary implementation now exists; see the v2 corrections report for completed modeling and robustness work.
-
-[SP model validation](docs/archive/audits/SP_MODEL_VALIDATION.md) — reproduced baseline ranking, identified defects and remaining acceptance work.
-
-[Corrected SP model](docs/sp/MODEL.md) · [Chicago harmonization plan](docs/harmonization/PLAN.md).
+```text
+README.md            this page
+docs/                methods, decisions and status (see table above)
+analysis/            code, configs, results and local data — see analysis/README.md
+  scripts/           pipeline and pilot scripts (flat; INDEX.md), library packages, _archive/*.zip
+  curio_nodes/       Chicago feature/model nodes installed in the Curio dataflow
+  config/            frozen, versioned method contracts read by scripts
+  tests/             unit tests
+  results/           published outputs: SP/, Chicago/, SP_CHI/ (tracked)
+  data/ cache/ work/ local inputs and intermediates (git-ignored)
+```
 
 ## Development
 
-Use Python 3.12. `pyproject.toml` declares the project dependencies; `analysis/requirements.txt` records the exact tested environment used by the published releases. Run the repository tests with:
+Use Python 3.12. `pyproject.toml` declares the project dependencies; `analysis/requirements.txt` records the exact tested environment used by the published releases. Run scripts from the repository root and the tests with:
 
 ```bash
 .venv/bin/python -m unittest discover -s analysis/tests -v
 ```
+
+After adding, archiving or documenting a script, regenerate the index with `.venv/bin/python analysis/scripts/make_index.py`.
