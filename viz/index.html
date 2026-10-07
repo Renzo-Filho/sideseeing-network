@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cross-City Urban Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: sticky top bar over three page types: an overview, documentation (side contents + 70ch article), and
+   explorers (sticky 300px control rail + a fluid column of coordinated views). Palette follows the project's
+   A-vs-B deck: navy ink on map paper, terracotta for Index A, steel blue for Index B, pine for the harmonized model. */
+:root {
+  --paper: #f2f2ee; --surface: #fbfaf6; --sunk: #ecebe5; --ink: #1d2530; --ink-2: #4a5361; --muted: #737a86;
+  --rule: #dcdad1; --rule-strong: #c3c0b5; --focus: #2a78d6;
+  --acc-a: #a8501d; --acc-b: #2a5d8a; --acc-h: #2c6a58; --acc: var(--ink);
+  --c1: #2a78d6; --c2: #eb6834; --c3: #1baf7a; --c4: #eda100; --c5: #e87ba4; --c6: #008300; --c7: #4a3aa7; --c8: #e34948;
+  --seq-0: #eef3f9; --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #5598e7; --seq-4: #2a78d6; --seq-5: #1c5cab; --seq-6: #0d366b;
+  --div-neg: #2a78d6; --div-mid: #e9e8e3; --div-pos: #e34948;
+  --font-display: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r: 6px; --shadow: 0 1px 2px rgba(29, 37, 48, .06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #11161c; --surface: #19202a; --sunk: #141a22; --ink: #eef0f2; --ink-2: #b9c0ca; --muted: #8a93a0;
+    --rule: #2a323d; --rule-strong: #3a4452; --focus: #6fa3d6;
+    --acc-a: #e08a5a; --acc-b: #6fa3d6; --acc-h: #5fb39a;
+    --c1: #3987e5; --c2: #d95926; --c3: #199e70; --c4: #c98500; --c5: #d55181; --c6: #008300; --c7: #9085e9; --c8: #e66767;
+    --seq-0: #1d2633; --seq-1: #1c3556; --seq-2: #1f4f86; --seq-3: #2a6fc0; --seq-4: #4f93e6; --seq-5: #86b6ef; --seq-6: #cde2fb;
+    --div-neg: #3987e5; --div-mid: #2c333d; --div-pos: #e66767;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #11161c; --surface: #19202a; --sunk: #141a22; --ink: #eef0f2; --ink-2: #b9c0ca; --muted: #8a93a0;
+  --rule: #2a323d; --rule-strong: #3a4452; --focus: #6fa3d6;
+  --acc-a: #e08a5a; --acc-b: #6fa3d6; --acc-h: #5fb39a;
+  --c1: #3987e5; --c2: #d95926; --c3: #199e70; --c4: #c98500; --c5: #d55181; --c6: #008300; --c7: #9085e9; --c8: #e66767;
+  --seq-0: #1d2633; --seq-1: #1c3556; --seq-2: #1f4f86; --seq-3: #2a6fc0; --seq-4: #4f93e6; --seq-5: #86b6ef; --seq-6: #cde2fb;
+  --div-neg: #3987e5; --div-mid: #2c333d; --div-pos: #e66767;
+  --shadow: none; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 14px/1.55 var(--font-sans); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: 2.5rem; letter-spacing: -.01em; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; }
+h4 { font: 600 .8rem/1.3 var(--font-sans); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0; }
+p { margin: 0; }
+a { color: inherit; text-underline-offset: 2px; }
+code, .mono { font-family: var(--font-mono); font-size: .88em; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.muted { color: var(--muted); }
+.ink2 { color: var(--ink-2); }
+.eyebrow { font: 500 .75rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--acc); }
+.num { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* Top bar */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.topbar-in { max-width: 1480px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.brand { display: flex; flex-direction: column; line-height: 1.15; margin-right: auto; }
+.brand b { font: 600 1.05rem var(--font-display); }
+.brand span { font: 400 .72rem var(--font-mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+nav.tabs { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.tabgroup { display: flex; align-items: center; gap: 2px; }
+.tabgroup > span { font: 500 .66rem var(--font-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-right: 6px; }
+.tab { border: 0; background: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; color: var(--ink-2); font-weight: 500; }
+.tab:hover { background: var(--sunk); color: var(--ink); }
+.tab[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.themebtn { border: 1px solid var(--rule-strong); background: none; border-radius: 4px; padding: 5px 9px; cursor: pointer; color: var(--ink-2); font-size: .8rem; }
+
+.page { max-width: 1480px; margin: 0 auto; padding-inline: 24px; padding-block: 28px 64px; }
+section.view[hidden] { display: none; }
+.method-a { --acc: var(--acc-a); }
+.method-b { --acc: var(--acc-b); }
+.method-h { --acc: var(--acc-h); }
+
+/* Panels and tables */
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r); box-shadow: var(--shadow); padding: 18px; min-width: 0; }
+.panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.panel-head h3 { font-size: 1.05rem; }
+.note { font-size: .82rem; color: var(--muted); }
+.tablewrap { overflow-x: auto; }
+table.tbl { border-collapse: collapse; width: 100%; font-size: .86rem; }
+.tbl th, .tbl td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.tbl th { font-weight: 600; color: var(--ink-2); background: var(--sunk); font-size: .78rem; letter-spacing: .02em; }
+.tbl td.r, .tbl th.r { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl tr.hl td { background: color-mix(in srgb, var(--acc) 9%, transparent); }
+.pill { display: inline-block; font: 500 .7rem/1.6 var(--font-mono); padding: 0 6px; border-radius: 3px; border: 1px solid var(--rule-strong); color: var(--ink-2); white-space: nowrap; }
+.pill.abs { border-color: var(--c1); color: var(--ink); }
+.pill.rel { border-color: var(--c2); color: var(--ink); }
+.citytag { font: 500 .68rem var(--font-mono); padding: 0 4px; border-radius: 3px; color: #fff; vertical-align: 1px; }
+.citytag.SP { background: var(--c2); } .citytag.CHI { background: var(--c1); }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+
+/* Overview */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: end; padding-block: 12px 32px; border-bottom: 1px solid var(--rule); }
+.hero h1 { max-width: 16ch; margin-top: 10px; }
+.lede { font-size: 1.1rem; color: var(--ink-2); max-width: 60ch; margin-top: 14px; }
+.hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; }
+.hero-facts div { background: var(--surface); padding: 14px 16px; }
+.hero-facts b { display: block; font: 500 1.6rem/1.1 var(--font-sans); }
+.hero-facts span { font-size: .78rem; color: var(--muted); }
+.ov-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 28px; }
+.ov-section { margin-top: 40px; display: grid; gap: 14px; }
+.ov-section > p { max-width: 75ch; color: var(--ink-2); }
+.methods3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mcard { border-top: 3px solid var(--acc); display: flex; flex-direction: column; gap: 10px; }
+.mcard h3 { font-size: 1.2rem; }
+.mcard .formula { background: var(--sunk); border-radius: 4px; padding: 8px 10px; overflow-x: auto; }
+.mcard .links { display: flex; gap: 10px; margin-top: auto; padding-top: 6px; flex-wrap: wrap; }
+.btn { border: 1px solid var(--rule-strong); background: var(--surface); border-radius: 4px; padding: 6px 12px; cursor: pointer; font-weight: 500; font-size: .85rem; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.btn:hover { border-color: var(--ink-2); }
+.btn.primary { background: var(--acc); border-color: var(--acc); color: var(--surface); }
+.btn.small { padding: 3px 8px; font-size: .78rem; }
+.steps { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 75ch; color: var(--ink-2); }
+.picker-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.picker-row input { min-width: 0; flex: 1 1 240px; }
+input[type="search"], input[list], select { background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 6px 9px; }
+
+/* Docs */
+.docs { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+.toc { position: sticky; top: 84px; align-self: start; display: grid; gap: 4px; font-size: .85rem; }
+.toc a { text-decoration: none; color: var(--ink-2); padding: 3px 0 3px 10px; border-left: 2px solid var(--rule); }
+.toc a:hover { color: var(--ink); border-left-color: var(--acc); }
+article.doc { max-width: 78ch; display: grid; gap: 16px; }
+article.doc > h1 { font-size: 2.1rem; }
+article.doc h2 { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--rule); scroll-margin-top: 80px; }
+article.doc h3 { margin-top: 8px; }
+article.doc p, article.doc li { color: var(--ink); max-width: 72ch; }
+article.doc ul, article.doc ol { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; }
+.eq { background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--acc); border-radius: 4px; padding: 10px 16px; overflow-x: auto; }
+.callout { background: color-mix(in srgb, var(--acc) 7%, var(--surface)); border: 1px solid color-mix(in srgb, var(--acc) 30%, var(--rule)); border-radius: 4px; padding: 12px 16px; }
+.where { font-size: .86rem; color: var(--ink-2); }
+mjx-container[display="true"] { margin: .4em 0 !important; }
+
+/* Explorer */
+.explore { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; align-items: start; }
+.rail { position: sticky; top: 76px; max-height: calc(100vh - 92px); overflow-y: auto; display: grid; gap: 14px; padding-right: 4px; }
+.rail details { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r); }
+.rail summary { cursor: pointer; padding: 10px 14px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; }
+.rail summary::-webkit-details-marker { display: none; }
+.rail summary::after { content: "−"; color: var(--muted); }
+.rail details:not([open]) summary::after { content: "+"; }
+.rail .body { padding: 0 14px 14px; display: grid; gap: 10px; }
+.ctl { display: grid; gap: 4px; }
+.ctl > label, .ctl > .lbl { font-size: .78rem; color: var(--ink-2); font-weight: 500; }
+.seg { display: flex; border: 1px solid var(--rule-strong); border-radius: 4px; overflow: hidden; }
+.seg button { flex: 1; border: 0; background: var(--surface); padding: 5px 6px; cursor: pointer; font-size: .8rem; color: var(--ink-2); }
+.seg button + button { border-left: 1px solid var(--rule-strong); }
+.seg button[aria-pressed="true"] { background: var(--acc); color: var(--surface); }
+.frow { display: grid; grid-template-columns: 18px minmax(0, 1fr) 44px; gap: 2px 6px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--rule); }
+.frow:last-child { border-bottom: 0; }
+.frow .fname { font-size: .82rem; line-height: 1.25; cursor: help; }
+.frow .fname b { font-family: var(--font-mono); font-weight: 500; font-size: .76rem; margin-right: 4px; }
+.frow .share { font: 500 .75rem var(--font-mono); text-align: right; color: var(--ink-2); }
+.frow input[type="range"] { grid-column: 2 / 4; width: 100%; accent-color: var(--acc); margin: 0; height: 18px; }
+.frow input[type="checkbox"] { accent-color: var(--acc); margin: 0; }
+.frow.off .fname, .frow.off .share { color: var(--muted); text-decoration: line-through; }
+.domain { font: 500 .66rem var(--font-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding-top: 8px; }
+.btnrow { display: flex; gap: 6px; flex-wrap: wrap; }
+.basebox { font-size: .8rem; color: var(--ink-2); background: var(--sunk); border-radius: 4px; padding: 8px 10px; }
+
+.xmain { display: grid; gap: 20px; min-width: 0; }
+.xhead { display: grid; gap: 12px; }
+.xhead h1 { font-size: 1.9rem; }
+.xhead .def { color: var(--ink-2); max-width: 90ch; }
+.refbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--rule-strong); background: var(--surface); border-radius: 999px; padding: 3px 4px 3px 10px; font-size: .84rem; }
+.chip.ref { border-color: var(--ink); background: var(--ink); color: var(--paper); padding-right: 10px; }
+.chip .dot { width: 9px; height: 9px; border-radius: 50%; }
+.chip button { border: 0; background: var(--sunk); border-radius: 999px; padding: 1px 7px; cursor: pointer; font-size: .74rem; color: var(--ink-2); }
+.subnav { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+.subnav button { border: 0; background: none; padding: 4px 8px; cursor: pointer; color: var(--ink-2); font-size: .85rem; border-radius: 4px; }
+.subnav button:hover { background: var(--sunk); color: var(--ink); }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; }
+.tile { background: var(--surface); padding: 12px 14px; display: grid; gap: 2px; align-content: start; }
+.tile .k { font-size: .74rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.tile .v { font: 500 1.25rem/1.25 var(--font-sans); }
+.tile .s { font-size: .8rem; color: var(--ink-2); }
+.delta-up { color: var(--c6); } .delta-down { color: var(--c8); }
+.xsection { display: grid; gap: 12px; scroll-margin-top: 80px; }
+.xsection > header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.xsection > header h2 { font-size: 1.35rem; }
+.xsection > header p { color: var(--ink-2); font-size: .88rem; max-width: 80ch; }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.grid-3-2 { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 16px; align-items: start; }
+.grid-2-3 { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 16px; align-items: start; }
+.scrollbox { max-height: 520px; overflow-y: auto; }
+.scrollbox thead th { position: sticky; top: 0; z-index: 1; }
+.tbl td.nw { white-space: nowrap; }
+.inline-ctl { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: .82rem; color: var(--ink-2); }
+.plot { width: 100%; min-height: 120px; overflow: hidden; }
+.mapbox { position: relative; }
+.mapbox svg { width: 100%; height: auto; max-height: 520px; display: block; }
+.mapbox svg.zoomed { cursor: grab; touch-action: none; }
+.mapbox svg.panning, .mapbox svg.panning path.u { cursor: grabbing; }
+.mapctl { position: absolute; top: 6px; right: 6px; display: flex; flex-direction: column; gap: 2px; }
+.mapctl button { width: 28px; height: 28px; border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); border-radius: 4px; cursor: pointer; font-size: .95rem; line-height: 1; }
+.mapctl button:hover { border-color: var(--ink-2); }
+.mapbox path.u { stroke: var(--surface); stroke-width: .7; vector-effect: non-scaling-stroke; cursor: pointer; }
+.mapbox path.u:hover { stroke: var(--ink); stroke-width: 1.5; }
+.mapbox path.ring { fill: none; vector-effect: non-scaling-stroke; pointer-events: none; }
+.mapbox text { font-family: var(--font-sans); font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-linejoin: round; pointer-events: none; }
+.legend { display: flex; align-items: center; gap: 8px; font-size: .76rem; color: var(--ink-2); flex-wrap: wrap; }
+.legend .bar { flex: 0 1 180px; height: 8px; border-radius: 2px; }
+.cats { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .8rem; color: var(--ink-2); }
+.error { border: 1px solid var(--c8); color: var(--ink); background: color-mix(in srgb, var(--c8) 8%, var(--surface)); border-radius: 4px; padding: 10px 14px; }
+#tip { position: fixed; z-index: 50; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px; padding: 6px 9px; font-size: .8rem; box-shadow: 0 4px 14px rgba(0, 0, 0, .12); max-width: 260px; }
+.tview { margin-top: 6px; font-size: .84rem; }
+.tview summary { cursor: pointer; color: var(--ink-2); }
+.tview .tablewrap { max-height: 320px; overflow-y: auto; margin-top: 6px; }
+.members { display: flex; flex-wrap: wrap; gap: 4px; }
+.members button { border: 1px solid var(--rule); background: var(--surface); border-radius: 3px; padding: 1px 6px; font-size: .78rem; cursor: pointer; color: var(--ink-2); }
+.members button:hover { border-color: var(--ink-2); color: var(--ink); }
+.loading { padding: 60px 0; text-align: center; color: var(--muted); }
+
+@media (max-width: 1100px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .methods3 { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 980px) {
+  .explore, .docs, .hero, .ov-grid, .grid2, .grid-3-2, .grid-2-3 { grid-template-columns: minmax(0, 1fr); }
+  .rail { position: static; max-height: none; overflow: visible; }
+  .topbar { position: static; }
+  .toc { position: static; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  h1 { font-size: 2rem; }
+}
+@media (max-width: 560px) {
+  .page, .topbar-in { padding-inline: 16px; }
+  .hero-facts, .tiles { grid-template-columns: minmax(0, 1fr); }
+  .topbar-in { gap: 10px; }
+}
+</style>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' },
+  startup: { typeset: false, pageReady: () => MathJax.startup.defaultPageReady().then(() => window.onMathJaxReady && window.onMathJaxReady()) } };
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/3.5.1/plotly.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><b>Cross-City Urban Explorer</b><span>SideSeeing Network · São Paulo &amp; Chicago</span></div>
+    <nav class="tabs" aria-label="Pages">
+      <div class="tabgroup"><button class="tab" data-tab="overview">Overview</button></div>
+      <div class="tabgroup"><span>Docs</span>
+        <button class="tab" data-tab="doc-a">Index A</button><button class="tab" data-tab="doc-b">Index B</button><button class="tab" data-tab="doc-h">Harmonized</button>
+      </div>
+      <div class="tabgroup"><span>Explore</span>
+        <button class="tab" data-tab="index-a">Index A</button><button class="tab" data-tab="index-b">Index B</button><button class="tab" data-tab="harmonized">Harmonized model</button>
+      </div>
+    </nav>
+    <button class="themebtn" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+  </div>
+</header>
+
+<main class="page">
+<!-- ============================== OVERVIEW ============================== -->
+<section class="view" id="view-overview" data-view="overview">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Urban-form similarity · <span data-bind="n-sp"></span> districts · <span data-bind="n-chi"></span> Community Areas</div>
+      <h1>Find a place's counterparts in the other city</h1>
+      <p class="lede">This tool compares São Paulo's municipal districts with Chicago's Community Areas on how their streets are laid out, how densely they are built and what happens in them. Choose any unit and three methods built in this project rank every other unit by how much it resembles it, and show why.</p>
+    </div>
+    <div class="hero-facts" id="hero-facts"></div>
+  </div>
+
+  <div class="ov-grid">
+    <div class="panel">
+      <div class="panel-head"><h3>Start with a place</h3><span class="note">Search, or click a unit on either map</span></div>
+      <div class="picker-row">
+        <label for="ov-ref" class="muted">Reference</label>
+        <input id="ov-ref" list="unit-list" type="search" autocomplete="off" placeholder="Type a district or Community Area">
+      </div>
+      <div class="grid2" style="margin-top:12px">
+        <div class="mapbox" id="ov-map-SP"></div>
+        <div class="mapbox" id="ov-map-CHI"></div>
+      </div>
+      <p class="note" style="margin-top:6px">Shading: Harmonized-model distance to the reference (darker = more alike).</p>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3 id="ov-answer-title">Closest units in the other city</h3></div>
+      <div id="ov-answer"></div>
+      <p class="note" style="margin-top:10px">Each method uses its current settings in the Explore tabs. The methods disagree by design: they define "alike" differently. The documentation explains each definition.</p>
+    </div>
+  </div>
+
+  <div class="ov-section">
+    <div class="eyebrow">The objective</div>
+    <h2>A descriptive search for comparable places</h2>
+    <p>The project characterizes the urban form and function of São Paulo's districts, starting from <b>Brás (SP:10)</b>, a dense, older central district of retail and garment workshops, and asks which Chicago Community Areas remain comparable once both cities are measured the same way. The comparable places will later anchor a separate study of pedestrian accessibility. Similarity here is descriptive: it selects places to compare, and it does not explain or predict pedestrian outcomes.</p>
+    <p>The tool turns the project's notebooks into one interface. The notebooks fixed Brás as the reference; here any of the <span data-bind="n-all"></span> units can be the reference, and every ranking, map, profile, principal-component plot and cluster is recomputed in your browser from the frozen model inputs. A check script reproduces the published results from the same code (<code>analysis/tests/check_viz_model.js</code>).</p>
+  </div>
+
+  <div class="ov-section">
+    <div class="eyebrow">Three methods</div>
+    <h2>Three definitions of "alike"</h2>
+    <div class="methods3">
+      <div class="panel mcard method-a">
+        <div class="eyebrow">Cross-City Urban Index A</div>
+        <h3>One number from six counts</h3>
+        <p class="ink2">The advisor's sketch. Commerce, dwellings, transit stops, building height, street segments and street length per unit, each min–max scaled over the 173 units and summed. Two places are alike when their totals are close.</p>
+        <div class="formula">\(I_A(u)=C'+R'+H'+V'+N'+L' \in [0,6]\)</div>
+        <p class="note">Counts grow with the size of the unit, so the index partly measures area (test T1: 0 of 29 merged units consistent).</p>
+        <div class="links"><button class="btn primary" data-go="index-a">Explore</button><button class="btn" data-go="doc-a">Method</button></div>
+      </div>
+      <div class="panel mcard method-b">
+        <div class="eyebrow">Cross-City Urban Index B</div>
+        <h3>The same sketch, per km² of land</h3>
+        <p class="ink2">Counts are divided by land area and height comes from one satellite source for both cities. Scaling and weights are unchanged, so B isolates the effect of those two corrections.</p>
+        <div class="formula">\(I_B(u)=\sum_f \big(f/\text{Land}\big)'\)</div>
+        <p class="note">Boundary-invariant (T1 passed); still one number, so different mixes can reach the same total.</p>
+        <div class="links"><button class="btn primary" data-go="index-b">Explore</button><button class="btn" data-go="doc-b">Method</button></div>
+      </div>
+      <div class="panel mcard method-h">
+        <div class="eyebrow">Harmonized cross-city similarity model</div>
+        <h3>Twenty measurements, one calibrated distance</h3>
+        <p class="ink2"><span data-bind="n-cols"></span> columns in <span data-bind="n-fams"></span> feature families, each validated in both cities, put on a common scale (hybrid C6) and combined with equal family budgets. Two places are alike when their whole profile is close.</p>
+        <div class="formula">\(D=\sqrt{\sum_b w_b\,m_b/\beta_b}\)</div>
+        <p class="note">The project's primary model (<code>sp_chicago_model_v1</code>, fitted 6 October 2026).</p>
+        <div class="links"><button class="btn primary" data-go="harmonized">Explore</button><button class="btn" data-go="doc-h">Method</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ov-section">
+    <div class="eyebrow">Data at a glance</div>
+    <h2>What the two cities bring</h2>
+    <p>All figures are computed from the project's result tables by <code>analysis/scripts/export_viz_data.py</code>. Land is each unit's area minus municipal water; densities in Index B and in the harmonized model divide by it.</p>
+    <div class="grid-3-2">
+      <div class="panel"><div class="panel-head"><h3>Units and the raw inputs of the indices</h3></div><div class="tablewrap" id="ov-data"></div></div>
+      <div class="panel"><div class="panel-head"><h3>How to use the explorer</h3></div>
+        <ol class="steps">
+          <li>Choose a reference unit here or in any Explore tab. The reference is shared by all three methods.</li>
+          <li>Read the closest units in each city, then the maps and the profile to see why they are close.</li>
+          <li>Switch features off or change their weights in the left rail. Every view recomputes and compares itself with the baseline: the published settings, or a snapshot you pin.</li>
+          <li>Click any unit in a chart or map to add it to the profile comparison (up to three).</li>
+          <li>Use the PCA and cluster sections to see where the reference sits among all <span data-bind="n-all"></span> units.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="panel"><div class="panel-head"><h3>Harmonized model: feature families and sources</h3><span class="note">Absolute = compared on pooled levels; relative = compared by position within its own city (C6 hybrid)</span></div><div class="tablewrap" id="ov-sources"></div></div>
+  </div>
+</section>
+
+<!-- ============================== DOC: INDEX A ============================== -->
+<section class="view method-a" id="view-doc-a" data-view="doc-a" hidden>
+  <div class="docs">
+    <nav class="toc" aria-label="On this page">
+      <a href="#a-idea">The idea</a><a href="#a-factors">The six factors</a><a href="#a-math">Formulas</a><a href="#a-sim">Similarity</a>
+      <a href="#a-pipeline">Pipeline</a><a href="#a-decisions">Decisions</a><a href="#a-findings">What the tests found</a><a href="#a-limits">Limits</a>
+    </nav>
+    <article class="doc">
+      <div class="eyebrow">Documentation · Cross-City Urban Index A</div>
+      <h1>Index A: the advisor's composite index, built as specified</h1>
+      <p class="ink2">Protocol P-AB-1 (<code>docs/SIMPLE_INDEX.md</code>), decided 1 October 2026. Built by <code>analysis/scripts/build_simple_index_ab.py</code>; step-by-step notebook <code>analysis/simple_index_ab.ipynb</code>; results in <code>analysis/results/SP_CHI/simple_index_ab_2026_10_01/</code>.</p>
+
+      <h2 id="a-idea">The idea</h2>
+      <p>Describe every unit by six factors, two groups of urban intensity, and add them into one number:</p>
+      <div class="eq">\[\text{built environment}=C+R+H+V,\qquad \text{network}=N+L,\qquad I=\text{built environment}+\text{network}.\]</div>
+      <p>The units are the <span data-bind="n-sp"></span> São Paulo districts and the <span data-bind="n-chi"></span> Chicago Community Areas, pooled into one set of <span data-bind="n-all"></span>. With equal weights the built environment is 4/6 of the index and the network 2/6.</p>
+
+      <h2 id="a-factors">The six factors</h2>
+      <div class="tablewrap" data-fill="ab-factors-A"></div>
+
+      <h2 id="a-math">Formulas</h2>
+      <p class="where">\(u\) is a reporting unit (a São Paulo district or a Chicago Community Area); \(\mathbf 1[\cdot]\) is 1 when the condition holds and 0 otherwise.</p>
+      <h3>C · commercial establishments</h3>
+      <div class="eq">\[C(u)=\sum_{p\in P}\mathbf 1\big[p\in u\ \wedge\ k(p)\in K\big]\]</div>
+      <p class="where">\(P\) = all Overture places (release 2026-08-19.0); \(k(p)\) = the top level of the place's taxonomy; \(K\) = {shopping, food_and_drink, services_and_business, lifestyle_services, lodging}. No filter on operating status or confidence, so both cities follow one rule (decision D2).</p>
+      <h3>R · residential establishments (dwellings)</h3>
+      <div class="eq">\[R_{\text{SP}}(u)=\sum_{d\in \mathcal D}\mathbf 1[d\in u],\qquad R_{\text{CHI}}(u)=\sum_{b} HU_b\,\frac{|b\cap u|}{|b|}\]</div>
+      <p class="where">\(\mathcal D\) = IBGE CNEFE 2022 private dwellings; \(HU_b\) = Census 2020 housing units of block \(b\); \(|\cdot|\) = area, so a block cut by a unit boundary is split by area share.</p>
+      <h3>H · transportation hubs</h3>
+      <div class="eq">\[H(u)=S(u)+B(u),\qquad S(u)=\sum_s \mathbf 1[s\in u],\qquad B(u)=\sum_t \mathbf 1[t\in u]\]</div>
+      <p class="where">\(s\) = a metro or 'L' station (CTA parent stations; São Paulo metro stops grouped by name; CPTM excluded because Chicago's feed has no Metra); \(t\) = a bus stop as listed in the GTFS feed.</p>
+      <h3>V · building height</h3>
+      <div class="eq">\[V(u)=\frac{1}{n_u}\sum_{k=1}^{n_u} h_k,\qquad h_k>0\]</div>
+      <p class="where">\(h_k\) = Overture height of building \(k\) (m); a building belongs to the unit that contains its bounding-box centre. Heights come mostly from USGS LiDAR in Chicago and from OpenStreetMap tags in São Paulo.</p>
+      <h3>N · number of streets and L · average street length</h3>
+      <div class="eq">\[N(u)=\sum_s \mathbf 1\big[m(s)\in u\big],\qquad L(u)=\frac{1}{N(u)}\sum_{s:\,m(s)\in u}\ell(s)\]</div>
+      <p class="where">\(s\) = an Overture road segment in the ten street classes, counted as the source cuts it; \(m(s)\) = its midpoint, so each segment counts whole in one unit; \(\ell(s)\) = its length. L enters the index positively, as specified, although longer segments usually mean a coarser network.</p>
+      <h3>Scaling and the index</h3>
+      <div class="eq">\[x'(u)=\frac{x(u)-\min_v x(v)}{\max_v x(v)-\min_v x(v)}\in[0,1],\qquad I(u)=C'+R'+H'+V'+N'+L'\in[0,6]\]</div>
+      <p class="where">The minimum and maximum run over all <span data-bind="n-all"></span> units pooled, so one extreme unit sets each scale.</p>
+
+      <h2 id="a-sim">From an index to similarity</h2>
+      <p>The agreed rule ranks units by how close their index is to the reference's. The explorer generalizes the sum to adjustable weights \(w_f\ge 0\) (all equal to 1 reproduces the protocol):</p>
+      <div class="eq">\[I_w(u)=\sum_f w_f\,f'(u),\qquad \operatorname{gap}(u,r)=\big|I_w(u)-I_w(r)\big|,\qquad u^*=\arg\min_{u}\operatorname{gap}(u,r).\]</div>
+      <p>A one-number index can match a total built from a very different mix. The protocol therefore reports a diagnostic, the <b>factor profile distance</b>, which compares the six scaled factors one by one:</p>
+      <div class="eq">\[d(u,r)=\sqrt{\sum_f w_f\,\big(f'(u)-f'(r)\big)^2}.\]</div>
+      <p>In the explorer the similarity rule switch chooses between the two. The principal components and clusters always use the factor profile, because a single number has only one dimension: PCA of the weighted factors \(\sqrt{w_f}\,f'\) and Ward clustering on its components.</p>
+      <div class="callout">The explorer's "what drives each match" matrix shows, for the gap rule, each factor's signed part \(w_f\,(f'(u)-f'(r))\) of the index difference: a pair with a small gap can hide large opposite differences that cancel.</div>
+
+      <h2 id="a-pipeline">Pipeline</h2>
+      <ol>
+        <li><b>Acquire.</b> Fetch each source and record its version and SHA-256: Overture 2026-08-19.0 (places, buildings, segments), CNEFE 2022, Census 2020 blocks, CTA and SPTrans GTFS.</li>
+        <li><b>Filter.</b> Keep what each factor defines: five place categories; private dwellings; height &gt; 0; ten street classes.</li>
+        <li><b>Locate.</b> Assign each record to one unit: point in polygon (places, stops), bounding-box centre (buildings), midpoint (segments), block area share (Chicago dwellings).</li>
+        <li><b>Aggregate.</b> One value per unit and factor: counts for C, R, H, N; means for V and L, kept as additive sums so merged units recombine exactly.</li>
+        <li><b>Scale.</b> Min–max over the <span data-bind="n-all"></span> units pooled.</li>
+        <li><b>Sum.</b> Equal weights, six factors, index from 0 to 6.</li>
+      </ol>
+      <p>Twenty construction checks guard the build and any failure stops the run: commercial counts by two independent point-in-polygon routes; dwellings conserved against the CNEFE and Census totals; buildings with height reconciled with the source audit; every scaled factor spanning exactly 0 to 1; the index equal to the sum of its factors.</p>
+
+      <h2 id="a-decisions">Decisions</h2>
+      <div class="tablewrap"><table class="tbl">
+        <thead><tr><th>ID</th><th>Decision (1 October 2026)</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">D1</td><td>Commercial source: Overture Places; commercial = taxonomy top levels shopping, food_and_drink, services_and_business, lifestyle_services, lodging; places without taxonomy excluded in both cities. Chosen after the CNEFE address test: Overture matched 20.10% of São Paulo's census establishment addresses by name, OpenStreetMap 2.35%.</td></tr>
+          <tr><td class="mono">D2</td><td>No filter on operating status or confidence, so both cities follow the same rule.</td></tr>
+          <tr><td class="mono">D3</td><td>Hubs = subway/metro stations + bus stops; CPTM excluded (no Metra counterpart in the data); bus stops as listed, merging same-name stops within 50 m is sensitivity S1.</td></tr>
+          <tr><td class="mono">D4</td><td>Height: Index A uses the mean Overture height; Index B uses GHSL built-surface-weighted height.</td></tr>
+          <tr><td class="mono">D5</td><td>Streets: Overture road segments in the ten M1 classes, each assigned whole to the unit containing its midpoint.</td></tr>
+          <tr><td class="mono">D6</td><td>Equal weights for the six factors.</td></tr>
+          <tr><td class="mono">D7</td><td>São Paulo dwellings = CNEFE private dwellings; Chicago = Census 2020 housing units, blocks split by area share.</td></tr>
+          <tr><td class="mono">D8</td><td>Run the CNEFE address-level coverage check for Overture and OpenStreetMap (protocol P-PLACES-1).</td></tr>
+          <tr><td class="mono">D9</td><td>Report both indices in full; tests and pass/fail thresholds fixed in protocol P-AB-1 before any A or B value was computed.</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="a-findings">What the tests found</h2>
+      <p>Four tests with pass/fail rules written before any value existed compare A with B (full tables in the <a href="#doc-b" data-go="doc-b">Index B documentation</a>). For Index A:</p>
+      <div class="tablewrap" data-fill="ab-summary-A"></div>
+      <p>Supported conclusion: <b>Index A is biased as a measure of urban intensity</b> because it sums counts over units of unequal land area. The bias is structural and would remain with perfect data. A high A value means "much commerce, housing, stops and streets inside this boundary", not "a dense place".</p>
+
+      <h2 id="a-limits">Limits</h2>
+      <ul>
+        <li>Counts depend on unit size and on where boundaries are drawn (T1, T2).</li>
+        <li>Building height comes from different instruments in the two cities (LiDAR in Chicago, OpenStreetMap tags in São Paulo).</li>
+        <li>Overture place coverage varies across São Paulo districts (3.2% to 35.2% of census establishment addresses matched above chance); no available reference measures cross-city completeness.</li>
+        <li>Min–max over pooled units lets a single extreme unit set each factor's scale.</li>
+        <li>Vintages differ: Overture 2026, CNEFE 2022, Census 2020, GTFS feeds as supplied.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============================== DOC: INDEX B ============================== -->
+<section class="view method-b" id="view-doc-b" data-view="doc-b" hidden>
+  <div class="docs">
+    <nav class="toc" aria-label="On this page">
+      <a href="#b-what">What changes</a><a href="#b-math">Formulas</a><a href="#b-why">Why per km²</a><a href="#b-pipeline">Pipeline</a>
+      <a href="#b-tests">Tests: A vs B</a><a href="#b-app">Application: Brás</a><a href="#b-limits">Limits</a>
+    </nav>
+    <article class="doc">
+      <div class="eyebrow">Documentation · Cross-City Urban Index B</div>
+      <h1>Index B: the same sketch, counted per square kilometre of land</h1>
+      <p class="ink2">Decision D4 and protocol P-AB-1 (<code>docs/SIMPLE_INDEX.md</code>). Built in the same run as Index A by <code>analysis/scripts/build_simple_index_ab.py</code>.</p>
+
+      <h2 id="b-what">What changes, and what does not</h2>
+      <div class="tablewrap"><table class="tbl">
+        <thead><tr><th>Factor</th><th>Index A</th><th>Index B</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>C, R, H, N</td><td>count per unit</td><td>count ÷ land km²</td><td>counts depend on the area a boundary encloses</td></tr>
+          <tr><td>V</td><td>mean Overture height</td><td>GHSL built volume ÷ built surface</td><td>one instrument in both cities (Overture is LiDAR in Chicago, OSM tags in São Paulo)</td></tr>
+          <tr><td>L</td><td>mean segment length</td><td>unchanged</td><td>already a ratio</td></tr>
+          <tr><td>Scaling, weights</td><td>min–max, equal</td><td>unchanged</td><td>same model; only the inputs change</td></tr>
+        </tbody>
+      </table></div>
+      <p>Index B tries to show that Index A's ranking reflects unit size rather than urban intensity, and to fix it by putting every factor on a per-area basis, so that redrawing boundaries no longer changes it.</p>
+
+      <h2 id="b-math">Formulas</h2>
+      <div class="eq">\[\operatorname{Land}(u)=|u|-|W\cap u|,\qquad C_B=\frac{C}{\operatorname{Land}},\quad R_B=\frac{R}{\operatorname{Land}},\quad H_B=\frac{H}{\operatorname{Land}},\quad N_B=\frac{N}{\operatorname{Land}},\quad L_B=L\]</div>
+      <div class="eq">\[V_B(u)=\frac{\sum_c w_c\,\mathrm{AGBH}_c}{\sum_c w_c\,\mathrm{AGBH}_c/\mathrm{ANBH}_c},\qquad I_B(u)=\sum_f f_B'(u)\]</div>
+      <p class="where">\(W\) = municipal hydrography (rivers, reservoirs, Lake Michigan); \(c\) = a GHSL 100 m cell and \(w_c\) its area inside \(u\); AGBH = built volume per cell area; ANBH = built volume per built surface (GHSL R2023A, height epoch 2018). \(V_B\) is the unit's built volume divided by its built surface: the mean height of what is built. Each \(f_B'\) is min–max scaled as in Index A. The similarity rules (index gap and factor profile) are the same as Index A's.</p>
+
+      <h2 id="b-why">Why per km² removes the boundary effect</h2>
+      <p>Test T1 merges São Paulo's districts into their subprefeituras and asks whether a merged unit's value stays within the range of its parts. For a count the answer is always no, and for a ratio of sums always yes:</p>
+      <div class="eq">\[x_{\text{merged}}=\sum_i x_i\ \ge\ \max_i x_i,\qquad \frac{\sum_i a_i}{\sum_i b_i}=\sum_i \frac{b_i}{\sum_j b_j}\cdot\frac{a_i}{b_i}\ \in\ \Big[\min_i \tfrac{a_i}{b_i},\ \max_i \tfrac{a_i}{b_i}\Big].\]</div>
+      <p>A merged count is the sum of its parts, so it exceeds the largest part whenever two parts are positive. A ratio of sums is a weighted average of the parts' ratios, so it stays between them. The data confirm the algebra and measure its size (T1 below).</p>
+
+      <h2 id="b-pipeline">Pipeline</h2>
+      <p>Steps 1 to 6 are those of Index A, with the same records, assignment rules and checks, in one run that builds both indices. Two inputs are added:</p>
+      <ul>
+        <li><b>Land per unit:</b> unit area minus municipal hydrography.</li>
+        <li><b>GHSL height</b> recombined from built volume and built surface; the recombination reproduces the stored values (relative difference below 1e-9).</li>
+      </ul>
+
+      <h2 id="b-tests">Tests: Index A against Index B</h2>
+      <p>Rules fixed in protocol P-AB-1 before any A or B value existed.</p>
+      <div class="tablewrap"><table class="tbl">
+        <thead><tr><th>Test</th><th>Question</th><th>Rule</th></tr></thead>
+        <tbody>
+          <tr><td>T1 boundary invariance</td><td>Does a merged subprefeitura stay within its districts' range?</td><td>invariant if true in ≥ 95% of the 29 merged units</td></tr>
+          <tr><td>T2 size dependence</td><td>Does the value correlate with land area?</td><td>size-dependent if the 95% bootstrap interval excludes 0 and |ρ| ≥ 0.3</td></tr>
+          <tr><td>T3 agreement</td><td>Do A and B rank the units alike?</td><td>disagree if Spearman &lt; 0.8 or top-10 overlap &lt; 7</td></tr>
+          <tr><td>T4 city composition</td><td>How many Chicago units in the top and bottom 20?</td><td>descriptive; 8.9 expected from Chicago's share of units</td></tr>
+          <tr><td>S1 sensitivity</td><td>Does merging paired bus stops change the result?</td><td>descriptive</td></tr>
+        </tbody>
+      </table></div>
+      <h3>T1 · boundary invariance (merged units within their parts' range)</h3>
+      <div class="tablewrap" data-fill="ab-t1"></div>
+      <h3>T2 · size dependence (Spearman ρ with land area, 95% bootstrap interval)</h3>
+      <div class="tablewrap" data-fill="ab-t2"></div>
+      <h3>T3 · agreement, T4 · city composition, S1 · merged bus stops</h3>
+      <div class="tablewrap" data-fill="ab-t3"></div>
+      <div class="tablewrap" data-fill="ab-t4"></div>
+      <div class="tablewrap" data-fill="ab-s1"></div>
+      <p><b>What the comparison supports.</b> Index A is biased as a measure of intensity: its count factors and index depend on how boundaries are drawn and rise with unit size. Index B removes that bias: every factor and the index pass T1, and the index does not grow with unit size across the pooled units. Index B is not proven unbiased overall: both indices share the sources, and São Paulo–Chicago comparability is not validated (T4).</p>
+
+      <h2 id="b-app">Application: the Chicago area closest to Brás</h2>
+      <div class="tablewrap" data-fill="ab-bras"></div>
+      <p>Profile rank = position among the 77 Chicago areas by six-factor profile distance to Brás (1 = most alike). Index A's pick matches Brás's total with a different mix; Index B's pick also ranks among the closer profiles. Neither is a validated analogue: one number cannot hold six dimensions.</p>
+
+      <h2 id="b-limits">Limits</h2>
+      <ul>
+        <li>Average street length still enters positively although longer segments usually mean a coarser network (not changed, by agreement).</li>
+        <li>Min–max over the pooled units lets single extremes set each scale.</li>
+        <li>Shared source limits: uneven Overture place coverage; dwellings from two different censuses; cross-city comparability untested.</li>
+        <li>GHSL heights are modelled (2018 epoch) and compress tall buildings.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============================== DOC: HARMONIZED MODEL ============================== -->
+<section class="view method-h" id="view-doc-h" data-view="doc-h" hidden>
+  <div class="docs">
+    <nav class="toc" aria-label="On this page">
+      <a href="#h-question">Question</a><a href="#h-features">Features</a><a href="#h-c6">One scale for two cities</a><a href="#h-math">Distance</a>
+      <a href="#h-runs">Runs R1–R3</a><a href="#h-pca">PCA and clusters</a><a href="#h-pipeline">Pipeline</a><a href="#h-decisions">Decisions</a>
+      <a href="#h-robust">Robustness</a><a href="#h-limits">Limits</a>
+    </nav>
+    <article class="doc">
+      <div class="eyebrow">Documentation · Harmonized cross-city similarity model</div>
+      <h1>The harmonized cross-city similarity model</h1>
+      <p class="ink2">Contract <code>analysis/config/sp_chicago_model_v1.json</code>, frozen and fitted on 6 October 2026. Code <code>analysis/scripts/sp_chicago_model.py</code> (reusing <code>chicago_model.py</code>); notebook <code>analysis/sp_chicago_model_analysis.ipynb</code>; report <code>docs/harmonization/MODEL_REPORT.md</code>.</p>
+
+      <h2 id="h-question">The question</h2>
+      <p><b>Which Chicago Community Areas most resemble a given São Paulo district, and the reverse?</b> The model places all <span data-bind="n-all"></span> units in one space built from <span data-bind="n-cols"></span> measurements in <span data-bind="n-fams"></span> feature families, measures the dissimilarity between every pair, and ranks the units by their distance to a reference. The published report uses Brás; the explorer lets any unit be the reference. The model is target-free: rankings around a reference are read from the full matrix.</p>
+
+      <h2 id="h-features">The features</h2>
+      <p>The same twelve families as the Chicago model, built with the same definitions in both cities. Each family was accepted step by step, with checks fixed before its results were seen.</p>
+      <div class="tablewrap" data-fill="h-families"></div>
+      <p>Missing: U1 for O'Hare, Marsilac and Parelheiros (under 10% classified land). Pairs involving them use the families both units have.</p>
+      <h3>The columns as the distance sees them</h3>
+      <div class="tablewrap" data-fill="h-columns"></div>
+
+      <h2 id="h-c6">Putting two cities on one scale (convention C6)</h2>
+      <p id="h-c6-example">Absolute comparison is right when a number means the same thing in both cities; relative comparison is the safe choice when the measuring instrument differs.</p>
+      <p>Every transformed column \(t\) is standardized and capped at ±3:</p>
+      <div class="eq">\[z=\operatorname{clip}\Big(\frac{t-\bar t}{s},\,-3,\,3\Big),\qquad s=\sqrt{\tfrac1n\sum (t-\bar t)^2}.\]</div>
+      <ul>
+        <li><b>Absolute:</b> \(\bar t\) and \(s\) over all <span data-bind="n-all"></span> units (levels compared as measured).</li>
+        <li><b>Relative:</b> \(\bar t\) and \(s\) within the unit's own city (a unit is compared by its position in its city).</li>
+        <li><b>Hybrid (primary):</b> absolute for the same-instrument families (M1, M3, M4, M6, M7, B1, U3), relative for the rest (BV, U2, U4, U6, U1).</li>
+        <li><b>All-absolute</b> and <b>all-relative</b> apply one rule to every column; they are the two extra runs. Switch between all three in the explorer.</li>
+      </ul>
+      <p>Relative scaling removes a city-wide shift and stretch caused by an instrument. It does not fix an instrument that mis-ranks units inside a city.</p>
+
+      <h2 id="h-math">How the distance is calculated</h2>
+      <h3>1 · Transforms (J-5)</h3>
+      <p>Natural log for strictly positive amounts on a ratio scale (U2, U3, U4, M1, M7, BV height, M4 elongation), so that "twice as dense" is the same step everywhere; identity for shares, indices and log-ratios (B1, M6, M4 compactness, M3, already in ln m², U6, U1).</p>
+      <h3>2 · Composition (U6)</h3>
+      <p>The five activity classes (food &amp; drink, retail, services &amp; offices, making &amp; storing, institutions) are compared with the Aitchison distance, the Euclidean distance between centred log-ratios, left unscaled because standardizing log-ratios one by one breaks their geometry:</p>
+      <div class="eq">\[\operatorname{clr}_k=\ln(n_k+0.5)-\frac15\sum_{j=1}^{5}\ln(n_j+0.5).\]</div>
+      <p class="where">In hybrid and all-relative scaling the log-ratios are centred within each city; all-absolute uses the raw log-ratios.</p>
+      <h3>3 · Blocks and calibration (J-7)</h3>
+      <p>Each family is one block (U6 is two, intensity and composition, each with half of U6's budget). For block \(b\) with \(c_b\) columns:</p>
+      <div class="eq">\[m_b(d,e)=\frac1{c_b}\sum_{j=1}^{c_b}\big(x_{dj}-x_{ej}\big)^2,\qquad \beta_b=\operatorname*{median}_{d&lt;e,\ m_b(d,e)&gt;0} m_b(d,e).\]</div>
+      <p class="where">Averaging over columns keeps a three-column family from counting three times; dividing by \(\beta_b\), its median over all 14,878 pairs, puts every block on a common scale.</p>
+      <h3>4 · Distance (J-7, J-8)</h3>
+      <div class="eq">\[D(d,e)=\sqrt{\frac{\sum_{b} w_{f(b)}\,s_b\,m_b(d,e)/\beta_b}{\sum_{b\ \text{available for}\ d,e} w_{f(b)}\,s_b}}\]</div>
+      <p class="where">\(w_f\) = the family budget (equal, 1/12, in the published model; set by the weight sliders in the explorer); \(s_b\) = the block's share of its family. The denominator is 1 except for pairs involving a unit without U1, which use the families both units have.</p>
+      <h3>5 · What drives a match</h3>
+      <p>Each family's part of the squared distance is additive:</p>
+      <div class="eq">\[D^2(d,e)=\sum_f \underbrace{\frac{w_f\sum_{b\in f}s_b\,m_b(d,e)/\beta_b}{\sum_{b\ \text{avail.}}w_{f(b)}\,s_b}}_{\text{part of family } f},\qquad \text{share}_f=\frac{\text{part}_f}{D^2}.\]</div>
+      <p>The explorer's contribution matrix shows these shares for every top-10 match.</p>
+      <div class="callout">Equal budgets equalize families on a typical pair, not on every pair. Block size (M3) is nearly uniform inside each city's grid and extreme in a few industrial and airport units, so its median pair is small and it carries far more than its nominal 1/12 on average (table below). Lower its weight in the explorer to see how much a ranking depends on it.</div>
+      <div class="tablewrap" data-fill="h-shares"></div>
+
+      <h2 id="h-runs">Three runs</h2>
+      <ul>
+        <li><b>R1, equal weights.</b> The distance above with \(w_f=1/12\).</li>
+        <li><b>R2, PCA weights.</b> Euclidean distance on the principal components that explain at least 90% of the variance: \(D_{R2}(d,e)=\lVert \mathbf p_d^{(k)}-\mathbf p_e^{(k)}\rVert\), \(k=\min\{k:\sum_{i\le k}\lambda_i/\sum_i\lambda_i\ge 0.9\}\).</li>
+        <li><b>R3, without correlated features.</b> Scalar columns are dropped while any pair has |Spearman ρ| ≥ 0.70 on the scaled values (most such pairs first; ties to the higher mean |ρ|, then the later position). Under hybrid scaling this drops <span data-bind="r3-hybrid"></span>.</li>
+      </ul>
+      <p>The explorer's run presets set these exactly; the check script reproduces all nine published scaling × run matrices to within 1e-10.</p>
+
+      <h2 id="h-pca">Principal components and clusters</h2>
+      <p>The model has an exact Euclidean embedding, so principal components come from the distance matrix itself (principal-coordinate analysis, identical to PCA of the embedding when no value is missing):</p>
+      <div class="eq">\[B=-\tfrac12\,J\,D^{(2)}J,\qquad J=I-\tfrac1n\mathbf 1\mathbf 1^\top,\qquad B=V\Lambda V^\top,\qquad P=V_{+}\Lambda_{+}^{1/2}.\]</div>
+      <p class="where">\(D^{(2)}\) = the matrix of squared distances; \(V_+, \Lambda_+\) = the eigenvectors and eigenvalues with \(\lambda&gt;0\). Loadings are the correlations of each component with each model column.</p>
+      <p>Ward clustering runs on all positive components. At each step it merges the two clusters whose union increases the within-cluster sum of squares least,</p>
+      <div class="eq">\[\Delta(A,B)=\frac{n_A n_B}{n_A+n_B}\,\lVert \bar{\mathbf p}_A-\bar{\mathbf p}_B\rVert^2,\]</div>
+      <p>and the number of clusters is the \(k\in\{3,\dots,8\}\) with the best mean silhouette \(s(i)=\frac{b(i)-a(i)}{\max\{a(i),b(i)\}}\), where \(a(i)\) is unit \(i\)'s mean distance to its own cluster and \(b(i)\) to the nearest other cluster. Clusters are a descriptive check, not a validated typology.</p>
+      <div class="tablewrap" data-fill="h-pca"></div>
+
+      <h2 id="h-pipeline">Pipeline</h2>
+      <ol>
+        <li><b>Accept each family.</b> Freeze its definition, approve numeric checks before seeing results, build it with one script into one dated results folder, sign an acceptance record. A failed check stays recorded as failed.</li>
+        <li><b>Joint review (J-1 to J-10).</b> U1 land-share admission (J-3), redundancy merge rule (J-4), transforms, scaling, budgets, missing data and sensitivities, all fixed before any distance was computed.</li>
+        <li><b>Freeze the contract.</b> Columns, transforms, scaling, budgets and every input table's SHA-256; inputs are refused if a hash differs.</li>
+        <li><b>Cross-city design (X-1 to X-9).</b> 173 units, the C6 hybrid scaling and its two variants, the three runs, fixed before any cross-city value was computed.</li>
+        <li><b>Fit once and report</b> R1–R3 under three scalings, PCA, Ward clusters, 500 weight draws and the pre-registered sensitivities.</li>
+        <li><b>Export to the explorer.</b> <code>analysis/scripts/export_viz_data.py</code> writes the model's blocks for each scaling; <code>analysis/tests/check_viz_model.js</code> asserts that the browser reproduces the published results.</li>
+      </ol>
+
+      <h2 id="h-decisions">Decisions</h2>
+      <div class="tablewrap"><table class="tbl">
+        <thead><tr><th>ID</th><th>Decision</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">C2</td><td>Densities divide by land = unit minus municipal water; parks, vacant land and airports stay in the denominator.</td></tr>
+          <tr><td class="mono">C4</td><td>Missing values stay missing with a reason; nothing is imputed.</td></tr>
+          <tr><td class="mono">C6</td><td>Hybrid scaling: absolute levels where both cities use the same validated instrument, relative positions where they differ; all-absolute and all-relative as extra runs (user, 6 October 2026).</td></tr>
+          <tr><td class="mono">J-3</td><td>A U1 land share enters only if its largest |Spearman| with the U6 coordinates, B1 and M1 is below 0.70 in both cities: residential, industrial and institutional admitted; commerce not (0.708 with U6 intensity in São Paulo).</td></tr>
+          <tr><td class="mono">J-4</td><td>Families correlated at |ρ| ≥ 0.90 would share one budget; no pair reached it.</td></tr>
+          <tr><td class="mono">J-5</td><td>Log for strictly positive ratio-scale amounts; identity for shares, indices and log-ratios.</td></tr>
+          <tr><td class="mono">J-6</td><td>z-score with population SD, capped at ±3; robust and rank-normal scaling as sensitivities.</td></tr>
+          <tr><td class="mono">J-7</td><td>Equal budget per family; blocks calibrated by their median positive pairwise value; U6 = ½ intensity + ½ Aitchison composition.</td></tr>
+          <tr><td class="mono">J-8</td><td>Pairs with a missing family use the families both units have, budgets renormalized.</td></tr>
+          <tr><td class="mono">J-9</td><td>Leave-one-family-out, domain budgets, 500 weight draws (×U(0.5, 1.5), seed 20261006), scaling and metric variants, recorded family substitutes; a neighbour is stable if it stays in the top five in ≥ 80% of draws.</td></tr>
+          <tr><td class="mono">X-1</td><td>173 units; reference Brás (SP:10); rankings for all units, for Chicago and for São Paulo.</td></tr>
+          <tr><td class="mono">X-6</td><td>For each scaling: R1 equal weights, R2 PCA weights, R3 without correlated features.</td></tr>
+          <tr><td class="mono">—</td><td>Not in the model by decision: M2 junction density (excluded), B2 floors and B3 floor area (no defensible Chicago source), U1 mix entropy (blind to vertical mixing).</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="h-robust">Robustness (published, hybrid scaling)</h2>
+      <h3>Brás's closest Chicago areas under 500 weight draws</h3>
+      <div class="tablewrap" data-fill="h-stability"></div>
+      <h3>Scaling and run comparison against hybrid R1</h3>
+      <div class="tablewrap" data-fill="h-scale"></div>
+      <h3>Sensitivities against hybrid R1</h3>
+      <div class="tablewrap" data-fill="h-sens"></div>
+      <p>Results hold under every reweighting and alternative definition except the Ledoit-Wolf Mahalanobis distance, which removes the correlation shared among features (mostly the grain axis) and so defines a different similarity.</p>
+
+      <h2 id="h-limits">Limits</h2>
+      <ul>
+        <li><b>No external truth.</b> The model describes; no outcome validates similarity itself. Evidence comes from each family's checks, face validity and the robustness tables.</li>
+        <li><b>The scaling choice is a modelling decision, not a finding.</b></li>
+        <li><b>Block size (M3) weighs more than its budget</b>, and drives PC1.</li>
+        <li><b>The ±3 cap compresses extremes</b> (the Loop on jobs, height and transit; Marsilac on several columns).</li>
+        <li><b>Relative scaling keeps within-city instrument errors:</b> RAIS head-office registration, LODES location error, Overture's formal-economy bias, GHSL's compression of tall buildings.</li>
+        <li><b>Vintages differ:</b> Overture 2026, Census 2022 and ACS 2020–2024, RAIS 2022 and LODES 2023, IPTU 2026 and CMAP 2023, GHSL 2018.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============================== EXPLORERS (built by app.js) ============================== -->
+<section class="view method-a" id="view-index-a" data-view="index-a" hidden></section>
+<section class="view method-b" id="view-index-b" data-view="index-b" hidden></section>
+<section class="view method-h" id="view-harmonized" data-view="harmonized" hidden></section>
+</main>
+
+<datalist id="unit-list"></datalist>
+<div id="tip" role="tooltip" hidden></div>
+<script src="data.js"></script>
+<script src="model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
