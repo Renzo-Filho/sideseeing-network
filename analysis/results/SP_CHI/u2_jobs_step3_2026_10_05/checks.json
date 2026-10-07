@@ -1,0 +1,174 @@
+{
+  "CHI_2023_mass": {
+    "pass": true,
+    "inside": 1462492.8832082318,
+    "outside": 48696.116791768334,
+    "block_total": 1511189.0
+  },
+  "CHI_2023_all_positive_city_blocks_have_pieces": {
+    "pass": true,
+    "missing": 0
+  },
+  "CHI_2022_mass": {
+    "pass": true,
+    "inside": 1408821.4950077387,
+    "outside": 49441.504992261056,
+    "block_total": 1458263.0
+  },
+  "SP_unplaced_jobs": {
+    "pass": true,
+    "file_total": 5387474.0,
+    "placed": 4878630.0,
+    "unplaced": 508844.0
+  },
+  "SP_cep_allocation_matches_district_table": {
+    "pass": true,
+    "max_abs_diff": 2.9103830456733704e-11
+  },
+  "SP_mass": {
+    "pass": true,
+    "jobs": 5387474.0
+  },
+  "no_missing_values": {
+    "pass": true
+  },
+  "S3-3_CHI_allocation_immaterial": {
+    "pass": false,
+    "cases": [
+      "CHI:42",
+      "CHI:55"
+    ],
+    "max_abs_pct": 23.592149345787515,
+    "max_abs_rank_move": 5.0
+  },
+  "S3-4_SP_allocation_immaterial": {
+    "pass": false,
+    "cases": [
+      "SP:02",
+      "SP:03",
+      "SP:04",
+      "SP:05",
+      "SP:09",
+      "SP:13",
+      "SP:15",
+      "SP:19",
+      "SP:30",
+      "SP:33",
+      "SP:37",
+      "SP:43",
+      "SP:52",
+      "SP:55",
+      "SP:60",
+      "SP:64",
+      "SP:71",
+      "SP:72",
+      "SP:74",
+      "SP:83",
+      "SP:84",
+      "SP:87",
+      "SP:91",
+      "SP:93",
+      "SP:94",
+      "SP:96"
+    ],
+    "max_abs_pct": 157.3114674493849,
+    "max_abs_rank_move": 10.0
+  },
+  "S3-6_concentration": {
+    "CHI": [
+      "CHI:32",
+      "CHI:41",
+      "CHI:76"
+    ],
+    "SP": [
+      "SP:06",
+      "SP:26",
+      "SP:35",
+      "SP:41",
+      "SP:56",
+      "SP:71",
+      "SP:78"
+    ]
+  },
+  "S3-5_SP_exclusion": {
+    "level_change_pct": -9.444945813195575
+  },
+  "SP_od_agreement": {
+    "flagged": [
+      "SP:05",
+      "SP:07",
+      "SP:09",
+      "SP:10",
+      "SP:13",
+      "SP:14",
+      "SP:18",
+      "SP:19",
+      "SP:21",
+      "SP:24",
+      "SP:25",
+      "SP:26",
+      "SP:29",
+      "SP:30",
+      "SP:31",
+      "SP:34",
+      "SP:35",
+      "SP:37",
+      "SP:38",
+      "SP:41",
+      "SP:42",
+      "SP:43",
+      "SP:47",
+      "SP:49",
+      "SP:51",
+      "SP:55",
+      "SP:56",
+      "SP:57",
+      "SP:59",
+      "SP:61",
+      "SP:62",
+      "SP:63",
+      "SP:67",
+      "SP:68",
+      "SP:69",
+      "SP:71",
+      "SP:73",
+      "SP:74",
+      "SP:76",
+      "SP:78",
+      "SP:87",
+      "SP:90",
+      "SP:91",
+      "SP:93",
+      "SP:96"
+    ],
+    "n_flagged": 45,
+    "spearman_jobs": 0.8862588171459577,
+    "note": "approximate SE ignores clustering; flagged districts accepted with stated limits (user, 5 Oct 2026)"
+  },
+  "summary": {
+    "CHI": {
+      "median": 944.3176936273302,
+      "max": [
+        "LOOP",
+        122514.31614888833
+      ],
+      "min": [
+        "RIVERDALE",
+        106.96295648022863
+      ],
+      "jobs": 1462492.8832082318
+    },
+    "SP": {
+      "median": 3052.2319099010897,
+      "max": [
+        "SE",
+        136113.14295481637
+      ],
+      "min": [
+        "MARSILAC",
+        1.2134844641804095
+      ],
+      "jobs": 5387474.0
+    }
+  }
+}

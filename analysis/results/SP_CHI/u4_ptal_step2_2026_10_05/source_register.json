@@ -1,0 +1,116 @@
+{
+  "CHI:google_transit": {
+    "active_services": [
+      "109201",
+      "109202",
+      "109203",
+      "109204",
+      "109210",
+      "109211",
+      "109212",
+      "109218",
+      "109219",
+      "109220",
+      "109221",
+      "109226",
+      "109227",
+      "109228",
+      "109229",
+      "109234",
+      "109235",
+      "109236",
+      "109237",
+      "109238",
+      "109239",
+      "109240",
+      "109241",
+      "109242",
+      "209201",
+      "68201",
+      "68202",
+      "68203",
+      "68204",
+      "68210",
+      "68211",
+      "68212",
+      "68218",
+      "68219",
+      "68220",
+      "68221",
+      "68226",
+      "68227",
+      "68228",
+      "68229",
+      "68234",
+      "68235",
+      "68236",
+      "68237",
+      "68238",
+      "68239",
+      "68240",
+      "68241",
+      "68242"
+    ],
+    "files": {
+      "analysis/data/Chicago/google_transit/agency.txt": "cbcdf0fa2981959f2eda970a5d520a0413a30a39be52a9d67b28ebefd26bb30f",
+      "analysis/data/Chicago/google_transit/calendar.txt": "8303b79748d0d4d9d09594abe4aa057573de3855070c6d439e9e281c3f8f9dfa",
+      "analysis/data/Chicago/google_transit/calendar_dates.txt": "395c5f58183d6e93e967155eecad96dbc33a38bf5b697137bef95ab4c090db96",
+      "analysis/data/Chicago/google_transit/frequencies.txt": "5ba50d0c3af49afac0084c1e69c2b9019b6f0dd57f454cd4669f232e35eefab3",
+      "analysis/data/Chicago/google_transit/routes.txt": "39a63dec2f83fff7dea65ee507da19ce9150c44468681c0b60b934f201b0b75c",
+      "analysis/data/Chicago/google_transit/shapes.txt": "f8716544c54874d89c96db5edf0558efe626e92a55cf8ce6f187575a872e3907",
+      "analysis/data/Chicago/google_transit/stop_times.txt": "4a436b9e11ca814f87153db1477d98ee020f177316395c0ca05a7ffdd516d8d1",
+      "analysis/data/Chicago/google_transit/stops.txt": "dee19f9d31a7ce1896d044ef8eda3683bede7309880ef8ef01f46f5021fe4928",
+      "analysis/data/Chicago/google_transit/transfers.txt": "2de6f47ab836c7ac0209b643cc303f5c81a50b387c8ec10edbc182afa511307d",
+      "analysis/data/Chicago/google_transit/trips.txt": "291681a2d47ae2915528a0490115b3e20ed2484c4214ccd789b5343814adc091"
+    }
+  },
+  "CHI:metra_gtfs_2026_10_05": {
+    "active_services": [
+      "A1A"
+    ],
+    "files": {
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/agency.txt": "97d94d90c14249fbb35ddfda05bf7d11bf2854fc835b934b2c9408a3f8b39a3e",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/calendar.txt": "0fb9cef67198f4d9e7d752adaa0a6b37c748871e97b8d2e641353df7775cc609",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/calendar_dates.txt": "d39e493db100f9123f5b51a669386bf5bb186a459ce19303ca17a5825cccba09",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/fare_attributes.txt": "82fe9e6127a29745fc174b886b4a6b2101cb7806900ed775a3bf63d87e64f116",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/fare_rules.txt": "4b60d8ed8d5cf40e5519016a28e479d9d206fd418c3a4c7bb73492c5204ad7c8",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/routes.txt": "f3924c78dd6e1e3f639e5ab56cf29d93a5406f61c47df0fa2e4ee1bc2d0a20c4",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/shapes.txt": "d24a09cd44d8a20c17999011441997b374b4a878ec3f2487c9f5ec4a17c6b73f",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/stop_times.txt": "1fd9c23eb650c8446de4b2bf39c46857b000598f0a7687d76f57205bc992df7c",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/stops.txt": "90670d0868bcdec95bc8a61faadf76b2df3a7ada742712b6dcf318bbbab7d155",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/trips.txt": "622d67c2f525427796ad387a020d5f446a604cb16d61aaf75c6dea94a9208b5a",
+      "analysis/data/Chicago/metra_gtfs_2026_10_05/schedule.zip": "06b6f940e9f9c38805a7acaf8582a20d42491073a200078e4a6227ff2f12926d"
+    }
+  },
+  "SP:f-6gy-sptrans-latest": {
+    "active_services": [
+      "USD",
+      "US_",
+      "U__"
+    ],
+    "files": {
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/agency.txt": "cf2cdb7007ec04d7262a0a1dfa3930d656ee2168f61ae415cf4a25f956445c56",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/calendar.txt": "dc61ede20271b59c71013232a5412cd5c0c65d2e953544f5cc26931d1f296e1a",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/fare_attributes.txt": "6e6ac2fc27217b846daf90cc57885a11d2de3642f15b2a39ca55b19eb1b7d711",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/fare_rules.txt": "042200e902619b61fd217811820a3280d360cb64df606f0df6135fed364e87f3",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/frequencies.txt": "eb5f88c9022ca81a0875f21f25ce549d5fd6def8d5cbb5db675ba19737d35ef2",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/routes.txt": "0241f1bf3c904d569e99b703eaa34f4b0196e301fbda58af678bc9c19639c34a",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/shapes.txt": "91fa3b9e04a68136a6f76141d65b2017a7a594bd157e85deba64beaf0082e21c",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/stop_times.txt": "58558b1e4b85fc37d56ae4f22aba4bf875fc27a6adf7ae29db37f6795fe9b57b",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/stops.txt": "57e97165816e7c00168c1375ad7079e3be8254ae77309be34a209e3829d9df4e",
+      "analysis/data/SP/Socioeconomico/f-6gy-sptrans-latest/trips.txt": "c68f0a8564d1011d62e3a648a396ced913f2e30681023dbe6d4ff494a69d4362"
+    }
+  },
+  "method": {
+    "source": "Transport for London, Connectivity Assessment Guide (2015), section 2, tables 2.1-2.2, figure 2.15",
+    "files": {
+      "analysis/data/shared/ptal_method/tfl_connectivity_assessment_guide_2015.pdf": "aafbbe1c36a46f5c326972eb59144ae65ab51c12bb4b1f025b79608da45de416"
+    }
+  },
+  "inputs": {
+    "analysis/data/SP/Socioeconomico/densidade_demografica.gpkg": "c8acb66d651a58169fbb7fbeab335b615d869c3cbe37d655a257f520bc3c2815",
+    "analysis/results/Chicago/chicago_u3_step1_2026_10_02/tables/u3_step1.parquet": "23fba2ae593c713f6f3ccbacbe2a1ea4e7482dba53522e30641eff21b764c4f6",
+    "analysis/data/Chicago/overture_2026_08_19/segment/part_0000.parquet": "755e08ebcbb15111871443a358ec6324ee0f20d26feff65b32c3dbdf9727ff5d",
+    "analysis/data/SP/overture_2026_08_19/segment/part_0000.parquet": "41743533133e680ff199f9dd9e8ac0521b6214792ea129a705627b2c53d8bf55"
+  }
+}
