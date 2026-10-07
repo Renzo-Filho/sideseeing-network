@@ -1,0 +1,25 @@
+image_file,district_id,review_group,SRC_DATE,geosampa_area_m2,overlap_fraction_upper,visual_class,visual_note
+far_00_district_01.png,1,far,20250626,51.92005694299483,0.0,no_visible_roof,Target falls on planted strip.
+near_01_district_01.png,1,near,20250626,90.87366567744736,0.0488339786973915,visible_roof,Narrow roof segment visible; Overture outline does not cover the target.
+far_02_district_05.png,5,far,20250604,57.193572142286726,0.0,visible_roof,Long roof segment visible.
+near_03_district_05.png,5,near,20250604,62.4129015351459,0.0,visible_roof,Light roof visible beside mapped roof.
+far_04_district_10.png,10,far,20250629,61.02860968943425,0.0,visible_roof,Small roof extension visible.
+near_05_district_10.png,10,near,20250629,339.4910027195896,0.0001019063991195,visible_roof,Target follows a large dark roof; Overture geometry differs.
+far_06_district_15.png,15,far,20250408,500.92778801090697,0.0,uncertain,Target crosses a building edge and open ground.
+near_07_district_15.png,15,near,20250408,319.1250982502824,0.0198843637576279,visible_roof,White rooftop visible without corresponding Overture coverage.
+far_08_district_21.png,21,far,20250629,88.41001044703088,0.0,visible_roof,Brown roof visible.
+near_09_district_21.png,21,near,20250629,159.55729363012952,0.0301870824398337,visible_roof,Orange roof visible.
+far_10_district_27.png,27,far,20250629,107.95298357321788,0.0,no_visible_roof,Target falls on paved parking or driveway.
+near_11_district_27.png,27,near,20250629,102.37587967866564,0.0083785772987318,visible_roof,"Roof visible, partly in shadow."
+far_12_district_35.png,35,far,20250408,204.131852008236,0.0,uncertain,Dark target adjoins a tower roof; roof edge is obscured.
+near_13_district_35.png,35,near,20250408,58.81969924347897,0.0,visible_roof,Small brown roof visible.
+far_14_district_41.png,41,far,20250408,103.06481332811418,0.0,no_visible_roof,Target falls on cleared ground and trees.
+near_15_district_41.png,41,near,20250408,62.08815619718186,0.0,no_visible_roof,Target falls on a swimming pool.
+far_16_district_54.png,54,far,20250408,92.8437694286623,0.0,visible_roof,White roof segment visible.
+near_17_district_54.png,54,near,20250408,1232.9548544017196,0.0172636426501099,visible_roof,White roof visible; Overture misses much of its outline.
+far_18_district_55.png,55,far,20250408,83.34036462561676,0.0,no_visible_roof,Target falls on a highway.
+near_19_district_55.png,55,near,20250408,154.25427187058435,1.988176025819403e-06,visible_roof,Target follows a dark roof edge; Overture maps another part.
+far_20_district_71.png,71,far,20250408,105.33936217028324,0.0,no_visible_roof,Target falls on an open path and trees.
+near_21_district_71.png,71,near,20250408,69.91592743455487,0.0242436947661777,visible_roof,Light roof visible.
+far_22_district_81.png,81,far,20250408,92.0095376959709,0.0,visible_roof,Target covers a visible portion of a building roof.
+near_23_district_81.png,81,near,20250408,119.17183178409644,0.0,uncertain,Narrow structure may be an awning or walkway.

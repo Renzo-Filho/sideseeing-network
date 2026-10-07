@@ -1,0 +1,7 @@
+{
+  "analysis/data/Chicago/overture_2026_08_19/segment/part_0000.parquet": "755e08ebcbb15111871443a358ec6324ee0f20d26feff65b32c3dbdf9727ff5d",
+  "analysis/data/SP/overture_2026_08_19/segment/part_0000.parquet": "41743533133e680ff199f9dd9e8ac0521b6214792ea129a705627b2c53d8bf55",
+  "analysis/data/Chicago/steet_center_lines_20260915.geojson": "ebfabc5fde1ddfec2c161a405900601263e525942790e7510d791ea2057cf959",
+  "analysis/data/SP/Cadastro e Vias/SIRGAS_GPKG_logradouronbl.gpkg": "709d05e983d88f331ce04364e6ea3a7f4ef146072525bb8d523b794ca10cf213",
+  "analysis/data/SP/Cadastro e Vias/classvias.gpkg": "6e88e30436b59bb2e95f68c1e60d4eacb093c385f76076552c9584c38c2c7196"
+}

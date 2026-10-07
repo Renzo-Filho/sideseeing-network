@@ -1,0 +1,86 @@
+{
+  "no_missing_bv": {
+    "pass": true,
+    "missing": []
+  },
+  "S5-5_CHI_vs_cook2022_lidar": {
+    "pass": true,
+    "spearman": 0.8519901151480098,
+    "units_with_reference": 77,
+    "median_ratio_ghsl_over_ref": 0.9514211246335165
+  },
+  "S5-7_CHI_bias_by_height_class": {
+    "<8 m": {
+      "size": 20,
+      "median": 1.108
+    },
+    "8-15 m": {
+      "size": 45,
+      "median": 0.923
+    },
+    "15-25 m": {
+      "size": 8,
+      "median": 0.832
+    },
+    ">=25 m": {
+      "size": 4,
+      "median": 0.585
+    }
+  },
+  "CHI_descriptive": {
+    "spearman_bv_vs_B1": 0.3485461906514538,
+    "spearman_frozen_bv_vs_B1": 0.5367001419632998,
+    "spearman_bi_vs_B1": 0.7514853567485146,
+    "spearman_bi_vs_bv": 0.812923918187076,
+    "spearman_bi_vs_bv_x_builtfraction": 0.9999211315000788,
+    "spearman_land_vs_gross_support": 0.9999211315000788,
+    "median_bv_m": 9.756612891444222,
+    "max": [
+      "CHI:32",
+      41.98704856288456
+    ],
+    "min": [
+      "CHI:54",
+      6.548733947869481
+    ]
+  },
+  "S5-6_SP_vs_geosampa": {
+    "pass": false,
+    "spearman": 0.7877780792186652,
+    "units_with_reference": 96,
+    "median_ratio_ghsl_over_ref": 2.115881691178986
+  },
+  "S5-7_SP_bias_by_height_class": {
+    "<8 m": {
+      "size": 79,
+      "median": 2.141
+    },
+    "8-15 m": {
+      "size": 13,
+      "median": 1.95
+    },
+    "15-25 m": {
+      "size": 4,
+      "median": 1.518
+    }
+  },
+  "SP_descriptive": {
+    "spearman_bv_vs_B1": 0.12980195333695063,
+    "spearman_frozen_bv_vs_B1": 0.5111096039066739,
+    "spearman_bi_vs_B1": 0.6634291915355398,
+    "spearman_bi_vs_bv": 0.7432718393922952,
+    "spearman_bi_vs_bv_x_builtfraction": 0.9999457406402604,
+    "spearman_land_vs_gross_support": 0.9999728703201302,
+    "median_bv_m": 13.40027208683815,
+    "max": [
+      "SP:66",
+      31.25231173127853
+    ],
+    "min": [
+      "SP:52",
+      2.9849303416442923
+    ],
+    "spearman_vs_overture_osm_height": 0.7494574064026045,
+    "spearman_geosampa_vs_osm_height": 0.7574877916440587
+  }
+}

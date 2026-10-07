@@ -79,3 +79,13 @@ analysis/curio_nodes/backup_spec_rev_*.json
 # Record-level source extracts; only curated unit-level U6 results are published
 /analysis/results/SP_CHI/u6_activity_2026_10_06/cnefe_establishments_classified.parquet
 /analysis/results/SP_CHI/u6_activity_2026_10_06/overture_places_classified_*.parquet
+
+# Large source-imagery review captures stay local; keep the six linked examples
+/analysis/results/SP_CHI/b1_step4_2026_10_05/**/window_*.png
+/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/*.png
+!/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/near_17_district_54.png
+!/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/near_13_district_35.png
+!/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/far_04_district_10.png
+!/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/far_18_district_55.png
+!/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/far_14_district_41.png
+!/analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05/imagery_review_v2/near_15_district_41.png

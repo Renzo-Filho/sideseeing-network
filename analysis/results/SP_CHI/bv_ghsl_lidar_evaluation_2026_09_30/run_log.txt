@@ -1,0 +1,55 @@
+/home/renzo/Documents/GitHub/sideseeing-network/.venv/lib/python3.12/site-packages/pyogrio/raw.py:200: RuntimeWarning: Non-conformant content for record 1 in column dt_atualizacao, 2026-03-20T16:13:20.005662Z, successfully parsed
+  return ogr_read(
+RECON (max abs diff vs sealed H1-H3):
+             d_anbh        d_agbh         d_vol
+city
+CHI   3.808498e-09  1.612368e-09  1.613979e-09
+SP    2.687258e-06  3.950784e-07  4.090069e-07
+
+SPEARMAN CHI (n=77)
+                           footprint_coverage_gross  anbh_mean_incl_zero  agbh_mean  volume_density_m  ghsl_built_fraction  height_built_weighted  anbh_p50_built  anbh_p90_built
+footprint_coverage_gross                     1.000                0.524      0.742             0.741                0.862                  0.330           0.321           0.203
+anbh_mean_incl_zero                          0.524                1.000      0.932             0.933                0.368                  0.933           0.925           0.839
+agbh_mean                                    0.742                0.932      1.000             1.000                0.610                  0.807           0.797           0.701
+volume_density_m                             0.741                0.933      1.000             1.000                0.609                  0.807           0.798           0.702
+ghsl_built_fraction                          0.862                0.368      0.610             0.609                1.000                  0.133           0.120           0.000
+height_built_weighted                        0.330                0.933      0.807             0.807                0.133                  1.000           0.991           0.950
+anbh_p50_built                               0.321                0.925      0.797             0.798                0.120                  0.991           1.000           0.921
+anbh_p90_built                               0.203                0.839      0.701             0.702                0.000                  0.950           0.921           1.000
+     ghsl_built_fraction  footprint_coverage_gross  height_built_weighted  anbh_mean_incl_zero  share_area_zero_anbh
+min                0.090                     0.045                  6.475                3.375                 0.000
+50%                0.304                     0.224                  9.757                9.093                 0.009
+max                0.382                     0.360                 41.556               29.993                 0.378
+anomaly cells (AGBH>0, ANBH=0): 0   min valid_fraction: 1.0
+
+SPEARMAN SP (n=96)
+                           footprint_coverage_gross  anbh_mean_incl_zero  agbh_mean  volume_density_m  ghsl_built_fraction  height_built_weighted  anbh_p50_built  anbh_p90_built
+footprint_coverage_gross                     1.000                0.515      0.672             0.670                0.905                  0.132           0.023           0.131
+anbh_mean_incl_zero                          0.515                1.000      0.948             0.949                0.494                  0.822           0.739           0.784
+agbh_mean                                    0.672                0.948      1.000             1.000                0.675                  0.736           0.637           0.704
+volume_density_m                             0.670                0.949      1.000             1.000                0.674                  0.738           0.639           0.706
+ghsl_built_fraction                          0.905                0.494      0.675             0.674                1.000                  0.085          -0.013           0.059
+height_built_weighted                        0.132                0.822      0.736             0.738                0.085                  1.000           0.963           0.959
+anbh_p50_built                               0.023                0.739      0.637             0.639               -0.013                  0.963           1.000           0.881
+anbh_p90_built                               0.131                0.784      0.704             0.706                0.059                  0.959           0.881           1.000
+     ghsl_built_fraction  footprint_coverage_gross  height_built_weighted  anbh_mean_incl_zero  share_area_zero_anbh
+min                0.003                     0.005                  2.984                0.372                 0.000
+50%                0.388                     0.363                 13.396               12.479                 0.006
+max                0.470                     0.566                 31.252               31.558                 0.877
+anomaly cells (AGBH>0, ANBH=0): 0   min valid_fraction: 1.0
+
+COOK 2022 LIDAR (Chicago)  buildings read: 779962  assigned: 779962  areas: 77
+  Spearman lidar_footprint_coverage_gross vs footprint_coverage_gross: nan
+  Spearman lidar_footprint_coverage_gross vs ghsl_built_fraction: nan
+  Spearman lidar_volume_density_m vs volume_density_m: nan
+  Spearman lidar_height_area_weighted_m vs height_built_weighted: nan
+  Spearman lidar_height_area_weighted_m vs anbh_mean_incl_zero: nan
+       ratio_lidar_cov_over_overture  ratio_ghsl_vol_over_lidar_vol
+count                            0.0                            0.0
+mean                             NaN                            NaN
+std                              NaN                            NaN
+min                              NaN                            NaN
+25%                              NaN                            NaN
+50%                              NaN                            NaN
+75%                              NaN                            NaN
+max                              NaN                            NaN

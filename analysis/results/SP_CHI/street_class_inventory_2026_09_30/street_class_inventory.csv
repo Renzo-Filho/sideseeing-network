@@ -1,0 +1,140 @@
+city,source,class_value,qualifier,features,km,class_field,share_of_source,m1_eligible
+Chicago,city_street_centerlines,(missing),(missing),1,0.08185946311762739,class,1.1414910116279376e-05,
+Chicago,city_street_centerlines,1,N,1869,282.90680528277227,class,0.03944999918880724,
+Chicago,city_street_centerlines,2,(missing),4,0.53612202702841,class,7.475964924291063e-05,
+Chicago,city_street_centerlines,2,N,6212,656.6584265536537,class,0.0915678729218699,
+Chicago,city_street_centerlines,2,UC,10,2.001583828636939,class,0.0002791112795506351,
+Chicago,city_street_centerlines,3,N,6941,749.7034284141229,class,0.10454255284959095,
+Chicago,city_street_centerlines,4,(missing),11,0.9599710920465674,class,0.00013386337159568374,
+Chicago,city_street_centerlines,4,C,12,1.296485970891131,class,0.00018078875991983664,
+Chicago,city_street_centerlines,4,N,37217,4897.294959765228,class,0.6829043295617496,
+Chicago,city_street_centerlines,4,P,519,57.4504995376678,class,0.008011197036749332,
+Chicago,city_street_centerlines,4,UC,42,3.3633948920806334,class,0.0004690093107926357,
+Chicago,city_street_centerlines,4,V,15,2.257237941088742,class,0.00031476102123414854,
+Chicago,city_street_centerlines,5,N,75,8.221146846043776,class,0.0011463995575621527,
+Chicago,city_street_centerlines,5,P,1,0.10248049946452631,class,1.4290414883103257e-05,
+Chicago,city_street_centerlines,5,V,1,0.052005948341989267,class,7.251980445836108e-06,
+Chicago,city_street_centerlines,7,N,148,14.253196112075434,class,0.0019875399409260064,
+Chicago,city_street_centerlines,7,P,2,0.3698851397789556,class,5.1578711405144964e-05,
+Chicago,city_street_centerlines,9,N,1157,156.64505253168187,class,0.02184340242055616,
+Chicago,city_street_centerlines,99,N,540,141.20163892626385,class,0.01968989234999705,
+Chicago,city_street_centerlines,E,(missing),3,0.39844436060904576,class,5.5561157983105146e-05,
+Chicago,city_street_centerlines,E,C,19,2.172032867865956,class,0.00030287958181044356,
+Chicago,city_street_centerlines,E,N,897,106.56460765660007,class,0.014859924212167539,
+Chicago,city_street_centerlines,E,P,120,10.808344758299183,class,0.0015071719166354638,
+Chicago,city_street_centerlines,E,UC,39,3.469875836442332,class,0.000483857568558983,
+Chicago,city_street_centerlines,E,V,34,4.5143343575629284,class,0.0006295023075385423,
+Chicago,city_street_centerlines,RIV,N,342,67.55115661711233,class,0.009419685295602722,
+Chicago,city_street_centerlines,S,N,6,0.44033582951466466,class,6.140272270860823e-05,
+Sao Paulo,classvias,(missing),,5,0.7138353176128758,Classifica,3.5852544077858763e-05,
+Sao Paulo,classvias,ARTERIAL,,21732,2164.196895225279,Classifica,0.10869729006783152,
+Sao Paulo,classvias,COLETORA,,50404,4164.53040353594,Classifica,0.20916450359398986,
+Sao Paulo,classvias,LOCAL,,133001,12820.62473949667,Classifica,0.643918845477701,
+Sao Paulo,classvias,RODOVIA,,633,311.3289284323288,Classifica,0.015636567502234314,
+Sao Paulo,classvias,VIA DE PEDESTRES,,4148,276.63585915257624,Classifica,0.013894100066316431,
+Sao Paulo,classvias,VTR,,428,172.28075391472717,Classifica,0.008652840747849099,
+Sao Paulo,cet_export_75000_rows,Arterial,,7887,831.162178877219,dc_tipo_classificacao_viaria,0.11792699245441383,
+Sao Paulo,cet_export_75000_rows,Coletora,,17983,1504.0603084510983,dc_tipo_classificacao_viaria,0.21339915741269233,
+Sao Paulo,cet_export_75000_rows,Local,,46987,4413.0907154936785,dc_tipo_classificacao_viaria,0.6261383502912548,
+Sao Paulo,cet_export_75000_rows,Rodovia,,232,113.20078628248432,dc_tipo_classificacao_viaria,0.016061159433170318,
+Sao Paulo,cet_export_75000_rows,VTR,,215,82.03272424977507,dc_tipo_classificacao_viaria,0.011638970948709733,
+Sao Paulo,cet_export_75000_rows,Vias de pedestre,,1541,104.561286165153,dc_tipo_classificacao_viaria,0.014835369459758954,
+Sao Paulo,logradouro_street_type_no_class, ,,6948,647.1726077881781,lg_tipo,0.03341124219662075,
+Sao Paulo,logradouro_street_type_no_class,AC,,463,49.42421503733998,lg_tipo,0.002551598134899609,
+Sao Paulo,logradouro_street_type_no_class,AL,,1103,103.01361861826497,lg_tipo,0.005318230283213237,
+Sao Paulo,logradouro_street_type_no_class,AV,,29029,2656.4509358222076,lg_tipo,0.13714320496896798,
+Sao Paulo,logradouro_street_type_no_class,BC,,48,1.676426930991373,lg_tipo,8.654801754931995e-05,
+Sao Paulo,logradouro_street_type_no_class,CM,,88,8.114969652657678,lg_tipo,0.00041894729971623775,
+Sao Paulo,logradouro_street_type_no_class,CMP,,2,0.1457661788754351,lg_tipo,7.525394381458662e-06,
+Sao Paulo,logradouro_street_type_no_class,CP,,2,0.07300367434712757,lg_tipo,3.7689225648645637e-06,
+Sao Paulo,logradouro_street_type_no_class,CV,,122,23.63158606001694,lg_tipo,0.0012200155504726471,
+Sao Paulo,logradouro_street_type_no_class,EL,,4,0.20497881675765184,lg_tipo,1.0582334309965449e-05,
+Sao Paulo,logradouro_street_type_no_class,EPL,,4,0.18275415772490047,lg_tipo,9.434953446275355e-06,
+Sao Paulo,logradouro_street_type_no_class,ES,,3259,544.5339634731484,lg_tipo,0.028112370515907276,
+Sao Paulo,logradouro_street_type_no_class,ESC,,455,26.192035026274915,lg_tipo,0.00135220251190185,
+Sao Paulo,logradouro_street_type_no_class,ESP,,6,2.229070904328025,lg_tipo,0.00011507907930849934,
+Sao Paulo,logradouro_street_type_no_class,EST,,4,1.4812562410616112,lg_tipo,7.647204228020108e-05,
+Sao Paulo,logradouro_street_type_no_class,GL,,3,0.08242629914629758,lg_tipo,4.255379493826546e-06,
+Sao Paulo,logradouro_street_type_no_class,JD,,14,1.6131060011144176,lg_tipo,8.32789809758087e-05,
+Sao Paulo,logradouro_street_type_no_class,LD,,9,0.6077935567662917,lg_tipo,3.1378240497642834e-05,
+Sao Paulo,logradouro_street_type_no_class,LG,,346,22.189176338721513,lg_tipo,0.0011455490171784332,
+Sao Paulo,logradouro_street_type_no_class,PA,,113,5.4701008287035995,lg_tipo,0.00028240203838721616,
+Sao Paulo,logradouro_street_type_no_class,PC,,11293,952.1150497561026,lg_tipo,0.04915434637317148,
+Sao Paulo,logradouro_street_type_no_class,PCR,,3,0.06082048896340296,lg_tipo,3.139947616476168e-06,
+Sao Paulo,logradouro_street_type_no_class,PP,,6,0.29095213692105976,lg_tipo,1.502083400519268e-05,
+Sao Paulo,logradouro_street_type_no_class,PQ,,546,142.83212716860658,lg_tipo,0.007373919626479011,
+Sao Paulo,logradouro_street_type_no_class,PQE,,6,5.0296666214735275,lg_tipo,0.0002596639716143761,
+Sao Paulo,logradouro_street_type_no_class,PQL,,1,0.799153567898054,lg_tipo,4.125748384281853e-05,
+Sao Paulo,logradouro_street_type_no_class,PQM,,18,9.645998642058883,lg_tipo,0.000497988933678091,
+Sao Paulo,logradouro_street_type_no_class,PRO,,1,0.022983593876219472,lg_tipo,1.1865619964534688e-06,
+Sao Paulo,logradouro_street_type_no_class,PS,,663,40.87221089508495,lg_tipo,0.002110088283857044,
+Sao Paulo,logradouro_street_type_no_class,PSP,,53,3.7664468414829875,lg_tipo,0.00019444838382695235,
+Sao Paulo,logradouro_street_type_no_class,PSS,,7,1.0379407199227786,lg_tipo,5.3585223419136716e-05,
+Sao Paulo,logradouro_street_type_no_class,PT,,7,1.0520283417756306,lg_tipo,5.431251771440779e-05,
+Sao Paulo,logradouro_street_type_no_class,PTE,,160,32.607636329797806,lg_tipo,0.001683417409456843,
+Sao Paulo,logradouro_street_type_no_class,PTL,,2,0.028746379217281043,lg_tipo,1.4840743052877195e-06,
+Sao Paulo,logradouro_street_type_no_class,R,,146192,12825.315882082701,lg_tipo,0.662125884235021,
+Sao Paulo,logradouro_street_type_no_class,RP,,279,23.65333184833169,lg_tipo,0.0012211382089278987,
+Sao Paulo,logradouro_street_type_no_class,RPJ,,73,5.473378902606232,lg_tipo,0.00028257127379641183,
+Sao Paulo,logradouro_street_type_no_class,RV,,334,148.8807853466965,lg_tipo,0.00768619054295587,
+Sao Paulo,logradouro_street_type_no_class,SV,,11,0.5539343231741839,lg_tipo,2.859767797627718e-05,
+Sao Paulo,logradouro_street_type_no_class,TN,,79,15.60928764535216,lg_tipo,0.0008058525403570205,
+Sao Paulo,logradouro_street_type_no_class,TPJ,,3,0.2176313862877658,lg_tipo,1.1235541908514776e-05,
+Sao Paulo,logradouro_street_type_no_class,TV,,9550,578.7355551366221,lg_tipo,0.029878078224834688,
+Sao Paulo,logradouro_street_type_no_class,TVP,,77,4.686001653681153,lg_tipo,0.0002419217598223049,
+Sao Paulo,logradouro_street_type_no_class,VCP,,27,1.4956400657669762,lg_tipo,7.72146284854287e-05,
+Sao Paulo,logradouro_street_type_no_class,VD,,450,71.10357980241501,lg_tipo,0.0036708273762458147,
+Sao Paulo,logradouro_street_type_no_class,VE,,5226,232.36066070173342,lg_tipo,0.01199596246541609,
+Sao Paulo,logradouro_street_type_no_class,VEL,,8,5.9801778169094675,lg_tipo,0.00030873551663827207,
+Sao Paulo,logradouro_street_type_no_class,VEP,,67,2.835978512756568,lg_tipo,0.0001464115814140502,
+Sao Paulo,logradouro_street_type_no_class,VER,,8,0.364996881636486,lg_tipo,1.8843503366198433e-05,
+Sao Paulo,logradouro_street_type_no_class,VES,,19,1.6849753121130238,lg_tipo,8.69893403565701e-05,
+Sao Paulo,logradouro_street_type_no_class,VIA,,419,106.33914607214486,lg_tipo,0.005489915552113646,
+Sao Paulo,logradouro_street_type_no_class,VL,,115,7.203403478839261,lg_tipo,0.00037188634898195925,
+Sao Paulo,logradouro_street_type_no_class,VLP,,4,0.2922422497839171,lg_tipo,1.5087437988122704e-05,
+Sao Paulo,logradouro_street_type_no_class,VP,,1070,52.46747168532474,lg_tipo,0.002708710756337343,
+Chicago,overture_2026-08-19.0,(missing),water,7,12.38334306396757,class,0.0004276267315724867,False
+Chicago,overture_2026-08-19.0,cycleway,road,595,205.73911915218793,class,0.007104668474836248,False
+Chicago,overture_2026-08-19.0,footway,road,90815,12062.598160533273,class,0.4165506357221472,False
+Chicago,overture_2026-08-19.0,light_rail,rail,31,12.093800001201084,class,0.0004176281106071518,False
+Chicago,overture_2026-08-19.0,living_street,road,31,4.120541609896987,class,0.00014229224950375611,True
+Chicago,overture_2026-08-19.0,monorail,rail,3,0.020595749049055822,class,7.11220936433709e-07,False
+Chicago,overture_2026-08-19.0,motorway,road,1136,480.6191382695232,class,0.016596939143793028,True
+Chicago,overture_2026-08-19.0,path,road,1749,208.15658979141378,class,0.007188149572209108,False
+Chicago,overture_2026-08-19.0,pedestrian,road,111,8.888148735819081,class,0.0003069292334061106,True
+Chicago,overture_2026-08-19.0,primary,road,1545,184.2853245787532,class,0.0063638171549725425,True
+Chicago,overture_2026-08-19.0,residential,road,32578,4442.042993487843,class,0.15339446844017804,True
+Chicago,overture_2026-08-19.0,secondary,road,8937,1027.4945959779632,class,0.03548186895224982,True
+Chicago,overture_2026-08-19.0,service,road,48450,6459.5276826582,class,0.22306308532100916,False
+Chicago,overture_2026-08-19.0,standard_gauge,rail,3005,1979.9734173561521,class,0.06837326210626217,False
+Chicago,overture_2026-08-19.0,steps,road,2879,21.647922318576256,class,0.0007475550195620499,False
+Chicago,overture_2026-08-19.0,subway,rail,675,368.2632906321905,class,0.012717020478048251,False
+Chicago,overture_2026-08-19.0,tertiary,road,6062,753.6090494000983,class,0.02602393982091302,True
+Chicago,overture_2026-08-19.0,track,road,432,153.42534973448954,class,0.005298147722179367,False
+Chicago,overture_2026-08-19.0,trunk,road,224,37.14071359044418,class,0.0012825585045095924,True
+Chicago,overture_2026-08-19.0,unclassified,road,713,121.58883631710395,class,0.004198756054919985,True
+Chicago,overture_2026-08-19.0,unknown,rail,1010,310.0161662839366,class,0.01070560665547427,False
+Chicago,overture_2026-08-19.0,unknown,road,2461,104.66494732325171,class,0.00361433331071008,True
+Sao Paulo,overture_2026-08-19.0,(missing),water,3,6.123462223987262,class,0.00025492059005362223,False
+Sao Paulo,overture_2026-08-19.0,cycleway,road,979,294.4777531723883,class,0.012259150109934003,False
+Sao Paulo,overture_2026-08-19.0,footway,road,25316,1814.100071924367,class,0.07552124008207815,False
+Sao Paulo,overture_2026-08-19.0,funicular,rail,1,0.11695980973956115,class,4.869053261171934e-06,False
+Sao Paulo,overture_2026-08-19.0,living_street,road,1394,102.71958390624299,class,0.004276230665205536,True
+Sao Paulo,overture_2026-08-19.0,monorail,rail,62,57.39982499130547,class,0.0023895627539660775,False
+Sao Paulo,overture_2026-08-19.0,motorway,road,923,449.84203893066814,class,0.018726987086802184,True
+Sao Paulo,overture_2026-08-19.0,narrow_gauge,rail,1,0.009369352112297093,class,3.9004744073226364e-07,False
+Sao Paulo,overture_2026-08-19.0,path,road,1059,257.4994337465855,class,0.010719737492952278,False
+Sao Paulo,overture_2026-08-19.0,pedestrian,road,684,58.088221210537036,class,0.0024182207849913636,True
+Sao Paulo,overture_2026-08-19.0,primary,road,9596,924.869852147433,class,0.038502461484723687,True
+Sao Paulo,overture_2026-08-19.0,residential,road,131945,12275.670898265666,class,0.511037898859172,True
+Sao Paulo,overture_2026-08-19.0,secondary,road,15834,1247.681399952556,class,0.05194115143372797,True
+Sao Paulo,overture_2026-08-19.0,service,road,27194,2438.6154933503058,class,0.10151990454739486,False
+Sao Paulo,overture_2026-08-19.0,standard_gauge,rail,360,458.9332710388367,class,0.01910545635280832,False
+Sao Paulo,overture_2026-08-19.0,steps,road,2302,90.80216840222997,class,0.0037801069885873423,False
+Sao Paulo,overture_2026-08-19.0,subway,rail,383,325.42880429323185,class,0.013547646703184429,False
+Sao Paulo,overture_2026-08-19.0,tertiary,road,19728,1563.6485941416634,class,0.06509490998305845,True
+Sao Paulo,overture_2026-08-19.0,track,road,512,259.7076566997903,class,0.010811666123783998,False
+Sao Paulo,overture_2026-08-19.0,trunk,road,3562,569.1893399355986,class,0.023695431943750064,True
+Sao Paulo,overture_2026-08-19.0,unclassified,road,1245,367.09209334053594,class,0.01528209526169904,True
+Sao Paulo,overture_2026-08-19.0,unknown,rail,52,100.70080253225065,class,0.00419218851385014,False
+Sao Paulo,overture_2026-08-19.0,unknown,road,5863,358.3406905449843,class,0.014917773137574577,True

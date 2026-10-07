@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-05",
+  "input_geosampa": "analysis/data/SP/geosampa_edificacao_2026_10_05",
+  "input_overture": "analysis/data/SP/Edificacoes/sao_paulo_building_morphology.gpkg",
+  "assignment": "GeoSampa polygon centroid within district land",
+  "overlap": "sum of exact pairwise intersection area, capped at GeoSampa polygon area; upper bound if Overture polygons overlap each other",
+  "strong_unmatched": "under 5% overlap, no Overture geometry within 3 m, GeoSampa polygon at least 50 m2",
+  "interpretation": "disagreement between sources, not proof that a historical GeoSampa building still exists"
+}
