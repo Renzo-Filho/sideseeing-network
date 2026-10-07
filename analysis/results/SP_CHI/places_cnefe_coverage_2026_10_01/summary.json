@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-01T22:22:25.516016+00:00",
+  "finished_utc": "2026-10-01T22:24:03.397321+00:00",
+  "protocol": "P-PLACES-1, docs/SIMPLE_INDEX.md",
+  "code_sha256": "68a209a377d2ef6147f2391da26ca51e9994da1997d26d12d795520427b7c657",
+  "inputs_sha256": {
+    "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0",
+    "analysis/data/SP/Socioeconomico/CNEFE_2022/3550308_SAO_PAULO.csv": "946626758584e09fcc26a0018d4986c43e8739be7eef3558e30f4ed35ca026c8",
+    "analysis/results/SP_CHI/simple_index_source_audit_2026_10_01/tables/cnefe_district_crosswalk.csv": "d89688cd653a4d7bb098c7c90021f1e84fda9fde6e71030fabdfb7970b27220a",
+    "analysis/data/SP/overture_2026_08_19/place/part_0000.parquet": "54c8d642a1df92d465299ec441101838de170abbfc1678bcfbf731d151d74aa8",
+    "analysis/data/SP/osm_2026_10_01/places.parquet": "2e214c9da4782fbf974e7d2e00c623f04a60b6cb53ce3aeb8c3f4a715939ef7b",
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f",
+    "analysis/data/Chicago/overture_2026_08_19/place/part_0000.parquet": "1ddf250f6d222f258065e289ca7facc7c5546839e4a0efcc4276faf9416a4c09",
+    "analysis/data/Chicago/osm_2026_10_01/places.parquet": "362b0d47f1e7b0fe82831423496eafb4ea37e404eb46819a157f3f098d1db07c"
+  },
+  "reference_excluded_by_geocode_level": {
+    "4": 6431,
+    "5": 1,
+    "6": 31
+  },
+  "reference_points": 600253,
+  "reference_points_by_species": {
+    "4": 9978,
+    "5": 10598,
+    "6": 564093,
+    "8": 15584
+  },
+  "osm_snapshot_SP": "Wed, 30 Sep 2026 23:15:43 GMT",
+  "candidates_SP": {
+    "overture": 445419,
+    "osm": 24545
+  },
+  "osm_snapshot_Chicago": "Thu, 01 Oct 2026 08:25:53 GMT",
+  "candidates_Chicago": {
+    "overture": 143229,
+    "osm": 19856
+  }
+}

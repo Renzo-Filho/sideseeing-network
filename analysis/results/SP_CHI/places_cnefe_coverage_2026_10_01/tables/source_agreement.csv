@@ -1,0 +1,5 @@
+city,records_of,found_in,records,name_match_50m,rate
+SP,osm,overture,24545,14525,0.5918
+SP,overture,osm,445419,17923,0.0402
+Chicago,osm,overture,19856,14993,0.7551
+Chicago,overture,osm,143229,17381,0.1214

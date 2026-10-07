@@ -1,0 +1,5 @@
+method,group,chicago,sp,expected_chicago_at_unit_share
+A,top20,2,18,8.9
+A,bottom20,19,1,8.9
+B,top20,2,18,8.9
+B,bottom20,14,6,8.9

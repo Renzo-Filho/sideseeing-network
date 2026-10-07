@@ -1,0 +1,5 @@
+city,measure,units,min,median,max
+Chicago,gross_area_km2,77,1.57,7.393,34.522
+Chicago,land_area_km2,77,1.57,7.393,34.521
+SP,gross_area_km2,96,2.194,9.683,208.154
+SP,land_area_km2,96,2.148,9.632,206.876
