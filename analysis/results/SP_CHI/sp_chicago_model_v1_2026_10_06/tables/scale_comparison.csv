@@ -1,0 +1,10 @@
+scaling,run,spearman_pairs,mean_topk_overlap,bras_chicago_spearman,bras_chicago_top10_kept,mean_other_city_neighbours,bras_other_city_in_top5
+hybrid,R1,1.0,1.0,1.0,10,0.111,0.0
+hybrid,R2,0.992,0.717,0.988,10,0.142,0.0
+hybrid,R3,0.984,0.815,0.971,7,0.136,0.0
+all_absolute,R1,0.96,0.822,0.951,8,0.072,0.0
+all_absolute,R2,0.95,0.665,0.939,8,0.089,0.0
+all_absolute,R3,0.968,0.719,0.966,7,0.083,0.0
+all_relative,R1,0.954,0.743,0.981,7,0.238,0.2
+all_relative,R2,0.947,0.578,0.976,8,0.276,0.0
+all_relative,R3,0.902,0.64,0.966,7,0.261,0.2

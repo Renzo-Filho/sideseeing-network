@@ -1,0 +1,16 @@
+,São Paulo median,Chicago median,Brás,hybrid
+m1_km_per_km2,17.783,13.203,18.017,absolute
+ov_m3_wmedian_ln_m2,10.245,10.063,10.231,absolute
+ov_m4_wmedian_compactness,0.554,0.697,0.676,absolute
+ov_m4_wmedian_elongation,1.922,1.978,1.721,absolute
+m6_major_share,0.185,0.222,0.31,absolute
+m7_parcels_per_km2,1748.139,1176.531,1997.094,absolute
+B1_coverage_land,0.365,0.224,0.566,absolute
+bv_height_built_m,13.4,9.757,14.613,relative
+u2_jobs_land_km2,3052.232,944.318,13984.497,relative
+u3_acs_land_km2,11110.511,4487.758,10689.7,absolute
+u4_ptai_avg_resident,14.196,5.652,36.917,relative
+u6_log_intensity,1.938,1.881,3.251,relative
+p_residential,0.65,0.676,0.148,relative
+p_industrial,0.046,0.053,0.163,relative
+p_institutional,0.045,0.09,0.039,relative
