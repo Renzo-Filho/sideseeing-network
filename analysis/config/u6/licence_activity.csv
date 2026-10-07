@@ -1,0 +1,4 @@
+priority,class,pattern,note
+1,excluded,(Home Based|Peddler|Street Performer|Raffles|Special Event|Shared Housing|Valet|Pharmaceutical Representative|Private Scavenger|Caterer's Liquor),no premises or not an establishment
+2,food_drink,(Dining|Prepared Onsite|Preparation of Food|Tavern|Coffee|Consumption of Liquor),eating and drinking
+3,making_storing,(Motor Vehicle Repair|Manufactur|Wholesale|Storage|Warehous),making and storing

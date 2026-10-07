@@ -1,0 +1,14 @@
+{
+  "places_in_units": 139388,
+  "closed_excluded": 5247,
+  "class_share": {
+    "services_offices": 0.3265,
+    "institutions": 0.1964,
+    "unclassifiable": 0.1751,
+    "food_drink": 0.1185,
+    "retail": 0.1109,
+    "making_storing": 0.0465,
+    "excluded_nonactivity": 0.0211,
+    "excluded_parking": 0.0051
+  }
+}

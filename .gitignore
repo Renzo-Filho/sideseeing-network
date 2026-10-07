@@ -79,6 +79,7 @@ analysis/curio_nodes/backup_spec_rev_*.json
 # Record-level source extracts; only curated unit-level U6 results are published
 /analysis/results/SP_CHI/u6_activity_2026_10_06/cnefe_establishments_classified.parquet
 /analysis/results/SP_CHI/u6_activity_2026_10_06/overture_places_classified_*.parquet
+/analysis/results/SP_CHI/u6_activity_2026_10_06/v1_audit_sample.csv
 
 # Large source-imagery review captures stay local; keep the six linked examples
 /analysis/results/SP_CHI/b1_step4_2026_10_05/**/window_*.png

@@ -1,0 +1,15 @@
+{
+  "auditor": "Claude (model judgment against the class definitions; user may verify in v1_audit_sample.csv)",
+  "sample": 400,
+  "classified_or_excluded": 325,
+  "correct": 312,
+  "accuracy": 0.96,
+  "unclassifiable_in_sample": 75,
+  "unclassifiable_human_classifiable": 49,
+  "V1_rule": "accuracy >= 0.90 and unclassifiable share <= 0.15 (all establishments)",
+  "V1_accuracy_pass": true,
+  "V1_unclassifiable_share_all": 0.1557356255189046,
+  "V1_unclassifiable_pass": false,
+  "dictionary_sha256": "221d7d5d68c3d825aa8ee7904748b9bd7091d8428227e41e35b479b37f9a912d",
+  "note": "dictionary developed on records outside the audit sample, frozen before the audit"
+}

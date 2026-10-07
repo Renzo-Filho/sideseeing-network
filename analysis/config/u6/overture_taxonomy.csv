@@ -1,0 +1,25 @@
+key,class,note
+food_and_drink,food_drink,top level
+shopping,retail,top level
+travel_and_transportation/fueling_station,retail,as SP POSTO
+travel_and_transportation/vehicle_service,making_storing,as SP OFICINA / MECANICA
+travel_and_transportation/parking,excluded_parking,as SP GARAGEM / ESTACIONAMENTO
+travel_and_transportation,services_offices,other transport services
+services_and_business/b2b_service,making_storing,manufacturers and wholesale
+services_and_business/storage_facility,making_storing,warehousing
+services_and_business/shipping_or_delivery_service,making_storing,logistics as SP TRANSPORTADORA
+services_and_business/building_or_construction_service,making_storing,as SP CONSTRUTORA / EMPREITEIRA
+services_and_business/printing_service,making_storing,as SP GRAFICA
+services_and_business,services_offices,top level remainder
+lifestyle_services,services_offices,personal beauty wellness pet
+lodging,services_offices,as SP HOTEL
+sports_and_recreation/park,excluded_nonactivity,open space
+sports_and_recreation,services_offices,gyms and clubs as SP ACADEMIA / CLUBE
+arts_and_entertainment,services_offices,leisure venues
+health_care,institutions,top level
+education,institutions,top level
+community_and_government,institutions,top level
+cultural_and_historic/place_of_worship,institutions,religion
+cultural_and_historic/religious_organization,institutions,religion
+cultural_and_historic,excluded_nonactivity,historic sites and monuments
+geographic_entities,excluded_nonactivity,not establishments

@@ -1,0 +1,100 @@
+prefix,class,note
+01,making_storing,agriculture (few in the city)
+02,making_storing,forestry
+03,making_storing,fishing
+05,making_storing,mining
+06,making_storing,mining
+07,making_storing,mining
+08,making_storing,mining
+09,making_storing,mining support
+10,making_storing,manufacturing 10-33
+11,making_storing,manufacturing
+12,making_storing,manufacturing
+13,making_storing,manufacturing
+14,making_storing,manufacturing (clothing; as SP CONFECCAO)
+15,making_storing,manufacturing
+16,making_storing,manufacturing
+17,making_storing,manufacturing
+18,making_storing,printing (as SP GRAFICA / Overture printing_service)
+19,making_storing,manufacturing
+20,making_storing,manufacturing
+21,making_storing,manufacturing
+22,making_storing,manufacturing
+23,making_storing,manufacturing
+24,making_storing,manufacturing
+25,making_storing,manufacturing
+26,making_storing,manufacturing
+27,making_storing,manufacturing
+28,making_storing,manufacturing
+29,making_storing,manufacturing
+30,making_storing,manufacturing
+31,making_storing,manufacturing
+32,making_storing,manufacturing
+33,making_storing,repair and installation of machinery
+35,making_storing,utilities
+36,making_storing,utilities
+37,making_storing,utilities
+38,making_storing,waste and recycling (as SP FERRO VELHO / RECICLAGEM)
+39,making_storing,remediation
+41,making_storing,construction (as SP CONSTRUTORA / Overture building_or_construction_service)
+42,making_storing,construction
+43,making_storing,construction
+451,retail,vehicle sales
+452,making_storing,vehicle repair (as SP OFICINA / Overture vehicle_service)
+453,retail,vehicle parts (as SP AUTO PECAS)
+4541,retail,motorcycle sales
+4542,retail,motorcycle sales on commission
+4543,making_storing,motorcycle repair
+46,making_storing,wholesale (as SP COMERCIO ATACADISTA / Overture b2b)
+47,retail,retail trade incl. fuel stations 4731 (as Overture fueling_station)
+49,services_offices,land passenger transport (Overture travel_and_transportation remainder)
+493,making_storing,road freight (as SP TRANSPORTADORA / Overture shipping_or_delivery_service)
+494,making_storing,pipeline transport
+50,services_offices,water transport
+51,services_offices,air passenger transport
+512,making_storing,air freight
+52,services_offices,transport support services
+521,making_storing,storage (as Overture storage_facility)
+5223,excluded_parking,parking (excluded in both cities)
+525,making_storing,freight logistics organisation
+53,making_storing,post and courier (as Overture shipping_or_delivery_service)
+55,services_offices,lodging (as Overture lodging)
+56,food_drink,food and drink service
+58,services_offices,information and communication 58-63
+59,services_offices,information and communication
+60,services_offices,information and communication
+61,services_offices,information and communication
+62,services_offices,information and communication
+63,services_offices,information and communication
+64,services_offices,finance
+65,services_offices,insurance
+66,services_offices,finance support
+68,services_offices,real estate
+69,services_offices,professional services 69-75
+70,services_offices,professional services
+71,services_offices,professional services
+72,services_offices,professional services
+73,services_offices,professional services
+74,services_offices,professional services
+75,services_offices,veterinary
+77,services_offices,administrative and support services 77-82
+78,services_offices,administrative and support services
+79,services_offices,travel agencies
+80,services_offices,security
+81,services_offices,building services
+82,services_offices,office support
+84,institutions,public administration (as Overture community_and_government)
+85,institutions,education
+86,institutions,health
+87,institutions,residential care
+88,institutions,social work
+90,services_offices,arts and entertainment (as Overture arts_and_entertainment)
+91,institutions,libraries archives museums
+92,services_offices,gambling and lottery
+93,services_offices,sports and recreation (as Overture sports_and_recreation)
+94,institutions,membership organisations (unions associations)
+9491,institutions,religious organisations
+95,services_offices,repair of computers and personal goods (as SP ASSISTENCIA TECNICA)
+96,services_offices,personal services (as Overture lifestyle_services)
+97,excluded_nonactivity,households as employers
+99,institutions,international organisations

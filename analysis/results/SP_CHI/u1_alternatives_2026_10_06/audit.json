@@ -1,0 +1,115 @@
+{
+  "chicago_overture_building_area_share_with_subtype": 0.3950346846882563,
+  "chicago_overture_building_subtype_area_shares": {
+    "agricultural": 0.0004,
+    "civic": 0.0066,
+    "commercial": 0.074,
+    "education": 0.0292,
+    "entertainment": 0.0036,
+    "industrial": 0.0861,
+    "medical": 0.004,
+    "military": 0.0002,
+    "outbuilding": 0.0029,
+    "religious": 0.0072,
+    "residential": 0.1727,
+    "service": 0.0011,
+    "transportation": 0.0072
+  },
+  "bras_osm_building_tag_area_share_yes": 0.9484335893500099,
+  "cmap_area_share_with_secondary_use": 0.003668907008936797,
+  "cmap_multi_use_modifier_polygons": 315,
+  "Chicago_place_provider_share": {
+    "Overture": 1.0,
+    "meta": 0.5707,
+    "Overture-signals": 0.5663,
+    "Microsoft": 0.1602,
+    "BrightQuery": 0.1587,
+    "Foursquare": 0.0943
+  },
+  "SP_place_provider_share": {
+    "Overture": 1.0,
+    "meta": 0.9503,
+    "Foursquare": 0.0219,
+    "Microsoft": 0.0218,
+    "AllThePlaces": 0.0058,
+    "PinMeTo": 0.0
+  },
+  "overture_commercial_places_CHI_vs_licence_sites": {
+    "n": 77,
+    "spearman_counts": 0.9694571698993296,
+    "spearman_densities": 0.9601451180398548,
+    "median_ratio": 1.6372549019607843,
+    "p10_p90_ratio": [
+      1.272,
+      2.183
+    ]
+  },
+  "overture_commercial_places_SP_vs_cnefe_establishments": {
+    "n": 96,
+    "spearman_counts": 0.48372033087484567,
+    "spearman_densities": 0.778418339663592,
+    "median_ratio": 0.4281192080473121,
+    "p10_p90_ratio": [
+      0.24,
+      1.056
+    ]
+  },
+  "sp_top5_est_per_100_dw": {
+    "SP:56": 69.66,
+    "SP:10": 45.31,
+    "SP:09": 44.75,
+    "SP:78": 36.53,
+    "SP:08": 24.84
+  },
+  "sp_selected_ranks_est_per_100_dw": {
+    "SP:66": 22,
+    "SP:78": 4,
+    "SP:10": 2,
+    "SP:02": 95
+  },
+  "chi_top5_licence_sites_per_100_hu": {
+    "CHI:32": 9.8,
+    "CHI:61": 8.77,
+    "CHI:76": 6.66,
+    "CHI:57": 6.1,
+    "CHI:31": 6.05
+  },
+  "cnefe_species_counts": {
+    "1": 4992162,
+    "2": 4367,
+    "3": 332,
+    "4": 10108,
+    "5": 10717,
+    "6": 570229,
+    "7": 85814,
+    "8": 15662
+  },
+  "cnefe_establishments_with_description": 0.9999868142590602,
+  "cnefe_other_purpose_top_first_words": {
+    "BAR": 35576,
+    "LOJA": 25401,
+    "SALAO": 21561,
+    "GARAGEM": 16478,
+    "OFICINA": 14563,
+    "DEPOSITO": 13850,
+    "ESCRITORIO": 13535,
+    "VAGO": 13411,
+    "ESTACIONAMENTO": 9151,
+    "COMERCIO": 8450,
+    "EMPRESA": 7954,
+    "IGREJA": 7266,
+    "RESTAURANTE": 6765,
+    "FABRICA": 5787,
+    "CASA": 5785,
+    "ADEGA": 5420,
+    "LANCHONETE": 5010,
+    "SEM": 4865,
+    "BARBEARIA": 4756,
+    "MARCENARIA": 4511,
+    "MECANICA": 4078,
+    "GALPAO": 3906,
+    "PIZZARIA": 3750,
+    "MERCEARIA": 3737,
+    "AUTO": 3601
+  }
+}

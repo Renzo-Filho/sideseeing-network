@@ -1,0 +1,37 @@
+{
+  "city_share_cnefe": {
+    "food_drink": 0.1871,
+    "retail": 0.255,
+    "services_offices": 0.2198,
+    "making_storing": 0.1979,
+    "institutions": 0.1402
+  },
+  "city_share_overture": {
+    "food_drink": 0.1319,
+    "retail": 0.2225,
+    "services_offices": 0.3803,
+    "making_storing": 0.0803,
+    "institutions": 0.185
+  },
+  "city_ratio_overture_over_cnefe": {
+    "food_drink": 0.705,
+    "retail": 0.872,
+    "services_offices": 1.73,
+    "making_storing": 0.406,
+    "institutions": 1.32
+  },
+  "district_spearman_by_class": {
+    "food_drink": 0.6683667932718393,
+    "retail": 0.4005914290291246,
+    "services_offices": 0.8123711340206186,
+    "making_storing": 0.8523874118285404,
+    "institutions": 0.6772788931090613
+  },
+  "district_median_ratio_by_class": {
+    "food_drink": 0.7483804393726139,
+    "retail": 0.923510275880441,
+    "services_offices": 1.6448757720195573,
+    "making_storing": 0.45200421249964595,
+    "institutions": 1.289743551680282
+  }
+}
