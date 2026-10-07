@@ -64,3 +64,17 @@ export/
 .agents/
 .codex/
 analysis/curio_nodes/backup_spec_rev_*.json
+
+# Local research UI copy and generated tool state
+/analysis/viz/
+/graphify-out/
+/tasks/
+
+# Curio local transfer bundle, backups and scratch discovery output
+/analysis/curio_nodes/simple_index/local_share/
+/analysis/curio_nodes/simple_index/backup_spec_*.json
+/analysis/curio_nodes/simple_index/discovery_tests/results.jsonl
+
+# Record-level source extracts; only curated unit-level U6 results are published
+/analysis/results/SP_CHI/u6_activity_2026_10_06/cnefe_establishments_classified.parquet
+/analysis/results/SP_CHI/u6_activity_2026_10_06/overture_places_classified_*.parquet
