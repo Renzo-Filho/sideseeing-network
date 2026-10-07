@@ -1,0 +1,46 @@
+{
+  "sp_v2_without_m2": {
+    "n": 95,
+    "spearman_recomputed": 0.991545352743561,
+    "spearman_stored": 0.991545352743561,
+    "top10_retained": 9,
+    "max_rank_shift": 14
+  },
+  "sp_v2_family_share_mean": {
+    "M3": 0.0319,
+    "M1": 0.0343,
+    "U3": 0.0367,
+    "M7": 0.0399,
+    "U2": 0.0502,
+    "M6": 0.0531,
+    "B3": 0.0531,
+    "M4": 0.0693,
+    "B2": 0.0711,
+    "M2": 0.0746,
+    "U4": 0.1266,
+    "B1": 0.1366,
+    "U1": 0.2225
+  },
+  "sp_v2_m2_share": {
+    "median": 0.0561728718909578,
+    "max": 0.2386714290290739,
+    "families": 13
+  },
+  "shared_denominator": {
+    "SP": {
+      "pearson_log_density": 0.9454876208950412,
+      "partial_log_counts_given_log_area": 0.9416411430530557,
+      "spearman_log_area_vs_m2": -0.2544628323385784
+    },
+    "Chicago": {
+      "pearson_log_density": 0.9633185667022339,
+      "partial_log_counts_given_log_area": 0.9580418842467953,
+      "spearman_log_area_vs_m2": -0.1680424838319575
+    }
+  },
+  "checks": {
+    "sp_rows": 96,
+    "chicago_rows": 77,
+    "sp_v2_spearman_matches": true
+  }
+}
