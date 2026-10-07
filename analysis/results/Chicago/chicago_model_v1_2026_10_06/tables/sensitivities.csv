@@ -1,0 +1,24 @@
+scenario,spearman_pairs,mean_topk_overlap,target_top5_kept
+without M1,0.997,0.886,5
+without M3,0.959,0.868,5
+without M4,0.997,0.914,5
+without M6,0.993,0.857,5
+without M7,0.997,0.899,3
+without B1,0.997,0.917,5
+without BV,0.996,0.917,5
+without U2,0.995,0.891,5
+without U3,0.998,0.938,5
+without U4,0.994,0.909,5
+without U6,0.997,0.875,5
+without U1,0.998,0.886,5
+equal domain budgets,0.994,0.862,5
+robust median/IQR scaling,0.998,0.951,5
+rank-normal scaling,0.87,0.714,2
+Ledoit-Wolf Mahalanobis (no U1),0.858,0.551,3
+R2 PCA weights,0.99,0.719,5
+R3 without correlated,0.963,0.717,5
+M3_unweighted,0.757,0.655,3
+M7_median_parcel_size,0.993,0.836,3
+BV_volume,0.997,0.922,5
+POST-HOC: mean calibration,0.968,0.829,5
+U6 confidence >= 0.3,1.0,0.99,5

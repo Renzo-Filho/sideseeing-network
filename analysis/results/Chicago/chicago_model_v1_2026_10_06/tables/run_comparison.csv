@@ -1,0 +1,4 @@
+run_a,run_b,spearman_pairs,mean_topk_overlap
+R1 equal weights,R2 PCA weights,0.99,0.719
+R1 equal weights,R3 without correlated,0.963,0.717
+R2 PCA weights,R3 without correlated,0.943,0.579
