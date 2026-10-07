@@ -1,0 +1,36 @@
+{
+  "A": {
+    "max_abs_index_diff": 4.440892098500626e-16,
+    "ranks_identical": true,
+    "max_rel_raw_factor_diff": 2.220446049250313e-16,
+    "closest_names_identical": true,
+    "closest_profile_ranks_identical": true,
+    "map_77_areas_lonlat": true,
+    "map_top5_matches_table": true
+  },
+  "B": {
+    "max_abs_index_diff": 2.792746434110427e-07,
+    "ranks_identical": true,
+    "max_rel_raw_factor_diff": 4.684076537753157e-07,
+    "closest_names_identical": true,
+    "closest_profile_ranks_identical": true,
+    "map_77_areas_lonlat": true,
+    "map_top5_matches_table": true
+  },
+  "H": {
+    "max_abs_distance_diff": 8.881784197001252e-16,
+    "family_parts_sum_to_d2": true,
+    "bras_ranking_identical": true,
+    "bras_chicago_top5": [
+      "WEST TOWN",
+      "AVONDALE",
+      "LOGAN SQUARE",
+      "LINCOLN PARK",
+      "LOWER WEST SIDE"
+    ],
+    "worked_example_shares_max_diff": 4.7277621229319805e-05,
+    "top10_rows": 10,
+    "map_77_areas_lonlat": true,
+    "map_top5_matches_table": true
+  }
+}
