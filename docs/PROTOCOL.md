@@ -1,5 +1,7 @@
 # São Paulo–Chicago urban-form comparison: research protocol
 
+This protocol records the research design and original sequence. The [current status](STATUS.md) and [fitted cross-city report](harmonization/MODEL_REPORT.md) document the 6 October 2026 implementation and its limits.
+
 Originally updated 11 September 2026; M2 scope updated 25 September 2026. This is the current research protocol; project status lives in [STATUS.md](STATUS.md). [Implementation methods](archive/plans/SP_ATTRIBUTE_IMPLEMENTATION_PLAN.md) and the [current model status](STATUS.md) govern detailed definitions, evidence and continuation.
 
 ## Objective and research sequence

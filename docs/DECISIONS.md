@@ -1,5 +1,7 @@
 # Decisions and open questions
 
+This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cross-city](harmonization/MODEL_REPORT.md) models were fitted on 6 October 2026; [STATUS.md](STATUS.md) and those reports give the current inclusion lists. Earlier statements below that fitting is paused describe their original checkpoints.
+
 ## Open discussion: recovering urban structure and function across São Paulo and Chicago
 
 **Current sequence — 25 September 2026:** the next model is Chicago-only; the SP–Chicago common score is future work. See the [Chicago-only reassessment](STATUS.md) for current feature gates. Cross-city semantic options below remain research notes for that later stage.
@@ -16,7 +18,7 @@ Our immediate problem is that the six-family distance retains only M1/M6 from st
 
 **Reason and cost:** M2 measures junction frequency that M1 street length and M6 class shares cannot represent. But the two cities' current candidates have different meanings, and the [Chicago held-out cases](../analysis/results/Chicago/chicago_m_holdout_2026_09_25/README.md) have not validated a physical-junction algorithm beyond selected examples. The [SP v2 omission sensitivity](../analysis/results/SP/models/sp_urban_model_v2/reports/MODEL_REPORT.md) gave Spearman 0.9915 and 9/10 original top-ten Brás neighbors retained, with a maximum district rank shift of 14; that is evidence about the old SP proxy, not proof that M2 is redundant or that Chicago results would be stable. Omitting M2 improves the defensibility of the new comparison but weakens claims about fine-grained street connectivity, especially if M3/M4 are also absent. The model must not claim pedestrian permeability from M1/M6 alone.
 
-**Reopening condition:** an explicit future scope decision, a declared same-meaning junction estimand and eligible street universe, paired physical-arm/grade fixtures, and a new versioned acceptance/weight contract before fitting. This is a future option, not a current work package.
+**Reopening condition:** an explicit future scope decision, a declared same-meaning junction estimand and eligible street universe, paired physical-arm/grade fixtures, and a new versioned acceptance/weight contract before fitting. This is a future option, not a current work package. A [draft pedestrian-junction convention](harmonization/M2_JUNCTION_CONVENTION.md) (30 September 2026) proposes the estimand and street universe; it is not accepted and does not reopen M2.
 
 ### Factual corrections to the initial draft
 
@@ -147,6 +149,61 @@ The next step is to settle the **meaning** of D1–D3. For U1, district-clipped 
 - [Current model status](STATUS.md) and [reopened six-family review](harmonization/PLAN.md).
 - [Original SP attribute definitions](sp/ATTRIBUTES.md), [Chicago exploratory attributes](chicago/ATTRIBUTES.md) and [13-family gate ledger](harmonization/PLAN.md).
 - [M2 topology pilots](../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/junctions_v2/README.md), [M3/M4 reference review](../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/blocks_v2/reference_fixtures/README.md), [rail/water pilots](../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/blocks_v3_barriers/README.md) and [M1/M6 source-coverage review](../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/m1_m6_review/README.md).
+
+## Open question: uniform-allocation assumption and a developed-land denominator — 1 October 2026
+
+**Status:** documentation of a known limitation and a possible redefinition. **No decision, no code change, no fit.** Measured values below were computed on 2026-10-01 from the prepared tables (`analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N07/census_sectors.parquet` with `N02/districts.parquet`; `analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/blocks.parquet` and `block_district_pieces.parquet`); no script was saved, so treat them as a reproducible spot check, not a published result.
+
+### A. The split-block (uniform within-unit) assumption
+
+**What it is.** When a source unit is cut by a reporting boundary, its count is divided by area. Chicago U2/U3: each positive piece receives `source count × piece area / whole block area`, with gross polygon area as support ([Chicago attributes](chicago/ATTRIBUTES.md), "U2/U3 allocation"). São Paulo U3: `P_sd = P_s × area(s ∩ d) / area(s)` ([SP attributes](sp/ATTRIBUTES.md), "U3"). Both assume residents (or jobs) are spread evenly over the whole polygon, including parks, rail yards, vacant land and water. U4's population grid reuses the same assumption inside each piece.
+
+**Where it can matter.** Only for units not wholly inside one reporting unit. Measured (units with population):
+
+| | Chicago (2020 blocks) | São Paulo (2022 sectors) |
+|---|---:|---:|
+| Median / mean / 90th-percentile unit area, km² | 0.0099 / 0.0135 / 0.0203 | 0.0226 / 0.0495 / 0.0660 |
+| Largest unit, km² | 5.85 | 18.09 |
+| Units straddling two or more reporting units (count; share of residents) | 3,681 blocks; 8.0% | 2,490 sectors; 9.35% |
+| Units inside one reporting unit but partly outside the city (count; share of residents) | 1,400 blocks; 2.8% | 323 sectors; 1.3% |
+| Residents in units not wholly inside one reporting unit | 10.8% | 10.7% |
+
+São Paulo's sectors are about 2.3 times larger at the median and 3.7 times at the mean than Chicago's blocks, but both have a heavy tail of large peripheral units. The two unit types, years and boundary vintages differ, and the "partly outside" group has not been decomposed (it may include water, the boundary-vintage gap and true suburban edges).
+
+**What this implies, and what it does not.** Roughly one resident in ten lives in a unit that the assumption must split. The share allocated *across a line* is smaller than the whole unit, and for a straddling unit the error is bounded by that unit's population; the 8.0% and 9.35% figures are therefore **worst-case bounds on the share of residents that could sit on the wrong side**, not error estimates. The actual within-unit unevenness, and hence the real error, has **not been measured**.
+
+**Possible checks (proposals, not scheduled).**
+1. Dasymetric refinement: split a straddling unit by mapped building footprint area on each side (the B1 footprint data) and compare district totals with area weighting.
+2. Land-only weights: Chicago blocks retain `ALAND20`/`AWATER20`; compare gross-polygon support with land-only support for the straddling blocks.
+3. Concentrate review where it matters: districts with the largest shares of residents in split units, and large peripheral units.
+4. Report the split-unit share beside each district's U3 value rather than a single citywide figure.
+
+### B. A developed-land denominator
+
+**Current denominators.** M1, U2 and U3 divide by gross district area; B1 and B3 divide by land (water removed); M3/M4/B2/U1/M6 are distributions or compositions with no area denominator ([SP attributes](sp/ATTRIBUTES.md), "Denominator choice matters").
+
+**The issue.** A gross-area density mixes two things: *how much of the unit is developed* and *how dense the development is where it exists*. For street density, M1 ≈ (developed fraction) × (density on developed land). The [M1 review](../analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review/m1_m6_review/README.md) shows why this matters: O'Hare (CHI:76, M1 3.86 km/km²) is dominated by airfield and Marsilac (SP:52, 0.87 km/km², next-lowest SP unit 4.31) by rural land. Some of their low values are real sparseness, and some are map-coverage artifacts; a gross denominator cannot separate the two.
+
+**A three-step ladder.**
+
+| Step | Denominator | Status |
+|---|---|---|
+| 1 | Gross unit area | Current for M1/U2/U3 |
+| 2 | Land area (water removed) | Land masks already built for B1/B3; Chicago's is a CMAP `5000` parcel-based water proxy, SP's municipal hydrography. Cheap sensitivity for M1/U2/U3 in both cities; untested |
+| 3 | **Developed land** (also removes airfield, forest, farmland, large undeveloped land) | **Needs a new mask that does not exist yet.** Candidate masks to evaluate, with availability and fitness unverified: GHSL built-up/height support, a buffer on mapped building footprints, observed land use (CMAP LUI; SP zoning or cadastre), municipal land-cover layers |
+
+**Features affected.** M1 strongly; U2 and U3 moderately; M7 if reopened. B1 and B3 already use land. M3/M4/B2/U1/M6 are unaffected.
+
+**Risks and costs.**
+1. It is a **new feature definition**, not a repair: it needs a decision, construction in both cities by the same method, and validation of the mask itself.
+2. **Circularity:** a mask built from buildings makes B1 (footprint coverage) close to a tautology on that denominator, and a mask built from population would do the same for U3. The mask must come from a source independent of the numerator.
+3. The mask is itself an estimate (thresholds, resolution, source date). The 100 m GHSL grid is coarse for small units.
+4. It mainly changes values for edge and mixed units; fully urban units barely move, so it will not change the ranking of the core.
+5. It interacts with the modifiable-areal-unit problem; the planned 250/500 m grid sensitivity ([protocol](PROTOCOL.md)) addresses the same heterogeneity from another direction.
+
+**Not done.** No developed-land mask has been built or tested, and no denominator sensitivity has been computed for M1, U2 or U3.
+
+**Proposed order (not scheduled).** (1) Land-area sensitivity for M1 and U3 in both cities with existing masks. (2) Evaluate candidate developed-land masks on a few contrasting units (O'Hare, Marsilac, Brás, the Loop). (3) Only then decide whether a separately named developed-area density variant is worth defining. Keep gross density as the primary until that decision; do not replace it silently.
 
 ## B1 and BV harmonization decision — 25 September 2026
 

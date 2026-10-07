@@ -1,18 +1,21 @@
 # sideseeing-network
 
-Urban-form similarity research: characterize São Paulo's municipal districts (reference: Brás, district `10`) and Chicago's 77 Community Areas with street-morphology (M), built-form (B) and urban-function (U) feature families, then compare places descriptively. The current stage is a **Chicago-only model**; the São Paulo–Chicago common model is a later stage.
+Urban-form similarity research: characterize São Paulo's municipal districts (reference: Brás, district `10`) and Chicago's 77 Community Areas with street-morphology (M), built-form (B) and urban-function (U) feature families, then compare places descriptively. The Chicago-only and São Paulo–Chicago models were fitted on 6 October 2026; both are descriptive comparisons with documented limits.
 
 ## Start here
 
 | I want to… | Open |
 |---|---|
 | Know where the project stands and what is next | [docs/STATUS.md](docs/STATUS.md) — the only page with dated status |
-| Continue work in a new agent session | [docs/HANDOFF.md](docs/HANDOFF.md) |
+| Continue work in a new agent session | [current status](docs/STATUS.md) · [historical handoff](docs/HANDOFF.md) |
 | Understand the research design | [docs/PROTOCOL.md](docs/PROTOCOL.md) |
 | See why a feature was kept, deferred or changed | [docs/DECISIONS.md](docs/DECISIONS.md) |
-| Read Chicago feature definitions and sources | [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
+| Explore the three cross-city methods interactively (any reference unit) | [Cross-City Urban Explorer](viz/README.md): `python3 -m http.server 8765 --directory viz` |
+| Read the São Paulo–Chicago model (Brás reference) | [model report](docs/harmonization/MODEL_REPORT.md) · [notebook](analysis/sp_chicago_model_analysis.ipynb) · [contract](analysis/config/sp_chicago_model_v1.json) |
+| Read the Chicago model (methodology, features, results) | [model report](docs/chicago/MODEL_REPORT.md) · [notebook](analysis/chicago_model_analysis.ipynb) · [contract](analysis/config/chicago_model_v1.json) |
+| Read Chicago feature definitions and sources | [model plan](docs/chicago/MODEL_PLAN.md) · [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
 | Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |
-| Read the future SP–Chicago harmonization work | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
+| Read the SP–Chicago harmonization history | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
 | Find paper-oriented evidence | [survey](docs/survey/README.md) · [advisor brief](docs/survey/ADVISOR_BRIEF.md) · [experiment ledger](docs/survey/EXPERIMENT_LEDGER.md) |
 | Browse published results | [SP](analysis/results/SP/README.md) · [Chicago](analysis/results/Chicago/README.md) · `analysis/results/SP_CHI/` |
 | Run or find a script | [analysis/scripts/INDEX.md](analysis/scripts/INDEX.md) |
@@ -25,6 +28,7 @@ Superseded plans and audits are kept unchanged in [docs/archive/](docs/archive/)
 ```text
 README.md            this page
 docs/                methods, decisions and status (see table above)
+viz/                 isolated static Cross-City Urban Explorer (Vercel project root)
 analysis/            code, configs, results and local data — see analysis/README.md
   scripts/           pipeline and pilot scripts (flat; INDEX.md), library packages, _archive/*.zip
   curio_nodes/       Chicago feature/model nodes installed in the Curio dataflow

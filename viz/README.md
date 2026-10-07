@@ -34,7 +34,7 @@ This directory is the complete browser application. For a later Vercel project, 
 | `app.js` | UI: state, routing, the SVG map component and every view (Plotly 3.5.1) |
 | `model.js` | Pure computation, no DOM: block distances, index model, PCoA (Householder + QL), Ward, silhouette, Spearman, comparisons |
 | `data.js` | Generated model inputs (`window.VIZ_DATA`); do not edit |
-| `analysis/tests/check_viz_model.js` | Research-side check that `model.js` reproduces the published results |
+| `../analysis/tests/check_viz_model.js` | Research-side check that `model.js` reproduces the published results |
 
 ## Rebuild and check
 

@@ -1,6 +1,6 @@
 # Analysis workspace
 
-What each folder is for and the rules for adding to it. Project entry point and documentation map: [root README](../README.md).
+What each folder is for and the rules for adding to it. Project entry point and documentation map: [root README](../README.md). The deployable explorer lives in the repository-root [viz/](../viz/README.md); `scripts/export_viz_data.py` regenerates its browser data, and `tests/check_viz_model.js` compares it with the published results.
 
 ## Folders
 

@@ -72,10 +72,14 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
+| `audit_u1_alternatives.py` | Source audit for alternatives to U1 ('what is done in each neighbourhood'): building-use tags, CMAP secondary use, place providers, places vs official registries, and establishment… | — | analysis/results/SP_CHI/u1_alternatives_2026_10_06<br>docs/chicago/MODEL_PLAN.md |
+| `audit_u1_chicago_reference.py` | Post-hoc diagnostic for S7-5 (Chicago): residential share of Cook 2024 ground-parcel LAND AREA (not PIN counts) vs CMAP residential share. | — | analysis/results/SP_CHI/u1_step7_2026_10_06 |
 | `audit_u1_land_cases.py` | Bounded independent physical-cover audit of saved U1 diagnostic points. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
 | `audit_u1_poi_address_ranges.py` | Check four fixed São Paulo POI points against municipal address-range lines. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
 | `audit_u1_poi_cases.py` | Preselect seven named POI cases from the six-tile OSM/Overture comparison. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
 | `audit_u1_poi_neighbors.py` | Inspect nearby pinned Overture records for selected OSM-only POIs. | — | analysis/results/SP_CHI/u1_independent_cases_2026_09_23<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
+| `audit_u1_sp_reference.py` | Post-hoc diagnostic for S7-5 (São Paulo): CNEFE 2022 addresses collapsed to one point per building (street + number + block), share of buildings with at least one establishment, vs… | — | analysis/results/SP_CHI/u1_step7_2026_10_06 |
+| `evaluate_u1_step7.py` | Step 7: U1 land-use mix (four occupied uses, area-weighted entropy) for Chicago (CMAP LUI 2023) and São Paulo (IPTU 2026 on fiscal lots). | — | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/feature_options_2026_10_06<br>analysis/results/SP_CHI/u1_step7_2026_10_06 (+1) |
 | `pilot_u1_clipped_area.py` | Exact six-unit U1 land support check; no citywide U1 construction. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+2) |
 | `pilot_u1_dominant_use.py` | Six-unit SP explicit-dominance sensitivity for mixed/other fiscal use. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
 | `pilot_u1_gap_context.py` | Local reference context for SP sample points lacking raw cadastral lots. | — | analysis/results/SP_CHI/u1_developed_area_2026_09_22<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/README.md |
@@ -91,6 +95,7 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
+| `evaluate_m1_m6_step6.py` | Step 6: M1 street density (km per km² of land) and M6 major-class share, Overture ten-class streets, Chicago and São Paulo, with municipal validation. | evaluate_m3_m4_m7_step8 | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/feature_options_2026_10_06<br>analysis/results/SP_CHI/m1_m6_step6_2026_10_06 (+1) |
 | `render_m1_outlier_maps_v1.py` | Render local-vs-Overture street maps for the two M1 coverage outliers. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `review_m1_geometry_alignment_v1.py` | Paired M1 linework proximity against each city's independent local baseline. | render_m1_outlier_maps_v1, review_m1_outlier_classes_v1, test_m1_linework_alignment | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `review_m1_m6_scope_v1.py` | Reproducible paired M1/M6 scope and local-baseline audit. | — | analysis/results/SP_CHI/harmonization_2026_09_22_full_scope_review<br>docs/survey/EXPERIMENT_LEDGER.md |
@@ -110,7 +115,7 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
 | `acquire_ghsl_city_rasters.py` | Acquire public GHSL candidates; preserve native cells, no model fitting or audit suite. | — | analysis/results/SP_CHI/ghsl_public_2026_09_21<br>docs/survey/EXPERIMENT_LEDGER.md |
-| `acquire_harmonized_overture.py` | Acquire matched, buffered Overture sources with STAC pruning and atomic partitions. | — | docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
+| `acquire_harmonized_overture.py` | Acquire matched, buffered Overture sources with STAC pruning and atomic partitions. | — | analysis/results/SP_CHI/simple_index_source_audit_2026_10_01<br>docs/SIMPLE_INDEX.md<br>docs/chicago/ATTRIBUTES.md (+1) |
 | `assemble_harmonized_candidates.py` | Publish H1–H3 candidate companions, preserving all model acceptance gates. | — | analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3<br>docs/HANDOFF.md<br>docs/harmonization/EXECUTION_LOG.md (+2) |
 | `audit_harmonization_checkpoint.py` | Read-only audit of existing candidate releases; write a separate dated checkpoint. | — | analysis/results/Chicago/harmonization_checkpoint_2026_09_17<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `audit_microsoft_building_links.py` | Locate Microsoft global building tiles for the paired city supports. | — | analysis/results/SP_CHI/microsoft_footprints_2026_09_22_review<br>docs/harmonization/EXECUTION_LOG.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
@@ -133,12 +138,19 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 |---|---|---|---|
 | `acquire_chicago_assessor_bulk.py` | Stream source-year CSV exports and retain only Chicago parcel-linked rows. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
 | `acquire_chicago_cadastral.py` | Download Chicago-only cadastral candidates; no model attributes are constructed. | acquire_chicago_assessor_bulk | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
+| `audit_chicago_pin_area_coverage.py` | Count, by Cook property-class group, how many Chicago-linked 2024 PINs have a positive recorded building/unit area in any local assessor source; write CSVs to argv[1]. | — | analysis/results/Chicago/chicago_pin_area_coverage_2026_09_30 |
 | `audit_cook_parent_publication_2026_09_25.py` | Check only public Cook parcel-service metadata and seven saved M7 keys. | — | analysis/results/Chicago/chicago_m_holdout_2026_09_25 |
+| `chicago_model.py` | Chicago-only urban similarity model (contract chicago_model_v1; MODEL_PLAN final review J-1 to J-10, runs R1 to R3). Shared by analysis/chicago_model_analysis.ipynb: every number i… | export_viz_data, sp_chicago_model | analysis/chicago_model_analysis.ipynb<br>analysis/config/chicago_model_v1.json<br>analysis/config/sp_chicago_model_v1.json (+9) |
+| `evaluate_chicago_m7_ground_pieces_2026_09_30.py` | Evaluate Chicago M7 as distinct ground tax-map pieces: type profile, overlap, per-area candidates, redundancy and 2008-2024 assembly. | evaluate_m3_m4_m7_step8 | docs/harmonization/M_FAMILY_DECISION_REPORT.md |
+| `evaluate_chicago_u3_step1.py` | Chicago model Step 1: U3 resident density (ACS 2020-2024 5-year) on land minus water, with the pre-registered checks. | — | analysis/config/chicago_model_v1.json<br>analysis/results/Chicago/chicago_u3_step1_2026_10_02<br>analysis/results/SP_CHI/feature_options_2026_10_06 (+1) |
 | `export_chicago_curio_catalog.py` | Export Chicago model inputs into a local Curio Data Catalog. | — | — |
 | `plot_chicago_attribute_qa.py` | Compact descriptive maps; not a similarity-model visualization. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
 | `plot_chicago_functional.py` | Descriptive QA maps for the functional extension, not a similarity ranking. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2 |
 | `prepare_chicago.py` | Build a transparent local Chicago baseline. Does not fit cross-city similarity. Run from any directory: <repo>/.venv/bin/python <repo>/analysis/scripts/prepare_chicago.py | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/chicago/EXECUTION_LOG.md (+2) |
 | `prepare_chicago_functional.py` | Versioned functional extension; resume only when input/code/output hashes match. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
+| `review_chicago_centerline_class_vs_overture.py` | Cross-tabulate Chicago centerline CLASS (status N) against the nearest raw Overture road class. | — | analysis/results/Chicago/chicago_centerline_class_review_2026_09_30 |
+| `scan_chicago_floor_fields.py` | Scan local Chicago building, cadastral and workbook sources for floor/story fields; write non-null and positive counts to a JSON path given as argv[1]. | — | docs/harmonization/B_FAMILY_DECISION_REPORT.md |
+| `sp_chicago_model.py` | São Paulo–Chicago urban similarity model (contract sp_chicago_model_v1; MODEL_PLAN cross-city X-1 to X-9). Reuses the Chicago model's transforms, blocks, distance, PCA and robustne… | export_viz_data | analysis/config/sp_chicago_model_v1.json<br>analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06<br>analysis/sp_chicago_model_analysis.ipynb (+3) |
 | `validate_chicago_attributes.py` | Independent release checks and pilot reconstruction for Chicago's local baseline. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/chicago/EXECUTION_LOG.md (+1) |
 | `validate_chicago_cadastral_acquisition.py` | Independent read-only checks for downloaded Chicago-only candidates. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
 | `validate_chicago_functional.py` | Independent release audit and publication of the Chicago functional extension. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
@@ -149,11 +161,17 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 
 | Script | Purpose | Imported by | Cited in |
 |---|---|---|---|
+| `audit_m3_m4_sp_reference.py` | Post-hoc diagnostic for S8-4 (written after São Paulo failed the like-for-like check): which reference disagrees with the official blocks, and M4 of Overture faces vs official quad… | — | analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06 |
+| `audit_sp_geosampa_overture_imagery.py` | Render a fixed random sample of historical-only footprint candidates on dated imagery. | — | — |
+| `audit_sp_geosampa_overture_overlap.py` | Compare each GeoSampa building with Overture footprints, district by district. | — | analysis/results/SP_CHI/b1_geosampa_overture_overlap_2026_10_05 |
+| `audit_sp_height_references.py` | São Paulo height references for BV (S5-6): GeoSampa on two known towers, and IPTU 2026 floors weighted by occupied area. | — | analysis/results/SP_CHI/bv_step5_2026_10_05 |
 | `check_sp_population_support.py` | 125 m pilot sensitivity for the frozen 250 m U4 population approximation. | — | analysis/results/SP/reports |
 | `construct_sp_attributes.py` | Checkpointed N10 attribute construction, pilots before municipal release. No model fit. | — | analysis/results/SP/reports<br>docs/sp/ATTRIBUTES.md<br>docs/sp/PREPARATION.md (+1) |
+| `evaluate_sp_u3_catchup.py` | São Paulo U3 catch-up: Census 2022 residents per km² of district land (same estimand as Chicago U3). | — | analysis/results/SP_CHI/u3_sp_catchup_2026_10_05 |
 | `experiment_sp_allocations.py` | M2 approved proxy and U2 mass-conserving experiments; no model attributes. | test_sp_allocations | docs/DECISIONS.md<br>docs/sp/ATTRIBUTES.md<br>docs/sp/PREPARATION.md (+2) |
 | `extract_sao_paulo_buildings.py` | Cloud-native Overture building morphology extraction for metropolitan São Paulo. | — | docs/sp/PREPARATION.md |
 | `fetch_RAIS.py` | Download 2022 RAIS formal jobs for São Paulo from Base dos Dados, aggregated by CEP (needs GOOGLE_CLOUD_PROJECT). | — | analysis/README.md |
+| `fetch_RAIS_estab.py` | Download 2022 RAIS establishment microdata for the municipality of São Paulo from Base dos Dados, one row per establishment, all columns (needs GOOGLE_CLOUD_PROJECT). Reference for… | — | analysis/results/SP_CHI/u6_activity_2026_10_06<br>docs/chicago/MODEL_PLAN.md |
 | `model_sp_urban_similarity.py` | Versioned, immutable SP model release, including prespecified robustness experiments. | — | docs/archive/audits/SP_MODEL_VALIDATION.md<br>docs/archive/plans/URBAN_MODEL_IMPLEMENTATION_PLAN.md<br>docs/sp/MODEL.md |
 | `plot_sp_attribute_qa.py` | Plot the six-feature SP attribute pilot bar chart (Brás, Itaim Bibi, Grajaú) for QA. | — | analysis/results/SP/reports |
 | `prepare_overture_sp.py` | Discover official metropolitan geography and pinned Overture release inputs. | — | docs/sp/PREPARATION.md |
@@ -162,6 +180,30 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | `review_sp_attribute_release.py` | Independent release review, documentation and artifact inventory for N10. | — | analysis/results/SP/reports<br>docs/sp/ATTRIBUTES.md |
 | `review_sp_v3.py` | Generate pilot input QA maps; no model attributes. | — | docs/sp/PREPARATION.md |
 | `validate_sp_urban_model.py` | Read-only audit of the user model; writes separate review evidence, never model outputs. | — | docs/archive/audits/SP_MODEL_VALIDATION.md<br>docs/sp/MODEL.md |
+
+## Other
+
+| Script | Purpose | Imported by | Cited in |
+|---|---|---|---|
+| `acquire_geosampa_edificacao.py` | Download GeoSampa `geoportal:edificacao` (municipal photogrammetric building outlines) by WFS pages; resumable. | — | analysis/results/SP_CHI/b1_step4_2026_10_05 |
+| `acquire_osm_places.py` | Extract named OpenStreetMap place elements (shop/amenity/office/craft/healthcare/tourism) for one city. | — | analysis/results/SP_CHI/places_cnefe_coverage_2026_10_01<br>docs/SIMPLE_INDEX.md |
+| `audit_simple_index_sources.py` | Source audit for the simplified composite index (docs/SIMPLE_INDEX.md). | — | analysis/results/SP_CHI/simple_index_source_audit_2026_10_01<br>docs/SIMPLE_INDEX.md |
+| `audit_u2_od2023.py` | U2 source audit: Metrô OD 2023 jobs by workplace zone (microdata) vs RAIS 2022 by district, São Paulo. | — | analysis/results/SP_CHI/u2_source_audit_2026_10_05<br>analysis/results/SP_CHI/u2_work_data_search_2026_10_05<br>docs/chicago/MODEL_PLAN.md |
+| `audit_u2_sources.py` | U2 source audit: São Paulo RAIS 2022 district shares (area_first allocation) vs Metrô OD 2023 work trips attracted. | — | analysis/results/SP_CHI/u2_source_audit_2026_10_05 |
+| `build_simple_index_ab.py` | Protocol P-AB-1 (docs/SIMPLE_INDEX.md): build the advisor's composite index (method A) and the corrected one (method B) for 96 SP districts and 77 Chicago Community Areas, run the … | — | analysis/results/SP_CHI/simple_index_ab_2026_10_01<br>analysis/simple_index_ab.ipynb<br>docs/SIMPLE_INDEX.md (+1) |
+| `build_u6_activity.py` | U6 activity composition (Step 7b). Phase B: classify São Paulo CNEFE 2022 establishments and draw the V1 audit sample. Usage: build_u6_activity.py classify \| places CITY \| v2 \| bri… | — | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/feature_options_2026_10_06<br>analysis/results/SP_CHI/u6_activity_2026_10_06 (+1) |
+| `evaluate_b1_bras.py` | S4-4/S4-7: footprint sources in one São Paulo district (default Brás) with imagery windows. Usage: evaluate_b1_bras.py [district_id] [n_windows]. | — | analysis/results/SP_CHI/b1_step4_2026_10_05 |
+| `evaluate_b1_step4.py` | Step 4: B1 footprint-coverage validation (S4-1..S4-6). Usage: evaluate_b1_step4.py CHI\|SP\|summary. | audit_m3_m4_sp_reference, audit_sp_height_references, audit_u1_alternatives, audit_u1_chicago_reference, audit_u1_sp_reference, build_u6_activity, evaluate_bv_step5, evaluate_m1_m6_step6, evaluate_m3_m4_m7_step8, evaluate_u1_step7 | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/b1_step4_2026_10_05<br>analysis/results/SP_CHI/feature_options_2026_10_06 |
+| `evaluate_bv_built_form_2026_09_30.py` | Evaluate GHSL vertical-form (BV) variants: cell-level built fraction/height, overlap with B1, and a Chicago LiDAR-footprint check; writes CSVs to argv[1]. | — | analysis/results/SP_CHI/bv_ghsl_lidar_evaluation_2026_09_30 |
+| `evaluate_bv_lidar_sample.py` | Step 5 follow-up: GHSL building height vs LiDAR building height per 100 m GHSL cell, São Paulo 2020 sample tiles and Chicago (Cook 2022). | — | analysis/results/SP_CHI/bv_step5_2026_10_05<br>docs/chicago/MODEL_PLAN.md |
+| `evaluate_bv_step5.py` | Step 5: BV built-surface-weighted GHSL height on land, BI (descriptive), and height validation in both cities. | — | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/bv_step5_2026_10_05<br>analysis/results/SP_CHI/feature_options_2026_10_06 |
+| `evaluate_m3_m4_m7_step8.py` | Step 8: M3 block size and M4 block shape from street faces of the M1 Overture network (area-weighted), and M7 mapped ground-parcel density, Chicago and São Paulo, with municipal an… | audit_m3_m4_sp_reference | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/feature_options_2026_10_06<br>analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06 (+1) |
+| `evaluate_places_against_cnefe.py` | Protocol P-PLACES-1 (docs/SIMPLE_INDEX.md): coverage of CNEFE 2022 establishment addresses by Overture Places and OpenStreetMap in São Paulo, with a 500 m displaced-point chance ba… | — | analysis/results/SP_CHI/places_cnefe_coverage_2026_10_01<br>docs/SIMPLE_INDEX.md |
+| `evaluate_u2_step3.py` | Step 3: U2 registered workplace-job density (jobs per km² of land), Chicago (LODES 2023) and São Paulo (RAIS 2022). | — | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/feature_options_2026_10_06<br>analysis/results/SP_CHI/u2_jobs_step3_2026_10_05 (+1) |
+| `evaluate_u4_ptal_step2.py` | Step 2: U4 PTAL Access Index (TfL 2015 method) for Chicago Community Areas and São Paulo districts. | evaluate_sp_u3_catchup | analysis/config/chicago_model_v1.json<br>analysis/results/SP_CHI/feature_options_2026_10_06<br>analysis/results/SP_CHI/u4_ptal_step2_2026_10_05 (+1) |
+| `export_viz_data.py` | Export the inputs of the Cross-City Urban Explorer to viz/data.js. | — | analysis/README.md<br>viz/README.md<br>viz/data.js (+1) |
+| `review_m2_redundancy_2026_09_30.py` | Diagnostic: how much existing M2 proxies overlap M1/M3/M7/B1/U3 in SP and Chicago, plus SP v2 omission recheck. | — | analysis/results/SP_CHI/m2_redundancy_2026_09_30 |
+| `tabulate_street_classes_by_source.py` | Tabulate street length by each source's own class, clipped to the city, with no imputation or filtering. | — | analysis/results/SP_CHI/street_class_inventory_2026_09_30 |
 
 ## Library packages
 
@@ -184,15 +226,18 @@ Frozen method contracts; a change is a new versioned file, never an edit. "Read 
 | `chicago_functional_v2.json` | prepare_chicago_functional |
 | `chicago_m3_alley_repair_v2.json` | evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_complete_zones_v1_2026_09_26, evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26 |
 | `chicago_m3_motorway_candidate_v1.json` | evaluate_chicago_m3_motorway_holdout_2026_09_26, summarize_chicago_block_protocol_pilot_v1 |
+| `chicago_model_v1.json` | chicago_model, sp_chicago_model, sp_chicago_model_v1.json |
 | `sp_attributes_2026_09_11.json` | core, review_sp_attribute_release, sp_current_methods.json |
 | `sp_chicago_harmonization_v1.json` | finalize_harmonization_checkpoint, sp_chicago_harmonization_v2_full_scope.json |
 | `sp_chicago_harmonization_v2_full_scope.json` | — (cited by docs only) |
+| `sp_chicago_model_v1.json` | sp_chicago_model |
 | `sp_current_methods.json` | review_sp_attribute_release |
-| `sp_district_subprefeitura.csv` | sp_urban_model_v2.json |
+| `sp_district_subprefeitura.csv` | build_simple_index_ab, sp_urban_model_v2.json |
 | `sp_preparation_v2.json` | prepare_sp_inputs |
 | `sp_preparation_v3.json` | prepare_sp_v3, review_sp_v3, test_sp_v3 |
 | `sp_urban_model_v1.json` | review, validate_sp_urban_model |
 | `sp_urban_model_v2.json` | model_sp_urban_similarity, test_sp_model, validate_sp_urban_model |
+| `u6` | build_u6_activity, chicago_model, export_viz_data, sp_chicago_model, chicago_model_v1.json, sp_chicago_model_v1.json |
 
 ## Archived (`_archive/*.zip`)
 

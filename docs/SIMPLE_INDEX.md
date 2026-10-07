@@ -1,6 +1,6 @@
 # Simplified composite index: advisor method (A) vs corrected method (B)
 
-Opened 1 October 2026 at the advisor's suggestion; the [Chicago feature-acceptance plan](chicago/MODEL_PLAN.md) is paused, not withdrawn. Units: 96 São Paulo districts and 77 Chicago Community Areas. **Status (1 October 2026): methods A and B built and tested under protocol P-AB-1; [methodology report](../analysis/results/SP_CHI/simple_index_ab_2026_10_01/README.md).** Dated status stays in [STATUS.md](STATUS.md).
+Opened 1 October 2026 at the advisor's suggestion; the [Chicago feature-acceptance plan](chicago/MODEL_PLAN.md) was paused briefly, then resumed and fitted on 6 October. Units: 96 São Paulo districts and 77 Chicago Community Areas. **Methods A and B were built and tested under protocol P-AB-1; [methodology report](../analysis/results/SP_CHI/simple_index_ab_2026_10_01/README.md).** Current project status is in [STATUS.md](STATUS.md).
 
 **Evidence rule (user, 1 October 2026):** every number in this page is computed from repository data by a saved script, or comes from an official definition document saved next to its data. Figures from papers or web pages are not used as evidence. A completeness claim requires a demonstrated reference (ground truth) first.
 
