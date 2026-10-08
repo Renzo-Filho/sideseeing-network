@@ -1,0 +1,18 @@
+{
+  "CHI_M3_spearman": {
+    "overture_vs_official": 0.8308,
+    "municipal_vs_official": 0.8099,
+    "overture_vs_municipal": 0.9587
+  },
+  "CHI_land_in_municipal_faces_p10": 0.835,
+  "SP_M3_spearman": {
+    "overture_vs_official": 0.9768,
+    "municipal_vs_official": 0.6042,
+    "overture_vs_municipal": 0.5632
+  },
+  "SP_land_in_municipal_faces_p10": 0.429,
+  "SP_M4_vs_official_quadras": {
+    "compactness": 0.9109,
+    "elongation": 0.8049
+  }
+}

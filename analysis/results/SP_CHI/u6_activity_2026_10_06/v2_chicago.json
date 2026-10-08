@@ -1,0 +1,16 @@
+{
+  "food_drink": {
+    "areas": 77,
+    "spearman": 0.9795156412728019,
+    "pass": true,
+    "overture_total": 16511,
+    "licence_sites_total": 7799
+  },
+  "making_storing": {
+    "areas": 76,
+    "spearman": 0.8750547036483788,
+    "pass": true,
+    "overture_total": 6483,
+    "licence_sites_total": 3056
+  }
+}

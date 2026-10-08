@@ -1,0 +1,145 @@
+{
+  "land_matches_release": {
+    "pass": true,
+    "max_abs_diff_m2": 0.0
+  },
+  "no_populated_block_without_land": {
+    "pass": true,
+    "populated_pieces_without_land": 0
+  },
+  "weights_b_at_most_one": {
+    "pass": true,
+    "max_weight_sum": 1.0000000000163678
+  },
+  "U3-3_mass_a": {
+    "pass": true,
+    "inside": 2745500.350813928,
+    "outside": 36978.64918607163,
+    "block_total": 2782479
+  },
+  "U3-3_mass_b": {
+    "pass": true,
+    "inside": 2746058.8956385306,
+    "outside": 36420.10436146932,
+    "block_total": 2782479
+  },
+  "U3-3_coverage": {
+    "pass": true,
+    "uncovered_m2": 11884.190238237381,
+    "share": 1.988325538972446e-05,
+    "release_union_uncovered_m2": 11884.19023965996
+  },
+  "allocation_a_matches_release": {
+    "pass": true
+  },
+  "U3-2_allocation_immaterial": {
+    "pass": true,
+    "max_abs_pct": 0.4378873236697278,
+    "max_abs_rank_move": 1.0,
+    "cases": [],
+    "spearman": 0.9999737105000263
+  },
+  "S1-2_gross_sensitivity": {
+    "spearman": 0.9987643935012355,
+    "areas_moving_5_or_more_ranks": 0
+  },
+  "U3-4_acs_diagnostic": {
+    "descriptive_only": true,
+    "flag_pct": 10.0,
+    "flagged_for_map_review": [
+      "CHI:06",
+      "CHI:07",
+      "CHI:08",
+      "CHI:29",
+      "CHI:32",
+      "CHI:36",
+      "CHI:37",
+      "CHI:39",
+      "CHI:41",
+      "CHI:43",
+      "CHI:47",
+      "CHI:55",
+      "CHI:63",
+      "CHI:67",
+      "CHI:68",
+      "CHI:76",
+      "CHI:77"
+    ],
+    "missing_acs": 0
+  },
+  "acs_block_groups_present": {
+    "pass": true,
+    "block_groups": 2316,
+    "missing": 0
+  },
+  "acs_moe_valid": {
+    "pass": true,
+    "special_or_negative": 0
+  },
+  "all_blocks_of_block_groups_read": {
+    "pass": true,
+    "blocks": 42782
+  },
+  "no_acs_residents_without_2020_blocks": {
+    "pass": true,
+    "zero_in_both": 4,
+    "acs_residents_unsplittable": 0.0
+  },
+  "acs_a_weights_at_most_one": {
+    "pass": true,
+    "max": 1.0000000000006963
+  },
+  "acs_a_mass": {
+    "pass": true,
+    "inside": 2710782.5633361363,
+    "outside": 192402.4366638636,
+    "block_group_total": 2903185
+  },
+  "acs_b_weights_at_most_one": {
+    "pass": true,
+    "max": 1.000000000000413
+  },
+  "acs_b_mass": {
+    "pass": true,
+    "inside": 2712506.23737318,
+    "outside": 190678.7626268196,
+    "block_group_total": 2903185
+  },
+  "S1-8_cv_gate": {
+    "pass": false,
+    "max_cv": 0.16758147709737597,
+    "median_cv": 0.05130283047260272,
+    "cases": [
+      "CHI:37",
+      "CHI:47"
+    ],
+    "median_rank_span": 8.0,
+    "max_rank_span": 16
+  },
+  "S1-7_allocation_immaterial": {
+    "pass": false,
+    "max_abs_pct": 9.523469500416159,
+    "max_abs_rank_move": 1.0,
+    "cases": [
+      "CHI:76"
+    ],
+    "spearman": 0.9998685525001314
+  },
+  "S1-9_period_comparison": {
+    "descriptive_only": true,
+    "flag_pct": 10.0,
+    "flagged_for_map_review": [
+      "CHI:26",
+      "CHI:48",
+      "CHI:55"
+    ],
+    "city_acs_vs_census2020_pct": -1.2846167414115706,
+    "spearman_u3_acs_vs_census2020": 0.9947421000052578,
+    "areas_moving_5_or_more_ranks": 5,
+    "supplied_aggregate_vs_acs_2020_2024": {
+      "median_abs_pct": 3.292037150963123,
+      "max_abs_pct": 36.944403945445,
+      "city_pct": -2.3300121592343404
+    }
+  }
+}

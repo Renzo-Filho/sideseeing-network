@@ -1,0 +1,6 @@
+city,route_type,served_stops,distinct_names,distinct_parent_stations,nearest_same_mode_median_m,share_with_same_mode_stop_within_50m
+Chicago,1,298,148,143.0,0.0,1.0
+Chicago,3,10683,6054,2.0,25.4,0.8467
+SP,1,109,100,,865.4,0.1284
+SP,2,104,97,,1576.5,0.0962
+SP,3,22048,20182,,47.4,0.5203

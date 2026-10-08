@@ -1,0 +1,95 @@
+{
+  "CHI_cook_pins_without_area": {
+    "pins": 738,
+    "of": 883597
+  },
+  "SP_iptu_use_labels_unmapped": {
+    "pass": true,
+    "labels": []
+  },
+  "SP_lots_in_several_partitions": 9883,
+  "SP_lot_join": {
+    "polygons": 1677182,
+    "polygons_without_iptu": 29971,
+    "iptu_lots": 1674966,
+    "iptu_lots_without_polygon": 27756
+  },
+  "S7-5_CHI_residential_vs_cook_pins": {
+    "pass": false,
+    "spearman": 0.3897681266102318
+  },
+  "S7-5_SP_commerce_vs_cnefe_establishments": {
+    "pass": false,
+    "spearman": 0.4215138361367336
+  },
+  "missing_entropy_below_10pct_coverage": [
+    "CHI:76",
+    "SP:52",
+    "SP:55"
+  ],
+  "S7-6_CHI_descriptive": {
+    "median_entropy4": 0.6491836398701796,
+    "median_occupied_coverage": 0.5490009016337063,
+    "min_occupied_coverage": [
+      "CHI:76",
+      0.049145958369320314
+    ],
+    "spearman_entropy4_vs_entropy6": 0.8470266575529733,
+    "spearman_u1_u2": 0.3631168831168831,
+    "spearman_u1_u3": 0.04347231715652769,
+    "spearman_u1_b1": 0.08079289131920711,
+    "median_share_land": {
+      "agriculture": 0.0,
+      "commerce": 0.0541,
+      "industrial": 0.028,
+      "institutional": 0.0455,
+      "nonparcel": 0.2733,
+      "open_space": 0.0409,
+      "residential": 0.3653,
+      "transport": 0.0579,
+      "unclassified": 0.0,
+      "vacant": 0.0238,
+      "water": 0.0,
+      "no_polygon": 0.0,
+      "lot_no_use": NaN
+    }
+  },
+  "S7-6_SP_descriptive": {
+    "median_entropy4": 0.6635993828498283,
+    "median_occupied_coverage": 0.5915380662034629,
+    "min_occupied_coverage": [
+      "SP:52",
+      0.0019749354186923223
+    ],
+    "spearman_entropy4_vs_entropy6": 0.8843333453744174,
+    "spearman_u1_u2": 0.34904453997037893,
+    "spearman_u1_u3": -0.4053101181230358,
+    "spearman_u1_b1": 0.0128093053498537,
+    "median_share_land": {
+      "agriculture": NaN,
+      "commerce": 0.122,
+      "industrial": 0.0249,
+      "institutional": 0.0251,
+      "nonparcel": NaN,
+      "open_space": NaN,
+      "residential": 0.3227,
+      "transport": 0.0022,
+      "unclassified": 0.0216,
+      "vacant": 0.0486,
+      "water": NaN,
+      "no_polygon": 0.2523,
+      "lot_no_use": 0.0337
+    }
+  },
+  "SP_predominance_sensitivity_spearman": 0.9466531806523859,
+  "anchors": {
+    "SP:10": {
+      "entropy4": 0.7106487065674831,
+      "entropy6": 0.6420304825004604
+    },
+    "CHI:32": {
+      "entropy4": 0.6618133077296485,
+      "entropy6": 0.7344012346836089
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "SP_cnefe": {
+    "median": 0.1573,
+    "p10": 0.1171,
+    "p90": 0.2118,
+    "top8": {
+      "SP:62": 0.268,
+      "SP:06": 0.263,
+      "SP:54": 0.255,
+      "SP:02": 0.232,
+      "SP:26": 0.231,
+      "SP:12": 0.225,
+      "SP:79": 0.225,
+      "SP:32": 0.216
+    }
+  },
+  "SP_spearman_unclassified_share_vs_intensity": -0.007,
+  "CHI_overture": {
+    "median": 0.037,
+    "p10": 0.0238,
+    "p90": 0.2106,
+    "top8": {
+      "CHI:39": 0.727,
+      "CHI:41": 0.601,
+      "CHI:31": 0.52,
+      "CHI:07": 0.422,
+      "CHI:06": 0.308,
+      "CHI:22": 0.297,
+      "CHI:24": 0.291,
+      "CHI:32": 0.228
+    }
+  },
+  "CHI_confidence": {
+    "median_typed": 0.92,
+    "median_untyped": 0.206,
+    "share_below_0.3_typed": 0.0537,
+    "share_below_0.3_untyped": 0.7768,
+    "provider_share_typed": {
+      "meta": 0.543,
+      "BrightQuery": 0.165,
+      "Microsoft": 0.147,
+      "Foursquare": 0.13,
+      "AllThePlaces": 0.012,
+      "DAC": 0.003,
+      "PinMeTo": 0.0,
+      "RenderSEO": 0.0
+    },
+    "provider_share_untyped": {
+      "meta": 0.842,
+      "Microsoft": 0.115,
+      "BrightQuery": 0.024,
+      "Foursquare": 0.012,
+      "PinMeTo": 0.004,
+      "DAC": 0.002
+    },
+    "typed_share_below_0.3_top6_units": {
+      "CHI:39": 0.172,
+      "CHI:41": 0.099,
+      "CHI:07": 0.091,
+      "CHI:32": 0.082,
+      "CHI:52": 0.079,
+      "CHI:31": 0.075
+    }
+  },
+  "CHI_sensitivity_confidence_0.3": {
+    "spearman_intensity": 0.9992,
+    "spearman_clr_food_drink": 0.9958,
+    "spearman_clr_retail": 0.9947,
+    "spearman_clr_services_offices": 0.9966,
+    "spearman_clr_making_storing": 0.9981,
+    "spearman_clr_institutions": 0.9988,
+    "classified_kept": 0.9463,
+    "median_confidence": 0.92
+  },
+  "SP_sensitivity_confidence_0.3": {
+    "spearman_intensity": 0.9995,
+    "spearman_clr_food_drink": 0.9724,
+    "spearman_clr_retail": 0.9766,
+    "spearman_clr_services_offices": 0.9921,
+    "spearman_clr_making_storing": 0.9971,
+    "spearman_clr_institutions": 0.9953,
+    "classified_kept": 0.8652,
+    "median_confidence": 0.668
+  },
+  "CHI_kenwood_untyped_name_sample": "inspected by hand 6 Oct 2026: mostly non-words or codes (e.g. 'Rmlhv1', 'Tqwh0727 71'); see README"
+}

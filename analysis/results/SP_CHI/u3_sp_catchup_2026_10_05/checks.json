@@ -1,0 +1,36 @@
+{
+  "SP_residents_conserved": {
+    "pass": false,
+    "census_2022_total": 11451999.0,
+    "assigned": 11446054.473149512
+  },
+  "matches_sp_prep_v3_allocation": {
+    "pass": true,
+    "max_abs_diff": 1.4551915228366852e-11
+  },
+  "matches_u4_resident_weights": {
+    "pass": true
+  },
+  "no_missing_values": {
+    "pass": true
+  },
+  "gross_sensitivity": {
+    "spearman": 0.9992946283233858,
+    "areas_moving_5_or_more_ranks": 1
+  },
+  "summary": {
+    "median": 11110.510901862814,
+    "max": [
+      "REPUBLICA",
+      26063.953600137706
+    ],
+    "min": [
+      "MARSILAC",
+      55.11310605622614
+    ],
+    "bras": [
+      10689.699816999397,
+      52
+    ]
+  }
+}

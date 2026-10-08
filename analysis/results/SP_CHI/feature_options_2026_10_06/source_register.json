@@ -1,0 +1,98 @@
+{
+  "analysis/data/Chicago/overture_2026_08_19/segment/manifest.json": {
+    "bytes": 6645,
+    "sha256": "1be004fe2ecff396ee18b0e371892de2467cd0060946969d9350c00f5cda764e"
+  },
+  "analysis/data/Chicago/overture_2026_08_19/segment/part_0000.parquet": {
+    "bytes": 66458626,
+    "sha256": "755e08ebcbb15111871443a358ec6324ee0f20d26feff65b32c3dbdf9727ff5d"
+  },
+  "analysis/data/Chicago/steet_center_lines_20260915.geojson": {
+    "bytes": 83617801,
+    "sha256": "ebfabc5fde1ddfec2c161a405900601263e525942790e7510d791ea2057cf959"
+  },
+  "analysis/data/SP/Cadastro e Vias/SIRGAS_GPKG_logradouronbl.gpkg": {
+    "bytes": 55382016,
+    "sha256": "709d05e983d88f331ce04364e6ea3a7f4ef146072525bb8d523b794ca10cf213"
+  },
+  "analysis/data/SP/overture_2026_08_19/segment/manifest.json": {
+    "bytes": 6644,
+    "sha256": "cee33d617c6b3300a23b0fc6ce69e68438f7548d95bd537aca937f8d2825490a"
+  },
+  "analysis/data/SP/overture_2026_08_19/segment/part_0000.parquet": {
+    "bytes": 61010860,
+    "sha256": "41743533133e680ff199f9dd9e8ac0521b6214792ea129a705627b2c53d8bf55"
+  },
+  "analysis/results/Chicago/chicago_u3_step1_2026_10_02/tables/u3_step1.parquet": {
+    "bytes": 40605,
+    "sha256": "23fba2ae593c713f6f3ccbacbe2a1ea4e7482dba53522e30641eff21b764c4f6"
+  },
+  "analysis/results/SP_CHI/bv_step5_2026_10_05/bv_step5_by_unit.csv": {
+    "bytes": 27076,
+    "sha256": "f9177bd8d1e04349f9e2afa7e2ab30d2b89fc8f9d787fa1eb966b8ceec88d27b"
+  },
+  "analysis/results/SP_CHI/feature_options_2026_10_06/model_contract_snapshot.json": {
+    "bytes": 26443,
+    "sha256": "5f7681ec8f8f48b65306cc07d854a5698eb0214cd815b84be5188c3b2156de4a"
+  },
+  "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/footprints/footprint_candidates.csv": {
+    "bytes": 42720,
+    "sha256": "10fc466a45105ebdc18efdfab55c6fd49e04dc975fbc69826e05e293520047e9"
+  },
+  "analysis/results/SP_CHI/m1_m6_step6_2026_10_06/m1_m6_by_unit.csv": {
+    "bytes": 79793,
+    "sha256": "30883611b3f05e91e14180fd926f1a0d099b926a4b7be11b427884de3e191c7a"
+  },
+  "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/m3_m4_m7_by_unit.csv": {
+    "bytes": 89341,
+    "sha256": "c0d0d6395998c4c04d57f8f74e305285b68c92ccb4539e65d5ccbf4923120137"
+  },
+  "analysis/results/SP_CHI/u1_step7_2026_10_06/u1_by_unit.csv": {
+    "bytes": 69413,
+    "sha256": "c7ea486d35f6f152a579273a7bace6f7621fc64be4c00de979e46518ef572191"
+  },
+  "analysis/results/SP_CHI/u2_jobs_step3_2026_10_05/tables/u2_jobs.parquet": {
+    "bytes": 44370,
+    "sha256": "210fe8be7c5edf57484fa6f49c5a503d688108a4d33914adb69d3bd16141142b"
+  },
+  "analysis/results/SP_CHI/u4_ptal_step2_2026_10_05/tables/u4_ptal.parquet": {
+    "bytes": 50416,
+    "sha256": "e7203d8477a97cd0fa4630600d6cb1c11b808a71c46e897f06f1a22315cb9fbe"
+  },
+  "analysis/results/SP_CHI/u6_activity_2026_10_06/u6_by_unit.csv": {
+    "bytes": 73212,
+    "sha256": "fcb1c5b3e2237c49d4541ea97a8beb2068d61d8b3e1c18fe32672a36c03ef8c9"
+  },
+  "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet": {
+    "bytes": 844432,
+    "sha256": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f"
+  },
+  "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/district_land.parquet": {
+    "bytes": 10051157,
+    "sha256": "aee648428515f3d2b346379c018ffbd7d6229cb8eb08bcfb7c67e5b7ea67ebeb"
+  },
+  "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet": {
+    "bytes": 2206845,
+    "sha256": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0"
+  },
+  "analysis/data/Chicago/Hydro_20260916.geojson": {
+    "bytes": 2840576,
+    "sha256": "970f89278ebcb9c1799b0b2562165721979a7c10ecbbb8608206de27be0a2129"
+  },
+  "analysis/results/SP_CHI/u3_sp_catchup_2026_10_05/tables/u3_sp.parquet": {
+    "bytes": 12036,
+    "sha256": "ffd6069498f7dc99110585a16a08108ce079b8e5839e5e60902185c0f6897d93"
+  },
+  "analysis/scripts/evaluate_b1_step4.py": {
+    "bytes": 12382,
+    "sha256": "f41ba3d337d43d10309610c83519f3c29002d6bab66af6bbd6e3780fe1927b03"
+  },
+  "analysis/scripts/evaluate_m1_m6_step6.py": {
+    "bytes": 8497,
+    "sha256": "b197d1e254fd3277b8d0a44e2ba4bde3120e5ff277c86f555850561d00cb0054"
+  },
+  "analysis/results/SP_CHI/feature_options_2026_10_06/explore_candidates.py": {
+    "bytes": 5184,
+    "sha256": "6ad5ed48c204f2bfc39b1ed38da0090f2dd56b0fe68a882313ddd78cf24e9201"
+  }
+}

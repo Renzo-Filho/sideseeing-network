@@ -1,0 +1,33 @@
+{
+  "land_km2": 9.866184664555643,
+  "ghsl_built_fraction": 0.388966300382763,
+  "overture": {
+    "records": 16801,
+    "coverage": 0.2572629314510487,
+    "median_polygon_m2": 86.20966617236263,
+    "p90_polygon_m2": 311.34890566204774
+  },
+  "microsoft": {
+    "records": 5054,
+    "coverage": 0.3436981744691434,
+    "median_polygon_m2": 240.14209843623465,
+    "p90_polygon_m2": 1746.2518746475328
+  },
+  "osm": {
+    "records": 1275,
+    "coverage": 0.07039930457263195,
+    "median_polygon_m2": 371.82942382000255,
+    "p90_polygon_m2": 1022.810003166581
+  },
+  "geosampa": {
+    "records": 24638,
+    "coverage": 0.421516084909942,
+    "median_polygon_m2": 100.80242923241899,
+    "p90_polygon_m2": 327.13613467386705
+  },
+  "overture_area_share_by_source": {
+    "Google Open Buildings": 0.5924,
+    "Microsoft ML Buildings": 0.1497,
+    "OpenStreetMap": 0.2579
+  }
+}

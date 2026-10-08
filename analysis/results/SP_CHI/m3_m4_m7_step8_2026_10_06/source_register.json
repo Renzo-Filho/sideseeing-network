@@ -1,0 +1,11 @@
+{
+  "analysis/data/Chicago/overture_2026_08_19/segment/part_0000.parquet": "755e08ebcbb15111871443a358ec6324ee0f20d26feff65b32c3dbdf9727ff5d",
+  "analysis/data/SP/overture_2026_08_19/segment/part_0000.parquet": "41743533133e680ff199f9dd9e8ac0521b6214792ea129a705627b2c53d8bf55",
+  "analysis/data/Chicago/steet_center_lines_20260915.geojson": "ebfabc5fde1ddfec2c161a405900601263e525942790e7510d791ea2057cf959",
+  "analysis/data/SP/Cadastro e Vias/SIRGAS_GPKG_logradouronbl.gpkg": "709d05e983d88f331ce04364e6ea3a7f4ef146072525bb8d523b794ca10cf213",
+  "analysis/data/SP/Cadastro e Vias/quadra_viaria_editada.gpkg": "476d3854b0505240d03896b2333535c84175cc5bf069eda4dc13b513ce77b290",
+  "analysis/data/SP/Cadastro e Vias/geoportal_quadra_fiscal_gsc.gpkg": "ee4e143cedb3069f3032bc8fbe4fa015d964cd488fcfd20ddaa6034aa0b6f73c",
+  "analysis/data/SP/Cadastro e Vias/IPTU_2026.csv": "ff4d2c8894fa81a6673c8ca10002b34ee895af546fa707475a2d9500fcb2079f",
+  "analysis/work/u1_step7_2026_10_06/sp_lot_areas.parquet": "42e2fe257c12d1996e44d2894c1e637c4993738d8dfc5cfb23dc2d61f7d60a38",
+  "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/blocks.parquet": "d482e194bfa643afba39071452489569dadf47d10a9dea0d5836cb831cd72f98"
+}

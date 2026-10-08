@@ -1,0 +1,402 @@
+{
+  "contract_version": "chicago_model_v1",
+  "status": "frozen 2026-10-06: 12 families; fit authorized (J-10); any change is chicago_model_v2",
+  "plan": "docs/chicago/MODEL_PLAN.md",
+  "fit_authorized": true,
+  "units": {
+    "ids": "CHI:01-CHI:77",
+    "count": 77,
+    "name": "Chicago Community Areas",
+    "crs": "EPSG:26916"
+  },
+  "conventions": {
+    "C1": "77 Community Areas, EPSG:26916, IDs CHI:NN",
+    "C2": "density denominator = Community Area land: area minus municipal hydrography (Hydro_20260916), release field hydro_land_m2; decided 2026-10-02",
+    "C3": "each family lists source, release, observation period and SHA-256; vintages are disclosed, not aligned",
+    "C4": "missing values are null with a reason; never imputed"
+  },
+  "families": [
+    {
+      "id": "U3",
+      "name": "resident density",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-05",
+      "definition": "ACS 2020-2024 5-year B01003 total population allocated to the Community Area / land km2",
+      "allocation": "block-group estimate -> its 2020 blocks by 2020 POP20 share -> Community Area by block land share (S1-3, S1-7a)",
+      "uncertainty": "90% MOE = sqrt(sum((weight x block-group MOE)^2)); understates (no covariance)",
+      "observation_period": "pooled 2020-01-01 to 2024-12-31",
+      "column": "u3_acs_land_km2",
+      "units": "residents per km2 of land",
+      "table": "analysis/results/Chicago/chicago_u3_step1_2026_10_02/tables/u3_step1.parquet",
+      "table_sha256": "23fba2ae593c713f6f3ccbacbe2a1ea4e7482dba53522e30641eff21b764c4f6",
+      "script": "analysis/scripts/evaluate_chicago_u3_step1.py",
+      "script_sha256": "d65dfb39bec329d1231ca4c613140f59df55771e11cc667c60820fde24d1ef6a",
+      "source_register": "analysis/results/Chicago/chicago_u3_step1_2026_10_02/source_register.json",
+      "stated_limits": [
+        "population pooled over 2020-2024, not a 2024 count; 2020 distribution assumed inside each block group",
+        "margins of error understate uncertainty (no covariance between block groups)",
+        "Burnside (CHI:47, CV 16.8%) and Fuller Park (CHI:37, CV 14.2%) exceed the 12% CV gate; accepted because each 90% interval spans 3 rank positions among the lowest-density areas",
+        "O'Hare (CHI:76): block-group land split would add 9.5%; 2020-block split kept because the land split assigns residents to airport land",
+        "land includes parks, vacant land, cemeteries and the airport (C2): redundancy with U1 and other densities to be checked at the final joint review",
+        "municipal hydrography covers the city only"
+      ],
+      "sensitivities": {
+        "census_2020_count": "u3_land_km2",
+        "block_group_land_split": "u3_acs_b_land_km2",
+        "gross_area": "u3_gross_km2"
+      }
+    },
+    {
+      "id": "U4",
+      "name": "public transport accessibility (PTAL Access Index)",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-05",
+      "definition": "resident-weighted mean over 100 m grid locations of the TfL PTAL Access Index, weekday 08:15-09:15, Wednesday 2026-10-14; modes CTA bus, CTA 'L' (metro), Metra (rail)",
+      "method": "TfL Connectivity Assessment Guide 2015, section 2, applied unchanged: walk 4.8 km/h on Overture segments without motorway/trunk (footways included); max walk 640 m bus, 960 m metro/rail; AWT = 0.5*60/f + reliability (2 bus, 0.75 metro/rail); EDF = 30/TAT; nearest stop per route, most frequent direction; per mode best EDF + 0.5*others; rail services need >= 2 city stops",
+      "residents": "ACS 2020-2024 allocation accepted for U3",
+      "observation_period": "scheduled service on 2026-10-14 (CTA feed Sept 2026; Metra feed saved 2026-10-05)",
+      "column": "u4_ptai_avg_resident",
+      "rows": "city == 'CHI'",
+      "units": "Access Index (equivalent doorstep departures)",
+      "table": "analysis/results/SP_CHI/u4_ptal_step2_2026_10_05/tables/u4_ptal.parquet",
+      "table_sha256": "e7203d8477a97cd0fa4630600d6cb1c11b808a71c46e897f06f1a22315cb9fbe",
+      "script": "analysis/scripts/evaluate_u4_ptal_step2.py",
+      "script_sha256": "4e79f4bcab18092e03d1a01ab84a75f3966138330dd602fa01b241dc972c28ed",
+      "method_code": "analysis/scripts/harmonization/ptal.py",
+      "method_code_sha256": "3f6ec626e6c7d6a696bb13dc9ac64461a6f8aa512a2e00993c685714b63437a1",
+      "source_register": "analysis/results/SP_CHI/u4_ptal_step2_2026_10_05/source_register.json",
+      "stated_limits": [
+        "service near home, not where it goes",
+        "grows with the number of routes faster than with one route's frequency (cross-city levels need a decision at the common stage)",
+        "scheduled service, not reliability; Pace suburban buses excluded (EMTU excluded in Sao Paulo for symmetry)",
+        "footway sensitivity: streets-only network lowers values by a median 3.7%; Near South Side, Douglas and Archer Heights change by more than 10% (Archer Heights 6 ranks); footways kept because they carry real links",
+        "walking network ignores slope, crossings and safety; points snapped to the nearest network node",
+        "Metra Heritage Corridor has no departure counted in the window"
+      ],
+      "sensitivities": {
+        "streets_only_network": "u4_streets_only",
+        "straight_line_distance": "u4_straight_line",
+        "unweighted_populated_mean": "ai_unweighted_populated",
+        "bus_only_old_u4": "chi_bus_only_u4_old"
+      },
+      "sao_paulo_values": "same table, city == 'SP', kept for the common-model stage (Census 2022 tract residents; SPTrans bus, Metro, CPTM)"
+    },
+    {
+      "id": "U2",
+      "name": "registered workplace-job density",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-05",
+      "definition": "registered jobs at the declaring establishment / land km2 (C2)",
+      "source": "LODES 8 WAC 2023, S000 JT00 (unemployment-insurance-covered and Federal jobs, all jobs per person, about 1 April 2023)",
+      "allocation": "2020 block -> Community Area by land share (same rule as U3)",
+      "column": "u2_jobs_land_km2",
+      "rows": "city == 'CHI'",
+      "units": "jobs per km2 of land",
+      "also_reported": {
+        "relative_centrality": "u2_relative_centrality",
+        "lodes_2022_land_share": "u2_2022_land_share",
+        "lodes_2022_business_land": "u2_2022_business_land",
+        "without_top10_blocks": "u2_without_top10"
+      },
+      "table": "analysis/results/SP_CHI/u2_jobs_step3_2026_10_05/tables/u2_jobs.parquet",
+      "table_sha256": "210fe8be7c5edf57484fa6f49c5a503d688108a4d33914adb69d3bd16141142b",
+      "script": "analysis/scripts/evaluate_u2_step3.py",
+      "script_sha256": "d3a91d92c83273f2f2ae91357106694362b610d30a8eaa5982bcb029141f94cd",
+      "source_register": "analysis/results/SP_CHI/u2_jobs_step3_2026_10_05/source_register.json",
+      "source_audit": "analysis/results/SP_CHI/u2_source_audit_2026_10_05/README.md",
+      "stated_limits": [
+        "registered jobs at the employer's establishment, not where people physically work; self-employed and informal work excluded",
+        "location error unmeasured in Chicago (no area-level independent source; CMAP 2024-25 survey has a median of 6 workers per community area)",
+        "Woodlawn (-5.4%, 5 ranks) and Hegewisch (-23.6%) change under the CMAP business-land allocation; land share kept for consistency with U3",
+        "LODES is partially synthetic with disclosure protection",
+        "Loop, Hyde Park and O'Hare change by more than 10% without the 10 largest job blocks",
+        "reference date about 1 April 2023 (Sao Paulo RAIS: 2022 reference year)"
+      ],
+      "sao_paulo_values": "same table, city == 'SP' (RAIS 2022 area_first CEP allocation, 508,844 unplaced jobs spread like placed ones); limits: head-office bias in Pari, Jaguare, Se, Casa Verde, Consolacao, Itaim Bibi; 26 districts change by more than 5% under address-first weights; RAIS exceeds OD 2023 RAIS-comparable jobs by 1.64 million; informal work (26% of OD jobs) excluded"
+    },
+    {
+      "id": "B1",
+      "name": "footprint coverage",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-05",
+      "definition": "exact union of Overture building footprints clipped to land / land area (C2)",
+      "source": "Overture Maps buildings, release 2026-08-19.0",
+      "column": "B1_coverage_land",
+      "rows": "unit_id starting 'CHI:'",
+      "units": "share of land",
+      "table": "analysis/results/SP_CHI/harmonization_2026_09_22_h1_h3/footprints/footprint_candidates.csv",
+      "table_sha256": "10fc466a45105ebdc18efdfab55c6fd49e04dc975fbc69826e05e293520047e9",
+      "script": "analysis/curio_nodes/B1.py",
+      "script_sha256": "d828e1f5a2f70813749542c155a1f4054927937cec5ecade331ef5b0b8aa6a89",
+      "validation_script": "analysis/scripts/evaluate_b1_step4.py",
+      "validation_script_sha256": "f41ba3d337d43d10309610c83519f3c29002d6bab66af6bbd6e3780fe1927b03",
+      "validation": "analysis/results/SP_CHI/b1_step4_2026_10_05/README.md",
+      "stated_limits": [
+        "mapped footprint coverage, not surveyed coverage",
+        "Overture is a median 8.5% below Cook County 2022 LiDAR footprints (range -17.8% to +3.8%; Spearman 0.983)",
+        "99.4% of Overture footprint area in Chicago comes from OpenStreetMap (median area); municipal 2015 footprints share lineage",
+        "Overture release 2026; observation dates of individual footprints are not uniform"
+      ],
+      "sao_paulo_values": "same table, unit_id starting 'SP:' (Overture, kept by user decision on 2026-10-05; GeoSampa 2007/2014 judged too old). Limit: 22 districts whose Overture footprints are more than 50% machine-learning-derived (North, South, West) are a median 13.4% below the 2007-2014 municipal GeoSampa map and rank on average 10 places lower; per-district flag in analysis/results/SP_CHI/b1_step4_2026_10_05/tables/b1_sp_explanations.csv (ml_share)"
+    },
+    {
+      "id": "BV",
+      "name": "vertical form (built-surface-weighted height)",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-05",
+      "definition": "GHSL R2023A built-surface-weighted building height on land: sum(volume) / sum(built surface) over native 100 m cells weighted by cell-land overlap",
+      "source": "GHSL GHS-BUILT-H ANBH/AGBH epoch 2018 and GHS-BUILT-V 2020, 100 m, Mollweide",
+      "column": "bv_height_built_m",
+      "rows": "city == 'CHI'",
+      "units": "metres",
+      "table": "analysis/results/SP_CHI/bv_step5_2026_10_05/bv_step5_by_unit.csv",
+      "table_sha256": "f9177bd8d1e04349f9e2afa7e2ab30d2b89fc8f9d787fa1eb966b8ceec88d27b",
+      "script": "analysis/scripts/evaluate_bv_step5.py",
+      "script_sha256": "9ca6495f153918dda39c3d2d8d902350e06eb286ed78519cffab4ef0474bb3ae",
+      "validation": "analysis/results/SP_CHI/bv_step5_2026_10_05/README.md",
+      "replaces": "frozen land-weighted ANBH mean including empty cells (mixed coverage and height)",
+      "bi_decision": "no separate BI family: BI equals BV x GHSL built fraction (Spearman 0.9999); BI reported descriptively as bi_volume_per_land_m",
+      "stated_limits": [
+        "modeled height (GHSL epoch 2018, 100 m cells), not measured",
+        "Spearman 0.852 with Cook 2022 LiDAR building height; GHSL a median 5% lower",
+        "tall areas compressed: areas with LiDAR height >= 25 m read at 0.59 of LiDAR (Loop 42 m)",
+        "absolute levels compared across cities under C6: against LiDAR with the same method, GHSL is about 10-15% higher relative to LiDAR in Sao Paulo than in Chicago within each height class (corrected 2026-10-06; the earlier 1.6-2x reading relied on references that understate height)"
+      ],
+      "sensitivities": {
+        "built_weighted_p90": "bv_p90_built_m",
+        "frozen_incl_empty": "bv_frozen_incl_empty_m",
+        "bi_descriptive": "bi_volume_per_land_m"
+      },
+      "sao_paulo_values": "same table, city == 'SP'; failed S5-6 (Spearman 0.788 vs GeoSampa 2007/2014 heights). LiDAR 2020 sample (6 tiles, 88 cells): GHSL/LiDAR 1.08 (max statistic) vs Chicago 1.15; per height class about 10-15% higher than Chicago; analysis/results/SP_CHI/bv_step5_2026_10_05/lidar_sample/README.md",
+      "lidar_sample": "analysis/results/SP_CHI/bv_step5_2026_10_05/lidar_sample/README.md"
+    },
+    {
+      "id": "M1",
+      "name": "street density",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/m1_m6_step6_2026_10_06/m1_m6_by_unit.csv",
+      "table_sha256": "30883611b3f05e91e14180fd926f1a0d099b926a4b7be11b427884de3e191c7a",
+      "script": "analysis/scripts/evaluate_m1_m6_step6.py",
+      "script_sha256": "b197d1e254fd3277b8d0a44e2ba4bde3120e5ff277c86f555850561d00cb0054",
+      "source": "Overture Maps transportation segments, release 2026-08-19.0 (97.8% OpenStreetMap, 2.2% TomTom in Chicago)",
+      "validation": "analysis/results/SP_CHI/m1_m6_step6_2026_10_06/README.md",
+      "definition": "Overture road length in ten classes (motorway, trunk, primary, secondary, tertiary, residential, living_street, pedestrian, unclassified, unknown; links and both carriageways kept; service, alleys, footways, paths excluded) clipped to land / land km2 (C2)",
+      "column": "m1_km_per_km2",
+      "units": "km per km2 of land",
+      "stated_limits": [
+        "mapped street length, not legal access or walkability; divided roads count both carriageways",
+        "Spearman 0.958 with the city centerlines (status N, classes 1-4, 7, 9); Overture a median 1.8% longer",
+        "O'Hare: Overture 2.19 times the city file (airport roads tagged with street classes; city class 99 excluded)"
+      ],
+      "sao_paulo_values": "same table, city == 'SP'; Spearman 0.975 with logradouro; Marsilac 0.61 and Parque do Carmo 0.76 of the municipal length; M1 overlaps U3 and B1 (about 0.7) in Sao Paulo"
+    },
+    {
+      "id": "M6",
+      "name": "street hierarchy (major-class share)",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/m1_m6_step6_2026_10_06/m1_m6_by_unit.csv",
+      "table_sha256": "30883611b3f05e91e14180fd926f1a0d099b926a4b7be11b427884de3e191c7a",
+      "script": "analysis/scripts/evaluate_m1_m6_step6.py",
+      "script_sha256": "b197d1e254fd3277b8d0a44e2ba4bde3120e5ff277c86f555850561d00cb0054",
+      "source": "Overture Maps transportation segments, release 2026-08-19.0 (97.8% OpenStreetMap, 2.2% TomTom in Chicago)",
+      "validation": "analysis/results/SP_CHI/m1_m6_step6_2026_10_06/README.md",
+      "definition": "share of M1 street length in motorway, trunk, primary and secondary",
+      "column": "m6_major_share",
+      "units": "share of street length",
+      "sensitivities": {
+        "tertiary_share": "m6_tertiary_share",
+        "local_share": "m6_local_share",
+        "ten_shares": "share_<class>"
+      },
+      "stated_limits": [
+        "Overture class scheme (OpenStreetMap tags); median major share 0.222 vs 0.272 for the city classes 1-3 and 9 (Spearman 0.815)",
+        "Chicago class 4 ('other streets') enters only as validation, not as a feature"
+      ],
+      "sao_paulo_values": "same table, city == 'SP'; Spearman 0.828 with classvias (arterial, coletora, rodovia, VTR)"
+    },
+    {
+      "id": "U6",
+      "name": "activity composition (establishments per dwelling and their class mix)",
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/u6_activity_2026_10_06/u6_by_unit.csv",
+      "table_sha256": "fcb1c5b3e2237c49d4541ea97a8beb2068d61d8b3e1c18fe32672a36c03ef8c9",
+      "script": "analysis/scripts/build_u6_activity.py",
+      "script_sha256": "ad1429595b46424aa459bffdd5c99f94ee79cd9b1174d95b205988cb9caf6617",
+      "source": "Overture Maps places, release 2026-08-19.0 (closed and untyped places excluded); dwellings ACS 2020-2024 B25001 allocated as U3",
+      "validation": "analysis/results/SP_CHI/u6_activity_2026_10_06/README.md",
+      "definition": "address units: log classified establishments per 100 dwellings, and five city-centred log-ratios (pseudo-count 0.5) of establishments in food & drink, retail, services & offices, making & storing, institutions",
+      "columns": [
+        "u6_log_intensity",
+        "u6_clr_city_food_drink",
+        "u6_clr_city_retail",
+        "u6_clr_city_services_offices",
+        "u6_clr_city_making_storing",
+        "u6_clr_city_institutions"
+      ],
+      "units": "log ratio; centred log-ratios (relative to the city mean composition, C6)",
+      "crosswalks": {
+        "overture": "analysis/config/u6/overture_taxonomy.csv",
+        "rais_check": "analysis/config/u6/rais_cnae.csv",
+        "licence_check": "analysis/config/u6/licence_activity.csv"
+      },
+      "descriptive_only": {
+        "entropy": "u6_entropy5",
+        "shares": "share_<class>",
+        "dominant_relative_class": "dominant_relative_class"
+      },
+      "flags": {
+        "under_100_establishments": "flag_under_100_establishments (Oakland, Burnside, Riverdale)",
+        "untyped_places_over_30pct": "Kenwood, Hyde Park, Lower West Side, Lincoln Park, Lake View"
+      },
+      "stated_limits": [
+        "a unit is a unit: a kiosk counts the same as a department store (no floor area in Chicago)",
+        "Overture leans formal and online: workshops and informal trade under-seen",
+        "Chicago places without a taxonomy (17.5%) excluded as noise (median confidence 0.21, non-word names)",
+        "Overture provider mix differs by city (Chicago: Meta, BrightQuery, Microsoft, Foursquare; Sao Paulo: 95% Meta); compare relative to each city (C6)",
+        "intensity overlaps U2: Spearman 0.71 Chicago, 0.91 Sao Paulo; redundancy decided at the final joint review (C5)",
+        "years differ: places 2026, dwellings ACS 2020-2024"
+      ],
+      "sao_paulo_values": "same table, city == 'SP'; Overture chosen over CNEFE 2022 by the pre-registered RAIS 2022 test (mean Spearman 0.686 vs 0.469); dwellings CNEFE 2022 species 1-2; food & drink weakest coordinate (0.14 vs RAIS)"
+    },
+    {
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/m3_m4_m7_by_unit.csv",
+      "table_sha256": "c0d0d6395998c4c04d57f8f74e305285b68c92ccb4539e65d5ccbf4923120137",
+      "script": "analysis/scripts/evaluate_m3_m4_m7_step8.py",
+      "script_sha256": "245052dda486f22e7bcc2564c84727ce6246fe43a03310b833fffbf1a1f16d07",
+      "validation": "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/README.md",
+      "id": "M3",
+      "name": "block size",
+      "source": "Overture Maps transportation segments 2026-08-19.0",
+      "definition": "area-weighted median of ln(face land area, m2) over faces of the M1 Overture network (ten road classes, release 2026-08-19.0; service roads and alleys excluded), whole faces with water removed, weighted by land inside each area",
+      "column": "ov_m3_wmedian_ln_m2",
+      "units": "ln m2",
+      "sensitivities": {
+        "iqr": "ov_m3_wiqr_ln",
+        "unweighted_median": "ov_m3_median_ln_m2_unweighted"
+      },
+      "stated_limits": [
+        "centreline faces include half of each surrounding street",
+        "grade separation ignored (bridges split land beneath)",
+        "large non-block faces (airport, rail yards, parks) weigh as coarse grain by design",
+        "Sao Paulo like-for-like check vs municipal-line faces failed (0.563; reference has broken joins, municipal vs official 0.604); official blocks 0.977",
+        "near-redundant with M1 in Sao Paulo (-0.90), Chicago -0.54"
+      ],
+      "sao_paulo_values": "same table, city == 'SP'"
+    },
+    {
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/m3_m4_m7_by_unit.csv",
+      "table_sha256": "c0d0d6395998c4c04d57f8f74e305285b68c92ccb4539e65d5ccbf4923120137",
+      "script": "analysis/scripts/evaluate_m3_m4_m7_step8.py",
+      "script_sha256": "245052dda486f22e7bcc2564c84727ce6246fe43a03310b833fffbf1a1f16d07",
+      "validation": "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/README.md",
+      "id": "M4",
+      "name": "block shape",
+      "source": "Overture Maps transportation segments 2026-08-19.0",
+      "definition": "area-weighted medians of compactness 4*pi*A/P^2 (exterior ring) and elongation (longest/shortest side of the minimum rotated rectangle) over faces of the M1 Overture network (ten road classes, release 2026-08-19.0; service roads and alleys excluded), whole faces with water removed, weighted by land inside each area",
+      "columns": [
+        "ov_m4_wmedian_compactness",
+        "ov_m4_wmedian_elongation"
+      ],
+      "units": "dimensionless",
+      "sensitivities": {
+        "unweighted_compactness": "ov_m4_median_compactness_unweighted"
+      },
+      "stated_limits": [
+        "little variance inside Chicago's grid (compactness p10-p90 0.59-0.70)",
+        "Sao Paulo check vs municipal-line faces failed (0.335 / 0.499); post-hoc vs official quadras 0.911 / 0.805"
+      ],
+      "sao_paulo_values": "same table, city == 'SP'"
+    },
+    {
+      "status": "accepted with stated limits",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/m3_m4_m7_by_unit.csv",
+      "table_sha256": "c0d0d6395998c4c04d57f8f74e305285b68c92ccb4539e65d5ccbf4923120137",
+      "script": "analysis/scripts/evaluate_m3_m4_m7_step8.py",
+      "script_sha256": "245052dda486f22e7bcc2564c84727ce6246fe43a03310b833fffbf1a1f16d07",
+      "validation": "analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/README.md",
+      "id": "M7",
+      "name": "mapped ground-parcel density",
+      "source": "Cook County 2024 parcel polygons (ground pieces: Elevated* dropped, overlaps >= 90% merged, rule of 2026-09-30)",
+      "definition": "ground parcels per km2 of land, assigned by representative point",
+      "column": "m7_parcels_per_km2",
+      "units": "parcels per km2",
+      "sensitivities": {
+        "median_ln_parcel_m2": "m7_median_ln_m2"
+      },
+      "flags": {
+        "OHare": "DuPage part has no Cook parcels (49 per km2)"
+      },
+      "stated_limits": [
+        "record consistency, not truth: polygons vs Assessor distinct 10-digit PINs 0.998",
+        "condominium towers count once (dense high-rise areas read coarse: Loop 335 per km2)",
+        "renamed from 'cadastral parcel density': not physical cadastral entities"
+      ],
+      "sao_paulo_values": "same table, city == 'SP'; GeoSampa fiscal lot polygons (condominium lot once) vs IPTU lots 0.998"
+    },
+    {
+      "id": "U1",
+      "name": "land-use composition (land shares)",
+      "status": "admitted at the final review (J-3, 2026-10-06)",
+      "accepted": "2026-10-06",
+      "rows": "city == 'CHI'",
+      "table": "analysis/results/SP_CHI/u1_step7_2026_10_06/u1_by_unit.csv",
+      "table_sha256": "c7ea486d35f6f152a579273a7bace6f7621fc64be4c00de979e46518ef572191",
+      "script": "analysis/scripts/evaluate_u1_step7.py",
+      "script_sha256": "e562b8e4ee9526b91a8c00e7ee2c54d6ca37bbb47ac07f11f50af80b2c45f135",
+      "source": "CMAP Land Use Inventory 2023 primary LANDUSE",
+      "validation": "analysis/results/SP_CHI/u1_step7_2026_10_06/README.md",
+      "definition": "share of classified occupied lot land in residential, industrial and institutional use (commerce is the remainder and failed admission)",
+      "columns": [
+        "p_residential",
+        "p_industrial",
+        "p_institutional"
+      ],
+      "units": "share of occupied land",
+      "admission": {
+        "rule": "max |Spearman| with U6 coordinates, B1 and M1 < 0.70 in both cities (pre-registered 2026-10-06)",
+        "p_residential": "0.231 CHI / 0.588 SP: admitted",
+        "p_industrial": "0.662 / 0.692: admitted",
+        "p_institutional": "0.503 / 0.287: admitted",
+        "p_commerce": "0.593 / 0.708: not admitted"
+      },
+      "missing_rule": "S7-4 extended to the shares: missing where classified occupied land < 10% of land (O'Hare, 4.9%); J-8 available-case distance",
+      "stated_limits": [
+        "the U1 mix score (entropy) is dropped: it cannot see vertical mixing",
+        "primary use per lot; observed (CMAP) vs declared (IPTU) use across cities"
+      ]
+    }
+  ],
+  "model": {
+    "frozen": "2026-10-06 (J-10)",
+    "output": "77 x 77 dissimilarity matrix; each area's five nearest neighbours with family contributions (J-1)",
+    "implementation": "analysis/scripts/chicago_model.py; notebook analysis/chicago_model_analysis.ipynb; report docs/chicago/MODEL_REPORT.md",
+    "transforms": "log: U2, U3, U4, M1, M7, BV height, M4 elongation; identity: B1, M6, M4 compactness, M3 (already ln), U6, U1 (J-5)",
+    "scaling": "z-score with population SD on the 77 areas, capped at +-3; U6 log-ratios unscaled (J-6)",
+    "budgets": "equal per family (12 families); U6 = 1/2 intensity + 1/2 Aitchison composition; within a family, mean of squared column differences (J-7)",
+    "calibration": "each block divided by its median positive pairwise mean squared difference",
+    "distance": "D^2 = sum over blocks of budget x share x calibrated block; pairs missing a family use the families both areas have, renormalized (J-8)",
+    "redundancy": "J-4: no family pair with |Spearman| >= 0.90 in Chicago; no budgets merged",
+    "runs": {
+      "R1_equal_weights": "as above",
+      "R2_pca_weights": "principal components of R1 (from D; equals PCA of the embedding when complete), fewest components reaching 90% variance, unwhitened",
+      "R3_without_correlated_features": "drop scalar columns while any pair has |Spearman| >= 0.70 (most pairs first; ties: higher mean |rho|, then later position); equal budgets over surviving families"
+    },
+    "sensitivities": "leave-one-family-out; equal domain budgets; 500 weight draws x U(0.5,1.5) seed 20261006; robust IQR and rank-normal scaling; Ledoit-Wolf Mahalanobis; M3 unweighted, M7 median parcel size, BV volume, U6 confidence >= 0.3 (J-9)",
+    "stability_rule": "a neighbour is stable if it stays in the area's top five in >= 80% of weight draws",
+    "display_reference": "CHI:32 (Loop) for target-based views only"
+  }
+}

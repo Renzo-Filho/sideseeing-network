@@ -1,0 +1,15 @@
+method,factor,subprefeituras_tested,within_parts,share_within,verdict,merged_over_max_part_median,merged_over_max_part_max
+A,C,29,0,0.0,depends on boundaries,2.3183,4.5485
+A,R,29,0,0.0,depends on boundaries,2.489,5.1785
+A,H,29,0,0.0,depends on boundaries,2.2936,5.6786
+A,V,29,29,1.0,boundary-invariant,0.9521,1.0
+A,N,29,0,0.0,depends on boundaries,2.4111,6.6125
+A,L,29,29,1.0,boundary-invariant,0.9311,0.9924
+A,index,29,0,0.0,depends on boundaries,2.1408,4.2938
+B,C,29,29,1.0,boundary-invariant,0.6902,0.9932
+B,R,29,29,1.0,boundary-invariant,0.8234,0.9679
+B,H,29,29,1.0,boundary-invariant,0.8129,0.9939
+B,V,29,29,1.0,boundary-invariant,0.937,0.996
+B,N,29,29,1.0,boundary-invariant,0.8318,0.9922
+B,L,29,29,1.0,boundary-invariant,0.9311,0.9924
+B,index,29,28,0.9655,boundary-invariant,0.8628,0.9863

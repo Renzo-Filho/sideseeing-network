@@ -1,0 +1,22 @@
+{
+  "iptu": {
+    "records": 3920972,
+    "physical_lots": 1674966,
+    "lots_with_varying_value": 1774,
+    "occupied_m2_max_minus_median": 301494.5,
+    "lots_without_district": 2634,
+    "occupied_m2_without_district": 441493.0,
+    "occupied_m2_total": 245929935.5
+  },
+  "geosampa_records": 2817745,
+  "geosampa_number_matched": 2817745,
+  "overture_records": 7278768,
+  "geosampa_update_dates": [
+    "2014-01-03 00:00:00",
+    "2014-03-13 00:00:00"
+  ],
+  "geosampa_creation_dates": [
+    "2007-03-11 00:00:00",
+    "2007-03-11 00:00:00"
+  ]
+}

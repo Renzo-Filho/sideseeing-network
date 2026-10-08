@@ -1,0 +1,170 @@
+{
+  "CHI": {
+    "units": 77,
+    "flagged_under_100": [
+      "CHI:36",
+      "CHI:47",
+      "CHI:54"
+    ],
+    "median_intensity": 6.557882059224918,
+    "median_entropy5": 0.8878499605613308,
+    "top5_intensity": {
+      "CHI:32": 42.7,
+      "CHI:28": 19.8,
+      "CHI:76": 17.4,
+      "CHI:08": 15.0,
+      "CHI:31": 13.0
+    },
+    "bottom5_intensity": {
+      "CHI:36": 2.2,
+      "CHI:54": 2.6,
+      "CHI:43": 2.9,
+      "CHI:39": 3.5,
+      "CHI:53": 3.6
+    },
+    "dominant_relative_class_counts": {
+      "making_storing": 24,
+      "institutions": 23,
+      "food_drink": 14,
+      "services_offices": 8,
+      "retail": 8
+    },
+    "V5_spearman": {
+      "u6_log_intensity_vs_u1": 0.22479835953520164,
+      "u6_log_intensity_vs_u2": 0.7064777327935222,
+      "u6_log_intensity_vs_u3": 0.14966612335033386,
+      "u6_entropy5_vs_u1": 0.2846753246753247,
+      "u6_entropy5_vs_u2": -0.08662390241337609,
+      "u6_entropy5_vs_u3": 0.03654240496345759
+    }
+  },
+  "SP": {
+    "units": 96,
+    "flagged_under_100": [
+      "SP:52"
+    ],
+    "median_intensity": 6.9474621952512905,
+    "median_entropy5": 0.9346050062926918,
+    "top5_intensity": {
+      "SP:78": 47.4,
+      "SP:56": 39.5,
+      "SP:62": 33.8,
+      "SP:35": 29.3,
+      "SP:10": 25.8
+    },
+    "bottom5_intensity": {
+      "SP:52": 1.6,
+      "SP:25": 3.0,
+      "SP:43": 3.0,
+      "SP:33": 3.1,
+      "SP:58": 3.2
+    },
+    "dominant_relative_class_counts": {
+      "making_storing": 39,
+      "institutions": 22,
+      "food_drink": 17,
+      "services_offices": 13,
+      "retail": 5
+    },
+    "V5_spearman": {
+      "u6_log_intensity_vs_u1": 0.2913773796192609,
+      "u6_log_intensity_vs_u2": 0.9113402061855669,
+      "u6_log_intensity_vs_u3": -0.09275637547476939,
+      "u6_entropy5_vs_u1": 0.097207672578839,
+      "u6_entropy5_vs_u2": -0.5622354856212696,
+      "u6_entropy5_vs_u3": 0.03963646228974498
+    }
+  },
+  "V4_anchors": {
+    "SP:78": {
+      "u6_intensity_per_100_dwellings": 47.389,
+      "u6_entropy5": 0.869,
+      "dominant_relative_class": "retail",
+      "share_food_drink": 0.101,
+      "share_retail": 0.35,
+      "share_services_offices": 0.36,
+      "share_making_storing": 0.058,
+      "share_institutions": 0.132
+    },
+    "SP:66": {
+      "u6_intensity_per_100_dwellings": 21.856,
+      "u6_entropy5": 0.849,
+      "dominant_relative_class": "services_offices",
+      "share_food_drink": 0.11,
+      "share_retail": 0.268,
+      "share_services_offices": 0.447,
+      "share_making_storing": 0.052,
+      "share_institutions": 0.123
+    },
+    "SP:10": {
+      "u6_intensity_per_100_dwellings": 25.813,
+      "u6_entropy5": 0.7,
+      "dominant_relative_class": "retail",
+      "share_food_drink": 0.067,
+      "share_retail": 0.635,
+      "share_services_offices": 0.164,
+      "share_making_storing": 0.08,
+      "share_institutions": 0.054
+    },
+    "SP:56": {
+      "u6_intensity_per_100_dwellings": 39.498,
+      "u6_entropy5": 0.751,
+      "dominant_relative_class": "retail",
+      "share_food_drink": 0.102,
+      "share_retail": 0.599,
+      "share_services_offices": 0.154,
+      "share_making_storing": 0.077,
+      "share_institutions": 0.069
+    },
+    "SP:02": {
+      "u6_intensity_per_100_dwellings": 11.751,
+      "u6_entropy5": 0.863,
+      "dominant_relative_class": "services_offices",
+      "share_food_drink": 0.116,
+      "share_retail": 0.212,
+      "share_services_offices": 0.45,
+      "share_making_storing": 0.049,
+      "share_institutions": 0.172
+    },
+    "CHI:32": {
+      "u6_intensity_per_100_dwellings": 42.658,
+      "u6_entropy5": 0.784,
+      "dominant_relative_class": "services_offices",
+      "share_food_drink": 0.106,
+      "share_retail": 0.086,
+      "share_services_offices": 0.527,
+      "share_making_storing": 0.043,
+      "share_institutions": 0.238
+    },
+    "CHI:28": {
+      "u6_intensity_per_100_dwellings": 19.79,
+      "u6_entropy5": 0.876,
+      "dominant_relative_class": "food_drink",
+      "share_food_drink": 0.157,
+      "share_retail": 0.108,
+      "share_services_offices": 0.403,
+      "share_making_storing": 0.053,
+      "share_institutions": 0.279
+    },
+    "CHI:72": {
+      "u6_intensity_per_100_dwellings": 11.077,
+      "u6_entropy5": 0.847,
+      "dominant_relative_class": "institutions",
+      "share_food_drink": 0.11,
+      "share_retail": 0.136,
+      "share_services_offices": 0.424,
+      "share_making_storing": 0.039,
+      "share_institutions": 0.291
+    },
+    "CHI:57": {
+      "u6_intensity_per_100_dwellings": 11.07,
+      "u6_entropy5": 0.967,
+      "dominant_relative_class": "making_storing",
+      "share_food_drink": 0.179,
+      "share_retail": 0.186,
+      "share_services_offices": 0.335,
+      "share_making_storing": 0.151,
+      "share_institutions": 0.149
+    }
+  }
+}

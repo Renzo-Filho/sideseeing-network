@@ -42,7 +42,7 @@ def main(city,kind):
     districts=gpd.read_parquet(source)
     region=gpd.GeoSeries([districts.geometry.union_all().buffer(2000)],crs=districts.crs).to_crs(4326)
     west,south,east,north=map(float,region.total_bounds)
-    theme='buildings' if kind=='building' else 'transportation'
+    theme={'building':'buildings','place':'places'}.get(kind,'transportation')
     folder=CACHE/kind;folder.mkdir(exist_ok=True)
     base=f'https://stac.overturemaps.org/{RELEASE}/{theme}/{kind}'
     collection=fetch(base+'/collection.json',folder/'collection.json')
@@ -59,7 +59,7 @@ def main(city,kind):
     query_filter=f'bbox.xmin <= {east} AND bbox.xmax >= {west} AND bbox.ymin <= {north} AND bbox.ymax >= {south}'
     manifest={'release':RELEASE,'city':city,'kind':kind,'buffer_m':2000,'bbox':[west,south,east,north],
               'source_boundary_sha256':sha(source),'code_sha256':sha(Path(__file__)),'items_total':len(items),'selected_assets':paths,
-              'access_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'license':'ODbL for transportation; buildings per source attribution retained',
+              'access_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'license':{'place':'CDLA-Permissive-2.0 / Apache-2.0 per source attribution retained'}.get(kind,'ODbL for transportation; buildings per source attribution retained'),
               'exact_city_filter':'pending downstream; whole objects intersecting buffered bbox retained','partitions':[]}
     for i,path in enumerate(paths):
         target=out/f'part_{i:04}.parquet';record=target.with_suffix('.json')

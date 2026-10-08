@@ -1,0 +1,84 @@
+{
+  "CHI": {
+    "n": 77,
+    "direction_overture_municipal_spearman": 0.9879856985120142,
+    "direction_source_abs_difference_median": 0.010260698966344517,
+    "direction_source_abs_difference_max": 0.12395970424168723,
+    "direction_source_rank_shift_max": 14.0,
+    "direction_road_scope_spearman": 0.958751774541248,
+    "direction_p10_p50_p90": {
+      "0.1": 0.5688456372250279,
+      "0.5": 0.8499949308032391,
+      "0.9": 0.9844137074019087
+    },
+    "direction_lowest": {
+      "CHI:12": 0.2339593907284647,
+      "CHI:11": 0.40384932676474067,
+      "CHI:45": 0.4638008216074957
+    },
+    "direction_highest": {
+      "CHI:67": 0.9949142567921565,
+      "CHI:18": 0.9948267329152147,
+      "CHI:62": 0.9944058765902838
+    },
+    "block_spread_official_spearman": 0.8645302066354698,
+    "block_spread_municipal_spearman": 0.9359324885640675,
+    "block_spread_top_overlaps": {
+      "m1_km_per_km2": -0.6180924338819076,
+      "ov_m3_wmedian_ln_m2": 0.600347021399653,
+      "m7_parcels_per_km2": -0.5875177454124823,
+      "ov_m4_wmedian_compactness": -0.4942163100057837,
+      "p_residential": -0.4865397760134602,
+      "u3_residents": -0.4385877280614123
+    },
+    "street_direction_coherence_top_overlaps": {
+      "m6_major_share": -0.6549503128450497,
+      "ov_m4_wmedian_compactness": 0.3860087281139913,
+      "u6_clr_city_retail": 0.37512487512487513,
+      "u6_clr_city_services_offices": -0.3658972606341027,
+      "m7_parcels_per_km2": 0.23300383826699617,
+      "u6_log_intensity": -0.22243545927756453
+    }
+  },
+  "SP": {
+    "n": 96,
+    "direction_overture_municipal_spearman": 0.9909793814432989,
+    "direction_source_abs_difference_median": 0.008083704887641832,
+    "direction_source_abs_difference_max": 0.05263924243969065,
+    "direction_source_rank_shift_max": 18.0,
+    "direction_road_scope_spearman": 0.9741996744438415,
+    "direction_p10_p50_p90": {
+      "0.1": 0.054495334636239276,
+      "0.5": 0.1668718094086174,
+      "0.9": 0.37052304854111295
+    },
+    "direction_lowest": {
+      "SP:13": 0.00741406582605809,
+      "SP:30": 0.016061802998891563,
+      "SP:11": 0.027302658969077073
+    },
+    "direction_highest": {
+      "SP:45": 0.7835422785698951,
+      "SP:80": 0.7007543361920199,
+      "SP:15": 0.5589756280290217
+    },
+    "block_spread_official_spearman": 0.9213917525773196,
+    "block_spread_municipal_spearman": 0.35040694519804666,
+    "block_spread_top_overlaps": {
+      "m1_km_per_km2": -0.7547205642973412,
+      "ov_m4_wmedian_compactness": -0.7544085729788389,
+      "ov_m3_wmedian_ln_m2": 0.7528621812262616,
+      "B1_coverage_land": -0.7481958762886598,
+      "m7_parcels_per_km2": -0.567200217037439,
+      "u2_jobs_land_km2": -0.5583423765599566
+    },
+    "street_direction_coherence_top_overlaps": {
+      "ov_m4_wmedian_compactness": 0.6905995659251221,
+      "u6_log_intensity": 0.5591020075963103,
+      "B1_coverage_land": 0.5072571893651655,
+      "u2_jobs_land_km2": 0.5057379272924579,
+      "ov_m3_wmedian_ln_m2": -0.5032013022246338,
+      "u4_ptai_avg_resident": 0.4152197504069452
+    }
+  }
+}

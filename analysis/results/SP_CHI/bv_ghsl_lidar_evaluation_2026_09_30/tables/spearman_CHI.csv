@@ -1,0 +1,9 @@
+,footprint_coverage_gross,anbh_mean_incl_zero,agbh_mean,volume_density_m,ghsl_built_fraction,height_built_weighted,anbh_p50_built,anbh_p90_built
+footprint_coverage_gross,1.0,0.524,0.742,0.741,0.862,0.33,0.321,0.203
+anbh_mean_incl_zero,0.524,1.0,0.932,0.933,0.368,0.933,0.925,0.839
+agbh_mean,0.742,0.932,1.0,1.0,0.61,0.807,0.797,0.701
+volume_density_m,0.741,0.933,1.0,1.0,0.609,0.807,0.798,0.702
+ghsl_built_fraction,0.862,0.368,0.61,0.609,1.0,0.133,0.12,0.0
+height_built_weighted,0.33,0.933,0.807,0.807,0.133,1.0,0.991,0.95
+anbh_p50_built,0.321,0.925,0.797,0.798,0.12,0.991,1.0,0.921
+anbh_p90_built,0.203,0.839,0.701,0.702,0.0,0.95,0.921,1.0

@@ -1,0 +1,52 @@
+{
+  "sources": [
+    {
+      "source": "US Census Bureau TIGER/Line 2022 tabulation blocks, Illinois (POP20 = 2020 Census, P.L. 94-171, Disclosure Avoidance applied)",
+      "release": "tl_2022_17_tabblock20",
+      "observation_period": "Census day, 1 April 2020",
+      "files": {
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.dbf": "72bc17c9e8e1b7bc965290517d5fdfe70252603d8ad2bf7cfb66f92c3e5abae8",
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.prj": "0b9041e921d9ebb43247d314608fe9e38a0b008ee793067fc1806199ea1fb9dd",
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp": "3d45f2384904abb1abd3c808542791c9ebf948a233cc5815f2b3ac512c3c1a87",
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp.ea.iso.xml": "c5ee6ab0d5c21cb054710b78dcbc0c0cbba7dc8bdedecfa7f3c6a8ecc87ec854",
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shp.iso.xml": "9bb5e3609bc779b84482c1fdeac4cb37859712a43217b5c6e304cc4e00ff91aa",
+        "analysis/data/Chicago/tl_2022_17_tabblock20/tl_2022_17_tabblock20.shx": "916cc6897cf96be9b9668386d1aa72a2a71a3efe2011f908d60cdbcf022deb47"
+      }
+    },
+    {
+      "source": "City of Chicago Boundaries - Community Areas",
+      "release": "download 2026-08-31",
+      "observation_period": "current boundaries at download",
+      "files": {
+        "analysis/data/Chicago/Boundaries_-_Community_Areas_20260831.geojson": "c4b9c42adc19baca0a9c6ee3e84b302d40073d3ad99ee3d8b101d5d8217b0d16"
+      }
+    },
+    {
+      "source": "City of Chicago Hydrography",
+      "release": "download 2026-09-16",
+      "observation_period": "publisher edit dates vary; completeness review pending (release config hydro_status)",
+      "files": {
+        "analysis/data/Chicago/Hydro_20260916.geojson": "970f89278ebcb9c1799b0b2562165721979a7c10ecbbb8608206de27be0a2129"
+      }
+    },
+    {
+      "source": "US Census Bureau American Community Survey 5-year, table B01003 Total population, block groups (2020 geography); table-based Summary File",
+      "release": "ACS 2020-2024 5-year",
+      "observation_period": "pooled sample, 1 January 2020 to 31 December 2024",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/",
+      "files": {
+        "analysis/data/Chicago/acs_2020_2024_5yr/acsdt5y2024-b01003.dat": "38d1a992bb058d184009b10b9b34987279aee575e4323165cfb5706c69b6ca90",
+        "analysis/data/Chicago/acs_2020_2024_5yr/ACS20245YR_Table_Shells.txt": "5b46f4af873744a415c4974204010db976e2a61ff916674732f81c496a6b517d"
+      }
+    }
+  ],
+  "derived_inputs": {
+    "analysis/work/prepared/Chicago/chi_local_2026_09_16_v1/districts.parquet": "c3b668e1bf702ea8e1838c90ade1ca392316ddde2ecfbf9fe2659c8e2e35cd4f",
+    "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/block_district_pieces.parquet": "5697d725a995b85b5625885b3a0890eba87eb50d8e19e1424c2a26fb9ff911b3",
+    "analysis/work/prepared/Chicago/chi_functional_2026_09_16_v2/blocks.parquet": "d482e194bfa643afba39071452489569dadf47d10a9dea0d5836cb831cd72f98",
+    "analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/functional_attributes.parquet": "d5d8178117504d726b67f11a66a8cbc1d7c000ed88eb7228a75492c6d4856032",
+    "analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/border_block_accounting.parquet": "3497b9687765b1a383fad932c1a7a1525dee781a419899a8925cbf8be8068a58",
+    "analysis/results/Chicago/chi_functional_2026_09_16_v2/tables/population_period_diagnostic.csv": "4568a963c51cccc9007ed91a5dbc567478e2cde96b3ce8dc758b3f97cc64ce4a"
+  }
+}

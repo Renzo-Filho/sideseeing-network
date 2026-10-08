@@ -1,0 +1,170 @@
+{
+  "by_city": {
+    "CHI": {
+      "cells": 40471,
+      "spearman": 0.6946961515352059,
+      "median_ratio": 1.150757896733982,
+      "median_lidar_m": 8.051258768088342,
+      "median_ghsl_m": 9.299999237060547,
+      "by_class": {
+        "<8 m": {
+          "size": 19943,
+          "median": 1.267
+        },
+        "8-15 m": {
+          "size": 16518,
+          "median": 1.045
+        },
+        "15-25 m": {
+          "size": 2550,
+          "median": 0.716
+        },
+        ">=25 m": {
+          "size": 1460,
+          "median": 0.528
+        }
+      }
+    },
+    "SP": {
+      "cells": 88,
+      "spearman": 0.5380226127998311,
+      "median_ratio": 1.2322110441355236,
+      "median_lidar_m": 9.913115723149964,
+      "median_ghsl_m": 13.811330318450928,
+      "by_class": {
+        "<8 m": {
+          "size": 32,
+          "median": 1.577
+        },
+        "8-15 m": {
+          "size": 39,
+          "median": 1.206
+        },
+        "15-25 m": {
+          "size": 12,
+          "median": 0.931
+        },
+        ">=25 m": {
+          "size": 5,
+          "median": 0.626
+        }
+      }
+    }
+  },
+  "by_sp_district": {
+    "BRAS": {
+      "cells": 37,
+      "spearman": 0.21123755334281646,
+      "median_ratio": 1.1277165677359633,
+      "median_lidar_m": 12.457875468718075,
+      "median_ghsl_m": 14.195158958435059,
+      "by_class": {
+        "<8 m": {
+          "size": 1,
+          "median": 1.381
+        },
+        "8-15 m": {
+          "size": 26,
+          "median": 1.191
+        },
+        "15-25 m": {
+          "size": 10,
+          "median": 0.852
+        }
+      }
+    },
+    "CIDADE TIRADENTES": {
+      "cells": 23,
+      "spearman": 0.05731225296442688,
+      "median_ratio": 1.5083433070201187,
+      "median_lidar_m": 7.432968841898481,
+      "median_ghsl_m": 12.475932121276855,
+      "by_class": {
+        "<8 m": {
+          "size": 14,
+          "median": 1.838
+        },
+        "8-15 m": {
+          "size": 9,
+          "median": 1.3
+        }
+      }
+    },
+    "ITAIM BIBI": {
+      "cells": 28,
+      "spearman": 0.6480569239189928,
+      "median_ratio": 1.3518083552181541,
+      "median_lidar_m": 7.159767680415351,
+      "median_ghsl_m": 12.892534255981445,
+      "by_class": {
+        "<8 m": {
+          "size": 17,
+          "median": 1.369
+        },
+        "8-15 m": {
+          "size": 4,
+          "median": 2.894
+        },
+        "15-25 m": {
+          "size": 2,
+          "median": 1.539
+        },
+        ">=25 m": {
+          "size": 5,
+          "median": 0.626
+        }
+      }
+    }
+  },
+  "tiles": [
+    {
+      "tile": "3323-111",
+      "building_points": 2593402,
+      "footprints_with_height": 646,
+      "cells_inside_tile": 18,
+      "mds_sha256": "730adc748dafcc7c8b80dd569c42695f085a515c9e9f5bf7f24bcee80e75fbc2",
+      "mdt_sha256": "1852f6cbb1549f2f09e87001a0b60b6bb8f6e4bb7ba1b16e6cb8883f49b7c753"
+    },
+    {
+      "tile": "3321-344",
+      "building_points": 2646772,
+      "footprints_with_height": 897,
+      "cells_inside_tile": 19,
+      "mds_sha256": "b5ae0ec10a5d279eb0d9f52c09986c091a78e2321dba8c72d06e2304ddc99ad1",
+      "mdt_sha256": "41cc4272ec5c64a45d77df63fcb2c3c4e333a918421c679ea627827bbf7d8df2"
+    },
+    {
+      "tile": "3316-312",
+      "building_points": 1901421,
+      "footprints_with_height": 828,
+      "cells_inside_tile": 19,
+      "mds_sha256": "d84071802e1204788c222c5511ef02f5ab558e2d4f42e2abceb7ae96bedde81e",
+      "mdt_sha256": "066b37731e23cd1691964f629262b20f4414e45a2fdf0b37ddf4ed878ec231ad"
+    },
+    {
+      "tile": "3315-262",
+      "building_points": 993689,
+      "footprints_with_height": 151,
+      "cells_inside_tile": 19,
+      "mds_sha256": "6549ed15979cde5d3e1b9d34f6dbf1a4f6083bc4e6926c739abfb762208b5511",
+      "mdt_sha256": "42342e3574572a7c76d5aca8a2d3ef271d0b1e083d2142440c4c249627964b35"
+    },
+    {
+      "tile": "4316-223",
+      "building_points": 629237,
+      "footprints_with_height": 376,
+      "cells_inside_tile": 19,
+      "mds_sha256": "1565aa6c5388e3c0f46847d3d46437d56dcc5cbec2905d4a117c5071f4d2a1e2",
+      "mdt_sha256": "c5d4462da3a8fb33218dfa9b937c220a03333be5a9f0b7c2ec17ac68ca35ea76"
+    },
+    {
+      "tile": "4316-242",
+      "building_points": 771739,
+      "footprints_with_height": 350,
+      "cells_inside_tile": 18,
+      "mds_sha256": "222b192aaacc3cfec4afec6af5533d1d0cd1cccabaec3af1b6d53c776e57190a",
+      "mdt_sha256": "cefe619132c6e0bc45c408930113beba34b7cfa854e0f27fbec7b0d7f3eefbda"
+    }
+  ],
+  "method": "GHSL ANBH 2018 per 100 m cell vs footprint-area-weighted LiDAR building height; SP: Overture footprints, 95th percentile of class-6 points above MDT terrain (GeoSampa LiDAR 2020); Chicago: Cook 2022 Height (max point minus ground, feet to m); cells with >= 500 m2 footprint area and ANBH > 0"
+}

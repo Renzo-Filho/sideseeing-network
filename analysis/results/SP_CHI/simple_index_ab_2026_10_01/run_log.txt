@@ -1,0 +1,21 @@
+check ok commercial_independent_route_SP
+check ok commercial_matches_source_audit_SP
+check ok dwellings_SP_conserved
+check ok heights_A_SP_reconcile_audit
+built SP
+check ok commercial_independent_route_Chicago
+check ok commercial_matches_source_audit_Chicago
+check ok dwellings_CHI_blocks_joined
+check ok dwellings_CHI_weights_reproduce_U3
+check ok dwellings_CHI_no_overallocation
+check ok stations_CHI_all_platforms_have_parent
+check ok heights_A_Chicago_reconcile_audit
+built Chicago
+check ok heights_B_recombination_exact
+check ok units_complete
+check ok scaled_range_A
+check ok index_is_sum_A
+check ok scaled_range_B
+check ok index_is_sum_B
+done
+88.45 s 1629848 KB

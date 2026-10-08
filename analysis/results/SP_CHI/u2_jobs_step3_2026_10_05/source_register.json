@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "analysis/data/Chicago/lodes_2023/il_wac_S000_JT00_2023.csv.gz": "02cd57766b9c1bd4b85367acad26e09fe98850798d5e8ec96a3e8b4af1c01c76",
+    "analysis/data/Chicago/il_wac_S000_JT00_2022.csv": "79ec0551bc164db4147c6036a95212b0da05f26022ad4f1d5396d6d7cf6aa6a1",
+    "analysis/data/SP/Socioeconomico/rais_empregos_sp_2022.csv": "197d6040feffaf8793ab8d2b3aab345594f74036829bff283311964dd2b8eb66",
+    "analysis/work/evidence/job_allocation_experiments/district_sensitivity.csv": "74a18d23a283c030f9c3d78ef53de665577af13ecabe41cb27bac1f2829f3aca",
+    "analysis/work/evidence/job_allocation_experiments/area_first_allocations.parquet": "c8c064f3491dfd10427d792099b53e28b25dbcc4ab5cfba102c5147ed0308904",
+    "analysis/data/SP/od2023_metro/Site_190225_PesquisaOD2023.zip": "1844d38ad83c86cbb679f24c04e317aa49704c5009f8e5a0d0246f026f06bd9d",
+    "analysis/results/Chicago/chi_employment_sensitivity_2026_09_22_v2/tables/district_job_sensitivity.csv": "34cc00853ea236724c5d9f2ebe1a0c77c89f2b0d6c8a3014910e7489fe79313e",
+    "analysis/results/Chicago/chicago_u3_step1_2026_10_02/tables/u3_step1.parquet": "23fba2ae593c713f6f3ccbacbe2a1ea4e7482dba53522e30641eff21b764c4f6",
+    "analysis/work/prepared/SP/sp_prep_2026_09_10_v3/N02/districts.parquet": "1dbd618c1e1cc0720c6f33c61a6b5ded4f4b3a7441a984b319144d937a80b2f0"
+  },
+  "documentation": "analysis/results/SP_CHI/u2_source_audit_2026_10_05/README.md"
+}

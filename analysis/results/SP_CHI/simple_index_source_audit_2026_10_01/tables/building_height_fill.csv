@@ -1,0 +1,3 @@
+city,file,buildings_in_city,height_positive,num_floors_positive,height_sources
+Chicago,analysis/data/Chicago/overture_2026_08_19/building/part_0000.parquet,832457,749136,424601,"{""USGS Lidar"": 617576, ""Microsoft ML Buildings"": 131166, ""OpenStreetMap"": 394}"
+SP,analysis/data/SP/Edificacoes/sao_paulo_building_morphology.gpkg,3144642,2080386,3774,"{""OpenStreetMap"": 2080386}"

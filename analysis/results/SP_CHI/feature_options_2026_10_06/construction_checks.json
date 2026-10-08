@@ -1,0 +1,9 @@
+{
+  "status": "construction checks only, not acceptance",
+  "rows": 173,
+  "no_missing": true,
+  "bounds_0_1": true,
+  "m1_length_reproduced": true,
+  "max_abs_length_difference_km": 1.1368683772161603e-13,
+  "analytic_rotation_segmentation_examples": true
+}

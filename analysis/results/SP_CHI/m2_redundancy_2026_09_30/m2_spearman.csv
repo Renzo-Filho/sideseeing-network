@@ -1,0 +1,27 @@
+city,m2_variable,other,column,n,spearman,p
+SP,intersection_density_proxy_5m_km2,M1 street density,street_density_km_km2,96,0.8641074335322844,8.881036471054537e-30
+SP,intersection_density_proxy_5m_km2,M3 block log-area median,block_log_area_median,96,-0.3658301682040152,0.000247004101365825
+SP,intersection_density_proxy_5m_km2,M3 block log-area IQR,block_log_area_iqr,96,-0.36398534997287035,0.00026689394700208795
+SP,intersection_density_proxy_5m_km2,M4 compactness median,block_compactness_median,96,0.1327183939229517,0.19738214461137724
+SP,intersection_density_proxy_5m_km2,M7 parcel density,cadastral_parcel_density_km2,96,0.800488334237656,1.2889014198625077e-22
+SP,intersection_density_proxy_5m_km2,B1 coverage (land),building_coverage_land,96,0.5051546391752577,1.5305005098206681e-07
+SP,intersection_density_proxy_5m_km2,U3 population density,population_density_km2,96,0.6172137818773739,2.1268212734602116e-11
+SP,intersection_density_proxy_5m_km2,U2 job density,formal_job_density_area_first_km2,96,0.0458898534997287,0.6570635316024189
+SP,junctions_per_street_km,M3 block log-area median,block_log_area_median,96,-0.5802088985349972,5.811307391924643e-10
+SP,junctions_per_street_km,M3 block log-area IQR,block_log_area_iqr,96,-0.0921459576776994,0.3719015176083631
+SP,junctions_per_street_km,M4 compactness median,block_compactness_median,96,-0.24171188279978298,0.017665562713225166
+SP,junctions_per_street_km,M7 parcel density,cadastral_parcel_density_km2,96,0.5821893651654911,4.91946178275207e-10
+SP,junctions_per_street_km,B1 coverage (land),building_coverage_land,96,0.08681497558328811,0.4003162813885741
+SP,junctions_per_street_km,U3 population density,population_density_km2,96,0.3608790016277808,0.0003037519087927493
+SP,junctions_per_street_km,U2 job density,formal_job_density_area_first_km2,96,-0.3643380358111774,0.00026298088403935464
+SP,junctions_per_street_km,M1 street density,street_density_km_km2,96,0.39195604991861094,7.837857682072556e-05
+Chicago,candidate_density_km2,M1 street density,street_density_municipal_km_km2,77,0.9482622640517376,4.120593484203281e-39
+Chicago,candidate_density_km2,M3 block log-area median (experimental),block_log_area_median_experimental,77,-0.3417634996582365,0.002349543360334737
+Chicago,candidate_density_km2,M3 block log-area IQR (experimental),block_log_area_iqr_experimental,77,0.17813765182186234,0.1211391359991855
+Chicago,candidate_density_km2,M4 compactness median (experimental),block_compactness_median_experimental,77,-0.0879120879120879,0.4470863690725937
+Chicago,candidate_density_km2,"B1 coverage (municipal, land)",building_coverage_municipal_land,77,0.4389557810610442,6.510353837019894e-05
+Chicago,junctions_per_street_km,M1 street density,street_density_municipal_km_km2,77,0.5596508754403491,1.2143801970113408e-07
+Chicago,junctions_per_street_km,M3 block log-area median (experimental),block_log_area_median_experimental,77,-0.1404910878595089,0.22295994722180712
+Chicago,junctions_per_street_km,M3 block log-area IQR (experimental),block_log_area_iqr_experimental,77,-0.002444923497555076,0.9831633075948378
+Chicago,junctions_per_street_km,M4 compactness median (experimental),block_compactness_median_experimental,77,0.10818129239181869,0.3490094454453369
+Chicago,junctions_per_street_km,"B1 coverage (municipal, land)",building_coverage_municipal_land,77,0.5238971554761028,1.0104158533459682e-06

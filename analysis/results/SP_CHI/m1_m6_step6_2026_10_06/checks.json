@@ -1,0 +1,82 @@
+{
+  "SP_logradouro_nan_vertices_removed": {
+    "records": 3,
+    "of": 219193
+  },
+  "no_missing": {
+    "pass": true
+  },
+  "S6-6_CHI_M1": {
+    "pass": true,
+    "spearman": 0.9584625900415373,
+    "median_ratio": 1.0179393700984705,
+    "returned_outside_0.80_1.25": {
+      "CHI:76": 2.185
+    }
+  },
+  "S6-6_CHI_M6": {
+    "pass": true,
+    "spearman": 0.8154477101845522,
+    "median_overture_major": 0.2217697278535015,
+    "median_muni_major": 0.27202093092171375
+  },
+  "S6-7_CHI_descriptive": {
+    "m1_median": 13.202779871405662,
+    "m1_max": [
+      "CHI:34",
+      22.914675307715907
+    ],
+    "m1_min": [
+      "CHI:76",
+      3.905600022160344
+    ],
+    "m6_median": 0.2217697278535015,
+    "spearman_m1_u3": 0.3856932541143067,
+    "spearman_m1_b1": 0.39137178610862816,
+    "spearman_m6_m1": 0.261711972238288,
+    "median_share_link": 0.01773024066078703,
+    "median_share_oneway": 0.5100884524570463,
+    "median_share_tomtom": 0.013343458875497182,
+    "max_share_tomtom": [
+      "CHI:76",
+      0.05310182982910735
+    ]
+  },
+  "S6-6_SP_M1": {
+    "pass": true,
+    "spearman": 0.9753391209983722,
+    "median_ratio": 0.9364205546168163,
+    "returned_outside_0.80_1.25": {
+      "SP:52": 0.606,
+      "SP:57": 0.76
+    }
+  },
+  "S6-6_SP_M6": {
+    "pass": true,
+    "spearman": 0.8284725990233314,
+    "median_overture_major": 0.18537304649725148,
+    "median_muni_major": 0.3370782739807975
+  },
+  "S6-7_SP_descriptive": {
+    "m1_median": 17.783412492236472,
+    "m1_max": [
+      "SP:66",
+      27.42545785532212
+    ],
+    "m1_min": [
+      "SP:52",
+      0.8723138652608022
+    ],
+    "m6_median": 0.18537304649725148,
+    "spearman_m1_u3": 0.6689365165491047,
+    "spearman_m1_b1": 0.7242132392837766,
+    "spearman_m6_m1": 0.042457948996201846,
+    "median_share_link": 0.0155881699411476,
+    "median_share_oneway": 0.26549994109410824,
+    "median_share_tomtom": 0.01728510402532563,
+    "max_share_tomtom": [
+      "SP:41",
+      0.06970597422034878
+    ]
+  }
+}

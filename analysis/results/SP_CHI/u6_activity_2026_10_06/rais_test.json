@@ -1,0 +1,121 @@
+{
+  "checks": {
+    "non_negativa_establishments": 314022,
+    "non_negativa_jobs": 5390446,
+    "rt1_establishments": 282689,
+    "rt1_placed_share": 0.9875,
+    "rt2_class_share": {
+      "services_offices": 0.3122,
+      "retail": 0.2734,
+      "making_storing": 0.2077,
+      "institutions": 0.1157,
+      "food_drink": 0.0793,
+      "excluded_parking": 0.0116,
+      "excluded_nonactivity": 0.0001
+    }
+  },
+  "RT3_spearman_with_rais": {
+    "cnefe": {
+      "log_intensity": 0.2835,
+      "clr_food_drink": -0.2777,
+      "clr_retail": 0.4061,
+      "clr_services_offices": 0.8534,
+      "clr_making_storing": 0.7935,
+      "clr_institutions": 0.7544
+    },
+    "overture": {
+      "log_intensity": 0.9884,
+      "clr_food_drink": 0.1407,
+      "clr_retail": 0.4912,
+      "clr_services_offices": 0.8501,
+      "clr_making_storing": 0.7657,
+      "clr_institutions": 0.8815
+    }
+  },
+  "RT4_mean": {
+    "cnefe": 0.4689,
+    "overture": 0.6863
+  },
+  "RT4_difference_overture_minus_cnefe": 0.2174,
+  "RT4_choice": "overture",
+  "RT5_raw_count_spearman_with_rais": {
+    "cnefe": {
+      "food_drink": -0.1816,
+      "retail": 0.4798,
+      "services_offices": 0.3028,
+      "making_storing": 0.392,
+      "institutions": 0.3487,
+      "total": 0.1699
+    },
+    "overture": {
+      "food_drink": 0.7977,
+      "retail": 0.9795,
+      "services_offices": 0.9059,
+      "making_storing": 0.888,
+      "institutions": 0.9088,
+      "total": 0.9303
+    }
+  },
+  "RT5_office_gap_districts_intensity_rank": {
+    "SP:26": {
+      "cnefe": 95,
+      "overture": 14,
+      "rais": 12
+    },
+    "SP:45": {
+      "cnefe": 88,
+      "overture": 7,
+      "rais": 9
+    },
+    "SP:07": {
+      "cnefe": 92,
+      "overture": 10,
+      "rais": 16
+    },
+    "SP:35": {
+      "cnefe": 56,
+      "overture": 4,
+      "rais": 4
+    },
+    "SP:06": {
+      "cnefe": 65,
+      "overture": 6,
+      "rais": 7
+    },
+    "SP:62": {
+      "cnefe": 16,
+      "overture": 3,
+      "rais": 5
+    },
+    "SP:66": {
+      "cnefe": 27,
+      "overture": 12,
+      "rais": 10
+    },
+    "SP:78": {
+      "cnefe": 4,
+      "overture": 1,
+      "rais": 2
+    },
+    "SP:10": {
+      "cnefe": 2,
+      "overture": 5,
+      "rais": 3
+    },
+    "SP:56": {
+      "cnefe": 1,
+      "overture": 2,
+      "rais": 1
+    }
+  },
+  "RT5_rais_jobs_per_rais_establishment": {
+    "median": 12.19,
+    "top5": {
+      "SP:41": 84.6,
+      "SP:78": 43.6,
+      "SP:56": 38.4,
+      "SP:06": 35.5,
+      "SP:57": 34.2
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "U4-1_tfl_figure_2_15": {
+    "pass": true,
+    "computed": 15.161914250057173,
+    "published": 15.16
+  },
+  "CHI_residents_equal_U3": {
+    "pass": true,
+    "max_abs_diff": 1.4551915228366852e-11
+  },
+  "U4-1_CHI_grid_conserves_residents": {
+    "pass": true,
+    "points": 171185,
+    "residents": 2710782.5633361405
+  },
+  "U4-1_timetable_count_google_transit": {
+    "pass": true,
+    "departures": 75260
+  },
+  "U4-1_timetable_count_metra_gtfs_2026_10_05": {
+    "pass": true,
+    "departures": 648
+  },
+  "CHI_service": {
+    "bus": {
+      "routes": 123,
+      "stop_route_directions": 13043,
+      "departures_per_hour": 71137.0
+    },
+    "metro": {
+      "routes": 8,
+      "stop_route_directions": 321,
+      "departures_per_hour": 3149.0
+    },
+    "rail": {
+      "routes": 10,
+      "stop_route_directions": 184,
+      "departures_per_hour": 327.0
+    }
+  },
+  "CHI_u4_ptai_avg_resident_network": {
+    "segments": 251296,
+    "nodes": 536070,
+    "edges": 849437,
+    "main_component_share": 0.9930363571921578,
+    "stop_rows_over_100m_from_network": 0.0012547977561263655
+  },
+  "CHI_u4_streets_only_network": {
+    "segments": 141630,
+    "nodes": 340761,
+    "edges": 422850,
+    "main_component_share": 0.9957184067425556,
+    "stop_rows_over_100m_from_network": 0.002066725715972837
+  },
+  "SP_residents_conserved": {
+    "pass": false,
+    "census_2022_total": 11451999.0,
+    "assigned": 11446054.473149512
+  },
+  "U4-1_SP_grid_conserves_residents": {
+    "pass": true,
+    "points": 318335,
+    "residents": 11446054.473149478
+  },
+  "headway_expansion_f-6gy-sptrans-latest": {
+    "pass": true,
+    "sampled_trips": 25,
+    "mismatches": 0
+  },
+  "SP_service": {
+    "bus": {
+      "routes": 1111,
+      "stop_route_directions": 84338,
+      "departures_per_hour": 423079.0
+    },
+    "metro": {
+      "routes": 8,
+      "stop_route_directions": 198,
+      "departures_per_hour": 6126.0
+    },
+    "rail": {
+      "routes": 6,
+      "stop_route_directions": 128,
+      "departures_per_hour": 1623.0
+    }
+  },
+  "SP_u4_ptai_avg_resident_network": {
+    "segments": 297580,
+    "nodes": 325765,
+    "edges": 438177,
+    "main_component_share": 0.9852194066274769,
+    "stop_rows_over_100m_from_network": 0.004181234054615893
+  },
+  "SP_u4_streets_only_network": {
+    "segments": 264459,
+    "nodes": 288185,
+    "edges": 366851,
+    "main_component_share": 0.98173742561202,
+    "stop_rows_over_100m_from_network": 0.00627185108192384
+  },
+  "U4-1_no_missing_values": {
+    "pass": true,
+    "missing": []
+  },
+  "U4-2_CHI_footways_immaterial": {
+    "pass": false,
+    "max_abs_pct": 13.450785498484452,
+    "max_abs_rank_move": 6.0,
+    "cases": [
+      "CHI:33",
+      "CHI:35",
+      "CHI:57"
+    ],
+    "spearman": 0.9977916820022082
+  },
+  "U4-3_CHI_straight_line": {
+    "spearman": 0.9912455965087544,
+    "median_pct": 30.729281809072084,
+    "areas_moving_5_or_more_ranks": 8
+  },
+  "U4-4_CHI_descriptive": {
+    "resident_weighted_mode_share_of_ai": {
+      "bus": 0.8064735975313475,
+      "metro": 0.16094404989346558,
+      "rail": 0.03258235257518719
+    },
+    "areas_over_10pct_residents_ai_zero": [
+      "CHI:09",
+      "CHI:10",
+      "CHI:12",
+      "CHI:50",
+      "CHI:54",
+      "CHI:55",
+      "CHI:56",
+      "CHI:70",
+      "CHI:72",
+      "CHI:74",
+      "CHI:75"
+    ],
+    "spearman_vs_bus_only_u4": 0.9387191755612807
+  },
+  "U4-2_SP_footways_immaterial": {
+    "pass": false,
+    "max_abs_pct": 14.019189636803686,
+    "max_abs_rank_move": 7.0,
+    "cases": [
+      "SP:05",
+      "SP:12",
+      "SP:23",
+      "SP:44",
+      "SP:84",
+      "SP:87",
+      "SP:88"
+    ],
+    "spearman": 0.9971378187737385
+  },
+  "U4-3_SP_straight_line": {
+    "spearman": 0.9783233857840478,
+    "median_pct": 62.50556476604753,
+    "areas_moving_5_or_more_ranks": 38
+  },
+  "U4-4_SP_descriptive": {
+    "resident_weighted_mode_share_of_ai": {
+      "bus": 0.9687431500458986,
+      "metro": 0.024452744901460315,
+      "rail": 0.00680410505264121
+    },
+    "areas_over_10pct_residents_ai_zero": [
+      "SP:52",
+      "SP:55"
+    ]
+  }
+}

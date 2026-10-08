@@ -1,0 +1,101 @@
+{
+  "commercial_independent_route_SP": {
+    "passed": true,
+    "detail": "sjoin vs contains_xy counts per unit"
+  },
+  "commercial_matches_source_audit_SP": {
+    "passed": true,
+    "detail": "per-unit totals vs audit table"
+  },
+  "dwellings_SP_conserved": {
+    "passed": true,
+    "detail": "sum 4992162 vs CNEFE private dwellings 4992162"
+  },
+  "hubs_SP_inventory": {
+    "passed": true,
+    "detail": {
+      "stations_in_feed": 100,
+      "stations_in_units": 100,
+      "bus_stops_served": 22048,
+      "bus_in_units": 21978,
+      "bus_clusters": 20660,
+      "bus_clusters_in_units": 20596
+    }
+  },
+  "heights_A_SP_reconcile_audit": {
+    "passed": true,
+    "detail": "assigned 2080386 vs audit 2080386 (diff 0; points on internal unit boundaries)"
+  },
+  "commercial_independent_route_Chicago": {
+    "passed": true,
+    "detail": "sjoin vs contains_xy counts per unit"
+  },
+  "commercial_matches_source_audit_Chicago": {
+    "passed": true,
+    "detail": "per-unit totals vs audit table"
+  },
+  "dwellings_CHI_blocks_joined": {
+    "passed": true,
+    "detail": "0 pieces without HOUSING20"
+  },
+  "dwellings_CHI_weights_reproduce_U3": {
+    "passed": true,
+    "detail": "area weights reproduce published U3 population"
+  },
+  "dwellings_CHI_no_overallocation": {
+    "passed": true,
+    "detail": "max weight sum per block 1.0000000000163682"
+  },
+  "dwellings_CHI_accounting": {
+    "passed": true,
+    "detail": {
+      "blocks_intersecting_city": 39498,
+      "housing_units_in_those_blocks": 1278961,
+      "allocated": 1262055.983706038,
+      "outside_city_remainder": 16905.01629396202
+    }
+  },
+  "stations_CHI_all_platforms_have_parent": {
+    "passed": true,
+    "detail": "0 without parent"
+  },
+  "hubs_Chicago_inventory": {
+    "passed": true,
+    "detail": {
+      "stations_in_feed": 143,
+      "stations_in_units": 123,
+      "bus_stops_served": 10683,
+      "bus_in_units": 9867,
+      "bus_clusters": 6590,
+      "bus_clusters_in_units": 6044
+    }
+  },
+  "heights_A_Chicago_reconcile_audit": {
+    "passed": true,
+    "detail": "assigned 749136 vs audit 749136 (diff 0; points on internal unit boundaries)"
+  },
+  "heights_B_recombination_exact": {
+    "passed": true,
+    "detail": "built volume / built surface reproduces height_built_weighted"
+  },
+  "units_complete": {
+    "passed": true,
+    "detail": "173 units, missing: {}"
+  },
+  "scaled_range_A": {
+    "passed": true,
+    "detail": "every scaled factor spans exactly 0..1"
+  },
+  "index_is_sum_A": {
+    "passed": true,
+    "detail": "index = sum of six scaled factors"
+  },
+  "scaled_range_B": {
+    "passed": true,
+    "detail": "every scaled factor spans exactly 0..1"
+  },
+  "index_is_sum_B": {
+    "passed": true,
+    "detail": "index = sum of six scaled factors"
+  }
+}

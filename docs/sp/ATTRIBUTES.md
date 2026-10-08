@@ -19,7 +19,7 @@ For district d:
 
 District preparation repairs geometries, assigns small inter-district overlaps to ascending district ID, and preserves existing holes. The removed overlap excess was 22.067 m². Streets and footprint areas are clipped to district geometry; source objects used for counts and shape statistics retain whole-object ownership. Blocks use largest district overlap. Accepted cadastral entities inherit the prepared largest-overlap assignment; they were not reallocated for the small N02 boundary correction.
 
-**Denominator choice matters:** M1/M2/M7/U2/U3 use gross district km²; B1 primary and B3 use land m². U4 uses allocated population. M3/M4/B2 summarize object distributions rather than dividing by district area. U1/M6 use their respective classified mass/length.
+**Denominator choice matters:** M1/M2/M7/U2/U3 use gross district km²; B1 primary and B3 use land m². U4 uses allocated population. M3/M4/B2 summarize object distributions rather than dividing by district area. U1/M6 use their respective classified mass/length. A land-area or developed-land denominator for M1/U2/U3 is an open question, not a decision; see [DECISIONS.md](../DECISIONS.md).
 
 ### Inputs and lineage
 
@@ -109,7 +109,7 @@ For class c, `model_share_c = model-class length_c / total canonical district le
 
 **Observed diagnostics:** `observed_share_c = observed-class length_c / the same total length`. These are **not renormalized to observed-only length**, so their sum is the observed fraction rather than one. `street_class_imputed_share = 1 − observed_length / total_length`.
 
-**Validation/limits:** six model shares sum to one. About 23.85% of source length is imputed Local; classification completeness is not observed accuracy. The six primary shares are compositionally dependent and need appropriate treatment during modeling. Source matching and imputation flags remain available for sensitivity review.
+**Validation/limits:** six model shares sum to one. About 23.85% of source length is imputed Local; classification completeness is not observed accuracy. The six primary shares are compositionally dependent and need appropriate treatment during modeling. Source matching and imputation flags remain available for sensitivity review. A 2026-09-30 [layer comparison](../../analysis/results/SP_CHI/street_class_inventory_2026_09_30/README.md) shows `classvias` (19,910 km, six classes, essentially complete) and the `logradouro` geometry (19,370 km, no class) describe largely the same streets (95% of `logradouro` length within 5 m of `classvias`), so the imputed/unresolved share reflects the strictness of the code, address-range and buffer matching, not absence of class information in the sources.
 
 ## 7. M7 — Cadastral parcel density
 
@@ -214,7 +214,7 @@ The four prior variants allocate all source jobs by assumption; they do not esta
 
 **Validation:** allocated population totals **11,446,054.473149512** from source population 11,451,999; the outside residual is approximately 5,944.527. Coverage reports this citywide intersection fraction.
 
-**Limits:** area weighting assumes uniform within-sector population, including uninhabited portions. Values are allocated census estimates, not a direct observation of each district's current population.
+**Limits:** area weighting assumes uniform within-sector population, including uninhabited portions. Values are allocated census estimates, not a direct observation of each district's current population. A 2026-10-01 spot check finds 9.35% of residents live in sectors straddling two or more districts and 1.3% in sectors partly outside the municipality; these are worst-case bounds on misallocation, not error estimates. See [DECISIONS.md](../DECISIONS.md) ("Open question: uniform-allocation assumption and a developed-land denominator").
 
 ## 14. U4 — Population-weighted expected bus-service access
 

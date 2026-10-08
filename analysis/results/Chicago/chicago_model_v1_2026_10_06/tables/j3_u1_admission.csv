@@ -1,0 +1,5 @@
+share,CHI_max_abs_rho,CHI_with,SP_max_abs_rho,SP_with,admitted
+p_residential,0.231,u6_log_intensity,0.588,u6_log_intensity,True
+p_commerce,0.593,u6_clr_city_food_drink,0.708,u6_log_intensity,False
+p_industrial,0.662,u6_clr_city_making_storing,0.692,u6_clr_city_making_storing,True
+p_institutional,0.503,u6_clr_city_institutions,0.287,u6_log_intensity,True
