@@ -1,6 +1,6 @@
 # Harmonized model · one accepted feature family for the 173 units (96 São Paulo districts, 77 Chicago Community Areas).
 # FAMILY and TABLES, set by the dataflow below: for each input table, the SHA-256 recorded when the family was accepted
-# (analysis/config/chicago_model_v1.json, sp_chicago_model_v1.json) and the columns it supplies. A changed table is refused.
+# (analysis/config/chicago_model_v1.json, sp_chicago_model_v2.json) and the columns it supplies. A changed table is refused.
 import hashlib
 import numpy as np
 import pandas as pd

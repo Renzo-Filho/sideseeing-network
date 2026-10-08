@@ -2,6 +2,14 @@
 
 This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cross-city](harmonization/MODEL_REPORT.md) models were fitted on 6 October 2026; [STATUS.md](STATUS.md) and those reports give the current inclusion lists. Earlier statements below that fitting is paused describe their original checkpoints.
 
+## U1 commerce share in the cross-city model — 8 October 2026
+
+**Decision (user).** The São Paulo–Chicago model now includes the U1 **commerce** land share: contract `sp_chicago_model_v2`, which supersedes v1 while keeping it unchanged. The share had failed the J-3 admission rule (|Spearman| 0.708 with U6 intensity in São Paulo, rule < 0.70). It was added because commercial land is central to Brás's profile (65.0% of its occupied land, 3rd of 94 São Paulo districts).
+
+**Consequence.** Part of the commercial signal is now counted twice, in U6 (establishments per dwelling) and in U1 (commercial land). The overlap is reported in the [model report §11](harmonization/MODEL_REPORT.md#11-version-2-u1-commerce-share-8-october-2026), not corrected. Brás's first four Chicago matches are unchanged; North Center replaces Lower West Side in fifth place.
+
+**Within-family weights.** The published fit weights the four U1 shares equally. The [explorer](../viz/README.md) and Curio lane H let users change a column's weight inside its family; the block's calibration is then recomputed, so the family weight and the inner mix stay separate. Design and checks: [MODEL_PLAN, cross-city v2](chicago/MODEL_PLAN.md#cross-city-model-v2-u1-commerce-share-8-october-2026).
+
 ## Open discussion: recovering urban structure and function across São Paulo and Chicago
 
 **Current sequence — 25 September 2026:** the next model is Chicago-only; the SP–Chicago common score is future work. See the [Chicago-only reassessment](STATUS.md) for current feature gates. Cross-city semantic options below remain research notes for that later stage.

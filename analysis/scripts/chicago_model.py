@@ -17,7 +17,7 @@ TRANSFORM = {"m1_km_per_km2": "log", "ov_m3_wmedian_ln_m2": "identity", "ov_m4_w
              "ov_m4_wmedian_elongation": "log", "m6_major_share": "identity", "m7_parcels_per_km2": "log",
              "B1_coverage_land": "identity", "bv_height_built_m": "log", "u2_jobs_land_km2": "log", "u3_acs_land_km2": "log",
              "u4_ptai_avg_resident": "log", "u6_log_intensity": "identity",
-             "p_residential": "identity", "p_industrial": "identity", "p_institutional": "identity",
+             "p_residential": "identity", "p_commerce": "identity", "p_industrial": "identity", "p_institutional": "identity",
              # sensitivity substitutes (J-9)
              "ov_m3_median_ln_m2_unweighted": "identity", "m7_median_ln_m2": "identity", "bi_volume_per_land_m": "log"}
 U1_MIN_COVERAGE = 0.10     # S7-4: below 10% classified occupied land the U1 composition is missing (extended from entropy to shares)

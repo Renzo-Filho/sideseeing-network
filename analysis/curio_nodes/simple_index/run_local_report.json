@@ -18,7 +18,8 @@
     "map_top5_matches_table": true
   },
   "H": {
-    "max_abs_distance_diff": 8.881784197001252e-16,
+    "commerce_weight_0_v1_max_abs_diff": 2.220446049250313e-15,
+    "max_abs_distance_diff": 2.220446049250313e-15,
     "family_parts_sum_to_d2": true,
     "bras_ranking_identical": true,
     "bras_chicago_top5": [
@@ -26,9 +27,9 @@
       "AVONDALE",
       "LOGAN SQUARE",
       "LINCOLN PARK",
-      "LOWER WEST SIDE"
+      "NORTH CENTER"
     ],
-    "worked_example_shares_max_diff": 4.7277621229319805e-05,
+    "worked_example_shares_max_diff": 4.607262293159983e-05,
     "top10_rows": 10,
     "map_77_areas_lonlat": true,
     "map_top5_matches_table": true

@@ -33,7 +33,7 @@
       defaults: { weights: ones(AB_F), off: {}, rule: 'gap', k: 0 } },
     H: { tab: 'harmonized', doc: 'doc-h', name: 'Harmonized cross-city similarity model', short: 'Harmonized', feats: H_F,
       def: `${V.h.columns.length} measurements in ${H_F.length} feature families, standardized on a common scale (C6) and combined into a calibrated distance with equal family budgets. Two units are alike when their whole profile is close.`,
-      defaults: { weights: ones(H_F), off: {}, scaling: 'hybrid', geometry: 'full', k: 0 } },
+      defaults: { weights: ones(H_F), off: {}, cols: {}, scaling: 'hybrid', geometry: 'full', k: 0 } },
   };
   const TAB_METHOD = { 'index-a': 'A', 'index-b': 'B', harmonized: 'H' };
   const TABS = ['overview', 'doc-a', 'doc-b', 'doc-h', 'index-a', 'index-b', 'harmonized'];
@@ -43,14 +43,32 @@
     base: { A: null, B: null, H: null },                  // null = the published settings
     ui: Object.fromEntries(['A', 'B', 'H'].map((m) => [m, { breakdown: true, mapBy: 'distance', heat: 'nbhd', pcx: 0, pcy: 1, pcColor: 'city' }])),
   };
-  const weightsOf = (cfg, m) => Object.fromEntries(METHODS[m].feats.map((f) => [f, cfg.off[f] ? 0 : +cfg.weights[f]]));
+  /* Families with several scalar columns in one block (M4, U1) can be reweighted inside (column weights, cfg.cols). */
+  const MIX = Object.fromEntries(V.h.scalings.hybrid.blocks.filter((b) => b.block !== 'composition' && b.columns.length > 1).map((b) => [b.family, b.columns]));
+  const colW = (cfg, c) => (cfg.cols && c in cfg.cols ? +cfg.cols[c] : 1);
+  const mixEmpty = (cfg, f) => !!MIX[f] && MIX[f].every((c) => !(colW(cfg, c) > 0));
+  const weightsOf = (cfg, m) => Object.fromEntries(METHODS[m].feats.map((f) => [f, cfg.off[f] || (m === 'H' && mixEmpty(cfg, f)) ? 0 : +cfg.weights[f]]));
   const baseCfg = (m) => state.base[m] || METHODS[m].defaults;
   /* Canonical form of a settings object: switched-off features as a sorted list, so the order of clicks does not matter. */
-  const canon = (m, cfg) => JSON.stringify({ ...cfg, off: Object.keys(cfg.off).filter((f) => cfg.off[f]).sort(), weights: METHODS[m].feats.map((f) => +cfg.weights[f]) });
+  const canon = (m, cfg) => JSON.stringify({ ...cfg, off: Object.keys(cfg.off).filter((f) => cfg.off[f]).sort(), weights: METHODS[m].feats.map((f) => +cfg.weights[f]),
+    cols: Object.entries(cfg.cols || {}).filter(([, v]) => +v !== 1).map(([c, v]) => [c, +v]).sort() });
+  /* Published runs as settings: R1 and R2 equal weights; R3 drops the pruned columns (a one-column family is switched off). */
+  function presetCfg(name, c) {
+    const out = { ...clone(c), weights: ones(H_F), off: {}, cols: {}, geometry: name === 'R2' ? 'pca' : 'full' };
+    if (name === 'R3') V.h.r3_dropped_columns[c.scaling].forEach((col) => { const f = COLS[col].family; if (MIX[f]) out.cols[col] = 0; else out.off[f] = true; });
+    return out;
+  }
 
   /* ---------------------------------------------------------------- computation (memoized) */
-  const matsCache = {};
-  const mats = (s) => matsCache[s] || (matsCache[s] = M.blockMatrices(V.h.scalings[s].blocks, N));
+  const blocksCache = new Map();
+  function blocksFor(cfg) {
+    const key = cfg.scaling + JSON.stringify(Object.entries(cfg.cols || {}).sort());
+    if (!blocksCache.has(key)) {
+      if (blocksCache.size > 30) blocksCache.delete(blocksCache.keys().next().value);
+      blocksCache.set(key, M.blockMatrices(V.h.scalings[cfg.scaling].blocks, N, cfg.cols || {}));
+    }
+    return blocksCache.get(key);
+  }
   const memo = new Map();
 
   function run(m, cfg, base) {
@@ -60,7 +78,7 @@
     let D, Dfull, contrib = null, index = null;
     if (!Object.values(w).some((v) => v > 0)) return { error: 'Every feature is switched off. Turn at least one back on.' };
     if (m === 'H') {
-      const r = M.harmonizedDistance(mats(cfg.scaling), V.h.scalings[cfg.scaling].blocks, w, N);
+      const r = M.harmonizedDistance(blocksFor(cfg), w, N);
       D = Dfull = r.D; contrib = r.contrib;
     } else {
       const r = M.indexModel(V.ab[m].scaled, AB_F, w, N);
@@ -101,7 +119,7 @@
         const col = COLS[c];
         out.push({ id: c, code: b.family + (b.columns.length > 1 ? String.fromCharCode(97 + k) : ''), label: col.label, family: b.family,
           values: b.X.map((r) => r[k]), raw: col.raw, unit: col.unit, desc: col.desc, high: col.high,
-          level: V.h.scalings[cfg.scaling].levels[c], off: !!cfg.off[b.family] });
+          level: V.h.scalings[cfg.scaling].levels[c], off: !!cfg.off[b.family] || colW(cfg, c) === 0 });
       });
     }
     return out;
@@ -357,7 +375,7 @@
   function fillStatic() {
     const S = V.summary, nAll = N;
     const bind = { 'n-sp': S.SP.units, 'n-chi': S.CHI.units, 'n-all': nAll, 'n-cols': V.h.columns.length, 'n-fams': H_F.length,
-      'r3-hybrid': V.h.r3_dropped.hybrid.map((f) => `${f} (${FAM[f].name.toLowerCase()})`).join(', ') };
+      'r3-hybrid': V.h.r3_dropped_columns.hybrid.map((c) => `${COLS[c].family} (${COLS[c].label.toLowerCase()})`).join(', ') };
     $$('[data-bind]').forEach((el) => { el.textContent = bind[el.dataset.bind]; });
     $('#unit-list').innerHTML = U.map((u, i) => `<option value="${esc(label(i))}"></option>`).join('');
     const n = (x) => nf(0).format(x);
@@ -449,7 +467,11 @@
       const tipText = isH ? `${meta.desc} Chicago: ${meta.chicago}. São Paulo: ${meta.sao_paulo}.` : `A: ${meta.defA}. B: ${meta.defB}.`;
       return `<div class="frow" data-f="${f}"><input type="checkbox" id="on-${m}-${f}" aria-label="Use ${esc(meta.name)}" checked>
         <label class="fname" for="on-${m}-${f}" title="${esc(tipText)}"><b>${f}</b>${esc(meta.name)}</label><span class="share num"></span>
-        <input type="range" id="w-${m}-${f}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(meta.name)}"></div>`;
+        <input type="range" id="w-${m}-${f}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(meta.name)}">${isH && MIX[f] ? `
+        <details class="mix"${f === 'U1' ? ' open' : ''}><summary>Inside ${f}: ${MIX[f].length} columns</summary>${MIX[f].map((c) => `
+          <div class="mrow" data-c="${c}"><label for="cw-${c}">${esc(COLS[c].label)}</label><span class="share num"></span>
+          <input type="range" id="cw-${c}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(COLS[c].label)} inside ${f}"></div>`).join('')}
+        </details>` : ''}</div>`;
     }).join('');
     const feats = isH
       ? ['Street morphology', 'Built form', 'Use and activity'].map((d) => `<div class="domain">${d}</div>${featRows(H_F.filter((f) => FAM[f].domain === d))}`).join('')
@@ -536,13 +558,16 @@
       sl.addEventListener('input', () => { cfg().weights[f] = +sl.value; if (+sl.value > 0) delete cfg().off[f]; syncRail(m); clearTimeout(h.drag); h.drag = setTimeout(schedule, 180); });
       sl.addEventListener('change', () => { clearTimeout(h.drag); schedule(); });
     });
+    $$('.mrow', root).forEach((row) => {            // column weights inside a family (same pause-then-recompute rule)
+      const c = row.dataset.c, sl = $('input', row);
+      sl.addEventListener('input', () => { cfg().cols = { ...cfg().cols, [c]: +sl.value }; syncRail(m); clearTimeout(h.drag); h.drag = setTimeout(schedule, 180); });
+      sl.addEventListener('change', () => { clearTimeout(h.drag); schedule(); });
+    });
     $$('[data-set]', root).forEach((seg) => seg.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { cfg()[seg.dataset.set] = b.dataset.v; schedule(); } }));
     const preset = $('[data-preset]', root);
     if (preset) preset.addEventListener('click', (e) => {
       const b = e.target.closest('button'); if (!b) return;
-      const c = cfg();
-      c.weights = ones(H_F); c.off = {}; c.geometry = b.dataset.v === 'R2' ? 'pca' : 'full';
-      if (b.dataset.v === 'R3') V.h.r3_dropped[c.scaling].forEach((f) => { c.off[f] = true; });
+      state.cfg[m] = presetCfg(b.dataset.v, cfg());
       schedule();
     });
     $(`#k-${m}`).addEventListener('change', (e) => { cfg().k = +e.target.value; schedule(); });
@@ -551,7 +576,7 @@
       if (jump) document.getElementById(jump.dataset.jump).scrollIntoView({ behavior: 'smooth' });
       if (!act) return;
       const c = cfg();
-      if (act.dataset.act === 'equal') c.weights = ones(METHODS[m].feats);
+      if (act.dataset.act === 'equal') { c.weights = ones(METHODS[m].feats); c.cols = {}; }
       if (act.dataset.act === 'allon') c.off = {};
       if (act.dataset.act === 'pin') state.base[m] = clone(c);
       if (act.dataset.act === 'unpin') state.base[m] = null;
@@ -572,20 +597,30 @@
       if (document.activeElement !== sl) sl.value = c.weights[f];
       row.classList.toggle('off', !(w[f] > 0));
       $('.share', row).textContent = w[f] > 0 && tot > 0 ? pct(w[f] / tot) : 'off';
+      if (MIX[f]) {
+        const vs = MIX[f].reduce((a, col) => a + colW(c, col), 0);
+        $$('.mrow', row).forEach((mr) => {
+          const v = colW(c, mr.dataset.c), msl = $('input', mr);
+          if (document.activeElement !== msl) msl.value = v;
+          $('.share', mr).textContent = v > 0 && vs > 0 ? `${pct(v / vs)} of ${f}` : 'off';
+          mr.classList.toggle('off', !(v > 0) || !(w[f] > 0));
+        });
+      }
     });
     $$('[data-set]', root).forEach((seg) => $$('button', seg).forEach((b) => b.setAttribute('aria-pressed', String(c[seg.dataset.set] === b.dataset.v))));
     const preset = $('[data-preset]', root);
     if (preset) {
-      const allOne = H_F.every((f) => +c.weights[f] === 1), offs = Object.keys(c.off).filter((f) => c.off[f]).sort().join();
-      const which = allOne && !offs ? (c.geometry === 'pca' ? 'R2' : 'R1') : allOne && c.geometry === 'full' && offs === V.h.r3_dropped[c.scaling].slice().sort().join() ? 'R3' : null;
+      const which = ['R1', 'R2', 'R3'].find((r) => canon(m, presetCfg(r, c)) === canon(m, c)) || null;
       $$('button', preset).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === which)));
-      $('[data-preset-note]', root).textContent = which ? `Current: ${which} under ${c.scaling.replace('_', '-')} scaling` + (which === 'R3' ? ` (without ${V.h.r3_dropped[c.scaling].join(', ')})` : '') : 'Custom settings';
+      $('[data-preset-note]', root).textContent = which ? `Current: ${which} under ${c.scaling.replace('_', '-')} scaling`
+        + (which === 'R3' ? ` (without ${V.h.r3_dropped_columns[c.scaling].map((col) => `${COLS[col].family} ${COLS[col].label.toLowerCase()}`).join(', ')})` : '') : 'Custom settings';
     }
     $(`#k-${m}`).value = String(c.k || 0);
     const b = baseCfg(m);
     const desc = m === 'H' ? `${b.scaling.replace('_', '-')} scaling, ${b.geometry === 'pca' ? 'PCA distance' : 'full distance'}` : `${b.rule === 'gap' ? 'index gap' : 'factor profile'} rule`;
-    const changed = METHODS[m].feats.filter((f) => !!b.off[f] !== !!c.off[f] || +b.weights[f] !== +c.weights[f]);
-    $('[data-basebox]', root).innerHTML = `<b>${state.base[m] ? 'Pinned snapshot' : 'Published settings'}</b>: ${desc}${Object.keys(b.off).length ? `, without ${Object.keys(b.off).join(', ')}` : ''}${METHODS[m].feats.some((f) => +b.weights[f] !== 1) ? ', custom weights' : ', equal weights'}.<br>${sameAsBase(m) ? 'Current settings match it.' : `Changed from it: ${changed.length ? changed.join(', ') : 'model settings'}.`}`;
+    const changed = METHODS[m].feats.filter((f) => !!b.off[f] !== !!c.off[f] || +b.weights[f] !== +c.weights[f])
+      .concat(Object.keys(MIX).filter((f) => m === 'H' && MIX[f].some((col) => colW(b, col) !== colW(c, col))).map((f) => `${f} inner mix`));
+    $('[data-basebox]', root).innerHTML = `<b>${state.base[m] ? 'Pinned snapshot' : 'Published settings'}</b>: ${desc}${Object.keys(b.off).length ? `, without ${Object.keys(b.off).join(', ')}` : ''}${METHODS[m].feats.some((f) => +b.weights[f] !== 1) || Object.values(b.cols || {}).some((v) => +v !== 1) ? ', custom weights' : ', equal weights'}.<br>${sameAsBase(m) ? 'Current settings match it.' : `Changed from it: ${changed.length ? changed.join(', ') : 'model settings'}.`}`;
   }
 
   /* ---------------------------------------------------------------- explorer rendering */

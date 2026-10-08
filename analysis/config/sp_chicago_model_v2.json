@@ -1,0 +1,66 @@
+{
+  "contract_version": "sp_chicago_model_v2",
+  "status": "frozen 2026-10-08: sp_chicago_model_v1 with the U1 commerce land share added (user decision); any change is sp_chicago_model_v3",
+  "supersedes": "sp_chicago_model_v1, kept unchanged with its results in analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06",
+  "plan": "docs/chicago/MODEL_PLAN.md#cross-city-model-v2-u1-commerce-share-8-october-2026",
+  "decision": "User, 8 October 2026: add the U1 commerce share although it failed the J-3 admission rule (|Spearman| 0.708 with U6 intensity in São Paulo, rule < 0.70), because commercial land is central to Brás's profile. The overlap with U6 is accepted and reported, not corrected.",
+  "fit_authorized": true,
+  "units": {
+    "count": 173,
+    "sao_paulo": "96 districts SP:01-SP:96",
+    "chicago": "77 Community Areas CHI:01-CHI:77",
+    "reference": "SP:10 (Brás)"
+  },
+  "families": "the 12 families of analysis/config/chicago_model_v1.json (definitions, tables and SHA-256), São Paulo rows from the same tables; family_columns overrides a family's columns",
+  "family_columns": {
+    "U1": [
+      "p_residential",
+      "p_commerce",
+      "p_industrial",
+      "p_institutional"
+    ]
+  },
+  "u3_sao_paulo_table": "analysis/results/SP_CHI/u3_sp_catchup_2026_10_05/tables/u3_sp.parquet",
+  "u3_sao_paulo_table_sha256": "ffd6069498f7dc99110585a16a08108ce079b8e5839e5e60902185c0f6897d93",
+  "u3_sao_paulo_definition": "Census 2022 residents per km2 of land (S3-0 catch-up)",
+  "missing": "U1 (all four shares) under 10% classified occupied land: Marsilac, Parelheiros, O'Hare; available-case distance (J-8)",
+  "c6_scaling": {
+    "primary": "hybrid",
+    "absolute_pooled": [
+      "M1",
+      "M3",
+      "M4",
+      "M6",
+      "M7",
+      "B1",
+      "U3"
+    ],
+    "relative_within_city": [
+      "U2",
+      "U4",
+      "BV",
+      "U6 intensity",
+      "U1 (four shares)"
+    ],
+    "u6_composition": "city-centred log-ratios (relative); all-absolute uses raw log-ratios",
+    "variants": [
+      "all_absolute",
+      "all_relative"
+    ]
+  },
+  "model": {
+    "transforms": "as chicago_model_v1 (J-5)",
+    "scaling": "z-score, population SD, capped at +-3, over 173 units (absolute) or within each city (relative)",
+    "budgets": "equal per family; U6 = 1/2 intensity + 1/2 Aitchison composition",
+    "calibration": "median positive pairwise value over all 14,878 pairs",
+    "runs": {
+      "R1": "equal weights",
+      "R2": "PCA of the R1 geometry, fewest components >= 90%",
+      "R3": "drop scalar columns while any pair |Spearman| >= 0.70 on the scaled 173 values"
+    },
+    "robustness": "500 weight draws (seed 20261006, x U(0.5,1.5), 80% stability), leave-one-family-out, J-9 alternatives",
+    "implementation": "analysis/scripts/sp_chicago_model.py (SP_CHI_MODEL_VERSION=v2, the default; reuses chicago_model.py); notebook analysis/sp_chicago_model_analysis.ipynb; report docs/harmonization/MODEL_REPORT.md §11",
+    "within_family_weights": "equal: a block averages its columns with weight 1 each (U1: four shares, 1/4 of the U1 budget each). Explorer and Curio lane H let a user set column weights; the block's calibration is then recomputed on the reweighted block, so the family budget and the mix inside the family stay independent",
+    "outputs": "analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08"
+  }
+}

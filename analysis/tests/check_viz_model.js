@@ -18,27 +18,35 @@ function matrix(file) {                     // published n x n distance table, r
   return D;
 }
 const maxDiff = (a, b) => a.reduce((m, v, p) => Math.max(m, Math.abs(v - b[p])), 0);
-const equal = (fams) => Object.fromEntries(V.h.families.map((f) => [f.id, fams.includes(f.id) ? 0 : 1]));
-const tab = (s) => path.join(res, 'sp_chicago_model_v1_2026_10_06/tables', s);
+const famOnes = Object.fromEntries(V.h.families.map((f) => [f.id, 1]));
+const zero = (cols) => Object.fromEntries(cols.map((c) => [c, 0]));       // R3 and v1 are column weights of 0
+const results = path.join(here, '../..', V.meta.results, 'tables'), v1 = path.join(res, 'sp_chicago_model_v1_2026_10_06/tables');
+const tab = (s) => path.join(results, s);
+const dist = (s, cols) => M.harmonizedDistance(M.blockMatrices(V.h.scalings[s].blocks, n, cols), famOnes, n);
 
-/* Harmonized model: R1, R2, R3 under the three C6 scalings. */
+/* Harmonized model (published version): R1, R2, R3 under the three C6 scalings. */
 let hybrid;
 for (const s of ['hybrid', 'all_absolute', 'all_relative']) {
-  const sc = V.h.scalings[s], mats = M.blockMatrices(sc.blocks, n);
-  const r1 = M.harmonizedDistance(mats, sc.blocks, equal([]), n);
-  check(`${s} R1 distance`, maxDiff(r1.D, matrix(tab(`distance_${s}_R1.csv`))) < 1e-9, `max |diff| ${maxDiff(r1.D, matrix(tab(`distance_${s}_R1.csv`))).toExponential(1)}`);
+  const r1 = dist(s, {});
+  check(`${V.meta.contract} ${s} R1 distance`, maxDiff(r1.D, matrix(tab(`distance_${s}_R1.csv`))) < 1e-9, `max |diff| ${maxDiff(r1.D, matrix(tab(`distance_${s}_R1.csv`))).toExponential(1)}`);
   const P = M.pcoa(r1.D, n), r2 = M.euclidean(P.scores, n, P.k90);
-  check(`${s} R2 distance (${P.k90} components)`, maxDiff(r2, matrix(tab(`distance_${s}_R2.csv`))) < 1e-7, `max |diff| ${maxDiff(r2, matrix(tab(`distance_${s}_R2.csv`))).toExponential(1)}`);
-  const r3 = M.harmonizedDistance(mats, sc.blocks, equal(V.h.r3_dropped[s]), n);
-  check(`${s} R3 distance (without ${V.h.r3_dropped[s].join(', ')})`, maxDiff(r3.D, matrix(tab(`distance_${s}_R3.csv`))) < 1e-9);
-  if (s === 'hybrid') hybrid = { mats, sc, r1, P };
+  check(`${V.meta.contract} ${s} R2 distance (${P.k90} components)`, maxDiff(r2, matrix(tab(`distance_${s}_R2.csv`))) < 1e-7, `max |diff| ${maxDiff(r2, matrix(tab(`distance_${s}_R2.csv`))).toExponential(1)}`);
+  const r3 = dist(s, zero(V.h.r3_dropped_columns[s]));
+  check(`${V.meta.contract} ${s} R3 distance (without ${V.h.r3_dropped_columns[s].join(', ')})`, maxDiff(r3.D, matrix(tab(`distance_${s}_R3.csv`))) < 1e-9);
+  if (s === 'hybrid') hybrid = { r1, P };
 }
 
-const { mats, sc, r1, P } = hybrid;
+/* Column weights: the commerce share at weight 0 is exactly the frozen v1 fit (three U1 shares). */
+for (const s of ['hybrid', 'all_absolute', 'all_relative']) {
+  const d = maxDiff(dist(s, { p_commerce: 0 }).D, matrix(path.join(v1, `distance_${s}_R1.csv`)));
+  check(`commerce weight 0 reproduces v1 ${s} R1`, d < 1e-9, `max |diff| ${d.toExponential(1)}`);
+}
+
+const { r1, P } = hybrid;
 const pv = csv(tab('pca_variance.csv')).slice(1, 9).map((r) => +r[1]);
 check('hybrid PCA explained variance, PC1-PC8', pv.every((v, c) => Math.abs(v - P.explained[c]) < 1e-9));
 
-const lofo = M.compare(M.harmonizedDistance(mats, sc.blocks, equal(['M1']), n).D, r1.D, n);
+const lofo = M.compare(M.harmonizedDistance(M.blockMatrices(V.h.scalings.hybrid.blocks, n), { ...famOnes, M1: 0 }, n).D, r1.D, n);
 const sens = csv(tab('sensitivities_hybrid.csv')).find((r) => r[0] === 'without M1');
 check('sensitivity "without M1" (Spearman, shared top-5)', lofo.spearmanPairs.toFixed(3) === (+sens[1]).toFixed(3) && lofo.meanTopkOverlap.toFixed(3) === (+sens[2]).toFixed(3),
   `${lofo.spearmanPairs.toFixed(3)}, ${lofo.meanTopkOverlap.toFixed(3)}`);
@@ -46,8 +54,8 @@ check('sensitivity "without M1" (Spearman, shared top-5)', lofo.spearmanPairs.to
 const C = M.clusters(P.scores, n);
 const pub = new Map(csv(tab('ward_clusters.csv')).slice(1).map((r) => [r[0], +r[r.length - 2]]));
 const pairs = new Set(ids.map((u, i) => `${C.labels[i]}-${pub.get(u)}`));
-check(`Ward clusters: best k ${C.k}, silhouette ${C.silhouette[C.k].toFixed(3)}, same partition as published`,
-  C.k === 4 && C.silhouette[4].toFixed(3) === '0.262' && pairs.size === 4);
+const kPub = new Set(pub.values()).size;
+check(`Ward clusters: best k ${C.k}, silhouette ${C.silhouette[C.k].toFixed(3)}, same partition as published`, C.k === kPub && pairs.size === kPub);
 
 /* Cross-City Urban Index A and B. */
 const F = V.ab.factors.map((f) => f.id), ones = Object.fromEntries(F.map((f) => [f, 1]));

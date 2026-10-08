@@ -1,13 +1,16 @@
 # São Paulo–Chicago urban similarity model (`sp_chicago_model_v1`): methodology and results
 
-**Status:** fitted 6 October 2026 under the user's C6 decision (hybrid primary; all-absolute and all-relative as extra steps). Any change is `sp_chicago_model_v2`.
+**Status:**
+- **Current version: `sp_chicago_model_v2`, fitted 8 October 2026.** It is v1 with the U1 commerce land share added by user decision; see [§11](#11-version-2-u1-commerce-share-8-october-2026). Any further change is `sp_chicago_model_v3`.
+- **§1–10 describe `sp_chicago_model_v1`**, fitted 6 October 2026 under the user's C6 decision (hybrid primary; all-absolute and all-relative as extra steps). v1 is kept unchanged and stays reproducible (`SP_CHI_MODEL_VERSION=v1`).
 
 | Item | Location |
 |---|---|
-| Contract | [`analysis/config/sp_chicago_model_v1.json`](../../analysis/config/sp_chicago_model_v1.json), which uses the 12 family definitions of [`chicago_model_v1.json`](../../analysis/config/chicago_model_v1.json) |
+| Contract | v2: [`analysis/config/sp_chicago_model_v2.json`](../../analysis/config/sp_chicago_model_v2.json); v1: [`sp_chicago_model_v1.json`](../../analysis/config/sp_chicago_model_v1.json). Both use the 12 family definitions of [`chicago_model_v1.json`](../../analysis/config/chicago_model_v1.json); v2 overrides U1's columns |
 | Code | [`analysis/scripts/sp_chicago_model.py`](../../analysis/scripts/sp_chicago_model.py) (reuses [`chicago_model.py`](../../analysis/scripts/chicago_model.py)) |
 | Notebook (builds the model, all plots and tables) | [`analysis/sp_chicago_model_analysis.ipynb`](../../analysis/sp_chicago_model_analysis.ipynb) |
-| Outputs | [`analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/`](../../analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/README.md) |
+| Outputs | v2: [`analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/`](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md); v1: [`…/sp_chicago_model_v1_2026_10_06/`](../../analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/README.md) |
+| Interactive explorer | [`viz/`](../../viz/README.md): any reference unit, family and within-family weights |
 | Decision record | [MODEL_PLAN.md](../chicago/MODEL_PLAN.md), cross-city section |
 | Feature-by-feature evidence | [Chicago model report §3](../chicago/MODEL_REPORT.md#3-the-features) and each family's results README |
 
@@ -269,3 +272,77 @@ jupyter nbconvert --to notebook --execute --inplace sp_chicago_model_analysis.ip
 - Inputs are refused if any table's SHA-256 differs from the one recorded at acceptance.
 - Seed 20261006.
 - `python analysis/scripts/sp_chicago_model.py` runs the module check.
+
+## 11. Version 2: U1 commerce share (8 October 2026)
+
+### 11.1 What changed and why
+
+- **Change.** U1 compares **four** land-use shares instead of three: residential, **commerce**, industrial and institutional (21 columns instead of 20). Nothing else changed: same tables and SHA-256, transforms, C6 scaling (U1 relative), calibration, equal family budgets and runs. Contract [`sp_chicago_model_v2.json`](../../analysis/config/sp_chicago_model_v2.json).
+- **Why (user decision, 8 October 2026).** Commercial land is central to Brás's profile. Brás devotes **65.0%** of its classified occupied land to commerce, 3rd of 94 São Paulo districts with U1 (city median 22.9%; Chicago median 10.5%), z = +2.68 within São Paulo.
+- **What the decision overrides.** The commerce share failed the pre-registered J-3 admission rule: its largest |Spearman| with U6, B1 and M1 is 0.708 with U6 intensity in São Paulo (rule < 0.70 in both cities; Chicago 0.445 with U6 intensity, 0.593 with the food-and-drink log-ratio). Commercial land and establishments per dwelling are two instruments for overlapping things, so v2 counts part of the commercial signal twice, once in U6 and once in U1. The overlap is accepted and reported here, not corrected.
+- **Within the family.** The four shares are averaged with equal weights, so each carries a quarter of U1's 1/12 budget. The explorer and Curio lane H let users change these weights. The block's calibration is then recomputed on the reweighted block, so a column weight changes only the mix inside U1, and U1's own weight still sets how much the family counts:
+
+$$m_{U1}(d,e)=\frac{\sum_j v_j\,(x_{dj}-x_{ej})^2}{\sum_j v_j},\qquad v_j = 1 \text{ in the published fit.}$$
+
+  Setting the commerce weight to 0 reproduces v1 exactly (checked in `analysis/tests/check_viz_model.js` and Curio `run_local.py`, maximum difference 2.2e-10 and 2.2e-15).
+
+### 11.2 How much the model moves
+
+| Comparison, hybrid R1 | v2 against v1 |
+|---|---|
+| Spearman over all 14,878 pair distances | 0.9996 |
+| Mean shared top-5 neighbours over all units | 0.975 |
+| Brás's distances to the 77 Chicago areas (Spearman) | 0.9985 |
+| Brás's Chicago top 10 kept | 10 of 10 |
+
+### 11.3 Brás under v2 (hybrid R1)
+
+| Chicago rank | v2 area | Distance | Rank among all 172 | v1 area (distance) |
+|---|---|---|---|---|
+| 1 | West Town | 1.096 | 12 | West Town (1.075) |
+| 2 | Avondale | 1.132 | 14 | Avondale (1.119) |
+| 3 | Logan Square | 1.148 | 15 | Logan Square (1.143) |
+| 4 | Lincoln Park | 1.182 | 18 | Lincoln Park (1.196) |
+| 5 | **North Center** | 1.271 | 29 | Lower West Side (1.227) |
+| 6 | Lake View | 1.278 | 30 | North Center |
+| 7 | Lower West Side | 1.278 | 31 | McKinley Park |
+| 8 | Edgewater | 1.290 | 33 | Edgewater |
+| 9 | Albany Park | 1.298 | 34 | Lake View |
+| 10 | McKinley Park | 1.318 | 35 | Albany Park |
+
+**Reading.**
+- The first four are unchanged, and Lincoln Park moves closer: it is the most commercial of them (27.7% commerce land).
+- Lower West Side drops from 5th to 7th. Its land is industrial (49.2%) rather than commercial (13.1%), so the new share separates it from Brás. North Center enters the five.
+- Brás's ten closest units remain São Paulo inner-ring districts. **Bom Retiro (0.752) now precedes Belém (0.755)**; the closest Chicago area enters at rank 12 (v1: 11). The Loop ranks 67th of 77 Chicago areas (v1: 69th): its commerce share is the highest in Chicago (58.6%), but height, jobs and transit still set it apart.
+- **Worked example, Brás vs West Town:** $D^2 = 1.201$, so $D = 1.096$. B1 coverage 38.1%, U6 activity 22.0%, **U1 land shares 18.2%** (v1: 15.0%), U4 6.1%, every other family under 5%.
+
+**Stability under 500 weight draws** (seed 20261006): West Town, Avondale and Logan Square 100%, Lincoln Park 99.8%. These four are firmer than in v1. **North Center 27.0%: the fifth place is not firm**, as in v1, where Lower West Side held it in 55.8% of draws. Over all units, 77.5% of top-five relations are stable (v1: 75.8%).
+
+### 11.4 Across scalings and runs
+
+West Town is in Brás's Chicago top three in all nine scaling × run combinations, as in v1. Relative scaling still puts Lower West Side first.
+
+| Scaling, run | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| hybrid R1 | West Town | Avondale | Logan Square | Lincoln Park | North Center |
+| hybrid R2 | West Town | Logan Square | Avondale | Lincoln Park | North Center |
+| hybrid R3 | West Town | Avondale | Lincoln Park | Logan Square | Lower West Side |
+| all-absolute R1 | West Town | Lincoln Park | Near North Side | Lake View | Logan Square |
+| all-relative R1 | Lower West Side | Avondale | West Town | McKinley Park | Lincoln Park |
+
+**R3 pruning** (|ρ| ≥ 0.70 on the scaled 173 values) drops the same columns as v1 under hybrid (B1, U2, M1) and all-relative (U2, M3) scaling; commerce now appears among U2's correlated partners (0.70). Under **all-absolute** scaling R3 also drops the **commerce share itself** (correlated 0.76 with BV height on absolute levels), with B1, U2, U4 and M1.
+
+### 11.5 Structure
+
+- **Family contributions over all pairs:** U1 carries 6.4% of $D^2$ on average (v1: 6.9%) against a nominal 8.3%, and over half of $D^2$ in 4 pairs (v1: 13). The calibration keeps U1's typical contribution at its budget; the extra column changes which pairs U1 separates, not how much U1 counts. M3 still carries the most (19.0%).
+- **PCA:** five components carry 90.5%. PC1 (55.3%) is the same grain axis. **PC2 (19.5%) now also loads the commerce share (−0.75)** next to M6 major roads (−0.81) and BV height (−0.77), against residential land (+0.74): a residential versus central-commercial axis.
+- **Ward clusters:** still k = 4 (silhouette 0.258; v1 0.262). Brás's cluster gains Alto de Pinheiros and Morumbi (35 São Paulo + 20 Chicago units).
+- **Sensitivities:** leave-one-family-out agreement 0.906–0.997; Ledoit-Wolf Mahalanobis keeps none of Brás's Chicago top five (v1: one). Full table: `tables/sensitivities_hybrid.csv`.
+
+### 11.6 Limits added by v2
+
+- **Double counting.** In São Paulo, commerce land rises with establishments per dwelling (0.708). A unit with both high is now further from residential units than v1 made it.
+- **Instruments differ by city, as for the other U1 shares:** observed CMAP land use (2023) in Chicago, declared IPTU use (2026) in São Paulo; U1 is therefore compared relative to each city. Primary use per lot hides vertical mixing in both.
+- **Same missing units:** O'Hare, Marsilac and Parelheiros have no U1 (all four shares).
+
+Reproduce: `jupyter nbconvert --to notebook --execute --inplace analysis/sp_chicago_model_analysis.ipynb` (v2 is the default; `SP_CHI_MODEL_VERSION=v1` rebuilds v1 into its own folder).

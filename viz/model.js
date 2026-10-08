@@ -6,39 +6,71 @@
 
   const sq = (x) => x * x;
 
-  /* Harmonized model (sp_chicago_model_v1). Each block b holds X (n x c, null = missing), its share s_b of its family
-     budget and its calibration beta_b. blockMatrices precomputes m_b / beta_b once per C6 scaling. */
-  function blockMatrices(blocks, n) {
-    return blocks.map((b) => {
-      const m = new Float64Array(n * n), c = b.X[0].length;
+  /* Harmonized model (sp_chicago_model_v2). Each block b holds X (n x c, null = missing) and its columns. A block's
+     dissimilarity is the weighted mean of its columns' squared differences,
+       m_b(d,e) = sum_j v_j (x_dj - x_ej)^2 / sum_j v_j        (v_j = 1 in the published fit: a plain mean),
+     divided by beta_b, its median positive value over all pairs (J-7). Changing the column weights v_j changes the block,
+     so beta_b is recomputed: the family budget sets how much the family counts, the column weights only its inner mix.
+     A block whose columns all weigh 0 drops out; the family's other blocks share its budget (as R3 pruning does). */
+  const partsCache = new WeakMap();
+  function columnParts(blocks, n) {            // per block and column: squared differences (NaN when either unit lacks it)
+    if (partsCache.has(blocks)) return partsCache.get(blocks);
+    const parts = blocks.map((b) => b.columns.map((_, k) => {
+      const m = new Float64Array(n * n);
       for (let i = 0; i < n; i++) {
         for (let j = i; j < n; j++) {
-          let s = 0;
-          for (let k = 0; k < c; k++) {
-            const a = b.X[i][k], e = b.X[j][k];
-            if (a === null || e === null) { s = NaN; break; }
-            s += sq(a - e);
-          }
-          m[i * n + j] = m[j * n + i] = s / c / b.cal;
+          const a = b.X[i][k], e = b.X[j][k];
+          m[i * n + j] = m[j * n + i] = a === null || e === null ? NaN : sq(a - e);
         }
       }
       return m;
+    }));
+    partsCache.set(blocks, parts);
+    return parts;
+  }
+
+  function median(values) {                    // as numpy.median: mean of the two middle values when the count is even
+    const s = Float64Array.from(values).sort(), h = s.length >> 1;
+    return s.length % 2 ? s[h] : (s[h - 1] + s[h]) / 2;
+  }
+
+  /* colWeights: {column: v_j}; a column not listed weighs 1. Returns the active blocks with their share of the family
+     budget and m_b / beta_b. */
+  function blockMatrices(blocks, n, colWeights = {}) {
+    const parts = columnParts(blocks, n), out = [];
+    blocks.forEach((b, bi) => {
+      const v = b.columns.map((c) => (c in colWeights ? +colWeights[c] : 1)), vs = v.reduce((x, y) => x + y, 0);
+      if (!(vs > 0)) return;
+      const m = new Float64Array(n * n), pos = [];
+      for (let p = 0; p < n * n; p++) {
+        let s = 0;
+        for (let k = 0; k < v.length; k++) if (v[k] > 0) s += v[k] * parts[bi][k][p];
+        m[p] = s / vs;
+      }
+      for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const x = m[i * n + j]; if (x > 0) pos.push(x); }
+      const beta = median(pos);
+      for (let p = 0; p < n * n; p++) m[p] /= beta;
+      out.push({ family: b.family, block: b.block, m, beta });
     });
+    const count = {};
+    out.forEach((b) => { count[b.family] = (count[b.family] || 0) + 1; });
+    out.forEach((b) => { b.share = 1 / count[b.family]; });
+    return out;
   }
 
   /* D^2(d,e) = sum_b w_f(b) s_b m_b / beta_b over the blocks both units have, divided by the budget of those blocks
      (J-7, J-8). Weights need not sum to 1: the denominator renormalizes. Returns D and each family's part of D^2. */
-  function harmonizedDistance(mats, blocks, weights, n) {
+  function harmonizedDistance(bms, weights, n) {
     const N = n * n, num = new Float64Array(N), den = new Float64Array(N), contrib = {};
-    blocks.forEach((b, bi) => {
+    for (const b of bms) {
       const w = (weights[b.family] || 0) * b.share;
-      if (!(w > 0)) return;
-      const m = mats[bi], c = contrib[b.family] || (contrib[b.family] = new Float64Array(N));
+      if (!(w > 0)) continue;
+      const m = b.m, c = contrib[b.family] || (contrib[b.family] = new Float64Array(N));
       for (let p = 0; p < N; p++) {
         const v = m[p];
         if (v === v) { num[p] += w * v; den[p] += w; c[p] += w * v; }
       }
-    });
+    }
     const D = new Float64Array(N);
     for (let p = 0; p < N; p++) D[p] = Math.sqrt(num[p] / den[p]);
     for (const f in contrib) { const c = contrib[f]; for (let p = 0; p < N; p++) c[p] /= den[p]; }

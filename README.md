@@ -11,7 +11,7 @@ Urban-form similarity research: characterize São Paulo's municipal districts (r
 | Understand the research design | [docs/PROTOCOL.md](docs/PROTOCOL.md) |
 | See why a feature was kept, deferred or changed | [docs/DECISIONS.md](docs/DECISIONS.md) |
 | Explore the three cross-city methods interactively (any reference unit) | [Cross-City Urban Explorer](viz/README.md): `python3 -m http.server 8765 --directory viz` |
-| Read the São Paulo–Chicago model (Brás reference) | [model report](docs/harmonization/MODEL_REPORT.md) · [notebook](analysis/sp_chicago_model_analysis.ipynb) · [contract](analysis/config/sp_chicago_model_v1.json) |
+| Read the São Paulo–Chicago model (Brás reference; current version v2, with the U1 commerce share) | [model report](docs/harmonization/MODEL_REPORT.md) (v2: §11) · [notebook](analysis/sp_chicago_model_analysis.ipynb) · [contract v2](analysis/config/sp_chicago_model_v2.json) · [v1](analysis/config/sp_chicago_model_v1.json) |
 | Read the Chicago model (methodology, features, results) | [model report](docs/chicago/MODEL_REPORT.md) · [notebook](analysis/chicago_model_analysis.ipynb) · [contract](analysis/config/chicago_model_v1.json) |
 | Read Chicago feature definitions and sources | [model plan](docs/chicago/MODEL_PLAN.md) · [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
 | Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |

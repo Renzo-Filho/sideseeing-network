@@ -16,7 +16,8 @@ import dataflow
 
 ROOT = Path(__file__).resolve().parents[3]
 PUB = ROOT / 'analysis/results/SP_CHI/simple_index_ab_2026_10_01/tables'
-PUB_H = ROOT / 'analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/tables'
+PUB_H = ROOT / 'analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/tables'
+PUB_H_V1 = ROOT / 'analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/tables'
 
 
 def resolver(store):
@@ -79,13 +80,18 @@ def run(store, lanes='ABH'):
     return {n['title']: out[n['id']] for n in order}
 
 
-def check_harmonized(res):
-    """Lane H against the published hybrid R1 fit: all pair distances, Brás's ranking and the worked example."""
-    pairs = res['H · distance between every pair of units (R1, equal family budgets)']
+def matrix_diff(pairs, published):
     D = pairs.pivot(index='unit_id', columns='other_id', values='distance')
-    pub = pd.read_csv(PUB_H / 'distance_hybrid_R1.csv', index_col=0)
+    pub = pd.read_csv(published, index_col=0)
     D = D.reindex(index=pub.index, columns=pub.columns).to_numpy(copy=True)
     np.fill_diagonal(D, 0)
+    return float(np.abs(D - pub.to_numpy()).max())
+
+
+def check_harmonized(res, profile=None, distance_code=None):
+    """Lane H against the published v2 hybrid R1 fit (all pair distances, Brás's ranking, the worked example) and, when
+    the profile and the distance node's code are given, the column weights: commerce at weight 0 must give v1."""
+    pairs = res['H · distance between every pair of units (R1, equal family budgets)']
     parts = pairs[[c for c in pairs if c.startswith('d2_')]].sum(axis=1)
     rank = pd.read_csv(PUB_H / 'ranking_bras_hybrid_R1.csv', index_col=0)
     bras = pairs[pairs.unit_id == 'SP:10'].sort_values(['distance', 'other_id'])
@@ -95,7 +101,14 @@ def check_harmonized(res):
     shares = pd.Series({f: west['d2_' + f] for f in worked.index}) / west.distance ** 2
     near = res['H · five Chicago areas closest to Brás']
     mp = res['H · Chicago areas by closeness to Brás (map data)']
-    return {'max_abs_distance_diff': float(np.abs(D - pub.to_numpy()).max()),
+    out = {}
+    if distance_code is not None:
+        code = distance_code.replace('COLUMN_WEIGHTS = {}', "COLUMN_WEIGHTS = {'p_commerce': 0}", 1)
+        assert code != distance_code
+        ns = {}
+        exec('def userCode(arg):\n' + textwrap.indent(code, '    '), ns)
+        out['commerce_weight_0_v1_max_abs_diff'] = matrix_diff(ns['userCode'](profile), PUB_H_V1 / 'distance_hybrid_R1.csv')
+    return {**out, 'max_abs_distance_diff': matrix_diff(pairs, PUB_H / 'distance_hybrid_R1.csv'),
             'family_parts_sum_to_d2': bool(np.allclose(parts, pairs.distance ** 2)),
             'bras_ranking_identical': bras.other_id.tolist() == rank.index.tolist(),
             'bras_chicago_top5': chi.other_name.head(5).tolist(),
@@ -111,7 +124,8 @@ if __name__ == '__main__':
     pub = pd.read_csv(PUB / 'index_A_B.csv').set_index('unit_id')
     report = {}
     if 'H' in lanes:
-        report['H'] = check_harmonized(res)
+        dist = next(n for n in dataflow.graph()[0] if n['title'] == 'H · distance between every pair of units (R1, equal family budgets)')
+        report['H'] = check_harmonized(res, res['H · standardized profile (transforms, C6 hybrid scaling)'], dist['content'])
         print(res['H · top 10 units closest to Brás'].to_string(index=False))
         print(res['H · five Chicago areas closest to Brás'].to_string(index=False))
     for m in [x for x in 'AB' if x in lanes]:

@@ -38,7 +38,7 @@ FAMILIES = {   # id: (name, domain, what it measures)
     "U3": ("Resident density", "Use and activity", "Residents per km² of land."),
     "U4": ("Transit access", "Use and activity", "PTAL Access Index (TfL method) for bus and rail, averaged over residents."),
     "U6": ("Activity composition", "Use and activity", "Establishments per 100 dwellings (intensity) and their mix across five activity classes (composition)."),
-    "U1": ("Land-use shares", "Use and activity", "Residential, industrial and institutional shares of classified occupied land."),
+    "U1": ("Land-use shares", "Use and activity", "Residential, commerce, industrial and institutional shares of classified occupied land."),
 }
 SOURCES = {    # family: (Chicago source, São Paulo source, same instrument?)
     "M1": ("Overture streets 2026-08-19", "Overture streets 2026-08-19", True),
@@ -73,6 +73,7 @@ COLUMNS = {    # column: (short label, unit, how to read a high value)
     "u6_clr_city_making_storing": ("Mix: making & storing", "clr", "relatively more workshops, manufacturing and storage"),
     "u6_clr_city_institutions": ("Mix: institutions", "clr", "relatively more schools, health, religious and public institutions"),
     "p_residential": ("Residential land", "share", "more occupied land in residential use"),
+    "p_commerce": ("Commerce land", "share", "more occupied land in commercial use"),
     "p_industrial": ("Industrial land", "share", "more occupied land in industrial use"),
     "p_institutional": ("Institutional land", "share", "more occupied land in institutional use"),
 }
@@ -81,6 +82,7 @@ COL_DESC = {   # columns of multi-column families; single-column families use th
     "ov_m4_wmedian_elongation": "Area-weighted median elongation of the street blocks, longest ÷ shortest side.",
     "u6_log_intensity": "Establishments (Overture places, five activity classes) per 100 dwellings, in logs.",
     "p_residential": "Share of classified occupied land in residential use.",
+    "p_commerce": "Share of classified occupied land in commercial use. Added in v2 by user decision although it overlaps U6 intensity (Spearman 0.708 in São Paulo).",
     "p_industrial": "Share of classified occupied land in industrial use.",
     "p_institutional": "Share of classified occupied land in institutional use.",
 }
@@ -142,7 +144,7 @@ def harmonized(df, subs, fams, ids):
                            blocks=[dict(family=b["family"], block=b["block"], columns=b["columns"], share=b["share"], cal=b["cal"],
                                         X=[clean(row) for row in b["X"]]) for b in bl])
     col_fam = {c: f for f, cs in fams.items() for c in cs}
-    r3 = {s: sorted({col_fam[c] for c in pd.read_csv(XR / f"r3_pruning_log_{s}.csv").dropped}) for s in scalings}
+    r3 = {s: sorted(pd.read_csv(XR / f"r3_pruning_log_{s}.csv").dropped) for s in scalings}    # dropped columns
     columns = [dict(id=c, family=col_fam[c], label=COLUMNS[c][0], unit=COLUMNS[c][1], high=COLUMNS[c][2],
                     desc=COL_DESC.get(c, FAMILIES[col_fam[c]][2]),
                     transform=cm.TRANSFORM.get(c, "identity (log-ratio)"), raw=clean(df.loc[ids, c].to_numpy(float)))
@@ -159,7 +161,7 @@ def harmonized(df, subs, fams, ids):
         stability_bras=records(pd.read_csv(XR / "stability_bras_top5_chicago.csv")),
         r3_logs={s: records(pd.read_csv(XR / f"r3_pruning_log_{s}.csv")) for s in scalings},
     )
-    return dict(families=families, columns=columns, scalings=scalings, r3_dropped=r3, published=published)
+    return dict(families=families, columns=columns, scalings=scalings, r3_dropped_columns=r3, published=published)
 
 
 def index_ab(ids):
@@ -192,7 +194,7 @@ def main():
     ids = df.index.tolist()
     ab, comp = index_ab(ids)
     data = dict(
-        meta=dict(contract=x["contract_version"], reference=xm.REFERENCE, simplify_m=SIMPLIFY_M,
+        meta=dict(contract=x["contract_version"], results=str(xm.OUT.relative_to(xm.ROOT)), reference=xm.REFERENCE, simplify_m=SIMPLIFY_M,
                   generated_by="analysis/scripts/export_viz_data.py"),
         units=[dict(id=u, name=unit_name(names[u]), city=city[u], land_km2=round(float(comp.land_km2[u]), 3)) for u in ids],
         polygons=polygons(ids),

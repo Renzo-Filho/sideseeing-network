@@ -1,20 +1,24 @@
-"""São Paulo–Chicago urban similarity model (contract sp_chicago_model_v1; MODEL_PLAN cross-city X-1 to X-9).
+"""São Paulo–Chicago urban similarity model (contracts sp_chicago_model_v1 and v2; MODEL_PLAN cross-city X-1 to X-9).
 Reuses the Chicago model's transforms, blocks, distance, PCA and robustness functions (chicago_model.py) and adds the
-173-unit inputs and the C6 scaling variants. Shared by analysis/sp_chicago_model_analysis.ipynb."""
-import json
+173-unit inputs and the C6 scaling variants. Shared by analysis/sp_chicago_model_analysis.ipynb.
+
+SP_CHI_MODEL_VERSION selects the contract: v2 (default) adds the U1 commerce share; v1 reproduces the first fit."""
+import json, os
 import geopandas as gpd, numpy as np, pandas as pd
 import chicago_model as cm
 
 A, ROOT, CLR = cm.A, cm.ROOT, cm.CLR
-CONTRACT = A / "config/sp_chicago_model_v1.json"
-OUT = A / "results/SP_CHI/sp_chicago_model_v1_2026_10_06"
+VERSION = os.environ.get("SP_CHI_MODEL_VERSION", "v2")
+CONTRACT = A / f"config/sp_chicago_model_{VERSION}.json"
+OUT = {"v1": A / "results/SP_CHI/sp_chicago_model_v1_2026_10_06",          # each version publishes into its own folder
+       "v2": A / "results/SP_CHI/sp_chicago_model_v2_2026_10_08"}[VERSION]
 REFERENCE = "SP:10"
 U3_SP = "analysis/results/SP_CHI/u3_sp_catchup_2026_10_05/tables/u3_sp.parquet"
 RAW_CLR = {c: c.replace("u6_clr_city_", "clr_") for c in CLR}
 ABSOLUTE = ["m1_km_per_km2", "ov_m3_wmedian_ln_m2", "ov_m4_wmedian_compactness", "ov_m4_wmedian_elongation",   # same instrument
             "m6_major_share", "m7_parcels_per_km2", "B1_coverage_land", "u3_acs_land_km2"]
 RELATIVE = ["u2_jobs_land_km2", "u4_ptai_avg_resident", "bv_height_built_m", "u6_log_intensity",                 # instruments differ
-            "p_residential", "p_industrial", "p_institutional"]
+            "p_residential", "p_commerce", "p_industrial", "p_institutional"]
 SUB_OF = {new: old for _, old, new in cm.SUBSTITUTES.values()}            # a substitute keeps the level of the column it replaces
 ACCENTS = {"Bras": "Brás", "Se": "Sé", "Republica": "República", "Consolacao": "Consolação", "Belem": "Belém", "Butanta": "Butantã",
            "Brasilandia": "Brasilândia", "Agua Rasa": "Água Rasa", "Tatuape": "Tatuapé", "Grajau": "Grajaú", "Jacana": "Jaçanã",
@@ -36,6 +40,7 @@ def load_inputs():
     and, for São Paulo U3, in the cross-city contract."""
     c = json.loads(cm.CONTRACT.read_text())
     x = json.loads(CONTRACT.read_text())
+    override = x.get("family_columns", {})          # v2: U1 adds p_commerce (same accepted table and SHA-256)
     families, frames, extra = {}, [], []
     for f in c["families"]:
         p = ROOT / f["table"]
@@ -43,7 +48,7 @@ def load_inputs():
             raise ValueError(f"{f['id']}: {f['table']} changed since acceptance")
         t = cm.read(p)
         t = t[t.unit_id.astype(str).str.match(r"^(SP|CHI):")].set_index("unit_id")
-        cols = f.get("columns") or [f["column"]]
+        cols = override.get(f["id"]) or f.get("columns") or [f["column"]]
         if f["id"] == "U1":
             t.loc[t.occupied_coverage < cm.U1_MIN_COVERAGE, cols] = np.nan
         if f["id"] == "U3":
@@ -143,4 +148,5 @@ if __name__ == "__main__":       # runnable check: hybrid R1 is finite and symme
     x, df, subs, names, city, fams = load_inputs()
     D, _ = cm.distance(cm.blocks(frame_for(df, subs, "hybrid"), fams, levels=levels("hybrid")), cm.equal_budgets(fams))
     assert np.isfinite(D).all() and np.allclose(D, D.T) and np.allclose(np.diag(D), 0) and REFERENCE in df.index
-    print("ok:", len(df), "units;", city.value_counts().to_dict(), "; missing U1:", df.index[df.p_residential.isna()].tolist())
+    print("ok:", x["contract_version"], len(df), "units,", sum(map(len, fams.values())), "columns;", city.value_counts().to_dict(),
+          "; missing U1:", df.index[df.p_residential.isna()].tolist())

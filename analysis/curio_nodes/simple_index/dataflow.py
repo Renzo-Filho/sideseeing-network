@@ -3,8 +3,8 @@ cross-city similarity model (bottom lane, H).
 
 Each lane is a complete dataflow ending in the same three views: a top-10 table, the five Chicago areas closest to
 Brás, and a map of Chicago areas by closeness to Brás. A and B: source loaders → factor nodes → merge → index.
-H: one loader and one node per accepted feature family → one merge per domain → standardized profile (C6 hybrid)
-→ distance between every pair of units (R1). Node code lives in nodes/*.py; this module only wires and places them.
+H (sp_chicago_model_v2): one loader and one node per accepted feature family → one merge per domain → standardized
+profile (C6 hybrid) → distance between every pair of units (R1; family and column weights editable in that node). Node code lives in nodes/*.py; this module only wires and places them.
 """
 import json
 import uuid
@@ -38,7 +38,7 @@ D = {
     'ghsl_chi': 'imported.ghsl.chicago-height-volume-rasters',
     'ghsl_sp': 'imported.ghsl.sao-paulo-height-volume-rasters',  # raster collections (folder source)
 }
-# Harmonized model (lane H): the accepted family tables of contract sp_chicago_model_v1, registered as project datasets.
+# Harmonized model (lane H): the accepted family tables of contract sp_chicago_model_v2, registered as project datasets.
 H_TABLES = {  # table path in the repository -> dataset id
     'analysis/results/SP_CHI/m1_m6_step6_2026_10_06/m1_m6_by_unit.csv': 'data.sideseeing.feature-m1-m6',
     'analysis/results/SP_CHI/m3_m4_m7_step8_2026_10_06/m3_m4_m7_by_unit.csv': 'data.sideseeing.feature-m3-m4-m7',
@@ -62,10 +62,10 @@ def h_families():
     """Per family: the loader's datasets and, per input table, (accepted SHA-256, {source column: model column})."""
     root = Path(__file__).resolve().parents[3]
     chicago = json.loads((root / 'analysis/config/chicago_model_v1.json').read_text())
-    cross = json.loads((root / 'analysis/config/sp_chicago_model_v1.json').read_text())
+    cross = json.loads((root / 'analysis/config/sp_chicago_model_v2.json').read_text())
     out = {}
     for f in chicago['families']:
-        cols = f.get('columns') or [f['column']]
+        cols = cross.get('family_columns', {}).get(f['id']) or f.get('columns') or [f['column']]   # v2: U1 adds p_commerce
         out[f['id']] = {'sources': {'table': H_TABLES[f['table']]}, 'tables': {'table': (f['table_sha256'], {c: c for c in cols})}}
     u3 = out['U3']   # U3 has one table per city: Chicago in the Chicago contract, São Paulo in the cross-city one
     out['U3'] = {'sources': {'chicago': u3['sources']['table'], 'sao_paulo': H_TABLES[cross['u3_sao_paulo_table']]},
@@ -296,7 +296,7 @@ def spec(installed_at):
         'task': 'Build the advisor’s composite index (A, top), the corrected index (B, middle) and the harmonized cross-city similarity '
                 'model (H, bottom) for 96 São Paulo districts and 77 Chicago Community Areas',
         'description': 'Method A: counts per unit, pooled min–max, equal weights. Method B: counts per km² of land and GHSL height. '
-                       'H: 12 accepted feature families, C6 hybrid scaling, calibrated distance with equal family budgets (sp_chicago_model_v1, R1). '
+                       'H: 12 accepted feature families, C6 hybrid scaling, calibrated distance with equal family budgets (sp_chicago_model_v2, R1). '
                        'Each lane ends in the top 10 table, the five Chicago areas closest to Brás and a map of Chicago areas by closeness to Brás.',
         'timestamp': installed_at, 'provenance_id': nid('provenance'), 'packages': ['curio.builtin@1'],
         'datasets': [{'datasetId': d, 'dirName': f'{d}@1', 'origin': 'imported', 'producerNodeId': None, 'consumerNodeIds': [],

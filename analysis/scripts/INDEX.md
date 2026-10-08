@@ -150,7 +150,7 @@ Scripts stay flat: they resolve the repo root with `parents[2]` and import each 
 | `prepare_chicago_functional.py` | Versioned functional extension; resume only when input/code/output hashes match. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md (+1) |
 | `review_chicago_centerline_class_vs_overture.py` | Cross-tabulate Chicago centerline CLASS (status N) against the nearest raw Overture road class. | — | analysis/results/Chicago/chicago_centerline_class_review_2026_09_30 |
 | `scan_chicago_floor_fields.py` | Scan local Chicago building, cadastral and workbook sources for floor/story fields; write non-null and positive counts to a JSON path given as argv[1]. | — | docs/harmonization/B_FAMILY_DECISION_REPORT.md |
-| `sp_chicago_model.py` | São Paulo–Chicago urban similarity model (contract sp_chicago_model_v1; MODEL_PLAN cross-city X-1 to X-9). Reuses the Chicago model's transforms, blocks, distance, PCA and robustne… | export_viz_data | analysis/config/sp_chicago_model_v1.json<br>analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06<br>analysis/sp_chicago_model_analysis.ipynb (+3) |
+| `sp_chicago_model.py` | São Paulo–Chicago urban similarity model (contracts sp_chicago_model_v1 and v2; MODEL_PLAN cross-city X-1 to X-9). Reuses the Chicago model's transforms, blocks, distance, PCA and … | export_viz_data | analysis/config/sp_chicago_model_v1.json<br>analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06<br>analysis/sp_chicago_model_analysis.ipynb (+3) |
 | `validate_chicago_attributes.py` | Independent release checks and pilot reconstruction for Chicago's local baseline. | — | analysis/results/Chicago/chi_local_2026_09_16_v1<br>docs/chicago/ATTRIBUTES.md<br>docs/chicago/EXECUTION_LOG.md (+1) |
 | `validate_chicago_cadastral_acquisition.py` | Independent read-only checks for downloaded Chicago-only candidates. | — | analysis/results/Chicago/chicago_cadastral_2026_09_18<br>docs/survey/EXPERIMENT_LEDGER.md<br>docs/survey/METHODS_FIELD_GUIDE.md |
 | `validate_chicago_functional.py` | Independent release audit and publication of the Chicago functional extension. | — | analysis/results/Chicago/chi_functional_2026_09_16_v2<br>docs/chicago/ATTRIBUTES.md<br>docs/survey/EXPERIMENT_LEDGER.md |
@@ -226,18 +226,19 @@ Frozen method contracts; a change is a new versioned file, never an edit. "Read 
 | `chicago_functional_v2.json` | prepare_chicago_functional |
 | `chicago_m3_alley_repair_v2.json` | evaluate_chicago_m3_alley_3m_motorway_stress_2026_09_26, evaluate_chicago_m3_complete_zones_v1_2026_09_26, evaluate_chicago_m3_motorway_complete_zone_v1_2026_09_26 |
 | `chicago_m3_motorway_candidate_v1.json` | evaluate_chicago_m3_motorway_holdout_2026_09_26, summarize_chicago_block_protocol_pilot_v1 |
-| `chicago_model_v1.json` | chicago_model, sp_chicago_model, sp_chicago_model_v1.json |
+| `chicago_model_v1.json` | chicago_model, sp_chicago_model_v1.json, sp_chicago_model_v2.json |
 | `sp_attributes_2026_09_11.json` | core, review_sp_attribute_release, sp_current_methods.json |
 | `sp_chicago_harmonization_v1.json` | finalize_harmonization_checkpoint, sp_chicago_harmonization_v2_full_scope.json |
 | `sp_chicago_harmonization_v2_full_scope.json` | — (cited by docs only) |
-| `sp_chicago_model_v1.json` | sp_chicago_model |
+| `sp_chicago_model_v1.json` | — (cited by docs only) |
+| `sp_chicago_model_v2.json` | — (cited by docs only) |
 | `sp_current_methods.json` | review_sp_attribute_release |
 | `sp_district_subprefeitura.csv` | build_simple_index_ab, sp_urban_model_v2.json |
 | `sp_preparation_v2.json` | prepare_sp_inputs |
 | `sp_preparation_v3.json` | prepare_sp_v3, review_sp_v3, test_sp_v3 |
 | `sp_urban_model_v1.json` | review, validate_sp_urban_model |
 | `sp_urban_model_v2.json` | model_sp_urban_similarity, test_sp_model, validate_sp_urban_model |
-| `u6` | build_u6_activity, chicago_model, export_viz_data, sp_chicago_model, chicago_model_v1.json, sp_chicago_model_v1.json |
+| `u6` | build_u6_activity, chicago_model, export_viz_data, sp_chicago_model, chicago_model_v1.json, sp_chicago_model_v1.json, sp_chicago_model_v2.json |
 
 ## Archived (`_archive/*.zip`)
 

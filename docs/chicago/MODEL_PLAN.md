@@ -956,3 +956,26 @@ Robust scaling (the São Paulo v2 precedent) would therefore inflate rounding-le
 **Caveats.**
 - M3 carries 18.9% of D² (nominal 8.3%).
 - Mahalanobis gives a different similarity (0.737; keeps 1 of Brás's Chicago top five).
+
+---
+
+## Cross-city model v2: U1 commerce share (8 October 2026)
+
+**User decision.** Add the U1 **commerce** land share to the cross-city model although it failed J-3 (|Spearman| 0.708 with U6 intensity in São Paulo; rule < 0.70 in both cities). Reason: commercial land is central to Brás's profile and its "essence" (65.0% of its occupied land, 3rd of 94 São Paulo districts). The redundancy with U6 is accepted and reported, not corrected.
+
+**Design (fixed before the v2 fit).**
+
+| ID | Rule |
+|---|---|
+| V2-1 Version | New contract `analysis/config/sp_chicago_model_v2.json`. v1 and its results stay unchanged and reproducible (`SP_CHI_MODEL_VERSION=v1`) |
+| V2-2 Columns | U1 = `p_residential`, `p_commerce`, `p_industrial`, `p_institutional` from the same accepted table (same SHA-256); 21 columns. Same coverage rule: O'Hare, Marsilac and Parelheiros have no U1 |
+| V2-3 Everything else | As X-1 to X-9: transforms, C6 hybrid (U1 relative) and the two variants, median calibration, equal family budgets, R1–R3, robustness |
+| V2-4 Within-family weights | Equal in the published fit (each U1 share a quarter of U1's budget). Tools may let users set column weights $v_j$: the block becomes $\sum_j v_j \Delta_j^2 / \sum_j v_j$ and its calibration is recomputed, so column weights change only the mix inside a family and the family weight keeps its meaning. $v_{commerce} = 0$ must reproduce v1 exactly |
+| V2-5 Scope | Cross-city model only. The Chicago-only model (`chicago_model_v1`) has no Brás reference and is unchanged |
+
+**Results (8 October 2026).** [Report §11](../harmonization/MODEL_REPORT.md#11-version-2-u1-commerce-share-8-october-2026) · outputs [sp_chicago_model_v2_2026_10_08](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md).
+- Agreement with v1 over all pairs 0.9996; 97.5% of top-five neighbours shared.
+- Brás's closest Chicago areas: West Town, Avondale, Logan Square, Lincoln Park (all ≥ 99.8% of weight draws) and North Center (27.0%: not firm); Lower West Side moves from 5th to 7th.
+- U1 carries 18.2% of Brás–West Town's $D^2$ (v1: 15.0%) and 6.4% of $D^2$ over all pairs.
+- PC2 now loads the commerce share (−0.75). Under all-absolute scaling R3 prunes the commerce share itself (0.76 with BV height).
+- Checks: V2-4 holds (commerce weight 0 reproduces v1 to 2.2e-10 in the explorer and 2.2e-15 in Curio lane H).
