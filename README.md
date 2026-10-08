@@ -10,7 +10,10 @@ Urban-form similarity research: characterize São Paulo's municipal districts (r
 | Continue work in a new agent session | [docs/HANDOFF.md](docs/HANDOFF.md) |
 | Understand the research design | [docs/PROTOCOL.md](docs/PROTOCOL.md) |
 | See why a feature was kept, deferred or changed | [docs/DECISIONS.md](docs/DECISIONS.md) |
-| Read Chicago feature definitions and sources | [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
+| Explore the three cross-city methods interactively (any reference unit) | [Cross-City Urban Explorer](analysis/viz/README.md): `python3 -m http.server 8765 --directory analysis/viz` |
+| Read the São Paulo–Chicago model (Brás reference; current version v2, with the U1 commerce share) | [model report](docs/harmonization/MODEL_REPORT.md) (v2: §11) · [notebook](analysis/sp_chicago_model_analysis.ipynb) · [contract v2](analysis/config/sp_chicago_model_v2.json) · [v1](analysis/config/sp_chicago_model_v1.json) |
+| Read the Chicago model (methodology, features, results) | [model report](docs/chicago/MODEL_REPORT.md) · [notebook](analysis/chicago_model_analysis.ipynb) · [contract](analysis/config/chicago_model_v1.json) |
+| Read Chicago feature definitions and sources | [model plan](docs/chicago/MODEL_PLAN.md) · [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
 | Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |
 | Read the future SP–Chicago harmonization work | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
 | Find paper-oriented evidence | [survey](docs/survey/README.md) · [advisor brief](docs/survey/ADVISOR_BRIEF.md) · [experiment ledger](docs/survey/EXPERIMENT_LEDGER.md) |
@@ -31,6 +34,7 @@ analysis/            code, configs, results and local data — see analysis/READ
   config/            frozen, versioned method contracts read by scripts
   tests/             unit tests
   results/           published outputs: SP/, Chicago/, SP_CHI/ (tracked)
+  viz/               Cross-City Urban Explorer: static page over methods A, B and the harmonized model
   data/ cache/ work/ local inputs and intermediates (git-ignored)
 ```
 

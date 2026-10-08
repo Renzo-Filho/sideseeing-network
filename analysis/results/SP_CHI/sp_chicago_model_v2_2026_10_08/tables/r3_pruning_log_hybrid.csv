@@ -1,0 +1,4 @@
+dropped,pairs_at_or_above,mean_abs_rho,partners
+B1_coverage_land,3,0.335,"m1_km_per_km2 (0.78), m7_parcels_per_km2 (0.75), u3_acs_land_km2 (0.79)"
+u2_jobs_land_km2,2,0.361,"u6_log_intensity (0.83), p_commerce (0.70)"
+m1_km_per_km2,1,0.29,m7_parcels_per_km2 (0.76)

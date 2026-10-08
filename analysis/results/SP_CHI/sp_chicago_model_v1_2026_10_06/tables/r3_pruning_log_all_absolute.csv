@@ -1,0 +1,5 @@
+dropped,pairs_at_or_above,mean_abs_rho,partners
+B1_coverage_land,4,0.403,"m1_km_per_km2 (0.78), m7_parcels_per_km2 (0.75), u2_jobs_land_km2 (0.73), u3_acs_land_km2 (0.79)"
+u2_jobs_land_km2,3,0.368,"bv_height_built_m (0.74), u4_ptai_avg_resident (0.75), u6_log_intensity (0.75)"
+u4_ptai_avg_resident,2,0.323,"bv_height_built_m (0.79), u3_acs_land_km2 (0.73)"
+m1_km_per_km2,1,0.331,m7_parcels_per_km2 (0.76)

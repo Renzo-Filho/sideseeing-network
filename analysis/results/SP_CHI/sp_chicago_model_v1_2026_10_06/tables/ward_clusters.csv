@@ -1,0 +1,174 @@
+,name,city,cluster,rank_to_bras
+CHI:01,Rogers Park,CHI,2,47.0
+CHI:02,West Ridge,CHI,0,81.0
+CHI:03,Uptown,CHI,2,94.0
+CHI:04,Lincoln Square,CHI,2,67.0
+CHI:05,North Center,CHI,2,29.0
+CHI:06,Lake View,CHI,2,34.0
+CHI:07,Lincoln Park,CHI,2,25.0
+CHI:08,Near North Side,CHI,2,105.0
+CHI:09,Edison Park,CHI,0,143.0
+CHI:10,Norwood Park,CHI,0,135.0
+CHI:11,Jefferson Park,CHI,0,77.0
+CHI:12,Forest Glen,CHI,0,142.0
+CHI:13,North Park,CHI,1,154.0
+CHI:14,Albany Park,CHI,0,35.0
+CHI:15,Portage Park,CHI,0,68.0
+CHI:16,Irving Park,CHI,0,46.0
+CHI:17,Dunning,CHI,0,122.0
+CHI:18,Montclare,CHI,0,90.0
+CHI:19,Belmont Cragin,CHI,0,58.0
+CHI:20,Hermosa,CHI,0,60.0
+CHI:21,Avondale,CHI,2,14.0
+CHI:22,Logan Square,CHI,2,16.0
+CHI:23,Humboldt Park,CHI,0,55.0
+CHI:24,West Town,CHI,2,11.0
+CHI:25,Austin,CHI,0,66.0
+CHI:26,West Garfield Park,CHI,0,53.0
+CHI:27,East Garfield Park,CHI,0,71.0
+CHI:28,Near West Side,CHI,2,76.0
+CHI:29,North Lawndale,CHI,0,78.0
+CHI:30,South Lawndale,CHI,1,86.0
+CHI:31,Lower West Side,CHI,2,28.0
+CHI:32,Loop,CHI,2,151.0
+CHI:33,Near South Side,CHI,2,117.0
+CHI:34,Armour Square,CHI,2,93.0
+CHI:35,Douglas,CHI,2,130.0
+CHI:36,Oakland,CHI,0,157.0
+CHI:37,Fuller Park,CHI,2,139.0
+CHI:38,Grand Boulevard,CHI,0,102.0
+CHI:39,Kenwood,CHI,0,116.0
+CHI:40,Washington Park,CHI,0,149.0
+CHI:41,Hyde Park,CHI,2,104.0
+CHI:42,Woodlawn,CHI,0,113.0
+CHI:43,South Shore,CHI,0,92.0
+CHI:44,Chatham,CHI,0,89.0
+CHI:45,Avalon Park,CHI,0,98.0
+CHI:46,South Chicago,CHI,0,127.0
+CHI:47,Burnside,CHI,1,156.0
+CHI:48,Calumet Heights,CHI,0,121.0
+CHI:49,Roseland,CHI,0,132.0
+CHI:50,Pullman,CHI,1,155.0
+CHI:51,South Deering,CHI,3,166.0
+CHI:52,East Side,CHI,0,140.0
+CHI:53,West Pullman,CHI,0,150.0
+CHI:54,Riverdale,CHI,3,169.0
+CHI:55,Hegewisch,CHI,3,168.0
+CHI:56,Garfield Ridge,CHI,0,123.0
+CHI:57,Archer Heights,CHI,1,126.0
+CHI:58,Brighton Park,CHI,0,59.0
+CHI:59,McKinley Park,CHI,2,32.0
+CHI:60,Bridgeport,CHI,0,40.0
+CHI:61,New City,CHI,1,114.0
+CHI:62,West Elsdon,CHI,0,101.0
+CHI:63,Gage Park,CHI,0,73.0
+CHI:64,Clearing,CHI,0,124.0
+CHI:65,West Lawn,CHI,0,100.0
+CHI:66,Chicago Lawn,CHI,0,108.0
+CHI:67,West Englewood,CHI,0,129.0
+CHI:68,Englewood,CHI,0,134.0
+CHI:69,Greater Grand Crossing,CHI,0,103.0
+CHI:70,Ashburn,CHI,0,131.0
+CHI:71,Auburn Gresham,CHI,0,107.0
+CHI:72,Beverly,CHI,0,144.0
+CHI:73,Washington Heights,CHI,0,125.0
+CHI:74,Mount Greenwood,CHI,0,147.0
+CHI:75,Morgan Park,CHI,0,138.0
+CHI:76,O'Hare,CHI,3,170.0
+CHI:77,Edgewater,CHI,2,33.0
+SP:01,Água Rasa,SP,0,18.0
+SP:02,Alto De Pinheiros,SP,0,88.0
+SP:03,Anhanguera,SP,3,167.0
+SP:04,Aricanduva,SP,0,38.0
+SP:05,Artur Alvim,SP,0,63.0
+SP:06,Barra Funda,SP,2,85.0
+SP:07,Bela Vista,SP,2,56.0
+SP:08,Belém,SP,2,1.0
+SP:09,Bom Retiro,SP,2,2.0
+SP:10,Brás,SP,2,
+SP:11,Brasilândia,SP,1,152.0
+SP:12,Butantã,SP,2,83.0
+SP:13,Cachoeirinha,SP,1,133.0
+SP:14,Cambuci,SP,2,4.0
+SP:15,Campo Belo,SP,2,39.0
+SP:16,Campo Grande,SP,1,65.0
+SP:17,Campo Limpo,SP,0,91.0
+SP:18,Cangaíba,SP,0,118.0
+SP:19,Capao Redondo,SP,0,70.0
+SP:20,Carrao,SP,0,17.0
+SP:21,Casa Verde,SP,0,24.0
+SP:22,Cidade Ademar,SP,0,69.0
+SP:23,Cidade Dutra,SP,1,158.0
+SP:24,Cidade Lider,SP,0,74.0
+SP:25,Cidade Tiradentes,SP,1,145.0
+SP:26,Consolação,SP,2,49.0
+SP:27,Cursino,SP,0,82.0
+SP:28,Ermelino Matarazzo,SP,0,79.0
+SP:29,Freguesia Do O,SP,0,54.0
+SP:30,Grajaú,SP,3,165.0
+SP:31,Guaianases,SP,0,110.0
+SP:32,Moema,SP,2,30.0
+SP:33,Iguatemi,SP,1,153.0
+SP:34,Ipiranga,SP,2,7.0
+SP:35,Itaim Bibi,SP,2,52.0
+SP:36,Itaim Paulista,SP,0,96.0
+SP:37,Itaquera,SP,0,43.0
+SP:38,Jabaquara,SP,0,45.0
+SP:39,Jaçanã,SP,0,64.0
+SP:40,Jaguara,SP,2,106.0
+SP:41,Jaguaré,SP,2,120.0
+SP:42,Jaraguá,SP,1,160.0
+SP:43,Jardim Angela,SP,1,159.0
+SP:44,Jardim Helena,SP,0,136.0
+SP:45,Jardim Paulista,SP,2,31.0
+SP:46,Jardim São Luís,SP,1,137.0
+SP:47,Jose Bonifacio,SP,1,148.0
+SP:48,Lapa,SP,2,3.0
+SP:49,Liberdade,SP,2,27.0
+SP:50,Limão,SP,0,26.0
+SP:51,Mandaqui,SP,1,141.0
+SP:52,Marsilac,SP,3,172.0
+SP:53,Mooca,SP,2,5.0
+SP:54,Morumbi,SP,0,111.0
+SP:55,Parelheiros,SP,3,171.0
+SP:56,Pari,SP,2,19.0
+SP:57,Parque Do Carmo,SP,1,161.0
+SP:58,Pedreira,SP,1,162.0
+SP:59,Penha,SP,0,15.0
+SP:60,Perdizes,SP,2,50.0
+SP:61,Perus,SP,3,164.0
+SP:62,Pinheiros,SP,2,10.0
+SP:63,Pirituba,SP,0,87.0
+SP:64,Ponte Rasa,SP,0,57.0
+SP:65,Raposo Tavares,SP,1,146.0
+SP:66,República,SP,2,84.0
+SP:67,Rio Pequeno,SP,0,99.0
+SP:68,Sacoma,SP,0,72.0
+SP:69,Santa Cecilia,SP,2,8.0
+SP:70,Santana,SP,2,12.0
+SP:71,Santo Amaro,SP,2,13.0
+SP:72,São Lucas,SP,0,36.0
+SP:73,São Mateus,SP,0,44.0
+SP:74,São Miguel,SP,0,51.0
+SP:75,São Rafael,SP,0,119.0
+SP:76,Sapopemba,SP,0,75.0
+SP:77,Saúde,SP,2,22.0
+SP:78,Sé,SP,2,62.0
+SP:79,Socorro,SP,1,115.0
+SP:80,Tatuapé,SP,2,6.0
+SP:81,Tremembe,SP,3,163.0
+SP:82,Tucuruvi,SP,0,41.0
+SP:83,Vila Andrade,SP,2,128.0
+SP:84,Vila Curuca,SP,0,112.0
+SP:85,Vila Formosa,SP,0,20.0
+SP:86,Vila Guilherme,SP,2,9.0
+SP:87,Vila Jacui,SP,0,95.0
+SP:88,Vila Leopoldina,SP,2,37.0
+SP:89,Vila Maria,SP,2,23.0
+SP:90,Vila Mariana,SP,2,42.0
+SP:91,Vila Matilde,SP,0,61.0
+SP:92,Vila Medeiros,SP,0,48.0
+SP:93,Vila Prudente,SP,0,21.0
+SP:94,Vila Sônia,SP,0,80.0
+SP:95,São Domingos,SP,0,97.0
+SP:96,Lajeado,SP,0,109.0

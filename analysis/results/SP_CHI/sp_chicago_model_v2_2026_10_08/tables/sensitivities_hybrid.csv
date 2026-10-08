@@ -1,0 +1,22 @@
+scenario,spearman_pairs,mean_topk_overlap,bras_top5_chicago_kept
+without M1,0.997,0.908,4
+without M3,0.906,0.865,4
+without M4,0.997,0.904,5
+without M6,0.989,0.818,5
+without M7,0.996,0.914,4
+without B1,0.995,0.912,4
+without BV,0.987,0.864,4
+without U2,0.995,0.904,5
+without U3,0.994,0.912,4
+without U4,0.992,0.847,5
+without U6,0.996,0.889,4
+without U1,0.997,0.869,4
+equal domain budgets,0.986,0.862,5
+robust median/IQR scaling,0.984,0.906,4
+rank-normal scaling,0.862,0.732,4
+Ledoit-Wolf Mahalanobis (no U1),0.738,0.449,0
+M3_unweighted,0.903,0.84,4
+M7_median_parcel_size,0.993,0.895,4
+BV_volume,0.99,0.866,5
+U6 confidence >= 0.3,1.0,0.994,5
+POST-HOC: mean calibration,0.961,0.84,4

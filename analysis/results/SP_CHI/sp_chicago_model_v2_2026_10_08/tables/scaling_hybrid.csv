@@ -1,0 +1,17 @@
+column,transform,level,units_capped,capped
+m1_km_per_km2,log,absolute,3,"O'Hare (CHI), Marsilac (SP), Parelheiros (SP)"
+ov_m3_wmedian_ln_m2,identity,absolute,7,"South Deering (CHI), Hegewisch (CHI), O'Hare (CHI), Anhanguera (SP), Grajaú (SP), Marsilac (SP), Parelheiros (SP)"
+ov_m4_wmedian_compactness,identity,absolute,2,"Cidade Dutra (SP), Pedreira (SP)"
+ov_m4_wmedian_elongation,log,absolute,2,"Fuller Park (CHI), Cangaíba (SP)"
+m6_major_share,identity,absolute,3,"Loop (CHI), Armour Square (CHI), Fuller Park (CHI)"
+m7_parcels_per_km2,log,absolute,3,"O'Hare (CHI), Marsilac (SP), Parelheiros (SP)"
+B1_coverage_land,identity,absolute,0,
+bv_height_built_m,log,relative,3,"Near North Side (CHI), Loop (CHI), Marsilac (SP)"
+u2_jobs_land_km2,log,relative,2,"Loop (CHI), Marsilac (SP)"
+u3_acs_land_km2,log,absolute,3,"South Deering (CHI), O'Hare (CHI), Marsilac (SP)"
+u4_ptai_avg_resident,log,relative,2,"Loop (CHI), Marsilac (SP)"
+u6_log_intensity,identity,relative,1,Loop (CHI)
+p_residential,identity,relative,0,
+p_commerce,identity,relative,4,"Loop (CHI), Near South Side (CHI), República (SP), Sé (SP)"
+p_industrial,identity,relative,2,"Anhanguera (SP), Jaguaré (SP)"
+p_institutional,identity,relative,4,"Douglas (CHI), Hyde Park (CHI), Butantã (SP), Parque Do Carmo (SP)"
