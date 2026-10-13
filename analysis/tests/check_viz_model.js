@@ -36,11 +36,11 @@ for (const s of ['hybrid', 'all_absolute', 'all_relative']) {
   if (s === 'hybrid') hybrid = { r1, P };
 }
 
-/* Final settings (sp_chicago_model_v3): the page's starting configuration reproduces the v3 fit. */
-{
-  const F = V.h.final, d3 = M.harmonizedDistance(M.blockMatrices(V.h.scalings[F.scaling].blocks, n, F.cols), F.weights, n).D;
-  const d = maxDiff(d3, matrix(path.join(here, '../..', F.results, 'tables/distance_v3.csv')));
-  check(`${F.contract} (${F.scaling}, ${F.geometry} distance, final weights)`, F.geometry === 'full' && d < 1e-9, `max |diff| ${d.toExponential(1)}`);
+/* Named settings (v4 = the page's starting settings, v3): each preset reproduces its published fit, column weights included. */
+for (const F of V.h.presets) {
+  const D = M.harmonizedDistance(M.blockMatrices(V.h.scalings[F.scaling].blocks, n, F.cols), F.weights, n).D;
+  const d = maxDiff(D, matrix(path.join(here, '../..', F.results, `tables/distance_${F.id}.csv`)));
+  check(`${F.contract} (${F.scaling}, ${F.geometry} distance, its family and column weights)`, F.geometry === 'full' && d < 1e-9, `max |diff| ${d.toExponential(1)}`);
 }
 
 /* Column weights: the commerce share at weight 0 is exactly the frozen v1 fit (three U1 shares). */

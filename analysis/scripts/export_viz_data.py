@@ -5,8 +5,8 @@ The page recomputes every model in the browser, so this script exports model *in
 - Harmonized cross-city similarity model (inputs of sp_chicago_model_v2, unchanged in v3): for each C6 scaling, every
   distance block as the model sees it (scaled columns or log-ratios) and its calibration, built by the model's own
   functions (sp_chicago_model.py / chicago_model.py), so no model rule is re-implemented here.
-- The final settings (contract sp_chicago_model_v3: scaling, distance, family and column weights), which the page
-  starts from, and the v3 tables its documentation quotes.
+- The named settings (contracts sp_chicago_model_v4, the starting settings, and v3: scaling, distance, family and
+  column weights) and the tables of each that the documentation quotes.
 - Simplified unit polygons in each city's projected CRS (decametres), unit names, and the published test tables
   that the documentation pages quote.
 analysis/tests/check_viz_model.js asserts that the page's computations reproduce the published results.
@@ -21,8 +21,7 @@ import chicago_model as cm
 A = xm.A
 AB = A / "results/SP_CHI/simple_index_ab_2026_10_01/tables"
 XR = xm.OUT / "tables"
-V3_CONTRACT = A / "config/sp_chicago_model_v3.json"
-V3 = A / "results/SP_CHI/sp_chicago_model_v3_2026_10_13"
+PRESETS = ("v4", "v3")                                 # the first is the page's starting settings
 OUT = A.parent / "viz/data.js"
 SIMPLIFY_M = 20                                        # polygon simplification tolerance (metres)
 NAME_FIX = {"Capao Redondo": "Capão Redondo", "Carrao": "Carrão", "Cidade Lider": "Cidade Líder", "Freguesia Do O": "Freguesia do Ó",
@@ -165,19 +164,21 @@ def harmonized(df, subs, fams, ids):
         stability_bras=records(pd.read_csv(XR / "stability_bras_top5_chicago.csv")),
         r3_logs={s: records(pd.read_csv(XR / f"r3_pruning_log_{s}.csv")) for s in scalings},
     )
-    return dict(families=families, columns=columns, scalings=scalings, r3_dropped_columns=r3, published=published, final=final_settings())
+    return dict(families=families, columns=columns, scalings=scalings, r3_dropped_columns=r3, published=published, presets=[preset(v) for v in PRESETS])
 
 
-def final_settings():
-    """The v3 settings the page starts from, and the v3 tables (python analysis/scripts/sp_chicago_model_v3.py)."""
-    x, t = json.loads(V3_CONTRACT.read_text()), V3 / "tables"
-    st, rank = x["settings"], pd.read_csv(t / "ranking_bras_v3.csv", index_col=0)
-    shares = pd.read_csv(t / "family_contribution_shares_v3.csv").rename(columns={"Unnamed: 0": "family"})
-    return dict(contract=x["contract_version"], results=str(V3.relative_to(xm.ROOT)), question=x["question"], decision=x["decision"],
-                scaling=st["scaling"], geometry=st["distance"], weights=st["family_weights"], cols=st["column_weights"],
-                published=dict(family_shares=records(shares), stability_bras=records(pd.read_csv(t / "stability_bras_top5_chicago_v3.csv")),
-                               comparison=records(pd.read_csv(t / "comparison_v3.csv")),
-                               correlations=records(pd.read_csv(t / "active_correlations_v3.csv")),
+def preset(v):
+    """A version's settings and tables (python analysis/scripts/sp_chicago_model_settings.py <v>)."""
+    x = json.loads((A / f"config/sp_chicago_model_{v}.json").read_text())
+    out = xm.ROOT / x["model"]["outputs"]
+    t = lambda name: pd.read_csv(out / "tables" / f"{name}_{v}.csv")
+    st, rank = x["settings"], pd.read_csv(out / "tables" / f"ranking_bras_{v}.csv", index_col=0)
+    return dict(id=v, contract=x["contract_version"], results=str(out.relative_to(xm.ROOT)), status=x["status"], question=x["question"],
+                decision=x["decision"], scaling=st["scaling"], geometry=st["distance"], weights=st["family_weights"], cols=st["column_weights"],
+                match_strength=json.loads((out / "run.json").read_text())["match_strength"],
+                published=dict(family_shares=records(t("family_contribution_shares").rename(columns={"Unnamed: 0": "family"})),
+                               stability_bras=records(t("stability_bras_top5_chicago")), comparison=records(t("comparison")),
+                               correlations=records(t("active_correlations")),
                                bras_chicago_top10=records(rank[rank.city == "CHI"].head(10).reset_index(names="unit_id"))))
 
 

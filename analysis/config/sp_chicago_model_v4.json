@@ -1,0 +1,64 @@
+{
+  "contract_version": "sp_chicago_model_v4",
+  "status": "proposed 2026-10-13 for exploration (user); not final. Any change is sp_chicago_model_v5",
+  "supersedes": "sp_chicago_model_v3 as the explorer's starting settings; v1, v2 and v3 stay unchanged and reproducible",
+  "plan": "docs/chicago/MODEL_PLAN.md#cross-city-model-v4-proposed-brás-focused-settings-13-october-2026",
+  "decision": "User, 13 October 2026, after finding that v3's matches are not commercial areas and are weak: weight the families by how much they distinguish Brás within São Paulo. 80% of the budget goes to U1, U6, B1 and U4, Brás's most distinctive families. Inside U1, commerce and residential shares count most and institutional land is left out. The weights are reasoned starting values, chosen from Brás's São Paulo profile before the candidate's Chicago ranking was computed, and not tuned afterwards.",
+  "question": "Which areas most closely reproduce the traits that distinguish Brás within São Paulo, each read relative to its own city?",
+  "fit_authorized": true,
+  "units": {
+    "count": 173,
+    "sao_paulo": "96 districts SP:01-SP:96",
+    "chicago": "77 Community Areas CHI:01-CHI:77",
+    "reference": "SP:10 (Brás)"
+  },
+  "families": "the 12 families of analysis/config/chicago_model_v1.json (definitions, tables and SHA-256), São Paulo rows from the same tables; family_columns overrides a family's columns (same as v2)",
+  "family_columns": {
+    "U1": [
+      "p_residential",
+      "p_commerce",
+      "p_industrial",
+      "p_institutional"
+    ]
+  },
+  "u3_sao_paulo_table": "analysis/results/SP_CHI/u3_sp_catchup_2026_10_05/tables/u3_sp.parquet",
+  "u3_sao_paulo_table_sha256": "ffd6069498f7dc99110585a16a08108ce079b8e5839e5e60902185c0f6897d93",
+  "missing": "U1 (all four shares) under 10% classified occupied land: Marsilac, Parelheiros, O'Hare; available-case distance (J-8)",
+  "settings": {
+    "scaling": "all_relative",
+    "scaling_note": "every column standardized within its own city (z-score, population SD, capped at +-3); U6 composition uses the city-centred log-ratios",
+    "distance": "full",
+    "distance_note": "the full calibrated distance (R1 geometry); correlated-column pruning (R3) off",
+    "family_weights": {
+      "U1": 0.25,
+      "U6": 0.25,
+      "B1": 0.2,
+      "U4": 0.1,
+      "M4": 0.05,
+      "M6": 0.05,
+      "U2": 0.04,
+      "BV": 0.03,
+      "M1": 0.02,
+      "U3": 0.01,
+      "M3": 0,
+      "M7": 0
+    },
+    "family_weights_note": "sum to 1; renormalized over the families both units have (J-8); U6 = 1/2 intensity + 1/2 Aitchison composition of the five classes, unweighted inside",
+    "column_weights": {
+      "p_commerce": 3,
+      "p_residential": 2,
+      "p_industrial": 1,
+      "p_institutional": 0,
+      "ov_m4_wmedian_compactness": 2,
+      "ov_m4_wmedian_elongation": 1
+    },
+    "column_weights_note": "inside a family m_b = sum_j v_j (x_dj - x_ej)^2 / sum_j v_j, and the block's median calibration is recomputed on the reweighted block, so the family weight still sets how much the family counts. U1: commerce 50%, residential 33.3%, industrial 16.7%, institutional off; M4: compactness 2/3, elongation 1/3"
+  },
+  "model": {
+    "transforms": "as chicago_model_v1 (J-5)",
+    "calibration": "median positive pairwise value over all 14,878 pairs, per block (recomputed when column weights change)",
+    "robustness": "500 weight draws around the v4 family weights (seed 20261006, x U(0.5,1.5), 80% stability; column weights held fixed); named alternatives in comparison_v4.csv; match strength in run.json",
+    "implementation": "analysis/scripts/sp_chicago_model_settings.py v4 (reuses sp_chicago_model.py and chicago_model.py); report docs/harmonization/MODEL_REPORT.md §13",
+    "outputs": "analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13"
+  }
+}

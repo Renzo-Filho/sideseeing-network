@@ -46,6 +46,13 @@
     "Logan Square"
   ],
   "first_chicago_rank_overall": 5,
+  "match_strength": {
+    "bras_best_chicago_distance": 1.1822,
+    "median_best_cross_city_distance": 0.6388,
+    "bras_best_chicago_percentile_among_best_cross_city": 0.9538,
+    "median_nearest_neighbour_distance": 0.4906,
+    "median_pair_distance": 1.307
+  },
   "top5_relations_stable": 0.723,
   "seed": 20261006,
   "draws": 500

@@ -67,7 +67,7 @@ Order follows readiness and dependency, **not importance**. M1/M6 are the backbo
 | 7b | U6 activity composition (new, user request 6 Oct 2026) | Composition and diversity of unit types (homes, food & drink, retail, services, making, institutions), vertical mixing included | **accepted with stated limits (6 Oct 2026)**; Overture in both cities (D7b-3 RAIS test); in `chicago_model_v1.json` |
 | 8 | M3/M4 blocks, M7 parcels | Open method tracks; may end as omitted with stated loss | **built 6 Oct 2026**; Chicago passes all checks; São Paulo fails the municipal-line check for M3/M4 (reference topology gaps) but passes official blocks (0.977); M7 passes both; **M3, M4, M7 accepted with stated limits (6 Oct 2026)**; in `chicago_model_v1.json` |
 | — | M2, B2, B3 | Excluded/out of scope/refused by user decisions (25 and 30 September 2026) | closed |
-| Cross-city | `sp_chicago_model_v1` (Brás reference; C6 hybrid) | User request after the Chicago fit | **fitted 6 Oct 2026**; [report](../harmonization/MODEL_REPORT.md); v2 (U1 commerce share) 8 Oct; **v3 final settings 13 Oct 2026** ([below](#cross-city-model-v3-final-settings-13-october-2026)) |
+| Cross-city | `sp_chicago_model_v1` (Brás reference; C6 hybrid) | User request after the Chicago fit | **fitted 6 Oct 2026**; [report](../harmonization/MODEL_REPORT.md); v2 (U1 commerce share) 8 Oct; v3 settings 13 Oct (reopened the same day); **v4 proposed settings 13 Oct 2026** ([below](#cross-city-model-v4-proposed-brás-focused-settings-13-october-2026)) |
 | Final | Joint review | Redundancy among accepted families, family budgets (C5), no-family sensitivities, contract freeze, then a fit-authorization decision | **done 6 Oct 2026**: J-1 to J-10 approved; contract frozen (12 families); fit run (R1, R2, R3); [model report](MODEL_REPORT.md) |
 
 ---
@@ -982,6 +982,8 @@ Robust scaling (the São Paulo v2 precedent) would therefore inflate rounding-le
 
 ## Cross-city model v3: final settings (13 October 2026)
 
+> **Reopened the same day.** The user reopened these settings for exploration on 13 October 2026; v3 is kept as a candidate and [v4](#cross-city-model-v4-proposed-brás-focused-settings-13-october-2026) is the current proposal. The v3 contract's question was reworded: its first text called the answer "a non-residential working district", which West Town and Avondale (over 60% residential land) are not.
+
 **User decision.** The user reviewed the scalings, runs R1–R3, the PCA distance, the family weights and the correlations among the columns. They then fixed the final settings for selecting Brás's Chicago analogue. The question v3 answers: which Chicago area plays Brás's role in its city, a non-residential working district with a similar activity mix.
 
 | ID | Rule |
@@ -1006,4 +1008,25 @@ Robust scaling (the São Paulo v2 precedent) would therefore inflate rounding-le
 - Brás's closest Chicago areas: Lower West Side, Avondale, West Town, McKinley Park (each 100% of weight draws); Logan Square fifth (50.2%: not firm). Lower West Side ranks 5th among all 172 units.
 - Against the v2 published fit: Spearman 0.867 over all pairs; three of Brás's Chicago top five shared.
 - Checks: the explorer reproduces `distance_v3.csv` to 9.9e-11 and the Curio dataflow to 1.8e-15.
+
+## Cross-city model v4: proposed Brás-focused settings (13 October 2026)
+
+**User proposal, for exploration (not final).** v3's matches turned out not to be commercial areas, and they are weak matches. The user proposed weighting the families by how much they distinguish Brás within São Paulo.
+
+| ID | Rule |
+|---|---|
+| V4-1 Version | New contract `analysis/config/sp_chicago_model_v4.json`; v1, v2 and v3 unchanged and reproducible |
+| V4-2 Data, scaling, distance | As v3: v2's 21 columns, all-relative scaling, full distance, R3 pruning off |
+| V4-3 Family weights | U1 0.25, U6 0.25, B1 0.20, U4 0.10 (80% on Brás's four most distinctive families); M4 0.05, M6 0.05, U2 0.04, BV 0.03, M1 0.02, U3 0.01; M3 and M7 off |
+| V4-4 Inside U1 | Commerce 3, residential 2, industrial 1, institutional 0; block calibration recomputed |
+| V4-5 Inside M4 | Compactness 2, elongation 1 |
+| V4-6 U6 | Unchanged: half intensity, half five-class composition, coordinates unweighted |
+| V4-7 Evidence | Brás's rank within São Paulo on every column (`bras_profile_sao_paulo_v4.csv`); weights set from it before the Chicago ranking was computed |
+| V4-8 Reporting | Ranking with match strength (Brás's best cross-city distance against every unit's best), 500 family-weight draws, named alternatives |
+| V4-9 Tools | The explorer starts from v4 (preset "v4 · proposed") with v3 and v2 R1–R3 as presets; checked against `distance_v4.csv` (1.2e-10). The Curio dataflow `interactive_harmonized` is not updated |
+
+**Results (13 October 2026).** [Report §13](../harmonization/MODEL_REPORT.md#13-version-4-proposed-brás-focused-settings-13-october-2026) · outputs [sp_chicago_model_v4_2026_10_13](../../analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/README.md).
+- Brás's closest Chicago group: Near West Side, Near North Side, Lower West Side, West Town, Avondale. Lower West Side holds its top-five place in 77.8% of draws, under the 80% rule. First place flips with moderate single weight changes.
+- The weights inside U1 decide the order: with equal inner weights, Lower West Side is first.
+- No close match: Brás's best Chicago distance is farther than the best cross-city match of 98.3% of units (v3: 95.4%).
 

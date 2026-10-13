@@ -1,0 +1,9 @@
+column_a,family_a,column_b,family_b,spearman
+u2_jobs_land_km2,U2,u6_log_intensity,U6,0.829
+u2_jobs_land_km2,U2,p_commerce,U1,0.701
+B1_coverage_land,B1,u3_acs_land_km2,U3,0.694
+p_industrial,U1,u6_clr_city_making_storing,U6,0.67
+bv_height_built_m,BV,u4_ptai_avg_resident,U4,0.654
+bv_height_built_m,BV,u2_jobs_land_km2,U2,0.617
+u6_log_intensity,U6,p_commerce,U1,0.607
+u4_ptai_avg_resident,U4,p_commerce,U1,0.601

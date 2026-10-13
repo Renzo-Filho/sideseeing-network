@@ -1,0 +1,66 @@
+{
+  "contract": "sp_chicago_model_v4",
+  "settings": {
+    "scaling": "all_relative",
+    "scaling_note": "every column standardized within its own city (z-score, population SD, capped at +-3); U6 composition uses the city-centred log-ratios",
+    "distance": "full",
+    "distance_note": "the full calibrated distance (R1 geometry); correlated-column pruning (R3) off",
+    "family_weights": {
+      "U1": 0.25,
+      "U6": 0.25,
+      "B1": 0.2,
+      "U4": 0.1,
+      "M4": 0.05,
+      "M6": 0.05,
+      "U2": 0.04,
+      "BV": 0.03,
+      "M1": 0.02,
+      "U3": 0.01,
+      "M3": 0,
+      "M7": 0
+    },
+    "family_weights_note": "sum to 1; renormalized over the families both units have (J-8); U6 = 1/2 intensity + 1/2 Aitchison composition of the five classes, unweighted inside",
+    "column_weights": {
+      "p_commerce": 3,
+      "p_residential": 2,
+      "p_industrial": 1,
+      "p_institutional": 0,
+      "ov_m4_wmedian_compactness": 2,
+      "ov_m4_wmedian_elongation": 1
+    },
+    "column_weights_note": "inside a family m_b = sum_j v_j (x_dj - x_ej)^2 / sum_j v_j, and the block's median calibration is recomputed on the reweighted block, so the family weight still sets how much the family counts. U1: commerce 50%, residential 33.3%, industrial 16.7%, institutional off; M4: compactness 2/3, elongation 1/3"
+  },
+  "budgets": {
+    "M1": 0.02,
+    "M3": 0.0,
+    "M4": 0.05,
+    "M6": 0.05,
+    "M7": 0.0,
+    "B1": 0.2,
+    "BV": 0.03,
+    "U2": 0.04,
+    "U3": 0.01,
+    "U4": 0.1,
+    "U6": 0.25,
+    "U1": 0.25
+  },
+  "reference": "SP:10",
+  "bras_chicago_top5": [
+    "Near West Side",
+    "Near North Side",
+    "Lower West Side",
+    "West Town",
+    "Avondale"
+  ],
+  "first_chicago_rank_overall": 8,
+  "match_strength": {
+    "bras_best_chicago_distance": 1.4758,
+    "median_best_cross_city_distance": 0.5907,
+    "bras_best_chicago_percentile_among_best_cross_city": 0.9827,
+    "median_nearest_neighbour_distance": 0.4654,
+    "median_pair_distance": 1.2714
+  },
+  "top5_relations_stable": 0.738,
+  "seed": 20261006,
+  "draws": 500
+}

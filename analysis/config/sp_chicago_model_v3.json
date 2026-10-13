@@ -1,10 +1,10 @@
 {
   "contract_version": "sp_chicago_model_v3",
-  "status": "frozen 2026-10-13: final settings of the cross-city model (user decision); any change is sp_chicago_model_v4",
+  "status": "candidate (13 October 2026). Decided as the final settings, then reopened by the user the same day for exploration; v4 is the current proposal. The fit and tables are unchanged",
   "supersedes": "sp_chicago_model_v2 as the primary settings; v2 (hybrid, equal weights) and v1 stay unchanged and reproducible as published comparisons",
   "plan": "docs/chicago/MODEL_PLAN.md#cross-city-model-v3-final-settings-13-october-2026",
   "decision": "User, 13 October 2026, after reviewing scaling, runs, PCA distance, weights and correlations (MODEL_REPORT §12): compare every column by its position within its own city (all-relative), on the full calibrated distance, with family weights that favour land use and activity mix. M3 (long-tailed, carries about 3x its weight) and M7 (part of the grain cluster) leave the model; B1 returns at 0.10; U2 is halved to 0.05 because it duplicates U6 intensity (Spearman 0.83).",
-  "question": "Which Chicago Community Area plays the role in Chicago that Brás plays in São Paulo: a non-residential working district with a similar activity mix, read relative to each city.",
+  "question": "Which Chicago Community Area has the profile closest to Brás's when every column is read relative to its own city, with weights favouring land use and activity mix. (Corrected wording, 13 October 2026: the first text called the answer 'a non-residential working district', which West Town and Avondale, over 60% residential land, are not.)",
   "fit_authorized": true,
   "units": {
     "count": 173,
@@ -51,7 +51,7 @@
     "transforms": "as chicago_model_v1 (J-5)",
     "calibration": "median positive pairwise value over all 14,878 pairs, per block",
     "robustness": "500 weight draws around the v3 weights (seed 20261006, x U(0.5,1.5), 80% stability); named alternatives in comparison_v3.csv",
-    "implementation": "analysis/scripts/sp_chicago_model_v3.py (reuses sp_chicago_model.py and chicago_model.py); report docs/harmonization/MODEL_REPORT.md §12",
+    "implementation": "analysis/scripts/sp_chicago_model_settings.py v3 (reuses sp_chicago_model.py and chicago_model.py); report docs/harmonization/MODEL_REPORT.md §12",
     "outputs": "analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13"
   }
 }

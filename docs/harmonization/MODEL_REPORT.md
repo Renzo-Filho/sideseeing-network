@@ -1,17 +1,18 @@
 # São Paulo–Chicago urban similarity model (`sp_chicago_model_v1`): methodology and results
 
 **Status:**
-- **Final settings: `sp_chicago_model_v3`, 13 October 2026.** These are v2's data with the user's final settings: all-relative scaling, the full distance, and weights favouring land use and activity mix (M3 and M7 off). See [§12](#12-version-3-final-settings-13-october-2026). Brás's Chicago matches are Lower West Side, Avondale, West Town and McKinley Park. Any further change is `sp_chicago_model_v4`.
+- **Proposed settings: `sp_chicago_model_v4`, 13 October 2026, for exploration (not final).** These are v2's data with all-relative scaling, the full distance and Brás-focused weights: 80% on U1, U6, B1 and U4, and commerce and residential shares emphasized inside U1. See [§13](#13-version-4-proposed-brás-focused-settings-13-october-2026). Brás's closest Chicago group: Near West Side, Near North Side, Lower West Side, West Town, Avondale. The order is not firm, and none is a close match. The explorer starts from v4.
+- **`sp_chicago_model_v3`, 13 October 2026:** first decided as the final settings, then reopened the same day; kept as a candidate. See [§12](#12-version-3-final-settings-13-october-2026) and its correction in §13.1.
 - **`sp_chicago_model_v2`, fitted 8 October 2026**, is v1 with the U1 commerce land share added by user decision; see [§11](#11-version-2-u1-commerce-share-8-october-2026). It stays published as the equal-weight hybrid comparison.
 - **§1–10 describe `sp_chicago_model_v1`**, fitted 6 October 2026 under the user's C6 decision (hybrid primary; all-absolute and all-relative as extra steps). v1 is kept unchanged and stays reproducible (`SP_CHI_MODEL_VERSION=v1`).
 
 | Item | Location |
 |---|---|
-| Contract | v3 (final settings): [`analysis/config/sp_chicago_model_v3.json`](../../analysis/config/sp_chicago_model_v3.json), fitted by [`sp_chicago_model_v3.py`](../../analysis/scripts/sp_chicago_model_v3.py); v2: [`analysis/config/sp_chicago_model_v2.json`](../../analysis/config/sp_chicago_model_v2.json); v1: [`sp_chicago_model_v1.json`](../../analysis/config/sp_chicago_model_v1.json). Both use the 12 family definitions of [`chicago_model_v1.json`](../../analysis/config/chicago_model_v1.json); v2 overrides U1's columns |
+| Contract | v4 (proposed): [`analysis/config/sp_chicago_model_v4.json`](../../analysis/config/sp_chicago_model_v4.json); v3: [`analysis/config/sp_chicago_model_v3.json`](../../analysis/config/sp_chicago_model_v3.json); both fitted by [`sp_chicago_model_settings.py`](../../analysis/scripts/sp_chicago_model_settings.py); v2: [`analysis/config/sp_chicago_model_v2.json`](../../analysis/config/sp_chicago_model_v2.json); v1: [`sp_chicago_model_v1.json`](../../analysis/config/sp_chicago_model_v1.json). Both use the 12 family definitions of [`chicago_model_v1.json`](../../analysis/config/chicago_model_v1.json); v2 overrides U1's columns |
 | Code | [`analysis/scripts/sp_chicago_model.py`](../../analysis/scripts/sp_chicago_model.py) (reuses [`chicago_model.py`](../../analysis/scripts/chicago_model.py)) |
 | Notebook (builds the model, all plots and tables) | [`analysis/sp_chicago_model_analysis.ipynb`](../../analysis/sp_chicago_model_analysis.ipynb) |
-| Outputs | v3: [`analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/`](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md); v2: [`analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/`](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md); v1: [`…/sp_chicago_model_v1_2026_10_06/`](../../analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/README.md) |
-| Interactive explorer | [`viz/`](../../viz/README.md): starts from the v3 settings; any reference unit, family and within-family weights. Curio: [`interactive_harmonized`](../../analysis/curio_nodes/interactive_harmonized/README.md) |
+| Outputs | v4: [`analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/`](../../analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/README.md); v3: [`analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/`](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md); v2: [`analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/`](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md); v1: [`…/sp_chicago_model_v1_2026_10_06/`](../../analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/README.md) |
+| Interactive explorer | [`viz/`](../../viz/README.md): starts from the v4 settings (v3 and the v2 runs as presets); any reference unit, family and within-family weights. Curio: [`interactive_harmonized`](../../analysis/curio_nodes/interactive_harmonized/README.md) |
 | Decision record | [MODEL_PLAN.md](../chicago/MODEL_PLAN.md), cross-city section |
 | Feature-by-feature evidence | [Chicago model report §3](../chicago/MODEL_REPORT.md#3-the-features) and each family's results README |
 
@@ -352,7 +353,7 @@ Reproduce: `jupyter nbconvert --to notebook --execute --inplace analysis/sp_chic
 
 ### 12.1 What changed and why
 
-- **Change.** v3 fixes the settings used to answer the question; the data do not change. It uses the same 21 columns, tables and SHA-256, transforms and median calibration as v2. Contract [`sp_chicago_model_v3.json`](../../analysis/config/sp_chicago_model_v3.json); fit [`sp_chicago_model_v3.py`](../../analysis/scripts/sp_chicago_model_v3.py); outputs [`sp_chicago_model_v3_2026_10_13`](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md).
+- **Change.** v3 fixes the settings used to answer the question; the data do not change. It uses the same 21 columns, tables and SHA-256, transforms and median calibration as v2. Contract [`sp_chicago_model_v3.json`](../../analysis/config/sp_chicago_model_v3.json); fit [`sp_chicago_model_settings.py v3`](../../analysis/scripts/sp_chicago_model_settings.py); outputs [`sp_chicago_model_v3_2026_10_13`](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md).
 - **Decision (user, 13 October 2026)**, taken after reviewing the scalings, the runs, the PCA distance, the family weights and the correlations among the columns.
 - **The question v3 answers.** Which Chicago Community Area plays the role in Chicago that Brás plays in São Paulo: a non-residential working district with a similar activity mix, read relative to each city. v2 asked which Chicago area has Brás's physical fabric and, where instruments differ, its position.
 
@@ -465,4 +466,108 @@ Cross-family pairs among the active columns with |ρ| ≥ 0.6, under all-relativ
 - **Double counting carried from v2.** Commerce appears in U1 and in U6 intensity. U1's residential and commerce shares compete for the same land, so "commercial instead of residential" is counted along two U1 columns.
 - **Explorer and Curio** start from these settings and are checked against `distance_v3.csv`: maximum difference 9.9e-11 (explorer) and 1.8e-15 (Curio).
 
-Reproduce: `python analysis/scripts/sp_chicago_model_v3.py` (repository `.venv`; seed 20261006).
+Reproduce: `python analysis/scripts/sp_chicago_model_settings.py v3` (repository `.venv`; seed 20261006).
+
+## 13. Version 4: proposed Brás-focused settings (13 October 2026)
+
+### 13.1 Why a v4
+
+- v3 was decided as the final settings and **reopened by the user the same day** for exploration. v3 stays published as a candidate; v4 is the current proposal and the explorer's starting settings. **Neither is final.**
+- v3's matches are not commercial areas. By the model's own CMAP land-use data, West Town and Avondale are 61–63% residential land, Lower West Side 49% industrial; their commerce shares rank 8th–23rd in Chicago. They are also weak: Brás's best Chicago distance under v3 (1.182) is farther than the best cross-city match of 95% of the 173 units.
+- **Correction to §12.** §12 called v3's answer "a non-residential working district". That does not fit West Town or Avondale. v3 finds areas that resemble Brás in grain, height and business density for their city, not in being commercial. The v3 contract's question now says so.
+- **The question v4 asks:** which areas most closely reproduce the traits that distinguish Brás within São Paulo, each read relative to its own city?
+
+### 13.2 Settings
+
+Contract [`sp_chicago_model_v4.json`](../../analysis/config/sp_chicago_model_v4.json); fit [`sp_chicago_model_settings.py v4`](../../analysis/scripts/sp_chicago_model_settings.py); outputs [`sp_chicago_model_v4_2026_10_13`](../../analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/README.md). Same data, scaling (all-relative) and distance (full) as v3; R3 pruning off.
+
+Brás's rank within São Paulo's 96 districts (94 for U1) is from `bras_profile_sao_paulo_v4.csv`; 1 = highest value.
+
+| Family | v3 | **v4** | Brás within São Paulo |
+|---|---:|---:|---|
+| U1 land use | 0.25 | **0.25** | commerce 3rd highest; residential 3rd lowest |
+| U6 activity intensity and mix | 0.20 | **0.25** | retail share 1st; establishments per dwelling 5th |
+| B1 footprint coverage | 0.10 | **0.20** | 1st |
+| U4 transit access | 0.05 | **0.10** | 3rd |
+| M4 block shape | 0.05 | 0.05 | compactness 12th |
+| M6 major-road share | 0.05 | 0.05 | 15th |
+| U2 job density | 0.05 | 0.04 | 15th; overlaps U6 intensity |
+| BV height | 0.10 | 0.03 | 32nd |
+| M1 street density | 0.10 | 0.02 | 44th |
+| U3 resident density | 0.05 | 0.01 | 52nd |
+| M3, M7 | 0 | 0 | off |
+
+- **80% of the budget is on Brás's four most distinctive families.** A high weight makes a mismatch on that family costly; it does not reward high values.
+- **Inside U1:** commerce 3, residential 2, industrial 1, institutional 0. That is 50%, 33% and 17%, with institutional off (Brás 59th of 94: ordinary). Raising U1 alone would weight the ordinary institutional share as much as the exceptional commerce share. The block's calibration is recomputed on the reweighted block, as in the explorer.
+- **Inside M4:** compactness 2, elongation 1.
+- **U6** keeps half intensity, half five-class composition. Retail dominance and low shares of the other classes are one composition; boosting each extreme would count it several times.
+- **How the weights were set.** They come from Brás's São Paulo profile and were not tuned to a Chicago result. They are reasoned choices with no unique mapping from rank to weight.
+
+### 13.3 Brás under v4
+
+| Chicago rank | Area | Distance | Rank among all 172 | v3 Chicago rank | Share of 500 weight draws in the top 5 |
+|---|---|---:|---:|---:|---:|
+| 1 | **Near West Side** | 1.476 | 8 | 14 | 94.2% |
+| 2 | **Near North Side** | 1.500 | 9 | 35 | 82.2% |
+| 3 | Lower West Side | 1.533 | 11 | 1 | 77.8% (not stable) |
+| 4 | **West Town** | 1.540 | 12 | 3 | 94.6% |
+| 5 | **Avondale** | 1.551 | 13 | 2 | 81.2% |
+| 6–10 | Lincoln Park, Logan Square, McKinley Park, Near South Side, Loop | 1.575–1.791 | 16–28 | | |
+
+**Reading.**
+- **Brás's São Paulo neighbours** are Bom Retiro (0.900), Pari, Belém, Santa Cecília and Sé: its garment and wholesale neighbours and the centre.
+- **The Loop** moves from 52nd to 10th in Chicago. The low height weight no longer penalizes tall commercial areas.
+- **The weights inside U1 decide the order.** With v4's family weights but equal weights inside U1 and M4, Lower West Side is first, then West Town and Avondale. Emphasizing commerce and residential share brings Near West Side and Near North Side forward.
+- **What still separates the winners from Brás:**
+  - Near West Side: U6 50.4%, B1 19.9%, U1 15.9%, BV 7.1% of $D^2$.
+  - Near North Side: U6 43.5%, BV 20.4%, U1 14.4%, U2 11.1%.
+
+  Both differ from Brás on its activity mix, the core of its profile.
+- **Effective weights** (`family_contribution_shares_v4.csv`) are close to the nominal ones now that M3 is out: U6 23.9%, U1 21.6%, B1 19.4%, U4 10.4%. M1 still delivers about twice its 2% (3.8%).
+- **Stability over all units:** 73.8% of top-five relations hold in at least 80% of draws (v3: 72.3%).
+
+### 13.4 v4 against named alternatives
+
+From `comparison_v4.csv`, each alternative compared with v4:
+
+| Alternative | Spearman, all pairs | Shared top 5 | Brás's Chicago top 5 kept | Brás's Chicago top 5 |
+|---|---:|---:|---:|---|
+| v2 published (hybrid, equal weights) | 0.803 | 0.519 | 2 | West Town, Avondale, Logan Square, Lincoln Park, North Center |
+| v3 settings | 0.957 | 0.692 | 3 | Lower West Side, Avondale, West Town, McKinley Park, Logan Square |
+| v4 family weights, equal inside U1 and M4 | 0.988 | 0.842 | 3 | Lower West Side, West Town, Avondale, Logan Square, Lincoln Park |
+| Hybrid scaling, v4 weights | 0.942 | 0.720 | 4 | Near North Side, Near West Side, West Town, Avondale, Lincoln Park |
+| v4 weights, PCA distance (7 components) | 0.994 | 0.750 | 3 | Near West Side, Near North Side, Near South Side, Lower West Side, Lincoln Park |
+| B1 0.10 | 0.992 | 0.892 | 5 | Near West Side, Lower West Side, Near North Side, West Town, Avondale |
+| B1 0.30 | 0.995 | 0.920 | 5 | Near North Side, Near West Side, West Town, Avondale, Lower West Side |
+| U1 0.15 | 0.996 | 0.898 | 4 | Lower West Side, West Town, Avondale, Near West Side, Lincoln Park |
+| U1 0.35 | 0.997 | 0.940 | 4 | Near West Side, Near North Side, Lower West Side, Lincoln Park, West Town |
+| U6 0.15 | 0.997 | 0.912 | 4 | Near West Side, Near North Side, Lincoln Park, West Town, Avondale |
+| U6 0.35 | 0.998 | 0.914 | 5 | Lower West Side, Near West Side, Near North Side, West Town, Avondale |
+| BV 0.10 (v3's height weight) | 0.993 | 0.865 | 4 | Lower West Side, Avondale, West Town, Near West Side, Lincoln Park |
+
+**Reading.**
+- **The set is fairly robust; the order is not.** Single weight changes keep four or five of the five.
+- **First place flips** between Near West Side, Near North Side and Lower West Side. Lowering U1 to 0.15, raising U6 to 0.35 or restoring BV to 0.10 puts Lower West Side first again.
+- **Report the group, not a winner:** Near West Side, Near North Side, Lower West Side, West Town and Avondale.
+
+### 13.5 Match strength (v3 and v4)
+
+| | v3 | v4 |
+|---|---:|---:|
+| Brás's best Chicago distance | 1.182 | 1.476 |
+| Median of every unit's best cross-city distance | 0.639 | 0.591 |
+| Share of units whose best cross-city match is closer than Brás's | 95.4% | **98.3%** |
+| Median distance between any two units | 1.307 | 1.271 |
+
+- Distances are not comparable across versions; the definitions differ. The percentile is comparable.
+- **Under both settings Brás has no close Chicago match.** The ranking names the least different areas, and v4's are farther from Brás, relative to how close other units' matches are, than v3's.
+- The weight draws test stability around the settings. **They do not show that the matches are good.**
+
+### 13.6 Limits added by v4
+
+- **Low weights on height, street density and residents** (3%, 2%, 1%) mean the model largely ignores how tall, how fine-grained and how populated a candidate is. Near North Side's towers count little.
+- **Post-hoc framing.** The weights were set after v3's results were seen and found unsatisfying. They are not tuned to a result, but the question itself was chosen in response to results.
+- **Double counting carried from v2.** Commerce enters U1 and, through intensity, U6. Inside U1 the residential and commerce shares compete for the same land, and both now carry high weights.
+- **Fixed inner weights in the draws.** The 500 draws vary family weights only. The inner U1 weights, the most consequential choice, are tested only by the named alternative above.
+
+Reproduce: `python analysis/scripts/sp_chicago_model_settings.py v4` (repository `.venv`; seed 20261006). The explorer reproduces `distance_v4.csv` to 1.2e-10.

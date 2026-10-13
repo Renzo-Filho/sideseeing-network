@@ -2,7 +2,23 @@
 
 This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cross-city](harmonization/MODEL_REPORT.md) models were fitted on 6 October 2026; [STATUS.md](STATUS.md) and those reports give the current inclusion lists. Earlier statements below that fitting is paused describe their original checkpoints.
 
-## Final settings of the cross-city model (v3) — 13 October 2026
+## Proposed Brás-focused settings (v4); v3 reopened — 13 October 2026
+
+**Decision (user).** The v3 "final" settings were reopened for exploration. `sp_chicago_model_v4` is the current proposal and the explorer's starting settings. It is not final.
+
+**Settings:**
+- all-relative scaling and the full distance, as in v3;
+- U1 and U6 0.25 each, B1 0.20, U4 0.10 (80% on Brás's four most distinctive families within São Paulo); M4 and M6 0.05 each, U2 0.04, BV 0.03, M1 0.02, U3 0.01; M3 and M7 off;
+- inside U1, commerce 3, residential 2, industrial 1, institutional 0; inside M4, compactness 2, elongation 1.
+
+**Why.** v3's matches are not commercial areas: West Town and Avondale are over 60% residential land by the model's own CMAP data. They are also weak matches. v4 asks which areas reproduce the traits that distinguish Brás within São Paulo.
+
+**Consequence.**
+- Brás's closest Chicago group: Near West Side, Near North Side, Lower West Side, West Town, Avondale. First place is not firm.
+- Under both v3 and v4, Brás has no close Chicago match: its best Chicago distance is farther than the best cross-city match of 95% (v3) and 98% (v4) of units. Report the group with that match strength, not a single winner.
+- Report: [MODEL_REPORT §13](harmonization/MODEL_REPORT.md#13-version-4-proposed-brás-focused-settings-13-october-2026).
+
+## Final settings of the cross-city model (v3) — 13 October 2026 (reopened the same day)
 
 **Decision (user).** The São Paulo–Chicago model's final settings are contract `sp_chicago_model_v3`:
 - **all-relative scaling** and the **full distance**;

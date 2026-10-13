@@ -1,6 +1,6 @@
 # São Paulo–Chicago model v3: final settings (13 October 2026)
 
-Produced by [`analysis/scripts/sp_chicago_model_v3.py`](../../../scripts/sp_chicago_model_v3.py) under the contract [`sp_chicago_model_v3.json`](../../../config/sp_chicago_model_v3.json).
+Produced by [`analysis/scripts/sp_chicago_model_settings.py v3`](../../../scripts/sp_chicago_model_settings.py) under the contract [`sp_chicago_model_v3.json`](../../../config/sp_chicago_model_v3.json).
 - Data: 173 units and 21 columns, the same inputs as [v2](../sp_chicago_model_v2_2026_10_08/README.md); reference Brás (SP:10).
 - Settings: all-relative scaling and the full distance.
 - Family weights: U1 0.25, U6 0.20, BV, M1 and B1 0.10 each, U2, U3, U4, M6 and M4 0.05 each. M3 and M7 are off.
