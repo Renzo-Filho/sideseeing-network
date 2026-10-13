@@ -4,7 +4,7 @@
 
 - Method and full results: [MODEL_REPORT](MODEL_REPORT.md) (§11 v2, §12 v3, §13 v4).
 - Decisions: [DECISIONS](../DECISIONS.md) and the cross-city sections of [MODEL_PLAN](../chicago/MODEL_PLAN.md).
-- Sources of the numbers: the model's published tables in `analysis/results/SP_CHI/sp_chicago_model_v{2,3,4}_*/`, recomputed during the session with the model's own code. Section 7 is a variant the user set in the explorer; it is reproduced here but not published as a version. Section 9 uses the census-tract pieces in `analysis/results/Chicago/chicago_tract_breakdown_2026_10_13/`, scored with the explorer's own code (`viz/model.js`).
+- Sources of the numbers: the model's published tables in `analysis/results/SP_CHI/sp_chicago_model_v{2,3,4}_*/`, recomputed during the session with the model's own code. Section 7 is a variant the user set in the explorer; it is reproduced here but not published as a version. Sections 9 and 10 use the census-tract pieces in `analysis/results/Chicago/chicago_tract_breakdown_2026_10_13/` and the neighborhood pieces in `analysis/results/Chicago/chicago_neighborhoods_2026_10_13/`, scored with the explorer's own code (`viz/model.js`).
 
 ## 1. Summary
 
@@ -19,7 +19,7 @@
 4. **A defensible statement of the result:**
 
    > At Community Area scale, Chicago has no close analogue of Brás. Its best Chicago match is among the weakest cross-city matches in every version of the model, and the more the distance emphasizes Brás's distinctive traits, the weaker that match becomes. The least different areas are Near West Side, Near North Side, Lower West Side, West Town and Avondale, their order depending on which traits are emphasized.
-5. **Below Community Area scale, Brás-like pieces exist, on commercial corridors (§9).** Under v4, 22 of 801 census-tract pieces are closer to Brás than any whole area. The best is 24% closer, a gain larger than 92 of the 96 São Paulo districts get. The closest pieces are corridor tracts in residential areas: Diversey and Cicero, Clark and Howard, North Avenue, Ashland and 35th, Chicago Avenue, and Pilsen's 18th Street. Even the best piece is still farther from Brás than 94% of the units' best area-level matches.
+5. **Inside the areas, a few neighborhoods come closer, but none is close (§10).** With the City of Chicago's neighborhoods (102 pieces, median 5.1 km², near Brás's 3.6 km²), 6 pieces beat the best whole area under v4. The best is Bucktown, in Logan Square, at 1.256 against 1.476, 15% closer; only 3 of the 96 São Paulo districts gain more. United Center (the western part of Near West Side), West Town's own neighborhood, River North and West Loop follow. The best neighborhood is still farther from Brás than 95% of the units' best cross-city matches. A first try with census tracts (§9) found closer pieces on commercial corridors, but a tract is about 7 times smaller than Brás.
 
 ## 2. How the model works
 
@@ -261,16 +261,18 @@ Under v4 the full list is computed from `distance_v4.csv`:
 
 ## 8. Open questions
 
-- **Unit scale.** Tested with census tracts in §9: corridor tracts come closer than any area, especially under v4 and v3. A next step would compare like with like, for example Brás against corridor-sized pieces of São Paulo as well, or São Paulo census tracts against Chicago tracts.
+- **Unit scale.** Tested with census tracts (§9) and with the City's neighborhoods (§10). Neighborhoods of Brás's size bring a modest gain, mostly near downtown. Smaller pieces such as commercial-corridor tracts come closer but are not comparable in size. A like-for-like test would split São Paulo's districts the same way.
 - **The question to settle.** Is the target "least different overall profile" (v2, v3), "Brás's distinctive traits" (v4), or "a commercial hub" (which would point to the Loop or Near North Side)? Each is defensible; the write-up should name one and report the others beside it.
 - **Double counting.** Commerce appears in U1 and U6 intensity. U1's plain shares count "commercial instead of residential" twice. A log-ratio treatment of U1 would be a new version.
 - **External check.** Nothing outside the model validates similarity. Match strength and stability describe the model; they do not confirm the matches.
 
-## 9. Census-tract breakdown (13 October 2026)
+## 9. Census-tract breakdown (13 October 2026; superseded by §10)
+
+*The explorer's tab first used these tracts. The user replaced them the same day because a tract (median 0.5 km²) is about 7 times smaller than Brás (3.6 km²). The results stay in `analysis/results/Chicago/chicago_tract_breakdown_2026_10_13/`, produced by `chicago_tract_breakdown.py` at commit `9e8220c9`.*
 
 **Question.** The user asked what happens if only Pilsen is taken, and then for a way to break each Community Area into its neighbourhoods. The City of Chicago's neighbourhood layer maps 63 of the 77 areas one-to-one and does not split Lower West Side, so Pilsen cannot be isolated with it. Overture's neighbourhood polygons cover 6% of the city. The user chose **2020 census tracts**: 801 tract pieces (the part of a tract inside one area), median 10 per area. Lower West Side, which is Pilsen plus Heart of Chicago, has 11.
 
-**Method.** Each piece is measured on the 21 columns with the areas' sources and rules. Summing the pieces reproduces each area's published counts ([results README](../../analysis/results/Chicago/chicago_tract_breakdown_2026_10_13/README.md)). Pieces are scored with the fit's constants and calibration, not refitted, and placed against Brás. The explorer's **Chicago tracts** tab does this live for any settings and any reference.
+**Method.** Each piece is measured on the 21 columns with the areas' sources and rules. Summing the pieces reproduces each area's published counts ([results README](../../analysis/results/Chicago/chicago_tract_breakdown_2026_10_13/README.md)). Pieces are scored with the fit's constants and calibration, not refitted, and placed against Brás. The explorer's tab did this live until the tracts were replaced by neighborhoods (§10).
 
 ### 9.1 Pilsen (Lower West Side)
 
@@ -314,3 +316,32 @@ Three findings:
 3. **Still not close.** Even the best piece (1.116 under v4, 0.945 under v3) is farther from Brás than 94% (v4) and 86% (v3) of the 173 units' best area-level cross-city matches. Tracts make the match less weak; they do not make it strong. That comparison sets a tract against areas, so it is indicative only.
 
 **Reading.** If the study needs one Chicago place that resembles Brás, the tract evidence points to a commercial corridor rather than a Community Area. The candidates recur across settings: Chicago Avenue and Grand in West Town, Pilsen's 18th Street, North Avenue in Humboldt Park and Ashland and 35th in McKinley Park. The best whole areas remain the group in §1 item 4. Neither is a close match.
+
+## 10. City neighborhoods inside each area (13 October 2026)
+
+**Unit.** The user chose the City of Chicago's 98-neighborhood map (layer bbvz-uum9; the City calls it approximate and unofficial). Each 2020 census-block piece goes to the neighborhood that holds its centre, so boundaries follow block edges, nest exactly in the 77 areas, and keep each family's block allocation. 102 pieces are published (99.99% of the land), with a median of 5.1 km² of land; Brás has 3.6 km². 13 areas split into 2 to 5 neighborhoods: Near North Side and West Town 5; Near West Side and Loop 4; Lake View and Lincoln Park 3; Logan Square, Austin, Near South Side, Armour Square, Hyde Park, Woodlawn and Edgewater 2. The other 64 keep one neighborhood equal to the area, Lower West Side among them, so Pilsen still cannot be isolated. The smallest pieces are downtown: Greektown 0.14 km², Printers Row 0.20 km², Millennium Park 0.26 km². All checks pass ([results README](../../analysis/results/Chicago/chicago_neighborhoods_2026_10_13/README.md)). The explorer's **Chicago neighborhoods** tab shows them live.
+
+| Settings | Closest whole area | Neighborhoods closer than it | Best neighborhood | Best ÷ best area | Typical São Paulo district (median ratio) | Districts that gain more than Brás | Best neighborhood's percentile among units' best cross-city matches |
+|---|---|---|---|---|---|---|---|
+| v4 | Near West Side 1.476 | 6 of 102 | Bucktown (Logan Square), 1.256 | 0.851 | 1.000 | 3 | 95% |
+| v3 | Lower West Side 1.182 | 2 | United Center (Near West Side), 1.140 | 0.964 | 1.000 | 11 | 95% |
+| v2 hybrid R1 | West Town 1.096 | 1 | Wicker Park (West Town), 1.095 | 0.999 | 1.000 | 22 | 88% |
+| v2 all-relative R1 | Lower West Side 0.963 | 2 | United Center (Near West Side), 0.930 | 0.966 | 1.000 | 9 | 81% |
+
+Under v4, the next pieces are West Town's own neighborhood (1.322), United Center (1.348), River North (1.379), West Loop (1.386) and Lincoln Park (1.462). Inside the v4 group from §1:
+
+| Area (v4 distance) | Its neighborhoods |
+|---|---|
+| Near West Side (1.476) | United Center 1.348, West Loop 1.386, Greektown 1.698, Little Italy and UIC 2.050 |
+| Near North Side (1.500) | River North 1.379, Streeterville 1.752, Rush & Division 1.767, Old Town 1.975, Gold Coast 2.488 |
+| West Town (1.540) | West Town 1.322, Wicker Park 1.662, Ukrainian Village 1.944, East Village 1.949, Humboldt Park 2.264 |
+| Loop (1.791) | Loop 1.864, Printers Row 2.445, Millennium Park 2.774, Grant Park 3.350 |
+
+Findings:
+
+1. **The gain is modest and specific to the Brás-focused settings.** Under v4, Brás's best neighborhood is 15% closer than its best area. For a typical São Paulo district the best neighborhood is no closer than the best area (median ratio 1.000), and only 3 districts gain more than Brás. Under v3 and v2 all-relative the gain is 3–4%; under v2 hybrid there is none.
+2. **The same few pieces recur.** United Center, West Town (with Wicker Park), Bucktown and Lincoln Park appear near the top under every setting. United Center beats its whole area (Near West Side) under all four settings. River North beats Near North Side under v4 and v3.
+3. **Still not close.** The best neighborhood is farther from Brás than 81–95% of the 173 units' best cross-city matches, depending on the settings.
+4. **Compared with tracts (§9).** Tracts found larger gains (24% under v4) on commercial corridors, but at about a seventh of Brás's size, and many of them had under 100 businesses (480 of 801). Neighborhoods are comparable in size and much more stable (6 of 102 pieces under 100), and they find less.
+
+**Reading.** At a scale comparable to Brás, Chicago's closest pieces are west and northwest of the Loop: United Center and West Loop (Near West Side), West Town and Wicker Park, Bucktown, River North, and Lincoln Park. Bucktown leads under v4 and United Center under v3. None of them is a close match.
