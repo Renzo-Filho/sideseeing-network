@@ -1,0 +1,76 @@
+{
+  "U3_residents": {
+    "pass": true,
+    "max_abs_diff": 1.4551915228366852e-11,
+    "areas_off": []
+  },
+  "U2_jobs": {
+    "pass": true,
+    "max_abs_diff": 3.637978807091713e-12,
+    "areas_off": []
+  },
+  "U6_dwellings": {
+    "pass": true,
+    "max_abs_diff": 1.4551915228366852e-11,
+    "areas_off": []
+  },
+  "land": {
+    "pass": true,
+    "max_abs_diff": 10085.01057639718,
+    "areas_off": []
+  },
+  "B1_footprint_m2": {
+    "pass": true,
+    "max_abs_diff": 4.874076694250107e-06,
+    "areas_off": []
+  },
+  "BV_function_on_areas": {
+    "pass": true,
+    "max_abs_diff": 1.7763568394002505e-15,
+    "areas_off": []
+  },
+  "M1_street_km": {
+    "pass": true,
+    "max_abs_diff": 0.14949238761047923,
+    "areas_off": []
+  },
+  "ov_m3_wmedian_ln_m2_function_on_areas": {
+    "pass": true,
+    "max_abs_diff": 1.7763568394002505e-15,
+    "areas_off": []
+  },
+  "ov_m4_wmedian_compactness_function_on_areas": {
+    "pass": true,
+    "max_abs_diff": 5.551115123125783e-17,
+    "areas_off": []
+  },
+  "M7_parcels": {
+    "pass": true,
+    "max_abs_diff": 0.0,
+    "areas_off": []
+  },
+  "U1_commerce_share": {
+    "pass": true,
+    "max_abs_diff": 2.6867397195928788e-14,
+    "areas_off": []
+  },
+  "U6_establishments": {
+    "pass": true,
+    "max_abs_diff": 0.0,
+    "areas_off": []
+  },
+  "U4_resident_weighted_areas": {
+    "pass": true,
+    "max_abs_diff": 0.0,
+    "areas_off": []
+  },
+  "summary": {
+    "pieces": 1723,
+    "published": 801,
+    "areas_covered": 77,
+    "published_land_share": 0.9972358129313442,
+    "published_without_residents": 5,
+    "published_without_u1": 10,
+    "published_under_100_establishments": 480
+  }
+}
