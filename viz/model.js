@@ -50,7 +50,7 @@
       for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const x = m[i * n + j]; if (x > 0) pos.push(x); }
       const beta = median(pos);
       for (let p = 0; p < n * n; p++) m[p] /= beta;
-      out.push({ family: b.family, block: b.block, m, beta });
+      out.push({ family: b.family, block: b.block, m, beta, bi });
     });
     const count = {};
     out.forEach((b) => { count[b.family] = (count[b.family] || 0) + 1; });
@@ -75,6 +75,27 @@
     for (let p = 0; p < N; p++) D[p] = Math.sqrt(num[p] / den[p]);
     for (const f in contrib) { const c = contrib[f]; for (let p = 0; p < N; p++) c[p] /= den[p]; }
     for (let i = 0; i < n; i++) D[i * n + i] = 0;
+    return { D, contrib };
+  }
+
+  /* Out-of-sample rows (census-tract pieces, block field T, scored with the fit's constants) against unit r: the same
+     column weights, calibration beta_b, budgets and available-case rule as harmonizedDistance, so a row equal to a
+     unit's own row reproduces that unit's distances. Returns D and each family's part of D^2 per row. */
+  function projectedDistance(blocks, bms, weights, r, colWeights = {}) {
+    const nt = blocks[0].T.length, num = new Float64Array(nt), den = new Float64Array(nt), contrib = {};
+    for (const bm of bms) {
+      const b = blocks[bm.bi], w = (weights[b.family] || 0) * bm.share;
+      if (!(w > 0)) continue;
+      const v = b.columns.map((c) => (c in colWeights ? +colWeights[c] : 1)), vs = v.reduce((x, y) => x + y, 0), xr = b.X[r];
+      const c = contrib[b.family] || (contrib[b.family] = new Float64Array(nt));
+      for (let t = 0; t < nt; t++) {
+        let s = 0;
+        for (let k = 0; k < v.length; k++) if (v[k] > 0) s += b.T[t][k] === null || xr[k] === null ? NaN : v[k] * sq(b.T[t][k] - xr[k]);
+        if (s === s) { const m = s / vs / bm.beta; num[t] += w * m; den[t] += w; c[t] += w * m; }
+      }
+    }
+    const D = Float64Array.from(num, (x, t) => Math.sqrt(x / den[t]));
+    for (const f in contrib) { const c = contrib[f]; for (let t = 0; t < nt; t++) c[t] /= den[t]; }
     return { D, contrib };
   }
 
@@ -385,7 +406,7 @@
     return out;
   }
 
-  const api = { blockMatrices, harmonizedDistance, indexModel, pcoa, euclidean, ward, cut, silhouette, alignLabels, clusters,
+  const api = { blockMatrices, harmonizedDistance, projectedDistance, indexModel, pcoa, euclidean, ward, cut, silhouette, alignLabels, clusters,
                 spearman, order, compare, loadings };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.VizModel = api;

@@ -9,10 +9,14 @@ The page recomputes every model in the browser, so this script exports model *in
   column weights) and the tables of each that the documentation quotes.
 - Simplified unit polygons in each city's projected CRS (decametres), unit names, and the published test tables
   that the documentation pages quote.
+- Census-tract pieces of the Chicago areas (chicago_tract_breakdown.py) for the breakdown tab: polygons, raw columns,
+  and every block's rows scored with the fit's own constants (block field T), so the page can place each tract against
+  any unit without refitting.
 analysis/tests/check_viz_model.js asserts that the page's computations reproduce the published results.
 """
 import json
 from pathlib import Path
+import geopandas as gpd
 import numpy as np
 import pandas as pd
 import sp_chicago_model as xm
@@ -21,9 +25,11 @@ import chicago_model as cm
 A = xm.A
 AB = A / "results/SP_CHI/simple_index_ab_2026_10_01/tables"
 XR = xm.OUT / "tables"
+TRACTS = A / "results/Chicago/chicago_tract_breakdown_2026_10_13"
 PRESETS = ("v4", "v3")                                 # the first is the page's starting settings
 OUT = A.parent / "viz/data.js"
 SIMPLIFY_M = 20                                        # polygon simplification tolerance (metres)
+TRACT_SIMPLIFY_M = 10
 NAME_FIX = {"Capao Redondo": "Capão Redondo", "Carrao": "Carrão", "Cidade Lider": "Cidade Líder", "Freguesia Do O": "Freguesia do Ó",
             "Jardim Angela": "Jardim Ângela", "Jose Bonifacio": "José Bonifácio", "Sacoma": "Sacomã", "Santa Cecilia": "Santa Cecília",
             "Tremembe": "Tremembé", "Vila Curuca": "Vila Curuçá", "Vila Jacui": "Vila Jacuí", "Alto De Pinheiros": "Alto de Pinheiros",
@@ -116,41 +122,76 @@ def unit_name(n):
     return NAME_FIX.get(n, n)
 
 
+def rings(geom, x0, y0):
+    parts = list(geom.geoms) if geom.geom_type == "MultiPolygon" else [geom]
+    return [np.round((np.asarray(r.coords)[:, :2] - [x0, y0]) / 10).astype(int).ravel().tolist() for p in parts for r in [p.exterior, *p.interiors]]
+
+
 def polygons(ids):
-    """Simplified rings per unit in each city's projected CRS, integer decametres from the city's corner."""
+    """Simplified rings per unit in each city's projected CRS, integer decametres from the city's corner; and each corner."""
     sp, ch = xm.geometry()
-    out = {}
-    for g, crs in ((sp, 31983), (ch, 26916)):
+    out, corner = {}, {}
+    for city, g, crs in (("SP", sp, 31983), ("CHI", ch, 26916)):
         g = g.to_crs(crs)
         g["geometry"] = g.geometry.simplify(SIMPLIFY_M, preserve_topology=True)
-        x0, y0 = g.total_bounds[0], g.total_bounds[1]
-        for uid, geom in zip(g.unit_id, g.geometry):
-            parts = list(geom.geoms) if geom.geom_type == "MultiPolygon" else [geom]
-            rings = []
-            for p in parts:
-                for r in [p.exterior, *p.interiors]:
-                    xy = np.round((np.asarray(r.coords)[:, :2] - [x0, y0]) / 10).astype(int)
-                    rings.append(xy.ravel().tolist())
-            out[uid] = rings
+        x0, y0 = corner[city] = g.total_bounds[0], g.total_bounds[1]
+        out |= {uid: rings(geom, x0, y0) for uid, geom in zip(g.unit_id, g.geometry)}
     missing = set(ids) - set(out)
     if missing:
         raise ValueError(f"no polygon for {sorted(missing)}")
-    return [out[u] for u in ids]
+    return [out[u] for u in ids], corner
 
 
-def harmonized(df, subs, fams, ids):
-    """Every block of the three C6 scalings, built by cm.blocks exactly as the published fit."""
+def scored(rows, df, b, scaling):
+    """A block's rows for out-of-sample Chicago units (census-tract pieces) scored with the fit's own constants: each scalar
+    column standardized with the mean and SD of the rows the fit standardizes it over (the 77 Chicago areas for a relative
+    column, all 173 units for an absolute one) and capped at ±3; U6 log-ratios as the fit reads them (raw under
+    all-absolute, centred on the Chicago areas otherwise). On the fit's own Chicago rows it reproduces cm.blocks (asserted)."""
+    if b["block"] == "composition":
+        return rows[[xm.RAW_CLR[c] for c in b["columns"]] if scaling == "all_absolute" else b["columns"]].to_numpy(float)
+    lv, chi = xm.levels(scaling), df.index.str.startswith("CHI:")
+    out = []
+    with np.errstate(divide="ignore"):                  # a tract with no residents, jobs or parcels: log 0 = -inf, capped at -3
+        for c in b["columns"]:
+            ref = cm.transform(df[c], cm.TRANSFORM[c])
+            ref = ref[chi] if lv[c] == "relative" else ref
+            out.append(((cm.transform(rows[c], cm.TRANSFORM[c]) - ref.mean()) / ref.std(ddof=0)).clip(-cm.CAP, cm.CAP))
+    return np.column_stack(out)
+
+
+def tracts(corner):
+    """Published tract pieces: names, area, counts, polygons (Chicago corner) and raw model columns."""
+    t = pd.read_csv(TRACTS / "tract_columns.csv", index_col="sub_id")
+    t = t[t.published]
+    g = gpd.read_parquet(TRACTS / "tract_pieces.parquet").set_index("sub_id").loc[t.index].to_crs(26916)
+    g = g.geometry.simplify(TRACT_SIMPLIFY_M, preserve_topology=True)
+    meta = dict(source=str(TRACTS.relative_to(xm.ROOT)), simplify_m=TRACT_SIMPLIFY_M,
+                units=[dict(id=i, ca=r.unit_id, name=r["name"], nbhd=r.neighbourhood if isinstance(r.neighbourhood, str) else None,
+                            land_km2=round(r.land_m2 / 1e6, 3), residents=round(r.residents), establishments=int(r.establishments))
+                       for i, r in t.iterrows()],
+                polygons=[rings(geom, *corner) for geom in g])
+    return t, meta
+
+
+def harmonized(df, subs, fams, ids, tr):
+    """Every block of the three C6 scalings, built by cm.blocks exactly as the published fit, with the tract rows (T)."""
     scalings = {}
+    chi = df.index.str.startswith("CHI:")
+    own = pd.concat([df, subs[list(xm.RAW_CLR.values())]], axis=1)[chi]
     for s in ("hybrid", "all_absolute", "all_relative"):
         bl = cm.blocks(xm.frame_for(df, subs, s), fams, levels=xm.levels(s))
+        for b in bl:
+            if not np.allclose(scored(own, df, b, s), b["X"][chi], equal_nan=True):
+                raise ValueError(f"tract scoring does not reproduce {s} {b['family']} {b['block']}")
         scalings[s] = dict(levels={c: v for c, v in xm.levels(s).items() if c in df.columns},
                            blocks=[dict(family=b["family"], block=b["block"], columns=b["columns"], share=b["share"], cal=b["cal"],
-                                        X=[clean(row) for row in b["X"]]) for b in bl])
+                                        X=[clean(row) for row in b["X"]], T=[clean(row, 4) for row in scored(tr, df, b, s)]) for b in bl])
     col_fam = {c: f for f, cs in fams.items() for c in cs}
     r3 = {s: sorted(pd.read_csv(XR / f"r3_pruning_log_{s}.csv").dropped) for s in scalings}    # dropped columns
     columns = [dict(id=c, family=col_fam[c], label=COLUMNS[c][0], unit=COLUMNS[c][1], high=COLUMNS[c][2],
                     desc=COL_DESC.get(c, FAMILIES[col_fam[c]][2]),
-                    transform=cm.TRANSFORM.get(c, "identity (log-ratio)"), raw=clean(df.loc[ids, c].to_numpy(float)))
+                    transform=cm.TRANSFORM.get(c, "identity (log-ratio)"), raw=clean(df.loc[ids, c].to_numpy(float)),
+                    tract_raw=clean(tr[c].replace([np.inf, -np.inf], np.nan).to_numpy(float), 6))
                for c in df.columns]
     families = [dict(id=f, name=FAMILIES[f][0], domain=FAMILIES[f][1], desc=FAMILIES[f][2], columns=cs,
                      chicago=SOURCES[f][0], sao_paulo=SOURCES[f][1], same_instrument=SOURCES[f][2],
@@ -211,19 +252,22 @@ def main():
     x, df, subs, names, city, fams = xm.load_inputs()
     ids = df.index.tolist()
     ab, comp = index_ab(ids)
+    polys, corner = polygons(ids)
+    tr, tmeta = tracts(corner["CHI"])
     data = dict(
         meta=dict(contract=x["contract_version"], results=str(xm.OUT.relative_to(xm.ROOT)), reference=xm.REFERENCE, simplify_m=SIMPLIFY_M,
                   generated_by="analysis/scripts/export_viz_data.py"),
         units=[dict(id=u, name=unit_name(names[u]), city=city[u], land_km2=round(float(comp.land_km2[u]), 3)) for u in ids],
-        polygons=polygons(ids),
+        polygons=polys,
         ab=ab,
-        h=harmonized(df, subs, fams, ids),
+        h=harmonized(df, subs, fams, ids, tr),
+        tracts=tmeta,
         summary=summary(comp, city),
     )
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("// Generated by analysis/scripts/export_viz_data.py; do not edit.\nwindow.VIZ_DATA = "
                    + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
-    print(f"wrote {OUT.relative_to(xm.ROOT)} ({OUT.stat().st_size / 1e6:.2f} MB): {len(ids)} units")
+    print(f"wrote {OUT.relative_to(xm.ROOT)} ({OUT.stat().st_size / 1e6:.2f} MB): {len(ids)} units, {len(tr)} tract pieces")
 
 
 if __name__ == "__main__":

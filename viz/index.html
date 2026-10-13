@@ -218,6 +218,8 @@ mjx-container[display="true"] { margin: .4em 0 !important; }
 .mapbox path.u { stroke: var(--surface); stroke-width: .7; vector-effect: non-scaling-stroke; cursor: pointer; }
 .mapbox path.u:hover { stroke: var(--ink); stroke-width: 1.5; }
 .mapbox path.ring { fill: none; vector-effect: non-scaling-stroke; pointer-events: none; }
+.mapbox path.line { fill: none; stroke: var(--ink-2); stroke-width: .6; stroke-opacity: .55; vector-effect: non-scaling-stroke; pointer-events: none; }
+.mapbox path.line.focus { stroke: var(--ink); stroke-width: 2.4; stroke-opacity: 1; }
 .mapbox text { font-family: var(--font-sans); font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-linejoin: round; pointer-events: none; }
 .legend { display: flex; align-items: center; gap: 8px; font-size: .76rem; color: var(--ink-2); flex-wrap: wrap; }
 .legend .bar { flex: 0 1 180px; height: 8px; border-radius: 2px; }
@@ -266,7 +268,7 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
         <button class="tab" data-tab="doc-a">Index A</button><button class="tab" data-tab="doc-b">Index B</button><button class="tab" data-tab="doc-h">Harmonized</button>
       </div>
       <div class="tabgroup"><span>Explore</span>
-        <button class="tab" data-tab="index-a">Index A</button><button class="tab" data-tab="index-b">Index B</button><button class="tab" data-tab="harmonized">Harmonized model</button>
+        <button class="tab" data-tab="index-a">Index A</button><button class="tab" data-tab="index-b">Index B</button><button class="tab" data-tab="harmonized">Harmonized model</button><button class="tab" data-tab="tracts">Chicago tracts</button>
       </div>
     </nav>
     <button class="themebtn" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
@@ -701,6 +703,41 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
 <section class="view method-a" id="view-index-a" data-view="index-a" hidden></section>
 <section class="view method-b" id="view-index-b" data-view="index-b" hidden></section>
 <section class="view method-h" id="view-harmonized" data-view="harmonized" hidden></section>
+<!-- ============================== CHICAGO TRACTS ============================== -->
+<section class="view method-h" id="view-tracts" data-view="tracts" hidden>
+  <div class="xmain">
+    <div class="xhead">
+      <div class="eyebrow">Explore · Harmonized model · Chicago census tracts</div>
+      <h1 data-title></h1>
+      <p class="def">Each Chicago Community Area broken into its 2020 census tracts, counting only the part of a tract inside the area (median 10 tracts per area). Every tract is measured on the model's 21 columns from the same sources and with the same rules as the areas. It is then placed against the reference with the Harmonized model's current settings, and with the areas' own scaling and calibration, so nothing is refitted. <button class="btn small" data-go="harmonized">Change the settings</button> <button class="btn small" data-go="tr-read">How to read tracts</button></p>
+      <div class="picker-row">
+        <label for="ref-T" class="muted">Reference</label><input type="search" list="unit-list" data-ref id="ref-T" autocomplete="off" aria-label="Reference unit">
+        <label for="tr-ca" class="muted">Community Area</label><select id="tr-ca"></select>
+      </div>
+      <p class="note" data-tr-settings></p>
+      <div class="tiles" data-tr-tiles></div>
+    </div>
+    <div data-tr-error></div>
+    <section class="xsection" id="tr-map"><header><h2>Tracts across Chicago</h2>
+      <p>Each tract is shaded by its distance to the reference, using one colour scale for the whole city. Lines mark the Community Areas; tracts outside the chosen area are faded. Outlines mark the 10 tracts closest to the reference and the open tract. Click a tract to open it.</p></header>
+      <div class="grid-3-2"><div class="panel"><div class="mapbox" data-tr-map></div><div class="legend" data-tr-legend></div></div>
+        <div class="panel"><div class="panel-head"><h3>Closest tracts in Chicago</h3><span class="note">Click a row to open it</span></div><div class="tablewrap" data-tr-top></div></div></div></section>
+    <section class="xsection" id="tr-ca-sec"><header><h2 data-tr-ca-title></h2><p data-tr-ca-note></p></header>
+      <div class="panel"><div class="plot" data-tr-bars></div></div></section>
+    <section class="xsection" id="tr-profile"><header><h2 data-tr-prof-title></h2>
+      <p>Each value is shown raw and as the model sees it: a z-score capped at ±3. The reference and the area keep their model values; the tract is standardized with the same constants as the Chicago areas (the 77 areas' mean and SD for a relative column, all 173 units' for an absolute one), so under relative scaling Brás is read within São Paulo and the area and tract within Chicago. The U6 mix rows are log-ratios and are not standardized. Only active columns are listed.</p></header>
+      <div class="panel"><div class="tablewrap" data-tr-profile></div></div></section>
+    <section class="xsection" id="tr-read"><header><h2>Reading the tracts</h2></header>
+      <div class="panel"><ul class="steps">
+        <li><b>A tract is about ten times smaller than Brás.</b> Small units are more extreme: a tract can be almost all shops or all housing. A tract that is closer than its area may be a purer version of one trait, not a better match for the whole profile.</li>
+        <li><b>The best of about 870 tracts beats the best of 77 areas partly by chance.</b> The more candidates there are, the closer the nearest one gets, even with no real match. Compare a tract with its own area and its neighbours, not only with the citywide list.</li>
+        <li><b>Scored, not refitted.</b> Tracts use the areas' means, SDs and calibration, so a tract distance has the same scale as an area distance. Tracts do not change the 173-unit model, its rankings or its match strength.</li>
+        <li><b>Thin data.</b> Many tracts have fewer than 100 establishments, so the U6 mix is noisy there (the profile shows the count). Tracts with no residents get no transit value, since U4 is averaged over residents. Below 10% classified occupied land, the U1 shares are missing; the distance then uses the families both units have.</li>
+        <li><b>Full distance only.</b> The PCA (R2) geometry is not applied to tracts; under it this page uses the full model distance.</li>
+        <li>Boundary slivers are left out but still count in their areas: pieces under 5% of their tract's city land or under 0.05 km². The neighbourhood names come from the City of Chicago layer and are approximate. Source: <span class="mono">analysis/results/Chicago/chicago_tract_breakdown_2026_10_13</span>.</li>
+      </ul></div></section>
+  </div>
+</section>
 </main>
 
 <datalist id="unit-list"></datalist>
