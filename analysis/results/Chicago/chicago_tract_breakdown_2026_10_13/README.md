@@ -1,6 +1,8 @@
 # Chicago Community Areas by 2020 census tract (13 October 2026)
 
-Script: `analysis/scripts/chicago_tract_breakdown.py` (about 7 minutes). Read by `analysis/scripts/export_viz_data.py` for the explorer's **Chicago tracts** tab.
+**Superseded on 13 October 2026** by [`chicago_neighborhoods_2026_10_13`](../chicago_neighborhoods_2026_10_13/README.md): a tract (median 0.5 km²) is about 7 times smaller than Brás. The explorer no longer reads this folder; it is kept with the findings in `docs/harmonization/SETTINGS_DISCUSSION.md` §9.
+
+Script: `analysis/scripts/chicago_tract_breakdown.py` at commit `9e8220c9` (about 7 minutes; the file is now `chicago_neighborhoods.py`).
 
 ## What it is
 

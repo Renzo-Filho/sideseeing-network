@@ -1,13 +1,15 @@
-"""Chicago Community Areas broken down by 2020 census tract, for the explorer's Chicago tracts tab.
+"""Chicago Community Areas broken into the City of Chicago's neighborhoods, for the explorer's Chicago neighborhoods tab.
 
-A sub-unit is a tract piece: the 2020 blocks of one tract inside one Community Area (block_district_pieces), so pieces
-nest exactly in the 77 areas. Pieces under 5% of their tract's city land or under 0.05 km² (boundary slivers) are
-computed but not published. The 21 columns of sp_chicago_model_v2 are recomputed for every piece with the accepted
+A sub-unit is a neighborhood piece: the 2020 block pieces of one Community Area (block_district_pieces) whose
+representative point lies in one of the City's 98 neighborhoods (layer bbvz-uum9), so pieces nest exactly in the 77
+areas and follow block edges. Pieces under 5% of their neighborhood's city land or under 0.05 km² are computed but
+not published. This replaces the census-tract version of 13 October 2026 (chicago_tract_breakdown.py at commit
+9e8220c9), whose pieces were about 7 times smaller than Brás. The 21 columns of sp_chicago_model_v2 are recomputed for every piece with the accepted
 family scripts' own functions and rules: U3, U2, U4 residents and U6 dwellings from the same block allocation; B1, BV,
 M1, M6, M3, M4, M7, U1 and U6 places on the piece's land. Checks: summing the pieces' counts reproduces each area's
 published counts, and the non-additive functions (BV, M3, M4, U4) reproduce the published area values.
 
-    python analysis/scripts/chicago_tract_breakdown.py"""
+    python analysis/scripts/chicago_neighborhoods.py"""
 import json
 from pathlib import Path
 import geopandas as gpd, numpy as np, pandas as pd, pyogrio, shapely
@@ -24,9 +26,9 @@ ROOT = Path(__file__).resolve().parents[2]
 A = ROOT / "analysis"
 D = A / "data/Chicago"
 PREP = A / "work/prepared/Chicago/chi_functional_2026_09_16_v2"
-OUT = A / "results/Chicago/chicago_tract_breakdown_2026_10_13"
+OUT = A / "results/Chicago/chicago_neighborhoods_2026_10_13"
 R = A / "results"
-NEIGHBOURHOODS = D / "Boundaries_-_Neighborhoods_20261013.geojson"     # City of Chicago bbvz-uum9, downloaded 2026-10-13
+NEIGHBORHOODS = D / "Boundaries_-_Neighborhoods_20261013.geojson"     # City of Chicago bbvz-uum9, downloaded 2026-10-13
 MIN_SHARE, MIN_LAND_M2 = 0.05, 50_000
 CLR = [f"u6_clr_city_{k}" for k in u6.CLASSES]
 checks = {}
@@ -37,10 +39,6 @@ def check(name, a, b, rtol=1e-6, atol=1e-6):
     a, b = a.reindex(b.index), b.astype(float)
     bad = ~np.isclose(a, b, rtol=rtol, atol=atol)
     checks[name] = {"pass": bool(not bad.any()), "max_abs_diff": float((a - b).abs().max()), "areas_off": b.index[bad].tolist()}
-
-
-def tract_name(code):
-    return f"Tract {int(code[:4])}" + (f".{code[4:]}" if code[4:] != "00" else "")
 
 
 def block_pieces(water):
@@ -65,7 +63,14 @@ def block_pieces(water):
     p["dwellings"] = acs("b25001", "B25001_E001", "HOUSING20")
     wac = pd.read_csv(D / "lodes_2023/il_wac_S000_JT00_2023.csv.gz", dtype={"w_geocode": str}, usecols=["w_geocode", "C000"]).set_index("w_geocode").C000
     p["jobs"] = wac.reindex(p.GEOID20).fillna(0).to_numpy() * p.w.to_numpy()
-    p["sub_id"] = p.unit_id + "/" + p.GEOID20.str[5:11]
+    nb = pyogrio.read_dataframe(NEIGHBORHOODS, columns=["pri_neigh"]).to_crs(26916)
+    rp = gpd.GeoDataFrame(geometry=gpd.read_parquet(PREP / "block_district_pieces.parquet").representative_point().values, crs=26916)
+    j = gpd.sjoin(rp, nb, predicate="within", how="left")
+    j = j[~j.index.duplicated()].pri_neigh
+    if j.isna().any():                           # a point in a gap between neighborhoods takes the nearest one
+        k = gpd.sjoin_nearest(rp[j.isna()], nb)
+        j[j.isna()] = k[~k.index.duplicated()].pri_neigh
+    p["sub_id"] = p.unit_id + "/" + j.to_numpy()
     return p
 
 
@@ -77,10 +82,10 @@ def main():
     gross = gpd.read_parquet(PREP / "block_district_pieces.parquet").assign(sub_id=bp.sub_id).dissolve("sub_id")[["geometry"]].reset_index()
     land = gross.assign(geometry=shapely.difference(gross.geometry.values, water)).rename(columns={"sub_id": "unit_id"})
     t = pd.DataFrame(index=pd.Index(gross.sub_id, name="sub_id"))
-    t["unit_id"], t["tract"] = t.index.str[:6], t.index.str[7:]
+    t["unit_id"], t["name"] = t.index.str[:6], t.index.str[7:]
     t["land_m2"] = land.set_index("unit_id").geometry.area
     land = land[land.area > 0].reset_index(drop=True)                     # 54 pieces are water only
-    t["share_of_tract_land"] = t.land_m2 / t.groupby("tract").land_m2.transform("sum")
+    t["share_of_neighborhood_land"] = t.land_m2 / t.groupby("name").land_m2.transform("sum")
     ca = b1.land_units("CHI")
     ca_of = lambda s: s.groupby(s.index.str[:6]).sum()
     print("units", len(t), flush=True)
@@ -191,20 +196,15 @@ def main():
     check("U4_resident_weighted_areas", pd.Series(w * tot).groupby(by_ca).sum() / pd.Series(w).groupby(by_ca).sum(), pub.u4_ptai_avg_resident.loc[ca.unit_id])
     print("U4", flush=True)
 
-    # Names: the tract, and the City neighbourhood holding the piece's representative point.
-    nb = pyogrio.read_dataframe(NEIGHBOURHOODS, columns=["pri_neigh"]).to_crs(26916)
-    rp = gpd.GeoDataFrame({"sub_id": gross.sub_id}, geometry=gross.representative_point(), crs=gross.crs)
-    t["neighbourhood"] = gpd.sjoin(rp, nb, predicate="within").drop_duplicates("sub_id").set_index("sub_id").pri_neigh
-    t["name"] = t.tract.map(tract_name)
-    t["published"] = (t.share_of_tract_land >= MIN_SHARE) & (t.land_m2 >= MIN_LAND_M2)
+    t["published"] = (t.share_of_neighborhood_land >= MIN_SHARE) & (t.land_m2 >= MIN_LAND_M2)
 
-    cols = ["unit_id", "tract", "name", "neighbourhood", "published", "land_m2", "share_of_tract_land", "residents", "jobs", "dwellings",
+    cols = ["unit_id", "name", "published", "land_m2", "share_of_neighborhood_land", "residents", "jobs", "dwellings",
             "establishments", "occupied_coverage", "m7_parcels", "m1_km_per_km2", "ov_m3_wmedian_ln_m2", "ov_m4_wmedian_compactness",
             "ov_m4_wmedian_elongation", "m6_major_share", "m7_parcels_per_km2", "B1_coverage_land", "bv_height_built_m", "u2_jobs_land_km2",
             "u3_acs_land_km2", "u4_ptai_avg_resident", "u6_log_intensity", *CLR, *[f"clr_{k}" for k in u6.CLASSES],
             "p_residential", "p_commerce", "p_industrial", "p_institutional"]
-    t[cols].to_csv(OUT / "tract_columns.csv")
-    gross[gross.sub_id.isin(t.index[t.published])].to_parquet(OUT / "tract_pieces.parquet")
+    t[cols].to_csv(OUT / "neighborhood_columns.csv")
+    gross[gross.sub_id.isin(t.index[t.published])].to_parquet(OUT / "neighborhood_pieces.parquet")
     pub = t[t.published]
     checks["summary"] = {"pieces": len(t), "published": int(len(pub)), "areas_covered": int(pub.unit_id.nunique()),
                          "published_land_share": float(pub.land_m2.sum() / t.land_m2.sum()),
