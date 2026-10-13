@@ -24,6 +24,11 @@
   const COLS = Object.fromEntries(V.h.columns.map((c) => [c.id, c]));
   const FAM = Object.fromEntries(V.h.families.map((f) => [f.id, f]));
   const ones = (ids) => Object.fromEntries(ids.map((f) => [f, 1]));
+  /* The final settings (sp_chicago_model_v3): the page starts from them and they are the default baseline. The contract's
+     weights are shown ×10 so they sit on the 0–3 sliders (only their ratios matter); a family at weight 0 is switched off. */
+  const FIN = V.h.final;
+  const finalCfg = () => ({ weights: Object.fromEntries(H_F.map((f) => [f, Math.round(FIN.weights[f] * 100) / 10])),
+    off: Object.fromEntries(H_F.filter((f) => !(FIN.weights[f] > 0)).map((f) => [f, true])), cols: { ...FIN.cols }, scaling: FIN.scaling, geometry: FIN.geometry, k: 0 });
   const METHODS = {
     A: { tab: 'index-a', doc: 'doc-a', name: 'Cross-City Urban Index A', short: 'Index A', feats: AB_F,
       def: 'Six factors counted per unit (commerce, dwellings, transit stops, building height, street segments, street length), min–max scaled over the 173 units and summed. The agreed rule calls two units alike when their index values are close.',
@@ -32,15 +37,15 @@
       def: 'The Index A sketch with counts divided by land area and GHSL height for both cities. Same scaling and weights, so differences from Index A come from those two corrections.',
       defaults: { weights: ones(AB_F), off: {}, rule: 'gap', k: 0 } },
     H: { tab: 'harmonized', doc: 'doc-h', name: 'Harmonized cross-city similarity model', short: 'Harmonized', feats: H_F,
-      def: `${V.h.columns.length} measurements in ${H_F.length} feature families, standardized on a common scale (C6) and combined into a calibrated distance with equal family budgets. Two units are alike when their whole profile is close.`,
-      defaults: { weights: ones(H_F), off: {}, cols: {}, scaling: 'hybrid', geometry: 'full', k: 0 } },
+      def: `${V.h.columns.length} measurements in ${H_F.length} feature families, standardized on a common scale (C6) and combined into a calibrated distance. It starts from the final settings (v3): every column read by its position within its own city, with weights that favour land use and activity mix. Two units are alike when their whole profile is close.`,
+      defaults: finalCfg() },
   };
   const TAB_METHOD = { 'index-a': 'A', 'index-b': 'B', harmonized: 'H' };
   const TABS = ['overview', 'doc-a', 'doc-b', 'doc-h', 'index-a', 'index-b', 'harmonized'];
   const state = {
     tab: 'overview', ref: IDX[V.meta.reference], compare: [],
     cfg: { A: clone(METHODS.A.defaults), B: clone(METHODS.B.defaults), H: clone(METHODS.H.defaults) },
-    base: { A: null, B: null, H: null },                  // null = the published settings
+    base: { A: null, B: null, H: null },                  // null = the default settings (final v3 for the harmonized model)
     ui: Object.fromEntries(['A', 'B', 'H'].map((m) => [m, { breakdown: true, mapBy: 'distance', heat: 'nbhd', pcx: 0, pcy: 1, pcColor: 'city' }])),
   };
   /* Families with several scalar columns in one block (M4, U1) can be reweighted inside (column weights, cfg.cols). */
@@ -52,8 +57,10 @@
   /* Canonical form of a settings object: switched-off features as a sorted list, so the order of clicks does not matter. */
   const canon = (m, cfg) => JSON.stringify({ ...cfg, off: Object.keys(cfg.off).filter((f) => cfg.off[f]).sort(), weights: METHODS[m].feats.map((f) => +cfg.weights[f]),
     cols: Object.entries(cfg.cols || {}).filter(([, v]) => +v !== 1).map(([c, v]) => [c, +v]).sort() });
-  /* Published runs as settings: R1 and R2 equal weights; R3 drops the pruned columns (a one-column family is switched off). */
+  /* Presets: the final settings (v3); the v2 runs R1 and R2 with equal weights; R3 drops the pruned columns (a one-column
+     family is switched off). R1–R3 keep the current scaling. */
   function presetCfg(name, c) {
+    if (name === 'v3') return { ...finalCfg(), k: c.k };
     const out = { ...clone(c), weights: ones(H_F), off: {}, cols: {}, geometry: name === 'R2' ? 'pca' : 'full' };
     if (name === 'R3') V.h.r3_dropped_columns[c.scaling].forEach((col) => { const f = COLS[col].family; if (MIX[f]) out.cols[col] = 0; else out.off[f] = true; });
     return out;
@@ -453,6 +460,25 @@
     fill('h-scale', table(['Scaling', 'Run', 'Spearman, all pairs', 'Shared top 5', "Brás's Chicago distances (Spearman)", "Brás's Chicago top 10 kept", 'Other-city share of nearest 5'],
       V.h.published.scale_comparison.map((r) => [r.scaling.replace('_', '-'), r.run, fmt(r.spearman_pairs), fmt(r.mean_topk_overlap), fmt(r.bras_chicago_spearman), r.bras_chicago_top10_kept, fmt(r.mean_other_city_neighbours)]), [2, 3, 4, 5, 6]));
     fill('h-sens', table(['Scenario', 'Spearman, all pairs', 'Shared top 5', "Brás's Chicago top 5 kept"], V.h.published.sensitivities.map((r) => [esc(r.scenario), fmt(r.spearman_pairs), fmt(r.mean_topk_overlap), r.bras_top5_chicago_kept]), [1, 2, 3]));
+    const FP = FIN.published, sh = Object.fromEntries(FP.family_shares.map((r) => [r.family, r]));
+    fill('h-final-weights', table(['Family', 'v3 weight', 'Mean share of D² (all pairs)', 'Pairs where it is over half of D²'], H_F.slice().sort((x, y) => FIN.weights[y] - FIN.weights[x]).map((f) => {
+      const r = sh[f], row = [`${f} ${FAM[f].name}`, FIN.weights[f] > 0 ? pct(FIN.weights[f]) : '<b>off</b>', r ? pct(r.mean_share, 1) : '—', r ? nf(0).format(r.pairs_over_half) : '—'];
+      row.hl = !!r && r.mean_share > 1.3 * FIN.weights[f];
+      return row;
+    }), [1, 2, 3]));
+    const st = Object.fromEntries(FP.stability_bras.map((r) => [r.match, r.share_of_draws]));
+    fill('h-final-top', table(['Chicago rank', 'Area', 'Distance', 'Rank among all 172', 'Share of 500 weight draws in the top 5'], FP.bras_chicago_top10.map((r) => {
+      const row = [r.rank_in_city, esc(r.name), fmt(r.distance), r.rank, r.unit_id in st ? pct(st[r.unit_id]) : '—'];
+      row.hl = (st[r.unit_id] || 0) >= 0.8;
+      return row;
+    }), [0, 2, 3, 4]));
+    fill('h-final-compare', table(['Alternative', 'Spearman, all pairs', 'Shared top 5', "Brás's Chicago distances (Spearman)", "Brás's Chicago top 5 kept", 'Other-city share of nearest 5', "Brás's Chicago top 5"],
+      FP.comparison.map((r) => [esc(r.alternative), fmt(r.spearman_pairs), fmt(r.mean_topk_overlap), fmt(r.bras_chicago_spearman), r.bras_chicago_top5_kept, fmt(r.mean_other_city_neighbours), esc(r.bras_chicago_top5)]), [1, 2, 3, 4, 5]));
+    fill('h-final-corr', table(['Column', 'Column', 'Spearman (all-relative, 173 units)'], FP.correlations.map((r) => {
+      const row = [`${r.family_a} ${esc(COLS[r.column_a].label)}`, `${r.family_b} ${esc(COLS[r.column_b].label)}`, fmt(r.spearman, 2)];
+      row.hl = Math.abs(r.spearman) >= 0.7;
+      return row;
+    }), [2]));
     const bi = IDX['SP:10'], loop = IDX['CHI:32'], u3 = COLS.u3_acs_land_km2.raw;
     const med = (city) => { const v = POOL[city].map((i) => u3[i]).sort((a, b) => a - b); return (v[(v.length - 1) >> 1] + v[v.length >> 1]) / 2; };
     const pos = (i) => 1 + POOL[U[i].city].filter((j) => u3[j] > u3[i]).length;
@@ -477,9 +503,9 @@
       ? ['Street morphology', 'Built form', 'Use and activity'].map((d) => `<div class="domain">${d}</div>${featRows(H_F.filter((f) => FAM[f].domain === d))}`).join('')
       : `<div class="domain">Built environment</div>${featRows(['C', 'R', 'H', 'V'])}<div class="domain">Network</div>${featRows(['N', 'L'])}`;
     const settings = isH ? `
-        <div class="ctl"><span class="lbl help" title="How São Paulo and Chicago values are put on one scale. Every column is standardized, z = (value − mean) / SD, capped at ±3; the scaling decides whose mean and SD are used. Hover an option for its rule.">Cross-city scaling (C6)</span><div class="seg" data-set="scaling"><button data-v="hybrid" title="Published primary. Families measured with the same instrument in both cities (M1, M3, M4, M6, M7, B1, U3) are compared on absolute levels: mean and SD over all 173 units. Families whose instruments differ (BV, U2, U4, U6, U1) are compared by position within their own city: mean and SD per city.">Hybrid</button><button data-v="all_absolute" title="Every column standardized over all 173 units: values compared as measured. Keeps city-wide differences, including those caused by different instruments, so the nearest neighbours mix the two cities less (about 7% from the other city).">All absolute</button><button data-v="all_relative" title="Every column standardized within its own city: a unit is compared by its position in its city. Removes city-wide shifts and stretches, so the nearest neighbours mix the two cities more (about 24% from the other city). It does not fix an instrument that mis-ranks units inside a city.">All relative</button></div></div>
-        <div class="ctl"><span class="lbl help" title="How the dissimilarity between two units is measured. Hover an option for its rule.">Distance</span><div class="seg" data-set="geometry"><button data-v="full" title="Run R1: D = √( Σ family budget × calibrated block dissimilarity ), each block divided by its median pair so families count alike. Uses every direction of variation. Published primary.">Full model</button><button data-v="pca" title="Run R2: Euclidean distance on the principal components that together explain at least 90% of the variance (five components in the published fit). Drops the minor directions, about 10% of the variance; PCA and clusters then follow this geometry.">PCA (≥ 90%)</button></div></div>
-        <div class="ctl"><span class="lbl">Published runs</span><div class="seg" data-preset><button data-v="R1" title="Equal weights, full distance">R1</button><button data-v="R2" title="Equal weights, distance on the components reaching 90% of variance">R2</button><button data-v="R3" title="Without correlated features (|ρ| ≥ 0.70 pruned)">R3</button></div><span class="note" data-preset-note></span></div>`
+        <div class="ctl"><span class="lbl help" title="How São Paulo and Chicago values are put on one scale. Every column is standardized, z = (value − mean) / SD, capped at ±3; the scaling decides whose mean and SD are used. Hover an option for its rule.">Cross-city scaling (C6)</span><div class="seg" data-set="scaling"><button data-v="hybrid" title="The v2 primary. Families measured with the same instrument in both cities (M1, M3, M4, M6, M7, B1, U3) are compared on absolute levels: mean and SD over all 173 units. Families whose instruments differ (BV, U2, U4, U6, U1) are compared by position within their own city: mean and SD per city.">Hybrid</button><button data-v="all_absolute" title="Every column standardized over all 173 units: values compared as measured. Keeps city-wide differences, including those caused by different instruments, so the nearest neighbours mix the two cities less (about 7% from the other city).">All absolute</button><button data-v="all_relative" title="Every column standardized within its own city: a unit is compared by its position in its city. Removes city-wide shifts and stretches, so the nearest neighbours mix the two cities more (about 24% from the other city). It does not fix an instrument that mis-ranks units inside a city. Used by the final settings (v3).">All relative</button></div></div>
+        <div class="ctl"><span class="lbl help" title="How the dissimilarity between two units is measured. Hover an option for its rule.">Distance</span><div class="seg" data-set="geometry"><button data-v="full" title="Run R1: D = √( Σ family budget × calibrated block dissimilarity ), each block divided by its median pair so families count alike. Uses every direction of variation. Used by the final settings (v3) and v2 R1.">Full model</button><button data-v="pca" title="Run R2: Euclidean distance on the principal components that together explain at least 90% of the variance (five components in v2 hybrid R1). Drops the minor directions, about 10% of the variance; PCA and clusters then follow this geometry.">PCA (≥ 90%)</button></div></div>
+        <div class="ctl"><span class="lbl">Presets</span><div class="seg" data-preset><button data-v="v3" title="The final settings (sp_chicago_model_v3): all-relative scaling, full distance, U1 25%, U6 20%, BV, M1 and B1 10% each, U2, U3, U4, M6 and M4 5% each; M3 and M7 off">Final (v3)</button><button data-v="R1" title="v2 run R1: equal weights, full distance, under the current scaling">R1</button><button data-v="R2" title="v2 run R2: equal weights, distance on the components reaching 90% of variance">R2</button><button data-v="R3" title="v2 run R3: equal weights, without correlated features (|ρ| ≥ 0.70 pruned)">R3</button></div><span class="note" data-preset-note></span></div>`
       : `
         <div class="ctl"><span class="lbl">Similarity rule</span><div class="seg" data-set="rule"><button data-v="gap">Index gap</button><button data-v="profile">Factor profile</button></div>
         <span class="note">Index gap is the agreed rule; factor profile is the protocol's diagnostic. PCA and clusters always use the factor profile.</span></div>`;
@@ -495,7 +521,7 @@
           <div>${feats}</div>
           <div class="btnrow"><button class="btn small" data-act="equal">Equal weights</button><button class="btn small" data-act="allon">All on</button></div></div></details>
         <details open><summary>Baseline</summary><div class="body"><div class="basebox" data-basebox></div>
-          <div class="btnrow"><button class="btn small" data-act="pin">Pin current settings</button><button class="btn small" data-act="unpin">Use published</button></div></div></details>
+          <div class="btnrow"><button class="btn small" data-act="pin">Pin current settings</button><button class="btn small" data-act="unpin">${isH ? 'Use final (v3)' : 'Use published'}</button></div></div></details>
       </aside>
       <div class="xmain">
         <div class="xhead">
@@ -610,9 +636,9 @@
     $$('[data-set]', root).forEach((seg) => $$('button', seg).forEach((b) => b.setAttribute('aria-pressed', String(c[seg.dataset.set] === b.dataset.v))));
     const preset = $('[data-preset]', root);
     if (preset) {
-      const which = ['R1', 'R2', 'R3'].find((r) => canon(m, presetCfg(r, c)) === canon(m, c)) || null;
+      const which = ['v3', 'R1', 'R2', 'R3'].find((r) => canon(m, presetCfg(r, c)) === canon(m, c)) || null;
       $$('button', preset).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === which)));
-      $('[data-preset-note]', root).textContent = which ? `Current: ${which} under ${c.scaling.replace('_', '-')} scaling`
+      $('[data-preset-note]', root).textContent = which === 'v3' ? 'Current: the final settings (v3)' : which ? `Current: v2 ${which} under ${c.scaling.replace('_', '-')} scaling`
         + (which === 'R3' ? ` (without ${V.h.r3_dropped_columns[c.scaling].map((col) => `${COLS[col].family} ${COLS[col].label.toLowerCase()}`).join(', ')})` : '') : 'Custom settings';
     }
     $(`#k-${m}`).value = String(c.k || 0);
@@ -620,7 +646,7 @@
     const desc = m === 'H' ? `${b.scaling.replace('_', '-')} scaling, ${b.geometry === 'pca' ? 'PCA distance' : 'full distance'}` : `${b.rule === 'gap' ? 'index gap' : 'factor profile'} rule`;
     const changed = METHODS[m].feats.filter((f) => !!b.off[f] !== !!c.off[f] || +b.weights[f] !== +c.weights[f])
       .concat(Object.keys(MIX).filter((f) => m === 'H' && MIX[f].some((col) => colW(b, col) !== colW(c, col))).map((f) => `${f} inner mix`));
-    $('[data-basebox]', root).innerHTML = `<b>${state.base[m] ? 'Pinned snapshot' : 'Published settings'}</b>: ${desc}${Object.keys(b.off).length ? `, without ${Object.keys(b.off).join(', ')}` : ''}${METHODS[m].feats.some((f) => +b.weights[f] !== 1) || Object.values(b.cols || {}).some((v) => +v !== 1) ? ', custom weights' : ', equal weights'}.<br>${sameAsBase(m) ? 'Current settings match it.' : `Changed from it: ${changed.length ? changed.join(', ') : 'model settings'}.`}`;
+    $('[data-basebox]', root).innerHTML = `<b>${state.base[m] ? 'Pinned snapshot' : m === 'H' ? 'Final settings (v3)' : 'Published settings'}</b>: ${desc}${Object.keys(b.off).length ? `, without ${Object.keys(b.off).join(', ')}` : ''}${METHODS[m].feats.some((f) => +b.weights[f] !== 1) || Object.values(b.cols || {}).some((v) => +v !== 1) ? ', custom weights' : ', equal weights'}.<br>${sameAsBase(m) ? 'Current settings match it.' : `Changed from it: ${changed.length ? changed.join(', ') : 'model settings'}.`}`;
   }
 
   /* ---------------------------------------------------------------- explorer rendering */

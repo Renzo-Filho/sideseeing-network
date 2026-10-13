@@ -1,0 +1,10 @@
+alternative,spearman_pairs,mean_topk_overlap,bras_chicago_spearman,bras_chicago_top5_kept,bras_chicago_top10_kept,mean_other_city_neighbours,bras_chicago_top5
+"v2 published (hybrid, equal weights, R1)",0.867,0.586,0.918,3,7,0.112,"West Town, Avondale, Logan Square, Lincoln Park, North Center"
+"all-relative, equal weights (v2 all-relative R1)",0.923,0.667,0.908,4,8,0.235,"Lower West Side, Avondale, West Town, McKinley Park, Lincoln Park"
+"hybrid scaling, v3 weights",0.945,0.739,0.979,5,9,0.12,"Avondale, West Town, Lower West Side, Logan Square, McKinley Park"
+"v3 weights, PCA distance (7 components)",0.995,0.758,0.989,4,9,0.336,"Lower West Side, McKinley Park, Avondale, West Town, Lincoln Park"
+"user draft (B1 0, M3 0.05, U2 0.10)",0.973,0.785,0.963,5,10,0.251,"Lower West Side, McKinley Park, Avondale, West Town, Logan Square"
+U2 0,0.998,0.926,0.996,5,10,0.262,"Lower West Side, Avondale, McKinley Park, West Town, Logan Square"
+B1 0.05,0.998,0.928,0.992,5,10,0.269,"Lower West Side, McKinley Park, Avondale, West Town, Logan Square"
+"M1 out, M3 0.10 (keep block size instead)",0.944,0.773,0.969,5,10,0.253,"Lower West Side, Avondale, West Town, McKinley Park, Logan Square"
+U1 0.10 (land use at the other families' level),0.991,0.86,0.982,5,8,0.267,"Lower West Side, Avondale, West Town, McKinley Park, Logan Square"

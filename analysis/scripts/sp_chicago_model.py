@@ -35,11 +35,11 @@ def levels(scaling):
     return base | {new: base[old] for new, old in SUB_OF.items()}
 
 
-def load_inputs():
+def load_inputs(contract=None):
     """173 rows (96 São Paulo, 77 Chicago). Tables checked against the SHA-256 recorded at acceptance (Chicago contract)
-    and, for São Paulo U3, in the cross-city contract."""
+    and, for São Paulo U3, in the cross-city contract (`contract`, default the SP_CHI_MODEL_VERSION one)."""
     c = json.loads(cm.CONTRACT.read_text())
-    x = json.loads(CONTRACT.read_text())
+    x = json.loads((contract or CONTRACT).read_text())
     override = x.get("family_columns", {})          # v2: U1 adds p_commerce (same accepted table and SHA-256)
     families, frames, extra = {}, [], []
     for f in c["families"]:

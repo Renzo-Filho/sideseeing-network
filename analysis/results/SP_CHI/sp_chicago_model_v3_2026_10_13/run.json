@@ -1,0 +1,52 @@
+{
+  "contract": "sp_chicago_model_v3",
+  "settings": {
+    "scaling": "all_relative",
+    "scaling_note": "every column standardized within its own city (z-score, population SD, capped at +-3); U6 composition uses the city-centred log-ratios",
+    "distance": "full",
+    "distance_note": "the full calibrated distance (R1 geometry), not the PCA-truncated one",
+    "family_weights": {
+      "U1": 0.25,
+      "U6": 0.2,
+      "BV": 0.1,
+      "M1": 0.1,
+      "B1": 0.1,
+      "U2": 0.05,
+      "U3": 0.05,
+      "U4": 0.05,
+      "M6": 0.05,
+      "M4": 0.05,
+      "M3": 0,
+      "M7": 0
+    },
+    "family_weights_note": "sum to 1; weights are renormalized over the families both units have (J-8); U6 = 1/2 intensity + 1/2 Aitchison composition",
+    "column_weights": {},
+    "column_weights_note": "empty = every column weighs 1 inside its family (U1: four shares, 1/4 of U1 each; M4: two columns)"
+  },
+  "budgets": {
+    "M1": 0.1,
+    "M3": 0.0,
+    "M4": 0.05,
+    "M6": 0.05,
+    "M7": 0.0,
+    "B1": 0.1,
+    "BV": 0.1,
+    "U2": 0.05,
+    "U3": 0.05,
+    "U4": 0.05,
+    "U6": 0.2,
+    "U1": 0.25
+  },
+  "reference": "SP:10",
+  "bras_chicago_top5": [
+    "Lower West Side",
+    "Avondale",
+    "West Town",
+    "McKinley Park",
+    "Logan Square"
+  ],
+  "first_chicago_rank_overall": 5,
+  "top5_relations_stable": 0.723,
+  "seed": 20261006,
+  "draws": 500
+}

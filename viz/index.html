@@ -335,9 +335,9 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
       <div class="panel mcard method-h">
         <div class="eyebrow">Harmonized cross-city similarity model</div>
         <h3>Twenty measurements, one calibrated distance</h3>
-        <p class="ink2"><span data-bind="n-cols"></span> columns in <span data-bind="n-fams"></span> feature families, each validated in both cities, put on a common scale (hybrid C6) and combined with equal family budgets. Two places are alike when their whole profile is close.</p>
+        <p class="ink2"><span data-bind="n-cols"></span> columns in <span data-bind="n-fams"></span> feature families, each validated in both cities, put on a common scale (C6) and combined into one calibrated distance. Two places are alike when their whole profile is close.</p>
         <div class="formula">\(D=\sqrt{\sum_b w_b\,m_b/\beta_b}\)</div>
-        <p class="note">The project's primary model (<code>sp_chicago_model_v2</code>, fitted 8 October 2026: v1 plus the U1 commerce land share).</p>
+        <p class="note">The project's model, with its final settings (<code>sp_chicago_model_v3</code>, 13 October 2026): every column read by its position within its own city, weights favouring land use and activity mix.</p>
         <div class="links"><button class="btn primary" data-go="harmonized">Explore</button><button class="btn" data-go="doc-h">Method</button></div>
       </div>
     </div>
@@ -538,18 +538,36 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
 <section class="view method-h" id="view-doc-h" data-view="doc-h" hidden>
   <div class="docs">
     <nav class="toc" aria-label="On this page">
-      <a href="#h-question">Question</a><a href="#h-features">Features</a><a href="#h-c6">One scale for two cities</a><a href="#h-math">Distance</a>
+      <a href="#h-question">Question</a><a href="#h-final">Final settings (v3)</a><a href="#h-features">Features</a><a href="#h-c6">One scale for two cities</a><a href="#h-math">Distance</a>
       <a href="#h-runs">Runs R1–R3</a><a href="#h-pca">PCA and clusters</a><a href="#h-pipeline">Pipeline</a><a href="#h-decisions">Decisions</a>
       <a href="#h-robust">Robustness</a><a href="#h-limits">Limits</a>
     </nav>
     <article class="doc">
       <div class="eyebrow">Documentation · Harmonized cross-city similarity model</div>
       <h1>The harmonized cross-city similarity model</h1>
-      <p class="ink2">Contract <code>analysis/config/sp_chicago_model_v2.json</code>, frozen and fitted on 8 October 2026. It is <code>sp_chicago_model_v1</code> (6 October 2026, kept unchanged) with the U1 commerce land share added by user decision. Code <code>analysis/scripts/sp_chicago_model.py</code> (reusing <code>chicago_model.py</code>); notebook <code>analysis/sp_chicago_model_analysis.ipynb</code>; report <code>docs/harmonization/MODEL_REPORT.md</code> (§11 for v2).</p>
+      <p class="ink2">Final settings: contract <code>analysis/config/sp_chicago_model_v3.json</code>, decided on 13 October 2026, fitted by <code>analysis/scripts/sp_chicago_model_v3.py</code>. v3 uses v2's data and columns unchanged (contract <code>sp_chicago_model_v2.json</code>, fitted on 8 October 2026: <code>sp_chicago_model_v1</code> plus the U1 commerce land share). Code <code>analysis/scripts/sp_chicago_model.py</code> (reusing <code>chicago_model.py</code>); notebook <code>analysis/sp_chicago_model_analysis.ipynb</code> (v1, v2); report <code>docs/harmonization/MODEL_REPORT.md</code> (§11 for v2, §12 for v3). The explorer starts from the v3 settings; the presets R1–R3 give the v2 runs.</p>
       <div class="callout"><b>What changed in v2.</b> U1 compares four land-use shares instead of three: residential, <b>commerce</b>, industrial and institutional. The commerce share had failed the J-3 admission rule because it overlaps U6 activity intensity (Spearman 0.708 in São Paulo, 0.445 in Chicago). The user added it on 8 October 2026 because commercial land is central to Brás's profile: 65% of its occupied land, 3rd of 94 São Paulo districts. The overlap is accepted and reported. Setting the commerce weight to 0 in the explorer reproduces v1 exactly.</div>
 
       <h2 id="h-question">The question</h2>
       <p><b>Which Chicago Community Areas most resemble a given São Paulo district, and the reverse?</b> The model places all <span data-bind="n-all"></span> units in one space built from <span data-bind="n-cols"></span> measurements in <span data-bind="n-fams"></span> feature families, measures the dissimilarity between every pair, and ranks the units by their distance to a reference. The published report uses Brás; the explorer lets any unit be the reference. The model is target-free: rankings around a reference are read from the full matrix.</p>
+
+      <h2 id="h-final">Final settings (v3)</h2>
+      <p><b>The question v3 answers:</b> which Chicago Community Area plays the role in Chicago that Brás plays in São Paulo, a non-residential working district with a similar activity mix, read relative to each city.</p>
+      <ul>
+        <li><b>Scaling: all-relative.</b> Every column is standardized within its own city, so units are compared by their position in their city. Real level differences between the cities (São Paulo's denser streets and more residents) are set aside along with the instrument differences.</li>
+        <li><b>Distance: the full model</b> (the R1 geometry), not the PCA-truncated one: the minor components carry much of what separates close matches.</li>
+        <li><b>Weights</b> favour land use (U1) and activity mix (U6). <b>M3 block size is off</b>: its long tail made it carry about three times its weight, through airport, industrial and rural pairs. <b>M7 parcel density is off</b>: it is part of the grain cluster. <b>B1 coverage returns at 10%</b>: Brás's best-measured physical trait. <b>U2 jobs is halved to 5%</b>: it duplicates U6 intensity (Spearman 0.83). U1's four shares weigh equally inside U1.</li>
+      </ul>
+      <div class="tablewrap" data-fill="h-final-weights"></div>
+      <p class="where">Highlighted: families whose average share of D² exceeds their weight by more than 30%. Weights are prices per typical difference; a family with a long tail (M1 here, through the rural and airport units) delivers more than its weight on average.</p>
+      <h3>Brás's closest Chicago areas under v3</h3>
+      <div class="tablewrap" data-fill="h-final-top"></div>
+      <p>The first four are stable (highlighted); fifth place is not. Lower West Side, Avondale, West Town and McKinley Park are the answer; the v2 published fit (hybrid, equal weights) puts West Town first, so the two settings read Brás's similarity to West Town as physical form and to Lower West Side as function.</p>
+      <h3>v3 against named alternatives</h3>
+      <div class="tablewrap" data-fill="h-final-compare"></div>
+      <h3>Correlated columns left in v3 (|ρ| ≥ 0.6, across families)</h3>
+      <div class="tablewrap" data-fill="h-final-corr"></div>
+      <p class="where">The centrality group (U2 jobs, U6 intensity, U1 commerce, BV height, U4 transit) still moves together; U2 at 5% limits its duplication. Setting U2 to 0 keeps Brás's Chicago top five.</p>
 
       <h2 id="h-features">The features</h2>
       <p>The same twelve families as the Chicago model, built with the same definitions in both cities. Each family was accepted step by step, with checks fixed before its results were seen.</p>
@@ -565,8 +583,8 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
       <ul>
         <li><b>Absolute:</b> \(\bar t\) and \(s\) over all <span data-bind="n-all"></span> units (levels compared as measured).</li>
         <li><b>Relative:</b> \(\bar t\) and \(s\) within the unit's own city (a unit is compared by its position in its city).</li>
-        <li><b>Hybrid (primary):</b> absolute for the same-instrument families (M1, M3, M4, M6, M7, B1, U3), relative for the rest (BV, U2, U4, U6, U1).</li>
-        <li><b>All-absolute</b> and <b>all-relative</b> apply one rule to every column; they are the two extra runs. Switch between all three in the explorer.</li>
+        <li><b>Hybrid (v2 primary):</b> absolute for the same-instrument families (M1, M3, M4, M6, M7, B1, U3), relative for the rest (BV, U2, U4, U6, U1).</li>
+        <li><b>All-absolute</b> and <b>all-relative</b> apply one rule to every column; they were v2's two extra runs. <b>v3 uses all-relative.</b> Switch between all three in the explorer.</li>
       </ul>
       <p>Relative scaling removes a city-wide shift and stretch caused by an instrument. It does not fix an instrument that mis-ranks units inside a city.</p>
 
@@ -584,15 +602,15 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
       <p class="where">Averaging over columns keeps a three-column family from counting three times; dividing by \(\beta_b\), its median over all 14,878 pairs, puts every block on a common scale.</p>
       <h3>4 · Distance (J-7, J-8)</h3>
       <div class="eq">\[D(d,e)=\sqrt{\frac{\sum_{b} w_{f(b)}\,s_b\,m_b(d,e)/\beta_b}{\sum_{b\ \text{available for}\ d,e} w_{f(b)}\,s_b}}\]</div>
-      <p class="where">\(w_f\) = the family budget (equal, 1/12, in the published model; set by the weight sliders in the explorer); \(s_b\) = the block's share of its family. The denominator is 1 except for pairs involving a unit without U1, which use the families both units have.</p>
+      <p class="where">\(w_f\) = the family budget (equal, 1/12, in v2; the v3 weights above; set by the weight sliders in the explorer); \(s_b\) = the block's share of its family. The denominator is 1 except for pairs involving a unit without U1, which use the families both units have.</p>
       <h3>5 · What drives a match</h3>
       <p>Each family's part of the squared distance is additive:</p>
       <div class="eq">\[D^2(d,e)=\sum_f \underbrace{\frac{w_f\sum_{b\in f}s_b\,m_b(d,e)/\beta_b}{\sum_{b\ \text{avail.}}w_{f(b)}\,s_b}}_{\text{part of family } f},\qquad \text{share}_f=\frac{\text{part}_f}{D^2}.\]</div>
       <p>The explorer's contribution matrix shows these shares for every top-10 match.</p>
-      <div class="callout">Equal budgets equalize families on a typical pair, not on every pair. Block size (M3) is nearly uniform inside each city's grid and extreme in a few industrial and airport units, so its median pair is small and it carries far more than its nominal 1/12 on average (table below). Lower its weight in the explorer to see how much a ranking depends on it.</div>
+      <div class="callout">Equal budgets equalize families on a typical pair, not on every pair. Block size (M3) is nearly uniform inside each city's grid and extreme in a few industrial and airport units, so its median pair is small and it carries far more than its nominal 1/12 on average (table below). Lower its weight in the explorer to see how much a ranking depends on it; v3 switches it off. The table below is v2 hybrid R1.</div>
       <div class="tablewrap" data-fill="h-shares"></div>
 
-      <h2 id="h-runs">Three runs</h2>
+      <h2 id="h-runs">Three runs (v2)</h2>
       <ul>
         <li><b>R1, equal weights.</b> The distance above with \(w_f=1/12\).</li>
         <li><b>R2, PCA weights.</b> Euclidean distance on the principal components that explain at least 90% of the variance: \(D_{R2}(d,e)=\lVert \mathbf p_d^{(k)}-\mathbf p_e^{(k)}\rVert\), \(k=\min\{k:\sum_{i\le k}\lambda_i/\sum_i\lambda_i\ge 0.9\}\).</li>
@@ -628,6 +646,7 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
           <tr><td class="mono">C6</td><td>Hybrid scaling: absolute levels where both cities use the same validated instrument, relative positions where they differ; all-absolute and all-relative as extra runs (user, 6 October 2026).</td></tr>
           <tr><td class="mono">J-3</td><td>A U1 land share enters only if its largest |Spearman| with the U6 coordinates, B1 and M1 is below 0.70 in both cities: residential, industrial and institutional admitted; commerce not (0.708 with U6 intensity in São Paulo). v1 follows this rule.</td></tr>
           <tr><td class="mono">v2</td><td>User, 8 October 2026: add the U1 commerce share despite J-3, because commercial land is central to Brás's profile. Contract <code>sp_chicago_model_v2</code>; the overlap with U6 is accepted and reported. Within-family weights stay equal in the published fit; the explorer and Curio lane H let users change them.</td></tr>
+          <tr><td class="mono">v3</td><td>User, 13 October 2026: final settings. All-relative scaling, full distance, weights U1 25%, U6 20%, BV, M1 and B1 10% each, U2, U3, U4, M6 and M4 5% each, M3 and M7 off, equal weights inside U1. Contract <code>sp_chicago_model_v3</code>; v1 and v2 stay unchanged as published comparisons.</td></tr>
           <tr><td class="mono">J-4</td><td>Families correlated at |ρ| ≥ 0.90 would share one budget; no pair reached it.</td></tr>
           <tr><td class="mono">J-5</td><td>Log for strictly positive ratio-scale amounts; identity for shares, indices and log-ratios.</td></tr>
           <tr><td class="mono">J-6</td><td>z-score with population SD, capped at ±3; robust and rank-normal scaling as sensitivities.</td></tr>
@@ -640,7 +659,7 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
         </tbody>
       </table></div>
 
-      <h2 id="h-robust">Robustness (published, hybrid scaling)</h2>
+      <h2 id="h-robust">Robustness of v2 (hybrid scaling)</h2>
       <h3>Brás's closest Chicago areas under 500 weight draws</h3>
       <div class="tablewrap" data-fill="h-stability"></div>
       <h3>Scaling and run comparison against hybrid R1</h3>
@@ -653,7 +672,8 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
       <ul>
         <li><b>No external truth.</b> The model describes; no outcome validates similarity itself. Evidence comes from each family's checks, face validity and the robustness tables.</li>
         <li><b>The scaling choice is a modelling decision, not a finding.</b></li>
-        <li><b>Block size (M3) weighs more than its budget</b>, and drives PC1.</li>
+        <li><b>The v3 weights were chosen after the v2 results were seen.</b> They state a question (functional analogue); report them beside the v2 equal-weight result, not instead of it.</li>
+        <li><b>Block size (M3) weighs more than its budget</b> in v2, and drives PC1; v3 leaves it out.</li>
         <li><b>The ±3 cap compresses extremes</b> (the Loop on jobs, height and transit; Marsilac on several columns).</li>
         <li><b>Relative scaling keeps within-city instrument errors:</b> RAIS head-office registration, LODES location error, Overture's formal-economy bias, GHSL's compression of tall buildings.</li>
         <li><b>Vintages differ:</b> Overture 2026, Census 2022 and ACS 2020–2024, RAIS 2022 and LODES 2023, IPTU 2026 and CMAP 2023, GHSL 2018.</li>

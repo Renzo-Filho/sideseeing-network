@@ -2,6 +2,29 @@
 
 This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cross-city](harmonization/MODEL_REPORT.md) models were fitted on 6 October 2026; [STATUS.md](STATUS.md) and those reports give the current inclusion lists. Earlier statements below that fitting is paused describe their original checkpoints.
 
+## Final settings of the cross-city model (v3) — 13 October 2026
+
+**Decision (user).** The São Paulo–Chicago model's final settings are contract `sp_chicago_model_v3`:
+- **all-relative scaling** and the **full distance**;
+- family weights U1 0.25, U6 0.20, BV, M1 and B1 0.10 each, U2, U3, U4, M6 and M4 0.05 each;
+- **M3 block size and M7 parcel density left out**; equal weights inside U1.
+
+The data and columns are v2's. v1 and v2 stay published as comparisons.
+
+**Why.**
+- The question becomes Brás's *functional* analogue in Chicago: a non-residential working district with a similar activity mix, read relative to each city.
+- M3's long tail made it carry about three times its weight.
+- M7 belongs to the correlated grain cluster.
+- B1 is Brás's best-measured physical trait.
+- U2 duplicates U6 intensity (Spearman 0.83).
+
+**Consequence.**
+- Brás's Chicago matches are Lower West Side, Avondale, West Town and McKinley Park (all stable), with fifth place not firm.
+- The v2 equal-weight hybrid fit put West Town first. The two fits together read Brás's likeness to West Town as physical form and to Lower West Side as function.
+- The weights were chosen after the v2 results were seen, so v3 is reported beside v2, not instead of it.
+- The [explorer](../viz/README.md) and the Curio dataflow `interactive_harmonized` now start from v3.
+- Report: [MODEL_REPORT §12](harmonization/MODEL_REPORT.md#12-version-3-final-settings-13-october-2026); design: [MODEL_PLAN, cross-city v3](chicago/MODEL_PLAN.md#cross-city-model-v3-final-settings-13-october-2026).
+
 ## U1 commerce share in the cross-city model — 8 October 2026
 
 **Decision (user).** The São Paulo–Chicago model now includes the U1 **commerce** land share: contract `sp_chicago_model_v2`, which supersedes v1 while keeping it unchanged. The share had failed the J-3 admission rule (|Spearman| 0.708 with U6 intensity in São Paulo, rule < 0.70). It was added because commercial land is central to Brás's profile (65.0% of its occupied land, 3rd of 94 São Paulo districts).

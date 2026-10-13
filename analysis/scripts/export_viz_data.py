@@ -2,9 +2,11 @@
 
 The page recomputes every model in the browser, so this script exports model *inputs*, never fitted results:
 - Cross-City Urban Index A and B: the raw and min-max scaled factors of protocol P-AB-1 (index_A_B.csv).
-- Harmonized cross-city similarity model (sp_chicago_model_v1): for each C6 scaling, every distance block as the
-  model sees it (scaled columns or log-ratios) and its calibration, built by the model's own functions
-  (sp_chicago_model.py / chicago_model.py), so no model rule is re-implemented here.
+- Harmonized cross-city similarity model (inputs of sp_chicago_model_v2, unchanged in v3): for each C6 scaling, every
+  distance block as the model sees it (scaled columns or log-ratios) and its calibration, built by the model's own
+  functions (sp_chicago_model.py / chicago_model.py), so no model rule is re-implemented here.
+- The final settings (contract sp_chicago_model_v3: scaling, distance, family and column weights), which the page
+  starts from, and the v3 tables its documentation quotes.
 - Simplified unit polygons in each city's projected CRS (decametres), unit names, and the published test tables
   that the documentation pages quote.
 analysis/tests/check_viz_model.js asserts that the page's computations reproduce the published results.
@@ -19,6 +21,8 @@ import chicago_model as cm
 A = xm.A
 AB = A / "results/SP_CHI/simple_index_ab_2026_10_01/tables"
 XR = xm.OUT / "tables"
+V3_CONTRACT = A / "config/sp_chicago_model_v3.json"
+V3 = A / "results/SP_CHI/sp_chicago_model_v3_2026_10_13"
 OUT = A.parent / "viz/data.js"
 SIMPLIFY_M = 20                                        # polygon simplification tolerance (metres)
 NAME_FIX = {"Capao Redondo": "Capão Redondo", "Carrao": "Carrão", "Cidade Lider": "Cidade Líder", "Freguesia Do O": "Freguesia do Ó",
@@ -161,7 +165,20 @@ def harmonized(df, subs, fams, ids):
         stability_bras=records(pd.read_csv(XR / "stability_bras_top5_chicago.csv")),
         r3_logs={s: records(pd.read_csv(XR / f"r3_pruning_log_{s}.csv")) for s in scalings},
     )
-    return dict(families=families, columns=columns, scalings=scalings, r3_dropped_columns=r3, published=published)
+    return dict(families=families, columns=columns, scalings=scalings, r3_dropped_columns=r3, published=published, final=final_settings())
+
+
+def final_settings():
+    """The v3 settings the page starts from, and the v3 tables (python analysis/scripts/sp_chicago_model_v3.py)."""
+    x, t = json.loads(V3_CONTRACT.read_text()), V3 / "tables"
+    st, rank = x["settings"], pd.read_csv(t / "ranking_bras_v3.csv", index_col=0)
+    shares = pd.read_csv(t / "family_contribution_shares_v3.csv").rename(columns={"Unnamed: 0": "family"})
+    return dict(contract=x["contract_version"], results=str(V3.relative_to(xm.ROOT)), question=x["question"], decision=x["decision"],
+                scaling=st["scaling"], geometry=st["distance"], weights=st["family_weights"], cols=st["column_weights"],
+                published=dict(family_shares=records(shares), stability_bras=records(pd.read_csv(t / "stability_bras_top5_chicago_v3.csv")),
+                               comparison=records(pd.read_csv(t / "comparison_v3.csv")),
+                               correlations=records(pd.read_csv(t / "active_correlations_v3.csv")),
+                               bras_chicago_top10=records(rank[rank.city == "CHI"].head(10).reset_index(names="unit_id"))))
 
 
 def index_ab(ids):
