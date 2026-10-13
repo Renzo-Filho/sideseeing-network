@@ -78,7 +78,7 @@
     return { D, contrib };
   }
 
-  /* Out-of-sample rows (census-tract pieces, block field T, scored with the fit's constants) against unit r: the same
+  /* Out-of-sample rows (neighborhood pieces inside the Chicago areas, block field T, scored with the fit's constants) against unit r: the same
      column weights, calibration beta_b, budgets and available-case rule as harmonizedDistance, so a row equal to a
      unit's own row reproduces that unit's distances. Returns D and each family's part of D^2 per row. */
   function projectedDistance(blocks, bms, weights, r, colWeights = {}) {

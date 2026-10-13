@@ -44,13 +44,13 @@
       defaults: namedCfg(START) },
   };
   const TAB_METHOD = { 'index-a': 'A', 'index-b': 'B', harmonized: 'H' };
-  const TABS = ['overview', 'doc-a', 'doc-b', 'doc-h', 'index-a', 'index-b', 'harmonized', 'tracts'];
+  const TABS = ['overview', 'doc-a', 'doc-b', 'doc-h', 'index-a', 'index-b', 'harmonized', 'neighborhoods'];
   const state = {
     tab: 'overview', ref: IDX[V.meta.reference], compare: [],
     cfg: { A: clone(METHODS.A.defaults), B: clone(METHODS.B.defaults), H: clone(METHODS.H.defaults) },
     base: { A: null, B: null, H: null },                  // null = the default settings (the starting preset for the harmonized model)
     ui: Object.fromEntries(['A', 'B', 'H'].map((m) => [m, { breakdown: true, mapBy: 'distance', heat: 'nbhd', pcx: 0, pcy: 1, pcColor: 'city' }])),
-    tr: { ca: null, t: null },                            // tracts tab: open Community Area (null = closest to the reference) and tract
+    tr: { ca: null, t: null },                            // neighborhoods tab: open Community Area (null = closest to the reference) and piece
   };
   /* Families with several scalar columns in one block (M4, U1) can be reweighted inside (column weights, cfg.cols). */
   const MIX = Object.fromEntries(V.h.scalings.hybrid.blocks.filter((b) => b.block !== 'composition' && b.columns.length > 1).map((b) => [b.family, b.columns]));
@@ -200,7 +200,7 @@
 
   /* ---------------------------------------------------------------- SVG maps (projected polygons, decametres) */
   /* src (optional): polys and ids of the shapes to draw (default: the city's units), their noun, and `lines`, rings drawn
-     as outlines over them (Community Areas over census tracts; labels may name a line with { line, text }). */
+     as outlines over them (Community Areas over their neighborhoods; labels may name a line with { line, text }). */
   function makeMap(el, city, src = {}) {
     const polys = src.polys || V.polygons, ids = src.ids || POOL[city], has = new Set(ids), lines = src.lines || [];
     let W = 0, H = 0;
@@ -362,7 +362,7 @@
   function render() {
     readTokens();
     if (state.tab === 'overview') renderOverview();
-    if (state.tab === 'tracts') renderTracts();
+    if (state.tab === 'neighborhoods') renderNbhd();
     const m = TAB_METHOD[state.tab];
     if (m) renderExplorer(m);
   }
@@ -550,7 +550,7 @@
         <div class="xhead">
           <div class="eyebrow">Explore · ${meth.name}</div>
           <h1 data-title></h1>
-          <p class="def">${esc(meth.def)} <button class="btn small" data-go="${meth.doc}">Read the method</button>${isH ? ' <button class="btn small" data-go="tracts">Break Chicago areas into tracts</button>' : ''}</p>
+          <p class="def">${esc(meth.def)} <button class="btn small" data-go="${meth.doc}">Read the method</button>${isH ? ' <button class="btn small" data-go="neighborhoods">Break Chicago areas into neighborhoods</button>' : ''}</p>
           <div class="refbar" data-refbar></div>
           <div class="tiles" data-tiles></div>
           <p class="note" data-cross></p>
@@ -992,15 +992,14 @@
     $('[data-members]', root).onclick = (e) => { const b = e.target.closest('[data-cmp]'); if (b) toggleCompare(+b.dataset.cmp); };
   }
 
-  /* ---------------------------------------------------------------- Chicago census tracts (breakdown of the areas) */
-  const TR = V.tracts.units, NT = TR.length, TR_OF = {};
+  /* ---------------------------------------------------------------- Chicago neighborhoods (the City's 98, inside each area) */
+  const TR = V.neighborhoods.units, NT = TR.length, TR_OF = {};
   TR.forEach((t, k) => { (TR_OF[IDX[t.ca]] = TR_OF[IDX[t.ca]] || []).push(k); });
-  const nbhd = (k) => (TR[k].nbhd && TR[k].nbhd !== U[IDX[TR[k].ca]].name ? TR[k].nbhd : '');   // only when it adds to the area's name
-  const trLabel = (k) => TR[k].name + (nbhd(k) ? ` · ${nbhd(k)}` : '');
+  const trLabel = (k) => TR[k].name + (TR[k].name === U[IDX[TR[k].ca]].name ? ' (neighborhood)' : '');   // tell a piece from its namesake area
   const byD = (D) => (a, b) => (D[a] === D[a] ? D[a] : Infinity) - (D[b] === D[b] ? D[b] : Infinity) || a - b;
   const trMemo = new Map();
   let trMap = null, trZoomed = null;
-  function tractDistances(R) {                       // every tract against the reference under the Harmonized settings
+  function nbDistances(R) {                          // every neighborhood piece against the reference under the Harmonized settings
     const key = canon('H', R.cfg) + '|' + state.ref;
     if (!trMemo.has(key)) {
       if (trMemo.size > 20) trMemo.delete(trMemo.keys().next().value);
@@ -1008,30 +1007,30 @@
     }
     return trMemo.get(key);
   }
-  function selectTract(k) { state.tr.ca = IDX[TR[k].ca]; state.tr.t = k; schedule(); }
+  function selectPiece(k) { state.tr.ca = IDX[TR[k].ca]; state.tr.t = k; schedule(); }
 
-  function buildTracts(root) {
-    trMap = makeMap($('[data-tr-map]', root), 'CHI', { polys: V.tracts.polygons, ids: TR.map((_, k) => k), lines: POOL.CHI.map((i) => V.polygons[i]), noun: 'census-tract pieces' });
+  function buildNbhd(root) {
+    trMap = makeMap($('[data-tr-map]', root), 'CHI', { polys: V.neighborhoods.polygons, ids: TR.map((_, k) => k), lines: POOL.CHI.map((i) => V.polygons[i]), noun: 'neighborhood pieces' });
     const sel = $('#tr-ca');
     sel.innerHTML = POOL.CHI.slice().sort((a, b) => U[a].name.localeCompare(U[b].name)).map((i) => `<option value="${i}">${esc(U[i].name)}</option>`).join('');
     sel.addEventListener('change', () => { state.tr.ca = +sel.value; state.tr.t = null; schedule(); });
     bindRefInput($('#ref-T'));
-    root.addEventListener('click', (e) => { const b = e.target.closest('[data-tsel]'); if (b) selectTract(+b.dataset.tsel); });
+    root.addEventListener('click', (e) => { const b = e.target.closest('[data-tsel]'); if (b) selectPiece(+b.dataset.tsel); });
   }
 
-  function renderTracts() {
-    const root = $('[data-view="tracts"]');
-    if (!trMap) buildTracts(root);
+  function renderNbhd() {
+    const root = $('[data-view="neighborhoods"]');
+    if (!trMap) buildNbhd(root);
     syncRefInputs();
     const R = current('H'), ref = state.ref, c = state.cfg.H;
-    $('[data-title]', root).textContent = `${U[ref].name} against Chicago's census tracts`;
+    $('[data-title]', root).textContent = `${U[ref].name} against Chicago's neighborhoods`;
     $('[data-tr-error]', root).innerHTML = R.error ? `<div class="error">${esc(R.error)} Change it in the Harmonized model tab.</div>` : '';
     $$('.xsection', root).forEach((s) => { s.style.opacity = R.error ? 0.35 : 1; });
     if (R.error) return;
     const which = [...Object.keys(PRE), 'R1', 'R2', 'R3'].find((r) => canon('H', presetCfg(r, c)) === canon('H', c));
     $('[data-tr-settings]', root).innerHTML = `Settings: ${PRE[which] ? `the <b>${which}</b> settings` : which ? `v2 <b>${which}</b>` : '<b>custom</b> settings'} from the Harmonized model tab, ${c.scaling.replace('_', '-')} scaling`
-      + (c.geometry === 'pca' ? ', <b>full distance</b> (the PCA geometry is not applied to tracts, so area distances here are also full)' : ', full distance') + '.';
-    const P = tractDistances(R), D = P.D, Dca = (i) => R.Dfull[ref * N + i];
+      + (c.geometry === 'pca' ? ', <b>full distance</b> (the PCA geometry is not applied to neighborhoods, so area distances here are also full)' : ', full distance') + '.';
+    const P = nbDistances(R), D = P.D, Dca = (i) => R.Dfull[ref * N + i];
     const areas = M.order(R.Dfull, N, ref, POOL.CHI), nA = areas.length;
     if (state.tr.ca === null) state.tr.ca = areas[0];
     const ca = state.tr.ca, mine = (TR_OF[ca] || []).slice().sort(byD(D));
@@ -1044,35 +1043,35 @@
     const closer = mine.filter((k) => D[k] < Dca(ca)).length, beatBest = all.filter((k) => D[k] < Dca(areas[0])).length;
     $('[data-tr-tiles]', root).innerHTML =
       tile(`${esc(U[ca].name)}, whole area`, fmt(Dca(ca)), ca === ref ? 'the reference itself' : `rank ${areas.indexOf(ca) + 1} of ${nA} Chicago areas`)
-      + tile(`Closest tract in ${esc(U[ca].name)}`, esc(TR[mine[0]].name), `distance ${fmt(D[mine[0]])} · would rank ${areaRank(D[mine[0]])} of ${nA} areas`)
-      + tile(`Its ${mine.length} tracts`, `${fmt(D[mine[0]])} – ${fmt(D[mine[mine.length - 1]])}`, `${closer} of ${mine.length} closer than the area as a whole`)
-      + tile('Closest tract in Chicago', esc(TR[all[0]].name), `${esc(U[IDX[TR[all[0]].ca]].name)} · distance ${fmt(D[all[0]])}; ${beatBest} tracts beat the closest area (${esc(U[areas[0]].name)}, ${fmt(Dca(areas[0]))})`);
+      + tile(`Closest neighborhood in ${esc(U[ca].name)}`, esc(TR[mine[0]].name), `distance ${fmt(D[mine[0]])} · would rank ${areaRank(D[mine[0]])} of ${nA} areas`)
+      + tile(`Its ${mine.length} neighborhood${mine.length > 1 ? 's' : ''}`, `${fmt(D[mine[0]])} – ${fmt(D[mine[mine.length - 1]])}`, `${closer} of ${mine.length} closer than the area as a whole`)
+      + tile('Closest neighborhood in Chicago', esc(TR[all[0]].name), `${esc(U[IDX[TR[all[0]].ca]].name)} · distance ${fmt(D[all[0]])}; ${beatBest} beat the closest area (${esc(U[areas[0]].name)}, ${fmt(Dca(areas[0]))})`);
 
     const finite = Array.from(D).filter((v) => v === v), lo = Math.min(...finite), hi = quantile(finite, 0.95);
     const rank = new Int32Array(NT); all.forEach((k, r) => { rank[k] = r + 1; });
     trMap.update({ fill: (k) => ramp(T.seq, 1 - (D[k] - lo) / (hi - lo)), dim: (k) => TR[k].ca !== U[ca].id,
       rings: all.slice(0, 10).map((k) => ({ i: k, color: T.ink, width: 1.4 })).concat([{ i: t, color: T.acc, width: 3 }]),
       focus: POOL.CHI.indexOf(ca), labels: [{ line: POOL.CHI.indexOf(ca), text: U[ca].name }],
-      tipFor: (k) => `<b>${esc(trLabel(k))}</b><br>${esc(U[IDX[TR[k].ca]].name)}<br>distance ${fmt(D[k])} · rank ${rank[k]} of ${NT} tracts<br><span class="muted">${nf(0).format(TR[k].residents)} residents · ${TR[k].establishments} establishments · ${fmt(TR[k].land_km2, 2)} km²</span>`,
-      onClick: selectTract });
+      tipFor: (k) => `<b>${esc(trLabel(k))}</b><br>${esc(U[IDX[TR[k].ca]].name)}<br>distance ${fmt(D[k])} · rank ${rank[k]} of ${NT} neighborhoods<br><span class="muted">${nf(0).format(TR[k].residents)} residents · ${TR[k].establishments} establishments · ${fmt(TR[k].land_km2, 2)} km²</span>`,
+      onClick: selectPiece });
     if (trZoomed !== ca) { trMap.zoomTo(POOL.CHI.indexOf(ca)); trZoomed = ca; }
     $('[data-tr-legend]', root).innerHTML = `<span>more alike ${fmt(lo)}</span><span class="bar" style="background:linear-gradient(90deg,${T.seq.slice().reverse().join(',')})"></span><span>≥ ${fmt(hi)} less alike</span><span class="muted">the closest area is at ${fmt(Dca(areas[0]))}</span>`;
-    $('[data-tr-top]', root).innerHTML = table(['Rank', 'Tract', 'Community Area', 'Distance', 'Rank among areas'], all.slice(0, 15).map((k, r) => {
-      const row = [r + 1, `<button class="btn small" data-tsel="${k}">${esc(TR[k].name)}</button>${nbhd(k) ? ` <span class="muted">${esc(nbhd(k))}</span>` : ''}`, esc(U[IDX[TR[k].ca]].name), fmt(D[k]), areaRank(D[k])];
+    $('[data-tr-top]', root).innerHTML = table(['Rank', 'Neighborhood', 'Community Area', 'Distance', 'Rank among areas'], all.slice(0, 15).map((k, r) => {
+      const row = [r + 1, `<button class="btn small" data-tsel="${k}">${esc(TR[k].name)}</button>`, esc(U[IDX[TR[k].ca]].name), fmt(D[k]), areaRank(D[k])];
       row.hl = k === t;
       return row;
     }), [0, 3, 4]);
 
-    // The chosen area's tracts: distance bars and each family's share of the squared distance.
+    // The chosen area's neighborhoods: distance bars and each family's share of the squared distance.
     const fams = H_F.filter((f) => R.w[f] > 0), names = mine.map(trLabel);
     const z = mine.map((k) => fams.map((f) => (P.contrib[f] ? P.contrib[f][k] : 0) / (D[k] ** 2 || 1)));
     const dist = mine.map((k) => D[k]), xmax = Math.max(Dca(ca), ...dist.filter((v) => v === v)) * 1.3;
-    $('[data-tr-ca-title]', root).textContent = `The tracts of ${U[ca].name}`;
-    $('[data-tr-ca-note]', root).textContent = `Bars: distance to ${U[ref].name}, shorter = more alike; the dashed line is the area as a whole. Matrix: each family's share of the squared distance. Click a tract to open its profile.`;
+    $('[data-tr-ca-title]', root).textContent = `The neighborhoods of ${U[ca].name}`;
+    $('[data-tr-ca-note]', root).textContent = `Bars: distance to ${U[ref].name}, shorter = more alike; the dashed line is the area as a whole. Matrix: each family's share of the squared distance. Click a neighborhood to open its profile.`;
     plot($('[data-tr-bars]', root), [
       { type: 'bar', orientation: 'h', x: dist, y: names, customdata: mine, xaxis: 'x', yaxis: 'y', marker: { color: mine.map((k) => (k === t ? T.acc : T.city.CHI)), line: { width: 0 } },
         text: dist.map((d) => fmt(d)), textposition: 'outside', cliponaxis: false, textfont: { size: 11, color: T.ink2 },
-        hovertemplate: mine.map((k) => `<b>${esc(trLabel(k))}</b><br>distance %{x:.3f}<br>rank ${rank[k]} of ${NT} tracts; would rank ${areaRank(D[k])} of ${nA} areas<br>${TR[k].establishments} establishments<extra></extra>`) },
+        hovertemplate: mine.map((k) => `<b>${esc(trLabel(k))}</b><br>distance %{x:.3f}<br>rank ${rank[k]} of ${NT} neighborhoods; would rank ${areaRank(D[k])} of ${nA} areas<br>${TR[k].establishments} establishments<extra></extra>`) },
       { type: 'heatmap', z, x: fams, y: names, xaxis: 'x2', yaxis: 'y', xgap: 2, ygap: 2, colorscale: seqScale(), zmin: 0, zmax: Math.max(1e-9, ...z.flat()), customdata: z.map(() => fams.map((f) => `${f} ${FAM[f].name}`)),
         colorbar: { orientation: 'h', x: 0.78, xanchor: 'center', y: -0.02, yanchor: 'top', len: 0.42, thickness: 7, outlinewidth: 0, tickformat: '.0%', tickfont: { size: 9, color: T.ink2 }, nticks: 4 },
         hovertemplate: '%{y}<br>%{customdata}: %{z:.0%} of the squared distance<extra></extra>' }],
@@ -1082,20 +1081,20 @@
         xaxis2: { domain: [0.56, 1], anchor: 'y', side: 'top', tickmode: 'array', tickvals: fams, tickfont: { size: 9.5, color: T.ink2, family: T.mono }, tickangle: 0, gridcolor: 'rgba(0,0,0,0)', linecolor: 'rgba(0,0,0,0)' },
         shapes: [{ type: 'line', xref: 'x', yref: 'paper', x0: Dca(ca), x1: Dca(ca), y0: 0, y1: 1, line: { dash: 'dash', color: T.ink2, width: 1.2 } }],
         annotations: [{ xref: 'x', yref: 'paper', x: Dca(ca), y: 1, yanchor: 'bottom', text: `whole area ${fmt(Dca(ca))}`, showarrow: false, font: { size: 10, color: T.ink2 } }] }),
-      (p) => selectTract(typeof p.customdata === 'number' ? p.customdata : mine[names.indexOf(p.y)]));
+      (p) => selectPiece(typeof p.customdata === 'number' ? p.customdata : mine[names.indexOf(p.y)]));
 
-    // Profile: reference, area and open tract on every active column.
-    $('[data-tr-prof-title]', root).textContent = `${TR[t].name}${nbhd(t) ? ` (${nbhd(t)})` : ''} against ${U[ref].name} and ${U[ca].name}`;
+    // Profile: reference, area and open neighborhood on every active column.
+    $('[data-tr-prof-title]', root).textContent = `${trLabel(t)} against ${U[ref].name} and ${U[ca].name}`;
     const rows = [];
     V.h.scalings[c.scaling].blocks.forEach((b) => b.columns.forEach((col, k) => {
       if (!(R.w[b.family] > 0) || (b.block !== 'composition' && colW(c, col) === 0)) return;
       const a = COLS[col], comp = b.block === 'composition', cell = (raw, v) => comp ? `<span class="num">${fmt(v, 2)}</span>` : `<span class="num">${rawText({ raw: [raw], unit: a.unit }, 0)}</span><div class="muted num">z ${fmt(v, 2)}</div>`;
       rows.push([`<b class="mono">${b.family}</b> ${esc(a.label)}${comp ? '<div class="muted">log-ratio</div>' : ''}`,
-        cell(a.raw[ref], b.X[ref][k]), cell(a.raw[ca], b.X[ca][k]), cell(a.tract_raw[t], b.T[t][k])]);
+        cell(a.raw[ref], b.X[ref][k]), cell(a.raw[ca], b.X[ca][k]), cell(a.sub_raw[t], b.T[t][k])]);
     }));
     const sw = (col) => `<span class="swatch" style="background:${col}"></span>`;
     $('[data-tr-profile]', root).innerHTML = `<p class="note" style="margin-bottom:8px">${esc(trLabel(t))}: ${fmt(TR[t].land_km2, 2)} km² of land, ${nf(0).format(TR[t].residents)} residents, ${TR[t].establishments} establishments${TR[t].establishments < 100 ? ' (under 100: a noisy U6 mix)' : ''}; distance ${fmt(D[t])} against ${fmt(Dca(ca))} for the whole area.</p>`
-      + table(['Column', `${sw(T.ink)}${esc(U[ref].name)}`, `${sw(T.city.CHI)}${esc(U[ca].name)}`, `${sw(T.acc)}${esc(TR[t].name)}`], rows);
+      + table(['Column', `${sw(T.ink)}${esc(U[ref].name)}`, `${sw(T.city.CHI)}${esc(U[ca].name)}`, `${sw(T.acc)}${esc(trLabel(t))}`], rows);
   }
 
   /* ---------------------------------------------------------------- init */

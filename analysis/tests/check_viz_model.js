@@ -79,15 +79,15 @@ for (const m of ['A', 'B']) {
   check(`index ${m}: Brás's Chicago gap ranks and profile distances equal published`, okGap && okProf, `pick ${V.units[gapOrder[0]].name}`);
 }
 
-/* Breakdown tab: out-of-sample rows equal to the Chicago areas' own rows get exactly those areas' distances to Brás under
-   each named setting (export_viz_data.py asserts that tract scoring reproduces those rows). */
+/* Neighborhoods tab: out-of-sample rows equal to the Chicago areas' own rows get exactly those areas' distances to Brás under
+   each named setting (export_viz_data.py asserts that neighborhood scoring reproduces those rows). */
 for (const F of V.h.presets) {
   const blocks = V.h.scalings[F.scaling].blocks.map((b) => ({ ...b, T: chi.map((i) => b.X[i]) }));
   const bms = M.blockMatrices(blocks, n, F.cols), D = M.harmonizedDistance(bms, F.weights, n).D;
   const d = Math.max(...Array.from(M.projectedDistance(blocks, bms, F.weights, bras, F.cols).D, (v, t) => Math.abs(v - D[bras * n + chi[t]])));
   check(`projected distance reproduces ${F.id} Chicago distances to Brás`, d < 1e-12, `max |diff| ${d.toExponential(1)}`);
 }
-check(`tract rows present in every block (${V.tracts.units.length} tract pieces)`, Object.values(V.h.scalings).every((s) => s.blocks.every((b) => b.T.length === V.tracts.units.length)));
+check(`neighborhood rows present in every block (${V.neighborhoods.units.length} pieces)`, Object.values(V.h.scalings).every((s) => s.blocks.every((b) => b.T.length === V.neighborhoods.units.length)));
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nall checks passed');
 process.exit(failed ? 1 : 0);

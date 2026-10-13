@@ -71,7 +71,7 @@ button, input, select { font: inherit; color: inherit; }
 .brand b { font: 600 1.05rem var(--font-display); }
 .brand span { font: 400 .72rem var(--font-mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
 nav.tabs { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
-.tabgroup { display: flex; align-items: center; gap: 2px; }
+.tabgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
 .tabgroup > span { font: 500 .66rem var(--font-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-right: 6px; }
 .tab { border: 0; background: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; color: var(--ink-2); font-weight: 500; }
 .tab:hover { background: var(--sunk); color: var(--ink); }
@@ -268,7 +268,7 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
         <button class="tab" data-tab="doc-a">Index A</button><button class="tab" data-tab="doc-b">Index B</button><button class="tab" data-tab="doc-h">Harmonized</button>
       </div>
       <div class="tabgroup"><span>Explore</span>
-        <button class="tab" data-tab="index-a">Index A</button><button class="tab" data-tab="index-b">Index B</button><button class="tab" data-tab="harmonized">Harmonized model</button><button class="tab" data-tab="tracts">Chicago tracts</button>
+        <button class="tab" data-tab="index-a">Index A</button><button class="tab" data-tab="index-b">Index B</button><button class="tab" data-tab="harmonized">Harmonized model</button><button class="tab" data-tab="neighborhoods">Chicago neighborhoods</button>
       </div>
     </nav>
     <button class="themebtn" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
@@ -703,13 +703,13 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
 <section class="view method-a" id="view-index-a" data-view="index-a" hidden></section>
 <section class="view method-b" id="view-index-b" data-view="index-b" hidden></section>
 <section class="view method-h" id="view-harmonized" data-view="harmonized" hidden></section>
-<!-- ============================== CHICAGO TRACTS ============================== -->
-<section class="view method-h" id="view-tracts" data-view="tracts" hidden>
+<!-- ============================== CHICAGO NEIGHBORHOODS ============================== -->
+<section class="view method-h" id="view-neighborhoods" data-view="neighborhoods" hidden>
   <div class="xmain">
     <div class="xhead">
-      <div class="eyebrow">Explore · Harmonized model · Chicago census tracts</div>
+      <div class="eyebrow">Explore · Harmonized model · Chicago neighborhoods</div>
       <h1 data-title></h1>
-      <p class="def">Each Chicago Community Area broken into its 2020 census tracts, counting only the part of a tract inside the area (median 10 tracts per area). Every tract is measured on the model's 21 columns from the same sources and with the same rules as the areas. It is then placed against the reference with the Harmonized model's current settings, and with the areas' own scaling and calibration, so nothing is refitted. <button class="btn small" data-go="harmonized">Change the settings</button> <button class="btn small" data-go="tr-read">How to read tracts</button></p>
+      <p class="def">Each Chicago Community Area broken into the City of Chicago's neighborhoods (its 98-neighborhood map, cut to block edges inside each area). 13 areas split into 2 to 5 neighborhoods, mostly near downtown and the North Side. The other 64 keep one neighborhood that covers the area. Pieces have a median of 5.1 km² of land, near Brás's 3.6 km². Every piece is measured on the model's 21 columns from the same sources and with the same rules as the areas. It is then placed against the reference with the Harmonized model's current settings, and with the areas' own scaling and calibration, so nothing is refitted. <button class="btn small" data-go="harmonized">Change the settings</button> <button class="btn small" data-go="tr-read">How to read neighborhoods</button></p>
       <div class="picker-row">
         <label for="ref-T" class="muted">Reference</label><input type="search" list="unit-list" data-ref id="ref-T" autocomplete="off" aria-label="Reference unit">
         <label for="tr-ca" class="muted">Community Area</label><select id="tr-ca"></select>
@@ -718,23 +718,22 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
       <div class="tiles" data-tr-tiles></div>
     </div>
     <div data-tr-error></div>
-    <section class="xsection" id="tr-map"><header><h2>Tracts across Chicago</h2>
-      <p>Each tract is shaded by its distance to the reference, using one colour scale for the whole city. Lines mark the Community Areas; tracts outside the chosen area are faded. Outlines mark the 10 tracts closest to the reference and the open tract. Click a tract to open it.</p></header>
+    <section class="xsection" id="tr-map"><header><h2>Neighborhoods across Chicago</h2>
+      <p>Each neighborhood is shaded by its distance to the reference, using one colour scale for the whole city. Lines mark the Community Areas; neighborhoods outside the chosen area are faded. Outlines mark the 10 neighborhoods closest to the reference and the open one. Click a neighborhood to open it.</p></header>
       <div class="grid-3-2"><div class="panel"><div class="mapbox" data-tr-map></div><div class="legend" data-tr-legend></div></div>
-        <div class="panel"><div class="panel-head"><h3>Closest tracts in Chicago</h3><span class="note">Click a row to open it</span></div><div class="tablewrap" data-tr-top></div></div></div></section>
+        <div class="panel"><div class="panel-head"><h3>Closest neighborhoods in Chicago</h3><span class="note">Click a row to open it</span></div><div class="tablewrap" data-tr-top></div></div></div></section>
     <section class="xsection" id="tr-ca-sec"><header><h2 data-tr-ca-title></h2><p data-tr-ca-note></p></header>
       <div class="panel"><div class="plot" data-tr-bars></div></div></section>
     <section class="xsection" id="tr-profile"><header><h2 data-tr-prof-title></h2>
-      <p>Each value is shown raw and as the model sees it: a z-score capped at ±3. The reference and the area keep their model values; the tract is standardized with the same constants as the Chicago areas (the 77 areas' mean and SD for a relative column, all 173 units' for an absolute one), so under relative scaling Brás is read within São Paulo and the area and tract within Chicago. The U6 mix rows are log-ratios and are not standardized. Only active columns are listed.</p></header>
+      <p>Each value is shown raw and as the model sees it: a z-score capped at ±3. The reference and the area keep their model values. The neighborhood is standardized with the same constants as the Chicago areas (the 77 areas' mean and SD for a relative column, all 173 units' for an absolute one), so under relative scaling Brás is read within São Paulo and the area and neighborhood within Chicago. The U6 mix rows are log-ratios and are not standardized. Only active columns are listed.</p></header>
       <div class="panel"><div class="tablewrap" data-tr-profile></div></div></section>
-    <section class="xsection" id="tr-read"><header><h2>Reading the tracts</h2></header>
+    <section class="xsection" id="tr-read"><header><h2>Reading the neighborhoods</h2></header>
       <div class="panel"><ul class="steps">
-        <li><b>A tract is about ten times smaller than Brás.</b> Small units are more extreme: a tract can be almost all shops or all housing. A tract that is closer than its area may be a purer version of one trait, not a better match for the whole profile.</li>
-        <li><b>The best of about 870 tracts beats the best of 77 areas partly by chance.</b> The more candidates there are, the closer the nearest one gets, even with no real match. Compare a tract with its own area and its neighbours, not only with the citywide list.</li>
-        <li><b>Scored, not refitted.</b> Tracts use the areas' means, SDs and calibration, so a tract distance has the same scale as an area distance. Tracts do not change the 173-unit model, its rankings or its match strength.</li>
-        <li><b>Thin data.</b> Many tracts have fewer than 100 establishments, so the U6 mix is noisy there (the profile shows the count). Tracts with no residents get no transit value, since U4 is averaged over residents. Below 10% classified occupied land, the U1 shares are missing; the distance then uses the families both units have.</li>
-        <li><b>Full distance only.</b> The PCA (R2) geometry is not applied to tracts; under it this page uses the full model distance.</li>
-        <li>Boundary slivers are left out but still count in their areas: pieces under 5% of their tract's city land or under 0.05 km². The neighbourhood names come from the City of Chicago layer and are approximate. Source: <span class="mono">analysis/results/Chicago/chicago_tract_breakdown_2026_10_13</span>.</li>
+        <li><b>The City's map, not a model choice.</b> Neighborhoods follow the City of Chicago's 98-neighborhood layer, which the City calls approximate and unofficial. Only 13 areas are split. Lower West Side, where Pilsen is, and most residential areas stay whole, so their single neighborhood repeats the area.</li>
+        <li><b>Sizes still vary.</b> The median piece has 5.1 km² of land, but some downtown pieces are small: Greektown 0.14 km², Printers Row 0.20 km², Millennium Park 0.26 km². Small pieces are more extreme, so treat a small piece that beats its area with care.</li>
+        <li><b>Scored, not refitted.</b> Neighborhoods use the areas' means, SDs and calibration, so a neighborhood distance has the same scale as an area distance. They do not change the 173-unit model, its rankings or its match strength.</li>
+        <li><b>Built from blocks.</b> Each 2020 census block piece goes to the neighborhood holding its centre, so boundaries follow block edges and every family keeps the areas' own allocation of residents, jobs and dwellings. A neighborhood crossing an area line is cut into one piece per area. Pieces under 5% of their neighborhood's land or under 0.05 km² are left out but still count in their areas. Magnificent Mile, 0.01 km² after the cut, is one of them.</li>
+        <li><b>Full distance only.</b> The PCA (R2) geometry is not applied to neighborhoods; under it this page uses the full model distance. Source: <span class="mono">analysis/results/Chicago/chicago_neighborhoods_2026_10_13</span>.</li>
       </ul></div></section>
   </div>
 </section>
