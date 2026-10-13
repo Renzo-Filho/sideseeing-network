@@ -14,6 +14,7 @@
 | Outputs | v4: [`analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/`](../../analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/README.md); v3: [`analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/`](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md); v2: [`analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/`](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md); v1: [`…/sp_chicago_model_v1_2026_10_06/`](../../analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/README.md) |
 | Interactive explorer | [`viz/`](../../viz/README.md): starts from the v4 settings (v3 and the v2 runs as presets); any reference unit, family and within-family weights. Curio: [`interactive_harmonized`](../../analysis/curio_nodes/interactive_harmonized/README.md) |
 | Decision record | [MODEL_PLAN.md](../chicago/MODEL_PLAN.md), cross-city section |
+| Settings discussion (13 Oct 2026) | [SETTINGS_DISCUSSION.md](SETTINGS_DISCUSSION.md): scaling, runs, weights, correlations, search vs model, match strength, the v4 variant without U3 |
 | Feature-by-feature evidence | [Chicago model report §3](../chicago/MODEL_REPORT.md#3-the-features) and each family's results README |
 
 ## 1. Question
