@@ -705,13 +705,14 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
 <section class="view method-h" id="view-harmonized" data-view="harmonized" hidden></section>
 <!-- ============================== CHICAGO NEIGHBORHOODS ============================== -->
 <section class="view method-h" id="view-neighborhoods" data-view="neighborhoods" hidden>
+  <div class="explore">
+  <aside class="rail" aria-label="Harmonized model settings" data-nrail></aside>
   <div class="xmain">
     <div class="xhead">
       <div class="eyebrow">Explore · Harmonized model · Chicago neighborhoods</div>
       <h1 data-title></h1>
-      <p class="def">Each Chicago Community Area broken into the City of Chicago's neighborhoods (its 98-neighborhood map, cut to block edges inside each area). 13 areas split into 2 to 5 neighborhoods, mostly near downtown and the North Side. The other 64 keep one neighborhood that covers the area. Pieces have a median of 5.1 km² of land, near Brás's 3.6 km². Every piece is measured on the model's 21 columns from the same sources and with the same rules as the areas. It is then placed against the reference with the Harmonized model's current settings, and with the areas' own scaling and calibration, so nothing is refitted. <button class="btn small" data-go="harmonized">Change the settings</button> <button class="btn small" data-go="tr-read">How to read neighborhoods</button></p>
+      <p class="def">Each Chicago Community Area broken into the City of Chicago's neighborhoods (its 98-neighborhood map, cut to block edges inside each area). 13 areas split into 2 to 5 neighborhoods, mostly near downtown and the North Side. The other 64 keep one neighborhood that covers the area. Pieces have a median of 5.1 km² of land, near Brás's 3.6 km². Every piece is measured on the model's 21 columns from the same sources and with the same rules as the areas. It is then placed against the reference with the settings on the left, which are shared with the Harmonized model tab, and with the areas' own scaling and calibration, so nothing is refitted. <button class="btn small" data-go="tr-read">How to read neighborhoods</button></p>
       <div class="picker-row">
-        <label for="ref-T" class="muted">Reference</label><input type="search" list="unit-list" data-ref id="ref-T" autocomplete="off" aria-label="Reference unit">
         <label for="tr-ca" class="muted">Community Area</label><select id="tr-ca"></select>
       </div>
       <p class="note" data-tr-settings></p>
@@ -725,8 +726,9 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
     <section class="xsection" id="tr-ca-sec"><header><h2 data-tr-ca-title></h2><p data-tr-ca-note></p></header>
       <div class="panel"><div class="plot" data-tr-bars></div></div></section>
     <section class="xsection" id="tr-profile"><header><h2 data-tr-prof-title></h2>
-      <p>Each value is shown raw and as the model sees it: a z-score capped at ±3. The reference and the area keep their model values. The neighborhood is standardized with the same constants as the Chicago areas (the 77 areas' mean and SD for a relative column, all 173 units' for an absolute one), so under relative scaling Brás is read within São Paulo and the area and neighborhood within Chicago. The U6 mix rows are log-ratios and are not standardized. Only active columns are listed.</p></header>
-      <div class="panel"><div class="tablewrap" data-tr-profile></div></div></section>
+      <p>The radar draws the reference, the whole area (dashed) and every neighborhood of the area, with the open one in bold. Click a legend entry to hide or show a line. The table gives each value raw and as the model sees it: a z-score capped at ±3. The reference and the area keep their model values. The neighborhood is standardized with the same constants as the Chicago areas (the 77 areas' mean and SD for a relative column, all 173 units' for an absolute one), so under relative scaling Brás is read within São Paulo and the area and neighborhood within Chicago. The U6 mix rows are log-ratios and are not standardized. Only active columns are listed.</p></header>
+      <div class="grid2"><div class="panel"><div class="plot" data-tr-radar></div></div>
+        <div class="panel"><div class="tablewrap scrollbox" data-tr-profile></div></div></div></section>
     <section class="xsection" id="tr-read"><header><h2>Reading the neighborhoods</h2></header>
       <div class="panel"><ul class="steps">
         <li><b>The City's map, not a model choice.</b> Neighborhoods follow the City of Chicago's 98-neighborhood layer, which the City calls approximate and unofficial. Only 13 areas are split. Lower West Side, where Pilsen is, and most residential areas stay whole, so their single neighborhood repeats the area.</li>
@@ -735,6 +737,7 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
         <li><b>Built from blocks.</b> Each 2020 census block piece goes to the neighborhood holding its centre, so boundaries follow block edges and every family keeps the areas' own allocation of residents, jobs and dwellings. A neighborhood crossing an area line is cut into one piece per area. Pieces under 5% of their neighborhood's land or under 0.05 km² are left out but still count in their areas. Magnificent Mile, 0.01 km² after the cut, is one of them.</li>
         <li><b>Full distance only.</b> The PCA (R2) geometry is not applied to neighborhoods; under it this page uses the full model distance. Source: <span class="mono">analysis/results/Chicago/chicago_neighborhoods_2026_10_13</span>.</li>
       </ul></div></section>
+  </div>
   </div>
 </section>
 </main>

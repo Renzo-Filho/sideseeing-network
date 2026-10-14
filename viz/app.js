@@ -509,17 +509,19 @@
   }
 
   /* ---------------------------------------------------------------- explorer skeleton and control rail */
-  function explorerHTML(m) {
+  /* The settings rail: reference, model settings, features and weights, and (full = the method's own explorer) the
+     clusters control and baseline. `key` keeps element ids unique when two tabs show a rail for the same method. */
+  function railHTML(m, key, full) {
     const meth = METHODS[m], isH = m === 'H';
     const featRows = (ids) => ids.map((f) => {
       const meta = isH ? FAM[f] : V.ab.factors.find((x) => x.id === f);
       const tipText = isH ? `${meta.desc} Chicago: ${meta.chicago}. São Paulo: ${meta.sao_paulo}.` : `A: ${meta.defA}. B: ${meta.defB}.`;
-      return `<div class="frow" data-f="${f}"><input type="checkbox" id="on-${m}-${f}" aria-label="Use ${esc(meta.name)}" checked>
-        <label class="fname" for="on-${m}-${f}" title="${esc(tipText)}"><b>${f}</b>${esc(meta.name)}</label><span class="share num"></span>
-        <input type="range" id="w-${m}-${f}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(meta.name)}">${isH && MIX[f] ? `
+      return `<div class="frow" data-f="${f}"><input type="checkbox" id="on-${key}-${f}" aria-label="Use ${esc(meta.name)}" checked>
+        <label class="fname" for="on-${key}-${f}" title="${esc(tipText)}"><b>${f}</b>${esc(meta.name)}</label><span class="share num"></span>
+        <input type="range" id="w-${key}-${f}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(meta.name)}">${isH && MIX[f] ? `
         <details class="mix"${f === 'U1' ? ' open' : ''}><summary>Inside ${f}: ${MIX[f].length} columns</summary>${MIX[f].map((c) => `
-          <div class="mrow" data-c="${c}"><label for="cw-${c}">${esc(COLS[c].label)}</label><span class="share num"></span>
-          <input type="range" id="cw-${c}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(COLS[c].label)} inside ${f}"></div>`).join('')}
+          <div class="mrow" data-c="${c}"><label for="cw-${key}-${c}">${esc(COLS[c].label)}</label><span class="share num"></span>
+          <input type="range" id="cw-${key}-${c}" min="0" max="3" step="0.1" value="1" aria-label="Weight of ${esc(COLS[c].label)} inside ${f}"></div>`).join('')}
         </details>` : ''}</div>`;
     }).join('');
     const feats = isH
@@ -532,19 +534,24 @@
       : `
         <div class="ctl"><span class="lbl">Similarity rule</span><div class="seg" data-set="rule"><button data-v="gap">Index gap</button><button data-v="profile">Factor profile</button></div>
         <span class="note">Index gap is the agreed rule; factor profile is the protocol's diagnostic. PCA and clusters always use the factor profile.</span></div>`;
-    return `<div class="explore">
-      <aside class="rail" aria-label="${meth.short} settings">
+    return `
         <details open><summary>Reference</summary><div class="body">
-          <input type="search" list="unit-list" data-ref id="ref-${m}" autocomplete="off" aria-label="Reference unit">
-          <span class="note">Shared by all methods. Click units in any view to compare them.</span></div></details>
-        <details open><summary>Model settings</summary><div class="body">${settings}
-          <div class="ctl"><label for="k-${m}">Clusters</label><select id="k-${m}"><option value="0">Best silhouette (k = 3–8)</option>${[2, 3, 4, 5, 6, 7, 8].map((k) => `<option value="${k}">k = ${k}</option>`).join('')}</select></div></div></details>
+          <input type="search" list="unit-list" data-ref id="ref-${key}" autocomplete="off" aria-label="Reference unit">
+          <span class="note">Shared by all methods.${full ? ' Click units in any view to compare them.' : ''}</span></div></details>
+        <details open><summary>Model settings</summary><div class="body">${settings}${full ? `
+          <div class="ctl"><label for="k-${key}">Clusters</label><select id="k-${key}"><option value="0">Best silhouette (k = 3–8)</option>${[2, 3, 4, 5, 6, 7, 8].map((k) => `<option value="${k}">k = ${k}</option>`).join('')}</select></div>` : ''}</div></details>
         <details open><summary>Features and weights</summary><div class="body">
           <span class="note">${isH ? 'Family budgets; shares are renormalized over active families.' : 'Factor weights in the index sum.'} Hover a name for its definition.</span>
           <div>${feats}</div>
-          <div class="btnrow"><button class="btn small" data-act="equal">Equal weights</button><button class="btn small" data-act="allon">All on</button></div></div></details>
+          <div class="btnrow"><button class="btn small" data-act="equal">Equal weights</button><button class="btn small" data-act="allon">All on</button></div></div></details>${full ? `
         <details open><summary>Baseline</summary><div class="body"><div class="basebox" data-basebox></div>
-          <div class="btnrow"><button class="btn small" data-act="pin">Pin current settings</button><button class="btn small" data-act="unpin">${isH ? `Use ${START}` : 'Use published'}</button></div></div></details>
+          <div class="btnrow"><button class="btn small" data-act="pin">Pin current settings</button><button class="btn small" data-act="unpin">${isH ? `Use ${START}` : 'Use published'}</button></div></div></details>` : ''}`;
+  }
+
+  function explorerHTML(m) {
+    const meth = METHODS[m], isH = m === 'H';
+    return `<div class="explore">
+      <aside class="rail" aria-label="${meth.short} settings">${railHTML(m, m, true)}
       </aside>
       <div class="xmain">
         <div class="xhead">
@@ -594,35 +601,49 @@
   function buildExplorer(m) {
     const root = $(`[data-view="${METHODS[m].tab}"]`);
     root.innerHTML = explorerHTML(m);
-    const h = X[m] = { root, maps: { SP: makeMap($('[data-map="SP"]', root), 'SP'), CHI: makeMap($('[data-map="CHI"]', root), 'CHI') },
+    X[m] = { root, maps: { SP: makeMap($('[data-map="SP"]', root), 'SP'), CHI: makeMap($('[data-map="CHI"]', root), 'CHI') },
       clmaps: { SP: makeMap($('[data-clmap="SP"]', root), 'SP'), CHI: makeMap($('[data-clmap="CHI"]', root), 'CHI') },
       p: (k) => $(`[data-plot="${k}"]`, root) };
-    bindRefInput($(`#ref-${m}`));
-    if (matchMedia('(max-width: 980px)').matches) $$('.rail details', root).slice(1).forEach((d) => { d.open = false; });   // phones: settings folded
+    bindRail($('.rail', root), m, m);
+    root.addEventListener('click', (e) => { const jump = e.target.closest('[data-jump]'); if (jump) document.getElementById(jump.dataset.jump).scrollIntoView({ behavior: 'smooth' }); });
+    $$('[data-ui]', root).forEach((el) => el.addEventListener('change', () => {
+      state.ui[m][el.dataset.ui] = el.type === 'checkbox' ? el.checked : (el.dataset.ui === 'pcx' || el.dataset.ui === 'pcy' ? +el.value : el.value);
+      schedule();
+    }));
+    syncRefInputs();
+  }
+
+  /* Rail controls edit state.cfg[m], shared by every rail of that method. */
+  function bindRail(rail, m, key) {
+    bindRefInput($(`#ref-${key}`, rail));
+    if (matchMedia('(max-width: 980px)').matches) $$('details', rail).slice(1).forEach((d) => { d.open = false; });   // phones: settings folded
     const cfg = () => state.cfg[m];
-    $$('.frow', root).forEach((row) => {
+    let drag;
+    // A full recompute and redraw takes ~0.4 s, so while dragging only the shares update; views follow when the slider pauses.
+    const moving = () => { syncRail(m, rail); clearTimeout(drag); drag = setTimeout(schedule, 180); };
+    const settle = () => { clearTimeout(drag); schedule(); };
+    $$('.frow', rail).forEach((row) => {
       const f = row.dataset.f, cb = $('input[type="checkbox"]', row), sl = $('input[type="range"]', row);
       cb.addEventListener('change', () => { if (cb.checked) delete cfg().off[f]; else cfg().off[f] = true; schedule(); });
-      // A full recompute and redraw takes ~0.4 s, so while dragging only the shares update; views follow when the slider pauses.
-      sl.addEventListener('input', () => { cfg().weights[f] = +sl.value; if (+sl.value > 0) delete cfg().off[f]; syncRail(m); clearTimeout(h.drag); h.drag = setTimeout(schedule, 180); });
-      sl.addEventListener('change', () => { clearTimeout(h.drag); schedule(); });
+      sl.addEventListener('input', () => { cfg().weights[f] = +sl.value; if (+sl.value > 0) delete cfg().off[f]; moving(); });
+      sl.addEventListener('change', settle);
     });
-    $$('.mrow', root).forEach((row) => {            // column weights inside a family (same pause-then-recompute rule)
+    $$('.mrow', rail).forEach((row) => {            // column weights inside a family (same pause-then-recompute rule)
       const c = row.dataset.c, sl = $('input', row);
-      sl.addEventListener('input', () => { cfg().cols = { ...cfg().cols, [c]: +sl.value }; syncRail(m); clearTimeout(h.drag); h.drag = setTimeout(schedule, 180); });
-      sl.addEventListener('change', () => { clearTimeout(h.drag); schedule(); });
+      sl.addEventListener('input', () => { cfg().cols = { ...cfg().cols, [c]: +sl.value }; moving(); });
+      sl.addEventListener('change', settle);
     });
-    $$('[data-set]', root).forEach((seg) => seg.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { cfg()[seg.dataset.set] = b.dataset.v; schedule(); } }));
-    const preset = $('[data-preset]', root);
+    $$('[data-set]', rail).forEach((seg) => seg.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { cfg()[seg.dataset.set] = b.dataset.v; schedule(); } }));
+    const preset = $('[data-preset]', rail);
     if (preset) preset.addEventListener('click', (e) => {
       const b = e.target.closest('button'); if (!b) return;
       state.cfg[m] = presetCfg(b.dataset.v, cfg());
       schedule();
     });
-    $(`#k-${m}`).addEventListener('change', (e) => { cfg().k = +e.target.value; schedule(); });
-    root.addEventListener('click', (e) => {
-      const act = e.target.closest('[data-act]'), jump = e.target.closest('[data-jump]');
-      if (jump) document.getElementById(jump.dataset.jump).scrollIntoView({ behavior: 'smooth' });
+    const k = $(`#k-${key}`, rail);
+    if (k) k.addEventListener('change', (e) => { cfg().k = +e.target.value; schedule(); });
+    rail.addEventListener('click', (e) => {
+      const act = e.target.closest('[data-act]');
       if (!act) return;
       const c = cfg();
       if (act.dataset.act === 'equal') { c.weights = ones(METHODS[m].feats); c.cols = {}; }
@@ -631,15 +652,10 @@
       if (act.dataset.act === 'unpin') state.base[m] = null;
       schedule();
     });
-    $$('[data-ui]', root).forEach((el) => el.addEventListener('change', () => {
-      state.ui[m][el.dataset.ui] = el.type === 'checkbox' ? el.checked : (el.dataset.ui === 'pcx' || el.dataset.ui === 'pcy' ? +el.value : el.value);
-      schedule();
-    }));
-    syncRefInputs();
   }
 
-  function syncRail(m) {
-    const root = X[m].root, c = state.cfg[m], w = weightsOf(c, m), tot = Object.values(w).reduce((a, b) => a + b, 0);
+  function syncRail(m, root = $('.rail', X[m].root)) {
+    const c = state.cfg[m], w = weightsOf(c, m), tot = Object.values(w).reduce((a, b) => a + b, 0);
     $$('.frow', root).forEach((row) => {
       const f = row.dataset.f, on = !c.off[f], sl = $('input[type="range"]', row);
       $('input[type="checkbox"]', row).checked = on;
@@ -664,12 +680,14 @@
       $('[data-preset-note]', root).textContent = PRE[which] ? `Current: the ${which} settings${which === START ? ' (the starting settings)' : ''}` : which ? `Current: v2 ${which} under ${c.scaling.replace('_', '-')} scaling`
         + (which === 'R3' ? ` (without ${V.h.r3_dropped_columns[c.scaling].map((col) => `${COLS[col].family} ${COLS[col].label.toLowerCase()}`).join(', ')})` : '') : 'Custom settings';
     }
-    $(`#k-${m}`).value = String(c.k || 0);
+    const k = $('select[id^="k-"]', root), box = $('[data-basebox]', root);
+    if (k) k.value = String(c.k || 0);
+    if (!box) return;
     const b = baseCfg(m);
     const desc = m === 'H' ? `${b.scaling.replace('_', '-')} scaling, ${b.geometry === 'pca' ? 'PCA distance' : 'full distance'}` : `${b.rule === 'gap' ? 'index gap' : 'factor profile'} rule`;
     const changed = METHODS[m].feats.filter((f) => !!b.off[f] !== !!c.off[f] || +b.weights[f] !== +c.weights[f])
       .concat(Object.keys(MIX).filter((f) => m === 'H' && MIX[f].some((col) => colW(b, col) !== colW(c, col))).map((f) => `${f} inner mix`));
-    $('[data-basebox]', root).innerHTML = `<b>${state.base[m] ? 'Pinned snapshot' : m === 'H' ? `${START} settings` : 'Published settings'}</b>: ${desc}${Object.keys(b.off).length ? `, without ${Object.keys(b.off).join(', ')}` : ''}${METHODS[m].feats.some((f) => +b.weights[f] !== 1) || Object.values(b.cols || {}).some((v) => +v !== 1) ? ', custom weights' : ', equal weights'}.<br>${sameAsBase(m) ? 'Current settings match it.' : `Changed from it: ${changed.length ? changed.join(', ') : 'model settings'}.`}`;
+    box.innerHTML = `<b>${state.base[m] ? 'Pinned snapshot' : m === 'H' ? `${START} settings` : 'Published settings'}</b>: ${desc}${Object.keys(b.off).length ? `, without ${Object.keys(b.off).join(', ')}` : ''}${METHODS[m].feats.some((f) => +b.weights[f] !== 1) || Object.values(b.cols || {}).some((v) => +v !== 1) ? ', custom weights' : ', equal weights'}.<br>${sameAsBase(m) ? 'Current settings match it.' : `Changed from it: ${changed.length ? changed.join(', ') : 'model settings'}.`}`;
   }
 
   /* ---------------------------------------------------------------- explorer rendering */
@@ -1010,11 +1028,13 @@
   function selectPiece(k) { state.tr.ca = IDX[TR[k].ca]; state.tr.t = k; schedule(); }
 
   function buildNbhd(root) {
+    const rail = $('[data-nrail]', root);
+    rail.innerHTML = railHTML('H', 'N', false);
+    bindRail(rail, 'H', 'N');
     trMap = makeMap($('[data-tr-map]', root), 'CHI', { polys: V.neighborhoods.polygons, ids: TR.map((_, k) => k), lines: POOL.CHI.map((i) => V.polygons[i]), noun: 'neighborhood pieces' });
     const sel = $('#tr-ca');
     sel.innerHTML = POOL.CHI.slice().sort((a, b) => U[a].name.localeCompare(U[b].name)).map((i) => `<option value="${i}">${esc(U[i].name)}</option>`).join('');
     sel.addEventListener('change', () => { state.tr.ca = +sel.value; state.tr.t = null; schedule(); });
-    bindRefInput($('#ref-T'));
     root.addEventListener('click', (e) => { const b = e.target.closest('[data-tsel]'); if (b) selectPiece(+b.dataset.tsel); });
   }
 
@@ -1022,13 +1042,14 @@
     const root = $('[data-view="neighborhoods"]');
     if (!trMap) buildNbhd(root);
     syncRefInputs();
+    syncRail('H', $('[data-nrail]', root));
     const R = current('H'), ref = state.ref, c = state.cfg.H;
     $('[data-title]', root).textContent = `${U[ref].name} against Chicago's neighborhoods`;
-    $('[data-tr-error]', root).innerHTML = R.error ? `<div class="error">${esc(R.error)} Change it in the Harmonized model tab.</div>` : '';
+    $('[data-tr-error]', root).innerHTML = R.error ? `<div class="error">${esc(R.error)}</div>` : '';
     $$('.xsection', root).forEach((s) => { s.style.opacity = R.error ? 0.35 : 1; });
     if (R.error) return;
     const which = [...Object.keys(PRE), 'R1', 'R2', 'R3'].find((r) => canon('H', presetCfg(r, c)) === canon('H', c));
-    $('[data-tr-settings]', root).innerHTML = `Settings: ${PRE[which] ? `the <b>${which}</b> settings` : which ? `v2 <b>${which}</b>` : '<b>custom</b> settings'} from the Harmonized model tab, ${c.scaling.replace('_', '-')} scaling`
+    $('[data-tr-settings]', root).innerHTML = `Settings: ${PRE[which] ? `the <b>${which}</b> settings` : which ? `v2 <b>${which}</b>` : '<b>custom</b> settings'}, ${c.scaling.replace('_', '-')} scaling`
       + (c.geometry === 'pca' ? ', <b>full distance</b> (the PCA geometry is not applied to neighborhoods, so area distances here are also full)' : ', full distance') + '.';
     const P = nbDistances(R), D = P.D, Dca = (i) => R.Dfull[ref * N + i];
     const areas = M.order(R.Dfull, N, ref, POOL.CHI), nA = areas.length;
@@ -1095,6 +1116,24 @@
     const sw = (col) => `<span class="swatch" style="background:${col}"></span>`;
     $('[data-tr-profile]', root).innerHTML = `<p class="note" style="margin-bottom:8px">${esc(trLabel(t))}: ${fmt(TR[t].land_km2, 2)} km² of land, ${nf(0).format(TR[t].residents)} residents, ${TR[t].establishments} establishments${TR[t].establishments < 100 ? ' (under 100: a noisy U6 mix)' : ''}; distance ${fmt(D[t])} against ${fmt(Dca(ca))} for the whole area.</p>`
       + table(['Column', `${sw(T.ink)}${esc(U[ref].name)}`, `${sw(T.city.CHI)}${esc(U[ca].name)}`, `${sw(T.acc)}${esc(trLabel(t))}`], rows);
+
+    // Radar: the reference, the whole area and each of its neighborhoods on the active scalar columns (z-scores).
+    const axes = [];
+    V.h.scalings[c.scaling].blocks.forEach((b) => {
+      if (b.block === 'composition' || !(R.w[b.family] > 0)) return;
+      b.columns.forEach((col, k) => { if (colW(c, col) > 0) axes.push({ b, k, name: `${b.family}${b.columns.length > 1 ? String.fromCharCode(97 + k) : ''} ${COLS[col].label}` }); });
+    });
+    const theta = axes.map((a) => a.name), loop = (v) => [...v, v[0]];
+    const trace = (name, r, line, extra = {}) => ({ type: 'scatterpolar', r: loop(r), theta: loop(theta), name, mode: 'lines+markers', line, connectgaps: false,
+      marker: { size: line.width > 2 ? 5 : 3, color: line.color }, hovertemplate: `<b>${esc(name)}</b><br>%{theta}: %{r:.2f}<extra></extra>`, ...extra });
+    plot($('[data-tr-radar]', root), [
+      trace(U[ref].name, axes.map((a) => a.b.X[ref][a.k]), { color: T.ink, width: 2.5 }, { fill: 'toself', fillcolor: 'rgba(127,127,127,0.10)' }),
+      trace(`${U[ca].name} (whole area)`, axes.map((a) => a.b.X[ca][a.k]), { color: T.city.CHI, width: 2, dash: 'dash' }),
+      ...mine.filter((k) => k !== t).map((k, q) => trace(trLabel(k), axes.map((a) => a.b.T[k][a.k]), { color: T.cat[2 + (q % 6)], width: 1.3, dash: 'dot' }, { opacity: 0.85 })),
+      trace(trLabel(t), axes.map((a) => a.b.T[t][a.k]), { color: T.acc, width: 3 })],
+      layout({ height: 540, margin: { l: 110, r: 110, t: 40, b: 70 }, showlegend: true, legend: { orientation: 'h', y: -0.08, x: 0.5, xanchor: 'center' },
+        polar: { bgcolor: 'rgba(0,0,0,0)', radialaxis: { range: [-3.3, 3.3], gridcolor: T.rule, linecolor: T.ruleStrong, tickfont: { size: 10, color: T.muted }, angle: 90, tickangle: 90 },
+          angularaxis: { direction: 'clockwise', rotation: 90, gridcolor: T.rule, linecolor: T.ruleStrong, tickfont: { size: 10, color: T.ink } } } }));
   }
 
   /* ---------------------------------------------------------------- init */
