@@ -572,8 +572,8 @@
             <details class="tview"><summary>Table view</summary><div class="tablewrap" data-ranktable="${c}"></div></details></div>`).join('')}</div></section>
         <section class="xsection" id="maps-${m}"><header><h2>Distance maps</h2>
           <label class="inline-ctl">Colour by <select data-ui="mapBy"></select></label>
-          <p>Both cities on one colour scale. ★ marks the reference; outlines mark its 10 closest units in each city and the units you compare.</p></header>
-          <div class="panel"><div class="grid2"><div class="mapbox" data-map="SP"></div><div class="mapbox" data-map="CHI"></div></div><div class="legend" data-maplegend></div></div></section>
+          <p>Both cities on one colour scale. ★ marks the reference; outlines mark its 10 closest units in each city (on the chosen feature alone when one is selected) and the units you compare.</p></header>
+          <div class="panel"><div class="grid2"><div class="mapbox" data-map="SP"></div><div class="mapbox" data-map="CHI"></div></div><div class="legend" data-maplegend></div><div class="note" data-maptop></div></div></section>
         <section class="xsection" id="profile-${m}"><header><h2>Standardized profile</h2><p data-profile-note></p></header>
           <div class="grid2"><div class="panel"><div class="plot" data-plot="radar"></div></div><div class="panel"><div class="panel-head"><h3>What each axis means</h3><span class="note">raw value and standardized value</span></div><div class="tablewrap scrollbox" data-featguide></div></div></div></section>
         <section class="xsection" id="matrix-${m}"><header><h2>Distance matrix</h2>
@@ -809,7 +809,14 @@
   function renderMaps(m, R) {
     mapOptions(m, R);
     const ref = state.ref, by = state.ui[m].mapBy, root = X[m].root, all = rankAll(R);
-    const top = [...closest(R, 'SP', 10), ...closest(R, 'CHI', 10)];
+    let top = [...closest(R, 'SP', 10), ...closest(R, 'CHI', 10)], topNote = '';
+    const axis = by.startsWith('ax:') ? R.axes.find((x) => 'ax:' + x.id === by) : null;
+    if (axis) {   // a single feature selected: the 10 closest per city on that feature alone
+      const gap = (j) => Math.abs(axis.values[j] - axis.values[ref]);
+      const near = (city) => POOL[city].filter((j) => j !== ref && axis.values[j] !== null).sort((a, b) => gap(a) - gap(b)).slice(0, 10);
+      top = axis.values[ref] === null ? [] : [...near('SP'), ...near('CHI')];
+      topNote = top.length ? `<div class="grid2">${['SP', 'CHI'].map((c) => `<div><b>10 closest in ${CITY[c]} on ${esc(axis.code)} ${esc(axis.label)}</b><ol>${top.filter((j) => U[j].city === c).map((j) => `<li>${esc(U[j].name)} <span class="muted">${rawText(axis, j)}</span></li>`).join('')}</ol></div>`).join('')}</div>` : `<p class="muted">The reference has no value for this feature.</p>`;
+    }
     let fill, legend, valueText;
     if (by === 'distance') {
       const others = Array.from({ length: N }, (_, j) => R.D[ref * N + j]).filter((_, j) => j !== ref), lo = Math.min(...others), hi = quantile(others, 0.95);
@@ -839,6 +846,7 @@
         onClick: (i) => toggleCompare(i) });
     }
     $('[data-maplegend]', root).innerHTML = legend;
+    $('[data-maptop]', root).innerHTML = topNote;
   }
 
   /* Raw values, formatted by unit. */
