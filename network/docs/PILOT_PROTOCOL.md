@@ -1,82 +1,40 @@
-# Near West Side pilot: solo field protocol
+# Near West Side pilot: field protocol
 
-**Field version, 14 October 2026.** This pilot collects observations; it does not construct the graph yet. Renzo is the only collector. He will use one **moto g 5G (2023)** running MultiSensor in the existing collection vest. No volunteer or second device is needed.
+Renzo will collect this pilot **alone**, using a **moto g 5G (2023)**, the MultiSensor app, and the collection vest. The aim is to test whether one phone can produce usable video, GPS, and inertial data along the chosen walking routes.
 
-**Field sequence:** test the phone → mark starts, crossings and overlaps on the map → record pink, green and red one at a time → check each saved session → copy and review the raw data. If a target fails, log it and make a targeted revisit.
+## 1. Chosen location and routes
 
-## The route at a glance
+![Pilot map with blue passages and pink, green, and red walking arrows](pilot-routes-hand-drawn.png)
 
-![Researcher-drawn pilot routes: blue passages with pink, green and red walking arrows](pilot-routes-hand-drawn.png)
+The pilot covers the **drawn passages between S Aberdeen St and S Morgan St, from W Polk St to W Taylor St**. The **colored arrows** show where and in which direction to walk. Ignore the Google Maps white circles and A/B markers. The drawing is a field guide, so check the actual path and crossing on site.
 
-The researcher's drawing is the route reference. It covers the blue passages between **S Aberdeen St and S Morgan St**, from **W Polk St to W Taylor St**. Follow the colored arrows in three modules, **P (pink)**, **G (green)** and **R (red)**. Collect them in that order, one recording session at a time. The drawing supersedes the earlier Loomis–Racine rectangle and Flournoy-only proposals. The Google Maps background is for orientation, not proof that a path is open or public.
-
-| Module | Trace all blue passages with these arrows | First session ID |
+| Route | Area | Recording ID |
 |---|---|---|
-| P — pink | Aberdeen–Carpenter: Polk, Cabrini, Arthington, Aberdeen, Carpenter, the drawn south mid-block path and Taylor-side links | P01 |
-| G — green | Carpenter–Miller: Carpenter, Polk, Miller, Taylor-side links and the parallel mid-block paths | G01 |
-| R — red | Miller–Morgan: Miller, Polk, Morgan, Taylor-side links and the drawn mid-block connections | R01 |
+| **Pink** | Aberdeen to Carpenter, including the drawn Cabrini and Arthington links | P01 |
+| **Green** | Carpenter to Miller, including the drawn mid-block paths | G01 |
+| **Red** | Miller to Morgan, including the drawn mid-block links | R01 |
 
-**Core scope:** street-adjacent, non-UIC sidewalks shown by the blue line. **Exploratory scope:** the drawn mid-block paths, including the area around Samuel Miller Park, if they are public, open and non-UIC. Report these separately from the core sidewalk coverage; do not expand into other park paths. The [Chicago Park District lists Samuel Miller Park at 848 S Miller St](https://www.chicagoparkdistrict.com/media/27426), but the listing does not verify each path's present access. Never enter UIC grounds or private property to match the drawing. Record a closed or inaccessible passage as a gap.
+Record pink, then green, then red. They may be completed on different days. **Do not record UIC campus sidewalks or private passages.** The drawn public paths around Samuel Miller Park are included as a **pilot exception**; report them separately from street-adjacent sidewalks. A path that is closed or inaccessible stays in the log as a gap.
 
-The drawing's white circles and A/B markers are Google Maps marks; **ignore them for collection decisions**. They are not graph nodes, route starts or route ends. The arrows are the important marks. Before walking, write the actual start and finish landmarks for P, G and R on a copy of the map and in the field log.
+## 2. App setup and what to carry
 
-## Before field day: test the phone once
+**Set up MultiSensor before going to the pilot area:**
 
-1. Record the actual phone model, Android version, MultiSensor version, camera setting and free storage. Charge the phone and check camera, precise-location and sensor permissions. Keep **Battery Saver off** during capture: Motorola's [moto g 5G (2023) guide](https://help.motorola.com/hc/help.php?c=&m=MOTO+G+5G+-+2023&os=&product=&sku=&type=pdf) says it can stop location services while the screen is off.
-2. Put the phone in the vest as it will be worn. Make a short test recording named **T00** in the log: stationary start, straight walk, turn and, if convenient, one legal crossing. Check that the video shows the sidewalk ahead and crossing context without the vest or body blocking the view.
-3. Stop, locate the new MultiSensor folder, play part of the video and inspect the export. Check that GPS and inertial files exist, have timestamp fields, and can be aligned with the video using the export's metadata/time conventions. If their clocks cannot yet be related, record that as a test finding rather than assuming the raw numbers share one clock. The model has [GPS, accelerometer and gyroscope hardware](https://en-in.support.motorola.com/app/answers/detail/a_id/174791/~/moto-g-5g-%282023%29---specifications), but the export—not the hardware specification—establishes what was recorded. Preserve T00 even if it fails. Fix settings and repeat as T01, T02, etc. before the main routes.
+- Charge the phone, free enough storage for the planned outing, allow camera and precise location access, and turn **Battery Saver off**. Motorola's [guide](https://help.motorola.com/hc/help.php?c=&m=MOTO+G+5G+-+2023&os=&product=&sku=&type=pdf) says Battery Saver can stop location services when the screen is off.
+- Mount the phone in the vest. Check that the video shows the sidewalk ahead and the full crossing approach without the vest blocking the view.
+- Make a short **test recording (T00)** with a straight walk and a turn. Save it, play the video, and inspect the export for GPS and inertial files with usable timestamps. If any essential stream is missing, fix the setup and repeat the test before starting P01. Keep the same tested settings for all three routes.
 
-If a computer is needed to inspect the export, run this test before traveling to the pilot area. A video preview alone does not validate the multimodal recording.
+**Carry:** the charged phone in its vest, a paper or offline copy of the route map, a simple field log, and a power bank/cable if available. In the log, note the Android and MultiSensor versions, camera setting, and phone orientation.
 
-Use the same verified camera, location and sensor settings for P/G/R. Write them in the log. If settings must change, assign a new configuration ID and repeat the short test before continuing.
+## 3. Rules for the field agent
 
-## On site: mark a working map
+1. **Prepare each route.** At a safe standing place, mark its actual start and finish on the map. Follow the arrows; if two drawn passages do not join directly, label the connecting walk as **repositioning**.
+2. **Cover the drawn passages.** Walk each physical sidewalk side once in the arrow direction, at an ordinary pace. The opposite side of a street is a separate passage. Record the drawn public mid-block paths, but keep them in the separate pilot-exception category.
+3. **Record crossings continuously.** Keep the camera and sensors running through the approach, wait, legal crossing, and arrival. A crossing seen from the sidewalk does not count as traversed. Do not take a diagonal road shortcut unless the marked crossing itself is diagonal.
+4. **Make route joins visible.** Near Carpenter/Taylor, choose and mark a short section of the **same physical sidewalk** to record in both pink and green (**O-PG**). Do the same near Miller/Taylor for green and red (**O-GR**). Note the actual endpoints. Count each shared section once in unique coverage.
+5. **Keep the phone fixed in the vest.** Do not handle it while walking or crossing. If the view fails, stop safely, note the problem, and retake the affected passage under a new recording ID.
+6. **Log changes honestly.** Note missed turns, closed paths, interruptions, repositioning, and repeats. Do not treat a detour or a map line as proof of a sidewalk connection.
+7. **Check every session before moving on.** Confirm that the recording saved and the video plays. Log the recording ID (P01/G01/R01), original MultiSensor folder, start/end landmarks and times, passages and crossings actually covered, overlaps, and problems. Give restarts new IDs such as P02; keep failed files.
+8. **Preserve the raw data.** After each outing, copy the original folders intact and check that the video, GPS, and inertial files copied before deleting anything from the phone. Mark each target **usable**, **needs revisit**, **unavailable**, or **excluded**. Revisit only missing or unusable targets; never silently edit the GPS points.
 
-At a safe standing point, compare the drawing with what exists on the ground. On a paper or offline map copy:
-
-1. Mark each module's actual **start and finish**, then trace its arrows in the order you will walk. Make a short checklist of each drawn physical passage. Colored arrows specify direction on a passage; they do not guarantee that every passage joins into one continuous walk. Mark any connecting travel as repositioning. Opposite sides of a street are separate targets; one recorded direction is enough for the pilot.
-2. Number each road crossing you plan to **traverse**: C-P-01, C-G-01 or C-R-01, plus the intersection and crossing arm. A crossing merely visible from a sidewalk does not count.
-3. Mark **O-PG** as a short section of the *same physical sidewalk* to record in both P and G, near the Carpenter/Taylor handoff. Mark **O-GR** similarly near Miller/Taylor. The north sidewalk of W Taylor for roughly 15–25 m after each handoff is a candidate, not a verified location. Choose recognizable endpoints on site and write them on the map. If a candidate is unsuitable, choose another safe shared section before recording. Meeting at one point is not a passage overlap.
-4. Mark any closed, private, UIC or otherwise unavailable path. Keep it in the target list with a reason; do not invent a connection or force a detour.
-
-The first completed module measures the effort for the next two. Modules may be recorded on different days. There is no assumed one-day completion time.
-
-## Record one module, check it, then continue
-
-Repeat these steps for **P, G and R**:
-
-1. Start a fresh MultiSensor recording. Log the session ID (P01, G01, R01), actual start time and landmark, battery and free storage. Preserve the original app folder name in the log. Check that the camera view and location updates are active while standing still.
-2. Walk the drawn blue passages in the module's colored-arrow directions at a normal pace. Keep the phone fixed in the vest. Record each crossing continuously through **approach → wait → traverse → arrival**. Do not stop on a corner or cross diagonally where there is no diagonal facility. Follow traffic rules.
-3. At a safe stopping point, note any missed branch, closure, interrupted recording, camera obstruction or GPS concern. Label walking needed only to reach the next target as **repositioning**, not unique coverage. Keep recording the premarked O-PG/O-GR section in both adjoining sessions; count that physical section only once in unique coverage.
-4. Stop after the final passage or transition is visible. Confirm the file saved and the video plays. Tick off only passages and crossings actually traversed. Log end time, battery/storage, overlap endpoints, problems and any target needing a revisit before starting the next module.
-
-If a recording stops unexpectedly, keep its files and start a new ID such as P02. Resume at a recognizable landmark with a short, logged shared section. Do not rename or overwrite the failed capture. If a path cannot be used, retain its **unavailable** status rather than replacing it silently with another path.
-
-## After each outing: preserve and check the data
-
-Copy every original MultiSensor folder intact and retain the field map and log. Verify the copies open and contain the expected video, metadata, GPS and inertial files before deleting anything from the phone. Keep failed attempts. Each manifest row links the session ID to its original folder.
-
-Classify each drawn target as **usable**, **partial / revisit**, **unavailable** or **excluded**. A multimodal session is usable when relevant video, GPS and inertial data can be aligned in time using documented metadata, its route can be identified and its critical turns/crossings are visible without a disabling interruption. Note gaps and drift without hand-shifting GPS or modifying raw evidence. Re-record only affected targets when possible, using a new session ID and logged overlap.
-
-Make **one card per recording** (including T00 and any restart). Fill it immediately after stopping:
-
-| Field | Write here |
-|---|---|
-| Session ID and original MultiSensor folder | |
-| Date; actual start/end times and landmarks | |
-| Battery and free storage before/after | |
-| Video, GPS and inertial export check | |
-| Drawn passages and crossings actually traversed | |
-| O-PG or O-GR endpoints; repositioning | |
-| Interruption, closure, camera/GPS problem, retake target | |
-| Final status: usable / partial / unavailable / excluded | |
-
-On the first card of each outing, also write phone model, Android and app versions, acquisition settings, vest orientation, weather/lighting and map revision. Add cards for restarts or retakes. A map tick is not itself proof of a usable capture.
-
-## First review and completion rule
-
-Plot **raw, time-ordered GPS** from each session over a documented public aerial image; distinguish modules, overlaps and failed sessions. The [Cook County imagery service](https://gis.cookcountyil.gov/imagery/rest/services/Basemap/CookImagery/ImageServer) and [2025 orthophoto service](https://img.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer) are candidates. Record imagery year, retrieval date and spatial reference. Inspect video and sensor intervals at turns, crossings and overlaps. Report GPS drift separately from missing observations; do not manually repair either in the original data.
-
-The pilot is complete when **every drawn, eligible passage and planned crossing has an explicit final status**; P/G/R and their actual overlaps link to preserved raw folders; street-adjacent and exploratory mid-block coverage are reported separately; and actual walking, repositioning, setup, transfer, review, storage and battery costs are recorded. A closed path is a documented finding, not covered distance. The drawing is a collection plan, not verified graph topology or evaluation ground truth. This pilot does not imply coverage of all Near West Side sidewalks.
-
-Related documents: [route drawing and rationale](PILOT_NEAR_WEST_SIDE.md), [broader collection protocol](COLLECTION_PROTOCOL.md), and [research plan](PLAN.md).
+The pilot is complete when every eligible drawn passage and planned crossing has a recorded outcome, the original files are preserved, and the two overlaps and any gaps are documented. The [route plan](PILOT_NEAR_WEST_SIDE.md) and [broader collection protocol](COLLECTION_PROTOCOL.md) contain the research rationale and later-study details.
