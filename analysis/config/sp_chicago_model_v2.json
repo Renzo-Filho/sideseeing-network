@@ -59,7 +59,7 @@
       "R3": "drop scalar columns while any pair |Spearman| >= 0.70 on the scaled 173 values"
     },
     "robustness": "500 weight draws (seed 20261006, x U(0.5,1.5), 80% stability), leave-one-family-out, J-9 alternatives",
-    "implementation": "analysis/scripts/sp_chicago_model.py (SP_CHI_MODEL_VERSION=v2, the default; reuses chicago_model.py); notebook analysis/sp_chicago_model_analysis.ipynb; report docs/harmonization/MODEL_REPORT.md §11",
+    "implementation": "analysis/scripts/sp_chicago_model.py (SP_CHI_MODEL_VERSION=v2, the default; reuses chicago_model.py); notebook analysis/sp_chicago_model_analysis.ipynb; report docs/harmonization/MODEL_REPORT.md §6",
     "within_family_weights": "equal: a block averages its columns with weight 1 each (U1: four shares, 1/4 of the U1 budget each). Explorer and Curio lane H let a user set column weights; the block's calibration is then recomputed on the reweighted block, so the family budget and the mix inside the family stay independent",
     "outputs": "analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08"
   }

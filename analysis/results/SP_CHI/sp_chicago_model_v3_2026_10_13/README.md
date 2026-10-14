@@ -4,7 +4,7 @@ Produced by [`analysis/scripts/sp_chicago_model_settings.py v3`](../../../script
 - Data: 173 units and 21 columns, the same inputs as [v2](../sp_chicago_model_v2_2026_10_08/README.md); reference Brás (SP:10).
 - Settings: all-relative scaling and the full distance.
 - Family weights: U1 0.25, U6 0.20, BV, M1 and B1 0.10 each, U2, U3, U4, M6 and M4 0.05 each. M3 and M7 are off.
-- Methodology and reading: [docs/harmonization/MODEL_REPORT.md §12](../../../../docs/harmonization/MODEL_REPORT.md#12-version-3-final-settings-13-october-2026).
+- Methodology and reading: [docs/harmonization/MODEL_REPORT.md §7](../../../../docs/harmonization/MODEL_REPORT.md#7-version-3-position-within-each-city-13-october-2026).
 
 Brás's Chicago top five are Lower West Side, Avondale, West Town and McKinley Park, each in 100% of 500 weight draws, then Logan Square (50.2%, not firm).
 

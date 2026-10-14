@@ -10,7 +10,7 @@ Saved Curio project **"Composite urban index: method A and method B"** (`4e6b8d2
 
 ### Lane H: harmonized cross-city similarity model (added 7 October 2026; v2 since 8 October 2026)
 
-- **Version 2 (8 October 2026):** U1 compares four land-use shares, with the commerce share added by user decision ([report §11](../../../docs/harmonization/MODEL_REPORT.md#11-version-2-u1-commerce-share-8-october-2026)). Same datasets: the commerce share is in the accepted U1 table.
+- **Version 2 (8 October 2026):** U1 compares four land-use shares, with the commerce share added by user decision ([report §6](../../../docs/harmonization/MODEL_REPORT.md#6-version-2-the-u1-commerce-share-8-october-2026)). Same datasets: the commerce share is in the accepted U1 table.
 - **Weights you can change:** the first lines of *H · distance between every pair of units* hold `FAMILY_WEIGHTS` (a family's budget, e.g. `{'U1': 2}`) and `COLUMN_WEIGHTS` (a column inside its family, e.g. `{'p_commerce': 2}`; 0 drops it). Both are empty in the published fit. A column weight recomputes its block's calibration, so it changes only the mix inside the family. `COLUMN_WEIGHTS = {'p_commerce': 0}` reproduces v1 exactly (checked by `run_local.py`).
 
 - **Inputs are the accepted family tables**, not raw sources: each family was built and validated step by step ([MODEL_PLAN](../../../docs/chicago/MODEL_PLAN.md)), and rebuilding them would repeat that work. `register_datasets.py` hard-links the ten tables into the dataset store (`data.sideseeing.feature-*`); each family node refuses a table whose SHA-256 differs from the one in `analysis/config/chicago_model_v1.json` (U3 São Paulo: `sp_chicago_model_v1.json`). `dataflow.py` reads hashes and columns from those contracts.

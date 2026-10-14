@@ -540,18 +540,41 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
 <section class="view method-h" id="view-doc-h" data-view="doc-h" hidden>
   <div class="docs">
     <nav class="toc" aria-label="On this page">
-      <a href="#h-question">Question</a><a href="#h-settings">Settings under discussion</a><a href="#h-features">Features</a><a href="#h-c6">One scale for two cities</a><a href="#h-math">Distance</a>
+      <a href="#h-question">Question</a><a href="#h-versions">Versions and conclusions</a><a href="#h-settings">Settings under discussion</a><a href="#h-features">Features</a><a href="#h-c6">One scale for two cities</a><a href="#h-math">Distance</a>
       <a href="#h-runs">Runs R1–R3</a><a href="#h-pca">PCA and clusters</a><a href="#h-pipeline">Pipeline</a><a href="#h-decisions">Decisions</a>
       <a href="#h-robust">Robustness</a><a href="#h-limits">Limits</a>
     </nav>
     <article class="doc">
       <div class="eyebrow">Documentation · Harmonized cross-city similarity model</div>
       <h1>The harmonized cross-city similarity model</h1>
-      <p class="ink2">Settings under discussion: contract <code>analysis/config/sp_chicago_model_v4.json</code> (proposed 13 October 2026); the earlier candidate <code>sp_chicago_model_v3.json</code> (13 October 2026). Both are fitted by <code>analysis/scripts/sp_chicago_model_settings.py</code> on v2's data and columns (contract <code>sp_chicago_model_v2.json</code>, fitted on 8 October 2026: <code>sp_chicago_model_v1</code> plus the U1 commerce land share). Code <code>analysis/scripts/sp_chicago_model.py</code> (reusing <code>chicago_model.py</code>); notebook <code>analysis/sp_chicago_model_analysis.ipynb</code> (v1, v2); report <code>docs/harmonization/MODEL_REPORT.md</code> (§11 v2, §12 v3, §13 v4). The explorer starts from v4; the presets give v3 and the v2 runs R1–R3.</p>
+      <p class="ink2">Settings under discussion: contract <code>analysis/config/sp_chicago_model_v4.json</code> (proposed 13 October 2026); the earlier candidate <code>sp_chicago_model_v3.json</code> (13 October 2026). Both are fitted by <code>analysis/scripts/sp_chicago_model_settings.py</code> on v2's data and columns (contract <code>sp_chicago_model_v2.json</code>, fitted on 8 October 2026: <code>sp_chicago_model_v1</code> plus the U1 commerce land share). Code <code>analysis/scripts/sp_chicago_model.py</code> (reusing <code>chicago_model.py</code>); notebook <code>analysis/sp_chicago_model_analysis.ipynb</code> (v1, v2); report <code>docs/harmonization/MODEL_REPORT.md</code> (conclusions §1; v1 §5, v2 §6, v3 §7, v4 §8; across versions §9; neighborhoods §10). The explorer starts from v4; the presets give v3 and the v2 runs R1–R3.</p>
       <div class="callout"><b>What changed in v2.</b> U1 compares four land-use shares instead of three: residential, <b>commerce</b>, industrial and institutional. The commerce share had failed the J-3 admission rule because it overlaps U6 activity intensity (Spearman 0.708 in São Paulo, 0.445 in Chicago). The user added it on 8 October 2026 because commercial land is central to Brás's profile: 65% of its occupied land, 3rd of 94 São Paulo districts. The overlap is accepted and reported. Setting the commerce weight to 0 in the explorer reproduces v1 exactly.</div>
 
       <h2 id="h-question">The question</h2>
       <p><b>Which Chicago Community Areas most resemble a given São Paulo district, and the reverse?</b> The model places all <span data-bind="n-all"></span> units in one space built from <span data-bind="n-cols"></span> measurements in <span data-bind="n-fams"></span> feature families, measures the dissimilarity between every pair, and ranks the units by their distance to a reference. The published report uses Brás; the explorer lets any unit be the reference. The model is target-free: rankings around a reference are read from the full matrix.</p>
+
+      <h2 id="h-versions">Versions and conclusions</h2>
+      <p>Four versions were fitted between 6 and 13 October 2026. Each keeps the same 12 families and differs in its columns, scaling or weights, so each asks a slightly different question. Match strength is Brás's position among the 173 units' best cross-city distances (1 = closest); it is comparable across versions, while distances are not.</p>
+      <div class="tablewrap"><table class="tbl">
+        <thead><tr><th>Version</th><th>What changed</th><th>Brás's Chicago top five</th><th class="r">Match strength</th><th>Reading</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">v1 · 6 Oct</td><td>20 columns; hybrid scaling; equal weights</td><td>West Town, Avondale, Logan Square, Lincoln Park, Lower West Side</td><td class="r">148th</td><td>physical-fabric relatives on the near northwest side</td></tr>
+          <tr><td class="mono">v2 · 8 Oct</td><td>+ U1 commerce share (21 columns)</td><td>West Town, Avondale, Logan Square, Lincoln Park, North Center</td><td class="r">154th</td><td>barely moves (0.9996 against v1); the neutral baseline</td></tr>
+          <tr><td class="mono">v3 · 13 Oct</td><td>all-relative; weights on land use and activity; M3, M7 off</td><td>Lower West Side, Avondale, West Town, McKinley Park, Logan Square</td><td class="r">165th</td><td>Brás's position in its city: as fine-grained and busy for Chicago, but residential or industrial land</td></tr>
+          <tr><td class="mono">v4 · 13 Oct</td><td>Brás-distinctive weights; commerce and residential emphasized inside U1</td><td>Near West Side, Near North Side, Lower West Side, West Town, Avondale</td><td class="r">170th</td><td>Brás's distinctive commercial traits; first place not firm</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li><b>Chicago has no close analogue of Brás at Community Area scale.</b> In all 20 published fits (v1 and v2 under three scalings and three runs, v3, v4), Brás's best Chicago match ranks between 125th and 170th of 173.</li>
+        <li><b>West Town is in Brás's Chicago top five in all 20 fits,</b> and in 93–99% of 5,000 random family weightings under each scaling. It is the only area near the top on both halves of Brás's profile: 1st on its ordinary traits (street density, hierarchy, parcels, business intensity) and 3rd on its extremes combined (coverage, land use, business mix), although Near North Side, the Loop or Near South Side beat it on single extreme features. It is not a commercial district. Avondale is in 17 fits; Lower West Side is first under every all-relative fit. First place depends on the settings.</li>
+        <li><b>The settings decide which side of Brás is matched:</b> physical fabric points to West Town, position within each city to Lower West Side and McKinley Park, Brás's distinctive commercial traits to Near West Side and Near North Side.</li>
+        <li><b>The more the distance targets Brás's distinctive traits, the weaker its best match</b> (154th, 165th, 170th): Brás is an outlier even in São Paulo.</li>
+        <li><b>What no Chicago place has: a retail-led business mix with dense low-rise coverage.</b> Chicago's commercial centres are high-rise and services-led; its low-rise mixed neighborhoods are less commercial and less covered.</li>
+        <li><b>At Brás's own scale</b> (the City's neighborhoods, median 5.1 km²; see the Chicago neighborhoods tab), the best match under v4 is 15% closer than the best area (Bucktown), and still farther than 95% of the units' best matches. United Center beats its own area under all four settings.</li>
+        <li><b>Choosing a place is choosing a side of Brás.</b> West Town keeps its built form and intensity; Lower West Side its working character and the closest business mix; Near North Side and Near West Side its commercial intensity for their city, though their commerce is high-rise and led by services and offices rather than retail. None is "Chicago's most commercial hub": the Loop is, and it ranks 10th under v4.</li>
+        <li><b>Report a group with its match strength, never a single winner,</b> and name the question the settings encode.</li>
+      </ul>
+      <p class="ink2">Full method, findings and interpretation of every version, why West Town recurs (§9.5) and what each choice claims (§11): <code>docs/harmonization/MODEL_REPORT.md</code>.</p>
 
       <h2 id="h-settings">Settings under discussion</h2>
       <p>None of the settings below is final. Each states a question through its scaling and weights. Use the ranking together with the match strength under it: the model always names a closest Chicago area, even when none is close.</p>
@@ -689,7 +712,7 @@ window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\
         <li><b>No external truth.</b> The model describes; no outcome validates similarity itself. Evidence comes from each family's checks, face validity and the robustness tables.</li>
         <li><b>The scaling choice is a modelling decision, not a finding.</b></li>
         <li><b>The v3 and v4 weights were chosen after earlier results were seen.</b> They state a question; report them beside the v2 equal-weight result, not instead of it.</li>
-        <li><b>Brás has no close Chicago match</b> under v3 or v4: its best Chicago distance is farther than the best cross-city match of 95% (v3) and 98% (v4) of units.</li>
+        <li><b>Brás has no close Chicago match</b> in any version: its best Chicago match ranks 125th–170th of the 173 units' best cross-city matches across all 20 published fits, and 165th (v3) and 170th (v4) under the Brás-focused settings.</li>
         <li><b>Block size (M3) weighs more than its budget</b> in v2, and drives PC1; v3 and v4 leave it out.</li>
         <li><b>The ±3 cap compresses extremes</b> (the Loop on jobs, height and transit; Marsilac on several columns).</li>
         <li><b>Relative scaling keeps within-city instrument errors:</b> RAIS head-office registration, LODES location error, Overture's formal-economy bias, GHSL's compression of tall buildings.</li>

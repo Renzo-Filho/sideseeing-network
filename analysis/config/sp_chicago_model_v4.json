@@ -58,7 +58,7 @@
     "transforms": "as chicago_model_v1 (J-5)",
     "calibration": "median positive pairwise value over all 14,878 pairs, per block (recomputed when column weights change)",
     "robustness": "500 weight draws around the v4 family weights (seed 20261006, x U(0.5,1.5), 80% stability; column weights held fixed); named alternatives in comparison_v4.csv; match strength in run.json",
-    "implementation": "analysis/scripts/sp_chicago_model_settings.py v4 (reuses sp_chicago_model.py and chicago_model.py); report docs/harmonization/MODEL_REPORT.md §13",
+    "implementation": "analysis/scripts/sp_chicago_model_settings.py v4 (reuses sp_chicago_model.py and chicago_model.py); report docs/harmonization/MODEL_REPORT.md §8",
     "outputs": "analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13"
   }
 }

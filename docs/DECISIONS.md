@@ -2,6 +2,14 @@
 
 This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cross-city](harmonization/MODEL_REPORT.md) models were fitted on 6 October 2026; [STATUS.md](STATUS.md) and those reports give the current inclusion lists. Earlier statements below that fitting is paused describe their original checkpoints.
 
+## Chicago neighborhoods below Community Area scale; one cross-city report — 13 October 2026
+
+**Decisions (user).**
+- Break each Community Area into smaller pieces and score them against the reference in the explorer. 2020 census tracts were tried first and replaced the same day, because a tract is about 7 times smaller than Brás. The current unit is the City of Chicago's 98-neighborhood map, cut to block edges inside each area (102 pieces, median 5.1 km²; Brás 3.6 km²). Pieces are scored with the 173-unit fit's constants, not refitted.
+- Unify the cross-city documentation into one report: [MODEL_REPORT](harmonization/MODEL_REPORT.md) now holds the method, every version's findings and interpretation, the comparison across versions and the conclusions. The separate settings note of 13 October was folded into it.
+
+**Consequence.** At Brás's scale the gain is modest and specific to the Brás-focused settings: under v4 the best neighborhood (Bucktown) is 15% closer than the best area, and still farther than 95% of units' best area-level matches. Chicago has no place that combines Brás's retail-led business mix with its dense low-rise coverage. See [report §1](harmonization/MODEL_REPORT.md#1-conclusions) and [§10](harmonization/MODEL_REPORT.md#10-below-community-area-scale); design in [MODEL_PLAN](chicago/MODEL_PLAN.md#chicago-areas-below-community-area-scale-13-october-2026).
+
 ## Proposed Brás-focused settings (v4); v3 reopened — 13 October 2026
 
 **Decision (user).** The v3 "final" settings were reopened for exploration. `sp_chicago_model_v4` is the current proposal and the explorer's starting settings. It is not final.
@@ -16,7 +24,7 @@ This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cro
 **Consequence.**
 - Brás's closest Chicago group: Near West Side, Near North Side, Lower West Side, West Town, Avondale. First place is not firm.
 - Under both v3 and v4, Brás has no close Chicago match: its best Chicago distance is farther than the best cross-city match of 95% (v3) and 98% (v4) of units. Report the group with that match strength, not a single winner.
-- Report: [MODEL_REPORT §13](harmonization/MODEL_REPORT.md#13-version-4-proposed-brás-focused-settings-13-october-2026).
+- Report: [MODEL_REPORT §8](harmonization/MODEL_REPORT.md#8-version-4-brás-distinctive-traits-13-october-2026).
 
 ## Final settings of the cross-city model (v3) — 13 October 2026 (reopened the same day)
 
@@ -28,7 +36,7 @@ This is a dated decision record. The [Chicago](chicago/MODEL_REPORT.md) and [cro
 The data and columns are v2's. v1 and v2 stay published as comparisons.
 
 **Why.**
-- The question becomes Brás's *functional* analogue in Chicago: a non-residential working district with a similar activity mix, read relative to each city.
+- The question becomes Brás's *functional* analogue in Chicago: a non-residential working district with a similar activity mix, read relative to each city. (This wording was corrected later the same day: West Town and Avondale are over 60% residential land; see [report §7.4](harmonization/MODEL_REPORT.md#74-correction-recorded).)
 - M3's long tail made it carry about three times its weight.
 - M7 belongs to the correlated grain cluster.
 - B1 is Brás's best-measured physical trait.
@@ -39,13 +47,13 @@ The data and columns are v2's. v1 and v2 stay published as comparisons.
 - The v2 equal-weight hybrid fit put West Town first. The two fits together read Brás's likeness to West Town as physical form and to Lower West Side as function.
 - The weights were chosen after the v2 results were seen, so v3 is reported beside v2, not instead of it.
 - The [explorer](../viz/README.md) and the Curio dataflow `interactive_harmonized` now start from v3.
-- Report: [MODEL_REPORT §12](harmonization/MODEL_REPORT.md#12-version-3-final-settings-13-october-2026); design: [MODEL_PLAN, cross-city v3](chicago/MODEL_PLAN.md#cross-city-model-v3-final-settings-13-october-2026).
+- Report: [MODEL_REPORT §7](harmonization/MODEL_REPORT.md#7-version-3-position-within-each-city-13-october-2026); design: [MODEL_PLAN, cross-city v3](chicago/MODEL_PLAN.md#cross-city-model-v3-final-settings-13-october-2026).
 
 ## U1 commerce share in the cross-city model — 8 October 2026
 
 **Decision (user).** The São Paulo–Chicago model now includes the U1 **commerce** land share: contract `sp_chicago_model_v2`, which supersedes v1 while keeping it unchanged. The share had failed the J-3 admission rule (|Spearman| 0.708 with U6 intensity in São Paulo, rule < 0.70). It was added because commercial land is central to Brás's profile (65.0% of its occupied land, 3rd of 94 São Paulo districts).
 
-**Consequence.** Part of the commercial signal is now counted twice, in U6 (establishments per dwelling) and in U1 (commercial land). The overlap is reported in the [model report §11](harmonization/MODEL_REPORT.md#11-version-2-u1-commerce-share-8-october-2026), not corrected. Brás's first four Chicago matches are unchanged; North Center replaces Lower West Side in fifth place.
+**Consequence.** Part of the commercial signal is now counted twice, in U6 (establishments per dwelling) and in U1 (commercial land). The overlap is reported in the [model report §6](harmonization/MODEL_REPORT.md#6-version-2-the-u1-commerce-share-8-october-2026), not corrected. Brás's first four Chicago matches are unchanged; North Center replaces Lower West Side in fifth place.
 
 **Within-family weights.** The published fit weights the four U1 shares equally. The [explorer](../viz/README.md) and Curio lane H let users change a column's weight inside its family; the block's calibration is then recomputed, so the family weight and the inner mix stay separate. Design and checks: [MODEL_PLAN, cross-city v2](chicago/MODEL_PLAN.md#cross-city-model-v2-u1-commerce-share-8-october-2026).
 

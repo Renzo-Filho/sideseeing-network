@@ -6,7 +6,7 @@ Produced by [`analysis/scripts/sp_chicago_model_settings.py v4`](../../../script
 - **Settings:** all-relative scaling, full distance.
 - **Family weights:** U1 and U6 0.25 each, B1 0.20, U4 0.10, M4 and M6 0.05 each, U2 0.04, BV 0.03, M1 0.02, U3 0.01. M3 and M7 are off.
 - **Weights inside families:** U1 commerce 3, residential 2, industrial 1, institutional 0; M4 compactness 2, elongation 1.
-- **Methodology and reading:** [docs/harmonization/MODEL_REPORT.md §13](../../../../docs/harmonization/MODEL_REPORT.md#13-version-4-proposed-brás-focused-settings-13-october-2026).
+- **Methodology and reading:** [docs/harmonization/MODEL_REPORT.md §8](../../../../docs/harmonization/MODEL_REPORT.md#8-version-4-brás-distinctive-traits-13-october-2026).
 
 **Result.** Brás's closest Chicago group is Near West Side, Near North Side, Lower West Side, West Town and Avondale (shares of 500 weight draws in the top five: 94.2%, 82.2%, 77.8%, 94.6%, 81.2%). First place is not firm. None is a close match: Brás's best Chicago distance is farther than the best cross-city match of 98.3% of units (`run.json`, `match_strength`).
 

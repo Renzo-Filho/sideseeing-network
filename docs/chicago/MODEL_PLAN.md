@@ -973,7 +973,7 @@ Robust scaling (the São Paulo v2 precedent) would therefore inflate rounding-le
 | V2-4 Within-family weights | Equal in the published fit (each U1 share a quarter of U1's budget). Tools may let users set column weights $v_j$: the block becomes $\sum_j v_j \Delta_j^2 / \sum_j v_j$ and its calibration is recomputed, so column weights change only the mix inside a family and the family weight keeps its meaning. $v_{commerce} = 0$ must reproduce v1 exactly |
 | V2-5 Scope | Cross-city model only. The Chicago-only model (`chicago_model_v1`) has no Brás reference and is unchanged |
 
-**Results (8 October 2026).** [Report §11](../harmonization/MODEL_REPORT.md#11-version-2-u1-commerce-share-8-october-2026) · outputs [sp_chicago_model_v2_2026_10_08](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md).
+**Results (8 October 2026).** [Report §6](../harmonization/MODEL_REPORT.md#6-version-2-the-u1-commerce-share-8-october-2026) · outputs [sp_chicago_model_v2_2026_10_08](../../analysis/results/SP_CHI/sp_chicago_model_v2_2026_10_08/README.md).
 - Agreement with v1 over all pairs 0.9996; 97.5% of top-five neighbours shared.
 - Brás's closest Chicago areas: West Town, Avondale, Logan Square, Lincoln Park (all ≥ 99.8% of weight draws) and North Center (27.0%: not firm); Lower West Side moves from 5th to 7th.
 - U1 carries 18.2% of Brás–West Town's $D^2$ (v1: 15.0%) and 6.4% of $D^2$ over all pairs.
@@ -997,14 +997,14 @@ Robust scaling (the São Paulo v2 precedent) would therefore inflate rounding-le
 | V3-7 Robustness | 500 weight draws around the v3 weights (seed 20261006, ×U(0.5, 1.5), 80% stability); named alternatives in `comparison_v3.csv` |
 | V3-8 Tools | The explorer (`viz/`) and the Curio dataflow `interactive_harmonized` start from these settings and use them as the comparison baseline. Both are checked against `distance_v3.csv`; the v2 and v1 runs stay reachable (R1–R3 presets, hybrid with every weight at 1) |
 
-**Why each choice** (see [report §12.1](../harmonization/MODEL_REPORT.md#121-what-changed-and-why) for the full table):
+**Why each choice** (see [report §7.1](../harmonization/MODEL_REPORT.md#71-what-changed-and-why) for the full table):
 - M3 was dropped because its long tail made it carry about three times its weight.
 - M3 was dropped rather than M1 because M1 is better validated, and M3 is nearly constant across Brás's candidates.
 - B1 returns because it is Brás's best-measured physical trait.
 - U2 is halved because it duplicates U6 intensity (0.83).
 - The weights were chosen after the v2 results were seen. They are reported as a stated question beside v2, not instead of it.
 
-**Results (13 October 2026).** [Report §12](../harmonization/MODEL_REPORT.md#12-version-3-final-settings-13-october-2026) · outputs [sp_chicago_model_v3_2026_10_13](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md).
+**Results (13 October 2026).** [Report §7](../harmonization/MODEL_REPORT.md#7-version-3-position-within-each-city-13-october-2026) · outputs [sp_chicago_model_v3_2026_10_13](../../analysis/results/SP_CHI/sp_chicago_model_v3_2026_10_13/README.md).
 - Brás's closest Chicago areas: Lower West Side, Avondale, West Town, McKinley Park (each 100% of weight draws); Logan Square fifth (50.2%: not firm). Lower West Side ranks 5th among all 172 units.
 - Against the v2 published fit: Spearman 0.867 over all pairs; three of Brás's Chicago top five shared.
 - Checks: the explorer reproduces `distance_v3.csv` to 9.9e-11 and the Curio dataflow to 1.8e-15.
@@ -1025,8 +1025,23 @@ Robust scaling (the São Paulo v2 precedent) would therefore inflate rounding-le
 | V4-8 Reporting | Ranking with match strength (Brás's best cross-city distance against every unit's best), 500 family-weight draws, named alternatives |
 | V4-9 Tools | The explorer starts from v4 (preset "v4 · proposed") with v3 and v2 R1–R3 as presets; checked against `distance_v4.csv` (1.2e-10). The Curio dataflow `interactive_harmonized` is not updated |
 
-**Results (13 October 2026).** [Report §13](../harmonization/MODEL_REPORT.md#13-version-4-proposed-brás-focused-settings-13-october-2026) · outputs [sp_chicago_model_v4_2026_10_13](../../analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/README.md).
+**Results (13 October 2026).** [Report §8](../harmonization/MODEL_REPORT.md#8-version-4-brás-distinctive-traits-13-october-2026) · outputs [sp_chicago_model_v4_2026_10_13](../../analysis/results/SP_CHI/sp_chicago_model_v4_2026_10_13/README.md).
 - Brás's closest Chicago group: Near West Side, Near North Side, Lower West Side, West Town, Avondale. Lower West Side holds its top-five place in 77.8% of draws, under the 80% rule. First place flips with moderate single weight changes.
 - The weights inside U1 decide the order: with equal inner weights, Lower West Side is first.
 - No close match: Brás's best Chicago distance is farther than the best cross-city match of 98.3% of units (v3: 95.4%).
 
+
+## Chicago areas below Community Area scale (13 October 2026)
+
+**User request.** After asking what happens if only Pilsen is taken, the user asked for a breakdown of each Community Area into smaller pieces, scored against Brás in the explorer.
+
+| ID | Rule |
+|---|---|
+| S-1 Unit (first) | 2020 census tracts, cut inside each area from the block pieces (`chicago_tract_breakdown.py`, commit `9e8220c9`); 801 published pieces. **Superseded the same day by the user**: a tract (median 0.5 km²) is about 7 times smaller than Brás (3.6 km²) |
+| S-2 Unit (current) | The City of Chicago's 98-neighborhood map (layer bbvz-uum9), each 2020 block piece assigned to the neighborhood holding its centre (`chicago_neighborhoods.py`); 102 published pieces, median 5.1 km²; 13 areas split. The City map does not split Lower West Side, so Pilsen cannot be isolated |
+| S-3 Columns | All 21 columns recomputed with the accepted family scripts' own functions; pieces under 5% of their neighborhood's land or under 0.05 km² are not published |
+| S-4 Scoring | Scored with the 173-unit fit's means, SDs, calibration and weights; not refitted |
+| S-5 Checks | Sums of pieces reproduce each area's published counts; non-additive functions reproduce the published area values |
+| S-6 Yardstick | Each gain is compared with the gain every São Paulo district gets from the same breakdown |
+
+**Results.** [Report §10](../harmonization/MODEL_REPORT.md#10-below-community-area-scale). Under v4, Brás's best neighborhood (Bucktown) is 15% closer than its best area, a gain only 3 of 96 São Paulo districts exceed. Still, the best neighborhood is farther than 95% of the units' best area-level matches. United Center beats its own area under all four settings.

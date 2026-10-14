@@ -1,6 +1,6 @@
 # São Paulo–Chicago model v2: fit outputs (8 October 2026)
 
-Produced by executing [`analysis/sp_chicago_model_analysis.ipynb`](../../../sp_chicago_model_analysis.ipynb) with [`sp_chicago_model.py`](../../../scripts/sp_chicago_model.py), under the contract [`sp_chicago_model_v2.json`](../../../config/sp_chicago_model_v2.json) (`SP_CHI_MODEL_VERSION=v2`, the default). 173 units, 21 columns; reference Brás (SP:10). v2 is [v1](../sp_chicago_model_v1_2026_10_06/README.md) with the U1 commerce land share added by user decision. Methodology and reading: [docs/harmonization/MODEL_REPORT.md §11](../../../../docs/harmonization/MODEL_REPORT.md#11-version-2-u1-commerce-share-8-october-2026).
+Produced by executing [`analysis/sp_chicago_model_analysis.ipynb`](../../../sp_chicago_model_analysis.ipynb) with [`sp_chicago_model.py`](../../../scripts/sp_chicago_model.py), under the contract [`sp_chicago_model_v2.json`](../../../config/sp_chicago_model_v2.json) (`SP_CHI_MODEL_VERSION=v2`, the default). 173 units, 21 columns; reference Brás (SP:10). v2 is [v1](../sp_chicago_model_v1_2026_10_06/README.md) with the U1 commerce land share added by user decision. Methodology and reading: [docs/harmonization/MODEL_REPORT.md §6](../../../../docs/harmonization/MODEL_REPORT.md#6-version-2-the-u1-commerce-share-8-october-2026).
 
 ## `tables/`
 

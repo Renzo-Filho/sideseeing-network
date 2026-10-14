@@ -1,6 +1,6 @@
 # Chicago Community Areas by 2020 census tract (13 October 2026)
 
-**Superseded on 13 October 2026** by [`chicago_neighborhoods_2026_10_13`](../chicago_neighborhoods_2026_10_13/README.md): a tract (median 0.5 km²) is about 7 times smaller than Brás. The explorer no longer reads this folder; it is kept with the findings in `docs/harmonization/SETTINGS_DISCUSSION.md` §9.
+**Superseded on 13 October 2026** by [`chicago_neighborhoods_2026_10_13`](../chicago_neighborhoods_2026_10_13/README.md): a tract (median 0.5 km²) is about 7 times smaller than Brás. The explorer no longer reads this folder; it is kept with the findings in `docs/harmonization/MODEL_REPORT.md` §10.2.
 
 Script: `analysis/scripts/chicago_tract_breakdown.py` at commit `9e8220c9` (about 7 minutes; the file is now `chicago_neighborhoods.py`).
 
@@ -49,4 +49,4 @@ Thin data among the 801 published pieces: 480 have fewer than 100 classified est
 
 ## How the explorer uses it
 
-Pieces are **scored, not refitted**. `export_viz_data.scored` standardizes each column with the mean and SD the fit uses (the 77 areas for a relative column, all 173 units for an absolute one), capped at ±3. The export asserts that this reproduces the areas' own rows. In the page, `projectedDistance` applies the current column weights, the calibration β of the 173-unit fit and the family budgets. Pieces do not change the model, its rankings or its match strength. Findings for Brás are in [`docs/harmonization/SETTINGS_DISCUSSION.md` §9](../../../../docs/harmonization/SETTINGS_DISCUSSION.md#9-census-tract-breakdown-13-october-2026).
+Pieces are **scored, not refitted**. `export_viz_data.scored` standardizes each column with the mean and SD the fit uses (the 77 areas for a relative column, all 173 units for an absolute one), capped at ±3. The export asserts that this reproduces the areas' own rows. In the page, `projectedDistance` applies the current column weights, the calibration β of the 173-unit fit and the family budgets. Pieces do not change the model, its rankings or its match strength. Findings for Brás are in [`docs/harmonization/MODEL_REPORT.md` §10.2](../../../../docs/harmonization/MODEL_REPORT.md#102-census-tracts-first-attempt-superseded).
