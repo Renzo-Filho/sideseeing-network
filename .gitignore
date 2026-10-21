@@ -26,8 +26,9 @@ Thumbs.db
 # Original downloads and disposable caches (never publish source microdata)
 /data/
 /cache/
-/analysis/data/
-/analysis/data
+/analysis/data/*
+!/analysis/data/README.md
+!/analysis/data/SHA256SUMS
 /analysis/cache/
 /SP data/
 /Chicago data/

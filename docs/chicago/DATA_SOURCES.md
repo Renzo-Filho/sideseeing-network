@@ -1,5 +1,7 @@
 # Chicago data sources
 
+This page keeps the acquisition and discovery history up to 27 September 2026. Every file in `analysis/data/` today has an entry in the [data register](../../analysis/data/README.md): content, source and date, SHA-256, and its role in the fitted models.
+
 ## Chicago data requirements and readiness
 
 Updated 16 September 2026. This document supersedes the pre-addition local inventory in the harmonization plan. The current construction target is `chi_local_2026_09_16_v1`: a **Chicago local-source baseline**, not an accepted SP–Chicago feature matrix. Original SP attributes and model v2 remain frozen. Checkpoint history is in the [Chicago execution log](EXECUTION_LOG.md).

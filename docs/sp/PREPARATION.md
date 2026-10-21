@@ -109,7 +109,7 @@ RAIS retains all **29,594 CEP rows and 5,387,474 formal job links**. Postal evid
 | Unmatched | 2,407 | 507,963 |
 | Cross-source conflict | 36 | 15,149 |
 
-Located total is **3,194,165 (59.2887%)**; unresolved total is **2,193,309 (40.7113%)**. This fails the 95% job-mass gate. Jobs were neither replicated across districts nor distributed using unsupported equal weights. The saved CSV may omit null-CEP establishments upstream because the extraction groups CEP in pandas. No billed BigQuery extraction was rerun. Reconcile an upstream aggregate before claiming complete RAIS coverage.
+Located total is **3,194,165 (59.2887%)**; unresolved total is **2,193,309 (40.7113%)**. This fails the 95% job-mass gate. Jobs were neither replicated across districts nor distributed using unsupported equal weights. The saved CSV may omit null-CEP establishments upstream because the extraction groups CEP in pandas. No billed BigQuery extraction was rerun. Reconcile an upstream aggregate before claiming complete RAIS coverage. *Reconciled 20 October 2026:* the RAIS 2022 establishment file (`analysis/data/SP/rais_2022_estab/`) has 281 establishments with no CEP, holding 2,972 jobs. Dropping them gives exactly the CSV's 5,387,474 of the official 5,390,446.
 
 #### Bus service
 
@@ -242,7 +242,7 @@ For the current model, B2 uses a separately validated cadastral floor-count prox
 
 The pipeline verifies projected area and null-floor fallback against synthetic 10 m squares, reconciles source and output record counts, validates all output geometries before writing, enforces unique/nonmissing IDs, checks the stored GFA formula over the full table, checks SQLite integrity, verifies CRS and layer counts, and recalculates area from a sample of the exported geometries. A `.partial.gpkg` is renamed to the final filename only after these checks pass.
 
-A JSON metadata sidecar duplicates the embedded metadata for convenient inspection. The filtered WKB Parquet checkpoint, STAC catalog/items, IBGE inputs and executed SQL remain in the cache to support reproduction; they are not substitutes for the delivered GeoPackage.
+A JSON metadata sidecar duplicates the embedded metadata for convenient inspection. The STAC catalog/items, IBGE inputs and executed SQL remain in the cache to support reproduction; they are not substitutes for the delivered GeoPackage. The filtered WKB Parquet checkpoint (679 MB) and the downloaded DuckDB extensions were removed on 20 October 2026 to free disk space. A rerun now needs the cloud query again, as long as release 2026-08-19.0 is still online.
 
 ### Municipal preparation in v3
 
@@ -266,6 +266,8 @@ The active model has 13 families; M5 and U5 are removed. B2 targets cadastral fl
 Historical evidence and prepared data remain unchanged. Use `analysis/scripts/prepare_sp_v3.py` for preparation; do not run the old hard-coded v2 pipeline on the expanded raw folder. The current [attribute construction report](../../analysis/results/SP/reports/ATTRIBUTE_REPORT.md) and [primary table](../../analysis/results/SP/tables/attributes_primary.csv) are the published release; the long table contains the required source/quality metadata.
 
 ## Feature data sources
+
+Raw inputs of the SP v2 attribute release, by family. The complete register of `analysis/data/` is in [analysis/data/README.md](../../analysis/data/README.md). It covers every file, how it was obtained, its SHA-256 and its role in the later cross-city model.
 
 ### 1. Base Support & Geometries
 - **Files**: `Cadastro e Vias/distrito_municipal_v2.gpkg`, `Meio Ambiente/massa_d_agua.gpkg`
@@ -292,8 +294,8 @@ Historical evidence and prepared data remain unchanged. Use `analysis/scripts/pr
 - **Rationale**: Physical street blocks are used to compute distributions of block sizes and shapes, characterizing the urban grain.
 
 ### 5. Cadastral Density, Built Area & Land Use (M7, B2, B3, U1)
-- **Files**: `Cadastro e Vias/Lotes/`, `Cadastro e Vias/IPTU_2026.csv`
-- **Source**: GeoSampa
+- **Files**: `Cadastro e Vias/Lotes/`, `Cadastro e Vias/IPTU_2026.csv`, `Cadastro e Vias/Dicionario_dados_IPTU.xlsx`
+- **Source**: GeoSampa: fiscal lot polygons and the IPTU 2026 fiscal register, both downloaded manually (download dates not recorded)
 - **Variables Solved**: `cadastral_parcel_density_km2`, `cadastral_floor_count_*`, `cadastral_floor_area_density`, `land_use_entropy_count`
 - **Rationale**: Linking physical parcels to fiscal tax accounts reveals the number of lots, building floor counts, built floor area density, and land use diversity. It also provides the spatial foundation for job allocation (U2).
 
@@ -304,16 +306,16 @@ Historical evidence and prepared data remain unchanged. Use `analysis/scripts/pr
 - **Rationale**: Provides reliable machine-mapped building footprint shapes to calculate the percentage of total land covered by physical structures.
 
 ### 7. Economic Density (U2)
-- **Files**: `Socioeconomico/rais_empregos_sp_2022.csv`
-- **Source**: RAIS (Ministry of Labor)
+- **Files**: `Socioeconomico/rais_empregos_sp_2022.csv`; address evidence from `Socioeconomico/CNEFE_2022/` and `Cadastro e Vias/IPTU_2026.csv`
+- **Source**: RAIS 2022 (Ministry of Labour), queried from Base dos Dados by `analysis/scripts/fetch_RAIS.py`; IBGE CNEFE 2022 establishment addresses
 - **Variables Solved**: `formal_job_density_area_first_km2`
-- **Rationale**: Supplies the number of formal jobs by postal code, probabilistically allocated to buildings and tracts to measure economic density.
+- **Rationale**: Formal jobs by postal code (CEP), placed in districts through establishment addresses (CNEFE) and fiscal evidence (IPTU) under the area-first rule. 508,844 jobs stay unlocated. The script's `groupby` drops the 281 establishments with no CEP (2,972 jobs). That is the whole gap between the file's 5,387,474 and the official 5,390,446 (checked 20 October 2026 against `analysis/data/SP/rais_2022_estab/`).
 
 ### 8. Residential Density (U3)
-- **Files**: `Socioeconomico/CNEFE_2022/`, `Socioeconomico/densidade_demografica.gpkg`
-- **Source**: IBGE (Census 2022)
+- **Files**: `Socioeconomico/densidade_demografica.gpkg`
+- **Source**: IBGE Census 2022 population by census tract, as published by GeoSampa (27,301 tracts, 11,451,999 residents)
 - **Variables Solved**: `population_density_km2`
-- **Rationale**: Provides demographic counts per census tract, intersected with district boundaries to calculate residential population density and weight transit proximity (U4).
+- **Rationale**: Tract counts allocated to districts by intersection area give resident density and the population weights of transit access (U4). CNEFE is not a population source here. It supplies address evidence for U2 (section 7).
 
 ### 9. Public Transit Access (U4)
 - **Files**: `Socioeconomico/f-6gy-sptrans-latest/`

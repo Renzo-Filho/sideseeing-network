@@ -17,6 +17,7 @@ Urban-form similarity research: characterize São Paulo's municipal districts (r
 | Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |
 | Read the SP–Chicago harmonization history | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
 | Find paper-oriented evidence | [survey](docs/survey/README.md) · [advisor brief](docs/survey/ADVISOR_BRIEF.md) · [experiment ledger](docs/survey/EXPERIMENT_LEDGER.md) |
+| Find every dataset: content, source, version, use in the models | [data register](analysis/data/README.md) |
 | Browse published results | [SP](analysis/results/SP/README.md) · [Chicago](analysis/results/Chicago/README.md) · `analysis/results/SP_CHI/` |
 | Run or find a script | [analysis/scripts/INDEX.md](analysis/scripts/INDEX.md) |
 | Work in Curio | [analysis/curio_nodes/README.md](analysis/curio_nodes/README.md) |

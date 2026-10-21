@@ -11,9 +11,9 @@ What each folder is for and the rules for adding to it. Project entry point and 
 | config/ | Frozen, versioned method contracts (JSON) and one lookup CSV read by scripts; see [config bindings in INDEX.md](scripts/INDEX.md#config-bindings-analysisconfig) | yes | Never edit in place: a change is a new file with the next version. Keep superseded versions; published results cite them |
 | tests/ | Unit tests (`unittest`) | yes | Run from the repo root: `.venv/bin/python -m unittest discover -s analysis/tests` |
 | [curio_nodes/](curio_nodes/README.md) | Chicago feature and model nodes installed in the Curio dataflow, and install/sync scripts | yes | Curio spec backups (`backup_spec_rev_*.json`) stay local |
-| data/ | Original downloads (SP, Chicago, shared), ~16 GB | no | Never edit |
-| cache/ | Regenerable download caches (Overture SP extraction), ~0.8 GB | no | Safe to rebuild |
-| [work/](work/README.md) | Local intermediates, ~8 GB: `prepared/`, `evidence/`, `runs/`, plus dated pilot folders | no | Not published. New pilots write to `work/runs/<name>_<date>/` |
+| [data/](data/README.md) | Original downloads (SP, Chicago, shared), ~14.2 GB. [README.md](data/README.md) registers every dataset (content, source, use, terms, what was removed on 20 Oct 2026); `SHA256SUMS` hashes every file | register only | Never edit; new downloads go in a dated folder with a manifest and a register row |
+| cache/ | Provenance of the Overture SP building extraction (SQL, manifest, STAC items, IBGE inputs), ~7 MB. Its regenerable Parquet checkpoint and DuckDB extensions were removed on 20 Oct 2026 | no | Keep the provenance files |
+| [work/](work/README.md) | Local intermediates, ~6 GB: `prepared/`, `evidence/`, `runs/`, plus dated pilot folders | no | Not published. New pilots write to `work/runs/<name>_<date>/` |
 | `outputs` → `.compat/outputs/`, `processed` → `work/prepared` | Legacy symlinks from the 11 September 2026 reorganization; `.compat/` holds only links (below) | — | Keep; do not use for new work |
 
 Notebooks: [chicago_curio_model_analysis.ipynb](chicago_curio_model_analysis.ipynb) reproduces the Chicago Curio feature construction, eight-family candidate model and three linked views; [model_analysis.ipynb](model_analysis.ipynb) and `model_analysis.py` analyze the São Paulo model v2.
@@ -41,6 +41,6 @@ The frozen SP pipeline (`sp_v3/common.py`, `sp_attributes/`, several SP scripts)
 
 ## Git checkout versus local data
 
-Git tracks code, configs, documentation, tests and the published `results/`. Original downloads, prepared records, evidence, caches and intermediates are excluded by `.gitignore` and remain on the original workstation. A fresh checkout can read the published results but cannot rebuild them; full reconstruction requires the documented raw/prepared inputs, which this repository does not bundle. Result reports sometimes link to local-only evidence on purpose.
+Git tracks code, configs, documentation, tests and the published `results/`. Original downloads, prepared records, evidence, caches and intermediates are excluded by `.gitignore` and remain on the original workstation. The [data register](data/README.md) and its `SHA256SUMS` are tracked, so the sources and their exact versions stay documented without the files. A fresh checkout can read the published results but cannot rebuild them; full reconstruction requires the documented raw/prepared inputs, which this repository does not bundle. Result reports sometimes link to local-only evidence on purpose.
 
 The RAIS fetcher (`scripts/fetch_RAIS.py`) requires a local `GOOGLE_CLOUD_PROJECT` environment variable and separately configured credentials.
