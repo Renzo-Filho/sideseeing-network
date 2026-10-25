@@ -109,3 +109,15 @@ def test_sensor_clock_moves_motion_onto_the_video():
                                 pts_minus_index_s=0.0))
     clock = contract.sensor_clock(contract.summarize_rotation(windows))
     assert np.allclose(clock(np.array([0.0, 1800.0])), [-0.3, 1800 - 0.4])
+
+
+def test_reference_keeps_the_curbs_along_the_street():
+    import geopandas as gpd
+    from shapely.geometry import LineString
+    from graph import reference
+    axis = LineString([(0, 0), (0, 100)])
+    curbs = gpd.GeoSeries([LineString([(6, 0), (6, 100)]),       # along it
+                           LineString([(6, 95), (60, 95)]),       # around the corner, mostly along the cross street
+                           LineString([(40, 0), (40, 100)])])     # the next street
+    kept = reference.along(gpd.GeoDataFrame(geometry=curbs), axis)
+    assert list(kept.index) == [0]

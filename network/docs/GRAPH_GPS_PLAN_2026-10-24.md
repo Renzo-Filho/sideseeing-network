@@ -117,7 +117,7 @@ The camera's position and a detected object's position stay separate: once the c
   The two estimates are each other's check, and a tape measurement of the vest, if taken, validates both.
 - **Pitch and roll** per frame come from the gravity stream at 50 Hz (`west_loop.ipynb` §8).
 
-**Reference.** At 20–30 marked spots on Morgan: total width, the width of each zone and clear width with a tape, running and cross slope with a digital inclinometer, a photo of each spot. Cell outlines, centrelines and visible zones traced on the 2025 orthophoto.
+**Reference.** At 20–30 marked spots on Morgan: total width, the width of each zone and clear width with a tape, running and cross slope with a digital inclinometer, a photo of each spot. For the geometry, the City of Chicago's curb lines, checked against the 2025 orthophoto, and the back of the sidewalk traced on it (section 8, phase 1).
 
 **Prior work.** Width from single street-view images reaches about 0.25 m mean absolute error when scale is calibrated (UrbanVGGT, 2026); a monocular segmentation-and-depth pipeline matched its reference 64% of the time (TU Wien); HeiGIT estimates phone camera parameters for the same purpose. Slope has been measured with phone LiDAR, inclinometers on wheelchairs, and slope-meter apps; this search found no quantified slope from walking video plus gravity. What would be new here is continuous, uncertainty-tagged measurement along a walk, attached to the right cell and zone of the graph.
 
@@ -142,7 +142,7 @@ For a few alternatives (two walking lines, two attachments), enumerate the discr
 
 **Baselines, all on the same sessions.** Raw GPS; the 5-fix median now used for display; a Kalman/RTS smoother of GPS + pedestrian dead reckoning; multi-trace clustering in the style of Kasemsuppakorn and Karimi (2013); and the notebook's OSM-assisted corrected track as a separate **map-assisted** reference, never as ground truth; and the **protocol rule**: under the West Loop protocol the walking direction alone gives the sidewalk side (northbound on the east side, southbound on the west), so the joint inference must beat it ([phase 0](GRAPH_PHASE0_RESULTS_2026-10-25.md), section 4). Ablations: without the video side term, without the rung term, without repeats (one crossing per crosswalk).
 
-**What success looks like.** Side identity of runs, with abstention; the longest wrong-side stretch (now up to 77 m); lateral error of the edges against centrelines traced on the orthophoto, and boundary error of the cells; crossing attachment to the correct ports; port-to-port reachability, the critique's metric that a boundary-level score can miss.
+**What success looks like.** Side identity of runs, with abstention; the longest wrong-side stretch (now up to 77 m); where the walking lines and edges fall against the reference sidewalk (inside it, and their distance to its centreline), and boundary error of the cells; crossing attachment to the correct ports; port-to-port reachability, the critique's metric that a boundary-level score can miss.
 
 ## 7. What is established, and what would be new
 
@@ -168,8 +168,8 @@ This search was targeted, not systematic. Before any claim, trace the citations 
 | Phase | Work | Gate before moving on |
 |---|---|---|
 | **0. Data contract** (about a week) | Run the motion step on all 8 sessions (desktop-01, CPU only); check clock alignment between video, IMU and GPS at a few visible events per session (and whether D3 includes the sync tap); confirm D3's streets, collectors and phones; test the video side cue on D1: do curb, car and crosswalk masks say which side the road is on? Check on a few Morgan blocks whether the masks separate the zones. Record the lens calibration video | Every stream used has a measured alignment bound; the side cue works on at least a stated share of D1 runs, or is dropped; zones are kept where the masks separate them, otherwise strips stop at level 1. **Done 25 October** ([results](GRAPH_PHASE0_RESULTS_2026-10-25.md)): clocks and side cue met, zones in part; the calibration video is still to record |
-| **1. Reference for development sites** | On D1 (Morgan) and D2 (Aberdeen–Madison–Carpenter, including both jogged corners): trace sidewalk and crosswalk outlines, their centrelines and the visible zones on the 2025 Cook County orthophoto; label each run's walking line and each crossing's ports from the video, in the viewer, blind to model output. Double-label the corners; `unknown` where the recordings cannot decide. Take the field measurements of section 5 at 20–30 spots on Morgan | Reference instructions frozen; disagreement and effort recorded |
-| **2. Ladder on one street** | Morgan, both sessions: segmentation into runs and rungs, `W` from crossings, walking lines and assignments from the factor graph, against all baselines. Then the cells: boundaries, zones, centrelines as edges, width and running slope along both sides, against the field measurements and the traced centrelines | Beats the GPS + PDR smoother on side identity on Morgan, or the plan changes (section 10) |
+| **1. Reference for development sites** | On D1 (Morgan) and D2 (Aberdeen–Madison–Carpenter, including both jogged corners): the geometry reference is the City of Chicago's curb lines ([5gv8-ktcg](https://catalog.data.gov/dataset/boundaries-curb-lines), December 2010), checked block by block against the 2025 Cook County orthophoto and redrawn where they changed, plus the back of the sidewalk, traced on the orthophoto (`network/graph/trace.html`, by Renzo, blind to model output). The city's sidewalk polygons ([77cn-6x4c](https://catalog.data.gov/dataset/sidewalks-097b1), 2011) do not cover the sidewalk on the imagery and are not used. Tile2Net stays a competitor (phase 5), scored against the same reference. Then label each run's walking line and each crossing's ports from the video, in the viewer, blind to model output. Double-label the corners; `unknown` where the recordings cannot decide. Take the field measurements of section 5 at 20–30 spots on Morgan | Reference instructions frozen; disagreement and effort recorded |
+| **2. Ladder on one street** | Morgan, both sessions: segmentation into runs and rungs, `W` from crossings, walking lines and assignments from the factor graph, against all baselines. Then the cells: boundaries, zones, centrelines as edges, width and running slope along both sides, against the field measurements and the reference sidewalk | **Geometry** (changed 25 October; under the protocol the walking direction alone gives the side, so side identity cannot fail here): the walking lines lie inside the reference sidewalk and nearer its centreline than the GPS + PDR smoother's track, and `W` agrees with the curb-to-curb width plus the two walking-line offsets; or the plan changes (section 10). Side identity is tested on the natural-walk block |
 | **3. Corners and alternatives** | D2: Madison's jog, two streets meeting, corner cells and their ports, alternative groups where attachment is ambiguous; route queries per consistent graph | Alternatives appear where the reference says the decision is hard, not everywhere |
 | **4. Held-out test** | Freeze every threshold; run once on D3 (new streets, a second collector). Report per site, with site-level intervals | Results reported whatever they are |
 | **5. Aerial** | Add the orthophoto term as the street + aerial regime; compare with aerial-only (Tile2Net) on the same blocks: centrelines (lateral offset, topology) and polygons (overlap, boundary error), stratified by tree cover. Compare the edges with OSM's sidewalk and crossing ways, as a reference, not as truth | — |
@@ -188,14 +188,20 @@ The viewer supports each phase: the timeline already shows runs, turns, crossing
 - The protocol rule joins the baselines.
 - The camera height is inferred (section 5), not measured.
 
+Later the same day:
+
+- **Paper 1** is the map-free joint inference with alternatives.
+- **D3 stays strictly held out.**
+- **Phase 2's gate is geometry** (section 8).
+- **The reference** is the city's curb lines, checked by Renzo against the 2025 orthophoto, with the back of the sidewalk traced by him, blind to model output.
+- **At the next fieldwork** Renzo records the natural-walk block and a checkerboard calibration video for each phone.
+
 **Open, for Renzo.**
 
-1. **First paper focus:** the map-free joint inference with alternatives (recommended), a benchmark-only paper, or H2 routing first.
-2. **Held-out split:** keep D3 (22 October) unopened for method development (recommended), so the test has new streets and a second collector. Future West Loop days would add held-out sites.
-3. **Reference:** who traces and labels, and whether a second person can double-label the corners. The orthophoto is the geometry reference; video is the side and transition reference; neither is the input.
-4. **How far to take slope:** running slope only, or cross slope too as an exploratory result.
-5. **Field reference:** who takes the tape and inclinometer measurements on Morgan, and when.
-6. **Protocol dependence:** the method leans on the protocol (out and back, crossing every crosswalk, spins). Declare it as an *assisted survey* regime, and record a small natural-walk sample on one block to measure how much it depends on the ritual (the critique's suggestion).
+1. **Second labeller:** whether someone else can double-label the corners and the video labels (phase 1).
+2. **How far to take slope:** running slope only, or cross slope too as an exploratory result.
+3. **Field reference:** who takes the tape and inclinometer measurements on Morgan, and when.
+4. **Protocol dependence:** the method leans on the protocol (out and back, crossing every crosswalk, spins). Declare it as an *assisted survey* regime; the natural-walk block (agreed) measures how much it depends on the ritual.
 
 ## 10. Risks, and what would change the plan
 
