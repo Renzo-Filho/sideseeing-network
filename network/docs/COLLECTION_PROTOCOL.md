@@ -1,5 +1,7 @@
 # Chicago sidewalk-network collection protocol
 
+**Update, 16 October 2026:** River North is the selected area. Its boundary, pilot-based field rules and route plan are in [RIVER_NORTH_COLLECTION.md](RIVER_NORTH_COLLECTION.md); that document takes precedence where the two differ.
+
 Working draft, 13 October 2026, updated through interview Q19. The immediate collection is a small Near West Side pilot near UIC, not the entire community area; see [PILOT_NEAR_WEST_SIDE.md](PILOT_NEAR_WEST_SIDE.md). The broader target remains full street-adjacent sidewalk coverage, on both sides of streets, in a community area selected for feasible collection within one to two weeks. Each collector will use MultiSensor on their own device, with the existing data-collection vest setup. One pass per sidewalk is the agreed baseline; planned overlaps are permitted and must be highlighted. Actual person-hours, device inventory, detailed boundary rules, and field-verified routes remain to be settled.
 
 ## Purpose and agreed constraints

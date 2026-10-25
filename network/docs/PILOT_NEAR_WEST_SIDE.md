@@ -1,6 +1,6 @@
 # Near West Side pilot: researcher-drawn routes, Aberdeen to Morgan
 
-Route plan, updated 14 October 2026. The researcher drew the pilot routes by hand and limited the pilot to the passages they cover. This replaces the earlier computed routes, the Loomis–Racine rectangle and the Flourn ￼￼At Community Area scale Chicago has no close analogue of Brás: its best Chicago match is among the weakest cross-city matches in every version of the model. The least different areas are West Town (in every fit), Avondale, Lower West Side, and, when Brás's distinctive commercial profile is emphasized, Near West Side and Near North Side. At Brás's own scale, the least different places are the mixed neighborhoods just west and northwest of the Loop (United Center, West Town, Bucktown), then River North and West Loop on the downtown side. None combines Brás's retail-dominated mix with its dense low-rise coverage.oy corridor. Nothing has been collected. UIC campus sidewalks are excluded. Travel from UIC to a start point is access travel, not part of the capture route. The solo field procedure is in [PILOT_PROTOCOL.md](PILOT_PROTOCOL.md).
+Route plan, updated 14 October 2026. The researcher drew the pilot routes by hand and limited the pilot to the passages they cover. This replaces the earlier computed routes, the Loomis–Racine rectangle, and the Flournoy corridor. Three pilot sessions were recorded on 14 October 2026; their actual passage coverage has not yet been audited. UIC campus sidewalks are excluded. Travel from UIC to a start point is access travel, not part of the capture route. The solo field procedure is in [PILOT_PROTOCOL.md](PILOT_PROTOCOL.md), and the post-collection analysis is in [PILOT_DATA_PLAN.md](PILOT_DATA_PLAN.md).
 
 ## Pilot area and route map
 
@@ -10,9 +10,9 @@ The pilot covers only what is drawn: the blocks between **S Aberdeen St** and **
 
 | Route | Area | Passages drawn (to confirm against the drawing) |
 |---|---|---|
-| Pink | Aberdeen to Carpenter | Aberdeen, Cabrini and Arthington; Polk west of Carpenter; Carpenter's west side; a north–south passage between Aberdeen and Carpenter south of Arthington; and the passage just north of Taylor. Ends at B near Taylor and Carpenter. |
-| Green | Carpenter to Miller | Carpenter's east side; the two mid-block north–south passages at Miller (Samuel) Park and their east–west links; Polk between Carpenter and Miller; Miller's west side; and the passage just north of Taylor. A and B are near Taylor and Miller. |
-| Red | Miller to Morgan | Miller's east side; a mid-block north–south passage and its links; Morgan's west side; Polk between Miller and Morgan, plus the link at West Loop Church; and Taylor between Miller and Morgan. B is near Taylor and Morgan. |
+| Pink | Aberdeen to Carpenter | Aberdeen, Cabrini and Arthington; Polk west of Carpenter; Carpenter's west side; a north–south passage between Aberdeen and Carpenter south of Arthington; and the passage just north of Taylor. The drawn route reaches the Taylor/Carpenter area. |
+| Green | Carpenter to Miller | Carpenter's east side; the two mid-block north–south passages at Miller (Samuel) Park and their east–west links; Polk between Carpenter and Miller; Miller's west side; and the passage just north of Taylor. |
+| Red | Miller to Morgan | Miller's east side; a mid-block north–south passage and its links; Morgan's west side; Polk between Miller and Morgan, plus the link at West Loop Church; and Taylor between Miller and Morgan. |
 
 These descriptions are read from the drawing and may be imprecise. The arrows are the reference. Before fieldwork, mark a practical start and end for each colored route and check that the drawn mid-block paths are public and open.
 
@@ -25,7 +25,7 @@ These descriptions are read from the drawing and may be imprecise. The arrows ar
 
 ## What the pilot should establish
 
-1. Whether the moto g 5G (2023) and vest setup produce usable video, GPS and the intended inertial streams.
+1. Whether the moto g 5G (2023) and vest setup produced usable video, GPS and the intended inertial streams.
 2. Whether the two sides of a narrow residential street (Carpenter, Miller) and the parallel mid-block passages remain distinguishable despite GPS error.
 3. Whether crossings appear continuously in the capture.
 4. Whether separate sessions can be associated through overlaps.
