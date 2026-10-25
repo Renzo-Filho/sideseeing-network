@@ -16,7 +16,7 @@ from sideseeing_tools.geolocation import calculate_haversine_distance
 SHORT_M = 20.0
 UNDERFOOT = (0.85, 0.35, 0.65)  # the ground just ahead: rows from 85% of the height, columns 35-65%
 STRAIGHT_GAP_S = 2.0
-RUN_COLUMNS = ['run', 'start_s', 'end_s', 'kind', 'crossing_side', 'turn_before', 'turn_after', 'moving_s',
+RUN_COLUMNS = ['run', 'start_s', 'end_s', 'kind', 'crossing_side', 'turn_before', 'turn_deg', 'turn_after', 'moving_s',
                'distance_m', 'bearing_deg', 'lat0', 'lon0', 'lat1', 'lon1']
 
 
@@ -47,11 +47,13 @@ def _place(runs, track):
 
 
 def cut_runs(motion, track, duration_s):
-    """Runs of one session from SideSeeingWorkspace.motion(route) and .gps(route), in time order (RUN_COLUMNS)."""
+    """Runs of one session from SideSeeingWorkspace.motion(route) and .gps(route), in time order (RUN_COLUMNS).
+    turn_deg is the heading change of the turn before the run (+ = left), from the gyroscope."""
     turns, stops, crossings = motion['turns'], motion['stops'], motion['crossings']
     big = turns[turns['kind'] != 'small']
     runs = pd.DataFrame(dict(start_s=np.r_[0, big['end_s']], end_s=np.r_[big['start_s'], duration_s],
-                             turn_before=['start', *big['kind']], turn_after=[*big['kind'], 'end']))
+                             turn_before=['start', *big['kind']], turn_deg=np.r_[0, big['net_deg']],
+                             turn_after=[*big['kind'], 'end']))
     runs = runs[runs['end_s'] - runs['start_s'] >= MIN_SEGMENT_S].reset_index(drop=True)
     runs['moving_s'] = _moving(runs, stops)
     side = dict(zip(crossings['start_s'].round(6), crossings['side']))
@@ -80,7 +82,7 @@ def split_at_crosswalks(runs, times, stops, track, min_frames=2):
     """runs with each stretch on a crosswalk inside a 'run' cut out as a run of kind 'crossing' and crossing_side
     'straight'. A stretch is at least min_frames of `times` (crosswalk_underfoot) less than STRAIGHT_GAP_S apart,
     widened by half a frame each side; leftovers under MIN_SEGMENT_S join the crossing. Cuts without a turn are
-    marked 'none' in turn_before and turn_after."""
+    marked 'none' in turn_before and turn_after, with a turn_deg of 0."""
     pieces = []
     for run in runs.to_dict('records'):
         inside = times[(times >= run['start_s']) & (times <= run['end_s'])] if run['kind'] == 'run' else times[:0]
@@ -92,12 +94,12 @@ def split_at_crosswalks(runs, times, stops, track, min_frames=2):
                 a = start
             else:
                 pieces.append({**run, 'start_s': start, 'end_s': a, 'turn_before': before, 'turn_after': 'none'})
-                before = 'none'
+                before, run['turn_deg'] = 'none', 0.0
             if run['end_s'] - b < MIN_SEGMENT_S:
                 b = run['end_s']
             pieces.append({**run, 'start_s': a, 'end_s': b, 'kind': 'crossing', 'crossing_side': 'straight',
                            'turn_before': before, 'turn_after': run['turn_after'] if b == run['end_s'] else 'none'})
-            start, before = b, 'none'
+            start, before, run['turn_deg'] = b, 'none', 0.0
         if start < run['end_s']:
             pieces.append({**run, 'start_s': start, 'end_s': run['end_s'], 'turn_before': before})
     split = pd.DataFrame(pieces)
