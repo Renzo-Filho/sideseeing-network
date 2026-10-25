@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 1320" width="1120" height="1320" font-family="Helvetica, Arial, sans-serif">
+<!-- The pipeline to both papers (PAPERS.md, section 2). To update a step's status, change its group's class: done, doing, todo. -->
+<style>
+  text { font-size: 12.5px; text-anchor: middle; }
+  .t { font-size: 14px; font-weight: bold; }
+  .bt { font-size: 13px; font-weight: bold; text-anchor: start; fill: #0f172a; }
+  .lg { text-anchor: start; fill: #334155; }
+  .band { fill: #f8fafc; stroke: #cbd5e1; }
+  .done rect { fill: #dcfce7; stroke: #16a34a; } .done text { fill: #14532d; }
+  .doing rect { fill: #fef3c7; stroke: #d97706; } .doing text { fill: #78350f; }
+  .todo rect { fill: #f1f5f9; stroke: #94a3b8; } .todo text { fill: #334155; }
+  .result rect { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; } .result text { fill: #1e3a8a; }
+  .edge { fill: none; stroke: #64748b; stroke-width: 1.4; }
+  .dash { stroke-dasharray: 5 4; }
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect class="band" x="20" y="16" width="1080" height="112" rx="6"/><text class="bt" x="34" y="36">1 · Collection</text>
+<g class="done"><rect x="180" y="46" width="360" height="68" rx="4"/>
+<text x="360.0" y="68.0" class="t">West Loop, Chicago</text>
+<text x="360.0" y="85.0">8 sessions, 4.9 h, 19–22 October 2026</text>
+<text x="360.0" y="102.0">crossings out and back, spins, narration</text>
+</g>
+<g class="done"><rect x="580" y="46" width="360" height="68" rx="4"/>
+<text x="760.0" y="68.0" class="t">Brás, São Paulo</text>
+<text x="760.0" y="85.0">216 captures, 4 days, November 2025</text>
+<text x="760.0" y="102.0">audit routes, each crossing walked once</text>
+</g>
+<g class="done"><rect x="310" y="150" width="500" height="68" rx="4"/>
+<text x="560.0" y="172.0" class="t">Raw capture per session (MultiSensor phone on a vest)</text>
+<text x="560.0" y="189.0">video · GPS · accelerometer, gyroscope, gravity</text>
+<text x="560.0" y="206.0">audio · metadata</text>
+</g>
+<path class="edge" d="M360,114 L360,132 L480,132 L480,150" marker-end="url(#a)"/>
+<path class="edge" d="M760,114 L760,132 L640,132 L640,150" marker-end="url(#a)"/>
+<g class="doing"><rect x="360" y="240" width="400" height="51" rx="4"/>
+<text x="560.0" y="262.0" class="t">RustFS bucket → desktop-01 workspace</text>
+<text x="560.0" y="279.0">West Loop: all 8 · Brás: 433 of 649 transfer jobs</text>
+</g>
+<path class="edge" d="M560,218 L560,240" marker-end="url(#a)"/>
+<path class="edge" d="M560,291 L560,310 L285,310 L285,330" marker-end="url(#a)"/>
+<path class="edge" d="M560,310 L835,310 L835,330" marker-end="url(#a)"/>
+<rect class="band" x="20" y="330" width="530" height="209" rx="6"/><text class="bt" x="34" y="350">2 · Processing (sideseeing-tools), one time base</text>
+<g class="done"><rect x="34" y="360" width="244.0" height="68" rx="4"/>
+<text x="156.0" y="382.0" class="t">Motion</text>
+<text x="156.0" y="399.0">clocks aligned, steps, stops,</text>
+<text x="156.0" y="416.0">turns, crossing candidates</text>
+</g>
+<g class="doing"><rect x="292.0" y="360" width="244.0" height="68" rx="4"/>
+<text x="414.0" y="382.0" class="t">SAM3 masks</text>
+<text x="414.0" y="399.0">37 prompts every second</text>
+<text x="414.0" y="416.0">+ 5 zone prompts (queued)</text>
+</g>
+<g class="doing"><rect x="34" y="440" width="244.0" height="68" rx="4"/>
+<text x="156.0" y="462.0" class="t">Redaction and narration</text>
+<text x="156.0" y="479.0">faces and plates removed</text>
+<text x="156.0" y="496.0">Whisper transcript (West Loop)</text>
+</g>
+<g class="todo"><rect x="292.0" y="440" width="244.0" height="68" rx="4"/>
+<text x="414.0" y="470.5" class="t">The same for Brás</text>
+<text x="414.0" y="487.5">needs an agreed GPU run</text>
+</g>
+<rect class="band" x="570" y="330" width="530" height="209" rx="6"/><text class="bt" x="584" y="350">3 · Human labels and reference</text>
+<g class="done"><rect x="584" y="360" width="244.0" height="85" rx="4"/>
+<text x="706.0" y="382.0" class="t">Brás audit (exists)</text>
+<text x="706.0" y="399.0">corrected GPS on 64,645 frames</text>
+<text x="706.0" y="416.0">surface problems on 1,138 lots</text>
+<text x="706.0" y="433.0">578 crossings rated</text>
+</g>
+<g class="doing"><rect x="842.0" y="360" width="244.0" height="85" rx="4"/>
+<text x="964.0" y="382.0" class="t">West Loop geometry</text>
+<text x="964.0" y="399.0">city curbs checked on the</text>
+<text x="964.0" y="416.0">2025 orthophoto; back of</text>
+<text x="964.0" y="433.0">sidewalk traced blind</text>
+</g>
+<g class="todo"><rect x="584" y="457" width="244.0" height="68" rx="4"/>
+<text x="706.0" y="479.0" class="t">West Loop video labels</text>
+<text x="706.0" y="496.0">each run's walking line,</text>
+<text x="706.0" y="513.0">crossing ports, features</text>
+</g>
+<g class="todo"><rect x="842.0" y="457" width="244.0" height="68" rx="4"/>
+<text x="964.0" y="479.0" class="t">Fieldwork</text>
+<text x="964.0" y="496.0">width and slope on Morgan,</text>
+<text x="964.0" y="513.0">calibration, natural-walk block</text>
+</g>
+<path class="edge" d="M285,539 L285,565 L835,565"/>
+<path class="edge" d="M835,539 L835,565"/>
+<path class="edge" d="M285,565 L285,590" marker-end="url(#a)"/>
+<path class="edge" d="M835,565 L835,590" marker-end="url(#a)"/>
+<rect class="band" x="20" y="590" width="530" height="676" rx="6"/><text class="bt" x="34" y="610">Dataset paper</text>
+<rect class="band" x="570" y="590" width="530" height="676" rx="6"/><text class="bt" x="584" y="610">Graph paper (network/graph)</text>
+<g class="todo"><rect x="40" y="626" width="490" height="68" rx="4"/>
+<text x="285.0" y="656.5" class="t">One label schema</text>
+<text x="285.0" y="673.5">Brás audit classes and West Loop labels together</text>
+</g>
+<g class="todo"><rect x="40" y="718" width="490" height="68" rx="4"/>
+<text x="285.0" y="740.0" class="t">Labels completed</text>
+<text x="285.0" y="757.0">West Loop labelled; a Brás sample relabelled;</text>
+<text x="285.0" y="774.0">agreement between labellers measured</text>
+</g>
+<path class="edge" d="M285,694 L285,718" marker-end="url(#a)"/>
+<g class="todo"><rect x="40" y="810" width="490" height="68" rx="4"/>
+<text x="285.0" y="832.0" class="t">Privacy and rights</text>
+<text x="285.0" y="849.0">redaction checked; consent and ethics;</text>
+<text x="285.0" y="866.0">Brás data owners' approval</text>
+</g>
+<path class="edge" d="M285,786 L285,810" marker-end="url(#a)"/>
+<g class="todo"><rect x="40" y="902" width="490" height="68" rx="4"/>
+<text x="285.0" y="932.5" class="t">Splits by corridor</text>
+<text x="285.0" y="949.5">spatial buffers; held-out corridors kept for test</text>
+</g>
+<path class="edge" d="M285,878 L285,902" marker-end="url(#a)"/>
+<g class="todo"><rect x="40" y="994" width="490" height="68" rx="4"/>
+<text x="285.0" y="1016.0" class="t">Release package</text>
+<text x="285.0" y="1033.0">synchronised streams, labels, masks marked</text>
+<text x="285.0" y="1050.0">as machine output, loader, datasheet</text>
+</g>
+<path class="edge" d="M285,970 L285,994" marker-end="url(#a)"/>
+<g class="todo"><rect x="40" y="1086" width="490" height="68" rx="4"/>
+<text x="285.0" y="1108.0" class="t">Benchmark tasks and baselines</text>
+<text x="285.0" y="1125.0">detection · surface condition · city transfer</text>
+<text x="285.0" y="1142.0">sidewalk side (from the graph paper)</text>
+</g>
+<path class="edge" d="M285,1062 L285,1086" marker-end="url(#a)"/>
+<g class="result"><rect x="40" y="1178" width="490" height="68" rx="30"/>
+<text x="285.0" y="1208.5" class="t">Labelled two-city sidewalk dataset</text>
+<text x="285.0" y="1225.5">West Loop and Brás, one schema</text>
+</g>
+<path class="edge" d="M285,1154 L285,1178" marker-end="url(#a)"/>
+<g class="done"><rect x="590" y="626" width="490" height="68" rx="4"/>
+<text x="835.0" y="656.5" class="t">Runs and crossings</text>
+<text x="835.0" y="673.5">headings; each run's sidewalk from the crossings</text>
+</g>
+<g class="doing"><rect x="590" y="718" width="490" height="68" rx="4"/>
+<text x="835.0" y="740.0" class="t">Ladder fit</text>
+<text x="835.0" y="757.0">walking lines and corrected track</text>
+<text x="835.0" y="774.0">from GPS, steps and crossings</text>
+</g>
+<path class="edge" d="M835,694 L835,718" marker-end="url(#a)"/>
+<g class="todo"><rect x="590" y="810" width="490" height="68" rx="4"/>
+<text x="835.0" y="832.0" class="t">Cells</text>
+<text x="835.0" y="849.0">curb, back and zones from projected masks;</text>
+<text x="835.0" y="866.0">camera height inferred</text>
+</g>
+<path class="edge" d="M835,786 L835,810" marker-end="url(#a)"/>
+<g class="todo"><rect x="590" y="902" width="490" height="68" rx="4"/>
+<text x="835.0" y="924.0" class="t">Graph</text>
+<text x="835.0" y="941.0">edge = cell centreline; node in its corner cell;</text>
+<text x="835.0" y="958.0">ports on cell boundaries</text>
+</g>
+<path class="edge" d="M835,878 L835,902" marker-end="url(#a)"/>
+<g class="todo"><rect x="590" y="994" width="490" height="68" rx="4"/>
+<text x="835.0" y="1024.5" class="t">Alternatives</text>
+<text x="835.0" y="1041.5">consistent graphs; route queries in each</text>
+</g>
+<path class="edge" d="M835,970 L835,994" marker-end="url(#a)"/>
+<g class="todo"><rect x="590" y="1086" width="490" height="68" rx="4"/>
+<text x="835.0" y="1108.0" class="t">Evaluation</text>
+<text x="835.0" y="1125.0">D1–D2 against the reference and baselines;</text>
+<text x="835.0" y="1142.0">freeze, then D3 once; OSM and Tile2Net</text>
+</g>
+<path class="edge" d="M835,1062 L835,1086" marker-end="url(#a)"/>
+<g class="result"><rect x="590" y="1178" width="490" height="68" rx="30"/>
+<text x="835.0" y="1208.5" class="t">Map-free passage graph</text>
+<text x="835.0" y="1225.5">cells, graph and corrected GPS, with alternatives</text>
+</g>
+<path class="edge" d="M835,1154 L835,1178" marker-end="url(#a)"/>
+<path class="edge dash" d="M590,1120.0 L530,1120.0" marker-end="url(#a)"/>
+<g class="done"><rect x="300" y="1290" width="18" height="14" rx="3"/></g><text class="lg" x="326" y="1302">done</text>
+<g class="doing"><rect x="450" y="1290" width="18" height="14" rx="3"/></g><text class="lg" x="476" y="1302">in progress</text>
+<g class="todo"><rect x="600" y="1290" width="18" height="14" rx="3"/></g><text class="lg" x="626" y="1302">to do</text>
+<g class="result"><rect x="750" y="1290" width="18" height="14" rx="3"/></g><text class="lg" x="776" y="1302">paper result</text>
+</svg>

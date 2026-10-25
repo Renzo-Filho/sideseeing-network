@@ -158,7 +158,7 @@ For a few alternatives (two walking lines, two attachments), enumerate the discr
 
 This search was targeted, not systematic. Before any claim, trace the citations of Kasemsuppakorn & Karimi, the PolyU work and Walkie-Markie, and look for outdoor landmark-PDR sidewalk mapping specifically.
 
-**Possible papers.**
+**Possible papers.** Since 25 October the goals, pipeline and phases of the two papers in progress (the dataset paper, and the graph paper, which is the first below) are in [PAPERS.md](PAPERS.md).
 1. **First (recommended):** the map-free joint trajectory and ladder-graph inference, with alternatives where it cannot decide, plus the West Loop benchmark and port-level evaluation. This covers H1's side-identity question and a bounded part of H2. SIGSPATIAL fits, as the critique argues.
 2. **Second:** H2 at full scale, retained alternatives against early commitment on route risk–coverage, once more intersections exist.
 3. **Later:** H3 (revisits chosen by route impact) and the aerial union.
