@@ -107,7 +107,15 @@ The camera's position and a detected object's position stay separate: once the c
 | **Running slope** (limit about 5%, ramps 8.33%) | The camera and the gravity sensor are rigid together, so the mount drops out: slope is the angle between ground lines along the walk (curb, sidewalk edges) and the horizontal given by gravity, averaged over a stretch of the centreline | The gravity sensor while walking; a constant camera-to-sensor misalignment, calibrated once on level ground. The barometer drifts 1–1.5 m per session (notebook) and GPS altitude is too noisy, so neither measures slope here |
 | **Cross slope** (limit 2%, about 1.1°) | The same with lines across the walk: the transverse joints of the concrete slabs | Needs about 0.5° overall. Exploratory |
 
-**What the projection needs.** The lens parameters, which the recordings lack (the metadata only says `camera = 0_1_4000x2250@15`): a 5-minute checkerboard video with the same phone in the same video mode, checking whether stabilisation crops the image. The camera height above the ground, measured on the vest for each collector (a new protocol setting). Pitch and roll per frame, which the gravity stream already gives at 50 Hz (`west_loop.ipynb` §8).
+**What the projection needs.**
+
+- **The lens.** The recordings are 1920×1080 at 30 fps; the setting name `0_1_4000x2250@15` does not describe the stream. The camera's rotation during turns already gives a horizontal focal length of about 1460 px ([phase 0](GRAPH_PHASE0_RESULTS_2026-10-25.md)). A checkerboard video with the same phone in the same video mode would add the lens distortion and show whether stabilisation crops the image.
+- **The camera height.** It sets the scale of every width and offset: a 5 cm error is about 4% of a width. Angles, slope and topology do not need it. It is inferred, not measured, in two independent ways:
+  - The ground's apparent motion between frames gives speed ÷ height, and GPS over long straight runs gives the speed, so every run yields a height.
+  - The tactile paving at curb ramps is a ruler on the ground at almost every crossing. By rule it extends at least 610 mm (2 ft) in the direction of travel; whether most panels are exactly that deep is to confirm on Morgan.
+
+  The two estimates are each other's check, and a tape measurement of the vest, if taken, validates both.
+- **Pitch and roll** per frame come from the gravity stream at 50 Hz (`west_loop.ipynb` §8).
 
 **Reference.** At 20–30 marked spots on Morgan: total width, the width of each zone and clear width with a tape, running and cross slope with a digital inclinometer, a photo of each spot. Cell outlines, centrelines and visible zones traced on the 2025 orthophoto.
 
@@ -132,7 +140,7 @@ The cells follow from the solution: their boundaries are the walking lines plus 
 
 For a few alternatives (two walking lines, two attachments), enumerate the discrete choices, solve the continuous part for each, and keep the k best consistent ones. Robust-SLAM tools such as switchable constraints and max-mixtures handle the same discrete–continuous structure. They are tools here, not the contribution. `scipy.optimize.least_squares` is enough for one street; GTSAM if it grows.
 
-**Baselines, all on the same sessions.** Raw GPS; the 5-fix median now used for display; a Kalman/RTS smoother of GPS + pedestrian dead reckoning; multi-trace clustering in the style of Kasemsuppakorn and Karimi (2013); and the notebook's OSM-assisted corrected track as a separate **map-assisted** reference, never as ground truth. Ablations: without the video side term, without the rung term, without repeats (one crossing per crosswalk).
+**Baselines, all on the same sessions.** Raw GPS; the 5-fix median now used for display; a Kalman/RTS smoother of GPS + pedestrian dead reckoning; multi-trace clustering in the style of Kasemsuppakorn and Karimi (2013); and the notebook's OSM-assisted corrected track as a separate **map-assisted** reference, never as ground truth; and the **protocol rule**: under the West Loop protocol the walking direction alone gives the sidewalk side (northbound on the east side, southbound on the west), so the joint inference must beat it ([phase 0](GRAPH_PHASE0_RESULTS_2026-10-25.md), section 4). Ablations: without the video side term, without the rung term, without repeats (one crossing per crosswalk).
 
 **What success looks like.** Side identity of runs, with abstention; the longest wrong-side stretch (now up to 77 m); lateral error of the edges against centrelines traced on the orthophoto, and boundary error of the cells; crossing attachment to the correct ports; port-to-port reachability, the critique's metric that a boundary-level score can miss.
 
@@ -159,7 +167,7 @@ This search was targeted, not systematic. Before any claim, trace the citations 
 
 | Phase | Work | Gate before moving on |
 |---|---|---|
-| **0. Data contract** (about a week) | Run the motion step on all 8 sessions (desktop-01, CPU only); check clock alignment between video, IMU and GPS at a few visible events per session (and whether D3 includes the sync tap); confirm D3's streets, collectors and phones; test the video side cue on D1: do curb, car and crosswalk masks say which side the road is on? Check on a few Morgan blocks whether the masks separate the zones. Record the lens calibration video and measure each collector's camera height | Every stream used has a measured alignment bound; the side cue works on at least a stated share of D1 runs, or is dropped; zones are kept where the masks separate them, otherwise strips stop at level 1 |
+| **0. Data contract** (about a week) | Run the motion step on all 8 sessions (desktop-01, CPU only); check clock alignment between video, IMU and GPS at a few visible events per session (and whether D3 includes the sync tap); confirm D3's streets, collectors and phones; test the video side cue on D1: do curb, car and crosswalk masks say which side the road is on? Check on a few Morgan blocks whether the masks separate the zones. Record the lens calibration video | Every stream used has a measured alignment bound; the side cue works on at least a stated share of D1 runs, or is dropped; zones are kept where the masks separate them, otherwise strips stop at level 1. **Done 25 October** ([results](GRAPH_PHASE0_RESULTS_2026-10-25.md)): clocks and side cue met, zones in part; the calibration video is still to record |
 | **1. Reference for development sites** | On D1 (Morgan) and D2 (Aberdeen–Madison–Carpenter, including both jogged corners): trace sidewalk and crosswalk outlines, their centrelines and the visible zones on the 2025 Cook County orthophoto; label each run's walking line and each crossing's ports from the video, in the viewer, blind to model output. Double-label the corners; `unknown` where the recordings cannot decide. Take the field measurements of section 5 at 20–30 spots on Morgan | Reference instructions frozen; disagreement and effort recorded |
 | **2. Ladder on one street** | Morgan, both sessions: segmentation into runs and rungs, `W` from crossings, walking lines and assignments from the factor graph, against all baselines. Then the cells: boundaries, zones, centrelines as edges, width and running slope along both sides, against the field measurements and the traced centrelines | Beats the GPS + PDR smoother on side identity on Morgan, or the plan changes (section 10) |
 | **3. Corners and alternatives** | D2: Madison's jog, two streets meeting, corner cells and their ports, alternative groups where attachment is ambiguous; route queries per consistent graph | Alternatives appear where the reference says the decision is hard, not everywhere |
@@ -172,15 +180,22 @@ The viewer supports each phase: the timeline already shows runs, turns, crossing
 
 **Settled (24 October).** Two linked views: cells and graph. The edge is its cell's centreline, for direct comparison with OSM and Tile2Net. Each corner is its own cell, linked to a node. Zones are included, to be rethought if the masks cannot separate them. Which width the cells mean is no longer a choice: total, clear and per-zone widths are all stored. PLAN.md decision 3 is revised to match.
 
+**Settled (25 October).** After [phase 0](GRAPH_PHASE0_RESULTS_2026-10-25.md):
+
+- The `road` prompt is approved, together with `grass`, `tree pit`, `building` and `fence` for the zones. They make a second SAM3 pass on D1 and D2, queued on desktop-01 after the West Loop run.
+- Motion events are put on the video clock.
+- Runs are split at straight crossings.
+- The protocol rule joins the baselines.
+- The camera height is inferred (section 5), not measured.
+
 **Open, for Renzo.**
 
 1. **First paper focus:** the map-free joint inference with alternatives (recommended), a benchmark-only paper, or H2 routing first.
 2. **Held-out split:** keep D3 (22 October) unopened for method development (recommended), so the test has new streets and a second collector. Future West Loop days would add held-out sites.
 3. **Reference:** who traces and labels, and whether a second person can double-label the corners. The orthophoto is the geometry reference; video is the side and transition reference; neither is the input.
-4. **A `road` prompt:** the side cue may need a road-surface mask, which the 35 prompts lack. That would be a new SAM3 run on the West Loop frames (GPU time on desktop-01, to be agreed before running).
-5. **How far to take slope:** running slope only, or cross slope too as an exploratory result.
-6. **Field reference:** who takes the tape and inclinometer measurements on Morgan, and when.
-7. **Protocol dependence:** the method leans on the protocol (out and back, crossing every crosswalk, spins). Declare it as an *assisted survey* regime, and record a small natural-walk sample on one block to measure how much it depends on the ritual (the critique's suggestion).
+4. **How far to take slope:** running slope only, or cross slope too as an exploratory result.
+5. **Field reference:** who takes the tape and inclinometer measurements on Morgan, and when.
+6. **Protocol dependence:** the method leans on the protocol (out and back, crossing every crosswalk, spins). Declare it as an *assisted survey* regime, and record a small natural-walk sample on one block to measure how much it depends on the ritual (the critique's suggestion).
 
 ## 10. Risks, and what would change the plan
 
