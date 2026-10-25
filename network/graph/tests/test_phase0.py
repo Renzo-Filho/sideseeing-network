@@ -81,3 +81,31 @@ def test_three_knocks_and_gps_lag():
                               longitude=LON + east * M_LAT / np.cos(np.radians(LAT))))
     found = contract.gps_lag(fixes, times, rate)
     assert abs(found['gps_late_s'] - late) <= 0.6 and found['gps_corr'] > 0.9
+
+
+def test_straight_crossings_are_cut_out_of_runs():
+    motion, track = _walk()
+    cut = runs.cut_runs(motion, track, 180)
+    on_crosswalk = np.arange(140.0, 150.0)  # crossing a cross street in the last run, straight on
+    split = runs.split_at_crosswalks(cut, np.r_[30.0, on_crosswalk], motion['stops'], track)  # 30: one frame only
+    assert list(split['kind']) == ['run', 'crossing', 'run', 'crossing', 'run']
+    assert list(split['crossing_side'].fillna('')) == ['', 'right', '', 'straight', '']
+    assert split.loc[3, ['start_s', 'end_s']].tolist() == [139.5, 149.5]
+    assert split.loc[2, 'turn_after'] == 'none' and split.loc[4, 'turn_after'] == 'end'
+
+
+def test_crosswalk_underfoot_reads_masks_only_where_boxes_reach_the_patch():
+    mask = np.zeros((100, 200), bool)
+    mask[80:, 60:140] = True  # the crosswalk just ahead
+    detections = pd.DataFrame(dict(prompt='crosswalk', frame=['a', 'b'], t=[1.0, 2.0], score=0.9,
+                                   x0=[60.0, 0.0], y0=[80.0, 10.0], x1=[140.0, 50.0], y1=[100.0, 40.0]))
+    loaded = []
+    found = runs.crosswalk_underfoot(detections, lambda frame: loaded.append(frame) or mask, (200, 100))
+    assert list(found) == [1.0] and loaded == ['a']  # frame b's crosswalk is far ahead: never loaded
+
+
+def test_sensor_clock_moves_motion_onto_the_video():
+    windows = pd.DataFrame(dict(centre_s=[0.0, 3600.0], video_late_s=[-0.3, -0.5], corr=0.99, focal_px=1460.0,
+                                pts_minus_index_s=0.0))
+    clock = contract.sensor_clock(contract.summarize_rotation(windows))
+    assert np.allclose(clock(np.array([0.0, 1800.0])), [-0.3, 1800 - 0.4])

@@ -2,7 +2,7 @@
 
     python -m graph.phase0 align  --raw RAW --workspace WORKSPACE --out OUT   # needs the raw videos and sensors
     python -m graph.phase0 report --workspace WORKSPACE --out OUT [--pieces routes.gpkg] [--sessions ...]
-                                  [--zone-sessions ...]
+                                  [--zone-sessions ...] [--rotation rotation_windows.csv]
 
 `align` writes alignment.csv and rotation_windows.csv; `report` writes sessions.csv, runs/<session>.csv,
 side_cue.csv and, for --zone-sessions, zones_<session>.csv and .jpg. Sessions not listed in --sessions (the
@@ -86,7 +86,7 @@ def zone_check(ws, route, along, road_of_axis, out):
     return table
 
 
-def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=()):
+def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rotation_path=None):
     from sideseeing_tools import SideSeeingWorkspace
 
     ws = SideSeeingWorkspace(str(workspace))
@@ -94,6 +94,7 @@ def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=()):
     if pieces_path:
         import geopandas as gpd
         pieces = gpd.read_file(pieces_path, layer='pieces')
+    windows = pd.read_csv(rotation_path) if rotation_path else None
 
     summaries = []
     for session_dir in sorted(p for p in ws.data_dir.iterdir() if p.is_dir()):
@@ -108,17 +109,25 @@ def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=()):
     cues = []
     for route in sessions:
         track, motion = ws.gps(route), ws.motion(route)
+        if windows is not None:  # the motion events were timed by the sensors; move them onto the video clock
+            clock = contract.sensor_clock(contract.summarize_rotation(windows[windows['session'] == route]))
+            motion = contract.to_video_clock(motion, clock)
         duration = (ws._media_times(route)[1] - ws._media_times(route)[0]).total_seconds()
         cut = runs.cut_runs(motion, track, duration)
-        cut.to_csv(out / 'runs' / f'{route}.csv', index=False)
-        along = pd.concat([runs.axis_runs(cut, axis).assign(axis=axis) for axis in AXES]).sort_values('start_s')
 
         detections = ws.detections(route)
+        if not detections.empty:
+            size = Image.open(ws.route_frames_dir(route) / ws.frames(route)['name'].iloc[0]).size \
+                if ws.route_frames_dir(route).is_dir() else (1920, 1080)
+            crosswalk = lambda frame: zones.frame_masks(ws.preds_dir / 'sam3', route, detections, frame,
+                                                        ('crosswalk',)).get('crosswalk')
+            cut = runs.split_at_crosswalks(cut, runs.crosswalk_underfoot(detections, crosswalk, size),
+                                           motion['stops'], track)
+        cut.to_csv(out / 'runs' / f'{route}.csv', index=False)
+        along = pd.concat([runs.axis_runs(cut, axis).assign(axis=axis) for axis in AXES]).sort_values('start_s')
         if detections.empty:
             continue
-        width = Image.open(ws.route_frames_dir(route) / ws.frames(route)['name'].iloc[0]).size[0] \
-            if ws.route_frames_dir(route).is_dir() else 1920
-        cued = side_cue.road_side(along, detections, width)
+        cued = side_cue.road_side(along, detections, size[0])
         cues.append(cued.assign(session=route))
         for axis in AXES:
             mine = cued[cued['axis'] == axis]
@@ -139,12 +148,13 @@ def main():
     parser.add_argument('--pieces', type=Path)
     parser.add_argument('--sessions', nargs='*', default=[])
     parser.add_argument('--zone-sessions', nargs='*', default=[])
+    parser.add_argument('--rotation', type=Path, help='rotation_windows.csv from align: puts motion on the video clock')
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     if args.step == 'align':
         align(args.raw, args.workspace, args.out)
     else:
-        report(args.workspace, args.out, args.pieces, args.sessions, args.zone_sessions)
+        report(args.workspace, args.out, args.pieces, args.sessions, args.zone_sessions, args.rotation)
 
 
 if __name__ == '__main__':

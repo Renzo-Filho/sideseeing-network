@@ -161,11 +161,25 @@ def summarize_rotation(windows, min_corr=0.8):
     good = windows[windows['corr'].abs() >= min_corr] if len(windows) else windows
     if len(good) < 2:
         return dict(rotation_windows=len(good))
-    drift = np.polyfit(good['centre_s'], good['video_late_s'], 1)[0] * 3600
+    slope, intercept = np.polyfit(good['centre_s'], good['video_late_s'], 1)
     return dict(rotation_windows=len(good), video_late_s_median=good['video_late_s'].median(),
                 video_late_s_spread=good['video_late_s'].max() - good['video_late_s'].min(),
-                video_late_drift_s_per_h=drift, rotation_corr_median=good['corr'].abs().median(),
-                focal_px_median=good['focal_px'].median(), pts_minus_index_s_max=good['pts_minus_index_s'].abs().max())
+                video_late_s_at_start=intercept, video_late_drift_s_per_h=slope * 3600,
+                rotation_corr_median=good['corr'].abs().median(), focal_px_median=good['focal_px'].median(),
+                pts_minus_index_s_max=good['pts_minus_index_s'].abs().max())
+
+
+def sensor_clock(alignment):
+    """t on the sensor clock -> t on the video clock, from one session's summarize_rotation (a dict or row): an
+    event the sensors time at t shows in the video at t + video_late_s_at_start + drift * t."""
+    start, drift = alignment['video_late_s_at_start'], alignment['video_late_drift_s_per_h'] / 3600
+    return lambda t: t + start + drift * t
+
+
+def to_video_clock(motion, clock):
+    """SideSeeingWorkspace.motion tables with start_s and end_s moved onto the video clock."""
+    return {kind: table.assign(start_s=clock(table['start_s']), end_s=clock(table['end_s']))
+            for kind, table in motion.items()}
 
 
 def gps_lag(fixes, times, rate, max_lag_s=5.0, min_speed=0.7):
