@@ -1,7 +1,8 @@
 """The geometry reference (plan section 8, phase 1): the City of Chicago's curb lines along a street, written for
-trace.html, where they are checked against the 2025 orthophoto and the back of the sidewalk is traced.
+trace.html, where they are checked against the 2025 orthophoto, and the back of the sidewalk from Cook County's
+parcels (the property line).
 
-    python -m graph.reference --out ../data/west_loop_reference      # from network/; downloads the curbs once
+    python -m graph.reference --out ../data/west_loop_reference      # from network/; downloads once
 
 The city's sidewalk polygons (77cn-6x4c) are not used: on the imagery they cover the blocks, not the sidewalks.
 """

@@ -132,8 +132,8 @@ Detail in the [plan](GRAPH_GPS_PLAN_2026-10-24.md), section 8.
 | Phase | Work | Gate before moving on | Status, 25 October |
 |---|---|---|---|
 | **G0. Data contract** | Clocks, side cue, zones check, D3's streets and phones | A measured alignment bound for every stream used | Done ([results](GRAPH_PHASE0_RESULTS_2026-10-25.md)) |
-| **G1. Reference on D1–D2** | The city's curbs checked and the back of the sidewalk traced on the orthophoto (Renzo, blind). Walking lines and crossing ports labelled in the viewer. Corners double-labelled. Field spots on Morgan | Instructions frozen; disagreement and effort recorded | Morgan in progress (`network/graph/trace.html`) |
-| **G2a. Ladder on Morgan** | Steps, headings, each run's sidewalk from the crossings, a joint fit of both sessions, the baselines | **Geometry gate:** the walking lines lie inside the sidewalk and nearer its centreline than the smoother's; the crossing lengths agree with the curb-to-curb width | Built. Geometry sealed until the trace is exported ([notes](GRAPH_PHASE2A_NOTES_2026-10-25.md)) |
+| **G1. Reference on D1–D2** | From official data, not drawing (26 October). Curbs: the city's, checked on the orthophoto. Back of the sidewalk: Cook County's parcels, spot-checked. Walking lines and crossing ports labelled in the viewer. Corners double-labelled. Field spots on Morgan | The official data's error rate measured on a sample | Morgan done: 86 of 109 curb pieces matched, 23 redrawn; parcels spot-checked |
+| **G2a. Ladder on Morgan** | Steps, headings, each run's sidewalk from the crossings, a joint fit of both sessions, the baselines | **Geometry gate:** the walking lines lie inside the sidewalk and nearer its centreline than the smoother's; the crossing lengths agree with the curb-to-curb width | Half met. Nearer the middle than the smoother on both sides, never on the street's other half, but inside the sidewalk only 35% (east) and 54% (west) of the way ([notes](GRAPH_PHASE2A_NOTES_2026-10-25.md), section 4) |
 | **G2b. Cells on Morgan** | Zone prompts; camera height inferred two ways; curb and back lines from projected masks; width and running slope | Width within about 0.3 m of the tape, or the cells stay outlines (plan section 10) | Ready: the zone prompts finished on 25 October. Its geometry stays sealed like 2a's |
 | **G2c. Fieldwork** | The natural-walk block; a checkerboard video for each phone; tape and inclinometer spots | Side identity measured where the protocol rule does not hold | At the next fieldwork |
 | **G3. Corners and alternatives** | D2: Madison's jog, corner cells and ports, alternative groups, route queries within each consistent graph | Alternatives appear where the reference says the decision is hard, not everywhere | Not started |
@@ -145,10 +145,10 @@ Detail in the [plan](GRAPH_GPS_PLAN_2026-10-24.md), section 8.
 
 **Critical paths:**
 - **Graph paper:**
-  1. The trace on Morgan.
-  2. Unseal and evaluate phase 2a.
-  3. Fix what that evaluation shows, probably a GPS pull that varies along the street.
-  4. The cells (G2b, after the zone-prompt run).
+  1. The reference on Morgan (done).
+  2. Evaluate phase 2a (done: gate half met).
+  3. Fix what that evaluation shows: tie each crossing's far end to the far walking line, then take the curb offsets from the video.
+  4. The cells (G2b; the zone prompts are ready).
   5. The corners (G3).
   6. Freeze every setting, then run D3 once.
   7. The comparisons.

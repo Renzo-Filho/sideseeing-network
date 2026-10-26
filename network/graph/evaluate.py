@@ -16,11 +16,13 @@ import geopandas as gpd
 import numpy as np
 import pandas as pd
 from shapely.geometry import LineString, MultiLineString
+from pyproj import Transformer
 from shapely.ops import transform
 
 from graph import ladder, reference
 
 SIDES = {1.0: 'east', -1.0: 'west'}
+EPOCH = 2026.8  # the West Loop recordings, October 2026
 
 
 def in_frame(lines, frame):
@@ -51,12 +53,23 @@ def profile(curbs, backs, us, reach=40.0, road=(8.0, 18.0), widest=8.0):
     return pd.DataFrame(rows)
 
 
+def datum_shift(lon, lat, epoch=EPOCH):
+    """(east, north) metres from a point's NAD83(2011) coordinates to its ITRF2014 ones at `epoch`. The city's curbs,
+    the county's parcels and the orthophoto are NAD83, read as if they were WGS84 (pyproj's default treats the two as
+    the same); phone GPS is WGS84, which is ITRF2014 at the recording date to within centimetres."""
+    x, y, _, _ = Transformer.from_crs('EPSG:6319', 'EPSG:7912', always_xy=True).transform(lon, lat, 0.0, epoch)
+    a, b = gpd.GeoSeries(gpd.points_from_xy([lon, x], [lat, y]), crs=4326).to_crs(reference.UTM)
+    return b.x - a.x, b.y - a.y
+
+
 def reference_lines(folder, frame):
-    """The checked curbs and the parcel backs, in the frame."""
-    trace = gpd.read_file(folder / 'morgan_trace.geojson').to_crs(reference.UTM)
+    """The checked curbs and the parcel backs, moved into the GPS's datum, in the frame."""
+    trace = gpd.read_file(folder / 'morgan_trace.geojson')
     kept = trace[((trace['kind'] == 'city_curb') & (trace['status'] != 'changed')) | (trace['kind'] == 'curb')]
-    backs = gpd.read_file(folder / 'morgan_back.geojson').to_crs(reference.UTM)
-    return in_frame(kept.geometry, frame), in_frame(backs.geometry, frame)
+    backs = gpd.read_file(folder / 'morgan_back.geojson')
+    east, north = datum_shift(*kept.union_all().centroid.coords[0])
+    move = lambda lines: lines.to_crs(reference.UTM).translate(east, north)
+    return in_frame(move(kept.geometry), frame), in_frame(move(backs.geometry), frame), (east, north)
 
 
 def at(prof, u):
@@ -96,12 +109,13 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
 
     frame = ladder.Frame(gpd.GeoSeries([reference.MORGAN], crs=4326).to_crs(reference.UTM)[0])
-    curbs, backs = reference_lines(args.reference, frame)
+    curbs, backs, shift = reference_lines(args.reference, frame)
     us = np.arange(np.floor(min(g.bounds[0] for g in curbs.geoms)), np.ceil(max(g.bounds[2] for g in curbs.geoms)))
     prof = profile(curbs, backs, us)
     prof.to_csv(args.out / 'reference_profile.csv', index=False)
     road = prof['curb_e'] - prof['curb_w']
-    summary = dict(reference=dict(metres=len(prof), with_road=int(road.notna().sum()),
+    summary = dict(reference=dict(datum_shift_m=np.round(shift, 3).tolist(),
+                                  metres=len(prof), with_road=int(road.notna().sum()),
                                   road_m=float(road.median()),
                                   **{f'{name}_sidewalk': dict(metres=int(w.notna().sum()),
                                                               width_m=np.nanpercentile(w, [10, 50, 90]).round(2).tolist())

@@ -109,6 +109,12 @@ def test_the_reference_is_read_across_the_street():
     assert scored['n'] == 2 and scored['inside'] == 0.5 and scored['in_road'] == 0.5
 
 
+def test_the_reference_moves_into_the_gps_datum():
+    from graph import evaluate
+    east, north = evaluate.datum_shift(-87.652, 41.883)  # Morgan, October 2026
+    assert -1.1 < east < -0.9 and 0.8 < north < 1.0
+
+
 def test_steps_are_peaks_of_the_shaking():
     rate = 50
     t = np.arange(0, 20, 1 / rate)
