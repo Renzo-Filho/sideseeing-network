@@ -89,9 +89,11 @@ def test_lines_across_the_street_are_not_curbs():
     import geopandas as gpd
     axis = LineString([(0, 0), (0, 300)])
     lines = gpd.GeoSeries([LineString([(-7, 50), (7, 51)]),                          # across, like a bridge edge
+                           LineString([(7, 52), (9.5, 52)]),                          # a stub at the bridge's side
                            LineString([(7, 0), (7, 100)]),                            # along: a curb
-                           LineString([(7, 100), (8, 105), (12, 107), (20, 108)])])   # a corner curve
-    assert list(reference.across(gpd.GeoDataFrame(geometry=lines), axis)) == [True, False, False]
+                           LineString([(7, 100), (8, 105), (12, 107), (20, 108)]),    # a corner curve
+                           LineString([(11, 120), (20, 120)])])                       # a cross street's curb
+    assert list(reference.across(gpd.GeoDataFrame(geometry=lines), axis)) == [True, True, False, False, False]
 
 
 def test_steps_are_peaks_of_the_shaking():

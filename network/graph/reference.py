@@ -19,22 +19,24 @@ MORGAN = LineString([(-87.65185, 41.8752), (-87.65215, 41.8917)])  # its axis, T
 UTM = 32616
 
 
-def along(curbs, axis, within_m=20.0, min_share=0.3):
-    """The curbs (projected in metres) with at least min_share of their length within within_m of `axis`."""
-    zone = axis.buffer(within_m)
-    near = curbs[curbs.distance(axis) <= within_m]
-    return near[near.geometry.intersection(zone).length / near.length >= min_share]
+def near(curbs, axis, within_m=20.0):
+    """The parts of the curbs (projected in metres) within within_m of `axis`, one row per piece, indexed by (curb,
+    part). The city often draws one line around a corner and down the cross street; its part along the street stays."""
+    pieces = curbs.assign(geometry=curbs.intersection(axis.buffer(within_m))).explode(index_parts=True)
+    return pieces[(pieces.geom_type == 'LineString') & (pieces.length > 0.5)]
 
 
-def across(lines, axis, min_deg=60.0):
-    """Straight two-point lines more than min_deg from the axis. Along Morgan these close the curb pieces at the edges
-    of the expressway bridge and the railroad viaduct: structure edges, not curbs. Corner curves have more points."""
+def across(lines, axis, min_deg=60.0, stub_m=4.0):
+    """Straight two-point lines more than min_deg from the axis that cross it or are shorter than stub_m. Along Morgan
+    these close the curb pieces at the edges of the expressway bridge and the railroad viaduct: structure edges, not
+    curbs. The straight ends of cross-street curbs are longer and stay; corner curves have more points."""
     (x0, y0), (x1, y1) = axis.coords[0], axis.coords[-1]
     def angle(line):
         (a, b), (c, d) = line.coords[0], line.coords[-1]
         turn = np.degrees(np.arctan2(d - b, c - a) - np.arctan2(y1 - y0, x1 - x0))
         return abs((turn + 90) % 180 - 90)
-    return lines.geometry.apply(lambda line: len(line.coords) == 2 and angle(line) > min_deg)
+    return lines.geometry.apply(lambda line: len(line.coords) == 2 and angle(line) > min_deg
+                                and (line.intersects(axis) or line.length < stub_m))
 
 
 def main():
@@ -49,8 +51,12 @@ def main():
     axis = gpd.GeoSeries([MORGAN], crs=4326).to_crs(UTM)[0]
     box = tuple(gpd.GeoSeries([axis.buffer(200)], crs=UTM).to_crs(3435).total_bounds)  # the file is in ft (3435)
     curbs = gpd.read_file(f'zip://{args.cache.resolve()}!Curbs.shp', bbox=box).to_crs(UTM)
-    near = along(curbs, axis)
-    morgan = near[~across(near, axis)][['CURBS_', 'geometry']].rename(columns={'CURBS_': 'city_id'}).to_crs(4326)
+    pieces = near(curbs, axis)
+    pieces = pieces[~across(pieces, axis)]
+    curb, part = pieces.index.get_level_values(0), pieces.index.get_level_values(1)
+    ids = pieces['CURBS_'].astype(int).astype(str)
+    ids = ids.where(~curb.duplicated(keep=False), ids + '-' + part.astype(str))  # a line cut in two: '<id>-0', '<id>-1'
+    morgan = gpd.GeoDataFrame(dict(city_id=ids.to_numpy()), geometry=pieces.geometry.to_numpy(), crs=UTM).to_crs(4326)
 
     args.out.mkdir(parents=True, exist_ok=True)
     morgan.to_file(args.out / 'morgan_city_curbs.geojson', driver='GeoJSON')
