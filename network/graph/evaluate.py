@@ -136,6 +136,23 @@ def main():
             v = np.where(walked, np.interp(us, lines['u'], lines[f'{method}_{name}']), np.nan)
             summary['walking_lines'][f'{method}_{name}'] = score(v, curb, back, centre, side)
 
+    # The two lines' errors, split: the shift they share (the street's centre, which without a map only GPS can place)
+    # and their separation (which the crossings and steps measure)
+    walked = np.ones(len(us), bool)
+    for name in SIDES.values():
+        walked &= lines[f'observed_{name}'].to_numpy()[near_knot(us)].astype(bool)
+    middle = {side: (lambda c, b, _: (c + b) / 2)(*sidewalk(prof, us, side)) for side in SIDES}
+    summary['centre_and_separation'] = {}
+    for method in METHODS_LINES:
+        east, west = (np.interp(us, lines['u'], lines[f'{method}_{name}']) for name in SIDES.values())
+        ok = walked & np.isfinite(east + west + middle[1.0] + middle[-1.0])
+        shift = ((east + west) - (middle[1.0] + middle[-1.0]))[ok] / 2
+        apart = ((east - west) - (middle[1.0] - middle[-1.0]))[ok]
+        summary['centre_and_separation'][method] = dict(
+            n=int(ok.sum()), shift_median_m=float(np.median(shift)), shift_abs_median_m=float(np.median(np.abs(shift))),
+            shift_abs_p90_m=float(np.percentile(np.abs(shift), 90)), separation_median_m=float(np.median(apart)),
+            separation_abs_median_m=float(np.median(np.abs(apart))))
+
     # Tracks, fix by fix, on the side the crossings put each run
     tracks = pd.concat([pd.read_csv(path).assign(session=path.stem[len('track_'):])
                         for path in sorted(args.fit.glob('track_*.csv'))], ignore_index=True)

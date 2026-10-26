@@ -6,7 +6,7 @@ from shapely.geometry import LineString
 from graph import baselines, ladder, reference, steps
 
 SPEED, STEP, PULL = 1.3, 0.75, 3.5   # m/s, m per step, the GPS's pull towards the street's middle (m)
-EAST, WEST, CURB = 8.0, -8.0, 6.0    # walking lines and curbs (|v|, metres)
+EAST, WEST = 8.0, -8.0    # walking lines (v, metres)
 NORTH = ladder.Frame(LineString([(0, 0), (0, 300)]))
 
 
@@ -42,14 +42,14 @@ def _session(points, kinds, turns_deg, bearings, seed):
 
 
 def _north_on_east(seed=1):
-    """North on the east line, across to the west curb and straight back at u = 100, north again."""
-    points = [(0, EAST), (100, EAST), (100, -CURB), (100, EAST), (200, EAST)]
+    """North on the east line, across to the west sidewalk and straight back at u = 100, north again."""
+    points = [(0, EAST), (100, EAST), (100, WEST), (100, EAST), (200, EAST)]
     return _session(points, ['run', 'crossing', 'crossing', 'run'], [90.0, 180.0, 90.0], [0.0, 270.0, 90.0, 0.0], seed)
 
 
 def _south_on_west(seed=2):
-    """South on the west line, across to the east curb and straight back at u = 100, south again."""
-    points = [(200, WEST), (100, WEST), (100, CURB), (100, WEST), (0, WEST)]
+    """South on the west line, across to the east sidewalk and straight back at u = 100, south again."""
+    points = [(200, WEST), (100, WEST), (100, EAST), (100, WEST), (0, WEST)]
     return _session(points, ['run', 'crossing', 'crossing', 'run'], [90.0, 180.0, 90.0], [180.0, 90.0, 270.0, 180.0], seed)
 
 
@@ -67,7 +67,7 @@ def test_the_crossings_alone_put_each_run_on_its_sidewalk():
     assert not placed['conflict'].any()
 
 
-def test_one_session_finds_its_walking_line_and_the_far_curb():
+def test_one_session_finds_both_walking_lines():
     model = _ladder(_north_on_east())
     knots, rails, (p,), result, observed = ladder.fit([model])
     assert result.success
@@ -76,7 +76,7 @@ def test_one_session_finds_its_walking_line_and_the_far_curb():
     assert abs(np.interp(100, knots, rails[1.0]) - EAST) < 1.5
     assert observed[1.0].all() and not observed[-1.0].any()  # the west line was never walked
     ends = model.crossings(p)['v_end'].to_numpy()
-    assert abs(ends[0] + CURB) < 1.0  # the first crossing ends at the west curb
+    assert abs(ends[0] - WEST) < 1.0  # the first crossing turns on the west walking line
 
 
 def test_two_sessions_find_both_walking_lines():

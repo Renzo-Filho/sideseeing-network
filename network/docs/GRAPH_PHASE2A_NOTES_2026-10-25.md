@@ -93,9 +93,38 @@ Fix by fix, the tracks give the same picture. The ladder is never on the street'
 - **Crossings and steps fix the side, not the absolute position.** Without a map, the absolute sideways position comes only from GPS and its bias.
 - **The bias differs between the two sessions.** The fitted pull was 0.6 m for the east session and 3.7 m for the west one, and it also varies along the street. That is the plan's risk "the GPS bias is not systematic".
 
-## 5. Next
+## 5. Crossings tied to the far line (26 October)
 
-1. **Tie each crossing's far end to the far walking line.** The reference shows the turnaround sits on the far sidewalk, so the steps then measure the separation of the two lines. This is a small change to the fit.
-2. **Phase 2b, the video's curb offsets.** The camera sees the curb. Projecting the curb and sidewalk masks gives each run's distance from the curb with no map, which is the plan's "edges" term (section 6). This is the change that can fix an absolute sideways error like the east line's.
+Until now nothing tied a crossing's far end to anything. The return leg only had to match the outward one, so the distance between the two walking lines came from GPS alone. Now each crossing's end lies on the walking line it heads to (`FAR_M`, 1.5 m, robust). That is the modelling assumption the reference supports: the walker turns on the far sidewalk. The measured 1.9 m was not used. Output: `data/west_loop_graph/phase2a_far/`.
+
+`evaluate.py` now also splits the two lines' error into:
+- **the shift they share:** the street's centre, which without a map only GPS can place;
+- **their separation:** which the crossings and steps measure.
+
+| | Shift, median \| p90 | Separation, median | Inside, east \| west | Onto the sidewalk from the curb, east \| west (median) | In the road, east \| west |
+|---|---|---|---|---|---|
+| Raw GPS | 2.1 \| 8.9 m | 8.5 m too close | 36% \| 18% | −1.1 \| −2.3 m | 57% \| 73% |
+| GPS + steps smoother | 2.0 \| 7.4 m | 7.5 m too close | 42% \| 24% | −0.8 \| −2.2 m | 56% \| 70% |
+| Ladder, first fit | 1.0 \| 3.5 m | 3.9 m too close | 35% \| 54% | −0.5 \| +1.4 m | 60% \| 38% |
+| **Ladder, far ends tied** | **1.1 \| 3.1 m** | **1.8 m too close** | 36% \| 48% | **+0.9 \| +2.1 m** | **37% \| 30%** |
+
+The reference's sidewalk middles sit 1.0 m (east) and 1.45 m (west) from the curb, 17.65 m apart.
+
+**What changed:**
+- **The bias is gone.** The east line's median now sits in the middle of its sidewalk, and the west one 0.6 m past its middle, still inside a 2.9 m sidewalk.
+- **The separation error halved.**
+- **The share inside did not move.** What is left is the shared shift, which follows the GPS along the street: half a metre to 3 m, in stretches hundreds of metres long. Both sessions' GPS is off the same way there.
+
+Crossings and steps cannot see that shift, and neither will the video's curb offsets, which measure distances from the walking line, not positions. Without a map, the shared shift is the floor of the street-only method; the orthophoto (the street + aerial regime) is what can remove it.
+
+**Tried and dropped:** ignoring the GPS's across-street position while crossing. GPS chips smooth their output, which may cut a short out-and-back crossing short. The separation improved to 1.3 m too close. But the distance to the sidewalk's middle got slightly worse (east 1.75 → 1.86 m) and the share inside fell on the west (48% → 45%). It was not kept; its outputs are in `phase2a_far_noxgps_experiment/`.
+
+## 6. Next
+
+1. ~~Tie each crossing's far end to the far walking line.~~ Done (section 5).
+2. **Phase 2b, the video's curb offsets.** The camera sees the curb. Projecting the curb and sidewalk masks gives each run's distance from the curb with no map, which is the plan's "edges" term (section 6). It also gives the cells.
+   - **The road's width by steps:** the steps taken while the crosswalk is underfoot (already detected) measure it.
+   - **The separation then follows:** road width plus the two curb offsets, so this should fix the separation that remains.
+   - **It needs desktop-01:** the gravity stream gives the camera's tilt, and the second session's frames are there. The laptop has only D1's masks.
 3. **A GPS pull that varies along the street**, if 1 and 2 leave a bias.
 4. Every change is scored with `evaluate.py` on D1 only. The setting is frozen before D3.

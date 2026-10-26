@@ -7,10 +7,11 @@ by the GPS bearings of the long runs and rounded to the nearest quarter (heading
 crossing heading +v goes from the -v rail to the +v rail, and the crossings alone say which rail every run between them
 is on (assign_rails): no GPS, video or protocol rule. A run whose crossings before and after disagree is flagged.
 
-Under the West Loop protocol a crosswalk is crossed there and back: the walker turns at the far curb and never walks the
-far sidewalk. So a crossing is a leg measured by steps, from the walking line it leaves to its own far end, a port at
-the far curb; and a walking line is placed only by the runs walked on it. The sessions of one street are fitted
-together (fit), sharing the two rails: on Morgan, D1's first session walked the east side and the second the west.
+Under the West Loop protocol a crosswalk is crossed there and back: the walker steps onto the far sidewalk, turns and
+crosses back, without walking along it. So a crossing is a leg measured by steps, from the walking line it leaves to its
+far end, which lies on the far walking line (FAR_M; on Morgan's reference the turnaround is on the far sidewalk, 26
+October): the steps measure how far apart the two walking lines are. The sessions of one street are fitted together
+(fit), sharing the two rails: on Morgan, D1's first session walked the east side and the second the west.
 
 fit solves, by robust least squares, for the two rails and, per session, the step length, the GPS's pull towards the street's middle, where each run starts along the street and where
 each crossing starts across it, so that: the position reached by steps along each run's heading lies on its rail, or
@@ -27,6 +28,7 @@ KNOT_M = 40.0
 GPS_M = 3.0          # GPS error scale
 GPS_LATE_S = 1.0     # a fix shows where the walker was about this long before (phase 0: 0.6-2.0 s)
 JOIN_M = 1.5         # consecutive runs meet within this (turning in place)
+FAR_M = 1.5          # a crossing's turnaround lies on the far walking line within this
 SMOOTH_M = 0.3       # second difference of the street's centre line per knot (it may bend)
 SMOOTH_W_M = 0.05    # second difference of the walking lines' half-separation per knot (it barely changes)
 STEP_PRIOR = (0.78, 0.1)
@@ -188,8 +190,11 @@ class Ladder:
         i = np.arange(self.n_runs - 1)
         u1, v1 = self.position(p, i, self.total[i])
         u2, v2 = self.position(p, i + 1, np.zeros(len(i)))
+        c = self.across
+        u_far, v_far = self.position(p, c, self.total[c])
         return np.concatenate([robust((u - self.fix_u) / GPS_M), robust((v - self.fix_side * p['pull_m'] - self.fix_v) / GPS_M),
                                robust((u1 - u2) / JOIN_M), robust((v1 - v2) / JOIN_M),
+                               robust((v_far - self.rail_v(p, self.sign[c], u_far)) / FAR_M),
                                [(p['step_m'] - STEP_PRIOR[0]) / STEP_PRIOR[1], p['pull_m'] / 10]])
 
     def initial(self):
@@ -200,8 +205,8 @@ class Ladder:
         return np.concatenate([[STEP_PRIOR[0], 3.0], u0, v0])
 
     def crossings(self, p):
-        """One row per crossing of the street: where it starts (u, v), where its steps end (the port at the far curb),
-        its length by steps, and the rail it leaves."""
+        """One row per crossing of the street: where it starts (u, v), where its steps end (the turnaround, on the far
+        walking line), its length by steps, and the rail it leaves."""
         c = self.across
         extent = p['step_m'] * self.total[c]
         return pd.DataFrame(dict(run=self.runs['run'].to_numpy()[c], start_s=self.start[c], u=p['u0'][c],
