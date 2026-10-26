@@ -46,19 +46,19 @@
 <text x="156.0" y="399.0">clocks aligned, steps, stops,</text>
 <text x="156.0" y="416.0">turns, crossing candidates</text>
 </g>
-<g class="doing"><rect x="292.0" y="360" width="244.0" height="68" rx="4"/>
+<g class="done"><rect x="292.0" y="360" width="244.0" height="68" rx="4"/>
 <text x="414.0" y="382.0" class="t">SAM3 masks</text>
 <text x="414.0" y="399.0">37 prompts every second</text>
-<text x="414.0" y="416.0">+ 5 zone prompts (queued)</text>
+<text x="414.0" y="416.0">+ 5 zone prompts on D1–D2</text>
 </g>
-<g class="doing"><rect x="34" y="440" width="244.0" height="68" rx="4"/>
+<g class="done"><rect x="34" y="440" width="244.0" height="68" rx="4"/>
 <text x="156.0" y="462.0" class="t">Redaction and narration</text>
 <text x="156.0" y="479.0">faces and plates removed</text>
 <text x="156.0" y="496.0">Whisper transcript (West Loop)</text>
 </g>
 <g class="todo"><rect x="292.0" y="440" width="244.0" height="68" rx="4"/>
 <text x="414.0" y="470.5" class="t">The same for Brás</text>
-<text x="414.0" y="487.5">needs an agreed GPU run</text>
+<text x="414.0" y="487.5">same prompts, later</text>
 </g>
 <rect class="band" x="570" y="330" width="530" height="209" rx="6"/><text class="bt" x="584" y="350">3 · Human labels and reference</text>
 <g class="done"><rect x="584" y="360" width="244.0" height="85" rx="4"/>

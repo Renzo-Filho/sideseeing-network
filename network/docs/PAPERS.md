@@ -29,7 +29,7 @@ This page states each paper's goal, draws the pipeline from collection to both r
 | | West Loop, Chicago | Brás, São Paulo |
 |---|---|---|
 | Recordings | 8 sessions, 4.9 h, 19–22 October 2026. Morgan (D1); Aberdeen, Madison and Carpenter (D2); Sangamon and Peoria, two collectors at once (D3) | 216 captures in 16 route groups, 9–16 November 2025 |
-| Streams | Video 1920×1080 at 30 fps, GPS, accelerometer, gyroscope, gravity, audio with narration | The same app (MultiSensor): video, GPS, three sensor files, cell and Wi-Fi logs |
+| Streams | Video 1920×1080 at 30 fps, GPS, accelerometer, gyroscope, gravity, audio with narration. The audio is released only as annotated transcripts | The same app (MultiSensor): video, GPS, three sensor files, cell and Wi-Fi logs |
 | Human labels that exist | Spoken code words for sidewalk elements, an evaluation reference only ([PLAN.md](PLAN.md) decision 14) | The audit's GeoPackage, summarised below this table |
 | Human labels to make | Geometry: the city's curbs checked and the back of the sidewalk traced (in progress). In the viewer: each run's walking line, crossing ports and features. Tape and inclinometer spots on Morgan | A sample relabelled blind, to measure agreement with the audit |
 | Machine output (released, marked as such) | SAM3 masks for 37 prompts plus 5 zone prompts, Whisper transcript, motion events | The audit's frame classifier (crosswalk, curb ramp, surface problem, obstacle). The same SAM3 and motion outputs once run |
@@ -118,10 +118,10 @@ To update a status, change the box's class in the SVG to `done`, `doing` or `tod
 | Phase | Work | Gate before moving on | Status, 25 October |
 |---|---|---|---|
 | **D0. Inventory and transfer** | West Loop's 8 sessions are in RustFS. Brás: 649 transfer jobs from the `2025_Auditoria_Calcadas` Drive folder ([preflight](../../task/dataset-organization/TRANSFER_PREFLIGHT.md)) | Every capture is in a manifest with checksums verified at the destination, or has an exclusion reason | West Loop done. Brás 433 of 649 jobs |
-| **D1. The same processing for both** | West Loop: the run on desktop-01 (SAM3, redaction, Whisper, motion), then the zone prompts. Brás: frames, SAM3, redaction and motion with the same code, after estimating GPU time from the captures' durations | Every capture has masks, redacted frames and motion events on one time base, or has an exclusion reason | West Loop: SAM3 on the last D3 session. Brás: not started; the GPU run needs your approval |
+| **D1. The same processing for both** | West Loop: the run on desktop-01 (SAM3, redaction, Whisper, motion), then the zone prompts. Brás: frames, SAM3, redaction and motion with the same code and the same prompts, after estimating GPU time from the captures' durations | Every capture has masks, redacted frames and motion events on one time base, or has an exclusion reason | West Loop done on 25 October: 17,499 frames, 37 prompts, redaction, Whisper, events; zone prompts on D1–D2. Brás: later (same prompts, decided 25 October) |
 | **D2. One label schema** | Map both cities' labels into one schema, at four levels: frame, lot frontage or sidewalk stretch, crossing, and walking run. Each label is present, absent or unknown, and records its provenance (human, or which model). Start from the 2024 taxonomy | Schema and labelling guide frozen | Not started |
-| **D3. Labels** | West Loop: the graph paper's phase 1 (shared), plus crossing elements. Brás: import the audit as it is, and relabel a stratified sample blind (for example 50 crossings and 100 lots) | Agreement and effort reported for each label type | West Loop curbs and tracing in progress. Brás audit exists |
-| **D4. Privacy, ethics, rights** | Check redaction on a sample and count misses. Decide about audio (collectors' voices, bystanders). Confirm consent and ethics approval for both cities. Get written agreement and a licence from the Brás audit's partners: the team that ran it, Alobrás and IME-USP | Written approvals; redaction miss rate reported | Not started |
+| **D3. Labels** | West Loop: the graph paper's phase 1 (shared), plus crossing elements. Then the chosen transcript (`turbo-silence`): corrected, its code words and events tagged on the time base, names and addresses removed. Brás: import the audit as it is, and relabel a stratified sample blind | Agreement and effort reported for each label type | West Loop curbs and tracing in progress. Brás audit exists |
+| **D4. Privacy, ethics, rights** | Check redaction on a sample and count misses. Audio is released only as annotated transcripts (decided 25 October). Confirm consent and ethics approval for both cities. Get written agreement and a licence from the Brás audit's partners: the team that ran it, Alobrás and IME-USP | Written approvals; redaction miss rate reported | Not started. Rights are deferred (25 October) |
 | **D5. Splits, tasks, baselines** | Splits by corridor with spatial buffers: West Loop's test split is D3, Brás splits by route group. The four tasks. Baselines: SAM3 zero-shot, the audit's classifier, the graph paper's GPS baselines | Splits frozen before any baseline is tuned | Not started |
 | **D6. Release and paper** | Data laid out like the workspace, a loader in sideseeing-tools, a datasheet, a fixed evaluator; then the paper | Someone else reproduces one baseline from the release alone | Not started |
 
@@ -134,7 +134,7 @@ Detail in the [plan](GRAPH_GPS_PLAN_2026-10-24.md), section 8.
 | **G0. Data contract** | Clocks, side cue, zones check, D3's streets and phones | A measured alignment bound for every stream used | Done ([results](GRAPH_PHASE0_RESULTS_2026-10-25.md)) |
 | **G1. Reference on D1–D2** | The city's curbs checked and the back of the sidewalk traced on the orthophoto (Renzo, blind). Walking lines and crossing ports labelled in the viewer. Corners double-labelled. Field spots on Morgan | Instructions frozen; disagreement and effort recorded | Morgan in progress (`network/graph/trace.html`) |
 | **G2a. Ladder on Morgan** | Steps, headings, each run's sidewalk from the crossings, a joint fit of both sessions, the baselines | **Geometry gate:** the walking lines lie inside the sidewalk and nearer its centreline than the smoother's; the crossing lengths agree with the curb-to-curb width | Built. Geometry sealed until the trace is exported ([notes](GRAPH_PHASE2A_NOTES_2026-10-25.md)) |
-| **G2b. Cells on Morgan** | Zone prompts; camera height inferred two ways; curb and back lines from projected masks; width and running slope | Width within about 0.3 m of the tape, or the cells stay outlines (plan section 10) | Waiting for the zone-prompt run |
+| **G2b. Cells on Morgan** | Zone prompts; camera height inferred two ways; curb and back lines from projected masks; width and running slope | Width within about 0.3 m of the tape, or the cells stay outlines (plan section 10) | Ready: the zone prompts finished on 25 October. Its geometry stays sealed like 2a's |
 | **G2c. Fieldwork** | The natural-walk block; a checkerboard video for each phone; tape and inclinometer spots | Side identity measured where the protocol rule does not hold | At the next fieldwork |
 | **G3. Corners and alternatives** | D2: Madison's jog, corner cells and ports, alternative groups, route queries within each consistent graph | Alternatives appear where the reference says the decision is hard, not everywhere | Not started |
 | **G4. Held-out test** | Freeze every setting; run once on D3 | Results reported whatever they are | Not started |
@@ -162,20 +162,20 @@ Detail in the [plan](GRAPH_GPS_PLAN_2026-10-24.md), section 8.
   6. Splits and baselines.
   7. The release.
 
-**Recommendation: the graph paper goes first.**
-- Its data and its development reference exist now.
-- The dataset paper waits on the Brás transfer, a GPU run, the schema, and approvals from other people.
-- The dataset paper then takes the graph paper's West Loop reference, split and baselines as they are.
-- Nothing done for the graph paper is lost: the steps the two share (the West Loop reference, the viewer as the labelling tool) serve both.
+**Both papers proceed at the same time** (decided 25 October). The steps they share (the West Loop reference, the viewer as the labelling tool) are done once and serve both.
 
-## 6. Open decisions, for Renzo
+## 6. Decisions
 
-1. **Order and venues.** My recommendation is above.
-2. **Brás rights:** who must approve releasing the Brás videos and audit labels.
-3. **Brás GPU run:** the same prompts as West Loop, or a subset. It would run after the West Loop run ends.
-4. **Brás agreement sample:** its size, and who relabels it.
-5. **Audio:** release the narration audio, or only transcripts.
-6. **Second labeller** for the West Loop corners. This is already open in the plan.
+**Settled (25 October):**
+- **Order:** both papers at the same time.
+- **Brás rights:** deferred; not needed yet.
+- **Brás GPU run:** the same prompts as West Loop, later.
+- **Audio:** released only as transcripts, annotated.
+
+**Open, for Renzo:**
+1. **Brás agreement sample:** its size, and who relabels it.
+2. **Second labeller** for the West Loop corners (also open in the plan).
+3. **Venues:** candidates are in section 1.
 
 Out of scope: the hospital collections and River North.
 
