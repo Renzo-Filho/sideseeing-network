@@ -96,6 +96,19 @@ def test_lines_across_the_street_are_not_curbs():
     assert list(reference.across(gpd.GeoDataFrame(geometry=lines), axis)) == [True, True, False, False, False]
 
 
+def test_the_reference_is_read_across_the_street():
+    from shapely.geometry import MultiLineString
+    from graph import evaluate
+    curbs = MultiLineString([[(0, -7), (40, -7)], [(60, -7), (100, -7)], [(0, 7), (40, 7)], [(60, 7), (100, 7)]])
+    backs = MultiLineString([[(0, -10), (100, -10)], [(0, 10.5), (100, 10.5)]])
+    prof = evaluate.profile(curbs, backs, np.arange(0.0, 100.0))
+    assert list(prof.loc[20, ['curb_w', 'curb_e', 'back_w', 'back_e']]) == [-7, 7, -10, 10.5]
+    assert prof.loc[50, ['curb_w', 'curb_e']].isna().all()  # a cross street: no road edges to read
+    curb, back, centre = evaluate.sidewalk(prof, [20, 30, 50], 1.0)
+    scored = evaluate.score(np.array([8.75, 5.0, 9.0]), curb, back, centre, 1.0)
+    assert scored['n'] == 2 and scored['inside'] == 0.5 and scored['in_road'] == 0.5
+
+
 def test_steps_are_peaks_of_the_shaking():
     rate = 50
     t = np.arange(0, 20, 1 / rate)

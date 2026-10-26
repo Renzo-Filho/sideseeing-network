@@ -7,6 +7,7 @@ The city's sidewalk polygons (77cn-6x4c) are not used: on the imagery they cover
 """
 import argparse
 import json
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -15,6 +16,8 @@ import numpy as np
 from shapely.geometry import LineString
 
 CURBS_URL = 'https://data.cityofchicago.org/download/5gv8-ktcg/application%2Fzip'  # December 2010
+# Cook County's current parcels. Their terms forbid redistribution: they stay in data/, for evaluation only.
+PARCELS_URL = 'https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44/query'
 MORGAN = LineString([(-87.65185, 41.8752), (-87.65215, 41.8917)])  # its axis, Tilden to Grand (lon, lat)
 UTM = 32616
 
@@ -37,6 +40,41 @@ def across(lines, axis, min_deg=60.0, stub_m=4.0):
         return abs((turn + 90) % 180 - 90)
     return lines.geometry.apply(lambda line: len(line.coords) == 2 and angle(line) > min_deg
                                 and (line.intersects(axis) or line.length < stub_m))
+
+
+def fetch_parcels(axis, cache, within_m=60.0, slices=10):
+    """Cook County's parcels within within_m of the axis (projected), cached as GeoJSON. The service returns at most
+    2000 features a request, so the box is fetched in slices along the street."""
+    if not cache.exists():
+        west, south, east, north = gpd.GeoSeries([axis.buffer(within_m)], crs=UTM).to_crs(4326).total_bounds
+        parts = []
+        for a, b in zip(np.linspace(south, north, slices + 1)[:-1], np.linspace(south, north, slices + 1)[1:]):
+            query = urllib.parse.urlencode(dict(geometry=f'{west},{a},{east},{b}', geometryType='esriGeometryEnvelope',
+                                                inSR=4326, spatialRel='esriSpatialRelIntersects', outFields='Pin10',
+                                                outSR=4326, f='geojson'))
+            with urllib.request.urlopen(f'{PARCELS_URL}?{query}', timeout=60) as response:
+                found = json.load(response)['features']
+            assert len(found) < 2000, 'a slice hit the service limit: use more slices'
+            parts += found
+        parcels = gpd.GeoDataFrame.from_features(parts, crs=4326)
+        parcels = parcels[~parcels.geometry.to_wkb().duplicated()]  # parcels on two slices
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        parcels.to_file(cache, driver='GeoJSON')
+    return gpd.read_file(cache).to_crs(UTM)
+
+
+def backs(parcels, axis, within_m=25.0):
+    """The back of the sidewalk: the edges of the blocks (the parcels merged, slivers between them closed) within
+    within_m of the axis. In Chicago the public sidewalk runs from the curb to the property line."""
+    blocks = parcels.geometry.buffer(0.5).union_all().buffer(-0.5)
+    lines = gpd.GeoSeries([blocks.boundary.intersection(axis.buffer(within_m))], crs=UTM).explode(index_parts=False)
+    lines = lines[(lines.geom_type == 'LineString') & (lines.length > 1.0)].reset_index(drop=True)
+    (x0, y0), (x1, y1) = axis.coords[0], axis.coords[-1]
+    def right(line):
+        x, y = line.interpolate(0.5, normalized=True).coords[0]
+        return (x1 - x0) * (y - y0) - (y1 - y0) * (x - x0) < 0
+    side = np.where([right(line) for line in lines], 'E', 'W')  # right of the axis (north) is east
+    return gpd.GeoDataFrame(dict(kind='back', side=side, source='Cook County parcels'), geometry=lines, crs=UTM)
 
 
 def main():
@@ -64,6 +102,12 @@ def main():
         '// City of Chicago curb lines (5gv8-ktcg, December 2010) along Morgan St, for network/graph/trace.html\n'
         f'window.CITY_CURBS = {morgan.to_json()};\n')
     print(f'{len(morgan)} curb lines along Morgan -> {args.out}')
+
+    parcels = fetch_parcels(axis, args.out / 'morgan_parcels.geojson')
+    back = backs(parcels, axis).to_crs(4326)
+    back.to_file(args.out / 'morgan_back.geojson', driver='GeoJSON')
+    print(f'{len(parcels)} parcels -> {len(back)} back-of-sidewalk lines '
+          f'({(back.side == "E").sum()} east, {(back.side == "W").sum()} west)')
 
 
 if __name__ == '__main__':
