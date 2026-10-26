@@ -138,6 +138,7 @@ const busy = () => selectedKind || map.pm.globalEditModeEnabled() || map.pm.glob
   const id = String(feature.properties.city_id);
   const layer = L.geoJSON(feature, { pmIgnore: true, style: { weight: 4, opacity: .95 } }).getLayers()[0];
   curbs.set(id, { layer, status: 'unchecked' });
+  setCurb(id, 'unchecked');
   layer.on('click', event => {
     if (busy()) return;
     L.DomEvent.stopPropagation(event);

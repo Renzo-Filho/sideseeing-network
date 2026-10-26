@@ -11,6 +11,7 @@ import urllib.request
 from pathlib import Path
 
 import geopandas as gpd
+import numpy as np
 from shapely.geometry import LineString
 
 CURBS_URL = 'https://data.cityofchicago.org/download/5gv8-ktcg/application%2Fzip'  # December 2010
@@ -25,6 +26,17 @@ def along(curbs, axis, within_m=20.0, min_share=0.3):
     return near[near.geometry.intersection(zone).length / near.length >= min_share]
 
 
+def across(lines, axis, min_deg=60.0):
+    """Straight two-point lines more than min_deg from the axis. Along Morgan these close the curb pieces at the edges
+    of the expressway bridge and the railroad viaduct: structure edges, not curbs. Corner curves have more points."""
+    (x0, y0), (x1, y1) = axis.coords[0], axis.coords[-1]
+    def angle(line):
+        (a, b), (c, d) = line.coords[0], line.coords[-1]
+        turn = np.degrees(np.arctan2(d - b, c - a) - np.arctan2(y1 - y0, x1 - x0))
+        return abs((turn + 90) % 180 - 90)
+    return lines.geometry.apply(lambda line: len(line.coords) == 2 and angle(line) > min_deg)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--out', type=Path, required=True)
@@ -37,7 +49,8 @@ def main():
     axis = gpd.GeoSeries([MORGAN], crs=4326).to_crs(UTM)[0]
     box = tuple(gpd.GeoSeries([axis.buffer(200)], crs=UTM).to_crs(3435).total_bounds)  # the file is in ft (3435)
     curbs = gpd.read_file(f'zip://{args.cache.resolve()}!Curbs.shp', bbox=box).to_crs(UTM)
-    morgan = along(curbs, axis)[['CURBS_', 'geometry']].rename(columns={'CURBS_': 'city_id'}).to_crs(4326)
+    near = along(curbs, axis)
+    morgan = near[~across(near, axis)][['CURBS_', 'geometry']].rename(columns={'CURBS_': 'city_id'}).to_crs(4326)
 
     args.out.mkdir(parents=True, exist_ok=True)
     morgan.to_file(args.out / 'morgan_city_curbs.geojson', driver='GeoJSON')

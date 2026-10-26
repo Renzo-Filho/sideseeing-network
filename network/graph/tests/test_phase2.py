@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from shapely.geometry import LineString
 
-from graph import baselines, ladder, steps
+from graph import baselines, ladder, reference, steps
 
 SPEED, STEP, PULL = 1.3, 0.75, 3.5   # m/s, m per step, the GPS's pull towards the street's middle (m)
 EAST, WEST, CURB = 8.0, -8.0, 6.0    # walking lines and curbs (|v|, metres)
@@ -83,6 +83,15 @@ def test_two_sessions_find_both_walking_lines():
     knots, rails, ps, result, observed = ladder.fit([_ladder(_north_on_east()), _ladder(_south_on_west())])
     assert result.success
     assert abs(np.interp(100, knots, rails[1.0]) - EAST) < 1.0 and abs(np.interp(100, knots, rails[-1.0]) - WEST) < 1.0
+
+
+def test_lines_across_the_street_are_not_curbs():
+    import geopandas as gpd
+    axis = LineString([(0, 0), (0, 300)])
+    lines = gpd.GeoSeries([LineString([(-7, 50), (7, 51)]),                          # across, like a bridge edge
+                           LineString([(7, 0), (7, 100)]),                            # along: a curb
+                           LineString([(7, 100), (8, 105), (12, 107), (20, 108)])])   # a corner curve
+    assert list(reference.across(gpd.GeoDataFrame(geometry=lines), axis)) == [True, False, False]
 
 
 def test_steps_are_peaks_of_the_shaking():
