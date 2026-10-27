@@ -83,8 +83,9 @@ def side_summary(placed, stepped):
                 long_side_agrees_with_protocol=float(agrees[long].mean()), steps=len(stepped))
 
 
-def fit(workspace, rotation, prepared, out, sessions):
-    """Each session alone (what one walk can do) and all together (the street), with the baselines."""
+def fit(workspace, rotation, prepared, out, sessions, separations=None):
+    """Each session alone (what one walk can do) and all together (the street), with the baselines. separations:
+    the walking lines' separation measured along the street (phase 2b), for the joint fit."""
     import geopandas as gpd
     from sideseeing_tools import SideSeeingWorkspace
 
@@ -92,7 +93,7 @@ def fit(workspace, rotation, prepared, out, sessions):
     frame = ladder.Frame(gpd.GeoSeries([reference.MORGAN], crs=4326).to_crs(reference.UTM)[0])
     parts = {session: session_ladder(ws, windows, prepared, session, frame) for session in sessions}
     models = [part[-1] for part in parts.values()]
-    knots, rails, together, result, observed = ladder.fit(models)
+    knots, rails, together, result, observed = ladder.fit(models, separations)
     summary = dict(together=dict(solved=bool(result.success), evaluations=int(result.nfev)))
     tracks = []
 

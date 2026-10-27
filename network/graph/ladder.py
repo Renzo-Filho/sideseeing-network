@@ -18,7 +18,8 @@ each crossing starts across it, so that: the position reached by steps along eac
 for a crossing crosses the street; the GPS fixes match it (with the pull on the sidewalks); and consecutive runs meet.
 Both rails belong to one street: they are a centre line, which may bend, plus and minus a half-separation, which barely
 changes (both piecewise linear in u, KNOT_M apart). So a stretch of GPS on the wrong side of the street cannot drag one
-walking line across the other.
+walking line across the other. Where the video has measured it (phase 2b), the separation is also the road's width by
+steps plus each walking line's distance from its curb (EDGE_M).
 """
 import numpy as np
 import pandas as pd
@@ -29,6 +30,7 @@ GPS_M = 3.0          # GPS error scale
 GPS_LATE_S = 1.0     # a fix shows where the walker was about this long before (phase 0: 0.6-2.0 s)
 JOIN_M = 1.5         # consecutive runs meet within this (turning in place)
 FAR_M = 1.5          # a crossing's turnaround lies on the far walking line within this
+EDGE_M = 0.6         # the separation measured by the video and the steps on the crosswalk, within this
 SMOOTH_M = 0.3       # second difference of the street's centre line per knot (it may bend)
 SMOOTH_W_M = 0.05    # second difference of the walking lines' half-separation per knot (it barely changes)
 STEP_PRIOR = (0.78, 0.1)
@@ -214,9 +216,10 @@ class Ladder:
                                  by_steps_m=extent, leaves=-self.sign[c]))
 
 
-def fit(sessions):
-    """Fits the Ladders of one street together. Returns (knots, rails, [p per session], result, observed): rails is
-    {+1: v, -1: v} at the knots, and observed marks, per rail, the knots near fixes taken on it."""
+def fit(sessions, separations=None):
+    """Fits the Ladders of one street together. separations: optional table of u and separation_m, the distance
+    between the walking lines measured there (phase 2b). Returns (knots, rails, [p per session], result, observed):
+    rails is {+1: v, -1: v} at the knots, and observed marks, per rail, the knots near fixes taken on it."""
     lo, hi = min(l.u_range[0] for l in sessions), max(l.u_range[1] for l in sessions)
     knots = np.linspace(lo, hi, int(np.ceil((hi - lo) / KNOT_M)) + 1)
     k = len(knots)
@@ -234,10 +237,14 @@ def fit(sessions):
         rails = {1.0: centre + half, -1.0: centre - half}
         return rails, [l.unpack(theta[sl], rails, knots) for l, sl in zip(sessions, slices)]
 
+    measured_u, measured = (np.empty(0), np.empty(0)) if separations is None else \
+        (separations['u'].to_numpy(float), separations['separation_m'].to_numpy(float))
+
     def residuals(theta):
         rails, ps = unpack(theta)
+        apart = 2 * np.interp(measured_u, knots, theta[k:2 * k])
         return np.concatenate([np.diff(theta[:k], 2) / SMOOTH_M, np.diff(theta[k:2 * k], 2) / SMOOTH_W_M,
-                               *(l.residuals(p) for l, p in zip(sessions, ps))])
+                               robust((apart - measured) / EDGE_M), *(l.residuals(p) for l, p in zip(sessions, ps))])
 
     centre, half = (level[1.0] + level[-1.0]) / 2, (level[1.0] - level[-1.0]) / 2
     x0 = np.concatenate([np.full(k, centre), np.full(k, half), *(l.initial() for l in sessions)])

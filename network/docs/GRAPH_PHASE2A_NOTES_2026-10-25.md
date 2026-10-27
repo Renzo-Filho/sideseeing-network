@@ -122,7 +122,7 @@ Crossings and steps cannot see that shift, and neither will the video's curb off
 ## 6. Next
 
 1. ~~Tie each crossing's far end to the far walking line.~~ Done (section 5).
-2. **Phase 2b, the video's curb offsets.** The camera sees the curb. Projecting the curb and sidewalk masks gives each run's distance from the curb with no map, which is the plan's "edges" term (section 6). It also gives the cells.
+2. **Phase 2b, the video's curb offsets.** First pass done on 27 October: [phase 2b notes](GRAPH_PHASE2B_NOTES_2026-10-27.md). The camera sees the curb. Projecting the curb and sidewalk masks gives each run's distance from the curb with no map, which is the plan's "edges" term (section 6). It also gives the cells.
    - **The road's width by steps:** the steps taken while the crosswalk is underfoot (already detected) measure it.
    - **The separation then follows:** road width plus the two curb offsets, so this should fix the separation that remains.
    - **It needs desktop-01:** the gravity stream gives the camera's tilt, and the second session's frames are there. The laptop has only D1's masks.
