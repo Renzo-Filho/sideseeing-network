@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morgan walking lines</title>
+<!-- Template for graph/resultmap.py, which fills LAYERS. -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  html, body { margin: 0; height: 100%; font: 13px/1.4 system-ui, sans-serif; background: #111; }
+  #map { position: absolute; inset: 0; }
+  .leaflet-control-layers { max-width: 360px; }
+  .swatch { display: inline-block; width: 18px; height: 4px; margin-right: 6px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+const LAYERS = /*LAYERS*/null;
+const ORTHO = 'https://img.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage';
+const map = L.map('map', { maxZoom: 23, preferCanvas: true }).setView([41.8805, -87.6519], 17);
+const Ortho = L.TileLayer.extend({
+  getTileUrl(coords) {
+    const bounds = this._tileCoordsToBounds(coords);
+    const sw = L.CRS.EPSG3857.project(bounds.getSouthWest()), ne = L.CRS.EPSG3857.project(bounds.getNorthEast());
+    return `${ORTHO}?bbox=${sw.x},${sw.y},${ne.x},${ne.y}&bboxSR=3857&imageSR=3857&size=256,256&format=jpg&f=image`;
+  },
+});
+new Ortho('', { maxZoom: 23, maxNativeZoom: 21, attribution: 'Cook County 2025 orthophoto' }).addTo(map);
+L.control.scale({ imperial: false }).addTo(map);
+
+const overlays = {};
+const hiddenAtStart = ['Walking lines: phase2a', 'Walking lines: phase2a_far', 'Corrected track'];
+for (const item of LAYERS) {
+  if (!item.data) continue;
+  const s = item.style;
+  const layer = L.geoJSON(item.data, item.kind === 'points'
+    ? { pointToLayer: (_, at) => L.circleMarker(at, { radius: s.radius, color: s.color, weight: 0, fillOpacity: .85 }) }
+    : { style: { color: s.color, weight: s.weight, opacity: s.opacity ?? .95 } });
+  const label = `<span class="swatch" style="background:${s.color}"></span>${item.name}`;
+  overlays[label] = layer;
+  if (!hiddenAtStart.some(prefix => item.name.startsWith(prefix))) layer.addTo(map);
+}
+L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+</script>
+</body>
+</html>
