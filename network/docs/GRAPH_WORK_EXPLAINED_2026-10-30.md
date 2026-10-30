@@ -27,21 +27,20 @@ All of this is on one street so far, **Morgan Street**: set D1, two recordings o
 3. **The walking lines (phase 2a).** For each sidewalk, the line the walker followed, worked out from steps, turns, crossings and GPS together (section 3 explains how).
 4. **Crossings tied to the far side (26 October).** Every crossing ends on the other sidewalk, so its last step marks where the far walking line is. This fixed most of the error in how far apart the two lines were.
 5. **Measurements from the video (phase 2b, 27 October).** The camera sees the curb. From each frame we measure:
-   - **How far the walker is from the curb,** by projecting SAM3's curb outline onto the ground. This needs the camera's tilt (from the phone's gravity sensor) and its height. The height (about 1.45 m) was worked out by comparing how fast the ground slides past the camera with the distance walked by steps.
-   - **How wide the road is:** the steps taken while there is no sidewalk just ahead, i.e. while the walker is on the road.
+   - **How far the walker is from the curb,** by projecting SAM3's curb outline onto the ground. This needs the camera's tilt (from the phone's gravity sensor) and its height. The height was first estimated from how fast the ground slides past the camera (about 1.45 m). Renzo then measured it on the vest: **1.30 m**, which is now used, and the video's sidewalk widths match the aerial photo.
+   - **How wide the road is:** the steps taken from the first moment there is no sidewalk just ahead to the last, i.e. while the walker is on the road.
 
    Together these give how far apart the two walking lines should be: road width + each line's distance from its curb. Adding this halved the remaining error.
 6. **A map of the results** (`data/west_loop_graph/map.html`, section 3).
 
 **How good is it now?**
 - The corrected lines are never on the wrong half of the street. Raw GPS is there 15–29% of the time.
-- The lines are inside the sidewalk 41% of the way on the east side and 62% on the west. Raw GPS manages 18–36%.
+- The lines are inside the sidewalk 42% of the way on the east side and 67% on the west. Raw GPS manages 18–36%.
+- The two lines are 0.6 m closer together than the reference's sidewalk middles; at first they were 3.9 m closer.
 - What's left is mostly a shift that both lines share over stretches of a few hundred metres, where GPS was off the same way in both recordings. Nothing in the recordings themselves can see that kind of error. The aerial photo, a later phase, can fix it.
 
-**Two things still to fix:**
-- **The camera height and the road width by steps are each about 10% off,** in opposite directions. To check:
-  - the height, against the tactile paving at curb ramps (610 mm deep by rule), or a tape measure of the vest;
-  - the road width, from the far curb's distance ahead.
+**Still to fix:**
+- **The camera's lens:** the checkerboard video will measure it exactly. Each road width is also only good to about 1.5 m, because there is one frame a second at each end.
 - **The reference itself is off by about half a metre in places.**
   - Some city curb lines sit 0.6 m from the curbs visible on the photo.
   - On the east side, the parcel line falls in the middle of the paving.
@@ -72,7 +71,8 @@ A note on alignment: the city and county data use one coordinate system (NAD83),
 |---|---|---|---|
 | **Walking lines: phase2a** (purple) | The line walked along each sidewalk, first version | The model in the box below, with steps, turns, crossings and GPS | Superseded by the blue lines; kept on the map for comparison |
 | **Walking lines: phase2a_far** (orange) | Second version | Same, plus: each crossing's last step must land on the far sidewalk's line | Superseded; for comparison |
-| **Walking lines: phase2b** (blue) | Current best version | Same, plus: the two lines must be "road width + both curb distances" apart, measured from the video and steps | **The backbone of the graph.** Each sidewalk's walking line is the first, rough version of that sidewalk's edge, and the line the sidewalk polygon is built around |
+| **Walking lines: phase2b** (green) | Third version | Same, plus: the two lines must be "road width + both curb distances" apart, measured from the video and steps, with the estimated camera height | Superseded; for comparison |
+| **Walking lines: phase2b_h130** (blue) | Current best version | As phase2b, with the measured camera height (1.30 m) and the road width over the whole time on the road | **The backbone of the graph.** Each sidewalk's walking line is the first, rough version of that sidewalk's edge, and the line the sidewalk polygon is built around |
 | **Corrected track** (light blue, off at start) | Where the model says the walker was at each GPS moment | The model's position at each GPS time: moving along a blue line by steps, or straight across at crossings | The corrected GPS. Every video frame, detection and spoken comment is placed on the map through it |
 | **Crossings by steps** (cyan) | Each trip across Morgan: 97 in all | From where the walker left their line, across by steps × step length, to where they turned around | The future **crossing edges**, and where they meet the sidewalk, the **ports** (passable openings, e.g. a curb ramp) of the corner polygons |
 | **Curb where the video puts it** (red dots) | The curb, as seen by the camera | For each frame along the street: the walker's measured distance from the curb, drawn that far from the blue line towards the road | The first piece of a **sidewalk polygon**: its road-side boundary. Placed relative to the blue line, so it moves with it |
@@ -158,6 +158,6 @@ Each element of the graph keeps a list of **the observations that support or con
 |---|---|
 | Data checked, clocks lined up | **First (rough) graph on Morgan:** nodes, walking lines as edges, crossings |
 | Reference for Morgan (needs a clean-up) | **Sidewalk polygons** from the curb and building-side edges, and edges as their centrelines |
-| Walking lines on Morgan, three versions, scored | Fix the camera height and road width calibration |
+| Walking lines on Morgan, four versions, scored; camera height measured | Lens calibration (checkerboard); the reference clean-up |
 | Curb distance and road width from video | Corners and alternatives on the second street set (D2), then the one-time test on D3 |
 | Map of all of it | Compare with Tile2Net and OpenStreetMap; write the paper |

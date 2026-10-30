@@ -85,3 +85,38 @@ Before the gate is read as final, the reference needs one consistent pass:
 2. **The reference:** one consistent pass for curbs and the back (section 5). Which source to use is Renzo's decision.
 3. **The cells:** strips from the curb line and the paved edge along each walking line.
 4. **Then** phase 3 on D2, and freeze the settings before D3.
+
+## 7. Measured height and the road's full span (30 October)
+
+**The height.** Renzo measured the vest's camera height on himself: **1.30 m**. Other collectors may differ; this is the proxy until their measurements come in. `phase2b fit --height-m 1.30` rescales every ground distance by it, since all of them scale with the height.
+- The ground-motion estimate (1.43–1.49 m) was about 12% high.
+- At 1.30 m, the paved sidewalk under the walker reads 2.17 m (east) and 2.30 m (west). The orthophoto shows about 2.2 and 2.3 m. The camera scale is now right.
+- The walker's distance from the curb becomes 1.28 m (east) and 1.51 m (west).
+
+**The road's width.** With the height right, the short road width no longer hid behind it: the separation error went from 0.92 to 1.19 m. On about one crossing in five, the sidewalk mask flickers on mid-road. Keeping only the longest unbroken stretch made those crossings short. Taking the whole span, from the first frame on the road to the last, fixed the bias:
+
+| Road width by steps against the reference (53 crossings) | Median | Error, median | Error, quartiles |
+|---|---|---|---|
+| Longest stretch (before) | 14.32 m | −0.73 m | −2.33 / +0.79 m |
+| Whole span (now) | 14.52 m | +0.24 m | −1.14 / +1.72 m |
+
+Each crossing is only good to about 1.5 m, because there is one frame a second at each end. The fit relies on their number.
+
+**Tried and dropped:** reading the road's width straight ahead in the video, as the far curb's distance plus the distance walked. Only 42 crossings saw both curbs, and the errors spread from −3.6 to +0.6 m.
+
+**Results** (`data/west_loop_graph/phase2b_h130/`):
+
+| | Step 1 | Phase 2b (27 Oct) | **Phase 2b, 1.30 m and whole span** |
+|---|---|---|---|
+| Separation, median error | 1.77 m too close | 0.92 m too close | **0.61 m too close** |
+| Shared shift, \|median\| \| p90 | 1.10 \| 3.09 m | 0.94 \| 3.13 m | 0.94 \| 3.12 m |
+| Inside the sidewalk, east \| west | 36% \| 48% | 41% \| 62% | **42% \| 67%** |
+| Median distance to its middle, east \| west | 1.75 \| 1.84 m | 1.65 \| 1.51 m | 1.72 \| **1.40 m** |
+| In the road, east \| west | 37% \| 30% | 32% \| 21% | 31% \| **14%** |
+| On the street's other half | 0% | 0% | 0% |
+
+What limits the walking lines now:
+- **The shared shift**, which only the aerial photo can remove.
+- **The reference's own half-metre problems** (section 5). They matter most on the east side.
+
+Section 4's calibration problem is resolved for the height. The road width is now unbiased on average but loose for each crossing; the checkerboard video will refine the lens.

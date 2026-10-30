@@ -18,7 +18,8 @@ from shapely.geometry import LineString, MultiPoint
 
 from graph import evaluate, ladder, reference
 
-COLOURS = {'phase2a': '#a855f7', 'phase2a_far': '#f59e0b', 'phase2b': '#2563eb', 'gps': '#e5e7eb',
+FIT_COLOURS = ('#a855f7', '#f59e0b', '#10b981', '#2563eb')  # in the order of --fits; the last (best) is blue
+COLOURS = {'gps': '#e5e7eb',
            'track': '#60a5fa', 'video_curb': '#ef4444', 'crossing': '#22d3ee', 'curb': '#22c55e', 'back': '#f472b6'}
 
 
@@ -55,14 +56,14 @@ def build(reference_dir, fits, out):
     layers.append(layer('GPS fixes (both sessions)', [MultiPoint(to_lonlat(frame, gps['gps_u'], gps['gps_v'], shift))],
                         dict(color=COLOURS['gps'], radius=1.5), kind='points'))
 
-    for fit in fits:
+    for n, fit in enumerate(fits):
         lines = pd.read_csv(fit / 'walking_lines.csv')
         drawn = []
         for side, key in ((1.0, 'east'), (-1.0, 'west')):
             for a, b in runs_of(lines[f'observed_{key}'].to_numpy(bool)):
                 if b - a >= 2:
                     drawn.append(LineString(to_lonlat(frame, lines['u'][a:b], lines[f'ladder_{key}'][a:b], shift)))
-        layers.append(layer(f'Walking lines: {fit.name}', drawn, dict(color=COLOURS.get(fit.name, '#000'), weight=3)))
+        layers.append(layer(f'Walking lines: {fit.name}', drawn, dict(color=FIT_COLOURS[n - len(fits)], weight=3)))
 
     lines = pd.read_csv(last / 'walking_lines.csv')
     track = [LineString(to_lonlat(frame, t['ladder_u'], t['ladder_v'], shift)) for t in map(pd.read_csv, tracks)]

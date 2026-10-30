@@ -3,7 +3,7 @@
     python -m graph.phase2b measure --raw RAW --workspace W --rotation rotation_windows.csv --prepared PREP \
         --fit FIT --out OUT --sessions ...
     python -m graph.phase2b fit --workspace W --rotation rotation_windows.csv --prepared PREP --fit FIT \
-        --measured OUT --out FIT2 --sessions ...
+        --measured OUT --out FIT2 --sessions ... [--height-m 1.30]
 
 `measure` needs the video and the masks (desktop-01). Per session it writes:
 - heights_<session>.csv: the camera's height from the ground's motion (ground.ground_motion) in the middle 20 s of
@@ -19,7 +19,9 @@
 - each walking line's distance from its curb: the curb on the road side of every frame along the street, placed at
   the frame's u on FIT's track (curb_offsets);
 - the separation at each leg: its road width plus the two walking lines' distances from their curbs within NEAR_U_M.
-It writes FIT2 as phase2 fit does, plus widths.csv, offsets.csv and separations.csv.
+--height-m replaces the inferred camera height with a measured one: every distance on the ground scales with it. The
+ground-motion height came out about 12% high against Renzo's tape measure of the vest (1.30 m, 30 October). It writes
+FIT2 as phase2 fit does, plus widths.csv, offsets.csv and separations.csv.
 """
 import argparse
 import json
@@ -29,7 +31,7 @@ import numpy as np
 import pandas as pd
 
 from graph import contract, ground, phase2, zones
-from graph.runs import STRAIGHT_GAP_S, UNDERFOOT
+from graph.runs import UNDERFOOT
 
 WINDOW_S, EVERY = 20.0, 3       # height: seconds read from each long run, and every third frame (0.1 s apart)
 MIN_RHO, MIN_WALKED_M = 0.6, 0.05
@@ -123,19 +125,18 @@ def measure(raw, workspace, rotation, prepared, fit, out, sessions):
 def road_widths(runs, crossings, edges, steps, step_m):
     """One row per leg across the street: its u and the road's width by steps, from about half a frame before its first
     frame with road just ahead (ON_ROAD) to half a frame after its last. The ground just ahead is about 2 m away, the
-    same at both curbs, so the look-ahead cancels."""
+    same at both curbs, so the look-ahead cancels. The whole span is used: the sidewalk mask flickers on mid-road in
+    about one leg in five, and keeping only the longest unbroken stretch made the widths 0.7 m short (median, Morgan).
+    One frame a second leaves each leg within about 1.5 m; the fit relies on their number."""
     count = lambda t: np.interp(t, steps, np.arange(len(steps)))
     on_road = np.sort(edges.loc[edges['sidewalk_underfoot'] < ON_ROAD, 't'].to_numpy())
     rows = []
     for leg in crossings.itertuples():
         run = runs[runs['run'] == leg.run].iloc[0]
         inside = on_road[(on_road >= run['start_s']) & (on_road <= run['end_s'])]
-        if len(inside) < 2:
-            continue
-        stretch = max(np.split(inside, np.flatnonzero(np.diff(inside) > STRAIGHT_GAP_S) + 1), key=len)
-        if len(stretch) >= 2:
-            rows.append(dict(run=leg.run, u=leg.u, frames=len(stretch),
-                             width_m=step_m * (count(stretch[-1] + 0.5) - count(stretch[0] - 0.5))))
+        if len(inside) >= 2:
+            rows.append(dict(run=leg.run, u=leg.u, frames=len(inside),
+                             width_m=step_m * (count(inside[-1] + 0.5) - count(inside[0] - 0.5))))
     return pd.DataFrame(rows)
 
 
@@ -168,13 +169,16 @@ def separations(widths, offsets):
     return pd.DataFrame(rows)
 
 
-def fit(workspace, rotation, prepared, before, measured, out, sessions):
+def fit(workspace, rotation, prepared, before, measured, out, sessions, height_m=None):
     summary = json.loads((before / 'summary.json').read_text())
     widths, offsets = [], []
     for session in sessions:
         runs, crossings = pd.read_csv(before / f'runs_{session}.csv'), pd.read_csv(before / f'crossings_{session}.csv')
         steps = np.sort(pd.read_csv(prepared / f'steps_{session}.csv')['t'].to_numpy())
         edges = pd.read_csv(measured / f'edges_{session}.csv')
+        if height_m:
+            ground = [c for c in edges if c.endswith('_m')]  # the edge offsets and height_m itself
+            edges[ground] = edges[ground] * (height_m / edges['height_m'].to_numpy()[:, None])
         widths.append(road_widths(runs, crossings, edges, steps, summary[session]['step_m']).assign(session=session))
         offsets.append(curb_offsets(edges, runs, pd.read_csv(before / f'track_{session}.csv')).assign(session=session))
     widths, offsets = pd.concat(widths, ignore_index=True), pd.concat(offsets, ignore_index=True)
@@ -197,6 +201,7 @@ def main():
     parser.add_argument('--prepared', type=Path, required=True)
     parser.add_argument('--fit', type=Path, required=True)
     parser.add_argument('--measured', type=Path)
+    parser.add_argument('--height-m', type=float, help='measured camera height, in place of the inferred one')
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--sessions', nargs='+', required=True)
     args = parser.parse_args()
@@ -204,7 +209,8 @@ def main():
     if args.step == 'measure':
         measure(args.raw, args.workspace, args.rotation, args.prepared, args.fit, args.out, args.sessions)
     else:
-        fit(args.workspace, args.rotation, args.prepared, args.fit, args.measured, args.out, args.sessions)
+        fit(args.workspace, args.rotation, args.prepared, args.fit, args.measured, args.out, args.sessions,
+            args.height_m)
 
 
 if __name__ == '__main__':

@@ -40,3 +40,4 @@ def test_a_measured_separation_holds_the_walking_lines_apart():
     apart = pd.DataFrame(dict(u=[50.0, 100.0, 150.0], separation_m=[18.0, 18.0, 18.0]))
     knots, rails, *_ = ladder.fit(sessions, apart)
     assert abs(np.interp(100, knots, rails[1.0] - rails[-1.0]) - 18.0) < 0.5
+

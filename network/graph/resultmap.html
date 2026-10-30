@@ -31,7 +31,8 @@ new Ortho('', { maxZoom: 23, maxNativeZoom: 21, attribution: 'Cook County 2025 o
 L.control.scale({ imperial: false }).addTo(map);
 
 const overlays = {};
-const hiddenAtStart = ['Walking lines: phase2a', 'Walking lines: phase2a_far', 'Corrected track'];
+const fits = LAYERS.filter(item => item.name.startsWith('Walking lines: '));
+const hiddenAtStart = fits.slice(0, -1).map(item => item.name);  // only the last fit shown
 for (const item of LAYERS) {
   if (!item.data) continue;
   const s = item.style;
@@ -40,7 +41,7 @@ for (const item of LAYERS) {
     : { style: { color: s.color, weight: s.weight, opacity: s.opacity ?? .95 } });
   const label = `<span class="swatch" style="background:${s.color}"></span>${item.name}`;
   overlays[label] = layer;
-  if (!hiddenAtStart.some(prefix => item.name.startsWith(prefix))) layer.addTo(map);
+  if (!hiddenAtStart.includes(item.name) && !item.name.startsWith('Corrected track')) layer.addTo(map);
 }
 L.control.layers(null, overlays, { collapsed: false }).addTo(map);
 </script>
