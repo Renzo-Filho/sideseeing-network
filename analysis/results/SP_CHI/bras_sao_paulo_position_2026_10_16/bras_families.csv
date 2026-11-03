@@ -1,0 +1,29 @@
+family,scaling,bras_mean_gap,rank_most_unusual,districts
+U6 mix,all_relative,6.2,1,96
+U6,all_relative,5.46,3,96
+U1,all_relative,4.585,4,94
+B1,all_relative,5.394,6,96
+U4,all_relative,5.203,6,96
+U6 intensity,all_relative,4.721,6,96
+U2,all_relative,2.468,27,96
+M6,all_relative,2.965,27,96
+M4,all_relative,1.863,36,96
+M7,all_relative,2.505,57,96
+M1,all_relative,2.369,65,96
+M3,all_relative,7.4,70,96
+BV,all_relative,1.67,78,96
+U3,all_relative,1.285,84,96
+U6 mix,hybrid,6.2,1,96
+U6,hybrid,5.46,3,96
+U1,hybrid,4.585,4,94
+B1,hybrid,5.296,6,96
+U4,hybrid,5.203,6,96
+U6 intensity,hybrid,4.721,6,96
+U2,hybrid,2.468,27,96
+M6,hybrid,2.391,27,96
+M4,hybrid,1.688,40,96
+M7,hybrid,2.192,57,96
+M1,hybrid,1.729,65,96
+M3,hybrid,9.095,70,96
+BV,hybrid,1.67,78,96
+U3,hybrid,0.83,83,96

@@ -34,7 +34,7 @@ It replaces the separate settings note of 13 October 2026, whose content is fold
    - In every one of the 20 published fits (v1 and v2 under three scalings × three runs, plus v3 and v4), Brás's best Chicago match is weaker than the best cross-city match of most units. It sits between 125th and 170th of 173 (1 = closest).
    - Under the two Brás-focused versions it is among the very weakest: 165th under v3 and 170th under v4.
    - The model always names a closest area. That area is the least different, not a similar one ([§9.2](#92-match-strength-in-all-20-fits)).
-2. **One area is in every fit's top five: West Town.** It is in Brás's Chicago top five in all 20 fits, and in 93–99% of 5,000 random family weightings under each scaling. It is the only area near the top on both halves of Brás's profile: 1st on Brás's ordinary traits (street density, hierarchy, parcels, business intensity) and 3rd on its extremes combined (coverage, land use, business mix), although specialists such as Near North Side, the Loop or Near South Side beat it on each extreme feature alone. It is not a commercial district. Avondale is in 17 of 20 fits, and Lower West Side leads under every all-relative fit. These are the robust part of the answer; first place is not ([§9.1](#91-bráss-closest-chicago-areas-in-each-version), [§9.5](#95-why-west-town-is-in-every-top-five)).
+2. **One area is in every fit's top five: West Town.** It is in Brás's Chicago top five in all 20 fits, and in 93–99% of 5,000 random family weightings under each scaling. It is the only area in the top three on both halves of Brás's profile: 2nd on the four families where Brás is extreme within São Paulo (activity, land use, coverage, transit; §3.1) and 3rd on its ordinary traits (streets, blocks, parcels, height, jobs, residents), although specialists such as Near North Side, the Loop or Near South Side beat it on each extreme feature alone. It is not a commercial district. Avondale is in 17 of 20 fits, and Lower West Side leads under every all-relative fit. These are the robust part of the answer; first place is not ([§9.1](#91-bráss-closest-chicago-areas-in-each-version), [§9.5](#95-why-west-town-is-in-every-top-five)).
 3. **The settings decide which side of Brás is matched, and each version asks a different question.**
    - Physical fabric, with same-instrument families compared on absolute levels (v1, v2 hybrid), points to **West Town** and the near northwest side.
    - Position within each city (v3) points to **Lower West Side and McKinley Park**: areas as unusual for Chicago as Brás is for São Paulo in grain, height and business density.
@@ -87,6 +87,61 @@ The same 12 families as the Chicago model, built with the same definitions in bo
 **Missing values.** O'Hare, Marsilac and Parelheiros have no U1 shares (under 10% classified land). Pairs involving them use the families both units have.
 
 **B1 for Brás.** Coverage is the union of Overture footprints clipped to land, divided by land. Brás has 0.566, 1st in São Paulo (medians: São Paulo 0.365, Chicago 0.224). The value is reliable: 98.5% of its footprint area comes from OpenStreetMap, and it equals GeoSampa's 0.568. Microsoft footprints miss whole blocks in Brás (0.205) and are not used. In São Paulo, 22 districts mapped mostly by machine learning read about 13% low.
+
+### 3.1 Brás within São Paulo
+
+Where Brás stands among São Paulo's 96 districts (94 for U1) on every column. Script [`bras_sao_paulo_position.py`](../../analysis/scripts/bras_sao_paulo_position.py), outputs [`bras_sao_paulo_position_2026_10_16`](../../analysis/results/SP_CHI/bras_sao_paulo_position_2026_10_16/README.md).
+- **Rank:** 1 = highest value.
+- **z:** Brás's position within São Paulo as the all-relative scaling reads it, on the column's transformed scale (log for densities, height, PTAL, elongation and parcels).
+- **Farthest from the mean:** rank by |z|, 1 = the district farthest from the São Paulo mean in either direction.
+- **Business mix:** shown as shares for readability. The model reads it as city-centred log-ratios through the Aitchison block. The z given is that log-ratio standardized within São Paulo, to compare extremeness only; it is not a model input.
+
+| Family | Column | Brás | São Paulo: lowest – median – highest | Rank | z | Farthest from the mean |
+|---|---|---:|---|---:|---:|---:|
+| U6 | Retail share of businesses | 63% | 8% – 22% – 63% | **1st** | +5.44 | **1st** |
+| U6 | Institutions share | 5% | 5% – 18% – 37% | **96th** (lowest) | −3.27 | **2nd** |
+| U6 | Services & offices share | 16% | 15% – 36% – 50% | **95th** | −2.53 | **3rd** |
+| U1 | Commerce land | 65% | 12% – 23% – 89% | **3rd** of 94 | +2.68 | **3rd** |
+| U1 | Residential land | 15% | 7% – 65% – 82% | **92nd** of 94 | −2.52 | **3rd** |
+| U6 | Food & drink share | 7% | 5% – 13% – 19% | **95th** | −2.38 | **4th** |
+| B1 | Building coverage | 57% | 0.5% – 37% – 57% | **1st** | +1.96 | **6th** |
+| U4 | Transit access (PTAL) | 36.9 | 1.0 – 14.2 – 71.0 | **3rd** | +1.69 | **6th** |
+| U6 | Businesses per 100 dwellings | 25.8 | 1.6 – 6.9 – 47.4 | **5th** | +1.71 | **6th** |
+| M4 | Block compactness | 0.676 | 0.078 – 0.554 – 0.732 | 12th | +1.14 | 25th |
+| U2 | Jobs per km² | 13,984 | 1 – 3,052 – 136,113 | 15th | +0.94 | 25th |
+| M6 | Major-road share | 31% | 0.6% – 19% – 51% | 15th | +1.02 | 27th |
+| U1 | Industrial land | 16% | 0.1% – 4.6% – 37% | 17th of 94 | +0.91 | 29th |
+| U6 | Making & storing share | 8% | 3.5% – 8.6% – 17% | 56th | +1.01 | 30th |
+| M4 | Block elongation | 1.72 | 1.22 – 1.92 – 3.13 | 73rd | −0.56 | 50th |
+| U1 | Institutional land | 4% | 2% – 4.5% – 48% | 59th of 94 | −0.37 | 51st |
+| M7 | Parcels per km² | 1,997 | 5 – 1,748 – 3,393 | 36th | +0.43 | 54th |
+| M1 | Street density (km/km²) | 18.0 | 0.9 – 17.8 – 27.4 | 44th | +0.29 | 64th |
+| M3 | Typical block (m²) | 27,700 | 12,500 – 28,100 – 6.5 million | 50th | −0.40 | 70th |
+| BV | Height (m) | 14.6 | 3.0 – 13.4 – 31.3 | 32nd | +0.18 | 76th |
+| U3 | Residents per km² | 10,690 | 55 – 11,111 – 26,064 | 52nd | +0.15 | 77th |
+
+**By family.** For each district, the model's calibrated gap on a family (m_b/β_b, equal weights inside the family) is averaged over the other São Paulo districts; rank 1 is the district farthest on average from the rest of the city. All-relative scaling; hybrid gives the same ranks except M4 (40th) and U3 (83rd).
+
+| Family | Brás's rank of 96 (1 = most unusual) |
+|---|---:|
+| U6 activity | **3rd** (business mix **1st**, business intensity 6th) |
+| U1 land use | **4th** of 94 |
+| B1 coverage | **6th** |
+| U4 transit | **6th** |
+| M6 street hierarchy, U2 jobs | 27th |
+| M4 block shape | 36th |
+| M7 parcels | 57th |
+| M1 street density | 65th |
+| M3 block size | 70th |
+| BV height | 78th |
+| U3 residents | 84th |
+
+**Reading.**
+- **Four families make Brás unusual: activity, land use, coverage and transit.** On each, Brás is among São Paulo's six most unusual districts; the next family is 27th. These four are **Brás's extremes** in §9.5; the other eight are its **ordinary traits**.
+- **The extremes point both ways.** Brás is high on retail, commerce land, coverage, transit and business intensity, and low on residential land and on the services, food and institutions shares. Its business mix is the most unusual in São Paulo: retail is 63% of its businesses, almost three times the city's median.
+- **Its grain and density are typical of the inner city.** Residents, height, block size, street density and parcels are within 0.45 SD of the São Paulo mean. Jobs, major roads and block compactness are moderately high (z about +1).
+- **Two readings of one feature can differ.** Brás has the highest coverage, yet five districts are farther from the mean: thinly built peripheral districts sit further below it than Brás sits above. Its making & storing share is ordinary (56th), but its log-ratio is 14th, because the other non-retail shares are so small.
+- **v4's weights follow these ranks** (§8.2): 80% of the weight is on these four families.
 
 ## 4. How the model works
 
@@ -448,7 +503,7 @@ v3 was reopened by the user the same day for exploration. Its matches are not co
 
 ### 8.2 Settings
 
-Same data, scaling (all-relative) and distance (full) as v3; R3 pruning off. Brás's rank within São Paulo comes from `bras_profile_sao_paulo_v4.csv` (1 = highest value).
+Same data, scaling (all-relative) and distance (full) as v3; R3 pruning off. Brás's rank within São Paulo comes from `bras_profile_sao_paulo_v4.csv` (1 = highest value); §3.1 gives the full profile.
 
 | Family | v3 | **v4** | Brás within São Paulo |
 |---|---:|---:|---|
@@ -618,47 +673,53 @@ Each row is a defensible reading of "resembles Brás". The rows agree on a stabl
 | All-absolute | **98%**, 43% first | Lincoln Park 87% / 6%, Lake View 61% / 10%, Near North Side 61% / 37% |
 | All-relative | **93%**, 10% first | Avondale 92% / 17%, Lower West Side 82% / 32%, McKinley Park 77% / 29% |
 
-**Why: West Town is the only area near the top on both halves of Brás's profile.** Split the families into two groups:
-- **Brás's extremes:** building coverage (B1), land use (U1) and activity (U6), where Brás is among São Paulo's most unusual districts;
-- **Brás's ordinary traits:** streets, blocks, parcels, height, jobs, residents and transit (M1, M3, M4, M6, M7, BV, U2, U3, U4), where Brás is middling or moderately high.
+**Why: West Town is the only area near the top on both halves of Brás's profile.** Split the families into two groups, by how unusual Brás is within São Paulo on each (§3.1):
+- **Brás's extremes:** activity (U6), land use (U1), building coverage (B1) and transit (U4), on which Brás is among São Paulo's six most unusual districts;
+- **Brás's ordinary traits:** streets, blocks, parcels, height, jobs and residents (M1, M3, M4, M6, M7, BV, U2, U3), on which it ranks 27th or lower.
 
 Then rank every Chicago area on each group alone (v2 hybrid, equal weights within each group):
 
 | Area | Rank on Brás's extremes | Rank on Brás's ordinary traits | Overall rank |
 |---|---:|---:|---:|
-| **West Town** | 3rd | **1st** | **1st** |
-| Avondale | 2nd | 5th | 2nd |
-| Logan Square | 8th | 2nd | 3rd |
-| Lincoln Park | 10th | 4th | 4th |
-| Lower West Side | 6th | 15th | 7th |
-| Near West Side | 18th | 34th | 22nd |
-| Near North Side | **1st** | 59th | 37th |
-| Loop | 7th | 71st | 67th |
+| **West Town** | **2nd** | **3rd** | **1st** |
+| Avondale | 5th | 2nd | 2nd |
+| Logan Square | 6th | **1st** | 3rd |
+| Lincoln Park | 3rd | 7th | 4th |
+| Lower West Side | 4th | 17th | 7th |
+| Near West Side | 8th | 47th | 22nd |
+| Near North Side | **1st** | 66th | 37th |
+| Loop | 7th | 73rd | 67th |
 
-Near North Side is the closest of all on Brás's extremes, but it is 76th on height, 66th on jobs and 63rd on parcels, so it falls to 37th overall. The Loop does the same at 67th. Avondale and Logan Square are close on both halves, which is why they follow West Town.
+West Town is the only area in the top three on both halves. Near North Side is the closest of all on Brás's extremes, but it is 76th on height, 66th on jobs and 63rd on parcels, so it falls to 37th overall. The Loop does the same at 67th. Avondale, Logan Square and Lincoln Park are close on one half and fairly close on the other, which is why they follow West Town.
+
+The same split under the other scalings (extremes / ordinary / overall): all-absolute, West Town 3rd / 1st / 1st; all-relative, West Town 2nd / 5th / 3rd, while Lower West Side, 3rd / 3rd, is first overall.
+
+*Correction, 16 October 2026:* the first version of this split put transit among the ordinary traits, without measuring it; Brás is 3rd of 96 on transit access and 6th on how unusual it is. With transit in the ordinary half, West Town was 3rd on the extremes and 1st on the ordinary traits. The conclusion is unchanged.
 
 **1. On Brás's extremes, no Chicago area is close, and specialists beat West Town one feature at a time.** On each extreme feature, a few Chicago areas come much closer than West Town; see "Brás's extreme features, one by one" below. Each of those specialists pays heavily on another extreme feature. Ranks among the 77 areas on each part (v2 hybrid):
 
-| Area | Coverage (B1) | Land use (U1) | Business intensity (U6) | Business mix (U6) | Extremes combined |
-|---|---:|---:|---:|---:|---:|
-| Near North Side | 1 | 3 | 1 | 53 | 1 |
-| Avondale | 11 | 12 | 19 | 16 | 2 |
-| **West Town** | 13 | 10 | 5 | 41 | 3 |
-| Lower West Side | 19 | 8 | 2 | 17 | 6 |
-| Loop | 7 | 2 | 21 | 64 | 7 |
-| Lake View | 2 | 34 | 16 | 72 | 19 |
-| McKinley Park | 38 | 6 | 30 | 5 | 17 |
-| New City | 43 | 9 | 35 | 8 | 21 |
-| Near South Side | 25 | **1** | 28 | 73 | 22 |
-| Armour Square | 61 | 4 | 14 | 68 | 34 |
-| Fuller Park | 71 | 5 | 12 | 30 | 47 |
+| Area | Coverage (B1) | Land use (U1) | Business intensity (U6) | Business mix (U6) | Transit (U4) | Extremes combined |
+|---|---:|---:|---:|---:|---:|---:|
+| Near North Side | **1** | 3 | **1** | 53 | 8 | 1 |
+| **West Town** | 13 | 10 | 5 | 41 | 9 | 2 |
+| Lincoln Park | 10 | 7 | 11 | 60 | 5 | 3 |
+| Lower West Side | 19 | 8 | 2 | 17 | 14 | 4 |
+| Avondale | 11 | 12 | 19 | 16 | 21 | 5 |
+| Loop | 7 | 2 | 21 | 64 | 24 | 7 |
+| Near West Side | 22 | 16 | 10 | 55 | **1** | 8 |
+| Lake View | 2 | 34 | 16 | 72 | 2 | 10 |
+| McKinley Park | 38 | 6 | 30 | **5** | 17 | 11 |
+| Near South Side | 25 | **1** | 28 | 73 | 4 | 12 |
+| New City | 43 | 9 | 35 | 8 | 50 | 31 |
+| Armour Square | 61 | 4 | 14 | 68 | 23 | 32 |
+| Fuller Park | 71 | 5 | 12 | 30 | 30 | 41 |
 
-West Town is never the closest on an extreme feature. It is the most even across them: 5th to 13th on three of the four parts, and 41st on the business mix. Under all-relative scaling it is 4th on the extremes combined.
+West Town is never the closest on an extreme feature. It is the most even across them: 5th to 13th on four of the five parts, and 41st on the business mix.
 
-**2. On Brás's ordinary traits, West Town is the closest of all.** Its gap ranks among the 77 areas, as the hybrid scaling reads each column:
-- street hierarchy 4th, parcel density 5th, street density 6th (absolute values);
-- business intensity 5th, transit 9th, jobs 10th (within each city);
-- residents 10th (absolute values).
+**2. On Brás's ordinary traits, West Town is near the top (3rd).** Logan Square (1st) and Avondale (2nd) are closer, but both are farther on the extremes. West Town's gap ranks among the 77 areas, as the hybrid scaling reads each column:
+- street hierarchy 4th, parcel density 5th, street density 6th, residents 10th (absolute values);
+- jobs 10th (within each city);
+- block shape 33rd, height 34th, block size 43rd.
 
 **3. No weak spot.** For every candidate, rank each of the 12 families' parts of the distance among the 77 areas. Under v2 hybrid, West Town has the best average rank, with only one family in the worse half: block size, at 43rd. Logan Square and McKinley Park are about as even but farther overall. Avondale, Lincoln Park, Lower West Side and the two Near areas each have a family ranked 58th–76th, so a weighting that stresses that family pushes them out of the top five. No family does that to West Town.
 
@@ -709,7 +770,7 @@ Choosing West Town claims that Brás's counterpart is a place built and used at 
 #### Brás's extreme features, one by one
 
 For each feature:
-- **Brás:** its value, its rank among São Paulo's districts, and how the model reads it. Building coverage is read on absolute levels (the hybrid scaling), land use and business intensity within each city, and the business mix as city-centred log-ratios (shares shown for readability).
+- **Brás:** its value, its rank among São Paulo's districts, and how the model reads it. Building coverage is read on absolute levels (the hybrid scaling), land use, business intensity and transit within each city, and the business mix as city-centred log-ratios (shares shown for readability).
 - **At or beyond Brás:** how many Chicago areas reach Brás's value.
 - **Gap rank:** West Town's gap to Brás among the 77 areas (1 = closest).
 
@@ -724,12 +785,13 @@ For each feature:
 | Food & drink share | 7% (2nd lowest of 96); −0.35 | 0% – 14% – 39% (Armour Square) | 3 | Forest Glen (0.00), Norwood Park (0.01), West Pullman (0.03) | 0.39 | 18% (10th) | 0.73 | 69 |
 | Institutions share | 5% (lowest of 96); −0.86 | 13% (McKinley Park) – 24% – 65% | 0 | McKinley Park (0.05), Clearing (0.09), Archer Heights (0.16) | 0.82 | 18% (61st) | 0.52 | 23 |
 | Businesses per 100 dwellings | 25.8 (5th of 96); z +1.71 | 2.2 – 6.6 – 42.7 (Loop) | 1 | Near North Side (0.03), Lower West Side (0.29), North Center (0.33) | 1.78 | 12.3 (7th) | 0.40 | 5 |
+| Transit access (PTAL) | 36.9 (3rd of 96); z +1.69 | 1.7 (Edison Park) – 5.7 – 38.9 (Loop) | 1 | Near West Side (0.07), Lake View (0.21), Uptown (0.27) | 1.70 | 9.2 (10th) | 0.79 | 9 |
 
 What the table shows:
 - **Brás is out of Chicago's range on six of these features.** No Chicago area reaches its coverage, commerce land, low residential land, retail share, low services share or low institutions share. Chicago's highest retail share (25%, Fuller Park) is under half of Brás's 63%, and its lowest residential share (27%, Pullman) is almost twice Brás's 15%.
 - **Within-city scaling makes some of these gaps small.** On commerce land, three areas are within 0.32 SD of Brás's position. Armour Square (39%), the Loop and Near South Side (58–59%) are as exceptional for Chicago as Brás's 65% is for São Paulo; for the Loop and Near South Side the z-score cap at 3 does part of the work. West Town, at 19%, is 9th of 77 and far.
 - **West Town's position by feature:**
-  - **Moderately close** on commerce land (9th), coverage (13th), industrial land (17th) and business intensity (5th).
+  - **Moderately close** on commerce land (9th), coverage (13th), industrial land (17th), business intensity (5th) and transit (9th).
   - **Mid-pack** on residential land (25th), institutions (23rd) and retail (33rd).
   - **Among the farthest** on services & offices (65th) and food & drink (69th): its businesses are 44% services and 18% food, against Brás's 16% and 7%.
 - **Its business mix as a whole ranks 41st:** the far services and food shares outweigh the closer institutions and retail shares. The activity family still ranks 8th overall, because business intensity (5th) carries half of it.
@@ -941,9 +1003,10 @@ The write-up should say which side of Brás the study needs, and name the place 
 |---|---|
 | v1, v2 (all tables and figures) | `jupyter nbconvert --to notebook --execute --inplace analysis/sp_chicago_model_analysis.ipynb` (v2 is the default; `SP_CHI_MODEL_VERSION=v1` rebuilds v1 into its own folder) |
 | v3, v4 | `python analysis/scripts/sp_chicago_model_settings.py v3` (or `v4`) |
+| Brás within São Paulo (§3.1) | `python analysis/scripts/bras_sao_paulo_position.py` |
 | Neighborhood pieces | `python analysis/scripts/chicago_neighborhoods.py` (about 7 minutes) |
 | Explorer data and check | `python analysis/scripts/export_viz_data.py`, then `node analysis/tests/check_viz_model.js` |
 
 - Inputs are refused if any table's SHA-256 differs from the one recorded at acceptance. Seed 20261006.
 - The explorer reproduces every published distance matrix: v4 to 1.2e-10, v3 to 9.9e-11, and the v2 runs to about 2e-10.
-- Match strength (§9.2) is computed from each fit's `distance_*.csv`. The sub-area figures (§10) use the explorer's own code (`viz/model.js`, `projectedDistance`) on `viz/data.js`.
+- Match strength (§9.2) is computed from each fit's `distance_*.csv`. The extremes / ordinary split in §9.5 and the sub-area figures (§10) use the explorer's own code (`viz/model.js`, `projectedDistance`) on `viz/data.js`.
