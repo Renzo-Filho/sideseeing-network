@@ -125,8 +125,8 @@ def loader_code(lane, factor):
             pad = ' ' * (indent + 4)
             return '{\n' + ''.join(f"{pad}'{k}': {render(x, indent + 4)},{note(x)}\n" for k, x in v.items()) + ' ' * indent + '}'
         if isinstance(v, tuple):  # a raster collection: one path per GHSL product
-            return f'rasters(curio_collection("{v[1]}"))'
-        return f'curio_dataset_path("{v}")'
+            return f'rasters(curio_load_collection("{v[1]}"))'
+        return f'curio_data_path("{v}")'
     head = f'# Method {lane} · sources for {TITLES[factor]}. Paths only: the factor node opens the files.\n'
     if any(isinstance(v, tuple) for v in SOURCES[factor].values()):
         head += ('# GHSL rasters come from Discovery Catalog collections; each row of a collection is one raster file.\n'
@@ -285,7 +285,7 @@ def h_family_code(family, spec):
 
 
 def h_loader_code(family, spec):
-    lines = ''.join(f"    '{k}': curio_dataset_path(\"{d}\"),  # accepted {family} table\n" for k, d in spec['sources'].items())
+    lines = ''.join(f"    '{k}': curio_data_path(\"{d}\"),  # accepted {family} table\n" for k, d in spec['sources'].items())
     return f'# Harmonized model · sources for {family} ({H_NAMES[family]}). Paths only: the family node opens and checks the files.\nreturn {{\n{lines}}}\n'
 
 

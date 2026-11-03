@@ -7,7 +7,7 @@ chi = arg[arg.city == 'Chicago'][['unit_id', 'name', 'index']].copy()
 chi['gap'] = (chi['index'] - bras).abs()
 chi['gap_rank'] = chi.gap.rank(method='min').astype(int)
 chi['top5'] = chi.gap_rank <= 5
-areas = gpd.read_parquet(curio_dataset_path("data.sideseeing.chicago-community-areas-prepared"), columns=['unit_id', 'geometry'])
+areas = gpd.read_parquet(curio_data_path("data.sideseeing.chicago-community-areas-prepared"), columns=['unit_id', 'geometry'])
 g = areas.merge(chi, on='unit_id', validate='one_to_one')
 assert len(g) == 77
 centre = g.geometry.representative_point().to_crs(4326)

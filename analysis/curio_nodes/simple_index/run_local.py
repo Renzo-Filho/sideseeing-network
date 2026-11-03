@@ -21,22 +21,22 @@ PUB_H_V1 = ROOT / 'analysis/results/SP_CHI/sp_chicago_model_v1_2026_10_06/tables
 
 
 def resolver(store):
-    def curio_dataset_path(dataset_id):
+    def curio_data_path(dataset_id):
         m = json.loads((store / f'{dataset_id}@1/manifest.json').read_text())
         return str(store / f'{dataset_id}@1' / m['dataFile'])
-    return curio_dataset_path
+    return curio_data_path
 
 
 def collection_reader(store):
-    """curio_collection for a folder collection: the index rows, each with path = source root + relpath."""
-    def curio_collection(dataset_id):
+    """curio_load_collection for a folder collection: the index rows, each with path = source root + relpath."""
+    def curio_load_collection(dataset_id):
         m = json.loads((store / f'{dataset_id}@1/manifest.json').read_text())
         src = m['collection']['sourceId']
         root = json.loads((store.parents[2] / 'discovery' / src / 'manifest.json').read_text())['provider']['root']
         frame = pd.read_parquet(store / f'{dataset_id}@1' / m['dataFile'])
         frame['path'] = [str(Path(root) / rel) for rel in frame['relpath']]
         return frame
-    return curio_collection
+    return curio_load_collection
 
 
 def run(store, lanes='ABH'):
@@ -72,7 +72,7 @@ def run(store, lanes='ABH'):
             out[n['id']] = out[ins[0]['source']]
             continue
         arg = out[ins[0]['source']] if ins else None
-        ns = {'curio_dataset_path': resolver(store), 'curio_collection': collection_reader(store)}
+        ns = {'curio_data_path': resolver(store), 'curio_load_collection': collection_reader(store)}
         exec('def userCode(arg):\n' + textwrap.indent(n['content'], '    '), ns)
         t = time.time()
         out[n['id']] = ns['userCode'](arg)

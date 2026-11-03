@@ -35,8 +35,8 @@ for c in ABSOLUTE + RELATIVE:
 out[COMPOSITION] = df[COMPOSITION]
 
 # Unit names as the other lanes show them (prepared reporting units).
-sp = pd.read_parquet(curio_dataset_path("data.sideseeing.sp-districts-prepared"), columns=['district_id', 'nm_distrito_municipal'])
-chi = pd.read_parquet(curio_dataset_path("data.sideseeing.chicago-community-areas-prepared"), columns=['unit_id', 'district_name'])
+sp = pd.read_parquet(curio_data_path("data.sideseeing.sp-districts-prepared"), columns=['district_id', 'nm_distrito_municipal'])
+chi = pd.read_parquet(curio_data_path("data.sideseeing.chicago-community-areas-prepared"), columns=['unit_id', 'district_name'])
 names = {**dict(zip('SP:' + sp.district_id, sp.nm_distrito_municipal)), **dict(zip(chi.unit_id, chi.district_name))}
 out.insert(1, 'name', out.unit_id.map(names))
 assert out.name.notna().all()
