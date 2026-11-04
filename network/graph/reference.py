@@ -2,7 +2,7 @@
 trace.html, where they are checked against the 2025 orthophoto, and the back of the sidewalk from Cook County's
 parcels (the property line).
 
-    python -m graph.reference --out ../data/west_loop_reference      # from network/; downloads once
+    python -m graph.reference --out data/west_loop/reference      # from network/; downloads once
 
 The city's sidewalk polygons (77cn-6x4c) are not used: on the imagery they cover the blocks, not the sidewalks.
 """
@@ -17,7 +17,7 @@ import numpy as np
 from shapely.geometry import LineString
 
 CURBS_URL = 'https://data.cityofchicago.org/download/5gv8-ktcg/application%2Fzip'  # December 2010
-# Cook County's current parcels. Their terms forbid redistribution: they stay in data/, for evaluation only.
+# Cook County's current parcels. Their terms forbid redistribution: they stay in network/data/, for evaluation only.
 PARCELS_URL = 'https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44/query'
 MORGAN = LineString([(-87.65185, 41.8752), (-87.65215, 41.8917)])  # its axis, Tilden to Grand (lon, lat)
 UTM = 32616
@@ -81,7 +81,7 @@ def backs(parcels, axis, within_m=25.0):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--cache', type=Path, default=Path('../data/chicago_planimetrics/5gv8-ktcg.zip'))
+    parser.add_argument('--cache', type=Path, default=Path('data/sources/chicago_planimetrics/5gv8-ktcg.zip'))
     args = parser.parse_args()
     if not args.cache.exists():
         args.cache.parent.mkdir(parents=True, exist_ok=True)

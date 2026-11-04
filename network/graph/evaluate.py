@@ -1,6 +1,6 @@
 """Phase 2a evaluation: the ladder and its baselines against the Morgan reference (plan section 8, phase 2 gate).
 
-    python -m graph.evaluate --reference ../data/west_loop_reference --fit ../data/west_loop_graph/phase2a --out OUT
+    python -m graph.evaluate --reference data/west_loop/reference --fit data/west_loop/graph/phase2a --out OUT
 
 The reference (agreed 26 October): the city's curbs as Renzo checked them on the 2025 orthophoto (morgan_trace.geojson;
 a line marked changed is replaced by the one he redrew, and unchecked lines count as matching), and the back of the

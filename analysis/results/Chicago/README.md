@@ -1,6 +1,6 @@
 # Chicago results
 
-One folder per dated release; each has its own README, tables and validation receipts. **Status** means: *release* = constructed for all 77 Community Areas (not a scientific acceptance); *source* = data acquisition or audit checkpoint; *diagnostic* = bounded pilot, not accepted; *superseded* = kept for provenance only. **None is an accepted model matrix.** Current scope and gates: [docs/STATUS.md](../../../docs/STATUS.md). SP releases are separate and unchanged.
+One folder per dated release; each has its own README, tables and validation receipts. **Status** means: *release* = constructed for all 77 Community Areas (not a scientific acceptance); *source* = data acquisition or audit checkpoint; *diagnostic* = bounded pilot, not accepted; *superseded* = kept for provenance only. **None is an accepted model matrix.** Current scope and gates: [docs/STATUS.md](../../docs/STATUS.md). SP releases are separate and unchanged.
 
 ## Local attribute releases
 
@@ -18,7 +18,7 @@ One folder per dated release; each has its own README, tables and validation rec
 
 | Release | Status | Summary |
 |---|---|---|
-| [data_discovery_2026_09_18](data_discovery_2026_09_18/README.md) | source | Missing-data discovery; details in [data sources](../../../docs/chicago/DATA_SOURCES.md) |
+| [data_discovery_2026_09_18](data_discovery_2026_09_18/README.md) | source | Missing-data discovery; details in [data sources](../../docs/chicago/DATA_SOURCES.md) |
 | [chicago_cadastral_2026_09_18](chicago_cadastral_2026_09_18/README.md) | source | Nine Chicago-filtered cadastral datasets; 4,473 audit checks passed |
 | [chicago_workbooks_2026_09_19](chicago_workbooks_2026_09_19/README.md) | source | Text extractions of the eight 2024 commercial valuation workbooks (binaries not acquired) |
 | [dupage_characteristics_2026_09_21](dupage_characteristics_2026_09_21/README.md) | source | Addison Township target for the 81 Chicago-intersecting DuPage parcels |
@@ -35,7 +35,7 @@ One folder per dated release; each has its own README, tables and validation rec
 
 ## M3/M4 physical-block work (26–27 September 2026, active)
 
-Method: [M3/M4 block protocol](../../../docs/chicago/BLOCKS_M3_M4.md). M3/M4 remain unaccepted.
+Method: [M3/M4 block protocol](../../docs/chicago/BLOCKS_M3_M4.md). M3/M4 remain unaccepted.
 
 | Release | Status | Summary |
 |---|---|---|

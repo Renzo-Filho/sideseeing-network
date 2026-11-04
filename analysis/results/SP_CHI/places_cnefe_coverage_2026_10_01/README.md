@@ -1,6 +1,6 @@
 # Places coverage of CNEFE establishment addresses — 1 October 2026
 
-Protocol **P-PLACES-1**, fixed in [SIMPLE_INDEX.md](../../../../docs/SIMPLE_INDEX.md) before this run. Compares Overture Places with OpenStreetMap as the source of the "commercial establishments" factor. **No index was built.**
+Protocol **P-PLACES-1**, fixed in [SIMPLE_INDEX.md](../../../docs/SIMPLE_INDEX.md) before this run. Compares Overture Places with OpenStreetMap as the source of the "commercial establishments" factor. **No index was built.**
 
 ```bash
 .venv/bin/python analysis/scripts/acquire_osm_places.py Chicago   # Geofabrik illinois-latest, HTTP Last-Modified 2026-10-01 08:25:53 GMT

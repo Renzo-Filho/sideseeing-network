@@ -45,7 +45,7 @@ The data come from the **Overpass API**, a public service that answers questions
 - railways;
 - crossing nodes.
 
-The answer includes each way's tags, its node IDs and the coordinates of its nodes. It is saved once as `data/west_loop/osm_2026-10-19.json`: 12 MB, with 17,273 ways and 3,440 crossing nodes. Every later run reads this file instead of downloading again, so the results do not change when someone edits OSM. To start again from fresh data, delete the file. If one Overpass server is busy, the script tries two others in turn.
+The answer includes each way's tags, its node IDs and the coordinates of its nodes. It is saved once as `network/data/west_loop/plan/osm_2026-10-19.json`: 12 MB, with 17,273 ways and 3,440 crossing nodes. Every later run reads this file instead of downloading again, so the results do not change when someone edits OSM. To start again from fresh data, delete the file. If one Overpass server is busy, the script tries two others in turn.
 
 Latitude and longitude are angles, not metres. All geometry is therefore converted to **UTM zone 16N**, a flat map projection in metres, so that lengths and distances come out in metres.
 
@@ -173,9 +173,9 @@ Each point can carry a weight, here its field time, so that heavier points pull 
 
 ### A worked example
 
-![Four stages on four real West Loop blocks: OSM sidewalks and crosswalks; the graph with odd nodes in red; the repeats chosen by the matching in purple; the final Euler tour coloured from start to end](routing-example.png)
+![Four stages on four real West Loop blocks: OSM sidewalks and crosswalks; the graph with odd nodes in red; the repeats chosen by the matching in purple; the final Euler tour coloured from start to end](img/routing-example.png)
 
-The figure shows the four blocks between Morgan, Peoria, Monroe and Washington, routed with exactly the code used for the full area (`network/routing_example.py` regenerates it):
+The figure shows the four blocks between Morgan, Peoria, Monroe and Washington, routed with exactly the code used for the full area (`network/scripts/routing_example.py` regenerates it):
 
 1. **The data.** OSM gives 4.3 km of sidewalks (grey) and crosswalks (orange).
 2. **The graph.** It has 183 nodes, 207 edges and 28 odd nodes (red). Many of these sit at the edges of the picture, because the example is cut out of a larger network.
@@ -282,7 +282,7 @@ The full discussion and the recommendation (walk the modules) are in [WEST_LOOP_
 
 ## 8. Results and how to use them
 
-Everything is written to `data/west_loop/` (not versioned in git):
+Everything is written to `network/data/west_loop/plan/` (not versioned in git):
 
 | File | From | What it is | How to use it |
 |---|---|---|---|
@@ -313,9 +313,9 @@ The layers in `routing/routing.gpkg`:
 From the repository root, with the project's Python environment:
 
 ```bash
-.venv/bin/python network/routes.py west_loop         # step 2: about 45 s (downloads OSM only the first time)
-.venv/bin/python network/route_methods.py west_loop  # step 3: about 2 min
-.venv/bin/python network/routing_example.py          # optional: the worked-example figure
+.venv/bin/python network/scripts/routes.py west_loop         # step 2: about 45 s (downloads OSM only the first time)
+.venv/bin/python network/scripts/route_methods.py west_loop  # step 3: about 2 min
+.venv/bin/python network/scripts/routing_example.py          # optional: the worked-example figure
 ```
 
 `routes.py river_north` builds the River North plan with the same code. The run stops with an error if any of these checks fails:
@@ -363,4 +363,4 @@ The settings live at the top of each script:
 | Module, leg, session | One street; one side of it walked in one direction; one recording |
 | CPP, RPP, CARP | Chinese Postman (cover a whole connected network), Rural Postman (cover some edges, travel on others), Capacitated Arc Routing (several routes, each within a limit) |
 
-Related documents: [West Loop plan](WEST_LOOP_COLLECTION.md), [River North plan](RIVER_NORTH_COLLECTION.md), [collection protocol](COLLECTION_PROTOCOL.md).
+Related documents: [West Loop plan](WEST_LOOP_COLLECTION.md), [River North plan](archive/RIVER_NORTH_COLLECTION.md), [collection protocol](COLLECTION_PROTOCOL.md).

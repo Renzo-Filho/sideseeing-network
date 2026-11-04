@@ -1,6 +1,6 @@
 """São Paulo–Chicago model under named settings (contracts sp_chicago_model_v3 and sp_chicago_model_v4).
 Each contract keeps v2's inputs, columns, transforms and calibration rule and sets the scaling, the family weights and
-the within-family column weights. Writes that version's tables; the explorer (viz/) offers each version as a preset and
+the within-family column weights. Writes that version's tables; the explorer (analysis/viz/) offers each version as a preset and
 is checked against its distance table.
 
     python analysis/scripts/sp_chicago_model_settings.py v3|v4"""
@@ -22,7 +22,7 @@ def budgets_of(weights, fams):
 
 def blocks(df, subs, fams, scaling, cols):
     """cm.blocks with within-family column weights v_j (default 1): m_b = Σ v_j Δ_j² / Σ v_j over v_j > 0, and the
-    calibration β_b recomputed on the reweighted block, as viz/model.js and the Curio dataflow do. The U6 log-ratios
+    calibration β_b recomputed on the reweighted block, as analysis/viz/model.js and the Curio dataflow do. The U6 log-ratios
     form one composition and are not reweighted."""
     bl = cm.blocks(m.frame_for(df, subs, scaling), fams, levels=m.levels(scaling))
     for b in bl:

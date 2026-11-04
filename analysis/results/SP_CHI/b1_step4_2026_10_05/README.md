@@ -1,6 +1,6 @@
 # B1 footprint coverage: validation (Step 4)
 
-Run 5 October 2026. Scripts: `analysis/scripts/evaluate_b1_step4.py` (CHI, SP, summary), `analysis/scripts/evaluate_b1_bras.py` (district imagery windows), `analysis/scripts/acquire_geosampa_edificacao.py`. Rules S4-1 to S4-7 were fixed by the user before any test ran ([MODEL_PLAN Step 4](../../../../docs/chicago/MODEL_PLAN.md#step-4--b1-footprint-coverage)). **B1 was accepted with stated limits later on 5 October 2026.** The failed São Paulo reference check remains recorded below.
+Run 5 October 2026. Scripts: `analysis/scripts/evaluate_b1_step4.py` (CHI, SP, summary), `analysis/scripts/evaluate_b1_bras.py` (district imagery windows), `analysis/scripts/acquire_geosampa_edificacao.py`. Rules S4-1 to S4-7 were fixed by the user before any test ran ([MODEL_PLAN Step 4](../../../docs/chicago/MODEL_PLAN.md#step-4--b1-footprint-coverage)). **B1 was accepted with stated limits later on 5 October 2026.** The failed São Paulo reference check remains recorded below.
 
 ## New São Paulo sources
 

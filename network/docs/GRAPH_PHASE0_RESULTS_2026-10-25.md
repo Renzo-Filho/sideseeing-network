@@ -133,5 +133,5 @@ python -m graph.phase0 report --workspace $W --out $P/report --rotation $P/rotat
 ```
 
 - **The motion events** in `$W/motion/` came from `~/sideseeing/motion_all.py` (`SideSeeingWorkspace.generate_motion_events`, CPU only). D1 S1's file is identical to the one made earlier on the laptop.
-- **The session table with planned modules** needs geopandas and `--pieces data/west_loop/routes.gpkg`; it ran on the laptop.
+- **The session table with planned modules** needs geopandas and `--pieces data/west_loop/plan/routes.gpkg`; it ran on the laptop.
 - **The checks:** `python -m pytest graph/tests` from `network/`.

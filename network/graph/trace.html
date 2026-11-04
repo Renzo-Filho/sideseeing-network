@@ -9,14 +9,14 @@
   orthophoto and blind to GPS and model output. The City of Chicago's curb lines (December 2010) are checked block by
   block against the 2025 imagery and redrawn where they changed; the back of the sidewalk, which no usable city layer
   has, is traced. Open this file in a browser; the curbs come from
-  ../../data/west_loop_reference/morgan_city_curbs.js. Work is kept in the browser as you go; Export saves the
-  GeoJSON that graph code reads (save it as data/west_loop_reference/morgan_trace.geojson).
+  ../data/west_loop/reference/morgan_city_curbs.js. Work is kept in the browser as you go; Export saves the
+  GeoJSON that graph code reads (save it as data/west_loop/reference/morgan_trace.geojson).
 -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.17.0/dist/leaflet-geoman.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.17.0/dist/leaflet-geoman.js"></script>
-<script src="../../data/west_loop_reference/morgan_city_curbs.js" onerror="window.CITY_CURBS = null"></script>
+<script src="../data/west_loop/reference/morgan_city_curbs.js" onerror="window.CITY_CURBS = null"></script>
 <style>
   :root { --ink: #1e293b; --muted: #64748b; --line: #e2e8f0; --accent: #4f46e5; --bg: #f8fafc; }
   * { box-sizing: border-box; }
@@ -105,7 +105,7 @@
 <script>
 const ORTHO = 'https://img.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage';
 const STORE = 'sideseeing-trace-morgan-v2';
-const AREA = [[41.8752, -87.6532], [41.8917, -87.6508]];  // Morgan St, Tilden to Grand (data/west_loop/sessions.csv)
+const AREA = [[41.8752, -87.6532], [41.8917, -87.6508]];  // Morgan St, Tilden to Grand (data/west_loop/plan/sessions.csv)
 const KINDS = {
   back: { label: 'Back of sidewalk', color: '#38bdf8' },
   curb: { label: 'Curb line (correction)', color: '#e879f9' },
@@ -162,7 +162,7 @@ function progress() {
   curbs.forEach(({ status }) => counts[status]++);
   document.getElementById('progress').textContent = curbs.size
     ? `${counts.matches} match · ${counts.changed} changed · ${counts.unchecked} unchecked, of ${curbs.size} city curb lines`
-    : 'The city curbs did not load: run the graph step that writes data/west_loop_reference/morgan_city_curbs.js.';
+    : 'The city curbs did not load: run the graph step that writes data/west_loop/reference/morgan_city_curbs.js.';
 }
 
 const style = props => ({ color: KINDS[props.kind].color, weight: 3, dashArray: props.unsure ? '6 6' : null, opacity: .95 });
@@ -298,7 +298,7 @@ document.getElementById('export').onclick = () => {
   const link = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'morgan_trace.geojson' });
   link.click();
   URL.revokeObjectURL(link.href);
-  status('Exported morgan_trace.geojson: save it to data/west_loop_reference/.');
+  status('Exported morgan_trace.geojson: save it to data/west_loop/reference/.');
 };
 document.getElementById('import').onclick = () => document.getElementById('file').click();
 document.getElementById('file').onchange = async event => {

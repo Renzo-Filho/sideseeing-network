@@ -1,7 +1,7 @@
 # U6 activity composition (Step 7b)
 
 Run 6 October 2026 by `analysis/scripts/build_u6_activity.py` (`classify`, `places CHI`, `places SP`, `v2`, `bridge`, `features [overture|cnefe]`, `untyped`, `vertical`, `rais_test`).
-- Decisions S7b-1 to S7b-8 were fixed by the user before the run. The São Paulo source was then chosen by the pre-registered D7b-3 test (RT-1 to RT-5, approved before it ran). See [MODEL_PLAN Step 7b](../../../../docs/chicago/MODEL_PLAN.md#step-7b-plan--u6-activity-composition-user-request-6-october-2026).
+- Decisions S7b-1 to S7b-8 were fixed by the user before the run. The São Paulo source was then chosen by the pre-registered D7b-3 test (RT-1 to RT-5, approved before it ran). See [MODEL_PLAN Step 7b](../../../docs/chicago/MODEL_PLAN.md#step-7b-plan--u6-activity-composition-user-request-6-october-2026).
 - Crosswalks were frozen in `analysis/config/u6/` before each check.
 - SHA-256 of inputs, crosswalks and scripts: `source_register.sha256`.
 - **Accepted with stated limits on 6 October 2026:** the final Overture-based U6 family entered `chicago_model_v1` and `sp_chicago_model_v1`; the earlier CNEFE-based version below was superseded by D7b-3.

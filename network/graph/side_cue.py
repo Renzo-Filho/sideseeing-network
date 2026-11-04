@@ -6,7 +6,7 @@ at least `share` of them, from `min_count` detections up, and 'abstain' otherwis
 
 The West Loop protocol fixes the expected answer along the walked streets: north-south legs go northbound on the
 east side and southbound on the west side, east-west legs eastbound on the north side and westbound on the south
-side (data/west_loop/sessions.csv), so the road is on the left along NS streets and on the right along EW streets.
+side (data/west_loop/plan/sessions.csv), so the road is on the left along NS streets and on the right along EW streets.
 Under that protocol the walking direction alone gives the side, which is worth knowing before relying on the cue.
 """
 import numpy as np

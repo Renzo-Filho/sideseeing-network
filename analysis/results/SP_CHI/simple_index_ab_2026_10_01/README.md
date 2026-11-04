@@ -1,6 +1,6 @@
 # Methodology report: advisor's composite index (A) vs corrected index (B) — 1 October 2026
 
-Protocol **P-AB-1**, fixed in [docs/SIMPLE_INDEX.md](../../../../docs/SIMPLE_INDEX.md) before any A or B value was computed. Units: 96 São Paulo districts and 77 Chicago Community Areas (173). Every number below is in `tables/`, `checks.json` or `summary.json`, produced by one run of:
+Protocol **P-AB-1**, fixed in [docs/SIMPLE_INDEX.md](../../../docs/SIMPLE_INDEX.md) before any A or B value was computed. Units: 96 São Paulo districts and 77 Chicago Community Areas (173). Every number below is in `tables/`, `checks.json` or `summary.json`, produced by one run of:
 
 ```bash
 .venv/bin/python analysis/scripts/build_simple_index_ab.py

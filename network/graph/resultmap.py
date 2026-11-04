@@ -1,8 +1,8 @@
 """A map of the walking lines on Morgan over the 2025 orthophoto: the reference, the GPS, each fit's walking lines, the
 phase 2b track and crossings, and the curb where the video puts it. One self-contained page, for looking only.
 
-    python -m graph.resultmap --reference ../data/west_loop_reference --fits ../data/west_loop_graph/phase2a \
-        ../data/west_loop_graph/phase2a_far ../data/west_loop_graph/phase2b --out ../data/west_loop_graph/map.html
+    python -m graph.resultmap --reference data/west_loop/reference --fits data/west_loop/graph/phase2a \
+        data/west_loop/graph/phase2a_far data/west_loop/graph/phase2b --out data/west_loop/graph/map.html
 
 The reference is drawn as stored (NAD83, the orthophoto's datum); everything from the phones is moved from the GPS's
 datum into it (evaluate.datum_shift). The parcel lines stay local: the page is not to be shared.

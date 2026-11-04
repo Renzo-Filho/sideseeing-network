@@ -27,8 +27,8 @@ python -m graph.phase2b fit --workspace W --rotation rotation_windows.csv --prep
 ```
 
 Outputs:
-- the measurements are in `graph/phase2b` on desktop-01 and `data/west_loop_graph/phase2b_measured/`;
-- the fit is in `data/west_loop_graph/phase2b/`, scored in `phase2b/eval/`.
+- the measurements are in `graph/phase2b` on desktop-01 and `network/data/west_loop/graph/phase2b_measured/`;
+- the fit is in `network/data/west_loop/graph/phase2b/`, scored in `phase2b/eval/`.
 
 ## 2. What the video measures
 
@@ -104,7 +104,7 @@ Each crossing is only good to about 1.5 m, because there is one frame a second a
 
 **Tried and dropped:** reading the road's width straight ahead in the video, as the far curb's distance plus the distance walked. Only 42 crossings saw both curbs, and the errors spread from −3.6 to +0.6 m.
 
-**Results** (`data/west_loop_graph/phase2b_h130/`):
+**Results** (`network/data/west_loop/graph/phase2b_h130/`):
 
 | | Step 1 | Phase 2b (27 Oct) | **Phase 2b, 1.30 m and whole span** |
 |---|---|---|---|

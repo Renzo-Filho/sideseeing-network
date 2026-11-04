@@ -1,11 +1,11 @@
 /* Runnable check: the explorer's in-browser computations reproduce the published model results.
    Usage (from the repository root): node analysis/tests/check_viz_model.js */
 const fs = require('fs'), path = require('path'), vm = require('vm');
-const M = require('../../viz/model.js');
+const M = require('../viz/model.js');
 
 const here = __dirname, res = path.join(here, '../results/SP_CHI');
 const ctx = { window: {} };
-vm.runInNewContext(fs.readFileSync(path.join(here, '../../viz/data.js'), 'utf8'), ctx);
+vm.runInNewContext(fs.readFileSync(path.join(here, '../viz/data.js'), 'utf8'), ctx);
 const V = ctx.window.VIZ_DATA, n = V.units.length, ids = V.units.map((u) => u.id);
 const csv = (f) => fs.readFileSync(f, 'utf8').trim().split('\n').map((l) => l.split(','));
 let failed = 0;

@@ -1,6 +1,6 @@
 # Chicago model v1: fit outputs (6 October 2026)
 
-Produced by executing [`analysis/chicago_model_analysis.ipynb`](../../../chicago_model_analysis.ipynb) with [`analysis/scripts/chicago_model.py`](../../../scripts/chicago_model.py), under the frozen contract [`chicago_model_v1.json`](../../../config/chicago_model_v1.json). Methodology and reading: [MODEL_REPORT.md](../../../../docs/chicago/MODEL_REPORT.md).
+Produced by executing [`analysis/chicago_model_analysis.ipynb`](../../../chicago_model_analysis.ipynb) with [`analysis/scripts/chicago_model.py`](../../../scripts/chicago_model.py), under the frozen contract [`chicago_model_v1.json`](../../../config/chicago_model_v1.json). Methodology and reading: [MODEL_REPORT.md](../../../docs/chicago/MODEL_REPORT.md).
 
 ## `tables/`
 

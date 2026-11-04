@@ -1,6 +1,6 @@
 # São Paulo–Chicago model v1: fit outputs (6 October 2026)
 
-Produced by executing [`analysis/sp_chicago_model_analysis.ipynb`](../../../sp_chicago_model_analysis.ipynb) with [`sp_chicago_model.py`](../../../scripts/sp_chicago_model.py), under the contract [`sp_chicago_model_v1.json`](../../../config/sp_chicago_model_v1.json). 173 units; reference Brás (SP:10). Methodology and reading: [docs/harmonization/MODEL_REPORT.md](../../../../docs/harmonization/MODEL_REPORT.md).
+Produced by executing [`analysis/sp_chicago_model_analysis.ipynb`](../../../sp_chicago_model_analysis.ipynb) with [`sp_chicago_model.py`](../../../scripts/sp_chicago_model.py), under the contract [`sp_chicago_model_v1.json`](../../../config/sp_chicago_model_v1.json). 173 units; reference Brás (SP:10). Methodology and reading: [docs/harmonization/MODEL_REPORT.md](../../../docs/harmonization/MODEL_REPORT.md).
 
 ## `tables/`
 

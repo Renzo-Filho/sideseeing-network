@@ -31,7 +31,7 @@ All of this is on one street so far, **Morgan Street**: set D1, two recordings o
    - **How wide the road is:** the steps taken from the first moment there is no sidewalk just ahead to the last, i.e. while the walker is on the road.
 
    Together these give how far apart the two walking lines should be: road width + each line's distance from its curb. Adding this halved the remaining error.
-6. **A map of the results** (`data/west_loop_graph/map.html`, section 3).
+6. **A map of the results** (`network/data/west_loop/graph/map.html`, section 3).
 
 **How good is it now?**
 - The corrected lines are never on the wrong half of the street. Raw GPS is there 15–29% of the time.
@@ -48,7 +48,7 @@ All of this is on one street so far, **Morgan Street**: set D1, two recordings o
 
 ## 3. The map, layer by layer
 
-Open the map by running `python3 -m http.server 8767 --bind 127.0.0.1` in `data/west_loop_graph/`, then visit http://127.0.0.1:8767/map.html. It stays on this laptop, because it contains parcel lines that may not be shared. The background is Cook County's 2025 aerial photo. Each layer can be switched on and off.
+Open the map by running `python3 -m http.server 8767 --bind 127.0.0.1` in `network/data/west_loop/graph/`, then visit http://127.0.0.1:8767/map.html. It stays on this laptop, because it contains parcel lines that may not be shared. The background is Cook County's 2025 aerial photo. Each layer can be switched on and off.
 
 A note on alignment: the city and county data use one coordinate system (NAD83), and phone GPS uses another (WGS84). At Morgan they differ by about a metre, so everything from the phones is shifted by that amount before drawing.
 

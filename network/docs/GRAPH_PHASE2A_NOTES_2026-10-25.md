@@ -64,7 +64,7 @@ Each lesson below changed the model:
 - **Widths (medians):** road 15.2 m, east sidewalk 2.0 m, west 2.9 m. Together that is 20.1 m, Chicago's standard 66 ft right of way.
 - **Datum:** the city and county data are NAD83 and phone GPS is WGS84. At Morgan in October 2026 the same point is 1.0 m west and 0.9 m north in GPS coordinates. pyproj's default conversion ignores this, so `evaluate.py` moves the reference by it before scoring. Without the move, every walking line looked about a metre too far west.
 
-`python -m graph.evaluate --reference ../data/west_loop_reference --fit ../data/west_loop_graph/phase2a --out ../data/west_loop_graph/phase2a/eval` writes the scores, the profile and a plot (`walking_lines.png`).
+`python -m graph.evaluate --reference data/west_loop/reference --fit data/west_loop/graph/phase2a --out data/west_loop/graph/phase2a/eval` writes the scores, the profile and a plot (`walking_lines.png`).
 
 **Walking lines,** read every metre where their side was walked:
 

@@ -1,0 +1,13 @@
+source_site_folder,source_folder_url,proposed_city,proposed_site_code,proposed_destination_prefix,immediate_route_block_folders,name_status
+SaoPaulo_HC,https://drive.google.com/drive/folders/1kbs0rmoHB1g-KwaKFBLrGkI3SVrXyohn,sao-paulo,hc,hospitals/raw/sao-paulo/hc/,2,source_code_preserved
+SaoPaulo_HUUSP,https://drive.google.com/drive/folders/1GlJ9PCa932lHhXNLZNPLaoFvAaY-Q93n,sao-paulo,huusp,hospitals/raw/sao-paulo/huusp/,2,source_code_preserved
+Jundiai_HU,https://drive.google.com/drive/folders/1WSdaW4hpSv6qzXJ6pLsd4N5Wp18SKt7U,jundiai,hu,hospitals/raw/jundiai/hu/,2,source_code_preserved
+Jundiai_HSV,https://drive.google.com/drive/folders/15E6FyVO-rkKe_bLJ4yvyb-yDTyZbkz62,jundiai,hsv,hospitals/raw/jundiai/hsv/,5,source_code_preserved
+Santos_HM,https://drive.google.com/drive/folders/14AY45_c4Zvq5lWnPTNPJrAv5rYB1SKU2,santos,hm,hospitals/raw/santos/hm/,5,source_code_preserved
+Santos_CHE,https://drive.google.com/drive/folders/1-oWoHCvCQELuhbYxyHauthywgILrU8uE,santos,che,hospitals/raw/santos/che/,6,source_code_preserved
+Chicago_UIH,https://drive.google.com/drive/folders/1l9przGQSDlNh3C5mN5y-FruwjIKJqK8c,chicago,uih,hospitals/raw/chicago/uih/,9,source_code_preserved
+Chicago_NMH,https://drive.google.com/drive/folders/1h7p7Gj9736gRYmdiaR9q5cUQsBgxJFvA,chicago,nmh,hospitals/raw/chicago/nmh/,8,source_code_preserved
+Chicago_RUCM,https://drive.google.com/drive/folders/1V4LS_hvqG0daB4sq1q_-RkpeomlbAVKc,chicago,rucm,hospitals/raw/chicago/rucm/,8,source_code_preserved
+BATON_OLLRMC,https://drive.google.com/drive/folders/12bdqpfNLlt9Lm_1mkisBOkdHiHjmxZxy,baton-rouge,ollrmc,hospitals/raw/baton-rouge/ollrmc/,2,city_corrob_by_metadata
+BATON_0MCG,https://drive.google.com/drive/folders/11T4vQXfnTKY5hqES6IqSEKtb6c052SRH,baton-rouge,0mcg,hospitals/raw/baton-rouge/0mcg/,1,zero_in_source_and_metadata_intent_unverified
+BATON_BRGB,https://drive.google.com/drive/folders/1-EjuVS90NlFqO8eDs_P4j3t7ybZ7zBAo,baton-rouge,brgb,hospitals/raw/baton-rouge/brgb/,1,city_corrob_by_metadata

@@ -24,7 +24,9 @@ Thumbs.db
 .tmp/
 
 # Original downloads and disposable caches (never publish source microdata)
-/data/
+# Field captures and everything derived from them (network/data/README.md is the map)
+/network/data/*
+!/network/data/README.md
 /cache/
 /analysis/data/*
 !/analysis/data/README.md
@@ -56,6 +58,7 @@ test/
 *.lock
 /notebooks/cache/
 /notebooks/
+/curio_nodes/
 
 # Firecrawl source research cache
 .firecrawl/
@@ -67,10 +70,9 @@ export/
 .codex/
 analysis/curio_nodes/backup_spec_rev_*.json
 
-# Local research UI copy and generated tool state
-/analysis/viz/
+# Generated tool state
 /graphify-out/
-/tasks/
+.playwright-cli/
 
 # Curio local transfer bundle, backups and scratch discovery output
 /analysis/curio_nodes/simple_index/local_share/

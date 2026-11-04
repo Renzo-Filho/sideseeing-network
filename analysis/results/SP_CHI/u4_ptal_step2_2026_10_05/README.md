@@ -1,6 +1,6 @@
 # U4 public transport accessibility (PTAL Access Index), Chicago and São Paulo
 
-Run 5 October 2026 by `analysis/scripts/evaluate_u4_ptal_step2.py` (4 min, 1.9 GB peak). Method: Transport for London PTAL (Connectivity Assessment Guide 2015), applied unchanged; decisions S2-7 to S2-13 were fixed by the user before the run ([MODEL_PLAN.md](../../../../docs/chicago/MODEL_PLAN.md#step-2--u4-public-transport-accessibility-was-reachable-bus-supply)). **Not accepted until the user decides the returned cases and signs the acceptance record.**
+Run 5 October 2026 by `analysis/scripts/evaluate_u4_ptal_step2.py` (4 min, 1.9 GB peak). Method: Transport for London PTAL (Connectivity Assessment Guide 2015), applied unchanged; decisions S2-7 to S2-13 were fixed by the user before the run ([MODEL_PLAN.md](../../../docs/chicago/MODEL_PLAN.md#step-2--u4-public-transport-accessibility-was-reachable-bus-supply)). **Not accepted until the user decides the returned cases and signs the acceptance record.**
 
 ## Definition
 

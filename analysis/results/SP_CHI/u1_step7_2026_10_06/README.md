@@ -1,6 +1,6 @@
 # U1 land-use mix (Step 7)
 
-Run 6 October 2026 by `analysis/scripts/evaluate_u1_step7.py` (about 80 s with the São Paulo lot-geometry cache in `analysis/work/u1_step7_2026_10_06/`; 18 min to build it). Post-hoc diagnostics: `audit_u1_chicago_reference.py`, `audit_u1_sp_reference.py`. Decisions S7-1 to S7-6 fixed by the user before the run ([MODEL_PLAN Step 7](../../../../docs/chicago/MODEL_PLAN.md#step-7--u1-land-use-mix)). **The U1 entropy score was not accepted; three land shares were admitted at the final joint review with stated limits.**
+Run 6 October 2026 by `analysis/scripts/evaluate_u1_step7.py` (about 80 s with the São Paulo lot-geometry cache in `analysis/work/u1_step7_2026_10_06/`; 18 min to build it). Post-hoc diagnostics: `audit_u1_chicago_reference.py`, `audit_u1_sp_reference.py`. Decisions S7-1 to S7-6 fixed by the user before the run ([MODEL_PLAN Step 7](../../../docs/chicago/MODEL_PLAN.md#step-7--u1-land-use-mix)). **The U1 entropy score was not accepted; three land shares were admitted at the final joint review with stated limits.**
 
 ## Definition
 

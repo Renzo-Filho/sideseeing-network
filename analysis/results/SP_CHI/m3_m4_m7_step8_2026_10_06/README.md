@@ -1,6 +1,6 @@
 # M3 block size, M4 block shape, M7 parcel grain (Step 8)
 
-Run 6 October 2026 by `analysis/scripts/evaluate_m3_m4_m7_step8.py`. Decisions S8-1 to S8-8 were fixed by the user before the run ([MODEL_PLAN Step 8](../../../../docs/chicago/MODEL_PLAN.md#step-8--m3-block-size-m4-block-shape-m7-parcel-grain)).
+Run 6 October 2026 by `analysis/scripts/evaluate_m3_m4_m7_step8.py`. Decisions S8-1 to S8-8 were fixed by the user before the run ([MODEL_PLAN Step 8](../../../docs/chicago/MODEL_PLAN.md#step-8--m3-block-size-m4-block-shape-m7-parcel-grain)).
 - Post-hoc diagnostic: `audit_m3_m4_sp_reference.py` → `posthoc_reference_diagnostic.json`.
 - Inputs hashed in `source_register.json`; all checks in `checks.json`; table `m3_m4_m7_by_unit.csv`.
 - **Accepted with stated limits later on 6 October 2026.** The failed São Paulo municipal-line comparison and the accepted official-block comparison remain documented below.

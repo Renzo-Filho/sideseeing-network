@@ -1,6 +1,6 @@
 # Simplified-index source audit — 1 October 2026
 
-Checks, from local data only, every source the [simplified composite index](../../../../docs/SIMPLE_INDEX.md) would use. **No index, feature or model was built.** Every number below is in `tables/` or `summary.json` and was produced by one run of:
+Checks, from local data only, every source the [simplified composite index](../../../docs/SIMPLE_INDEX.md) would use. **No index, feature or model was built.** Every number below is in `tables/` or `summary.json` and was produced by one run of:
 
 ```bash
 .venv/bin/python analysis/scripts/audit_simple_index_sources.py
@@ -74,6 +74,6 @@ M1 ten classes, segments wholly inside the city: Chicago 52,796 (median 102.1 m,
 
 ## Limits
 
-- No completeness of any source is measured here; see the reference assessment in [SIMPLE_INDEX.md](../../../../docs/SIMPLE_INDEX.md).
+- No completeness of any source is measured here; see the reference assessment in [SIMPLE_INDEX.md](../../../docs/SIMPLE_INDEX.md).
 - Height-source attribution uses the dataset credited for `/properties/height`, otherwise the whole-record dataset.
 - CNEFE coordinates are read as SIRGAS 2000 (EPSG:4674).

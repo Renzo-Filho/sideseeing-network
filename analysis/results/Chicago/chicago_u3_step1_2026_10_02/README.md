@@ -1,6 +1,6 @@
 # Chicago model Step 1: U3 resident density
 
-Run 2 October 2026 by `analysis/scripts/evaluate_chicago_u3_step1.py` (about 2 min). Plan, definitions and decision rules (all fixed by the user before the run) are in [MODEL_PLAN.md](../../../../docs/chicago/MODEL_PLAN.md#step-1--u3-resident-density). **U3 is not accepted until the user signs the acceptance record. Two pre-registered rules returned cases for a user decision (S1-7 O'Hare, S1-8 Fuller Park and Burnside).**
+Run 2 October 2026 by `analysis/scripts/evaluate_chicago_u3_step1.py` (about 2 min). Plan, definitions and decision rules (all fixed by the user before the run) are in [MODEL_PLAN.md](../../../docs/chicago/MODEL_PLAN.md#step-1--u3-resident-density). **U3 is not accepted until the user signs the acceptance record. Two pre-registered rules returned cases for a user decision (S1-7 O'Hare, S1-8 Fuller Park and Burnside).**
 
 ## Definition (primary)
 

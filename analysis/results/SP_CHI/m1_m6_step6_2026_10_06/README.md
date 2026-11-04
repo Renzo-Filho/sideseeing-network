@@ -1,6 +1,6 @@
 # M1 street density and M6 street hierarchy (Step 6)
 
-Run 6 October 2026 by `analysis/scripts/evaluate_m1_m6_step6.py` (8 min). Decisions S6-1 to S6-7 fixed by the user before the run ([MODEL_PLAN Step 6](../../../../docs/chicago/MODEL_PLAN.md#step-6--m1-street-density-and-m6-street-hierarchy)). **M1 and M6 were accepted with stated limits later on 6 October 2026.**
+Run 6 October 2026 by `analysis/scripts/evaluate_m1_m6_step6.py` (8 min). Decisions S6-1 to S6-7 fixed by the user before the run ([MODEL_PLAN Step 6](../../../docs/chicago/MODEL_PLAN.md#step-6--m1-street-density-and-m6-street-hierarchy)). **M1 and M6 were accepted with stated limits later on 6 October 2026.**
 
 ## Definitions
 

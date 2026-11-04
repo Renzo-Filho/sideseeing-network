@@ -2,7 +2,7 @@
 
 > **Correction (6 October 2026):** a like-for-like LiDAR comparison ([lidar_sample](lidar_sample/README.md)) shows that GHSL is **not** 1.6–2 times too high in São Paulo. With the same per-building statistic as Chicago, São Paulo's GHSL ÷ LiDAR ratios are about 10–15% above Chicago's within each height class, and GHSL inflates low and compresses tall buildings in both cities. The municipal references below (GeoSampa 2007/2014 heights, IPTU floors) understate LiDAR building height; the readings that rely on them are superseded.
 
-Run 5 October 2026. Scripts: `analysis/scripts/evaluate_bv_step5.py`, `analysis/scripts/audit_sp_height_references.py`. Decisions S5-1 to S5-7 fixed by the user before the run ([MODEL_PLAN Step 5](../../../../docs/chicago/MODEL_PLAN.md#step-5--bv-vertical-form-and-the-bi-question)). **BV was accepted with stated limits for Chicago later on 5 October 2026;** the cross-city LiDAR follow-up and its limits are recorded separately.
+Run 5 October 2026. Scripts: `analysis/scripts/evaluate_bv_step5.py`, `analysis/scripts/audit_sp_height_references.py`. Decisions S5-1 to S5-7 fixed by the user before the run ([MODEL_PLAN Step 5](../../../docs/chicago/MODEL_PLAN.md#step-5--bv-vertical-form-and-the-bi-question)). **BV was accepted with stated limits for Chicago later on 5 October 2026;** the cross-city LiDAR follow-up and its limits are recorded separately.
 
 ## Definition (S5-1)
 

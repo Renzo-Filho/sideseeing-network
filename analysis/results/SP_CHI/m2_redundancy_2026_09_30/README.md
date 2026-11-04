@@ -2,7 +2,7 @@
 
 Run `analysis/scripts/review_m2_redundancy_2026_09_30.py`. It reads only published tables (no raw data, no fit) and writes `summary.json`, `m2_spearman.csv` and `m2_rank_r2.csv`.
 
-**Inputs are the existing proxies, not the draft [pedestrian-junction convention](../../../../docs/harmonization/M2_JUNCTION_CONVENTION.md).**
+**Inputs are the existing proxies, not the draft [pedestrian-junction convention](../../../docs/harmonization/M2_JUNCTION_CONVENTION.md).**
 - SP M2 is the v2 5 m planar proxy (`intersection_density_proxy_5m_km2`, 96 districts); M1, M3, M4 and M7 come from the same SP v2 attribute table (M3/M4 use municipal Quadra blocks).
 - Chicago M2 is the unaccepted endpoint diagnostic (`m2_endpoint_candidates.csv`, 77 areas); M1 is municipal street density; M3/M4 are **experimental** centerline enclosures; B1 is municipal footprint coverage on land.
 

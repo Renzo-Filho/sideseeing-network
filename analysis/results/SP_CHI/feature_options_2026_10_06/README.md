@@ -6,7 +6,7 @@ Prepared 6 October 2026 in response to a request for new features that capture n
 
 The [contract snapshot used in the overlap calculations](model_contract_snapshot.json) contains 12 families and 20 columns: M1 street density, M3 typical block size, M4 compactness and elongation, M6 major-road share, M7 mapped parcel density, B1 footprint coverage, BV built-weighted height, U2 registered jobs, U3 residents, U4 public transport access, U6 establishment intensity and composition, and U1 residential, industrial and institutional land shares. The initial review encountered the earlier 11-family contract; the joint review admitted those three U1 shares while this analysis was running. The saved snapshot makes the actual comparison set explicit. Paired São Paulo tables are available; cross-city acceptance, scaling and distance interpretation remain a separate stage. The historical São Paulo model is not the same specification.
 
-Sources: [current contract](../../../config/chicago_model_v1.json), [model plan](../../../../docs/chicago/MODEL_PLAN.md), [research protocol](../../../../docs/PROTOCOL.md).
+Sources: [current contract](../../../config/chicago_model_v1.json), [model plan](../../../docs/chicago/MODEL_PLAN.md), [research protocol](../../../docs/PROTOCOL.md).
 
 The principal gaps are relationships among the measured objects and variation within administrative areas. Two areas can share similar coverage, height, parcel density and typical block size while differing in street alignment, how buildings line streets, how much block sizes vary, or how much routes detour. Those are candidate dimensions of character; none is inherently a measure of neighborhood quality.
 

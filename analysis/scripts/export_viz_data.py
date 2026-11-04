@@ -1,4 +1,4 @@
-"""Export the inputs of the Cross-City Urban Explorer to viz/data.js.
+"""Export the inputs of the Cross-City Urban Explorer to analysis/viz/data.js.
 
 The page recomputes every model in the browser, so this script exports model *inputs*, never fitted results:
 - Cross-City Urban Index A and B: the raw and min-max scaled factors of protocol P-AB-1 (index_A_B.csv).
@@ -27,7 +27,7 @@ AB = A / "results/SP_CHI/simple_index_ab_2026_10_01/tables"
 XR = xm.OUT / "tables"
 NBHD = A / "results/Chicago/chicago_neighborhoods_2026_10_13"
 PRESETS = ("v4", "v3")                                 # the first is the page's starting settings
-OUT = A.parent / "viz/data.js"
+OUT = A / "viz/data.js"
 SIMPLIFY_M = 20                                        # polygon simplification tolerance (metres)
 NBHD_SIMPLIFY_M = 10
 NAME_FIX = {"Capao Redondo": "Capão Redondo", "Carrao": "Carrão", "Cidade Lider": "Cidade Líder", "Freguesia Do O": "Freguesia do Ó",

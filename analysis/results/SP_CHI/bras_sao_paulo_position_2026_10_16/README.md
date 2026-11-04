@@ -1,6 +1,6 @@
 # Brás's position within São Paulo (16 October 2026)
 
-Script: `analysis/scripts/bras_sao_paulo_position.py` (a few seconds). Inputs: the cross-city model's 21 columns (`sp_chicago_model.load_inputs`, the same data in v2–v4) and the U6 shares in `u6_activity_2026_10_06/u6_by_unit.csv`. Reading: [`docs/harmonization/MODEL_REPORT.md` §3.1](../../../../docs/harmonization/MODEL_REPORT.md#31-brás-within-são-paulo).
+Script: `analysis/scripts/bras_sao_paulo_position.py` (a few seconds). Inputs: the cross-city model's 21 columns (`sp_chicago_model.load_inputs`, the same data in v2–v4) and the U6 shares in `u6_activity_2026_10_06/u6_by_unit.csv`. Reading: [`docs/harmonization/MODEL_REPORT.md` §3.1](../../../docs/harmonization/MODEL_REPORT.md#31-brás-within-são-paulo).
 
 | File | Content |
 |---|---|

@@ -7,7 +7,7 @@ This folder holds the original downloads behind every São Paulo and Chicago fea
 - **Integrity, checked 20 October 2026 before the removals:**
   - All 153 SP files fingerprinted by the frozen SP preparation on 10 September (`work/prepared/SP/sp_prep_2026_09_10_v3/N01/manifest.json`) were byte-identical.
   - So were all 18 Chicago files hashed by the first Chicago release on 16 September (`results/Chicago/chi_local_2026_09_16_v1/validation/source_manifest.json`).
-  - Every SHA-256 quoted in `docs/` and in the result READMEs matched the file on disk.
+  - Every SHA-256 quoted in `analysis/docs/` and in the result READMEs matched the file on disk.
 
 **Verify** (a deleted file is skipped, not reported as a failure):
 
@@ -23,8 +23,8 @@ cd analysis/data && sha256sum -c --quiet --ignore-missing SHA256SUMS
 |---|---|
 | **Model** | Direct input to a feature of the fitted models: Chicago model v1 (`config/chicago_model_v1.json`) and the São Paulo–Chicago model v1–v4 (`config/sp_chicago_model_v*.json`), which share the same 12 families |
 | **Check** | Reference in a pre-registered acceptance check of a model family, or evidence behind a stated limit. Needed to rerun the acceptance record in `docs/chicago/MODEL_PLAN.md` |
-| **SP v2** | Input to the frozen São Paulo attribute release `sp_attributes_2026_09_11_v1` and SP model v2 (`docs/sp/`) |
-| **Index** | Advisor's simple index, methods A/B (`docs/SIMPLE_INDEX.md`) |
+| **SP v2** | Input to the frozen São Paulo attribute release `sp_attributes_2026_09_11_v1` and SP model v2 (`analysis/docs/sp/`) |
+| **Index** | Advisor's simple index, methods A/B (`analysis/docs/SIMPLE_INDEX.md`) |
 | **Pilot** | Only used by earlier discovery, pilots or superseded releases |
 | **Unused** | No script reads it |
 
