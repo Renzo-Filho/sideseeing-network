@@ -7,7 +7,7 @@ For a read-only survey of the other collections in the shared `datasets` Drive f
 
 ## Scope and existing conventions
 
-The network collection protocol requires original MultiSensor folders and their contents to remain intact; derived outputs belong outside raw folders ([collection protocol](../COLLECTION_PROTOCOL.md), [pilot data plan](../archive/PILOT_DATA_PLAN.md)). `analysis/data/` has a separate register for model inputs, so this plan concerns field captures and their direct derivatives, not a reorganization of the model-input register.
+The network collection protocol requires original MultiSensor folders and their contents to remain intact; derived outputs belong outside raw folders ([collection protocol](../archive/COLLECTION_PROTOCOL.md), [pilot data plan](../archive/PILOT_DATA_PLAN.md)). `analysis/data/` has a separate register for model inputs, so this plan concerns field captures and their direct derivatives, not a reorganization of the model-input register.
 
 RustFS bucket root at the initial 21 October check: `chicago/west-loop/` contained four 2026 capture folders directly; `sao-paulo/bras/` was empty then. These paths set the city and area spelling convention. Do not migrate the West Loop captures as part of this planning task.
 

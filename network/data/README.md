@@ -8,7 +8,8 @@ data/
     chicago_planimetrics/   City of Chicago curbs (5gv8-ktcg) and sidewalks (77cn-6x4c), zips + metadata
     imagery/                Cook County 2025 orthophoto crops (UTM 16N) cached by the notebooks
   west_loop/          the collection area
-    plan/             routes.py and route_methods.py output: osm_<date>.json, routes.gpkg, sessions.csv, cards/, routing/, status/
+    field_log.csv     one row per recording: label, protocol, leg, collector, phone, camera height (local: names)
+    plan/             walk2net.plan output (routing/ is from the dropped route_methods.py): osm_<date>.json, routes.gpkg, sessions.csv, cards/, routing/, status/
     raw/              MultiSensor capture folders kept locally (day 2, 2026-10-20). Day 1 is read from Drive
     derived/          per-session tables from the notebooks and transcribe.py (<session>/), and day<N>_*.csv/gpkg
     workspace/        copy of the desktop-01 sideseeing-tools workspace: frames, preds (SAM3), motion, transcripts

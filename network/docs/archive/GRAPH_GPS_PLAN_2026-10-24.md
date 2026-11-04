@@ -1,6 +1,6 @@
 # The walk measures the street: an initial plan for the passage graph, its cells and GPS correction
 
-Draft, 24 October 2026. A proposal for discussion, built on [PLAN.md](PLAN.md), the [research critique](archive/RESEARCH_CRITIQUE_2026-10-23.md) and the [hypothesis experiments](archive/HYPOTHESIS_EXPERIMENTS_2026-10-23.md). It keeps their decisions: construction is automatic, voice is an evaluation reference only (decision 14), the three input regimes (street-only, street + aerial, map-assisted) stay separate, and **OSM is not used for map matching** (24 October). It makes one revision, agreed with Renzo on 24 October: the graph gets a second, linked view made of polygons (section 4). [PLAN.md](PLAN.md) decision 3 is revised to match. Numbers below are measurements from the West Loop notebooks or the sideseeing-tools viewer, cited where they first appear. Nothing here is a result of the proposed method.
+Draft, 24 October 2026. A proposal for discussion, built on [PLAN.md](PLAN.md), the [research critique](RESEARCH_CRITIQUE_2026-10-23.md) and the [hypothesis experiments](HYPOTHESIS_EXPERIMENTS_2026-10-23.md). It keeps their decisions: construction is automatic, voice is an evaluation reference only (decision 14), the three input regimes (street-only, street + aerial, map-assisted) stay separate, and **OSM is not used for map matching** (24 October). It makes one revision, agreed with Renzo on 24 October: the graph gets a second, linked view made of polygons (section 4). [PLAN.md](PLAN.md) decision 3 is revised to match. Numbers below are measurements from the West Loop notebooks or the sideseeing-tools viewer, cited where they first appear. Nothing here is a result of the proposed method.
 
 ## 1. The goal
 
@@ -217,7 +217,7 @@ Later the same day:
 
 ## Sources consulted for this plan
 
-- West Loop notebooks: [`west_loop.ipynb`](../notebooks/west_loop.ipynb), [`west_loop_sam3_whisper.ipynb`](../notebooks/west_loop_sam3_whisper.ipynb); sideseeing-tools `tasks/visual-analytics-plan.md` and `tasks/west-loop-run.md`.
+- West Loop notebooks: [`west_loop.ipynb`](../../notebooks/west_loop.ipynb), [`west_loop_sam3_whisper.ipynb`](../../notebooks/west_loop_sam3_whisper.ipynb); sideseeing-tools `tasks/visual-analytics-plan.md` and `tasks/west-loop-run.md`.
 - Kasemsuppakorn & Karimi, [A pedestrian network construction algorithm based on multiple GPS traces](https://mail.iaorifors.com/paper/79378), Transportation Research Part C, 2013.
 - [Sidewalk matching: a smartphone-based GNSS positioning technique for pedestrians](https://research.polyu.edu.hk/en/publications/sidewalk-matching-a-smartphone-based-gnss-positioning-technique-f/) (PolyU; uses a pedestrian map; probably the critique's Weng et al. 2025, to confirm).
 - [UnLoc](https://synapsesocial.com/papers/W2054602086) (MobiSys 2012) and [Walkie-Markie](https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/shen) (NSDI 2013): landmark-anchored indoor dead reckoning and pathway mapping.

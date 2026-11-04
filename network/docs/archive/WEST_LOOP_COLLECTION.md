@@ -1,6 +1,6 @@
 # West Loop collection: route plan
 
-Draft, 19 October 2026. West Loop is a second candidate area for the full collection, next to [River North](archive/RIVER_NORTH_COLLECTION.md). This document plans its routes with the same method and the same field rules, so the two areas can be compared on equal terms. It only writes down what West Loop adds. Team size, hours per day and the schedule are still open.
+Draft, 19 October 2026. West Loop is a second candidate area for the full collection, next to [River North](RIVER_NORTH_COLLECTION.md). This document plans its routes with the same method and the same field rules, so the two areas can be compared on equal terms. It only writes down what West Loop adds. Team size, hours per day and the schedule are still open.
 
 ## 1. Boundary (proposed 19 October 2026)
 
@@ -23,7 +23,7 @@ Any comparison with the model must state this difference.
 
 ## 2. What carries over
 
-Field rules F1–F8 and settings S1–S4 are those of [River North §3](archive/RIVER_NORTH_COLLECTION.md). The voice protocol is that of [Pilot 2 §3](archive/PILOT2_PROTOCOL.md). The Pilot 2 test session ([`pilot2_test.ipynb`](../notebooks/pilot2_test.ipynb), 16 October 2026) has since answered several open settings:
+Field rules F1–F8 and settings S1–S4 are those of [River North §3](RIVER_NORTH_COLLECTION.md). The voice protocol is that of [Pilot 2 §3](PILOT2_PROTOCOL.md). The Pilot 2 test session ([`pilot2_test.ipynb`](../../notebooks/pilot2_test.ipynb), 16 October 2026) has since answered several open settings:
 
 | Item | Pilot 2 result | For West Loop |
 |---|---|---|
@@ -45,7 +45,7 @@ Field rules F1–F8 and settings S1–S4 are those of [River North §3](archive/
 
 ## 4. Route plan
 
-The rule is River North's ([§4](archive/RIVER_NORTH_COLLECTION.md)): out on the north or east side, back on the south or west side, crossing straight ahead at every intersection. The U-turn crosswalk is the planned overlap with the perpendicular module.
+The rule is River North's ([§4](RIVER_NORTH_COLLECTION.md)): out on the north or east side, back on the south or west side, crossing straight ahead at every intersection. The U-turn crosswalk is the planned overlap with the perpendicular module.
 
 `network/scripts/routes.py west_loop` builds the plan from OpenStreetMap (snapshot of 19 October 2026). The same script builds River North with `routes.py river_north`. The outputs are in `data/west_loop/` (not versioned):
 - `sessions.csv`: one row per leg. The `gap_m` column gives the length of the leg with no mapped sidewalk or crosswalk, counting stretches of 40 m or more.
@@ -290,4 +290,4 @@ RPP remains the efficiency benchmark. CARP's zones are the alternative if the te
 
 The day plan assumes one collector. With two, give each a run of consecutive days. Section 6's test day (`WASHINGTON_EAST`, `LAKE_EAST` and `HALSTED`) comes before day 1, and its legs are then skipped on days 9 and 10.
 
-Related documents: [River North plan](archive/RIVER_NORTH_COLLECTION.md), [Pilot 2 protocol](archive/PILOT2_PROTOCOL.md), [collection protocol](COLLECTION_PROTOCOL.md), [research plan](PLAN.md).
+Related documents: [River North plan](RIVER_NORTH_COLLECTION.md), [Pilot 2 protocol](PILOT2_PROTOCOL.md), [collection protocol](COLLECTION_PROTOCOL.md), [research plan](PLAN.md).

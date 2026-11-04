@@ -67,4 +67,4 @@ Create a small, separately verified reference for selected cases **after freezin
 - Do not convert reported GPS accuracy into a universal lateral-error threshold. Inspect disagreements on this phone and these streets first.
 - Record unknowns explicitly. A disconnected component or missing edge can be an honest coverage limit; forced connectivity would undermine routing reliability.
 
-The broader design remains in [PLAN.md](../PLAN.md); the [field protocol](PILOT_PROTOCOL.md) and [route plan](PILOT_NEAR_WEST_SIDE.md) explain the intended capture.
+The broader design remains in [PLAN.md](PLAN.md); the [field protocol](PILOT_PROTOCOL.md) and [route plan](PILOT_NEAR_WEST_SIDE.md) explain the intended capture.

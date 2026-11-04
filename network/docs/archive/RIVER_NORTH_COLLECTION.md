@@ -13,7 +13,7 @@ Draft, 16 October 2026. River North is the selected area for the full collection
 
 **This boundary is not the cross-city model's River North.** The model scored the City of Chicago neighborhood polygon (`Boundaries_-_Neighborhoods_20261013.geojson`, 3.60 km²). That polygon also includes Goose Island and the area north of Chicago Ave up to Division St and North Ave. Any comparison with the model must state this difference.
 
-**Proposed, not yet confirmed:** do not collect lower-level streets (Lower Michigan, Lower Wabash, Lower North Water, Lower Illinois), bridges, the Riverwalk, or private plazas. Lower levels have no usable GPS and are not ordinary street sidewalks. Bridges lead out of the area. The Riverwalk and plazas are not street-adjacent, which keeps the scope consistent with the [collection protocol](../COLLECTION_PROTOCOL.md).
+**Proposed, not yet confirmed:** do not collect lower-level streets (Lower Michigan, Lower Wabash, Lower North Water, Lower Illinois), bridges, the Riverwalk, or private plazas. Lower levels have no usable GPS and are not ordinary street sidewalks. Bridges lead out of the area. The Riverwalk and plazas are not street-adjacent, which keeps the scope consistent with the [collection protocol](COLLECTION_PROTOCOL.md).
 
 ## 2. What the pilot measured
 
@@ -57,7 +57,7 @@ These rules standardise the pauses so that every recording has the same structur
 
 **F7. Sessions.** One session is one leg (one side of one street), named by its plan ID, e.g. `ERIE-N`. A restart gets a new suffix (`ERIE-N.2`), and the failed folder is kept. A leg ends after the U-turn crosswalk at the far end (section 4), and the next leg starts there with F1.
 
-**F8. Log.** For each leg, record the ID, capture folder, start and end time, and any deviations, closures, crowding or stops. Copy the original folders each day and check that video, GPS and sensor files open before deleting anything from the phone ([collection protocol §7](../COLLECTION_PROTOCOL.md)).
+**F8. Log.** For each leg, record the ID, capture folder, start and end time, and any deviations, closures, crowding or stops. Copy the original folders each day and check that video, GPS and sensor files open before deleting anything from the phone ([collection protocol §7](COLLECTION_PROTOCOL.md)).
 
 **Settings to freeze before day 1** (verify each one on a short test export, not just in the app):
 
@@ -157,4 +157,4 @@ Its measured waits complete the workload estimate in section 5.
 4. Confirm the exclusions proposed in section 1, and the site checks in section 4.
 5. Results of settings tests S1–S3, from Pilot 2.
 
-Related documents: [collection protocol](../COLLECTION_PROTOCOL.md), [research plan](../PLAN.md), [pilot data plan](PILOT_DATA_PLAN.md).
+Related documents: [collection protocol](COLLECTION_PROTOCOL.md), [research plan](PLAN.md), [pilot data plan](PILOT_DATA_PLAN.md).

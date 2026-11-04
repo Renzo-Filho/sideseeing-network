@@ -67,4 +67,4 @@ Open before fieldwork:
 - Check current access to the drawn mid-block paths and crossing arms.
 - Record the date and confirm the moto g 5G (2023), MultiSensor and vest setup with a test export.
 
-Related documents: [collection protocol](../COLLECTION_PROTOCOL.md), [research plan](../PLAN.md).
+Related documents: [collection protocol](COLLECTION_PROTOCOL.md), [research plan](PLAN.md).

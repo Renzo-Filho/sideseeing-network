@@ -1,6 +1,6 @@
 # Calibration day: plan for discussion
 
-Draft, 3 November 2026. A field day to calibrate what the pipeline measures, collector by collector and phone by phone, and to build error models against tape and level. It answers Renzo's calibration idea in the [graph paper plan](GRAPH_PAPER_PLAN_2026-11-03.md) (section 14, idea 1). The day is built from **modules**: one full day on Morgan first; any module can then be repeated on another kind of block, if the first day shows that the errors depend on the block. A 10-minute **daily routine** for every collection day follows at the end.
+Draft, 3 November 2026. A field day to calibrate what the pipeline measures, collector by collector and phone by phone, and to build error models against tape and level. It answers Renzo's calibration idea in the [graph paper plan](archive/GRAPH_PAPER_PLAN_2026-11-03.md) (section 14, idea 1). The day is built from **modules**: one full day on Morgan first; any module can then be repeated on another kind of block, if the first day shows that the errors depend on the block. A 10-minute **daily routine** for every collection day follows at the end.
 
 ## 1. Why: what each module fixes
 
@@ -8,17 +8,17 @@ Every module answers a problem already measured on our data.
 
 | Module | Problem it addresses | Measured so far |
 |---|---|---|
-| CAL-0 Setup | The camera's height sets every distance from the video. The mount's angle changes between sessions | Height 1.30 m measured, against 1.43–1.49 m from ground motion ([phase 2b](GRAPH_PHASE2B_NOTES_2026-10-27.md) §7). Walking pitch 18.7–22.8° between sessions; the phone sat the other way round in some ([pilot 2](../notebooks/pilot2_test.ipynb), findings §4) |
+| CAL-0 Setup | The camera's height sets every distance from the video. The mount's angle changes between sessions | Height 1.30 m measured, against 1.43–1.49 m from ground motion ([phase 2b](RESULTS.md#phase-2b-notes-the-curb-from-the-video-on-morgan) §7). Walking pitch 18.7–22.8° between sessions; the phone sat the other way round in some ([pilot 2](../notebooks/pilot2_test.ipynb), findings §4) |
 | CAL-1, CAL-11 Still and sync | Sensor bias; barometer drift; clock alignment | Sync taps are the protocol's ([PILOT2_PROTOCOL.md](archive/PILOT2_PROTOCOL.md)) |
-| CAL-2 Checkerboard | The lens: focal length and distortion; whether stabilisation crops | Focal length about 1460 px, from turns only ([phase 0](GRAPH_PHASE0_RESULTS_2026-10-25.md)); no distortion model |
+| CAL-2 Checkerboard | The lens: focal length and distortion; whether stabilisation crops | Focal length about 1460 px, from turns only ([phase 0](RESULTS.md#phase-0-results-sessions-clocks-runs-side-cue-and-zones)); no distortion model |
 | CAL-3 Step course | Step length per collector and pace; GPS error along the street | 0.78 m per step on the West Loop days (October plan §5), one collector |
-| CAL-4 Width spots | Video widths against tape | Video 2.17 and 2.30 m against about 2.2 and 2.3 m on the orthophoto, on Morgan only ([phase 2b](GRAPH_PHASE2B_NOTES_2026-10-27.md) §7) |
+| CAL-4 Width spots | Video widths against tape | Video 2.17 and 2.30 m against about 2.2 and 2.3 m on the orthophoto, on Morgan only ([phase 2b](RESULTS.md#phase-2b-notes-the-curb-from-the-video-on-morgan) §7) |
 | CAL-5 Lateral lines | The video's distance from the curb; GPS's sideways error at a known offset | Curb distance 1.28 and 1.51 m from the video, never checked against a known line |
-| CAL-6 Crossings | The rung: where the walker turns around on the far side | The far end lies a median 1.9 m past the far curb ([phase 2a](GRAPH_PHASE2A_NOTES_2026-10-25.md) §4); each crossing good to about 1.5 m |
+| CAL-6 Crossings | The rung: where the walker turns around on the far side | The far end lies a median 1.9 m past the far curb ([phase 2a](RESULTS.md#phase-2a-notes-the-ladder-on-morgan) §4); each crossing good to about 1.5 m |
 | CAL-7 Slope, ramps, tactile paving | Running and cross slope from gravity and the video; the tactile paving as a ruler | No reference measurement yet |
-| CAL-8 Stair and curb | Whether the barometer sees a storey and a curb | Planned in pilot 2 (`P2-BARO`), not reported in its findings. Noise about 7 cm ([pipeline](GRAPH_PIPELINE_2026-11-03.md) §8) |
-| CAL-9 Wi-Fi repeats | The Wi-Fi side cue needs the same side walked twice | A modest signal on D2, between opposite sides only ([pipeline](GRAPH_PIPELINE_2026-11-03.md) §8) |
-| CAL-10 Under the 'L' (optional) | GPS, light and magnetometer under elevated steel | Lake St runs under the Green and Pink Lines ([WEST_LOOP_COLLECTION.md](WEST_LOOP_COLLECTION.md)) |
+| CAL-8 Stair and curb | Whether the barometer sees a storey and a curb | Planned in pilot 2 (`P2-BARO`), not reported in its findings. Noise about 7 cm ([method](METHOD.md#11-exploratory-sources-time-boxed) §11) |
+| CAL-9 Wi-Fi repeats | The Wi-Fi side cue needs the same side walked twice | A modest signal on D2, between opposite sides only ([method](METHOD.md#11-exploratory-sources-time-boxed) §11) |
+| CAL-10 Under the 'L' (optional) | GPS, light and magnetometer under elevated steel | Lake St runs under the Green and Pink Lines ([field protocol](FIELD_PROTOCOL.md#6-places-to-check-before-walking-a-street) §6) |
 
 ## 2. Where, who, what to bring
 
@@ -68,7 +68,7 @@ Times are estimates for one collector and one phone. Record each module as **its
 | **CAL-10** | Under the 'L' (optional) | Walk one block of Lake St beside the elevated structure's columns, each side, at normal pace | 15 min |
 | **CAL-11** | Still and sync, end | 60 s still, three taps, `CAL end` | 2 min |
 
-**Total:** about 3.5 hours for one collector, plus about 30 minutes per extra volunteer (CAL-0 to CAL-3). Finish well before dusk: the light falls quickly in November (D2 S2 dropped below 35 lux, [October plan](GRAPH_GPS_PLAN_2026-10-24.md) §10). Choose a dry day; wet paving changes the masks.
+**Total:** about 3.5 hours for one collector, plus about 30 minutes per extra volunteer (CAL-0 to CAL-3). Finish well before dusk: the light falls quickly in November (D2 S2 dropped below 35 lux, [October plan](archive/GRAPH_GPS_PLAN_2026-10-24.md) §10). Choose a dry day; wet paving changes the masks.
 
 **Safety and courtesy:**
 - Measure only on the sidewalk, never across traffic.

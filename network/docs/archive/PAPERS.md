@@ -89,7 +89,7 @@ The question stays the critique's: when can sparse phone recordings establish wh
 - City scale.
 - Cross slope, unless the phone resolves it.
 
-**Venue.** ACM SIGSPATIAL, as the [critique](archive/RESEARCH_CRITIQUE_2026-10-23.md) argues.
+**Venue.** ACM SIGSPATIAL, as the [critique](RESEARCH_CRITIQUE_2026-10-23.md) argues.
 
 ### What the two papers share
 
@@ -104,7 +104,7 @@ The question stays the critique's: when can sparse phone recordings establish wh
 
 ## 2. The pipeline
 
-![The pipeline from collection to both papers](img/papers-pipeline.svg)
+![The pipeline from collection to both papers](../img/papers-pipeline.svg)
 
 **How to read the diagram:**
 - **Colour** is each step's status on 25 October.
@@ -117,7 +117,7 @@ To update a status, change the box's class in the SVG to `done`, `doing` or `tod
 
 | Phase | Work | Gate before moving on | Status, 25 October |
 |---|---|---|---|
-| **D0. Inventory and transfer** | West Loop's 8 sessions are in RustFS. Brás: 649 transfer jobs from the `2025_Auditoria_Calcadas` Drive folder ([preflight](datasets/TRANSFER_PREFLIGHT.md)) | Every capture is in a manifest with checksums verified at the destination, or has an exclusion reason | West Loop done. Brás 433 of 649 jobs |
+| **D0. Inventory and transfer** | West Loop's 8 sessions are in RustFS. Brás: 649 transfer jobs from the `2025_Auditoria_Calcadas` Drive folder ([preflight](../datasets/TRANSFER_PREFLIGHT.md)) | Every capture is in a manifest with checksums verified at the destination, or has an exclusion reason | West Loop done. Brás 433 of 649 jobs |
 | **D1. The same processing for both** | West Loop: the run on desktop-01 (SAM3, redaction, Whisper, motion), then the zone prompts. Brás: frames, SAM3, redaction and motion with the same code and the same prompts, after estimating GPU time from the captures' durations | Every capture has masks, redacted frames and motion events on one time base, or has an exclusion reason | West Loop done on 25 October: 17,499 frames, 37 prompts, redaction, Whisper, events; zone prompts on D1–D2. Brás: later (same prompts, decided 25 October) |
 | **D2. One label schema** | Map both cities' labels into one schema, at four levels: frame, lot frontage or sidewalk stretch, crossing, and walking run. Each label is present, absent or unknown, and records its provenance (human, or which model). Start from the 2024 taxonomy | Schema and labelling guide frozen | Not started |
 | **D3. Labels** | West Loop: the graph paper's phase 1 (shared), plus crossing elements. Then the chosen transcript (`turbo-silence`): corrected, its code words and events tagged on the time base, names and addresses removed. Brás: import the audit as it is, and relabel a stratified sample blind | Agreement and effort reported for each label type | West Loop curbs and tracing in progress. Brás audit exists |
@@ -185,5 +185,5 @@ Out of scope: the hospital collections and River North.
 - The Brás audit:
   - its report (`RELATÓRIO DA AUDITORIA DE CALÇADAS - BRÁS`, supplied by Renzo; see [COLLECTION_PROTOCOL.md](COLLECTION_PROTOCOL.md));
   - its GeoPackage, `sao-paulo/bras/processed/auditoria_calcada_bras.gpkg` in RustFS. The counts above were read from it on 25 October.
-- The Brás inventory: [dataset organization plan](datasets/README.md).
+- The Brás inventory: [dataset organization plan](../datasets/README.md).
 - The West Loop run: sideseeing-tools `tasks/west-loop-run.md`.

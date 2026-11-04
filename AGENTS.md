@@ -9,7 +9,7 @@ Read this before working in the repository. It says what the project is, where e
 | Urban similarity model | [analysis/](analysis/README.md) | How similar are São Paulo districts (reference: Brás) and Chicago Community Areas, by street, building and function features? | [analysis/docs/STATUS.md](analysis/docs/STATUS.md) |
 | Sidewalk network | [network/](network/README.md) | Can phone recordings of a walk (video, GPS, motion, voice) build a map of where people can walk, without a map? | [network/docs/STATUS.md](network/docs/STATUS.md) |
 
-The similarity model was fitted on 6 October 2026 and is in its write-up phase. Day-to-day work is now on the network track: the West Loop (Chicago) collection, the passage graph, and the West Loop + Brás dataset.
+The similarity model was fitted on 6 October 2026 and is in its write-up phase. Day-to-day work is now on the network track: the West Loop (Chicago) collection, the pedestrian graph, and the West Loop + Brás dataset.
 
 ## 2. Where to find things
 
@@ -17,18 +17,18 @@ The similarity model was fitted on 6 October 2026 and is in its write-up phase. 
 |---|---|
 | What is done and what is next | The track's `STATUS.md` (the only pages with dated status) |
 | Every document of a track | [analysis/README.md](analysis/README.md) (start-here table) · [network/docs/README.md](network/docs/README.md) |
-| Why a choice was made | [analysis/docs/DECISIONS.md](analysis/docs/DECISIONS.md) · the numbered decisions in [network/docs/PLAN.md](network/docs/PLAN.md) and [PAPERS.md](network/docs/PAPERS.md) §6 |
+| Why a choice was made | [analysis/docs/DECISIONS.md](analysis/docs/DECISIONS.md) · the numbered decisions in [network/docs/RESEARCH_PLAN.md](network/docs/RESEARCH_PLAN.md) §5 |
 | A script, what it does, who imports it | [analysis/scripts/INDEX.md](analysis/scripts/INDEX.md) · [network/README.md](network/README.md#code) |
 | A model input dataset | [analysis/data/README.md](analysis/data/README.md) (register + `SHA256SUMS`) |
 | A field capture or its derivatives | [network/data/README.md](network/data/README.md) (local) · [network/docs/datasets/](network/docs/datasets/README.md) (Drive and RustFS inventories) |
-| A published number | The release folder under `analysis/results/` that produced it, or the network phase notes and `network/data/west_loop/graph/` |
+| A published number | The release folder under `analysis/results/` that produced it, or [network/docs/RESULTS.md](network/docs/RESULTS.md) and `network/data/west_loop/graph/` |
 | Old plans and handoffs | `analysis/docs/archive/` · `network/docs/archive/` (kept unchanged; do not treat as current) |
 
 ## 3. Environments and machines
 
-- Run everything from the **repository root**, except `network/graph`, which runs from `network/` as `python -m graph.<module>`.
-- `.venv` (Python 3.12): `analysis/`, `network/scripts/routes.py`, `route_methods.py`, `routing_example.py`.
-- `../sideseeing-tools/venv` (sibling repo): `network/graph`, its tests, the network notebooks, `transcribe.py`, anything with torch, Whisper or SAM3.
+- Run everything from the **repository root**, except the `walk2net` package and its experiments, which run from `network/` as `python -m walk2net.<module>` or `python -m experiments.<name>` ([architecture](network/docs/ARCHITECTURE.md)).
+- `.venv` (Python 3.12): `analysis/`.
+- `../sideseeing-tools/venv` (sibling repo): the `walk2net` package (installed there with `pip install -e network/`), its experiments and tests, the network notebooks, `transcribe.py`, anything with torch, Whisper or SAM3.
 - desktop-01 runs the heavy processing (frames, SAM3, redaction, Whisper, motion). Its sideseeing-tools workspace is copied to `network/data/<area>/workspace/`.
 - Raw captures live on Google Drive (mount read-only with `network/scripts/drive.sh mount`) and in the RustFS `sideseeing` bucket. **The laptop disk is nearly full:** read captures in place; never make large local copies; delete scratch output you create.
 
@@ -37,7 +37,7 @@ Tests, all must pass before a commit that touches code:
 ```bash
 .venv/bin/python -m unittest discover -s analysis/tests
 node analysis/tests/check_viz_model.js
-cd network && ../../sideseeing-tools/venv/bin/python -m pytest -q graph/tests
+cd network && ../../sideseeing-tools/venv/bin/python -m pytest -q             # add -m slow for the Morgan regression (local data)
 ```
 
 ## 4. Rules
@@ -60,7 +60,7 @@ cd network && ../../sideseeing-tools/venv/bin/python -m pytest -q graph/tests
 **Research integrity**
 
 11. Every number you state comes from the project's own data or a result file you have read. Never quote a figure from memory, a paper or the web as if it were measured here.
-12. Graph construction is automatic (PLAN decision 2). The Morgan reference (curbs, back of sidewalk) and the spoken code words are for **scoring only**, never inputs (decision 14).
+12. Graph construction is automatic (research plan decision 2). The Morgan reference (curbs, back of sidewalk) and the spoken code words are for **scoring only**, never inputs (decision 14).
 13. Do not snap GPS to OSM or map-match it inside graph construction. An OSM-assisted track is only a map-assisted baseline.
 14. D3 (Sangamon and Peoria) is the held-out test: run it once, with every setting frozen, and report the result whatever it is.
 15. A result is "done" only when its gate in the plan is checked. Report a half-met gate as half met.
@@ -78,11 +78,15 @@ cd network && ../../sideseeing-tools/venv/bin/python -m pytest -q graph/tests
 |---|---|
 | Analysis script | `analysis/scripts/<verb>_<subject>[_<yyyy_mm_dd>].py`, flat, with a one-line docstring; then `make_index.py` |
 | Analysis result | `analysis/results/{SP,Chicago,SP_CHI}/<name>_<yyyy_mm_dd>/` with README, tables and checks |
-| Graph step | a module in `network/graph/` with its command line in the docstring and a test in `graph/tests/` |
-| Network tool | `network/scripts/`, with its usage in the docstring and a row in `network/README.md` |
+| Graph step | a function in `network/walk2net/stages/` (tables in, tables out) with a test in `network/tests/`; the layout is in [ARCHITECTURE.md](network/docs/ARCHITECTURE.md) |
+| Network experiment | `network/experiments/`, a driver over `walk2net` with its command line in the docstring |
+| Operations tool (transfers, mounts, transcription) | `network/scripts/`, with its usage in the docstring and a row in `network/README.md` |
 | Field-day analysis | extend the existing notebook in `network/notebooks/` (West Loop days go in `west_loop.ipynb`) |
 | Field captures | Drive and RustFS first; local copies in `network/data/<area>/raw/` only while needed |
-| Phase notes or a plan | `network/docs/<TOPIC>_<yyyy-mm-dd>.md`, linked from the docs index and STATUS |
+| Graph results | A new dated section in `network/docs/RESULTS.md` |
+| A new area or protocol | `network/areas/<area>.toml` or `network/protocols/<name>.toml` (see an existing one); never a constant in the code |
+| A recording's details (collector, phone, height, protocol) | a row in the area's local field log, `network/data/<area>/field_log.csv` |
+| A plan or proposal | `network/docs/<TOPIC>_<yyyy-mm-dd>.md`, linked from the docs index and STATUS; once agreed, merged into `RESEARCH_PLAN.md`, `METHOD.md`, `FIELD_PROTOCOL.md` or `ARCHITECTURE.md` |
 | Transfer manifest or inventory | `network/docs/datasets/`; run logs in `network/data/_transfers/` |
 
 ## 6. Git

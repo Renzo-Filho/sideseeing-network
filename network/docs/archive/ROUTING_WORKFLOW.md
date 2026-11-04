@@ -173,7 +173,7 @@ Each point can carry a weight, here its field time, so that heavier points pull 
 
 ### A worked example
 
-![Four stages on four real West Loop blocks: OSM sidewalks and crosswalks; the graph with odd nodes in red; the repeats chosen by the matching in purple; the final Euler tour coloured from start to end](img/routing-example.png)
+![Four stages on four real West Loop blocks: OSM sidewalks and crosswalks; the graph with odd nodes in red; the repeats chosen by the matching in purple; the final Euler tour coloured from start to end](../img/routing-example.png)
 
 The figure shows the four blocks between Morgan, Peoria, Monroe and Washington, routed with exactly the code used for the full area (`network/scripts/routing_example.py` regenerates it):
 
@@ -363,4 +363,4 @@ The settings live at the top of each script:
 | Module, leg, session | One street; one side of it walked in one direction; one recording |
 | CPP, RPP, CARP | Chinese Postman (cover a whole connected network), Rural Postman (cover some edges, travel on others), Capacitated Arc Routing (several routes, each within a limit) |
 
-Related documents: [West Loop plan](WEST_LOOP_COLLECTION.md), [River North plan](archive/RIVER_NORTH_COLLECTION.md), [collection protocol](COLLECTION_PROTOCOL.md).
+Related documents: [West Loop plan](WEST_LOOP_COLLECTION.md), [River North plan](RIVER_NORTH_COLLECTION.md), [collection protocol](COLLECTION_PROTOCOL.md).

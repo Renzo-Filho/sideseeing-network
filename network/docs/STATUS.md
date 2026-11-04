@@ -2,9 +2,19 @@
 
 This is the **only page with dated status** for the network track. Other pages describe plans, methods and results as of their own date; update this page after each checkpoint instead of adding status banners elsewhere. Newest entry first.
 
+## 4 November 2026: the documents were merged; the briefing is the field protocol
+
+No research changed. The plans, protocols and phase notes were merged into four pages: [RESEARCH_PLAN.md](RESEARCH_PLAN.md) (both papers, the work plan and one numbered list of every decision), [METHOD.md](METHOD.md), [FIELD_PROTOCOL.md](FIELD_PROTOCOL.md) and [RESULTS.md](RESULTS.md). The originals are in [archive/](archive/). The dataset paper's phases are renamed DS0–DS6, and the old G-phase names map to P0–P9 ([RESEARCH_PLAN §4](RESEARCH_PLAN.md#4-work-plan)).
+
+Field days now follow the one-page volunteer briefing (decision 32): one street per day; north–south streets east side south to north, then west side north to south; east–west streets south side west to east, then north side east to west. The calibration day stays a separate plan, under discussion.
+
+The graph is renamed the **pedestrian graph** (decision 33). The method is to become an installable package anyone can run with the protocol (decision 34); the architecture is agreed in [ARCHITECTURE.md](ARCHITECTURE.md). **Step M1 is done:** `network/graph/` became the `walk2net` package (installed in the sideseeing-tools venv with `pip install -e network/`), the phase drivers moved to `network/experiments/`, `route_methods.py` and `routing_example.py` were dropped, and a test now enforces that construction never imports the evaluation code. The 20 tests pass; no computation changed. **Step M2 is done:** the area's settings (Morgan's axis, the reference sources and datum, the planner's boundary) are in `network/areas/west_loop.toml`, the projection is derived from the area's location, and the protocols are files in `network/protocols/` (`oct-2026`, `briefing-2026-11`, `free-route`). Each session's protocol comes from the area's field log (`data/west_loop/field_log.csv`, local), which lists D1–D3 under `oct-2026`; collectors, camera heights and the days after 22 October are still to fill in. The side cue and the planner now follow the session's protocol, so under the briefing east–west streets are planned south side first. A regression test re-runs the published Morgan fit (phase 2b at 1.30 m) and matches it value for value; 30 tests in all. Next: M3 (the table schema, `PedestrianGraph`, the runner and its manifest).
+
+The pilot captures (pilot 1, the GPS test shapes, pilot 2) were copied to RustFS (`chicago/pilots/`, and to Drive (`UIC/data/pilots/`), both checked file by file against the local copies with no difference. West Loop day 2 (20 October) was checked the same way: every file matches its Drive copy by hash, and its RustFS copy by hash or, for the two videos, by size. The local raw copies of the pilots and of day 2 (about 23 GB) are ready to delete.
+
 ## 3 November 2026: a new plan for the graph paper (draft)
 
-After talking with the advisors: Tile2Net is the baseline. The first result is a network (nodes and edges) at least as accurate as Tile2Net's and better at corners and crossings; the enriched graph (widths, slopes, detections) comes second. The proposed method fuses the walk with Tile2Net's output. Draft: [GRAPH_PAPER_PLAN_2026-11-03.md](GRAPH_PAPER_PLAN_2026-11-03.md). Later the same day Renzo decided most of section 12: the walk's network stands on its own first, the fusion second; Tile2Net runs as released; the test is free-route walks drawn before the walk; the City's curbs are kept for now; reviewers double-label. The margins and the curb source are to review with the advisors. The pipeline is specified in [GRAPH_PIPELINE_2026-11-03.md](GRAPH_PIPELINE_2026-11-03.md), and a calibration day is planned for discussion in [CALIBRATION_DAY_PLAN_2026-11-03.md](CALIBRATION_DAY_PLAN_2026-11-03.md). Collection continues until early or mid December.
+After talking with the advisors: Tile2Net is the baseline. The first result is a network (nodes and edges) at least as accurate as Tile2Net's and better at corners and crossings; the enriched graph (widths, slopes, detections) comes second. The proposed method fuses the walk with Tile2Net's output. Draft: [GRAPH_PAPER_PLAN_2026-11-03.md](archive/GRAPH_PAPER_PLAN_2026-11-03.md). Later the same day Renzo decided most of section 12: the walk's network stands on its own first, the fusion second; Tile2Net runs as released; the test is free-route walks drawn before the walk; the City's curbs are kept for now; reviewers double-label. The margins and the curb source are to review with the advisors. The pipeline is specified in [GRAPH_PIPELINE_2026-11-03.md](archive/GRAPH_PIPELINE_2026-11-03.md), and a calibration day is planned for discussion in [CALIBRATION_DAY_PLAN_2026-11-03.md](CALIBRATION_DAY_PLAN_2026-11-03.md). Collection continues until early or mid December.
 
 ## 3 November 2026: the repository was reorganized
 
@@ -13,19 +23,19 @@ No research changed. The network track now has its own folder for everything: `d
 ## Where things stand (from the 25 and 30 October documents)
 
 **Collection, West Loop.**
-- 8 sessions, 4.9 h, recorded on 19, 20 and 22 October 2026: Morgan (D1); Aberdeen, Madison and Carpenter (D2); Sangamon and Peoria with two collectors at once (D3) ([PAPERS.md](PAPERS.md) §1).
+- 8 sessions, 4.9 h, recorded on 19, 20 and 22 October 2026: Morgan (D1); Aberdeen, Madison and Carpenter (D2); Sangamon and Peoria with two collectors at once (D3) ([PAPERS.md](archive/PAPERS.md) §1).
 - More captures were made on 26 and 28 October (transfer manifests in [datasets/](datasets/)) and on 3 November. These documents do not describe them yet.
 
 **Processing.** The desktop-01 run finished on 25 October: 17,499 frames, SAM3 for 37 prompts, redaction, Whisper and motion events. The zone prompts were run on D1–D2.
 
-**Graph paper**, all on Morgan (D1) so far ([GRAPH_WORK_EXPLAINED](GRAPH_WORK_EXPLAINED_2026-10-30.md) §2):
+**Graph paper**, all on Morgan (D1) so far ([GRAPH_WORK_EXPLAINED](archive/GRAPH_WORK_EXPLAINED_2026-10-30.md) §2; results in [RESULTS.md](RESULTS.md)):
 
 | Phase | Status |
 |---|---|
-| G0 data contract | Done ([results](GRAPH_PHASE0_RESULTS_2026-10-25.md)) |
+| G0 data contract | Done ([results](RESULTS.md#phase-0-results-sessions-clocks-runs-side-cue-and-zones)) |
 | G1 reference | Morgan done: 86 of 109 City curb pieces matched the 2025 orthophoto, 23 redrawn; back of the sidewalk from Cook parcels. It is off by about 0.5 m in places and needs one consistent pass |
-| G2a walking lines | Fitted, with crossings tied to the far walking line ([notes](GRAPH_PHASE2A_NOTES_2026-10-25.md)) |
-| G2b video measures | Curb distance and road width from the video. Camera height measured on the vest: 1.30 m ([notes](GRAPH_PHASE2B_NOTES_2026-10-27.md)) |
+| G2a walking lines | Fitted, with crossings tied to the far walking line ([notes](RESULTS.md#phase-2a-notes-the-ladder-on-morgan)) |
+| G2b video measures | Curb distance and road width from the video. Camera height measured on the vest: 1.30 m ([notes](RESULTS.md#phase-2b-notes-the-curb-from-the-video-on-morgan)) |
 | G3–G6 | Not started |
 
 Results as of 30 October:
@@ -35,17 +45,17 @@ Results as of 30 October:
 
 The remaining error is mostly a shift that both lines share. Only the aerial photo can fix that.
 
-**Dataset paper** (status of 25 October, [PAPERS.md](PAPERS.md) §3):
+**Dataset paper** (status of 25 October, [PAPERS.md](archive/PAPERS.md) §3):
 - D0 transfer: West Loop done; Brás at 433 of 649 jobs.
 - D1 processing: West Loop done; Brás later, with the same prompts.
 - D2–D6 (schema, labels, privacy, splits, release): not started.
 
 ## Next (priorities set 3 November 2026)
 
-The rule for ordering them: **what can only be done in the field comes first**, because field access ends with collection (early or mid December). Everything computed can wait; a missing measurement cannot be taken afterwards. Detail in the [graph paper plan](GRAPH_PAPER_PLAN_2026-11-03.md).
+The rule for ordering them: **what can only be done in the field comes first**, because field access ends with collection (early or mid December). Everything computed can wait; a missing measurement cannot be taken afterwards. Detail in the [graph paper plan](RESEARCH_PLAN.md).
 
 **1. Before the next collection day**
-1. `splits.csv`: every route-plan module marked development or test, and the free test routes drawn ([plan](GRAPH_PAPER_PLAN_2026-11-03.md) §5).
+1. `splits.csv`: every route-plan module marked development or test, and the free test routes drawn ([research plan](RESEARCH_PLAN.md#25-the-reference-and-the-splits) §2.5).
 2. Start the daily routine ([calibration plan](CALIBRATION_DAY_PLAN_2026-11-03.md) §7): mount check, height, 10 m taped stretch.
 
 **2. While collecting (November to early December)**

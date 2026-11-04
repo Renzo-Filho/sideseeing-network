@@ -40,7 +40,7 @@ Tile2Net ([Hosseini et al. 2023](https://www.evl.uic.edu/pubs/2703), [code](http
 | Crosswalk paint fades or is missing | A crossing that was walked exists and is passable, painted or not. SAM3 sees the paint up close |
 | Trees and shadows hide footpaths and sidewalks | The camera is under the canopy |
 | The official data used to check it are years older than the imagery | The recording is dated to the day |
-| (Not discussed) Which moves a corner allows | The protocol crosses every legal crosswalk and logs the ones that are closed or missing as *not crossable* ([RIVER_NORTH_COLLECTION.md](archive/RIVER_NORTH_COLLECTION.md), field rules). That is a verified **negative** connection, which no image gives |
+| (Not discussed) Which moves a corner allows | The protocol crosses every legal crosswalk and logs the ones that are closed or missing as *not crossable* ([RIVER_NORTH_COLLECTION.md](RIVER_NORTH_COLLECTION.md), field rules). That is a verified **negative** connection, which no image gives |
 
 And beyond the network, aerial imagery cannot see clear width, slope, ramps, tactile paving, signals, obstacles, surface condition, or how long a crossing and its wait take. The walk records all of these (section 7).
 
@@ -148,7 +148,7 @@ The free routes also are the natural-walk block the October plan asked for. They
 | Tile2Net's own | Share of reference segments with a predicted segment within 4 m of the reference segment's centroid, and the reverse (predicted segments with a reference within 4 m) | Compares on Tile2Net's own terms, the reading the advisors know |
 | Coverage and correctness | Length-based completeness, correctness and F1 within 1, 2 and 4 m | Here sidewalks are 2–3 m wide (Morgan reference medians 2.0 and 2.9 m, [phase 2a](GRAPH_PHASE2A_NOTES_2026-10-25.md) §4), so 4 m cannot tell a sidewalk from the curb lane |
 | Position | Lateral offset from the reference centreline (median, p90); share inside the reference polygon | The measure used since phase 2a |
-| Topology | Nodes per real corner (redundant nodes); connected components; **crossing attachment** (each crossing joined to the right corner and side); **port-pair reachability** ([critique](archive/RESEARCH_CRITIQUE_2026-10-23.md)); PathwayBench's traversability similarity, for comparability; APLS (path-length similarity) over the walked blocks | Where aerial networks are known to fail, and what routing needs |
+| Topology | Nodes per real corner (redundant nodes); connected components; **crossing attachment** (each crossing joined to the right corner and side); **port-pair reachability** ([critique](RESEARCH_CRITIQUE_2026-10-23.md)); PathwayBench's traversability similarity, for comparability; APLS (path-length similarity) over the walked blocks | Where aerial networks are known to fail, and what routing needs |
 | Polygons | IoU with the reference sidewalk and crosswalk polygons; curb and back boundary error; width error | Both methods make polygons. This is Tile2Net's polygon evaluation, made stricter |
 
 **Strata:** canopy over the sidewalk (visible or covered on the orthophoto); corner type (plain, jogged, with alley or driveway); crossing (painted, faded, unpainted, logged not crossable).
@@ -252,7 +252,7 @@ P1 and P2 come first and can run at the same time. P1 can tell us early whether 
 
 | Workstream | What | Size | Gate |
 |---|---|---|---|
-| **Calibration in the field** | A short routine on every collection day, and a calibration day on Morgan with modules that can be repeated on other blocks. Plan: [CALIBRATION_DAY_PLAN_2026-11-03.md](CALIBRATION_DAY_PLAN_2026-11-03.md) | Routine 10 min a day; calibration day about 3 h | Per collector and phone: height, step length, lens; error models for width, curb distance, slope; their day-to-day spread |
+| **Calibration in the field** | A short routine on every collection day, and a calibration day on Morgan with modules that can be repeated on other blocks. Plan: [CALIBRATION_DAY_PLAN_2026-11-03.md](../CALIBRATION_DAY_PLAN_2026-11-03.md) | Routine 10 min a day; calibration day about 3 h | Per collector and phone: height, step length, lens; error models for width, curb distance, slope; their day-to-day spread |
 | **Source ablations** | The pipeline's section 7 matrix: each quantity from GPS alone, + motion, + crossings, + video, + Wi-Fi, + aerial, against the same reference | Runs as P3–P5 progress | Part of Gate 1 and Gate 2 tables |
 | **Exploratory sensors** | Wi-Fi as a side cue and for matching passes across days (a first signal exists, pipeline section 8); barometer on a known level change; magnetometer under the elevated train | Two weeks, then stop or adopt | Wi-Fi side cue beats shuffled labels on a second day and adds to the video side cue on the natural-walk block |
 | **Second detector** | Project Sidewalk's models (section 7) | One week | Precision and recall on a labelled sample of our frames |
@@ -375,7 +375,7 @@ Each idea is recorded as Renzo put it, followed by Claude's assessment, checked 
   - A short routine on every collection day catches this. A one-off pilot does not.
 - **3 to 5 separate pilots cost field days** that the collection needs before December.
 - **Rules tuned on a few pilot blocks can fit those blocks.** Whether they generalise has to be checked on development streets anyway.
-- **So:** a daily routine, and one calibration day built from modules. A module can be repeated on other kinds of block (narrow, wide, with trees, on a slope). That is what more pilots would really add, and it can be done if the first day shows the need. Plan: [CALIBRATION_DAY_PLAN_2026-11-03.md](CALIBRATION_DAY_PLAN_2026-11-03.md).
+- **So:** a daily routine, and one calibration day built from modules. A module can be repeated on other kinds of block (narrow, wide, with trees, on a slope). That is what more pilots would really add, and it can be done if the first day shows the need. Plan: [CALIBRATION_DAY_PLAN_2026-11-03.md](../CALIBRATION_DAY_PLAN_2026-11-03.md).
 - **Comparing sources fits fully.** It is now the ablation matrix ([pipeline](GRAPH_PIPELINE_2026-11-03.md), section 7), and part of it exists: phase 2a and 2b compared raw GPS, the smoother, the ladder and the ladder with video. One correction: the comparison is made quantity by quantity, because not every source measures everything (GPS gives no width).
 
 ### Idea 2. Unconventional data: Wi-Fi, light, pressure
@@ -414,5 +414,5 @@ Registered in section 7.
 - **Feelings do not fit this paper:**
   - One or two collectors' videos cannot measure how pedestrians feel.
   - Perception studies need many raters and their own design.
-  - Image-based "feeling" scores from vision–language models are not calibrated ([critique](archive/RESEARCH_CRITIQUE_2026-10-23.md), its sources).
+  - Image-based "feeling" scores from vision–language models are not calibrated ([critique](RESEARCH_CRITIQUE_2026-10-23.md), its sources).
 - **The collectors' talk** is kept as an exploratory measurement (decision 10). The perception study is parked as its own paper (section 13).

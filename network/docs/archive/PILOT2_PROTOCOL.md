@@ -158,4 +158,4 @@ NOTES  "note" + similar | use | feel | busy | landmark | change | access | other
        places, never people · say it while the thing is in view
 ```
 
-Related documents: [River North plan](RIVER_NORTH_COLLECTION.md), [collection protocol](../COLLECTION_PROTOCOL.md), [research plan](../PLAN.md).
+Related documents: [River North plan](RIVER_NORTH_COLLECTION.md), [collection protocol](COLLECTION_PROTOCOL.md), [research plan](PLAN.md).
