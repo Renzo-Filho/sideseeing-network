@@ -1,5 +1,5 @@
-"""Exploratory: does Wi-Fi tell the two sidewalks of a north-south street apart? (GRAPH_PIPELINE_2026-11-03.md, section 8)
-Run from the repo root:  .venv/bin/python network/scripts/wifi_side_check.py RAW_SESSION [RAW_SESSION ...]
+"""Exploratory: does Wi-Fi tell the two sidewalks of a north-south street apart? (docs/METHOD.md, section 11)
+Run from network/:  python -m experiments.wifi_side_check RAW_SESSION [RAW_SESSION ...]
 Side comes from the West Loop protocol rule (northbound = east sidewalk, southbound = west) on GPS stretches heading
 north or south. For each access point seen from both sides in the same stretch, the mean signal difference east - west,
 minus the stretch's median difference (removes a session or phone offset), compared with side labels shuffled within

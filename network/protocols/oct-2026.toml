@@ -1,0 +1,6 @@
+# The October field rules (archived River North rules F1-F8 and the Pilot 2 voice protocol), used up to the briefing,
+# at least for D1-D3 (19-22 October 2026). Read by walk2net.config.Protocol.
+description = "Modules of one street, one leg per side. North-south streets: east side northbound, west side southbound. East-west streets: north side eastbound, south side westbound."
+
+# The road is on the walker's left along north-south streets and on the right along east-west streets.
+road_side = { NS = "left", EW = "right" }

@@ -3,7 +3,10 @@ import numpy as np
 import pandas as pd
 from shapely.geometry import LineString
 
-from graph import baselines, ladder, reference, steps
+from walk2net import baselines
+from walk2net.config import Area
+from walk2net.evaluate import reference
+from walk2net.stages import ladder, walk
 
 SPEED, STEP, PULL = 1.3, 0.75, 3.5   # m/s, m per step, the GPS's pull towards the street's middle (m)
 EAST, WEST = 8.0, -8.0    # walking lines (v, metres)
@@ -98,20 +101,20 @@ def test_lines_across_the_street_are_not_curbs():
 
 def test_the_reference_is_read_across_the_street():
     from shapely.geometry import MultiLineString
-    from graph import evaluate
+    from walk2net.evaluate import score
     curbs = MultiLineString([[(0, -7), (40, -7)], [(60, -7), (100, -7)], [(0, 7), (40, 7)], [(60, 7), (100, 7)]])
     backs = MultiLineString([[(0, -10), (100, -10)], [(0, 10.5), (100, 10.5)]])
-    prof = evaluate.profile(curbs, backs, np.arange(0.0, 100.0))
+    prof = score.profile(curbs, backs, np.arange(0.0, 100.0))
     assert list(prof.loc[20, ['curb_w', 'curb_e', 'back_w', 'back_e']]) == [-7, 7, -10, 10.5]
     assert prof.loc[50, ['curb_w', 'curb_e']].isna().all()  # a cross street: no road edges to read
-    curb, back, centre = evaluate.sidewalk(prof, [20, 30, 50], 1.0)
-    scored = evaluate.score(np.array([8.75, 5.0, 9.0]), curb, back, centre, 1.0)
+    curb, back, centre = score.sidewalk(prof, [20, 30, 50], 1.0)
+    scored = score.score(np.array([8.75, 5.0, 9.0]), curb, back, centre, 1.0)
     assert scored['n'] == 2 and scored['inside'] == 0.5 and scored['in_road'] == 0.5
 
 
 def test_the_reference_moves_into_the_gps_datum():
-    from graph import evaluate
-    east, north = evaluate.datum_shift(-87.652, 41.883)  # Morgan, October 2026
+    from walk2net.evaluate import score
+    east, north = score.datum_shift(-87.652, 41.883, Area.load('west_loop'))  # Morgan, October 2026
     assert -1.1 < east < -0.9 and 0.8 < north < 1.0
 
 
@@ -120,7 +123,7 @@ def test_steps_are_peaks_of_the_shaking():
     t = np.arange(0, 20, 1 / rate)
     walking = (t > 5) & (t < 15)
     xyz = np.column_stack([np.zeros_like(t), np.zeros_like(t), 9.81 + walking * 3 * np.sin(2 * np.pi * 1.8 * t)])
-    found = steps.step_times(t, xyz, pd.DataFrame(dict(start_s=[0.0], end_s=[5.0])))
+    found = walk.step_times(t, xyz, pd.DataFrame(dict(start_s=[0.0], end_s=[5.0])))
     assert abs(len(found) - 18) <= 1  # 1.8 steps a second for 10 s
 
 

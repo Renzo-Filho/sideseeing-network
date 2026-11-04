@@ -1,0 +1,6 @@
+# The one-page volunteer briefing (docs/FIELD_PROTOCOL.md, section 1), from 4 November 2026. Read by
+# walk2net.config.Protocol.
+description = "One street per day. North-south streets: east side south to north, then west side north to south. East-west streets: south side west to east, then north side east to west. At every corner the walked street is crossed and recrossed."
+
+# The road is always on the walker's left.
+road_side = { NS = "left", EW = "left" }

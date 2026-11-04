@@ -1,7 +1,7 @@
 """Checks for phase 2b: the ground under the camera. Run from network/: python -m pytest graph/tests"""
 import numpy as np
 
-from graph import ground
+from walk2net.stages import ground
 
 PITCH, HEIGHT, CURB = np.radians(20.0), 1.4, -1.2
 
@@ -34,8 +34,8 @@ def test_a_curb_is_read_at_its_distance():
 
 def test_a_measured_separation_holds_the_walking_lines_apart():
     import pandas as pd
-    from graph import ladder
-    from graph.tests import test_phase2 as street
+    from walk2net.stages import ladder
+    import test_phase2 as street
     sessions = [street._ladder(street._north_on_east()), street._ladder(street._south_on_west())]
     apart = pd.DataFrame(dict(u=[50.0, 100.0, 150.0], separation_m=[18.0, 18.0, 18.0]))
     knots, rails, *_ = ladder.fit(sessions, apart)

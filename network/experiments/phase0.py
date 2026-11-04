@@ -1,12 +1,13 @@
 """Phase 0 of the graph plan: the data contract, the runs, the side cue and the zone check.
 
-    python -m graph.phase0 align  --raw RAW --workspace WORKSPACE --out OUT   # needs the raw videos and sensors
-    python -m graph.phase0 report --workspace WORKSPACE --out OUT [--pieces routes.gpkg] [--sessions ...]
-                                  [--zone-sessions ...] [--rotation rotation_windows.csv]
+    python -m experiments.phase0 align  --raw RAW --workspace WORKSPACE --out OUT   # needs the raw videos and sensors
+    python -m experiments.phase0 report --area west_loop --workspace WORKSPACE --out OUT [--pieces routes.gpkg]
+                                  [--sessions ...] [--zone-sessions ...] [--rotation rotation_windows.csv]
 
 `align` writes alignment.csv and rotation_windows.csv; `report` writes sessions.csv, runs/<session>.csv,
 side_cue.csv and, for --zone-sessions, zones_<session>.csv and .jpg. Sessions not listed in --sessions (the
-held-out ones) get only their contract rows.
+held-out ones) get only their contract rows. The street grid's axes come from the area's config; the road side each
+session's protocol expects, from the area's field log.
 """
 import argparse
 import json
@@ -16,9 +17,10 @@ from pathlib import Path
 import pandas as pd
 from PIL import Image
 
-from graph import contract, runs, side_cue, zones
+from walk2net import fieldlog
+from walk2net.config import Area
+from walk2net.stages import side_cue, sync, walk, zones
 
-AXES = (0.0, 90.0)  # the West Loop grid: north-south and east-west streets
 ZONE_RUNS = 3
 ZONE_FRAMES_PER_RUN = 8
 
@@ -45,17 +47,17 @@ def align(raw, workspace, out):
         times, rate = heading_rate(sensors[name('gyroscope')], sensors[name('gravity')], start)
         accel_times, accel = sensor_signal(sensors[name('accelerometer')], ['x', 'y', 'z'], start)
         row = dict(session=instance.name, **video_stream(instance.video))
-        row.update(contract.sync_taps(accel_times, accel, *contract.audio_track(instance.video)))
-        fixes = contract.read_fixes(Path(instance.path) / 'gps.csv', pd.Timestamp(start, tz='UTC'))
-        row.update(contract.gps_lag(fixes, times, rate))
+        row.update(sync.sync_taps(accel_times, accel, *sync.audio_track(instance.video)))
+        fixes = sync.read_fixes(Path(instance.path) / 'gps.csv', pd.Timestamp(start, tz='UTC'))
+        row.update(sync.gps_lag(fixes, times, rate))
         light = [s for s in (instance.sensors1 or {}) if 'light' in s.lower()]
         if light:
             frame = instance.sensors1[light[0]]
             row['light_lux_median'] = frame.select_dtypes('number').drop(columns='timestamp_nano', errors='ignore').iloc[:, 0].median()
-        found = contract.rotation_lag(instance.video, times, rate, ws.motion(instance.name)['turns'],
+        found = sync.rotation_lag(instance.video, times, rate, ws.motion(instance.name)['turns'],
                                       instance.media_total_time)
         windows.append(found.assign(session=instance.name))
-        row.update(contract.summarize_rotation(found))
+        row.update(sync.summarize_rotation(found))
         rows.append(row)
         pd.DataFrame(rows).to_csv(out / 'alignment.csv', index=False)
     pd.concat(windows, ignore_index=True).to_csv(out / 'rotation_windows.csv', index=False)
@@ -86,7 +88,7 @@ def zone_check(ws, route, along, road_of_axis, out):
     return table
 
 
-def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rotation_path=None):
+def report(area, workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rotation_path=None):
     from sideseeing_tools import SideSeeingWorkspace
 
     ws = SideSeeingWorkspace(str(workspace))
@@ -95,10 +97,11 @@ def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rota
         import geopandas as gpd
         pieces = gpd.read_file(pieces_path, layer='pieces')
     windows = pd.read_csv(rotation_path) if rotation_path else None
+    protocols = fieldlog.protocols(fieldlog.read(area.field_log), sessions)
 
     summaries = []
     for session_dir in sorted(p for p in ws.data_dir.iterdir() if p.is_dir()):
-        summary = contract.session_summary(session_dir, pieces)
+        summary = sync.session_summary(session_dir, pieces)
         motion = ws.motion(session_dir.name)
         if motion:
             summary.update({kind: len(table) for kind, table in motion.items()})
@@ -110,10 +113,10 @@ def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rota
     for route in sessions:
         track, motion = ws.gps(route), ws.motion(route)
         if windows is not None:  # the motion events were timed by the sensors; move them onto the video clock
-            clock = contract.sensor_clock(contract.summarize_rotation(windows[windows['session'] == route]))
-            motion = contract.to_video_clock(motion, clock)
+            clock = sync.sensor_clock(sync.summarize_rotation(windows[windows['session'] == route]))
+            motion = sync.to_video_clock(motion, clock)
         duration = (ws._media_times(route)[1] - ws._media_times(route)[0]).total_seconds()
-        cut = runs.cut_runs(motion, track, duration)
+        cut = walk.cut_runs(motion, track, duration)
 
         detections = ws.detections(route)
         if not detections.empty:
@@ -121,20 +124,21 @@ def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rota
                 if ws.route_frames_dir(route).is_dir() else (1920, 1080)
             crosswalk = lambda frame: zones.frame_masks(ws.preds_dir / 'sam3', route, detections, frame,
                                                         ('crosswalk',)).get('crosswalk')
-            cut = runs.split_at_crosswalks(cut, runs.crosswalk_underfoot(detections, crosswalk, size),
+            cut = walk.split_at_crosswalks(cut, walk.crosswalk_underfoot(detections, crosswalk, size),
                                            motion['stops'], track)
         cut.to_csv(out / 'runs' / f'{route}.csv', index=False)
-        along = pd.concat([runs.axis_runs(cut, axis).assign(axis=axis) for axis in AXES]).sort_values('start_s')
+        along = pd.concat([walk.axis_runs(cut, axis).assign(axis=axis) for axis in area.grid_axes_deg]).sort_values('start_s')
+        road_of_axis = {axis: protocols[route].road_side_along(axis) for axis in area.grid_axes_deg}
         if detections.empty:
             continue
         cued = side_cue.road_side(along, detections, size[0])
         cues.append(cued.assign(session=route))
-        for axis in AXES:
+        for axis in area.grid_axes_deg:
             mine = cued[cued['axis'] == axis]
-            if len(mine):
-                print(route, f'axis {axis:.0f}:', side_cue.score_against_protocol(mine, axis).to_dict())
+            if len(mine) and road_of_axis[axis]:
+                print(route, f'axis {axis:.0f}:', side_cue.score_against_protocol(mine, road_of_axis[axis]).to_dict())
         if route in zone_sessions:
-            zone_check(ws, route, along, side_cue.PROTOCOL_ROAD_SIDE, out)
+            zone_check(ws, route, along, road_of_axis, out)
     if cues:
         pd.concat(cues, ignore_index=True).to_csv(out / 'side_cue.csv', index=False)
 
@@ -142,6 +146,7 @@ def report(workspace, out, pieces_path=None, sessions=(), zone_sessions=(), rota
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('step', choices=['align', 'report'])
+    parser.add_argument('--area', help='report: an area config, network/areas/<area>.toml')
     parser.add_argument('--raw', type=Path)
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
@@ -154,7 +159,8 @@ def main():
     if args.step == 'align':
         align(args.raw, args.workspace, args.out)
     else:
-        report(args.workspace, args.out, args.pieces, args.sessions, args.zone_sessions, args.rotation)
+        report(Area.load(args.area), args.workspace, args.out, args.pieces, args.sessions, args.zone_sessions,
+               args.rotation)
 
 
 if __name__ == '__main__':

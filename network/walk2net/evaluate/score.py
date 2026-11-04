@@ -1,12 +1,15 @@
-"""Phase 2a evaluation: the ladder and its baselines against the Morgan reference (plan section 8, phase 2 gate).
+"""The walking lines of a fit, and its baselines, against the reference of one street (S11; on Morgan, the phase 2 gate).
 
-    python -m graph.evaluate --reference data/west_loop/reference --fit data/west_loop/graph/phase2a --out OUT
+    python -m walk2net.evaluate.score --area west_loop --street morgan --fit data/west_loop/graph/phase2a --out OUT \
+        [--reference FOLDER]
 
-The reference (agreed 26 October): the city's curbs as Renzo checked them on the 2025 orthophoto (morgan_trace.geojson;
-a line marked changed is replaced by the one he redrew, and unchecked lines count as matching), and the back of the
-sidewalk from Cook County's parcels (morgan_back.geojson). Both are read across the street every metre in the ladder's
-frame: at each u, the road is the gap between two curbs, and each sidewalk runs from its curb to the first property
-line beyond it.
+The reference (agreed 26 October), in the area's reference folder unless --reference names another: the city's curbs
+as checked on the orthophoto (<street>_trace.geojson; a line marked changed is replaced by the one redrawn, and
+unchecked lines count as matching), and the back of the sidewalk from the parcels (<street>_back.geojson). Both are read
+across the street every metre in the ladder's frame: at each u, the road is the gap between two curbs, and each
+sidewalk runs from its curb to the first property line beyond it.
+
+The rails are named east (+1, right of the axis) and west (-1) in the fit's tables, as on a north-going street.
 """
 import argparse
 import json
@@ -19,10 +22,10 @@ from shapely.geometry import LineString, MultiLineString
 from pyproj import Transformer
 from shapely.ops import transform
 
-from graph import ladder, reference
+from walk2net.config import Area
+from walk2net.stages import ladder
 
 SIDES = {1.0: 'east', -1.0: 'west'}
-EPOCH = 2026.8  # the West Loop recordings, October 2026
 
 
 def in_frame(lines, frame):
@@ -53,22 +56,24 @@ def profile(curbs, backs, us, reach=40.0, road=(8.0, 18.0), widest=8.0):
     return pd.DataFrame(rows)
 
 
-def datum_shift(lon, lat, epoch=EPOCH):
-    """(east, north) metres from a point's NAD83(2011) coordinates to its ITRF2014 ones at `epoch`. The city's curbs,
-    the county's parcels and the orthophoto are NAD83, read as if they were WGS84 (pyproj's default treats the two as
-    the same); phone GPS is WGS84, which is ITRF2014 at the recording date to within centimetres."""
-    x, y, _, _ = Transformer.from_crs('EPSG:6319', 'EPSG:7912', always_xy=True).transform(lon, lat, 0.0, epoch)
-    a, b = gpd.GeoSeries(gpd.points_from_xy([lon, x], [lat, y]), crs=4326).to_crs(reference.UTM)
+def datum_shift(lon, lat, area):
+    """(east, north) metres from a point's coordinates in the reference's datum to the GPS's frame at the recordings'
+    epoch (the area's [reference] datum, gps_frame and epoch). In West Loop the city's curbs, the county's parcels and
+    the orthophoto are NAD83(2011), read as if they were WGS84 (pyproj's default treats the two as the same); phone GPS
+    is WGS84, which is ITRF2014 at the recording date to within centimetres."""
+    src = area.reference
+    x, y, _, _ = Transformer.from_crs(src['datum'], src['gps_frame'], always_xy=True).transform(lon, lat, 0.0, src['epoch'])
+    a, b = gpd.GeoSeries(gpd.points_from_xy([lon, x], [lat, y]), crs=4326).to_crs(area.crs)
     return b.x - a.x, b.y - a.y
 
 
-def reference_lines(folder, frame):
-    """The checked curbs and the parcel backs, moved into the GPS's datum, in the frame."""
-    trace = gpd.read_file(folder / 'morgan_trace.geojson')
+def reference_lines(folder, street, area, frame):
+    """The checked curbs and the parcel backs of `street`, moved into the GPS's datum, in the frame."""
+    trace = gpd.read_file(folder / f'{street}_trace.geojson')
     kept = trace[((trace['kind'] == 'city_curb') & (trace['status'] != 'changed')) | (trace['kind'] == 'curb')]
-    backs = gpd.read_file(folder / 'morgan_back.geojson')
-    east, north = datum_shift(*kept.union_all().centroid.coords[0])
-    move = lambda lines: lines.to_crs(reference.UTM).translate(east, north)
+    backs = gpd.read_file(folder / f'{street}_back.geojson')
+    east, north = datum_shift(*kept.union_all().centroid.coords[0], area)
+    move = lambda lines: lines.to_crs(area.crs).translate(east, north)
     return in_frame(move(kept.geometry), frame), in_frame(move(backs.geometry), frame), (east, north)
 
 
@@ -101,15 +106,19 @@ def score(v, curb, back, centre, side):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--reference', type=Path, required=True)
+    parser.add_argument('--area', required=True, help='an area config: network/areas/<area>.toml')
+    parser.add_argument('--street', required=True, help="a street of the area's config")
+    parser.add_argument('--reference', type=Path, help="default: the area's reference folder")
     parser.add_argument('--fit', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--reference-only', action='store_true', help='write the profile only, without the fit')
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
-    frame = ladder.Frame(gpd.GeoSeries([reference.MORGAN], crs=4326).to_crs(reference.UTM)[0])
-    curbs, backs, shift = reference_lines(args.reference, frame)
+    area = Area.load(args.area)
+    street = area.streets[args.street]
+    frame = ladder.Frame(street.projected(area.crs))
+    curbs, backs, shift = reference_lines(args.reference or area.reference_dir, street.key, area, frame)
     us = np.arange(np.floor(min(g.bounds[0] for g in curbs.geoms)), np.ceil(max(g.bounds[2] for g in curbs.geoms)))
     prof = profile(curbs, backs, us)
     prof.to_csv(args.out / 'reference_profile.csv', index=False)
@@ -188,15 +197,15 @@ def main():
                        for name in SIDES.values()}
     (args.out / 'summary.json').write_text(json.dumps(summary, indent=1))
     print(json.dumps({k: summary[k] for k in ('walking_lines', 'crossings', 'gate')}, indent=1))
-    plot(prof, lines, us, args.out / 'walking_lines.png')
+    plot(prof, lines, us, args.out / 'walking_lines.png', street.name)
 
 
 METHODS_LINES = ('ladder', 'gps', 'median5', 'pdr')
 METHODS_TRACKS = ('gps', 'median5', 'pdr', 'ladder', 'alone')
 
 
-def plot(prof, lines, us, path):
-    """Each side's sidewalk (curb to back) and the methods' walking lines, as distance from the curb along Morgan."""
+def plot(prof, lines, us, path, street_name):
+    """Each side's sidewalk (curb to back) and the methods' walking lines, as distance from the curb along the street."""
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -215,7 +224,7 @@ def plot(prof, lines, us, path):
         ax.set_ylabel(f'{name} side: metres\nfrom the curb (+ onto\nthe sidewalk)')
         ax.set_ylim(-12, 10)
     axes[0].legend(ncol=6, fontsize=8, loc='upper left')
-    axes[1].set_xlabel('metres along Morgan from Tilden')
+    axes[1].set_xlabel(f'metres along {street_name} from the start of its axis')
     fig.tight_layout()
     fig.savefig(path, dpi=130)
 

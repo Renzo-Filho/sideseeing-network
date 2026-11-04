@@ -1,0 +1,3 @@
+# The free test routes (research plan decision 26): a route drawn at random before the walk, walked as a person going
+# somewhere would. No side of the road is fixed. Read by walk2net.config.Protocol.
+description = "A route drawn before the walk and kept unchanged; no protocol expectation applies."

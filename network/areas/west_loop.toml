@@ -1,0 +1,39 @@
+# West Loop, Chicago: the collection area (docs/FIELD_PROTOCOL.md, section 5). Read by walk2net.config.Area.
+# Paths are relative to network/. The metric projection is the UTM zone of the area (16N, EPSG 32616).
+
+name = "West Loop"
+data = "data/west_loop"            # captures, workspace, plan, reference, graph runs; the field log is field_log.csv
+grid_axes_deg = [0.0, 90.0]         # the street grid: north-south and east-west
+
+[plan]
+# The area is the land inside the boundary-street centrelines (edges), cut by the Chicago River, plus the outer
+# sidewalks of the boundary streets. `inside` picks the right piece when the river splits the frame.
+bbox = [41.868, -87.675, 41.898, -87.628]   # south, west, north, east
+inside = [-87.6520, 41.8840]                # Racine and Randolph (lon, lat)
+# South: the north rim of the I-290 trench, which is Van Buren west of Racine and Tilden east of it. Tilden's
+# centreline is the edge; west of Racine nothing walkable lies south of Van Buren but the I-290 bridges, which lead out.
+edges = { Grand = "N", Ashland = "W", Tilden = "S" }
+multi_level = false
+bridges_out = ["Eisenhower Expressway"]
+split_ew_at = "Halsted"   # east-west streets are 2.3 km wide; River North's longest leg was 1.4 km
+run_gap_m = 60            # a street interrupted for this long is walked as separate runs
+
+[streets.morgan]
+name = "Morgan St"
+axis = [[-87.65185, 41.8752], [-87.65215, 41.8917]]   # Tilden to Grand (lon, lat)
+
+[reference]
+# The scoring reference (never an input): the City's curb lines, checked on the 2025 orthophoto, and the back of the
+# sidewalk from Cook County's parcels. Cook County's terms forbid redistributing the parcels: they stay in data/.
+curbs_url = "https://data.cityofchicago.org/download/5gv8-ktcg/application%2Fzip"   # December 2010
+curbs_cache = "data/sources/chicago_planimetrics/5gv8-ktcg.zip"
+curbs_layer = "Curbs.shp"
+curbs_crs = 3435        # Illinois East, US feet
+curbs_id = "CURBS_"
+parcels_url = "https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44/query"
+parcels_id = "Pin10"
+# The reference and the orthophoto are NAD83(2011); phone GPS is WGS 84, which is ITRF2014 at the recording date to
+# within centimetres. At Morgan the two differ by about a metre.
+datum = "EPSG:6319"       # NAD83(2011), geographic 3D
+gps_frame = "EPSG:7912"   # ITRF2014, geographic 3D
+epoch = 2026.8            # the recordings, October 2026

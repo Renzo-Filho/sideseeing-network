@@ -1,4 +1,4 @@
-"""Baselines for the walking lines (plan section 6), in the street frame of graph.ladder.
+"""Baselines for the walking lines (plan section 6), in the street frame of walk2net.stages.ladder.
 
 pdr_smoother is GPS + pedestrian dead reckoning: between fixes the walker moves by the steps taken along the
 gyroscope heading, each fix measures the position, and a Kalman filter with a Rauch-Tung-Striebel smoother combines

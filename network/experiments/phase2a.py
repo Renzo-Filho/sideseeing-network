@@ -1,14 +1,16 @@
 """Phase 2a of the graph plan: the ladder on Morgan (D1), with its baselines.
 
-    python -m graph.phase2 prepare --raw RAW --workspace W --rotation rotation_windows.csv --out PREP --sessions ...
-    python -m graph.phase2 fit --workspace W --rotation rotation_windows.csv --prepared PREP --out OUT --sessions ...
+    python -m experiments.phase2a prepare --raw RAW --workspace W --rotation rotation_windows.csv --out PREP --sessions ...
+    python -m experiments.phase2a fit --area west_loop --street morgan --workspace W --rotation rotation_windows.csv \
+        --prepared PREP --out OUT --sessions ...
 
 `prepare` needs the raw sensors (desktop-01): it writes each session's step times and crosswalk-underfoot times, on
 the video clock. `fit` fits the sessions together (they share the street's two walking lines) and each alone, and
 writes per session runs_<session>.csv (headings and rails), track_<session>.csv (the ladder's track, together and
 alone, and the baselines' at every fix) and crossings_<session>.csv (each crossing's start and far end), plus
 walking_lines.csv (each method's two walking lines at the knots) and summary.json. Until the reference is traced (plan
-section 8, phase 1), only the summary's non-geometric fields are shown.
+section 8, phase 1), only the summary's non-geometric fields are shown. The street's axis comes from the area's config,
+and each session's protocol from the area's field log.
 """
 import argparse
 import json
@@ -17,10 +19,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from graph import baselines, contract, ladder, reference, runs as walk, steps as stepping, zones
+from walk2net import baselines, fieldlog
+from walk2net.config import Area
+from walk2net.stages import ladder, sync, walk, zones
 
 def clock_of(windows, session):
-    return contract.sensor_clock(contract.summarize_rotation(windows[windows['session'] == session]))
+    return sync.sensor_clock(sync.summarize_rotation(windows[windows['session'] == session]))
 
 
 def prepare(raw, workspace, rotation, out, sessions):
@@ -34,7 +38,7 @@ def prepare(raw, workspace, rotation, out, sessions):
         instance = ds.instances[session]
         accelerometer = instance.sensors3[motion_stream(instance.sensors3, 'accelerometer')]
         times, xyz = sensor_signal(accelerometer, ['x', 'y', 'z'], instance.media_start_time)
-        found = stepping.step_times(times, xyz, ws.motion(session)['stops'])  # both on the sensor clock
+        found = walk.step_times(times, xyz, ws.motion(session)['stops'])  # both on the sensor clock
         pd.DataFrame(dict(t=clock_of(windows, session)(found))).to_csv(out / f'steps_{session}.csv', index=False)
 
         detections = ws.detections(session)
@@ -46,18 +50,18 @@ def prepare(raw, workspace, rotation, out, sessions):
         print(f'[phase2] {session}: {len(found)} steps, {len(underfoot)} frames on a crosswalk', flush=True)
 
 
-def in_frame(table, frame):
-    """table (longitude, latitude) with u and v in the street frame."""
+def in_frame(table, frame, crs):
+    """table (longitude, latitude) with u and v in the street frame (projected in `crs`)."""
     import geopandas as gpd
-    points = gpd.GeoSeries(gpd.points_from_xy(table['longitude'], table['latitude']), crs=4326).to_crs(reference.UTM)
+    points = gpd.GeoSeries(gpd.points_from_xy(table['longitude'], table['latitude']), crs=4326).to_crs(crs)
     u, v = frame.to_uv(points.x, points.y)
     return table.assign(u=u, v=v)
 
 
-def session_ladder(ws, windows, prepared, session, frame):
+def session_ladder(ws, windows, prepared, session, frame, crs):
     """One session's runs (with headings and rails), steps, GPS fixes in the street frame, its 5-fix median track and
     its Ladder."""
-    motion = contract.to_video_clock(ws.motion(session), clock_of(windows, session))
+    motion = sync.to_video_clock(ws.motion(session), clock_of(windows, session))
     gps = ws.gps(session)
     start, stop = ws._media_times(session)
     cut = walk.cut_runs(motion, gps, (stop - start).total_seconds())
@@ -65,16 +69,18 @@ def session_ladder(ws, windows, prepared, session, frame):
     cut = walk.split_at_crosswalks(cut, underfoot, motion['stops'], gps)
     placed = ladder.assign_rails(ladder.headings(cut, frame, motion['turns']))
     stepped = pd.read_csv(prepared / f'steps_{session}.csv')['t'].to_numpy()
-    fixes = in_frame(contract.read_fixes(ws.data_dir / session / 'gps.csv', pd.Timestamp(start, tz='UTC')), frame)
+    fixes = in_frame(sync.read_fixes(ws.data_dir / session / 'gps.csv', pd.Timestamp(start, tz='UTC')), frame, crs)
     fixes = fixes[(fixes['t'] >= 0) & (fixes['t'] <= (stop - start).total_seconds())].reset_index(drop=True)
-    return placed, stepped, fixes, in_frame(gps, frame), ladder.Ladder(placed, stepped, fixes)
+    return placed, stepped, fixes, in_frame(gps, frame, crs), ladder.Ladder(placed, stepped, fixes)
 
 
-def side_summary(placed, stepped):
-    """How the crossings alone placed the runs, against the protocol (NS street: northbound on the east side,
-    southbound on the west), for every run along the street and for those of at least 40 m."""
+def side_summary(placed, stepped, road_side):
+    """How the crossings alone placed the runs, against the session's protocol, for every run along the street and for
+    those of at least 40 m. Walking +u with the road on the left is the +1 rail (right of the axis); `road_side` is
+    the side the protocol puts the road on along this street, or None (a free route: no expectation)."""
     along = placed[placed['quarter'].isin([0, 2]) & ~placed['across']]
-    agrees = along['rail'].to_numpy() == np.where(along['quarter'] == 0, 1.0, -1.0)
+    out_rail = {'left': 1.0, 'right': -1.0}.get(road_side, np.nan)
+    agrees = along['rail'].to_numpy() == np.where(along['quarter'] == 0, out_rail, -out_rail)
     long = along['distance_m'].to_numpy() >= 40
     return dict(runs=len(placed), along=len(along), crossings_of_the_street=int(placed['across'].sum()),
                 conflicts=int(placed['conflict'].sum()), chain_corrections=placed.attrs['chain_corrections'],
@@ -83,15 +89,15 @@ def side_summary(placed, stepped):
                 long_side_agrees_with_protocol=float(agrees[long].mean()), steps=len(stepped))
 
 
-def fit(workspace, rotation, prepared, out, sessions, separations=None):
+def fit(area, street, workspace, rotation, prepared, out, sessions, separations=None):
     """Each session alone (what one walk can do) and all together (the street), with the baselines. separations:
     the walking lines' separation measured along the street (phase 2b), for the joint fit."""
-    import geopandas as gpd
     from sideseeing_tools import SideSeeingWorkspace
 
     ws, windows = SideSeeingWorkspace(str(workspace)), pd.read_csv(rotation)
-    frame = ladder.Frame(gpd.GeoSeries([reference.MORGAN], crs=4326).to_crs(reference.UTM)[0])
-    parts = {session: session_ladder(ws, windows, prepared, session, frame) for session in sessions}
+    protocols = fieldlog.protocols(fieldlog.read(area.field_log), sessions)
+    frame = ladder.Frame(street.projected(area.crs))
+    parts = {session: session_ladder(ws, windows, prepared, session, frame, area.crs) for session in sessions}
     models = [part[-1] for part in parts.values()]
     knots, rails, together, result, observed = ladder.fit(models, separations)
     summary = dict(together=dict(solved=bool(result.success), evaluations=int(result.nfev)))
@@ -112,7 +118,8 @@ def fit(workspace, rotation, prepared, out, sessions, separations=None):
         placed.to_csv(out / f'runs_{session}.csv', index=False)
         track.to_csv(out / f'track_{session}.csv', index=False)
         model.crossings(p).to_csv(out / f'crossings_{session}.csv', index=False)
-        summary[session] = dict(**side_summary(placed, stepped), step_m=float(p['step_m']), pull_m=float(p['pull_m']),
+        road_side = protocols[session].road_side_along(street.orientation)
+        summary[session] = dict(**side_summary(placed, stepped, road_side), step_m=float(p['step_m']), pull_m=float(p['pull_m']),
                                 alone=dict(step_m=float(alone['step_m']), pull_m=float(alone['pull_m']),
                                            solved=bool(alone_result.success)))
         print(f'[phase2] {session}: ' + json.dumps(summary[session], default=lambda x: round(x, 3)), flush=True)
@@ -133,6 +140,8 @@ def fit(workspace, rotation, prepared, out, sessions, separations=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('step', choices=['prepare', 'fit'])
+    parser.add_argument('--area', help='fit: an area config, network/areas/<area>.toml')
+    parser.add_argument('--street', help="fit: a street of the area's config")
     parser.add_argument('--raw', type=Path)
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--rotation', type=Path, required=True)
@@ -144,7 +153,8 @@ def main():
     if args.step == 'prepare':
         prepare(args.raw, args.workspace, args.rotation, args.out, args.sessions)
     else:
-        fit(args.workspace, args.rotation, args.prepared, args.out, args.sessions)
+        area = Area.load(args.area)
+        fit(area, area.streets[args.street], args.workspace, args.rotation, args.prepared, args.out, args.sessions)
 
 
 if __name__ == '__main__':

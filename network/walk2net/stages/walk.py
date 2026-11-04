@@ -1,4 +1,10 @@
-"""The walk cut into runs: straight stretches between the turns that are not 'small' (the plan's Run record).
+"""The walk (pipeline step S2): its steps, and the walk cut into runs.
+
+Steps come from the accelerometer, as in the West Loop notebook (west_loop.ipynb, section 2): the magnitude,
+band-passed to BAND_HZ, has one peak per step, at least MIN_GAP_S apart and PROMINENCE (m/s²) high. Peaks inside
+stops are dropped. The notebook found 0.78 m per step on the West Loop days.
+
+Runs are straight stretches between the turns that are not 'small' (the plan's Run record).
 
 The cut is the one sideseeing-tools uses for crossing candidates (analysis.turns.detect_crossing_candidates), so
 each crossing candidate is exactly one run, of kind 'crossing'. A run's displacement and bearing come from the
@@ -10,9 +16,13 @@ split_at_crosswalks cuts them out where the crosswalk mask lies just ahead of th
 """
 import numpy as np
 import pandas as pd
+from scipy.signal import butter, filtfilt, find_peaks
 from sideseeing_tools.analysis.turns import MIN_SEGMENT_S
 from sideseeing_tools.geolocation import calculate_haversine_distance
 
+BAND_HZ = (0.8, 3.5)
+MIN_GAP_S = 0.33
+PROMINENCE = 1.0
 SHORT_M = 20.0
 UNDERFOOT = (0.85, 0.35, 0.65)  # the ground just ahead: rows from 85% of the height, columns 35-65%
 STRAIGHT_GAP_S = 2.0
@@ -115,3 +125,16 @@ def axis_runs(runs, axis_deg, tolerance_deg=30.0, min_m=SHORT_M):
     along['direction'] = np.where(offset.abs() <= tolerance_deg, 'forward',
                                   np.where(offset.abs() >= 180 - tolerance_deg, 'back', None))
     return along[along['direction'].notna()]
+
+
+def step_times(times, xyz, stops=None):
+    """Times of the steps in an accelerometer stream (times in s, xyz in m/s²), outside `stops` (start_s, end_s)."""
+    rate = 1 / np.median(np.diff(times))
+    b, a = butter(2, [BAND_HZ[0] / (rate / 2), BAND_HZ[1] / (rate / 2)], 'band')
+    peaks, _ = find_peaks(filtfilt(b, a, np.linalg.norm(xyz, axis=1)), distance=int(MIN_GAP_S * rate),
+                          prominence=PROMINENCE)
+    found = times[peaks]
+    if stops is not None and len(stops):
+        inside = ((found[:, None] >= stops['start_s'].to_numpy()) & (found[:, None] < stops['end_s'].to_numpy())).any(1)
+        found = found[~inside]
+    return found

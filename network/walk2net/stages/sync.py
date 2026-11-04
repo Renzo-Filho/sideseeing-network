@@ -20,7 +20,7 @@ import pandas as pd
 from scipy.signal import find_peaks
 from scipy.stats import median_abs_deviation
 
-from graph.runs import bearing
+from walk2net.stages.walk import bearing
 
 TAP_WINDOW_S = 120.0
 TAP_SPAN_S = 3.0

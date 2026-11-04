@@ -4,16 +4,15 @@ Cars and curbs are on the road side of a sidewalk. In a run, the detections of R
 min_score are split by whether their box centre is left or right of the frame's middle; the cue is the side holding
 at least `share` of them, from `min_count` detections up, and 'abstain' otherwise.
 
-The West Loop protocol fixes the expected answer along the walked streets: north-south legs go northbound on the
-east side and southbound on the west side, east-west legs eastbound on the north side and westbound on the south
-side (data/west_loop/plan/sessions.csv), so the road is on the left along NS streets and on the right along EW streets.
-Under that protocol the walking direction alone gives the side, which is worth knowing before relying on the cue.
+A session's protocol fixes the expected answer along the walked streets (walk2net.config.Protocol.road_side_along):
+under the October rules the road is on the walker's left along north-south streets and on the right along east-west
+ones; under the briefing it is always on the left. There the walking direction alone gives the side, which is worth
+knowing before relying on the cue.
 """
 import numpy as np
 import pandas as pd
 
 ROAD_PROMPTS = ('car', 'curb')
-PROTOCOL_ROAD_SIDE = {0.0: 'left', 90.0: 'right'}  # street axis (deg) -> road side under the protocol
 
 
 def road_side(runs, detections, frame_width, min_score=0.5, share=0.7, min_count=5):
@@ -37,9 +36,8 @@ def road_side(runs, detections, frame_width, min_score=0.5, share=0.7, min_count
     return result
 
 
-def score_against_protocol(cued, axis_deg):
-    """Counts of the cue against the protocol's expected road side for runs along one axis."""
-    expected = PROTOCOL_ROAD_SIDE[axis_deg]
+def score_against_protocol(cued, expected):
+    """Counts of the cue against the road side a protocol expects ('left' or 'right') for runs along one axis."""
     outcome = np.where(cued['road_side'] == 'abstain', 'abstain',
                        np.where(cued['road_side'] == expected, 'agrees', 'disagrees'))
     return pd.Series(outcome).value_counts().reindex(['agrees', 'disagrees', 'abstain'], fill_value=0)

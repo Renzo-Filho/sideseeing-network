@@ -1,9 +1,9 @@
 """Phase 2b of the graph plan: the curb and the sidewalk's edges from the video, on Morgan (D1).
 
-    python -m graph.phase2b measure --raw RAW --workspace W --rotation rotation_windows.csv --prepared PREP \
+    python -m experiments.phase2b measure --raw RAW --workspace W --rotation rotation_windows.csv --prepared PREP \
         --fit FIT --out OUT --sessions ...
-    python -m graph.phase2b fit --workspace W --rotation rotation_windows.csv --prepared PREP --fit FIT \
-        --measured OUT --out FIT2 --sessions ... [--height-m 1.30]
+    python -m experiments.phase2b fit --area west_loop --street morgan --workspace W --rotation rotation_windows.csv \
+        --prepared PREP --fit FIT --measured OUT --out FIT2 --sessions ... [--height-m 1.30]
 
 `measure` needs the video and the masks (desktop-01). Per session it writes:
 - heights_<session>.csv: the camera's height from the ground's motion (ground.ground_motion) in the middle 20 s of
@@ -30,8 +30,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from graph import contract, ground, phase2, zones
-from graph.runs import UNDERFOOT
+from experiments import phase2a
+from walk2net.config import Area
+from walk2net.stages import ground, sync, zones
+from walk2net.stages.walk import UNDERFOOT
 
 WINDOW_S, EVERY = 20.0, 3       # height: seconds read from each long run, and every third frame (0.1 s apart)
 MIN_RHO, MIN_WALKED_M = 0.6, 0.05
@@ -105,7 +107,7 @@ def measure(raw, workspace, rotation, prepared, fit, out, sessions):
     ds, ws, windows = SideSeeingDS(str(raw)), SideSeeingWorkspace(str(workspace)), pd.read_csv(rotation)
     step_m = json.loads((fit / 'summary.json').read_text())
     for session in sessions:
-        clock = contract.sensor_clock(contract.summarize_rotation(windows[windows['session'] == session]))
+        clock = sync.sensor_clock(sync.summarize_rotation(windows[windows['session'] == session]))
         camera = camera_of(ds.instances[session], clock)
         steps = np.sort(pd.read_csv(prepared / f'steps_{session}.csv')['t'].to_numpy())
         written = out / f'heights_{session}.csv'
@@ -169,7 +171,7 @@ def separations(widths, offsets):
     return pd.DataFrame(rows)
 
 
-def fit(workspace, rotation, prepared, before, measured, out, sessions, height_m=None):
+def fit(area, street, workspace, rotation, prepared, before, measured, out, sessions, height_m=None):
     summary = json.loads((before / 'summary.json').read_text())
     widths, offsets = [], []
     for session in sessions:
@@ -189,12 +191,14 @@ def fit(workspace, rotation, prepared, before, measured, out, sessions, height_m
           f'distance from the curb: east {offsets[offsets["side"] == 1]["distance_m"].median():.2f} m, '
           f'west {offsets[offsets["side"] == -1]["distance_m"].median():.2f} m; '
           f'separation at {len(measured_apart)} legs, median {measured_apart["separation_m"].median():.2f} m', flush=True)
-    phase2.fit(workspace, rotation, prepared, out, sessions, measured_apart)
+    phase2a.fit(area, street, workspace, rotation, prepared, out, sessions, measured_apart)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('step', choices=['measure', 'fit'])
+    parser.add_argument('--area', help='fit: an area config, network/areas/<area>.toml')
+    parser.add_argument('--street', help="fit: a street of the area's config")
     parser.add_argument('--raw', type=Path)
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--rotation', type=Path, required=True)
@@ -209,8 +213,9 @@ def main():
     if args.step == 'measure':
         measure(args.raw, args.workspace, args.rotation, args.prepared, args.fit, args.out, args.sessions)
     else:
-        fit(args.workspace, args.rotation, args.prepared, args.fit, args.measured, args.out, args.sessions,
-            args.height_m)
+        area = Area.load(args.area)
+        fit(area, area.streets[args.street], args.workspace, args.rotation, args.prepared, args.fit, args.measured,
+            args.out, args.sessions, args.height_m)
 
 
 if __name__ == '__main__':

@@ -1,7 +1,9 @@
 """Route plan for a collection area: one out-and-back module per street, built from OSM sidewalks and crossings.
 
-Run from the repo root:  .venv/bin/python network/scripts/routes.py river_north|west_loop
-Writes network/data/<area>/plan/ (git-ignored): osm_<date>.json (cached download), routes.gpkg, sessions.csv,
+Run from network/:  python -m walk2net.plan AREA PROTOCOL      e.g.  python -m walk2net.plan west_loop briefing-2026-11
+The area's settings are in network/areas/<AREA>.toml ([plan]); the protocol (network/protocols/) says which side each
+street's out leg walks: the out leg goes north or east, with the road on the side the protocol names.
+Writes the area's plan/ folder (git-ignored): osm_<date>.json (cached download), routes.gpkg, sessions.csv,
 unassigned.csv, overview.png and cards/<MODULE>.png.
 
 Rule: walk a street out on one side and back on the other, crossing straight ahead at every intersection.
@@ -11,7 +13,6 @@ exactly like a sidewalk piece. OSM is a planning inventory, not ground truth: fi
 import json
 import sys
 from datetime import date
-from pathlib import Path
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -21,24 +22,8 @@ import requests
 from shapely.geometry import LineString, Point, box
 from shapely.ops import polygonize, unary_union
 
-# The area is the land inside the boundary-street centrelines (edges), cut by the Chicago River, plus the
-# outer sidewalks of the boundary streets. `inside` picks the right piece when the river splits the frame.
-AREAS = {
-    'river_north': dict(name='River North', bbox=(41.880, -87.665, 41.915, -87.620),  # S, W, N, E
-                        inside=(-87.6312, 41.8930),  # Clark/Ontario
-                        edges={'Chicago': 'N', 'Michigan': 'E'}, multi_level=True),
-    'west_loop': dict(name='West Loop', bbox=(41.868, -87.675, 41.898, -87.628),
-                      inside=(-87.6520, 41.8840),  # Racine/Randolph
-                      # South: the north rim of the I-290 trench, which is Van Buren west of Racine and Tilden
-                      # east of it. Tilden's centreline is the edge; west of Racine nothing walkable lies south of
-                      # Van Buren but the I-290 bridges, which lead out.
-                      edges={'Grand': 'N', 'Ashland': 'W', 'Tilden': 'S'}, multi_level=False,
-                      bridges_out=['Eisenhower Expressway'],
-                      split_ew_at='Halsted',  # E-W streets are 2.3 km wide; River North's longest leg is 1.4 km
-                      run_gap_m=60),          # a street interrupted for this long is walked as separate runs
-}
-ROOT = Path(__file__).resolve().parents[1]  # network/
-UTM = 32616
+from walk2net.config import Area, Protocol
+
 OUTER_M = 30                               # reach past the boundary-street centrelines for the outer sides
 SEARCH_M = 30                              # max distance from a sidewalk piece to its street centreline
 PARALLEL_DEG = 35                          # max angle between a piece and its street
@@ -70,12 +55,12 @@ def fetch_osm(out, bbox):
     return r.json(), day
 
 
-def ways_frame(elements):
+def ways_frame(elements, crs):
     rows = [dict(osm_id=e['id'], **{k: e.get('tags', {}).get(k) for k in
                  ['highway', 'footway', 'crossing', 'name', 'layer', 'tunnel', 'bridge', 'level', 'waterway', 'railway']},
                  geometry=LineString([(p['lon'], p['lat']) for p in e['geometry']]))
             for e in elements if e['type'] == 'way' and len(e.get('geometry', [])) > 1]
-    return gpd.GeoDataFrame(rows, crs=4326).to_crs(UTM)
+    return gpd.GeoDataFrame(rows, crs=4326).to_crs(crs)
 
 
 def street_name(name):
@@ -97,7 +82,7 @@ def segments(gdf, cols):
         for a, b in zip(c[:-1], c[1:]):
             if np.hypot(*(b - a)) > 0.5:
                 rows.append((*rec[:-1], LineString([a, b])))
-    return gpd.GeoDataFrame(rows, columns=cols + ['geometry'], crs=UTM)
+    return gpd.GeoDataFrame(rows, columns=cols + ['geometry'], crs=gdf.crs)
 
 
 def gaps(g, ax):
@@ -112,10 +97,11 @@ def bearing(seg):
     return np.degrees(np.arctan2(x1 - x0, y1 - y0)) % 180  # 0 = N-S, 90 = E-W
 
 
-def main(key):
-    cfg, out = AREAS[key], ROOT / 'data' / key / 'plan'
+def main(area_key, protocol_name):
+    area_cfg, protocol = Area.load(area_key), Protocol.load(protocol_name)
+    cfg, out, crs = area_cfg.plan, area_cfg.data / 'plan', area_cfg.crs
     osm, day = fetch_osm(out, cfg['bbox'])
-    W = ways_frame(osm['elements'])
+    W = ways_frame(osm['elements'], crs)
     # Off street level. A multi-level area drops lower-level streets and everything tagged below ground. A
     # one-level area drops only 'Lower ...' streets: West Loop's layer -1 sidewalks are ordinary blocks, and
     # Randolph and Washington pass under the Ogilvie train shed as building passages.
@@ -132,7 +118,7 @@ def main(key):
         lim[side] = (c.x if side in 'EW' else c.y).median()
     frame = box(lim['W'], lim['S'], lim['E'], lim['N'])
     river = W[W.waterway == 'river'].geometry
-    inside = gpd.GeoSeries([Point(cfg['inside'])], crs=4326).to_crs(UTM).iloc[0]
+    inside = gpd.GeoSeries([Point(cfg['inside'])], crs=4326).to_crs(crs).iloc[0]
     core = next(p for p in polygonize(unary_union([frame.exterior, *river])) if p.contains(inside))
     area = core.union(core.buffer(OUTER_M).difference(frame.buffer(-1)))  # plus the outer sides of the edges
 
@@ -221,10 +207,11 @@ def main(key):
     tiny = pieces.groupby('module').length_m.transform('sum') < MIN_MODULE_M
     pieces.loc[tiny, ['street', 'axis', 'side', 'module']] = None
 
-    # Sessions: E-W streets out on the north side eastbound, back on the south side westbound;
-    # N-S streets out on the east side northbound, back on the west side southbound.
-    OUTWARD = {'N': 'out', 'E': 'out', 'S': 'back', 'W': 'back'}
-    DIRECTION = {'N': 'eastbound', 'S': 'westbound', 'E': 'northbound', 'W': 'southbound'}
+    # Sessions: the out leg goes north (N-S streets) or east (E-W streets) on the side the protocol gives it, the back
+    # leg the other way on the other side.
+    out_side = {ax: protocol.out_side(ax) for ax in ('NS', 'EW')}
+    assert all(out_side.values()), f'{protocol.name} does not fix the sides of a street: it cannot plan legs'
+    DIRECTION = {('NS', 'out'): 'northbound', ('NS', 'back'): 'southbound', ('EW', 'out'): 'eastbound', ('EW', 'back'): 'westbound'}
     a = pieces.dropna(subset=['street']).copy()
     a['session'] = a.module + '-' + a.side
     rows = []
@@ -234,13 +221,14 @@ def main(key):
         first, last = g.loc[pos.idxmin()].geometry.centroid, g.loc[pos.idxmax()].geometry.centroid
         s0, s1 = gaps(g, ax)  # stretches of the leg with no mapped sidewalk or crosswalk: a site check
         gap = s1 - s0
-        start, end = (first, last) if OUTWARD[side] == 'out' else (last, first)
-        to_ll = lambda p: gpd.GeoSeries([p], crs=UTM).to_crs(4326).iloc[0]
+        leg = 'out' if side == out_side[ax] else 'back'
+        start, end = (first, last) if leg == 'out' else (last, first)
+        to_ll = lambda p: gpd.GeoSeries([p], crs=crs).to_crs(4326).iloc[0]
         s, e = to_ll(start), to_ll(end)
         sw, cw = g[g.kind == 'sidewalk'], g[g.kind == 'crossing']
         other = rs[rs.street != g.street.iat[0]]
         cross_street = lambda p: other.street.iat[other.distance(p).argmin()]
-        rows.append(dict(module=mod, axis=ax, session=f'{mod}-{side}', leg=OUTWARD[side], direction=DIRECTION[side],
+        rows.append(dict(module=mod, axis=ax, session=f'{mod}-{side}', leg=leg, direction=DIRECTION[(ax, leg)],
                          from_street=cross_street(start), to_street=cross_street(end),
                          sidewalk_m=round(sw.length_m.sum()), crosswalks=cw.osm_id.nunique(),
                          signal_crosswalks=cw[cw.signals].osm_id.nunique(), crosswalk_m=round(cw.length_m.sum()),
@@ -263,7 +251,7 @@ def main(key):
         [['osm_id', 'kind', 'length_m', 'near_street', 'near_layer', 'near_m', 'lat', 'lon']] \
         .round({'length_m': 0, 'near_m': 0}).sort_values('length_m', ascending=False).to_csv(out / 'unassigned.csv', index=False)
 
-    gpd.GeoDataFrame({'name': ['core', 'collection area']}, geometry=[core, area], crs=UTM).to_file(out / 'routes.gpkg', layer='area')
+    gpd.GeoDataFrame({'name': ['core', 'collection area']}, geometry=[core, area], crs=crs).to_file(out / 'routes.gpkg', layer='area')
     pieces.drop(columns='bear').to_file(out / 'routes.gpkg', layer='pieces')
 
     tot = pieces.groupby('kind').length_m.sum()
@@ -275,7 +263,7 @@ def main(key):
           f'{sessions.walk_min.sum() / 60:.1f} h; crosswalks {sessions.crosswalks.sum()} '
           f'({sessions.signal_crosswalks.sum()} signalised)')
 
-    draw(out, cfg['name'], core, area, pieces, a, sessions, W, below)
+    draw(out, area_cfg.name, core, area, pieces, a, sessions, W, below)
 
 
 def draw(out, name, core, area, pieces, a, sessions, W, below):
@@ -315,7 +303,7 @@ def draw(out, name, core, area, pieces, a, sessions, W, below):
             sel = g[g.session == s.session]
             color = '#1a7f37' if s.leg == 'out' else '#8250df'
             sel.plot(ax=ax, color=color, lw=2.6)
-            st, en = [gpd.GeoSeries([Point(lon, lat)], crs=4326).to_crs(UTM).iloc[0]
+            st, en = [gpd.GeoSeries([Point(lon, lat)], crs=4326).to_crs(W.crs).iloc[0]
                       for lat, lon in [(s.start_lat, s.start_lon), (s.end_lat, s.end_lon)]]
             ax.annotate('', xy=(en.x, en.y), xytext=(st.x, st.y),
                         arrowprops=dict(arrowstyle='->', color=color, lw=1.5, alpha=.6))
@@ -332,4 +320,5 @@ def draw(out, name, core, area, pieces, a, sessions, W, below):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'river_north')
+    assert len(sys.argv) == 3, 'usage: python -m walk2net.plan AREA PROTOCOL'
+    main(*sys.argv[1:])

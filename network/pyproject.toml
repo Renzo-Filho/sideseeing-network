@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "walk2net"
+version = "0.1.0"
+description = "The pedestrian graph from phone walking recordings (working name). See docs/ARCHITECTURE.md."
+readme = "README.md"
+requires-python = ">=3.12"
+# sideseeing-tools is installed from its sibling checkout (../../sideseeing-tools); pinning it is an open question
+# in docs/ARCHITECTURE.md. Install walk2net into that checkout's venv: pip install -e network/
+dependencies = [
+    "sideseeing-tools",
+    "numpy",
+    "pandas",
+    "scipy",
+    "geopandas",
+    "shapely",
+    "pyproj",
+    "matplotlib",
+    "pillow",
+    "opencv-python",
+    "requests",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["walk2net*"]
+
+[tool.setuptools.package-data]
+walk2net = ["*.html", "evaluate/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: needs the local West Loop data (network/data/); run with -m slow"]
+addopts = "-m 'not slow'"
