@@ -2,6 +2,10 @@
 
 This is the **only page with dated status** for the network track. Other pages describe plans, methods and results as of their own date; update this page after each checkpoint instead of adding status banners elsewhere. Newest entry first.
 
+## 3 November 2026: a new plan for the graph paper (draft)
+
+After talking with the advisors: Tile2Net is the baseline. The first result is a network (nodes and edges) at least as accurate as Tile2Net's and better at corners and crossings; the enriched graph (widths, slopes, detections) comes second. The proposed method fuses the walk with Tile2Net's output. Draft: [GRAPH_PAPER_PLAN_2026-11-03.md](GRAPH_PAPER_PLAN_2026-11-03.md). Later the same day Renzo decided most of section 12: the walk's network stands on its own first, the fusion second; Tile2Net runs as released; the test is free-route walks drawn before the walk; the City's curbs are kept for now; reviewers double-label. The margins and the curb source are to review with the advisors. The pipeline is specified in [GRAPH_PIPELINE_2026-11-03.md](GRAPH_PIPELINE_2026-11-03.md), and a calibration day is planned for discussion in [CALIBRATION_DAY_PLAN_2026-11-03.md](CALIBRATION_DAY_PLAN_2026-11-03.md). Collection continues until early or mid December.
+
 ## 3 November 2026: the repository was reorganized
 
 No research changed. The network track now has its own folder for everything: `docs/` (with `datasets/` and `archive/`), `graph/`, `scripts/`, `notebooks/` and `data/` (see [README](../README.md)). River North was dropped as the collection area and its documents are archived; West Loop is the collection area.
@@ -36,13 +40,37 @@ The remaining error is mostly a shift that both lines share. Only the aerial pho
 - D1 processing: West Loop done; Brás later, with the same prompts.
 - D2–D6 (schema, labels, privacy, splits, release): not started.
 
-## Next
+## Next (priorities set 3 November 2026)
 
-From [GRAPH_WORK_EXPLAINED](GRAPH_WORK_EXPLAINED_2026-10-30.md) §6 and [PAPERS.md](PAPERS.md) §5:
-1. A first rough graph on Morgan: nodes at corners, walking lines as edges, crossings (level 0).
-2. Sidewalk polygons from the curb and building-side edges, with edges becoming their centrelines (level 1).
-3. Lens calibration from the checkerboard video, and the reference clean-up.
-4. Corners and alternatives on D2 (G3), then the one-time held-out run on D3 (G4).
-5. Comparisons with Tile2Net and OSM (G5), then the paper.
+The rule for ordering them: **what can only be done in the field comes first**, because field access ends with collection (early or mid December). Everything computed can wait; a missing measurement cannot be taken afterwards. Detail in the [graph paper plan](GRAPH_PAPER_PLAN_2026-11-03.md).
 
-**Open decisions, for Renzo:** the size of the Brás agreement sample and who relabels it; a second labeller for the West Loop corners; venues.
+**1. Before the next collection day**
+1. `splits.csv`: every route-plan module marked development or test, and the free test routes drawn ([plan](GRAPH_PAPER_PLAN_2026-11-03.md) §5).
+2. Start the daily routine ([calibration plan](CALIBRATION_DAY_PLAN_2026-11-03.md) §7): mount check, height, 10 m taped stretch.
+
+**2. While collecting (November to early December)**
+1. The calibration day on Morgan.
+2. Walk the free test routes; keep D3 untouched.
+3. After each day: transfer, desktop-01 processing, the automatic checks, split by module.
+4. Inventory what the 26 and 28 October and 3 November captures cover.
+
+**3. Computing, in parallel**
+1. Run Tile2Net as released on West Loop (P1): the earliest risk check.
+2. Reference pass on Morgan with the City's curbs (P2), then the scorer that reads Tile2Net's format (P3): Tile2Net's first scores.
+3. The walk-only network on Morgan, then D2's corners (P4), scored next to Tile2Net on development data (Gate 1a's measures).
+4. The data-review pre-step (S0), once the input-versus-reference rule is agreed.
+5. Time-boxed in the gaps: Wi-Fi side cue (two weeks), Project Sidewalk models on a labelled sample (one week).
+
+**4. With the advisors**
+
+The Gate 1 margins, the curb source, the confirmation that the walk's network comes first and the fusion second.
+
+**5. After collection ends**
+1. Freeze every setting.
+2. The fusion (P5).
+3. Gates 1a and 1b, once, on the test routes and D3 (P6).
+4. Enrichment and Gate 2 (P7).
+5. Routes (P8).
+6. The paper (P9).
+
+**Open decisions for the dataset paper** (PAPERS.md): the size of the Brás agreement sample and who relabels it; venues.

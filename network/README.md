@@ -39,6 +39,7 @@ network/
 | `transcribe.py <raw session>` | Whisper transcript with word times, written to the area's `derived/` | sideseeing-tools |
 | `build_pilot_dashboard.py` | sideseeing-tools dashboard for pilot 1 | sideseeing-tools |
 | `drive.sh mount\|unmount\|status` | Mounts Google Drive read-only at `~/gdrive`, where the West Loop captures live | — |
+| `wifi_side_check.py <raw sessions>` | Exploratory: whether Wi-Fi separates the two sidewalks of a street (pipeline doc, section 8) | `.venv` |
 | `transfer_bras.py` (+ test) | Resumable Brás copy from Drive to RustFS; its run record is in `data/_transfers/bras/` | `python3` |
 
 ## Where the data lives
