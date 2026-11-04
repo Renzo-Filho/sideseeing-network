@@ -1,50 +1,52 @@
 # sideseeing-network
 
-Urban-form similarity research: characterize São Paulo's municipal districts (reference: Brás, district `10`) and Chicago's 77 Community Areas with street-morphology (M), built-form (B) and urban-function (U) feature families, then compare places descriptively. The Chicago-only and São Paulo–Chicago models were fitted on 6 October 2026; both are descriptive comparisons with documented limits.
+Two connected research tracks on walkable urban space in São Paulo and Chicago.
+
+1. **Urban similarity model** ([analysis/](analysis/README.md)). Describes São Paulo's 96 districts (reference: Brás, district `10`) and Chicago's 77 Community Areas with street-morphology (M), built-form (B) and urban-function (U) feature families, and compares places descriptively. The Chicago-only and São Paulo–Chicago models were fitted on 6 October 2026.
+2. **Sidewalk network** ([network/](network/README.md)). Field collection with a phone on a vest (video, GPS, motion sensors, voice), and the passage graph built from those recordings without a map. It aims at two papers: a West Loop + Brás dataset, and the passage graph.
+
+Agents: read [AGENTS.md](AGENTS.md) first.
 
 ## Start here
 
 | I want to… | Open |
 |---|---|
-| Know where the project stands and what is next | [docs/STATUS.md](docs/STATUS.md) — the only page with dated status |
-| Continue work in a new agent session | [current status](docs/STATUS.md) · [historical handoff](docs/HANDOFF.md) |
-| Understand the research design | [docs/PROTOCOL.md](docs/PROTOCOL.md) |
-| See why a feature was kept, deferred or changed | [docs/DECISIONS.md](docs/DECISIONS.md) |
-| Explore the three cross-city methods interactively (any reference unit) | [Cross-City Urban Explorer](viz/README.md): `python3 -m http.server 8765 --directory viz` |
-| Read the São Paulo–Chicago model (Brás reference; proposed settings v4 and candidate v3, on v2's data with the U1 commerce share) | [model report](docs/harmonization/MODEL_REPORT.md) (conclusions §1; v1 §5, v2 §6, v3 §7, v4 §8; across versions §9; Chicago neighborhoods §10) · [contract v4](analysis/config/sp_chicago_model_v4.json) · [contract v3](analysis/config/sp_chicago_model_v3.json) · [notebook](analysis/sp_chicago_model_analysis.ipynb) · [contract v2](analysis/config/sp_chicago_model_v2.json) · [v1](analysis/config/sp_chicago_model_v1.json) |
-| Read the Chicago model (methodology, features, results) | [model report](docs/chicago/MODEL_REPORT.md) · [notebook](analysis/chicago_model_analysis.ipynb) · [contract](analysis/config/chicago_model_v1.json) |
-| Read Chicago feature definitions and sources | [model plan](docs/chicago/MODEL_PLAN.md) · [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
-| Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |
-| Read the SP–Chicago harmonization history | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
-| Find paper-oriented evidence | [survey](docs/survey/README.md) · [advisor brief](docs/survey/ADVISOR_BRIEF.md) · [experiment ledger](docs/survey/EXPERIMENT_LEDGER.md) |
-| Find every dataset: content, source, version, use in the models | [data register](analysis/data/README.md) |
-| Browse published results | [SP](analysis/results/SP/README.md) · [Chicago](analysis/results/Chicago/README.md) · `analysis/results/SP_CHI/` |
-| Run or find a script | [analysis/scripts/INDEX.md](analysis/scripts/INDEX.md) |
-| Work in Curio | [analysis/curio_nodes/README.md](analysis/curio_nodes/README.md) |
-
-Superseded plans and audits are kept unchanged in [docs/archive/](docs/archive/).
+| Know where the similarity model stands | [analysis/docs/STATUS.md](analysis/docs/STATUS.md) |
+| Know where the sidewalk network stands | [network/docs/STATUS.md](network/docs/STATUS.md) |
+| Read the cross-city model and its conclusions | [model report](analysis/docs/harmonization/MODEL_REPORT.md) |
+| Explore the cross-city methods interactively | [Cross-City Urban Explorer](analysis/viz/README.md): `python3 -m http.server 8765 --directory analysis/viz` |
+| Read the passage-graph work in plain English | [GRAPH_WORK_EXPLAINED](network/docs/GRAPH_WORK_EXPLAINED_2026-10-30.md) |
+| Find every document of a track | [analysis/README.md](analysis/README.md) · [network/docs/README.md](network/docs/README.md) |
+| Find a dataset | Model inputs: [analysis/data/README.md](analysis/data/README.md) · field captures: [network/data/README.md](network/data/README.md) and [Drive/RustFS inventory](network/docs/datasets/README.md) |
+| Run or find a script | [analysis/scripts/INDEX.md](analysis/scripts/INDEX.md) · [network/README.md](network/README.md#code) |
 
 ## Layout
 
 ```text
-README.md            this page
-docs/                methods, decisions and status (see table above)
-viz/                 isolated static Cross-City Urban Explorer (Vercel project root)
-analysis/            code, configs, results and local data — see analysis/README.md
-  scripts/           pipeline and pilot scripts (flat; INDEX.md), library packages, _archive/*.zip
-  curio_nodes/       Chicago feature/model nodes installed in the Curio dataflow
-  config/            frozen, versioned method contracts read by scripts
-  tests/             unit tests
-  results/           published outputs: SP/, Chicago/, SP_CHI/ (tracked)
-  data/ cache/ work/ local inputs and intermediates (git-ignored)
+README.md  AGENTS.md      this page; the guide for agents (CLAUDE.md points to it)
+analysis/                 track 1: urban similarity model
+  docs/                   status, protocol, decisions, per-city and cross-city reports, archive/
+  viz/                    Cross-City Urban Explorer, a static site (deploy root)
+  scripts/ config/ tests/ code, frozen method contracts, unit tests
+  results/                published releases: SP/, Chicago/, SP_CHI/ (tracked)
+  curio_nodes/            nodes and dataflows installed in Curio
+  data/ cache/ work/      model inputs and intermediates (local, git-ignored)
+network/                  track 2: sidewalk network
+  docs/                   status, plans, protocols, phase notes, datasets/, archive/
+  graph/                  the passage-graph package (python -m graph.<phase>)
+  scripts/                route planning, transcription, Drive mount, transfers
+  notebooks/              field-day analysis notebooks (local, not committed yet)
+  data/                   captures and everything derived from them (local, git-ignored)
 ```
 
 ## Development
 
-Use Python 3.12. `pyproject.toml` declares the project dependencies; `analysis/requirements.txt` records the exact tested environment used by the published releases. Run scripts from the repository root and the tests with:
+Python 3.12. Two environments:
+- `.venv` (this repo) for `analysis/` and the route-planning scripts. `pyproject.toml` declares its dependencies; `analysis/requirements.txt` pins the tested ones.
+- `../sideseeing-tools/venv` (a sibling repo) for `network/graph`, the notebooks and anything needing torch, Whisper or SAM3. Heavy runs happen on desktop-01.
 
 ```bash
-.venv/bin/python -m unittest discover -s analysis/tests -v
+.venv/bin/python -m unittest discover -s analysis/tests        # analysis tests
+node analysis/tests/check_viz_model.js                         # explorer vs published results
+cd network && ../../sideseeing-tools/venv/bin/python -m pytest -q graph/tests   # graph tests
 ```
-
-After adding, archiving or documenting a script, regenerate the index with `.venv/bin/python analysis/scripts/make_index.py`.

@@ -1,8 +1,8 @@
 # Chicago sidewalk-network collection protocol
 
-**Update, 16 October 2026:** River North is the selected area. Its boundary, pilot-based field rules and route plan are in [RIVER_NORTH_COLLECTION.md](RIVER_NORTH_COLLECTION.md); that document takes precedence where the two differ.
+**Update:** River North was later dropped; the collection area is West Loop ([WEST_LOOP_COLLECTION.md](WEST_LOOP_COLLECTION.md)). **Update, 16 October 2026:** River North is the selected area. Its boundary, pilot-based field rules and route plan are in [RIVER_NORTH_COLLECTION.md](archive/RIVER_NORTH_COLLECTION.md); that document takes precedence where the two differ.
 
-Working draft, 13 October 2026, updated through interview Q19. The immediate collection is a small Near West Side pilot near UIC, not the entire community area; see [PILOT_NEAR_WEST_SIDE.md](PILOT_NEAR_WEST_SIDE.md). The broader target remains full street-adjacent sidewalk coverage, on both sides of streets, in a community area selected for feasible collection within one to two weeks. Each collector will use MultiSensor on their own device, with the existing data-collection vest setup. One pass per sidewalk is the agreed baseline; planned overlaps are permitted and must be highlighted. Actual person-hours, device inventory, detailed boundary rules, and field-verified routes remain to be settled.
+Working draft, 13 October 2026, updated through interview Q19. The immediate collection is a small Near West Side pilot near UIC, not the entire community area; see [PILOT_NEAR_WEST_SIDE.md](archive/PILOT_NEAR_WEST_SIDE.md). The broader target remains full street-adjacent sidewalk coverage, on both sides of streets, in a community area selected for feasible collection within one to two weeks. Each collector will use MultiSensor on their own device, with the existing data-collection vest setup. One pass per sidewalk is the agreed baseline; planned overlaps are permitted and must be highlighted. Actual person-hours, device inventory, detailed boundary rules, and field-verified routes remain to be settled.
 
 ## Purpose and agreed constraints
 
@@ -12,7 +12,7 @@ Collect the observations needed to reconstruct a general-walking passage graph a
 
 **Collection decisions from Q16–Q19:** focus on street-adjacent sidewalks, collecting both physical sides of each street once. Internal park paths and other non-street passages are outside the initial systematic coverage target. Use the available data-collection vest setup; handheld capture is not the planned default. The researcher expects the represented passages to be bidirectional in most cases. Repeated sections are permitted for practical route continuity/efficiency and must be documented and highlighted; universal two-direction collection is not required.
 
-**Immediate pilot:** Renzo alone will use a moto g 5G (2023) with MultiSensor and the collection vest. The three researcher-drawn routes run between Aberdeen and Morgan, Polk to Taylor; see the [route drawing](PILOT_NEAR_WEST_SIDE.md) and [solo field protocol](PILOT_PROTOCOL.md). UIC campus sidewalks are excluded. The drawn public mid-block paths are a pilot-only exploratory exception and will be reported separately from street-adjacent sidewalks. The broader campaign's team and street-adjacent scope are unchanged. This pilot does not commit to surveying the whole Near West Side or select it as the final comparative-study community area.
+**Immediate pilot:** Renzo alone will use a moto g 5G (2023) with MultiSensor and the collection vest. The three researcher-drawn routes run between Aberdeen and Morgan, Polk to Taylor; see the [route drawing](archive/PILOT_NEAR_WEST_SIDE.md) and [solo field protocol](archive/PILOT_PROTOCOL.md). UIC campus sidewalks are excluded. The drawn public mid-block paths are a pilot-only exploratory exception and will be reported separately from street-adjacent sidewalks. The broader campaign's team and street-adjacent scope are unchanged. This pilot does not commit to surveying the whole Near West Side or select it as the final comparative-study community area.
 
 Construction will be automatic. Field administration and capture quality checks are permitted; a separate human-verified evaluation reference is agreed. Do not turn fieldwork into a manual barrier-labeling or GPS-correction exercise.
 
@@ -43,7 +43,7 @@ Source: `RELATÓRIO DA AUDITORIA DE CALÇADAS - BRÁS.txt`, supplied by the rese
 
 **Proposed selection procedure:** for candidate areas, estimate sidewalk-side length, crossing targets, repositioning, repeat/revisit burden, and practical access; check public imagery coverage and acquisition dates. Compare the estimated effort with confirmed person-hours and pilot-measured throughput before finalizing the area. Square kilometers alone do not define the collection workload. Retain the research criteria for neighborhood selection alongside operational feasibility, and document the resulting limits on cross-city or citywide comparisons.
 
-The immediate pilot is a small sample of Near West Side near UIC; its routes and objectives are documented separately in [PILOT_NEAR_WEST_SIDE.md](PILOT_NEAR_WEST_SIDE.md). Its limited extent does not replace the later full-area collection target. If a candidate area for the later study cannot fit the available effort, revisit area selection or the resource/window commitment explicitly rather than silently changing the target to partial coverage. No full-study feasibility conclusion is possible until the area and available person-hours are known.
+The immediate pilot is a small sample of Near West Side near UIC; its routes and objectives are documented separately in [PILOT_NEAR_WEST_SIDE.md](archive/PILOT_NEAR_WEST_SIDE.md). Its limited extent does not replace the later full-area collection target. If a candidate area for the later study cannot fit the available effort, revisit area selection or the resource/window commitment explicitly rather than silently changing the target to partial coverage. No full-study feasibility conclusion is possible until the area and available person-hours are known.
 
 ## 2. Define coverage before drawing itineraries
 
@@ -163,7 +163,7 @@ The field team may later contribute to evaluation; a separate large labeling wor
 
 ## Decisions to settle in the next interview round
 
-1. **Pilot logistics:** Renzo is the sole pilot collector with a moto g 5G (2023). Mark actual starts/finishes and overlap landmarks on the working route map, verify current access and choose the field date; see the [solo field protocol](PILOT_PROTOCOL.md).
+1. **Pilot logistics:** Renzo is the sole pilot collector with a moto g 5G (2023). Mark actual starts/finishes and overlap landmarks on the working route map, verify current access and choose the field date; see the [solo field protocol](archive/PILOT_PROTOCOL.md).
 2. **Site-dependent coverage:** specify the pilot crossing inventory and coverage endpoints, then boundary-street treatment for the later full study. Street-adjacent scope and one pass per sidewalk with highlighted overlaps are already settled.
 3. **Registration and pilot details:** record devices and available vest/mount setups after volunteer confirmation, then verify framing, export behavior, and feasible concurrent collection. Use of the collection vest is already settled.
 

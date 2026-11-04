@@ -1,11 +1,35 @@
-# Analysis workspace
+# Urban similarity model (analysis/)
 
-What each folder is for and the rules for adding to it. Project entry point and documentation map: [root README](../README.md). The deployable explorer lives in the repository-root [viz/](../viz/README.md); `scripts/export_viz_data.py` regenerates its browser data, and `tests/check_viz_model.js` compares it with the published results.
+Track 1 of the project: São Paulo's districts and Chicago's Community Areas described with M, B and U feature families and compared descriptively, with Brás as the reference. Everything for this track lives under this folder: code, configs, results, documentation and the explorer. The other track is [network/](../network/README.md); the rules for agents are in [AGENTS.md](../AGENTS.md).
+
+## Start here
+
+| I want to… | Open |
+|---|---|
+| Know where the model stands and what is next | [docs/STATUS.md](docs/STATUS.md), the only page with dated status for this track |
+| Understand the research design | [docs/PROTOCOL.md](docs/PROTOCOL.md) |
+| See why a feature was kept, deferred or changed | [docs/DECISIONS.md](docs/DECISIONS.md) |
+| Explore the three cross-city methods interactively (any reference unit) | [Cross-City Urban Explorer](viz/README.md): `python3 -m http.server 8765 --directory analysis/viz` from the repo root |
+| Read the São Paulo–Chicago model (Brás reference; proposed settings v4 and candidate v3, on v2's data with the U1 commerce share) | [model report](docs/harmonization/MODEL_REPORT.md) (conclusions §1; v1 §5, v2 §6, v3 §7, v4 §8; across versions §9; Chicago neighborhoods §10) · [contract v4](config/sp_chicago_model_v4.json) · [contract v3](config/sp_chicago_model_v3.json) · [notebook](sp_chicago_model_analysis.ipynb) · [contract v2](config/sp_chicago_model_v2.json) · [v1](config/sp_chicago_model_v1.json) |
+| Read the Chicago model (methodology, features, results) | [model report](docs/chicago/MODEL_REPORT.md) · [notebook](chicago_model_analysis.ipynb) · [contract](config/chicago_model_v1.json) |
+| Read Chicago feature definitions and sources | [model plan](docs/chicago/MODEL_PLAN.md) · [attributes](docs/chicago/ATTRIBUTES.md) · [data sources](docs/chicago/DATA_SOURCES.md) · [M3/M4 block protocol](docs/chicago/BLOCKS_M3_M4.md) · [execution log](docs/chicago/EXECUTION_LOG.md) |
+| Read São Paulo definitions and the SP model | [attributes](docs/sp/ATTRIBUTES.md) · [preparation](docs/sp/PREPARATION.md) · [model v2](docs/sp/MODEL.md) |
+| Read the SP–Chicago harmonization history | [plan](docs/harmonization/PLAN.md) · [execution log](docs/harmonization/EXECUTION_LOG.md) |
+| Read the advisor's simple index (methods A/B) | [docs/SIMPLE_INDEX.md](docs/SIMPLE_INDEX.md) · [notebook](simple_index_ab.ipynb) |
+| Find paper-oriented evidence | [survey](docs/survey/README.md) · [advisor brief](docs/survey/ADVISOR_BRIEF.md) · [experiment ledger](docs/survey/EXPERIMENT_LEDGER.md) |
+| Find every dataset: content, source, version, use in the models | [data register](data/README.md) |
+| Browse published results | [SP](results/SP/README.md) · [Chicago](results/Chicago/README.md) · `results/SP_CHI/` |
+| Run or find a script | [scripts/INDEX.md](scripts/INDEX.md) |
+| Work in Curio | [curio_nodes/README.md](curio_nodes/README.md) |
+
+Superseded plans, audits and the September handoff are kept unchanged in [docs/archive/](docs/archive/).
 
 ## Folders
 
 | Folder | What it holds | Tracked | Rule |
 |---|---|---|---|
+| [docs/](docs/) | Status, protocol, decisions, per-city (`chicago/`, `sp/`) and cross-city (`harmonization/`) reports, the paper survey (`survey/`) and `archive/` | yes | Dated status goes only in `docs/STATUS.md`. Superseded pages move to `archive/` unchanged |
+| [viz/](viz/README.md) | The Cross-City Urban Explorer: a static site, complete on its own (the deploy root). `scripts/export_viz_data.py` regenerates `viz/data.js`; `tests/check_viz_model.js` compares it with the published results | yes | Never type numbers into the page; regenerate `data.js` |
 | [results/](results/) | Published outputs, one folder per release: `SP/`, `Chicago/`, `SP_CHI/` (paired cross-city work). Each release has its own README, tables and validation receipts | yes | Never overwrite a release; publish a new dated/versioned folder. Start with [SP](results/SP/README.md) or [Chicago](results/Chicago/README.md) |
 | [scripts/](scripts/INDEX.md) | Pipeline, pilot and validation scripts (flat), library packages `harmonization/`, `sp_attributes/`, `sp_model/`, `sp_v3/`, and finished scripts in `_archive/*.zip` | yes | Keep flat: scripts find the repo root with `parents[2]` and import each other. Regenerate [INDEX.md](scripts/INDEX.md) with `make_index.py` |
 | config/ | Frozen, versioned method contracts (JSON) and one lookup CSV read by scripts; see [config bindings in INDEX.md](scripts/INDEX.md#config-bindings-analysisconfig) | yes | Never edit in place: a change is a new file with the next version. Keep superseded versions; published results cite them |
@@ -16,7 +40,7 @@ What each folder is for and the rules for adding to it. Project entry point and 
 | [work/](work/README.md) | Local intermediates, ~6 GB: `prepared/`, `evidence/`, `runs/`, plus dated pilot folders | no | Not published. New pilots write to `work/runs/<name>_<date>/` |
 | `outputs` → `.compat/outputs/`, `processed` → `work/prepared` | Legacy symlinks from the 11 September 2026 reorganization; `.compat/` holds only links (below) | — | Keep; do not use for new work |
 
-Notebooks: [chicago_curio_model_analysis.ipynb](chicago_curio_model_analysis.ipynb) reproduces the Chicago Curio feature construction, eight-family candidate model and three linked views; [model_analysis.ipynb](model_analysis.ipynb) and `model_analysis.py` analyze the São Paulo model v2.
+Notebooks, at this folder's top level, each reproduce one model from its scripts: [sp_chicago_model_analysis.ipynb](sp_chicago_model_analysis.ipynb) (cross-city model), [chicago_model_analysis.ipynb](chicago_model_analysis.ipynb) (Chicago model v1), [simple_index_ab.ipynb](simple_index_ab.ipynb) (simple index A/B), [chicago_curio_model_analysis.ipynb](chicago_curio_model_analysis.ipynb) (the Chicago Curio feature construction, eight-family candidate model and three linked views), and [model_analysis.ipynb](model_analysis.ipynb) with `model_analysis.py` (São Paulo model v2).
 
 ### Legacy links: `outputs`, `processed` and `.compat/`
 

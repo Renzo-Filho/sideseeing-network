@@ -1,6 +1,6 @@
 # Sideseeing sidewalk network: initial research plan
 
-Draft initiated 12 October 2026, updated 14 October after the pilot collection. This records the design interview; it is not a completed specification. Three pilot sessions have been recorded and a raw-GPS overview has been run; see [PILOT_DATA_PLAN.md](PILOT_DATA_PLAN.md) for the next analysis steps.
+Draft initiated 12 October 2026, updated 14 October after the pilot collection. This records the design interview; it is not a completed specification. Three pilot sessions have been recorded and a raw-GPS overview has been run; see [PILOT_DATA_PLAN.md](archive/PILOT_DATA_PLAN.md) for the next analysis steps.
 
 ## Research objective
 
@@ -21,9 +21,9 @@ The research includes both topology reconstruction and evidence association. Eva
 9. Document failure cases and use them to revise definitions. An initial rule is a testable design choice, not an immutable ontology.
 10. Target collection of all sidewalks in a Chicago community area within one to two weeks; choose the area with its workload and team capacity in mind. Each collector uses MultiSensor on their own phone. Register devices after volunteer confirmation. Detailed coverage boundaries, schedules, and acquisition settings remain open; see [COLLECTION_PROTOCOL.md](COLLECTION_PROTOCOL.md).
 11. Initial systematic collection concerns street-adjacent sidewalks on both physical sides of streets, using the existing data-collection vest setup. Represented passages are expected to be bidirectional in most cases. Preserve observed recording direction separately from permitted graph traversal. Collect each sidewalk once; route overlaps are permitted for practical, efficient coverage and must be documented and highlighted.
-12. Plan the first field pilot on a small sample of Near West Side near UIC, excluding UIC campus sidewalks. Renzo will collect alone with a moto g 5G (2023), MultiSensor and the vest. The scope is the three researcher-drawn routes between Aberdeen and Morgan, Polk to Taylor, in [PILOT_NEAR_WEST_SIDE.md](PILOT_NEAR_WEST_SIDE.md); the practical steps are in [PILOT_PROTOCOL.md](PILOT_PROTOCOL.md). Drawn public mid-block paths are an exploratory pilot exception and are reported separately. This is a pilot-location decision, not the selection of the final full-study area.
-13. On 16 October 2026 River North was selected for the full collection: the land between the Chicago River, the Chicago Ave centreline and the Michigan Ave centreline (1.45 km²), with both sides of Chicago Ave and Michigan Ave, and every legal crosswalk traversed once. This boundary differs from the City neighborhood polygon scored by the cross-city model (3.60 km²). Field rules and the route plan are in [RIVER_NORTH_COLLECTION.md](RIVER_NORTH_COLLECTION.md).
-14. Voice (16 October 2026): collectors keep a spoken log and say code words for sidewalk elements. The code words are an **evaluation reference only**: graph construction and the vision-language model run without them, consistent with decision 2. A later, declared experiment compares "automatic only" with "automatic + voice". MultiSensor is the only collection app. See [PILOT2_PROTOCOL.md](PILOT2_PROTOCOL.md).
+12. Plan the first field pilot on a small sample of Near West Side near UIC, excluding UIC campus sidewalks. Renzo will collect alone with a moto g 5G (2023), MultiSensor and the vest. The scope is the three researcher-drawn routes between Aberdeen and Morgan, Polk to Taylor, in [PILOT_NEAR_WEST_SIDE.md](archive/PILOT_NEAR_WEST_SIDE.md); the practical steps are in [PILOT_PROTOCOL.md](archive/PILOT_PROTOCOL.md). Drawn public mid-block paths are an exploratory pilot exception and are reported separately. This is a pilot-location decision, not the selection of the final full-study area.
+13. On 16 October 2026 River North was selected for the full collection: the land between the Chicago River, the Chicago Ave centreline and the Michigan Ave centreline (1.45 km²), with both sides of Chicago Ave and Michigan Ave, and every legal crosswalk traversed once. This boundary differs from the City neighborhood polygon scored by the cross-city model (3.60 km²). Field rules and the route plan are in [RIVER_NORTH_COLLECTION.md](archive/RIVER_NORTH_COLLECTION.md). Revised later: River North was dropped and West Loop became the collection area ([WEST_LOOP_COLLECTION.md](WEST_LOOP_COLLECTION.md)); the River North document is archived and keeps the field rules West Loop reuses.
+14. Voice (16 October 2026): collectors keep a spoken log and say code words for sidewalk elements. The code words are an **evaluation reference only**: graph construction and the vision-language model run without them, consistent with decision 2. A later, declared experiment compares "automatic only" with "automatic + voice". MultiSensor is the only collection app. See [PILOT2_PROTOCOL.md](archive/PILOT2_PROTOCOL.md).
 
 ## Proposed conceptual structure — pending confirmation
 
@@ -154,7 +154,7 @@ Interactive applications, specialized accessibility routing, and full walkable-s
 
 ## Open design frontier
 
-1. Audit which intended Near West Side pilot passages, crossings, and overlaps were actually recorded; see [PILOT_DATA_PLAN.md](PILOT_DATA_PLAN.md). The full community area is outside the pilot scope.
+1. Audit which intended Near West Side pilot passages, crossings, and overlaps were actually recorded; see [PILOT_DATA_PLAN.md](archive/PILOT_DATA_PLAN.md). The full community area is outside the pilot scope.
 2. Is the proposed provenance model sufficient, especially its separation of source identity, source agreement, and evaluation status?
 3. Which candidate edges should basic route queries traverse? This does not change the decision to retain the full inference union.
 4. What is the operational rule for reconciling two source hypotheses into one physical passage? Study 1 should inform this rather than choosing a distance threshold now.
