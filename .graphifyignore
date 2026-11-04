@@ -1,0 +1,7 @@
+# Result artefacts: outputs of the scripts, not part of the code/doc structure
+analysis/results/
+*.parquet
+*.csv
+*.png
+*.jpg
+*.gpkg
